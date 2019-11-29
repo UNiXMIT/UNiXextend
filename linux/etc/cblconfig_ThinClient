@@ -1,0 +1,48 @@
+#----This variable lets you determine how many seconds (from 0 to 32767) the client waits for a response from the server.
+TC_SERVER_TIMEOUT               60
+#
+#----Use the TC_CHECK_ALIVE_INTERVAL configuration variable to set a time interval in seconds (a value between 1 and 32767) 
+#----during which the server runtime checks for client activity.
+TC_CHECK_ALIVE_INTERVAL         60
+
+#----Select one of the following values for TC_QUIT_MODE
+# -1 (the default value) shuts your program down according to the value chosen for the QUIT_MODE configuration variable.  
+# 0  The runtime stops the program immediately
+# >0 Your application has a program-controlled exit. For example, if you set TC_QUIT_MODE to "100", 
+#    your program receives exception value 100 after the thin client is inactive for the interval defined by TC_CHECK_ALIVE_INTERVAL.
+TC_QUIT_MODE                    -1
+
+
+# This variable controls data compression by the internal socket layer. 
+# Setting this variable to "ZLIB" means that data is compressed using the same algorithm as the gzip compression utility. 
+# A value of "RUNLENGTH" means that a simple compression based on counting repeated bytes of data is performed. 
+# RUNLENGTH compression tends to be faster than ZLIB compression, but tends not to compress as well, especially with large blocks of data. 
+# The default value for this variable is "NONE". 
+AGS_SOCKET_COMPRESS       ZLIB
+
+# Use this variable to prevent the accumulation of 0 byte files 
+# when using format specifiers such as "%p" (to include the process id) in the error file name.
+A_REMOVE_EMPTY_ERROR_FILE 1
+
+# Released in 8.1.2 for the first time
+# The value of this variable by default is 10 milliseconds.
+# This variable is used to specify the amount of wait time before attempting to retry writing data to a socket. 
+# The default value should provide performance at par with pre 7.3 versions. "
+AGS_BLOCK_SLEEP_TIME 1
+
+# Released in 9.2.0 for the first time
+# Retry attempts before closing socket
+# Default value is 1000
+AGS_RETRY_COUNT 1000
+
+#---------------------------------------
+
+# The value of this variable determines whether the events listed in TC_AX_EVENT_LIST and TC_EVENT_LIST are sent to your program. 
+# A value of 1 means the specified events are not sent to your program. 
+# The default value is 0 or FALSE.
+#TC_EXCLUDE_EVENT_LIST TRUE
+
+# VSFlexGrid events for: MouseDown, MouseMove, MouseUp
+#TC_AX_EVENT_LIST -605 -606 -607
+
+#---------------------------------------

@@ -1,0 +1,9 @@
+#------------------------------------
+!copy /home/support/AcuSupport/etc/cblconfig_ThinClient
+#------------------------------------
+
+A-ASSERT-ACTION SILENT
+A_REMOVE_EMPTY_ERROR_FILE 1
+
+FILE_PREFIX      /home/support/AcuSupport/AcuDataFiles .
+WIN32_NATIVECTLS 1

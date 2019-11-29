@@ -1,0 +1,35 @@
+#------------------------------------
+#!copy \etc\cblconfi_TRACE.cfg
+!copy \etc\cblconfi_ThinClient.cfg
+#!copy \etc\cblconfi_ThinClient_AutoUpdate.cfg
+#!copy \etc\cblconfi_keystroke.cfg
+#!copy \etc\cblconfi_kSeystroke_CopyPaste.cfg
+#!copy \etc\cblconfi_acuserver.cfg
+#!copy \etc\cblconfi_oracle.cfg
+#!copy \etc\cblconfi_mssql.cfg
+#!copy \etc\cblconfi_acusql.cfg
+#!copy \etc\cblconfi_ODBC.cfg
+#------------------------------------
+
+FILE_PREFIX        C:\AcuDataFiles
+WIN32_NATIVECTLS    1
+IO_CREATES          1
+EXTEND_CREATES      1
+ACU_USER_DIR        C:\etc
+ATC_SPLASH_SCREEN   0
+
+#------------------------------------
+
+#V_VERSION               3
+#ACU_DUMP               1
+#ACU_DUMP_FILE           C:\temp\acudumpMIT.txt
+#DECIMAL_POINT          ,
+#COBOL_CHARACTER_SET    UTF-8
+#USE_UNICODE_FONTS      TRUE
+#TRANSLATE_TO_ANSI      TRUE
+#SHARED_LIBRARY_LIST    xmlif.dll rmnet.dll
+#SHARED_LIBRARY_PREFIX  C:\temp
+#ECN-4444               OFF
+#ERRORS_OK              1
+
+#------------------------------------

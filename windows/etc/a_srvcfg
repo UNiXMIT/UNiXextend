@@ -1,0 +1,65 @@
+# This is a sample AcuServer configuration file
+# You should edit it to match your needs
+
+# The following lines are commented out to show you the default values
+# If you want to use a different value then uncomment the line and change
+# the value
+
+#  This is the name of the Server Access File, which defines who has
+#  access to your running AcuServer
+#ACCESS-FILE
+
+#  For servers with multiple Network Interface Cards, this variable will
+#  determine which address to use when listening for connections.  The
+#  default value is blank, which will use the first address found.
+#SERVER_IP
+
+#  If you have multiple Network Interface Cards in your server, and each
+#  card is associated with a different host name, then this variable can
+#  be used to determine which name to use when listening for connections.
+#  This is only used if SERVER_IP (above) is not used.
+#  The default value is blank, which means to use the standard hostname.
+#SERVER_NAME
+
+#  DEFAULT-USER is used when the Server Access File has an unspecified
+#  username.  In that case, this username will be used.
+#DEFAULT-USER
+
+#  This variable is used when the umask given in the Server Access File
+#  is all blanks.  The default is 0.
+#DEFAULT-UMASK     0
+
+#  This variable specifies the port which AcuServer will listen on.  This
+#  port needs to be the same for all clients accessing this server.  This
+#  port also need to not be used by any other application on your server.
+#  The default value is 6523.
+#ACUSERVER-PORT    6523
+
+#  This variable can be used to limit the size of error files.  The default
+#  is 0, meaning that error files can be of unlimited size.
+#MAX-ERROR-LINES   0
+
+#  This variable determines how many times a client can send a password
+#  before the connection is refused.
+#PASSWORD-ATTEMPTS 3
+
+#  This variable is used only under Windows.  When set, all files are
+#  locked when opened, which can improve performance.
+#LOCK-ALL-FILES    0
+
+#  The rest of the variables are the same as in the runtime.  See your
+#  runtime documentation for more information.
+#LOCKS-PER-FILE    10
+#MAX-FILES         32
+#MAX-LOCKS         32
+#V-BUFFERS         32
+#V-BUFFER-DATA     1
+#V-READ-AHEAD      1
+#V-VERSION         4
+
+# Some HP machines have a problem placing locks above the 1GB boundary.
+# For these machines, the default V-SEG-SIZE is 1073740799.
+#V-SEG-SIZE        2147482623 or 1073740799
+
+#SECURITY_METHOD ON
+#AGS_SOCKET_COMPRESS ZLIB
