@@ -3,7 +3,7 @@ sudo docker pull ibmcom/informix-developer-database:latest
 sudo docker run -it --name INFORMIX -h INFORMIX --privileged -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 -p 27883:27883 -e LICENSE=accept ibmcom/informix-developer-database:latest
 
 # Attach to Docker container
-sudo docker exec -it INFORMIC bash
+sudo docker exec -it INFORMIX bash
 
 # Remove container
 sudo docker stop MYSQL
