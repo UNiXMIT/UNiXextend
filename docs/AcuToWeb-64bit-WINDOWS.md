@@ -36,7 +36,7 @@ The 64 bit AcuConnect service will NOT be shown in the AcuToWeb Control Panel. T
 
 ![2](images/atw-w-64-2.png)
 
-For this reason, if you need to stop/start the AcuConnect 10.2.0 64-bit service, you have to use the 64-bit Control Panel as suggested before. 
+For this reason, if you need to stop/start the AcuConnect 10.2.0 64-bit service, you have to use the 64-bit Control Panel as suggested before.   
  
 Now you can set the properties as normal.
 
