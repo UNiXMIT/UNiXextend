@@ -54,7 +54,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
      wrun32 -dlxe runtime.log <other options> programName
      ```
 
-2. At the debugger prompt enter 'tf 9', then 't flush', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
+2. At the debugger prompt enter 'tf', then 't 9', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
 
 3. Zip up runtime.log and attach to the support incident.
 
@@ -92,7 +92,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
      acuthin.exe server:port -dlxe runtime.log aliasName
      ```
 
-3. At the debugger prompt enter 'tf 9', then 't flush', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.  If you did not include the path for the log file name it will be located in the working directory specified in the alias.
+3. At the debugger prompt enter 'tf', then 't 9', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.  If you did not include the path for the log file name it will be located in the working directory specified in the alias.
 
 4. Zip up acurcl.log and runtime.log, and attach to the support incident.
 
