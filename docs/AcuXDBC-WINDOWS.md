@@ -22,8 +22,8 @@ During the installation you will be asked to enter your product code and key.
 **Set environment variables**
 
 ```
-set PATH=\pathtotheinstallation\folder\bin;%PATH%
-set GENESIS_HOME=\pathtotheinstallation\folder
+set PATH=\pathtotheinstallation\folder\AcuGT\bin;%PATH%
+set GENESIS_HOME=\pathtotheinstallation\folder\AcuGT
 ```
 
 These next steps must be accomplished to complete your installation/configuration of XDBC.
