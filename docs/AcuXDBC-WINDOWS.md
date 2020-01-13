@@ -157,7 +157,7 @@ AND activate this variable inside acuxdbc.cfg file:
 IGNORE_OWNER	ON
 ```
 
-TO LOAD SOME USEFUL VIEWS, use this syntax and the file sql provided with your installation: 
+TO LOAD SOME USEFUL VIEWS, use this syntax and the file sql provided with your installation (This is automatically loaded by the 'ainit' script): 
 ```
 asql -r "C:\pathtotheinstallation\folder\bin\cview.sql"
 ```
