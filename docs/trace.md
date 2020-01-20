@@ -98,6 +98,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
 
 
 ## AcuToWeb:
+
 1. Stop the AcuToWeb service. Open the gateway.conf file in Notepad or other text editor.
 
 2. Adjust the following options to assign the following values (change gateway.log path to suit your setup):
@@ -111,7 +112,9 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
 4. Zip up the gateway.log and attcah to the support incident.
 
 
-## AcuServer: (in addition to the runtime.log above)
+## AcuServer:  
+
+  Note: Please send this trace in addition to the runtime.log above.
 
 1. Stop AcuServer and restart with logging.  Add "-le acuserve.log -t7" to the AcuServer start command.  Something like:
 
