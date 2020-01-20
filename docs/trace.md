@@ -109,7 +109,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
      ```
 3. Start AcuToWeb then exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
 
-4. Zip up the gateway.log and attcah to the support incident.
+4. Zip up the gateway.log and attach to the support incident.
 
 
 ## AcuServer:  
