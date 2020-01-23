@@ -2,9 +2,9 @@
 
 The AcuToWeb Gateway provides a method where the client specifies an AcuConnect alias to be run. The AcuToWeb Gateway sends the alias information to AcuConnect; therefore, in order to use AcuToWeb, the following are prerequisites:
 
-1.	Install AcuConnect - http://bit.ly/2o22bat
-2.	Establish system security - http://bit.ly/2otNDgd
-3.	Create the required aliases - http://bit.ly/2otNJV7
+1.	Install AcuConnect - http://bit.ly/2Gfolh1
+2.	Establish system security - http://bit.ly/30LiI3v
+3.	Create the required aliases - http://bit.ly/37nocnt
 
 **Configure AcuConnect Thin Client**
 
