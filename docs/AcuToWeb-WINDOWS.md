@@ -56,7 +56,7 @@ Now Click OK to take you back to the previous window. Select the AcuToWeb servic
 
 ![9](images/atw-w-9.png)
 
-NOTE: Prior to extend 10.3.0 the properties of the service were created directly in the AcuToWeb Control Panel as shown below. This was an intentional change (http://bit.ly/36kJzVc)
+NOTE: Prior to extend 10.3.0 the properties of the AcuToWeb service were created directly in the AcuToWeb Control Panel as shown below. This was an intentional change (http://bit.ly/36kJzVc)
 
 ![10](images/atw-w-10.png)
 
