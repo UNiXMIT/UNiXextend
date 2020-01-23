@@ -2,9 +2,9 @@
 
 AcuToWeb on Linux doesn’t have a graphical control panel. The service is started using the acutoweb-gateway command. The AcuToWeb Gateway provides a method where the client specifies an AcuConnect alias to be run. The AcuToWeb Gateway sends the alias information to AcuConnect; therefore, in order to use AcuToWeb, the following are prerequisites:
 
-1.	Install AcuConnect - http://bit.ly/2otBAjg
-2.	Establish system security - http://bit.ly/2otNDgd
-3.	Create the required aliases - http://bit.ly/2otNJV7
+1.	Install AcuConnect - http://bit.ly/2Gfolh1
+2.	Establish system security - http://bit.ly/30LiI3v
+3.	Create the required aliases - http://bit.ly/37nocnt
 
 After performing the steps above (configuring the AcuAccess file, creating an alias in the acurcl.ini file, and starting the AcuConnect service), to start the gateway from the acutoweb directory, enter the following command at a terminal:
 

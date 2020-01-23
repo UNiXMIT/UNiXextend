@@ -52,7 +52,7 @@ Now when you click 'New' in the 'Gateway Services' tab a new window will appear 
 
 ![12](images/atw-w-12.png)
 
-Now Click OK to take you back to the previous window. Select the AcuToWeb service that you just created and click 'Start'. The status should change from red to green to show that it is now running.
+Now click OK to take you back to the previous window. Select the AcuToWeb service that you just created and click 'Start'. The status should change from red to green to show that it is now running.
 
 ![9](images/atw-w-9.png)
 
