@@ -46,7 +46,7 @@ acuthin localhost alias (acuthin servername alias)
 
 You need to create a new Gateway Service:
 
-First create your gateway.conf file. An example Gateway configuration file can be found in the documentation (http://bit.ly/36kOeGs). Ammend it to fit your needs and make sure ACURCL_PORT matches the port you selected when you created the AcuConnect service earlier.
+First create your gateway.conf file. An example Gateway configuration file can be found in the documentation (http://bit.ly/36kOeGs). Amend it to fit your needs and make sure ACURCL_PORT matches the port you selected when you created the AcuConnect service earlier.
 
 Now when you click 'New' in the 'Gateway Services' tab a new window will appear prompting you to load your gateway.conf file. Click 'Browse' then find and select the gateway.conf you just created.
 
