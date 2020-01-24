@@ -62,7 +62,7 @@ Sample code:
     CLOSE VISIONSTORAGE
 ```
 
-The issue is not reading and stocking the file, but rewriting it correctly. Every bit is important. Any tiny mistake will make the file unusable. Sample code:
+The issue is not reading and storing the file, but rewriting it correctly. Every bit is important. Any tiny mistake will make the file unusable. Sample code:
 ```
     SELECT FILETEMP
         ASSIGN TO FILE-NAME
