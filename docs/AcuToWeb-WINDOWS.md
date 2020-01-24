@@ -76,3 +76,7 @@ The following excerpt adds aliases for the Calculator and Tour applications:
 ```
 
 You can also type an alias name into the field, then click Make URL, which will generate a URL that you can distribute to customers, which will allow them to paste into their browser and connect to the gateway directly.
+
+---
+
+![gif](images/atw-w.gif)
