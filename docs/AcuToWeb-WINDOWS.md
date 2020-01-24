@@ -10,25 +10,29 @@ The AcuToWeb Gateway provides a method where the client specifies an AcuConnect 
 
 Choose the AcuToWeb control panel from the “All Programs” menu. On Windows 10 you will need to right click the 'extend' Start Menu item and select 'Run as administrator'.
 
+On the Access tab we want to add a new user to the Access file (AcuAccess by default). Click 'New' to open up a new window that will alow you to enter the user access details.
+
 ![1](images/atw-w-1.png)
 
-On the Access tab we want to add a new user to the Access file (AcuAccess by default):
+In this setup, all users on any machine are mapped to the user 'support' on the server.
 
 ![2](images/atw-w-2.png)
 
-On my machine my configuration looks like this:
-
 ![3](images/atw-w-3.png)
 
-Let’s configure an Alias on the Alias Tab: 
+On the Alias tab you can set any programs to be launched in AcuToWeb. We create an alias for each program and any command line options. Click 'New' tp open a new window where you can create an alias.
 
 ![4](images/atw-w-4.png)
+
+In the 'Commmand Line' field you can set the program to be launched as well as any other options like specifying a configuration file with '-c cblconfi' for example.
 
 ![5](images/atw-w-5.png)
 
 Now create the AcuConnect Thin Client service:
 
 ![6](images/atw-w-6.png)
+
+Click 'New' to open a new window where you can specify the port number and configuration file to be used. You can also set any trace options here.
 
 ![7](images/atw-w-7.png)
 
@@ -37,7 +41,16 @@ The file acurcl.cfg contains the server configuration variables; when the file i
 You should now be able to execute your program via thin client. Under extend 10.3.0 open tools and run the 32-bit runtime system command:
 
 ```
-acuthin localhost alias (acuthin servername alias)
+acuthin serverNameorIP:portNum alias 
+```
+
+I.E.
+```
+acuthin localhost:5632 Tour
+```
+or
+```
+acuthin 127.0.0.1:5632
 ```
 
 ![8](images/atw-w-8.png)
@@ -46,7 +59,9 @@ acuthin localhost alias (acuthin servername alias)
 
 You need to create a new Gateway Service:
 
-First create your gateway.conf file. An example Gateway configuration file can be found in the documentation (http://bit.ly/36kOeGs). Amend it to fit your needs and make sure ACURCL_PORT matches the port you selected when you created the AcuConnect service earlier.
+First create your gateway.conf file. An example Gateway configuration file can be found in the documentation (http://bit.ly/36kOeGs). Amend it to fit your needs and make sure ACURCL_PORT matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SLL then be sure to set USE_SSL to 0
+
+![13](images/atw-w-13.png)
 
 Now when you click 'New' in the 'Gateway Services' tab a new window will appear prompting you to load your gateway.conf file. Click 'Browse' then find and select the gateway.conf you just created.
 
