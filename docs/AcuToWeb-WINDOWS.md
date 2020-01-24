@@ -44,13 +44,13 @@ You should now be able to execute your program via thin client. Under extend 10.
 acuthin serverNameorIP:portNum alias 
 ```
 
-I.E.
+i.e.
 ```
 acuthin localhost:5632 Tour
 ```
 or
 ```
-acuthin 127.0.0.1:5632
+acuthin 127.0.0.1:5632 Tour
 ```
 
 ![8](images/atw-w-8.png)
