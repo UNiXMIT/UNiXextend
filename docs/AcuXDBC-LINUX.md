@@ -214,7 +214,9 @@ SQL (/? for help) ==> /q
 
 **LINUX**
 
-On LINUX you may use a 3rd party software called unixODBC. Please refer to their documentation on the setup and configuration of this software.
+On LINUX you may use a 3rd party software called unixODBC. Please refer to their documentation on the setup and configuration of this software.  
+
+Some help can be found in this guide - [AcuXDBC-LINUXClient](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUXClient.md)
 
 **WINDOWS**
 
