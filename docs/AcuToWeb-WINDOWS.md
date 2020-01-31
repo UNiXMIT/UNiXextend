@@ -59,7 +59,7 @@ acuthin 127.0.0.1:5632 Tour
 
 You need to create a new Gateway Service:
 
-First create your gateway.conf file. An example Gateway configuration file can be found in the documentation (http://bit.ly/36kOeGs). Amend it to fit your needs and make sure ACURCL_PORT matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SLL then be sure to set USE_SSL to 0
+First create your gateway.conf file. An example Gateway configuration file can be found in the documentation (http://bit.ly/36kOeGs). Amend it to fit your needs and make sure ACURCL_PORT matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set USE_SSL to 0
 
 ![13](images/atw-w-13.png)
 
