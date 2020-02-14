@@ -15,7 +15,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\TSFairShare\Disk
 #### Disable fair sharing of the CPU.  
 Change the value EnableCPUQuota from 1 to 0 (zero).  
 ```
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Quota Systemreg1  
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Quota System
 ```
   
   
