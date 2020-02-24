@@ -37,11 +37,19 @@ These next steps must be accomplished to complete your installation/configuratio
 
 ---
 
+**Quick Start Demo Program**
+
+It is a good idea to run and inspect the quick start demo program before testing with your own data and setup. This way you can understand the process in a working environment first.  
+
+https://www.microfocus.com/documentation/extend-acucobol/103/extend-Interoperability-Suite/BKXDXDINSTXD5.1.1.html  
+
+Once you are happy with how it works, you can continue on to **Configuration of AcuXDBC** and test with your own data.
+
 **Configuration of AcuXDBC**
 
 Open your installation directory i.e.
 
-C:\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT
+C:\Program Files (x86)\Micro Focus\extend 10.3.0\AcuGT
 
 This is where your acuxdbc.cfg config file must be located.   
 If it's not present, enter the BIN directory and use the batch program genxconf.bat to generate it.  
