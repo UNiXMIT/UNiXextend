@@ -154,7 +154,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
 
 This log is useful to find out what paths and DLLs a program is searching when attempting to load a DLL, like Microsofts query tool MSQUERY.EXE.  
 
-Note: Please have your program ready to run before starting procmon.exe in step 3. This will avoid unessearily large logs.  
+Note: Please have your program ready to run before starting procmon.exe in step 3. This will avoid unnecessarily large logs.  
 
 1.  Download Process Monitor from Microsoft here: http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx 
  
