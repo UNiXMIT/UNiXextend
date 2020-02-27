@@ -15,6 +15,8 @@ SupportLine engineers frequently require a log file in order to troubleshoot an 
 
 [AcuXDBC](#AcuXDBC)
 
+[Process Monitor Log](#Process-Monitor-Log)
+
 
 #### Note:
 The log files described here are a helpful starting place; additional tracing may be requested by Customer Care to further troubleshoot.
@@ -147,3 +149,27 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
 4. Zip up vision.log and debug.log and attach to the support incident.
 
     When the error is from AcuXDBC connected to AcuXDBC Server follow the steps above but modify the configuration file on the server.
+
+## Process Monitor Log
+
+This log is useful to find out what paths and DLLs a program is searching when attempting to load a DLL, like Microsofts query tool MSQUERY.EXE.  
+
+Note: Please have your program ready to run before starting procomn.exe in step 3. This will avoid unessearily large logs.  
+
+1.  Download Process Monitor from Microsoft here: http://technet.microsoft.com/en-us/sysinternals/bb896645.aspx 
+ 
+2.  Unzip the archive. 
+ 
+3.  Double-click procmon.exe 
+ 
+4.  Start Excel 
+ 
+5.  Attempt to get the AcuXDBC data 
+ 
+6.  In Process Monitor click the little magnifying glass icon to stop event capture. 
+ 
+7.  Click the Save icon. 
+ 
+8.  Select “All events” and “Native Process Monitor Format” then click OK. 
+ 
+9.  Zip up the log file and attach it to the support incident. 
