@@ -7,7 +7,7 @@ This time you will need to use the 64-bit setup: “extend(R) Version 10.3.0 x64
 This will install the software in 2 sub-folders:  
 
 C:\Program Files\Micro Focus\extend 10.3.0  
-C:\Program Files (x86)\Micro Focus\extend 10.3.0  
+C:\Program Files (x86)\Micro Focus\extend 10.3.0   
 
 **NOTE: The Compiler is installed only in the 32-bit x86 folder.  
 So does AcuBench, as they are only 32-bit.  
