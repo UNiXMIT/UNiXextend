@@ -1,0 +1,16 @@
+# Pull and Run container
+sudo docker pull docker pull postgres
+sudo docker run -d -p 5432:5432--name POSTGRES -e POSTGRES_PASSWORD=mysecretpassword postgres
+
+# Attach to Docker container
+sudo docker exec -it POSTGRES "bash"
+
+# Remove your container
+sudo docker stop POSTGRES
+sudo docker rm POSTGRES
+
+# Source
+https://dockr.ly/3borF7q
+
+# New users, databases, privileges etc.
+https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
