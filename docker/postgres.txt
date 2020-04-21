@@ -14,3 +14,23 @@ https://dockr.ly/3borF7q
 
 # New users, databases, privileges etc.
 https://medium.com/coding-blocks/creating-user-database-and-adding-access-on-postgresql-8bfcd2f4a91e
+
+# ODBC Driver Setup
+sudo yum install postgresql-odbc
+
+# odbc.ini
+[postgres]
+Description         = PostgreSQL ODBC connection
+Driver              = /usr/lib64/psqlodbcw.so
+Database            = postgres
+Servername          = 127.0.0.1
+UserName            = postgres
+Password            = mysecretpassword
+Port                = 5432
+
+# odbcinst.ini
+[PostgreSQL]
+Description     = ODBC for PostgreSQL
+Driver          = /usr/lib64/psqlodbcw.so
+Setup           = /usr/lib64/libodbcpsqlS.so
+FileUsage       = 1
