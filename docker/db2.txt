@@ -1,0 +1,13 @@
+# Pull and Run container
+sudo docker pull ibmcom/db2
+sudo docker run -itd --name DB2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=YourStrongPassword -e DBNAME=testdb -v <db storage dir>:/database ibmcom/db2
+
+# Attach to Docker container
+sudo docker exec -it DB2 bash
+
+# Remove your container
+sudo docker stop DB2
+sudo docker rm DB2
+
+# Source
+https://dockr.ly/2VsKKzQ
