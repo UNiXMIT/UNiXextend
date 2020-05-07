@@ -5,7 +5,9 @@
 ACURCL_PORT=$1
 
 if [ -z "$ACURCL_PORT" ] ; then
-        $ACUCOBOL/bin/acurcl -start -c /home/support/AcuSupport/etc/acurcl.cfg -@
+        $ACUCOBOL/bin/acurcl -start -@
 else
-        $ACUCOBOL/bin/acurcl -start -c /home/support/AcuSupport/etc/acurcl.cfg -n $ACURCL_PORT -@
+        ACCESS_FILE=/home/support/AcuSupport/etc/AcuAccess$1
+        SERVER_ALIAS_FILE=/home/support/AcuSupport/etc/acurcl.ini
+        $ACUCOBOL/bin/acurcl -start -n $ACURCL_PORT -@
 fi
