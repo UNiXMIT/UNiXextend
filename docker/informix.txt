@@ -9,5 +9,8 @@ sudo docker exec -it INFORMIX bash
 sudo docker stop MYSQL
 sudo docker rm MYSQL
 
+# Commandline utility
+dbaccess
+
 # Source
 https://dockr.ly/2BWRpaH
