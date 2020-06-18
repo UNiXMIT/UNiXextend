@@ -5,7 +5,7 @@ sudo docker run -d -p 1521:1521 --name ORACLE -e ORACLE_ALLOW_REMOTE=true oracle
 
 # 19c
 sudo docker pull heartu41/oracle19c
-sudo docker run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=Unidos30 heartu41/oracle19c
+sudo docker run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=YourStrongPassword heartu41/oracle19c
 
 # Attach to Docker container
 sudo docker exec -it ORACLE "bash"
@@ -18,7 +18,7 @@ sudo docker exec -it ORACLE "bash"
 # Container details - 19c
 # sid: ORCLCDB
 # username: system
-# password: Unidos30
+# password: YourStrongPassword
 
 # Remove your container
 sudo docker stop ORACLE
