@@ -1,5 +1,5 @@
 # Pull and Run container
-sudo docker pull docker pull postgres
+sudo docker pull postgres
 sudo docker run -d -p 5432:5432 --name POSTGRES -e POSTGRES_PASSWORD=mysecretpassword postgres
 
 # Attach to Docker container
