@@ -9,7 +9,9 @@ SupportLine engineers frequently require a log file in order to troubleshoot an 
 
 [Thin Client](#Thin-Client)
 
-[AcuToWeb](#AcuToWeb)
+[AcuToWeb](#AcuToWeb)  
+
+[AcuToWeb Build](AcuToWeb-Build)
 
 [AcuServer](#AcuServer)
 
@@ -113,6 +115,17 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
 
 4. Zip up the gateway.log and attach to the support incident.
 
+## AcuToWeb Build:
+
+You can check the build number of AcuToWeb in thew following way:
+
+1. In your browser enter the URL to access the initial AcuToWeb Connection Setup screen. Check the box 'Enable Logging Client'.  
+
+2. A monitor icon will appear in the top left of the browser window. Left click it once to make the AcuToWeb Console appear.
+
+3. Left click the 'I' icon (Info) in the Console toolbar to show the AcuToWeb build version in the Console.
+
+![1](images/atw-build.png)
 
 ## AcuServer:  
 
