@@ -41,7 +41,7 @@ These next steps must be accomplished to complete your installation/configuratio
 
 It is a good idea to run and inspect the quick start demo program before testing with your own data and setup. This way you can understand the process in a working environment first.  
 
-https://www.microfocus.com/documentation/extend-acucobol/103/extend-Interoperability-Suite/BKXDXDINSTXD5.1.1.html  
+https://www.microfocus.com/documentation/extend-acucobol/1031/extend-Interoperability-Suite/BKXDXDINSTXD5.1.1.html  
 
 Once you are happy with how it works, you can continue on to **Configuration of AcuXDBC** and test with your own data.
 
