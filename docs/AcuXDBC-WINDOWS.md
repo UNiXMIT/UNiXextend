@@ -132,7 +132,7 @@ Let's say you have a Vision file named TAB000001 with a xfd file named tabfields
 You can load a friendlier name in the syscat to use in your future query:
 
 ```
-addfile -d C:\path-to-the\syscat -x C:\path-to-the\xfd-directory tabfields#CUSTOMERS#\data\TAB000001
+addfile -d C:\path-to-the\syscat -x C:\path-to-the\xfd-directory tabfields#CLIENTS#\data\TAB000001
 ```
 
 If you need to load a list of xfd files, you can write a text file with the list of the xfd to load, which content is:
@@ -141,7 +141,7 @@ If you need to load a list of xfd files, you can write a text file with the list
 TAB000001
 TAB000002
 TAB000003
-tabfields#CUSTOMERS#C:\data\TAB000004 
+tabfields#CLIENTS#C:\data\TAB000004 
 TAB000005
 ```
 
@@ -187,14 +187,14 @@ xdbcquery /z /cacuxdbc04:system/manager/xvision:acuxdbc.cfg
 
 ```
 SQL (/? for help) ==>
-SQL (/? for help) ==> select * from CUSTOMERS;
+SQL (/? for help) ==> select * from CLIENTS;
 ```
 ```
 Use /? to show the help.
 ```
 ```
 Use /d to show the definition of the table, like: 
-SQL (/? for help) ==> /d tCUSTOMERS
+SQL (/? for help) ==> /d tCLIENTS
 ```
 (Note the t near the name of the table)
 
@@ -253,7 +253,7 @@ To test your DSN use the script odbcsql.bat
 ```
 odbcsql –h
 odbcsql -d my-dsn-name
-SQL (/? for help) ==> select * from CUSTOMERS;
+SQL (/? for help) ==> select * from CLIENTS;
 ```
 
 Or run the tool directly using:
