@@ -196,7 +196,7 @@ Use /? to show the help.
 ```
 ```
 Use /d to show the definition of the table, like:
-SQL (/? for help) ==> /d tCUSTOMERS
+SQL (/? for help) ==> /d CLIENTS
 ```
 (Note the t near the name of the table)
 
