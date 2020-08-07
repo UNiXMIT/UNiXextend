@@ -17,6 +17,8 @@ SupportLine engineers frequently require a log file in order to troubleshoot an 
 
 [AcuXDBC](#AcuXDBC)
 
+[Abend Diagnostic Report (ADR)](#Abend-Diagnostic-Report-(ADR))
+
 [Process Monitor Log](#Process-Monitor-Log)
 
 
@@ -162,6 +164,28 @@ You can check the build number of AcuToWeb in thew following way:
 4. Zip up vision.log and debug.log and attach to the support incident.
 
     When the error is from AcuXDBC connected to AcuXDBC Server follow the steps above but modify the configuration file on the server.
+
+## Abend Diagnostic Report (ADR)
+To generate an Abend Diagnostic Report, you must set the ACU_DUMP configuration variable to 1 (on, true, yes). The default value for the configuration variable is 0 (off, false, no).  
+
+In order to add detailed information to the report, programs must be compiled with line number (-Gl) and symbol table (-Gs) option. The -Ga compiler option may also be used, but since this includes full source information in the compiled object, it results in a much larger object file on disk.  
+
+In your runtime configuration file (cblconfig) set the following variable:  
+
+```
+ACU_DUMP            1  
+```
+
+The default value for ACU_DUMP_FILE is acudump.#, where # is an integer, starting at one and incrementing by one each time a new ADR is created in the current directory (acudump.1, acudump.2, and so on).  
+
+To customise the filename you can set the following variable:  
+
+```
+ACU_DUMP_FILE       fileName  
+```
+
+More information about ADR can be found in the documentation - https://bit.ly/3a7e1p6  
+
 
 ## Process Monitor Log
 
