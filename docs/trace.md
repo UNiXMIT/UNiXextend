@@ -178,10 +178,10 @@ ACU_DUMP            1
 
 The default value for ACU_DUMP_FILE is acudump.#, where # is an integer, starting at one and incrementing by one each time a new ADR is created in the current directory (acudump.1, acudump.2, and so on).  
 
-To customise the filename you can set the following variable:  
+To customise the filename you can set the following variable to the path and name of the file:  
 
 ```
-ACU_DUMP_FILE       fileName  
+ACU_DUMP_FILE       /path/to/file/fileName  
 ```
 
 More information about ADR can be found in the documentation - https://bit.ly/3a7e1p6  
