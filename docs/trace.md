@@ -168,6 +168,8 @@ You can check the build number of AcuToWeb in thew following way:
 ## Abend Diagnostic Report
 To generate an Abend Diagnostic Report (ADR), you must set the ACU_DUMP configuration variable to 1 (on, true, yes). The default value for the configuration variable is 0 (off, false, no).  
 
+An ADR is only generated with an abnormal program shutdown. No file will be created if your program runs and exits correctly.
+
 In order to add detailed information to the report, programs must be compiled with line number (-Gl) and symbol table (-Gs) option. The -Ga compiler option may also be used, but since this includes full source information in the compiled object, it results in a much larger object file on disk.  
 
 In your runtime configuration file (cblconfig) set the following variable:  
