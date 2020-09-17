@@ -9,10 +9,10 @@ sudo docker logs MYSQL 2>&1 | grep GENERATED
 sudo docker exec -it MYSQL mysql -uroot -p
 
 # Create user and allow remote access
-mysql> CREATE USER 'support'@'localhost' IDENTIFIED BY 'YourStrongPassword';
-mysql> GRANT ALL PRIVILEGES ON *.* TO 'support'@'localhost' WITH GRANT OPTION;
-mysql> CREATE USER 'support'@'%' IDENTIFIED BY 'YourStrongPassword';
-mysql> GRANT ALL PRIVILEGES ON *.* TO 'support'@'%' WITH GRANT OPTION;
+CREATE USER 'support'@'localhost' IDENTIFIED BY 'YourStrongPassword';
+GRANT ALL PRIVILEGES ON *.* TO 'support'@'localhost' WITH GRANT OPTION;
+CREATE USER 'support'@'%' IDENTIFIED BY 'YourStrongPassword';
+GRANT ALL PRIVILEGES ON *.* TO 'support'@'%' WITH GRANT OPTION;
 
 # Remove container
 sudo docker stop MYSQL
