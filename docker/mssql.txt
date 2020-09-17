@@ -6,7 +6,7 @@ sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrongPassword" -p 1433:1
 sudo docker exec -it MSSQL "bash"
 
 # Create User and Database
-CREATE LOGIN support WITH PASSWORD = 'Unidos30';
+CREATE LOGIN support WITH PASSWORD = 'YourPassword';
 CREATE USER support FOR LOGIN support;
 CREATE DATABASE support;
 
