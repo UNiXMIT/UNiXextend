@@ -5,6 +5,10 @@ sudo docker run -d -it --name INFORMIX -h INFORMIX --privileged -p 9088:9088 -p 
 # Attach to Docker container
 sudo docker exec -it INFORMIX bash
 
+# Container Details
+Username: informix
+Password: in4mix
+
 # Remove container
 sudo docker stop MYSQL
 sudo docker rm MYSQL

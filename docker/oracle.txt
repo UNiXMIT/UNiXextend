@@ -5,7 +5,7 @@ sudo docker run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=YourStrongPassword o
 # Attach to Docker container
 sudo docker exec -it ORACLE "bash"
 
-# Container details
+# Container Details
 sid: XE
 username: sys
 password: YourStrongPassword
