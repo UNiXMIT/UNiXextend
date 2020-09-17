@@ -6,9 +6,15 @@ sudo docker run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=YourStrongPassword o
 sudo docker exec -it ORACLE "bash"
 
 # Container details
-# sid: XE
-# username: sys
-# password: YourStrongPassword
+sid: XE
+username: sys
+password: YourStrongPassword
+
+# Create User and Schema
+sqlplus / sys as sysdba
+ALTER SESSION SET "_ORACLE_SCRIPT"=true;
+CREATE USER support IDENTIFIED BY YourPassword;
+CREATE SCHEMA AUTHORIZATION support;
 
 # Remove your container
 sudo docker stop ORACLE
