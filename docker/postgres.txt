@@ -1,9 +1,14 @@
 # Pull and Run container
 sudo docker pull postgres
-sudo docker run -d -p 5432:5432 --name POSTGRES -e POSTGRES_PASSWORD=mysecretpassword postgres
+sudo docker run -d -p 5432:5432 --name POSTGRES -e POSTGRES_USER=support -e POSTGRES_PASSWORD=mysecretpassword -e POSTGRES_DB=support postgres
 
 # Attach to Docker container
 sudo docker exec -it POSTGRES "bash"
+
+# Container Details
+Username: support
+Password: mysecretpassword
+DB: support
 
 # Remove your container
 sudo docker stop POSTGRES
@@ -12,11 +17,6 @@ sudo docker rm POSTGRES
 # Source
 https://dockr.ly/3borF7q
 
-# New users, databases, privileges etc.
-CREATE DATABASE support;
-CREATE USER support WITH ENCRYPTED PASSWORD 'YourPassword';
-GRANT ALL PRIVILEGES ON DATABASE support TO support;
-
 # ODBC Driver Setup
 sudo yum install postgresql-odbc
 
@@ -24,9 +24,9 @@ sudo yum install postgresql-odbc
 [postgres]
 Description         = PostgreSQL ODBC connection
 Driver              = /usr/lib64/psqlodbcw.so
-Database            = postgres
+Database            = support
 Servername          = 127.0.0.1
-UserName            = postgres
+UserName            = support
 Password            = mysecretpassword
 Port                = 5432
 
