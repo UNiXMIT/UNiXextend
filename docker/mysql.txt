@@ -1,6 +1,6 @@
 # Pull and Run container
-sudo docker pull mysql/mysql-server
-sudo docker run --name=MYSQL -p 3306:3306 -d mysql/mysql-server
+sudo docker pull mysql/mysql-server:latest
+sudo docker run --name=MYSQL -p 3306:3306 -d mysql/mysql-server:latest
 
 # Root password
 sudo docker logs MYSQL 2>&1 | grep GENERATED
