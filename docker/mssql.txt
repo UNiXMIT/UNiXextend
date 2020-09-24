@@ -1,9 +1,13 @@
 # Pull and Run container
-sudo docker pull mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
-sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrongPassword" -p 1433:1433 --name MSSQL -d mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-18.04
+sudo docker pull mcr.microsoft.com/mssql/server:2019-latest
+sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrongPassword" -p 1433:1433 --name MSSQL -d mcr.microsoft.com/mssql/server:2019-latest
 
 # Attach to Docker container
 sudo docker exec -it MSSQL "bash"
+
+# Container Details
+username: SA
+password: YourStrongPassword
 
 # Create User and Database
 CREATE LOGIN support WITH PASSWORD = 'YourPassword';
