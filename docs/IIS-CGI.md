@@ -14,19 +14,17 @@
 
 ![1](images/iis-1.png)
 
-7. Click next through the next screens and then click install.    
+7. Click next 3 more times until you reach the 'Role Services' page.
 
-8. On the Installation Progress page, confirm that your installation of the Web Server (IIS) role and required role services completed successfully, and then click Close.  
+8. Expand 'Web Server' > 'Application Development' and check the 'CGI' box. Click next the Install.
 
-9. To verify that IIS installed successfully, type the following into a web browser:  
+9. On the Installation Progress page, confirm that your installation of the Web Server (IIS) role and required role services completed successfully, and then click Close.  
+
+10. To verify that IIS installed successfully, type the following into a web browser:  
 
     http://localhost  
 
-    You should see the default IIS Welcome page.  
-
-10. Follow this link for directions to install the CGI module.  
-
-    http://www.iis.net/ConfigReference/system.webServer/cgi  
+    You should see the default IIS Welcome page.   
 
 11. Start 'Internet Information Services (IIS) Manager' and click the "Default Web Site" in the Connections Panel (left).  
 
