@@ -6,8 +6,10 @@ Essentially you can specify a registry with the name of your Executable and spec
 
 You can specify these keys in the registry at:
 
-text
+```
 HKEY_CURRENT_USER\SOFTWARE\Microsoft\Internet Explorer\Main\FeatureControl\FEATURE_BROWSER_EMULATION
+```
+
 The HKCU key is the best place to set these values because there's a single key and it can be set without admin rights, but you can also set these keys at the machine level at HKLM:
 
 text
