@@ -65,4 +65,6 @@ Webpages containing standards-based !DOCTYPE directives are displayed in IE7 Sta
 
 Setting these keys enables your applications to use the latest Internet Explorer versions on your machine.  
 
-![1](images/fbe-1.png)
+[DOWNLOAD wrun32.reg](files/wrun32.zip)  
+
+![1](images/fbe-1.png)  
