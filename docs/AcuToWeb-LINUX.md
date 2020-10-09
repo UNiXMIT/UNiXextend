@@ -28,7 +28,10 @@ Because AcuToWeb is only 32 bit, even in the 64 bit version of 10.3.0, you will 
 yum install libstdc++.i686
 ```
 
-After performing the steps above (configuring the AcuAccess file, creating an alias in the acurcl.ini file, and starting the AcuConnect service), to start the gateway from the acutoweb directory, enter the following command at a terminal:
+After performing the steps above (configuring the AcuAccess file, creating an alias in the acurcl.ini file, and starting the AcuConnect service), you can modify the Gateway configuration file 'gateway.conf'. This is found in the 'acutoweb' directory of the installation.  
+An example gateway.conf can be found in the documentation (http://bit.ly/36kOeGs). Amend it to fit your needs and make sure ACURCL_PORT matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set USE_SSL to 0.  
+
+To start the gateway from the acutoweb directory, enter the following command in the terminal:  
 
 ```
 ./acutoweb-gateway –start
