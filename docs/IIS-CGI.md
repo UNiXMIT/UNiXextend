@@ -16,7 +16,7 @@
 
 7. Click next 3 more times until you reach the 'Role Services' page.
 
-8. Expand 'Web Server' > 'Application Development' and check the 'CGI' box. Click next the Install.
+8. Expand 'Web Server' > 'Application Development' and check the 'CGI' box. Click next.
 
 9. On the Installation Progress page, confirm that your installation of the Web Server (IIS) role and required role services completed successfully, and then click Close.  
 
