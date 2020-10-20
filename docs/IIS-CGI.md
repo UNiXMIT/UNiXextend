@@ -8,7 +8,7 @@
 
 4. On the Select Installation Type page, select Role-based or Feature-based Installation and click Next  
 
-5. On the Select Destination Server page, select Select a server from the server pool, select your server, and click Next.  
+5. On the Select Destination Server page, select a server from the server pool, select your server, and click Next.  
 
 6. On the Select Server Roles page, select Web Server (IIS).  
 
