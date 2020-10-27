@@ -6,6 +6,7 @@ ACURCL_PORT=$1
 ACULOG=$2
 export ACUSUP=/home/support/AcuSupport
 export SERVER_ALIAS_FILE=$ACUSUP/acurcl.ini
+export FILE_TRACE_TIMESTAMP=TRUE
 
 if [ -z "$ACURCL_PORT" ] ; then
         if [ -z $ACULOG ] ; then
