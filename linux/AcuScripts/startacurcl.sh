@@ -8,8 +8,8 @@ ACUSUP=/home/support/AcuSupport
 export SERVER_ALIAS_FILE=$ACUSUP/etc/acurcl.ini
 export FILE_TRACE_TIMESTAMP=TRUE
 
-if [ -z "$ACURCL_PORT" ] ; then
-        if [ $ACUOPT = "log" ] ; then
+if [[ -z "$ACURCL_PORT" ]] ; then
+        if [[ "$ACUOPT" = "log" ]] ; then
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess
                 $ACUCOBOL/bin/acurcl -start -le $ACUSUP/AcuLogs/acurcl.log -t7 -@
         else
@@ -17,7 +17,7 @@ if [ -z "$ACURCL_PORT" ] ; then
                 $ACUCOBOL/bin/acurcl -start -@
         fi
 else
-        if [ $ACUOPT = "log" ] ; then
+        if [[ "$ACUOPT" = "log" ]] ; then
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACURCL_PORT
                 $ACUCOBOL/bin/acurcl -start -n $ACURCL_PORT -le $ACUSUP/AcuLogs/$ACURCL_PORT-acurcl.log -t7 -@
         else
