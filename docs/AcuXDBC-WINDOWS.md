@@ -215,7 +215,7 @@ SQL (/? for help) ==> /q
 
 ---
 
-**Creation of an ODBC Data Source**
+**Creation of an ODBC Data Source (DSN)**
 
 Create a Data Source Name from Control Panel, Administrative Tools, Data Sources (ODBC).
 
