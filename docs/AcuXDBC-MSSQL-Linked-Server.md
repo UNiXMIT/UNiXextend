@@ -1,8 +1,11 @@
 # AcuXDBC MSSQL Linked Server
 
+The following steps require you to have setup AcuXDBC first.  
+
 **Create an ODBC Data Source (DSN)**
 
 Create a Data Source Name from Control Panel, Administrative Tools, Data Sources (ODBC).  
+If you prefer to connect directly using the connection string rather than a DSN then skip this step and continue with creating the linked server.
 
 **N.B.**  
 - Windows 32-bit uses 32-bit Data Source by default.  
