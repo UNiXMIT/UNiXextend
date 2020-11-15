@@ -3,7 +3,7 @@
 export ACU_OPT=/home/products
 export JAVA32=
 export JAVA64=
-export ORACLE_OPT=/u01/app/oracle/product/11.2.0/xe
+export ORA_OPT=/u01/app/oracle/product/11.2.0/xe
 export INFORMIX_OPT=/home/informix
 
 set_acu()
@@ -75,7 +75,7 @@ set_oracle()
     # "sqlplus '/ as sysdba'"
     # "SQL> startup"
 
-    export ORACLE_HOME=$ORACLE_OPT
+    export ORACLE_HOME=$ORA_OPT
     export ORACLE_SID=XE
     export NLS_LANG=`$ORACLE_HOME/bin/nls_lang.sh`
     export PATH=$ORACLE_HOME/bin:$PATH
