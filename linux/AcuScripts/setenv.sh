@@ -1,5 +1,10 @@
 #!/bin/bash
 # Any scripts run after this to start/stop services will use the ACUCOBOL variable set here.
+export ACU_OPT=/home/products
+export JAVA32=
+export JAVA64=
+export ORACLE_OPT=/u01/app/oracle/product/11.2.0/xe
+export INFORMIX_OPT=/home/informix
 
 set_acu()
 {
@@ -7,7 +12,7 @@ set_acu()
     CURRENT_DIR=$(pwd)
 
     # Set the path of your Acu installations here.
-    cd /home/products
+    cd $ACU_OPT
     array=(*/)
 
     # Display a list of all Acu installations.
@@ -47,7 +52,7 @@ set_java()
 
 set_java32()
 {
-    export JAVA_HOME=
+    export JAVA_HOME=$JAVA32
     export PATH=
     export CLASSPATH=
     export PRELOAD_JAVA_LIBRARY=1
@@ -56,7 +61,7 @@ set_java32()
 
 set_java64()
 {
-    export JAVA_HOME=
+    export JAVA_HOME=$JAVA64
     export PATH=
     export CLASSPATH=
     export PRELOAD_JAVA_LIBRARY=1
@@ -70,7 +75,7 @@ set_oracle()
     # "sqlplus '/ as sysdba'"
     # "SQL> startup"
 
-    export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe
+    export ORACLE_HOME=$ORACLE_OPT
     export ORACLE_SID=XE
     export NLS_LANG=`$ORACLE_HOME/bin/nls_lang.sh`
     export PATH=$ORACLE_HOME/bin:$PATH
@@ -84,12 +89,12 @@ set_informix()
     # Both require to execute as ROOT
     # Setup Guide - http://bit.ly/2LqdqD7
 
-    export INFORMIXDIR=/home/informix
+    export INFORMIXDIR=$INFORMIX_OPT
     export INFORMIXSERVER=informix
     export ONCONFIG=onconfig
     export INFORMIXTERM=terminfo
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/informix/lib:/home/informix/lib/esql
-    export PATH=$PATH:/home/informix/bin    
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$INFORMIXDIR/lib:$INFORMIXDIR/lib/esql
+    export PATH=$PATH:$INFORMIXDIR/bin    
 }
 
 option="${1}" 
