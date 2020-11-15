@@ -3,8 +3,8 @@
 export ACU_OPT=/home/products
 export JAVA32=
 export JAVA64=
-export ORA_OPT=/u01/app/oracle/product/11.2.0/xe
-export INFORMIX_OPT=/home/informix
+export ORACLE_HOME=
+export INFORMIX_OPT=
 
 set_acu()
 {
@@ -70,25 +70,12 @@ set_java64()
 
 set_oracle()
 {
-    # If the Oracle database isn't started then run the following commands:
-    # "lsnrctl start"
-    # "sqlplus '/ as sysdba'"
-    # "SQL> startup"
-
-    export ORACLE_HOME=$ORA_OPT
-    export ORACLE_SID=XE
-    export NLS_LANG=`$ORACLE_HOME/bin/nls_lang.sh`
     export PATH=$ORACLE_HOME/bin:$PATH
     export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
 }
 
 set_informix()
 {
-    # Start Informix Database with - oninit
-    # Stop Informix Database with - onmode -ky
-    # Both require to execute as ROOT
-    # Setup Guide - http://bit.ly/2LqdqD7
-
     export INFORMIXDIR=$INFORMIX_OPT
     export INFORMIXSERVER=informix
     export ONCONFIG=onconfig

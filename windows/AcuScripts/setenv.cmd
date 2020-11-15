@@ -3,7 +3,7 @@
 :: Ensure JAVA and ORACLE PATHS are correct
 SET JAVA32=
 SET JAVA64=
-SET ORA_OPT=
+SET ORACLE_HOME=
 
 IF '%1'=='java' GOTO JAVA
 IF '%1'=='JAVA' GOTO JAVA
@@ -67,7 +67,7 @@ START "" "%ACUPATH32%acubench\AcuBench.exe"
 IF '%1'=='32' GOTO 32BIT
 IF '%1'=='64' GOTO 64BIT
 
-:32bit
+:32BIT
 set JAVA_HOME=%JAVA32%
 set PATH=%ACUCOB%bin;%JAVA_HOME%\bin\client;%JAVA_HOME%\bin;C:\WINDOWS\system32;C:\etc\acu
 set CLASSPATH=.;%ACUCOB%bin\CVM.jar;%ACUCOB%bin\vortex.jar
@@ -75,7 +75,7 @@ set PRELOAD_JAVA_LIBRARY=1
 set JAVA_LIBRARY_NAME=%JAVA_HOME%\bin\client\JVM.dll
 GOTO END
 
-:64bit
+:64BIT
 set JAVA_HOME=%JAVA64%
 set PATH=%ACUCOB%bin;%JAVA_HOME%\bin\client;%JAVA_HOME%\bin;C:\WINDOWS\system32;C:\etc\acu
 set CLASSPATH=.;%ACUCOB%bin\CVM.jar;%ACUCOB%bin\vortex.jar
@@ -84,6 +84,6 @@ set JAVA_LIBRARY_NAME=%JAVA_HOME%\bin\client\JVM.dll
 GOTO END
 
 :ORACLE
-SET PATH=%ORA_OPT%;%PATH%
+SET PATH=%ORACLE_HOME%;%PATH%
 
 :END
