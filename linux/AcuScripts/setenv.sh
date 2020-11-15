@@ -34,19 +34,33 @@ set_acu()
 
 set_java()
 {
-    if [[ $2 -eq 64 ]] ; then
-        export JAVA_HOME=
-        export PATH=
-        export CLASSPATH=
-        export PRELOAD_JAVA_LIBRARY=1
-        export JAVA_LIBRARY_NAME=
-    else
-        export JAVA_HOME=
-        export PATH=
-        export CLASSPATH=
-        export PRELOAD_JAVA_LIBRARY=1
-        export JAVA_LIBRARY_NAME=
-    fi
+    java_bit="${2}" 
+    case ${java_bit} in 
+       32) set_java32
+          ;;
+       64) set_java64
+          ;;  
+       *) set_java64
+          ;; 
+    esac 
+}
+
+set_java32()
+{
+    export JAVA_HOME=
+    export PATH=
+    export CLASSPATH=
+    export PRELOAD_JAVA_LIBRARY=1
+    export JAVA_LIBRARY_NAME=
+}
+
+set_java64()
+{
+    export JAVA_HOME=
+    export PATH=
+    export CLASSPATH=
+    export PRELOAD_JAVA_LIBRARY=1
+    export JAVA_LIBRARY_NAME=
 }
 
 set_oracle()
@@ -86,7 +100,6 @@ case ${option} in
       ;; 
    informix) set_informix
       ;;  
-   *)  
-      set_acu
+   *) set_acu
       ;; 
 esac 
