@@ -1,6 +1,10 @@
 @ECHO OFF
 
 :: Ensure JAVA and ORACLE PATHS are correct
+SET JAVA32=
+SET JAVA64=
+SET ORA_OPT=
+
 IF '%1'=='java' GOTO JAVA
 IF '%1'=='JAVA' GOTO JAVA
 IF '%1'=='oracle' GOTO ORACLE
@@ -64,7 +68,7 @@ IF '%1'=='32' GOTO 32BIT
 IF '%1'=='64' GOTO 64BIT
 
 :32bit
-set JAVA_HOME=C:\Java\x86\jdk-11.0.5+10
+set JAVA_HOME=%JAVA32%
 set PATH=%ACUCOBOL%bin;%JAVA_HOME%\bin\client;%JAVA_HOME%\bin;C:\WINDOWS\system32;C:\etc\acu
 set CLASSPATH=.;%ACUCOBOL%bin\CVM.jar;%ACUCOBOL%bin\vortex.jar
 set PRELOAD_JAVA_LIBRARY=1
@@ -72,7 +76,7 @@ set JAVA_LIBRARY_NAME=%JAVA_HOME%\bin\client\JVM.dll
 GOTO END
 
 :64bit
-set JAVA_HOME=C:\Java\x64\jdk-11.0.5+10
+set JAVA_HOME=%JAVA64%
 set PATH=%ACUCOBOL%bin;%JAVA_HOME%\bin\client;%JAVA_HOME%\bin;C:\WINDOWS\system32;C:\etc\acu
 set CLASSPATH=.;%ACUCOBOL%bin\CVM.jar;%ACUCOBOL%bin\vortex.jar
 set PRELOAD_JAVA_LIBRARY=1
@@ -80,6 +84,6 @@ set JAVA_LIBRARY_NAME=%JAVA_HOME%\bin\client\JVM.dll
 GOTO END
 
 :ORACLE
-SET PATH=C:\Oracle\instantclient_18_3;%PATH%
+SET PATH=%ORA_OPT%;%PATH%
 
 :END
