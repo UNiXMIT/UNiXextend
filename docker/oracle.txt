@@ -1,7 +1,7 @@
 # Build and Run container
 git clone https://github.com/oracle/docker-images.git
-sudo ./docker-images/OracleDatabase/SingleInstance/dockerfiles/buildDockerImage.sh
-./buildDockerImage.sh -v 18.4.0 -x
+cd docker-images/OracleDatabase/SingleInstance/dockerfiles
+sudo ./buildDockerImage.sh -v 18.4.0 -x
 sudo docker run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=YourStrongPassword oracle/database:18.4.0-xe
 
 # Attach to Docker container
