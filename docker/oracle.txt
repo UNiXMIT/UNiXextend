@@ -13,7 +13,7 @@ username: sys
 password: YourStrongPassword
 
 # Create User and Schema
-sqlplus / sys as sysdba
+sqlplus sys/YourStrongPassword@//localhost:1521/XE as sysdba
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 CREATE USER support IDENTIFIED BY YourPassword;
 CREATE SCHEMA AUTHORIZATION support;
