@@ -10,9 +10,20 @@ username: SA
 password: YourStrongPassword
 
 # Create User and Database
-CREATE LOGIN support WITH PASSWORD = 'YourPassword';
-CREATE USER support FOR LOGIN support;
-CREATE DATABASE support;
+CREATE DATABASE support
+GO
+CREATE LOGIN support WITH PASSWORD='YourStrongPassword', DEFAULT_DATABASE=support
+GO
+ALTER SERVER ROLE sysadmin ADD MEMBER support
+GO
+USE support
+GO
+CREATE USER support FOR LOGIN support
+GO
+ALTER USER support WITH DEFAULT_SCHEMA=dbo
+GO
+ALTER ROLE db_owner ADD MEMBER support
+GO
 
 # Remove container
 sudo docker stop MSSQL
