@@ -3,7 +3,8 @@
 export ACU_OPT=/home/products
 export JAVA32=
 export JAVA64=
-export ORACLE_HOME=
+export ORACLE32=
+export ORACLE64=
 export INFORMIX_OPT=
 
 set_acu()
@@ -70,6 +71,27 @@ set_java64()
 
 set_oracle()
 {
+    oracle_bit="${2}" 
+    case ${oracle_bit} in 
+       32) set_oracle32
+          ;;
+       64) set_oracle64
+          ;;  
+       *) set_oracle64
+          ;; 
+    esac 
+}
+
+set_oracle32()
+{
+    export ORACLE_HOME=$ORACLE32
+    export PATH=$ORACLE_HOME/bin:$PATH
+    export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
+}
+
+set_oracle64()
+{
+    export ORACLE_HOME=$ORACLE64
     export PATH=$ORACLE_HOME/bin:$PATH
     export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
 }
