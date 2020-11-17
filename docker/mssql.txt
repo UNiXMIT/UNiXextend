@@ -24,6 +24,13 @@ ALTER USER support WITH DEFAULT_SCHEMA=dbo
 GO
 ALTER ROLE db_owner ADD MEMBER support
 GO
+-- Clean up
+USE master
+GO
+DROP DATABASE [NewDatabase]
+GO
+DROP LOGIN [NewLogin]
+GO
 
 # Remove container
 sudo docker stop MSSQL
