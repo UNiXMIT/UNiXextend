@@ -59,5 +59,3 @@
 # Some HP machines have a problem placing locks above the 1GB boundary.
 # For these machines, the default V-SEG-SIZE is 1073740799.
 #V-SEG-SIZE        2147482623 or 1073740799
-#
-A_ASSERT_ACTION SILENT
