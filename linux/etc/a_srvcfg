@@ -7,7 +7,7 @@
 
 #  This is the name of the Server Access File, which defines who has
 #  access to your running AcuServer
-ACCESS-FILE       /home/support/AcuSupport/etc/AcuAccess
+#ACCESS-FILE       /home/support/AcuSupport/etc/AcuAccess
 
 #  For servers with multiple Network Interface Cards, this variable will
 #  determine which address to use when listening for connections.  The

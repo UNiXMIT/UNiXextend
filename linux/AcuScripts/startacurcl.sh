@@ -11,18 +11,18 @@ export FILE_TRACE_TIMESTAMP=TRUE
 if [[ -z "$ACURCL_PORT" ]] ; then
         if [[ "$ACUOPT" = "log" ]] ; then
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess
-                $ACUCOBOL/bin/acurcl -start -le $ACUSUP/AcuLogs/acurcl.log -t7 -@
+                $ACUCOBOL/bin/acurcl -start -c $ACUSUP/etc/acurcl.cfg -le $ACUSUP/AcuLogs/acurcl.log -t7 -@
         else
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess
-                $ACUCOBOL/bin/acurcl -start -@
+                $ACUCOBOL/bin/acurcl -start -c $ACUSUP/etc/acurcl.cfg -@
         fi
 else
         if [[ "$ACUOPT" = "log" ]] ; then
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACURCL_PORT
-                $ACUCOBOL/bin/acurcl -start -n $ACURCL_PORT -le $ACUSUP/AcuLogs/$ACURCL_PORT-acurcl.log -t7 -@
+                $ACUCOBOL/bin/acurcl -start -c $ACUSUP/etc/acurcl.cfg -n $ACURCL_PORT -le $ACUSUP/AcuLogs/$ACURCL_PORT-acurcl.log -t7 -@
         else
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACURCL_PORT
-                $ACUCOBOL/bin/acurcl -start -n $ACURCL_PORT -@
+                $ACUCOBOL/bin/acurcl -start -c $ACUSUP/etc/acurcl.cfg -n $ACURCL_PORT -@
         fi
 fi
 
