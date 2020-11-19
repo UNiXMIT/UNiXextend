@@ -23,3 +23,18 @@ sudo docker rm ORACLE
 
 # Source
 https://github.com/oracle/docker-images
+
+# ODBC Driver Setup
+sudo yum install [Oracle Instant Client + ODBC .rpm]
+
+# ODBC Driver Location example
+rpm -ql oracle-instantclient19.9-basic
+
+# odbc.ini
+[oracle]
+Description     = Oracle ODBC Connection
+Driver          = /usr/lib/oracle/19.9/client64/lib/libsqora.so.19.1
+Database        = support
+Servername      = 127.0.0.1:1521/XE
+UserName        = support
+Password        = YourStrongPassword
