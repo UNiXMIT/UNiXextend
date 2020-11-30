@@ -10,8 +10,8 @@ Username: informix
 Password: in4mix
 
 # Remove container
-sudo docker stop MYSQL
-sudo docker rm MYSQL
+sudo docker stop INFORMIX
+sudo docker rm INFORMIX
 
 # Commandline utility
 dbaccess
