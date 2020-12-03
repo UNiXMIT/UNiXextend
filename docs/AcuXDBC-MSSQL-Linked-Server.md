@@ -45,6 +45,22 @@ DRIVER={extend 10.3.1 AcuXDBC (64-bit)};HOST=HostIPAddress;PORTNUMBER:20222;UID=
 
 ![4](images/mssql-3.png)
 
+Available parameters in the connection:  
+
+**DSN** - DSN name  
+**UID** - username  
+**PWD** - pasword  
+**PASSWORD** - password  
+**DBQ** - configuration filename  
+**HOST** - server  
+**PORT** - server port  
+**MAXCOL** - maximum number of select list columns  
+**MAXCUR** - maximum number of real database cursors  
+**MAXSTMT** - maximum number of statements  
+**MBS** - merge buffer size (number of unique rows for unions)  
+**MSP** - memory sort size (4k pages)  
+**TSP** - total sort size (4k pages in temp disk file)  
+
 **Troubleshooting**  
 
 If, when you are creating your linked server, it complains that it cannot find the AcuXDBC DLLs you will most likely need to restart your machine after setting the GENESIS_HOME and PATH environment variables. After the restart, the DLLs should be located without error.  
