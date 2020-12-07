@@ -1,6 +1,6 @@
 # Pull and Run container
 sudo docker pull ibmcom/informix-developer-database:latest
-sudo docker run -d -it --name INFORMIX -h INFORMIX --privileged -p 9088:9088 -p 9089:9089 -p 27017:27017 -p 27018:27018 -p 27883:27883 -e LICENSE=accept ibmcom/informix-developer-database:latest
+sudo docker run -d -it --name INFORMIX -h INFORMIX --privileged -p 9088:9088 -e LICENSE=accept ibmcom/informix-developer-database:latest
 
 # Attach to Docker container
 sudo docker exec -it INFORMIX bash
@@ -15,6 +15,13 @@ sudo docker rm INFORMIX
 
 # Commandline utility
 dbaccess
+
+# Ports
+9088 - TCP
+9089 - DRDA
+27017 - Mongo
+27018 - REST
+27883 - MQTT
 
 # Source
 https://dockr.ly/2BWRpaH
