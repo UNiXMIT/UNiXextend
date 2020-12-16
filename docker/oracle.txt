@@ -2,7 +2,7 @@
 git clone https://github.com/oracle/docker-images.git
 cd docker-images/OracleDatabase/SingleInstance/dockerfiles
 sudo ./buildDockerImage.sh -v 18.4.0 -x
-sudo docker run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=YourStrongPassword oracle/database:18.4.0-xe
+sudo docker run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=YourStrongPassword -e ORACLE_CHARACTERSET=AL32UTF8 oracle/database:18.4.0-xe
 
 # Attach to Docker container
 sudo docker exec -it ORACLE "bash"
@@ -16,6 +16,7 @@ password: YourStrongPassword
 sqlplus sys/YourStrongPassword@//localhost:1521/XE as sysdba
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 CREATE USER support IDENTIFIED BY YourPassword;
+GRANT ALL PRIVILEGES TO supportZ;
 
 # Remove your container
 sudo docker stop ORACLE
