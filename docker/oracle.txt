@@ -16,7 +16,7 @@ password: YourStrongPassword
 sqlplus sys/YourStrongPassword@//localhost:1521/XE as sysdba
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 CREATE USER support IDENTIFIED BY YourPassword;
-GRANT ALL PRIVILEGES TO supportZ;
+GRANT ALL PRIVILEGES TO support;
 
 # Remove your container
 sudo docker stop ORACLE
