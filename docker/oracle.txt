@@ -14,6 +14,9 @@ password: YourStrongPassword
 
 # Create User and Schema
 sqlplus sys/YourStrongPassword@//localhost:1521/XE as sysdba
+sqlplus system/YourStrongPassword@//localhost:1521/XE
+sqlplus pdbadmin/YourStrongPassword@//localhost:1521/XEPDB1
+
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 CREATE USER support IDENTIFIED BY YourPassword;
 GRANT ALL PRIVILEGES TO support;
