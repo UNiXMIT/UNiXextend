@@ -6,6 +6,7 @@ export JAVA64=
 export ORACLE32=
 export ORACLE64=
 export INFORMIX_OPT=
+export FILE_TRACE_TIMESTAMP=TRUE
 
 set_acu()
 {
