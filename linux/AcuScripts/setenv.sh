@@ -99,12 +99,14 @@ set_oracle64()
 
 set_informix()
 {
-    export INFORMIXDIR=$INFORMIX_OPT
+    export INFORMIX_HOME=$INFORMIX_OPT
+    export INFORMIXDIR=$INFORMIX_OPT/odbc
     export INFORMIXSERVER=informix
     export ONCONFIG=onconfig
     export INFORMIXTERM=terminfo
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$INFORMIXDIR/lib:$INFORMIXDIR/lib/esql
-    export PATH=$PATH:$INFORMIXDIR/bin    
+    export INFORMIXSQLHOSTS=$INFORMIX_HOME/sqlhosts
+    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$INFORMIX_HOME/lib:$INFORMIX_HOME/lib/esql:$INFORMIXDIR/lib:$INFORMIXDIR/lib/esql:$INFORMIXDIR/lib/cli
+    export PATH=$PATH:$INFORMIX_HOME/bin:$INFORMIXDIR/bin    
 }
 
 option="${1}" 

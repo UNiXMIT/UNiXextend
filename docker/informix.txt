@@ -27,10 +27,12 @@ dbaccess
 sudo docker pull ibmcom/informix-developer-sandbox
 sudo docker run -d -it --name IFX -h IFX --privileged -e LICENSE=accept
 sudo docker cp IFX:/home/informix /home/
-export PATH=$PATH:/home/informix/odbc/bin
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/informix/odbc/lib:/home/informix/odbc/lib/esql:/home/informix/odbc/lib/cli
+. setenv.sh informix
 sudo mkdir -p /usr/informix/lib/esql
 sudo ln -s /home/informix/odbc/lib/esql/checkapi.o /usr/informix/lib/esql
+
+# sqlhosts
+informix        onsoctcp        localhost         9088
 
 # Source
 https://dockr.ly/2BWRpaH
