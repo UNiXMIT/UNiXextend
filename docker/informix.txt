@@ -23,5 +23,14 @@ dbaccess
 27018 - REST
 27883 - MQTT
 
+# Informix CSDK
+sudo docker pull ibmcom/informix-developer-sandbox
+sudo docker run -d -it --name IFX -h IFX --privileged -e LICENSE=accept
+sudo docker cp IFX:/home/informix /home/
+export PATH=$PATH:/home/informix/odbc/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/informix/odbc/lib:/home/informix/odbc/lib/esql:/home/informix/odbc/lib/cli
+sudo mkdir -p /usr/informix/lib/esql
+sudo ln -s /home/informix/odbc/lib/esql/checkapi.o /usr/informix/lib/esql
+
 # Source
 https://dockr.ly/2BWRpaH
