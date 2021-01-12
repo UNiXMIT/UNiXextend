@@ -25,7 +25,7 @@ dbaccess
 
 # Informix CSDK
 sudo docker pull ibmcom/informix-developer-sandbox
-sudo docker run -d -it --name IFX -h IFX --privileged -e LICENSE=accept
+sudo docker run -d -it --name IFX -h IFX --privileged -e LICENSE=accept ibmcom/informix-developer-sandbox
 sudo docker cp IFX:/home/informix /home/
 . setenv.sh informix
 sudo mkdir -p /usr/informix/lib/esql
