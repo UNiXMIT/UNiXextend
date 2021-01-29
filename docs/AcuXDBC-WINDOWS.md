@@ -13,7 +13,7 @@ AcuXDBC Enterprise Edition installs the Server side of AcuXDBC and the JDBC libr
 
 AcuXDBC Client can be installed using a standalone installer, too.
 
-The installers are now downloadable from the Supportline web site - https://supportline.microfocus.com
+The installers are now downloadable from the Micro Focus Support Portal - https://portal.microfocus.com/
 
 Once logged in navigate to Product Updates to find products available to you for download.
 
