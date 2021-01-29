@@ -260,9 +260,11 @@ Or run the tool directly using:
 
 ```
 xdbcquery /cacuxdbc11:system/manager/my-dsn-name
-```
-
+```  
+  
 If everything works fine, you can open MS Access or MS Excel and use AcuXDBC to link your Vision files.
+  
+![gif](images/xdbc-w-4.gif)  
 
 ---
 
@@ -293,7 +295,3 @@ TO STOP ACUXDBC SERVER
 ```
 acuxdbcs –kill –n 20222 server
 ```  
-
-![gif1](images/xdbc-w-4.gif)  
-  
-![gif2](images/xdbc-w-5.gif)  
