@@ -292,4 +292,8 @@ acuxdbcs –info –n 20222 server
 TO STOP ACUXDBC SERVER
 ```
 acuxdbcs –kill –n 20222 server
-```
+```  
+
+![gif1](images/xdbc-w-4.gif)  
+  
+![gif2](images/xdbc-w-5.gif)  
