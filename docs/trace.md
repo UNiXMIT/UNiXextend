@@ -1,5 +1,5 @@
 # ACUCOBOL-GT Trace Files For Troubleshooting
-SupportLine engineers frequently require a log file in order to troubleshoot an issue; therefore it is expedient to include these files when reporting a problem.  Following are instructions for obtaining commonly required logs to attach to your support incident.  There are alternatives for some of these instructions, such as setting configuration variables.  Use those ways if they are more familiar to you. 
+SupportLine engineers frequently require a log file in order to troubleshoot an issue; therefore it is expedient to include these files when reporting a problem.  Following are instructions for obtaining commonly required logs to attach to your support case.  There are alternatives for some of these instructions, such as setting configuration variables.  Use those ways if they are more familiar to you. 
 
 [General Information](#General-Information)
 
@@ -62,7 +62,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
 
 2. At the debugger prompt enter 'tf 9', then 't flush', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
 
-3. Zip up runtime.log and attach to the support incident.
+3. Zip up runtime.log and attach to the support case.
 
  
 ## Compiler:
@@ -79,7 +79,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
      ccbl32 -lcfoswx @.lst <other options> programName.cbl
      ```
 
-2. Zip up the list file and attach to the support incident.
+2. Zip up the list file and attach to the support case.
 
  
 ## Thin Client: 
@@ -100,7 +100,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
 
 3. At the debugger prompt enter 'tf 9', then 't flush', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.  If you did not include the path for the log file name it will be located in the working directory specified in the alias.
 
-4. Zip up acurcl.log and runtime.log, and attach to the support incident.
+4. Zip up acurcl.log and runtime.log, and attach to the support case.
 
 
 ## AcuToWeb:
@@ -115,7 +115,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
      ```
 3. Start AcuToWeb then exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
 
-4. Zip up the gateway.log and attach to the support incident.
+4. Zip up the gateway.log and attach to the support case.
 
 ## AcuToWeb Build:
 
@@ -143,7 +143,7 @@ You can check the build number of AcuToWeb in thew following way:
 
 2. Execute your application until the error happens.
 
-3. Zip up acuserve.log and runtime.log, and attach to the support incident.
+3. Zip up acuserve.log and runtime.log, and attach to the support case.
 
 
 ## AcuXDBC:
@@ -161,7 +161,7 @@ You can check the build number of AcuToWeb in thew following way:
 
 3. Execute the ODBC application that is accessing AcuXDBC data and exercise as needed to produce the error.
 
-4. Zip up vision.log and debug.log and attach to the support incident.
+4. Zip up vision.log and debug.log and attach to the support case.
 
     When the error is from AcuXDBC connected to AcuXDBC Server follow the steps above but modify the configuration file on the server.
 
@@ -211,4 +211,4 @@ Note: Please have your program ready to run before starting procmon.exe in step 
  
 8.  Select “All events” and “Native Process Monitor Format” then click OK. 
  
-9.  Zip up the log file and attach it to the support incident. 
+9.  Zip up the log file and attach it to the support case. 
