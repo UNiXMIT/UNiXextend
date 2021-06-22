@@ -1,6 +1,7 @@
 ## [AcuCOBOL-GT extend 10.4.0 Documentation](https://bit.ly/3j4HvdO)
 
 - [Documentation](#Documentation)
+- [KB Articles](#KB-Articles)
 - [Product Machine Keys](#Product-Machine-Keys)
 - [Docker](#Docker)
 
@@ -24,6 +25,8 @@
 - [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ProgramCutDown.md)
 - [Shared or Static](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Shared_OR_Static.md)
 - [Storing external documents in your Vision files](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Vision-Document-Storage.md)
+
+## KB Articles
 
 ## Product Machine Keys
 
