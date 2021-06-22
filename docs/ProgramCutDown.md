@@ -2,7 +2,9 @@
 
 When reporting an error or bad behavior in an ACUCOBOL-GT application, the Customer Care engineer may request a test case in order to troubleshoot the issue.  
 
-Should a small stand-alone program not demonstrate the behavior, the whole application itself may need to be submitted. However **DO NOT** send the entire application, instead send only the programs and data files that are actually used in demonstrating the issue.   
+Should a small stand-alone program not demonstrate the behavior, the whole application itself may need to be submitted.  
+
+**DO NOT** send the entire application, instead send only the programs and data files that are actually used in demonstrating the issue.   
 
 ## INSTRUCTIONS 
 
