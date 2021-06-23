@@ -1,6 +1,10 @@
 ## [AcuCOBOL-GT extend 10.4.0 Documentation](https://bit.ly/3j4HvdO)
 
 - [Documentation](#Documentation)
+  - [AcuRuntime](#AcuRuntime)
+  - [AcuConnect](#AcuConnect)
+  - [AcuToWeb](#AcuToWeb)
+  - [AcuXDBC](#AcuXDBC) 
 - [KB Articles](#KB-Articles)
 - [Product Machine Keys](#Product-Machine-Keys)
   - [Windows](#Windows)
@@ -8,25 +12,29 @@
 - [Docker](#Docker)
 
 ## Documentation
+### AcuRuntime
 - [ACUCOBOL-GT Trace Files For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/trace.md)
-- [AcuConnect - Multiple Services Setup](https://github.com/UNiXMIT/UNiXextend/tree/master/docs)
+- [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ProgramCutDown.md)
+- [New Activator Wizard README](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/NewActivatorREADME.md)
+- [ISV License Utility](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ISVLicenseUtility.md)
+- [Shared or Static](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Shared_OR_Static.md)
 - [64-bit native for Windows](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuRuntime-64bit-NATIVE.md)
-- [Installation / Setup of AcuToWeb - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-LINUX.md)
-- [Installation / Setup of AcuToWeb - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-WINDOWS.md)
-- [Installing AcuXDBC Client and Server - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUX.md)
-- [AcuXDBC Linux Client Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUXClient.md)
-- [AcuXDBC MSSQL Linked Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-MSSQL-Linked-Server.md)
-- [Installing AcuXDBC Client and Server - Windows](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-WINDOWS.md)
 - [Dynamic Runtime Tracing](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/DynamicRuntimeTracing.md)
 - [Performance issues on Windows Server 2012 / 2016](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/EnableFairShare.md)
 - [Registry Key Location for FEATURE_BROWSER EMULATION](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/FEATURE_BROWSER_EMULATION.md)
 - [Install IIS/CGI on Windows Server 2019](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/IIS-CGI.md)
-- [ISV License Utility](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ISVLicenseUtility.md)
 - [Libraries Required](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/LibrariesRequired.md)
-- [New Activator Wizard README](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/NewActivatorREADME.md)
-- [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ProgramCutDown.md)
-- [Shared or Static](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Shared_OR_Static.md)
 - [Storing external documents in your Vision files](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Vision-Document-Storage.md)
+### AcuConnect
+- [AcuConnect - Multiple Services Setup](https://github.com/UNiXMIT/UNiXextend/tree/master/docs)
+### AcuToWeb
+- [Installation / Setup of AcuToWeb - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-WINDOWS.md)
+- [Installation / Setup of AcuToWeb - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-LINUX.md)
+### AcuXDBC
+- [Installing AcuXDBC Client and Server - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUX.md)
+- [AcuXDBC Linux Client Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUXClient.md)
+- [AcuXDBC MSSQL Linked Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-MSSQL-Linked-Server.md)
+- [Installing AcuXDBC Client and Server - Windows](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-WINDOWS.md)
 
 ## KB Articles
 
