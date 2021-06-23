@@ -1,4 +1,4 @@
-# Installing AcuXDBC Client and Server
+# Installing AcuXDBC Client and Server - WINDOWS
 
 The following steps are for Windows.  
 To install the product on Windows, use the extend® setup and choose one of the following flags:

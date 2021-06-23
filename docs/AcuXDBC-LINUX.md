@@ -1,4 +1,4 @@
-# Installing AcuXDBC Client and Server
+# Installing AcuXDBC Client and Server - LINUX
 
 The following steps are for Unix/Linux.  
 **N.B.** for Unix/Linux you will need to install the SHARED Library product.  
