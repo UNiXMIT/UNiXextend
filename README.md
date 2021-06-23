@@ -37,16 +37,36 @@
 - [Installing AcuXDBC Client and Server - Windows](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-WINDOWS.md)
 
 ## KB Articles
+- [Install Error '0x8007000a - The environment is incorrect' at MS Tools download/install stage](https://bit.ly/3sYlS0m)
+- [Windows Store (UWP) applications do not connect to AcuXDBC](https://bit.ly/3aLetLD)
+- [How to setup CGI in IIS 10 on Windows Server 2019](https://bit.ly/3nsWrmd)
+- [Title bar of COBOL program changes style and minimize button stops working](https://bit.ly/3dYgBBx)
+- [Re-linking the runtime to use Acu4GL for Informix on Linux fails](https://bit.ly/3dUxfC1)
+- [HTTPPOST with extra headers returns error 'HTTP 400 - Bad Request'](https://bit.ly/3aKqPDM)
+- [AcuXDBC error 'DLLLOAD: xvision, the specified procedure could not be found' when using Excel](https://bit.ly/2S1DVFW)
+- [AcuToWeb does not start correctly in 10.3.0 but started OK in 10.2.1](https://bit.ly/32WRxVo)
+- [AcuToWeb Desktop will not attach to a program running in Firefox when SSL is enabled in AcuToWeb](https://bit.ly/3nssB1i)
+- [Using special characters in C$SYSTEM command line](https://bit.ly/3ewMTmg)
+- [Connecting to a database using C$JAVA](https://bit.ly/2Ptme15)
+- [The .atc file still launches using the older version of AcuThin instead of the new version after the automatic update](https://bit.ly/3eEeSAq)
+- [AcuThin and AcuToWeb cannot access a shared/mapped drive on Windows 10](https://bit.ly/32UCwTT)
+- [AcuBench does not correctly select the complete string if it contains a hyphen](https://bit.ly/2Sbina4)
+- [AcuConnect Distributed Processing - Program missing or inaccessible](https://bit.ly/3tZ8dr5)
+- [C$SOCKET fails to open client connection](https://bit.ly/32Uu8DV)
+- [C$JAVA using CJAVA-NEW does not allow for a return status value](https://bit.ly/3sXRrHz)
+- [CJAVA-SETSYSTEMPROPERTY does not correctly set the CLASSPATH](https://bit.ly/3aKqh0G)
+- [C$COPY and C$FILEINFO does not handle UTF-8](https://bit.ly/3eAyJ3u)
+- [Opportunistic Locking System](https://bit.ly/32S2FTg)
+- [AcuConnect Thin Client Performance](http://bit.ly/2WcKUsS)
+- [VM Support Statement](https://bit.ly/3gJQxfb)
+
 
 ## Product Machine Keys
-
 ### Windows
-
 - PMK: 2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows (32-bit)   
 - PMK: 5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Windows (64-bit)  
 
 ### LINUX
-
 - PMK: 83&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 6.1 (32-bit) PowerPC  
 - PMK: 84&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 6.1 (64-bit) PowerPC  
 - PMK: 53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 7.1 (32-bit) PowerPC  
@@ -68,7 +88,6 @@
 - PMK: 48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (SPARC) 64-bit 
 
 ## Docker
-
 - [SQL Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/mssql.txt)
 - [Oracle](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/oracle.txt)
 - [PostgreSQL](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/postgres.txt)
