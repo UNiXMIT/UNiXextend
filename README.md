@@ -3,6 +3,8 @@
 - [Documentation](#Documentation)
 - [KB Articles](#KB-Articles)
 - [Product Machine Keys](#Product-Machine-Keys)
+  - [Windows](#Windows)
+  - [LINUX](#LINUX) 
 - [Docker](#Docker)
 
 ## Documentation
