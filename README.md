@@ -26,7 +26,7 @@
 - [Libraries Required](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/LibrariesRequired.md)
 - [Storing external documents in your Vision files](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Vision-Document-Storage.md)
 ### AcuConnect
-- [AcuConnect - Multiple Services Setup](https://github.com/UNiXMIT/UNiXextend/tree/master/docs)
+- [AcuConnect - Multiple Services Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuConnect-Multiple-Setup.md)
 ### AcuToWeb
 - [Installation / Setup of AcuToWeb - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-WINDOWS.md)
 - [Installation / Setup of AcuToWeb - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-LINUX.md)
