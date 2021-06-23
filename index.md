@@ -31,10 +31,10 @@
 - [Installation / Setup of AcuToWeb - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-WINDOWS.md)
 - [Installation / Setup of AcuToWeb - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-LINUX.md)
 ### AcuXDBC
+- [Installing AcuXDBC Client and Server - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-WINDOWS.md)
 - [Installing AcuXDBC Client and Server - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUX.md)
 - [AcuXDBC Linux Client Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUXClient.md)
 - [AcuXDBC MSSQL Linked Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-MSSQL-Linked-Server.md)
-- [Installing AcuXDBC Client and Server - Windows](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-WINDOWS.md)
 
 ## KB Articles
 - [Install Error '0x8007000a - The environment is incorrect' at MS Tools download/install stage](https://bit.ly/3sYlS0m)
