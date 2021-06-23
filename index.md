@@ -1,15 +1,15 @@
 ## [AcuCOBOL-GT extend 10.4.0 Documentation](https://bit.ly/3j4HvdO)
 
-- [Documentation](https://unixmit.github.io/UNiXextend/#documentation)
-  - [AcuRuntime](https://unixmit.github.io/UNiXextend/#AcuRuntime)
-  - [AcuConnect](https://unixmit.github.io/UNiXextend/#AcuConnect)
-  - [AcuToWeb](https://unixmit.github.io/UNiXextend/#AcuToWeb)
-  - [AcuXDBC](https://unixmit.github.io/UNiXextend/#AcuXDBC) 
-- [KB Articles](https://unixmit.github.io/UNiXextend/#KB-Articles)
-- [Product Machine Keys](https://unixmit.github.io/UNiXextend/#Product-Machine-Keys)
-  - [Windows](https://unixmit.github.io/UNiXextend/#Windows)
-  - [LINUX](https://unixmit.github.io/UNiXextend/#LINUX) 
-- [Docker](https://unixmit.github.io/UNiXextend/#Docker)
+- [Documentation](#Documentation)
+  - [AcuRuntime](#AcuRuntime)
+  - [AcuConnect](#AcuConnect)
+  - [AcuToWeb](#AcuToWeb)
+  - [AcuXDBC](#AcuXDBC) 
+- [KB Articles](#KB-Articles)
+- [Product Machine Keys](#Product-Machine-Keys)
+  - [Windows](#Windows)
+  - [LINUX](#LINUX) 
+- [Docker](#Docker)
 
 ## Documentation
 ### AcuRuntime
