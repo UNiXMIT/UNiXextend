@@ -32,7 +32,7 @@ Should a small stand-alone program not demonstrate the behavior, the whole appli
 
     For each of those examine the runtime.log to see if there is a line following the open noting "translated name".  If the disk file has a different name then this line gives that name.  
 
-4. Zip up all of the following and attach to the support incident:  
+4. Zip up all of the following and attach to the support case:  
 
     - The COBOL program object files, compiled for debug  
 
@@ -44,5 +44,5 @@ Should a small stand-alone program not demonstrate the behavior, the whole appli
 
     - The Runtime configuration file
 
- 5. Update the support incident with the compile command line and instructions for running the application and reproducing the bad behavior.
+ 5. Update the support case with the compile command line and instructions for running the application and reproducing the bad behavior.
 
