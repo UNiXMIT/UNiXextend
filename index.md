@@ -25,8 +25,10 @@
 - [Install IIS/CGI on Windows Server 2019](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/IIS-CGI.md)
 - [Libraries Required](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/LibrariesRequired.md)
 - [Storing external documents in your Vision files](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Vision-Document-Storage.md)
+- [Opportunistic Locking System](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/OppLocks.md)
 ### AcuConnect
 - [AcuConnect - Multiple Services Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuConnect-Multiple-Setup.md)
+- [AcuConnect Thin Client Performance](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuThinPerformance.md)
 ### AcuToWeb
 - [Installation / Setup of AcuToWeb - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-WINDOWS.md)
 - [Installation / Setup of AcuToWeb - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-LINUX.md)
@@ -56,8 +58,6 @@
 - [C$JAVA using CJAVA-NEW does not allow for a return status value](https://bit.ly/3sXRrHz)
 - [CJAVA-SETSYSTEMPROPERTY does not correctly set the CLASSPATH](https://bit.ly/3aKqh0G)
 - [C$COPY and C$FILEINFO does not handle UTF-8](https://bit.ly/3eAyJ3u)
-- [Opportunistic Locking System](https://bit.ly/32S2FTg)
-- [AcuConnect Thin Client Performance](http://bit.ly/2WcKUsS)
 - [VM Support Statement](https://bit.ly/3gJQxfb)
 
 
