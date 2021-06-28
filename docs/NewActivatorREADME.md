@@ -16,6 +16,7 @@ From 10.4.0 onwards, the activator that is installed with the product can be use
   - [Version 10.1](#101)
   - [Version 10.2](#102)
   - [Version 10.3](#103)
+- [NEW Activator Download Links](#NEW-Activator-Download-Links)
 
 ## Windows  
 
@@ -140,3 +141,19 @@ Or the AcuGT\bin directory.
 Your product is now licensed.  
 
 If you encounter and problems then please contact Micro Focus Support - https://portal.microfocus.com  
+
+## NEW Activator Download Links  
+
+[NEW 9.0.x Activator](https://emeaftp.microfocus.com/download/DWt41GbrHtJWRT9nx8DA/mturner/NewActivators/acu_activator_wizard_90.zip)
+
+[NEW 9.1.x Activator](https://emeaftp.microfocus.com/download/znKJBl9aS6bbAO2RTwTQ/mturner/NewActivators/acu_activator_wizard_91.zip)
+
+[NEW 9.2.x Activator](https://emeaftp.microfocus.com/download/nWmbGy8hl6E7zpXfFv8f/mturner/NewActivators/acu_activator_wizard_92.zip)
+
+[NEW 10.0.x Activator](https://emeaftp.microfocus.com/download/irRmUa9uhOSW7x49vCX0/mturner/NewActivators/acu_activator_wizard_100.zip)
+
+[NEW 10.1.x Activator](https://emeaftp.microfocus.com/download/hA6to3dzlbP7dD4Dw6HQ/mturner/NewActivators/acu_activator_wizard_101.zip)
+
+[NEW 10.2.x Activator](https://emeaftp.microfocus.com/download/fSLBGQlsSiEHK5B0dZH5/mturner/NewActivators/acu_activator_wizard_102.zip)
+
+[NEW 10.3.x Activator](https://emeaftp.microfocus.com/download/EdA8YnDOxivveCQvxvlU/mturner/NewActivators/acu_activator_wizard_103.zip)
