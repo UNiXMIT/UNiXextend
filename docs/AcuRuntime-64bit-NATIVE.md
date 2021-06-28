@@ -1,6 +1,6 @@
-# 10.3.0 64-bit native for Windows
+# 64-bit native for Windows
 
-**Install 10.3.0 64-bit**
+**Install 64-bit Product**
 
 This time you will need to use the 64-bit setup: “extend(R) Version 10.3.0 x64.exe” (or .msi, it’s the same)
 
@@ -21,7 +21,7 @@ AcuToWeb 64-bit
 AcuRuntime 64-bit  
 
 
-**Compile in AcuBench 10.3.0**
+**Compile in AcuBench**
 
 You still need to use the 32 bit compiler. Create 2 different Project Settings, one per environment as shown in this screenshot:
 
