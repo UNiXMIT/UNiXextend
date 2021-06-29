@@ -12,7 +12,7 @@
 - [Docker](#Docker)
 
 ## Documentation
-### AcuRuntime
+### AcuRuntime  
 - [ACUCOBOL-GT Trace Files For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/trace.md)
 - [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ProgramCutDown.md)
 - [New Activator Wizard README](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/NewActivatorREADME.md)
@@ -39,6 +39,7 @@
 - [AcuXDBC MSSQL Linked Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-MSSQL-Linked-Server.md)
 
 ## KB Articles
+- [HTTPGET/HTTPPOST results in a MAV or returns garbage in the response](https://bit.ly/3h4wOXB)
 - [Install Error '0x8007000a - The environment is incorrect' at MS Tools download/install stage](https://bit.ly/3sYlS0m)
 - [Windows Store (UWP) applications do not connect to AcuXDBC](https://bit.ly/3aLetLD)
 - [How to setup CGI in IIS 10 on Windows Server 2019](https://bit.ly/3nsWrmd)
