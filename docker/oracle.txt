@@ -42,3 +42,15 @@ Database        = support
 Servername      = 127.0.0.1:1521/XE
 UserName        = support
 Password        = YourStrongPassword
+
+# tnsnames.ora
+# $ORACLE_HOME\network\admin\
+# TNS_ADMIN
+oracle =
+  (DESCRIPTION=
+    (ADDRESS = (PROTOCOL = TCP)(HOST = xxx.xxx.xxx.xxx)(PORT = 1521)
+  )
+  (CONNECT_DATA =
+    (SERVICE_NAME=XE)
+  )
+)
