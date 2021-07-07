@@ -1,10 +1,12 @@
 ## [AcuCOBOL-GT extend 10.4.0 Documentation](https://bit.ly/3j4HvdO)
 
 - [Documentation](#Documentation)
-  - [AcuRuntime](#AcuRuntime)
-  - [AcuConnect](#AcuConnect)
-  - [AcuToWeb](#AcuToWeb)
-  - [AcuXDBC](#AcuXDBC) 
+  - [Official](#Official)
+  - [Wiki](#Wiki)
+    - [AcuRuntime](#AcuRuntime)
+    - [AcuConnect](#AcuConnect)
+    - [AcuToWeb](#AcuToWeb)
+    - [AcuXDBC](#AcuXDBC) 
 - [KB Articles](#KB-Articles)
 - [Product Machine Keys](#Product-Machine-Keys)
   - [Windows](#Windows)
@@ -12,7 +14,17 @@
 - [Docker](#Docker)
 
 ## Documentation
-### AcuRuntime  
+### Official
+- [File Status Codes](https://bit.ly/3nxRfh5)
+- [Compiler Options](https://bit.ly/3nycbEQ)
+- [Runtime Options](https://bit.ly/3e1vL9h)
+- [License File Names](https://bit.ly/3t3Qc9A)
+- [Limits and Ranges](https://bit.ly/2PwEuXp)
+- [Memory Handling Descriptions](https://bit.ly/2PwEuXp)
+- [Machine Key Mismatch](https://bit.ly/331kOOF)
+
+### Wiki
+#### AcuRuntime  
 - [ACUCOBOL-GT Trace Files For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/trace.md)
 - [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ProgramCutDown.md)
 - [New Activator Wizard README](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/NewActivatorREADME.md)
@@ -26,13 +38,13 @@
 - [Libraries Required](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/LibrariesRequired.md)
 - [Storing external documents in your Vision files](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Vision-Document-Storage.md)
 - [Opportunistic Locking System](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/OppLocks.md)
-### AcuConnect
+#### AcuConnect
 - [AcuConnect - Multiple Services Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuConnect-Multiple-Setup.md)
 - [AcuConnect Thin Client Performance](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuThinPerformance.md)
-### AcuToWeb
+#### AcuToWeb
 - [Installation / Setup of AcuToWeb - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-WINDOWS.md)
 - [Installation / Setup of AcuToWeb - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-LINUX.md)
-### AcuXDBC
+#### AcuXDBC
 - [Installing AcuXDBC Client and Server - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-WINDOWS.md)
 - [Installing AcuXDBC Client and Server - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUX.md)
 - [AcuXDBC Linux Client Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUXClient.md)
