@@ -1,5 +1,6 @@
 ## [AcuCOBOL-GT extend 10.4.0 Documentation](https://bit.ly/3j4HvdO)
 
+- [AcuCommunity](https://community.microfocus.com/cobol/acucobol/)
 - [Documentation](#Documentation)
   - [Official](#Official)
   - [Wiki](#Wiki)
