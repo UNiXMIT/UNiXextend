@@ -21,7 +21,7 @@
 - [Runtime Options](https://bit.ly/3e1vL9h)
 - [License File Names](https://bit.ly/3t3Qc9A)
 - [Limits and Ranges](https://bit.ly/2PwEuXp)
-- [Memory Handling Descriptions](https://bit.ly/2PwEuXp)
+- [Memory Handling Descriptions](https://bit.ly/3nDb6LN)
 - [Machine Key Mismatch](https://bit.ly/331kOOF)
 
 ### Wiki
