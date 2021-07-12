@@ -39,6 +39,7 @@
 - [Libraries Required](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/LibrariesRequired.md)
 - [Storing external documents in your Vision files](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Vision-Document-Storage.md)
 - [Opportunistic Locking System](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/OppLocks.md)
+- [Investigating Memory Leaks](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/MemoryTracking.md)
 #### AcuConnect
 - [AcuConnect - Multiple Services Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuConnect-Multiple-Setup.md)
 - [AcuConnect Thin Client Performance](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuThinPerformance.md)
