@@ -76,7 +76,7 @@ WS_COMPRESSION 0
 
 If you plan to secure the ports with SSL, make sure you have created and/or imported your Server certificates in IIS for the domain you have asigned to your Server IP. We need these to be available when binding ports to the sites we will setup.  
 
-### Rewrite Rules
+## Rewrite Rules
 
 1. In IIS, under the section 'Sites' on the left hand side, select 'Default Web Site', then double-click URL Rewrite.
 
@@ -132,7 +132,7 @@ If you plan to secure the ports with SSL, make sure you have created and/or impo
 http://12.345.678.912?hostgw=12.345.678.912&portgw=8080&alias=tour  
 ```
 
-### SSL Setup and Binding
+## SSL Setup and Binding
 
 If you want to use SSL certificates to secure the connections in IIS, you need to modify the bindings on the sites we have already created and assign the SSL certificates to both ports i.e. port 443 for HTTP and port 8080 for Websockets.  
 
