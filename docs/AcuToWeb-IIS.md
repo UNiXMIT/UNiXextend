@@ -25,8 +25,8 @@ WS_COMPRESSION 0
 
 ### Install IIS with Websocket support
 
-    NOTE: You must use IIS version 8 or later, as this provides WebSocket support; IIS version 8 is supported on Windows Server 2012 and later.
-    For more information, visit http://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support.
+**NOTE:** You must use IIS version 8 or later, as this provides WebSocket support; IIS version 8 is supported on Windows Server 2012 and later.  
+For more information, visit http://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support.  
 
 1. On the Start page, click the Server Manager tile, and then click OK.   
 
