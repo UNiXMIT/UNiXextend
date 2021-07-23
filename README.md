@@ -46,6 +46,7 @@
 #### AcuToWeb
 - [Installation / Setup of AcuToWeb - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-WINDOWS.md)
 - [Installation / Setup of AcuToWeb - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-LINUX.md)
+- [Configure IIS with AcuToWeb](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-IIS.md)
 #### AcuXDBC
 - [Installing AcuXDBC Client and Server - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-WINDOWS.md)
 - [Installing AcuXDBC Client and Server - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUX.md)
