@@ -17,7 +17,7 @@ Installation and setup instructions can be found [here](https://github.com/UNiXM
 
 Take note of the WebServer port and TCP port you assigned when creating the service. You will need it later.  
 
-**Important:** Due a limitation of ARR 3.0, this component does not support compressed WebSocket frames; therefore, IIS is not capable of routing them. To make the WebSocket Proxy rule work, compression must not be enabled in AcuToWeb. Add the following to your gateway configuration file:
+**IMPORTANT:** Due a limitation of ARR 3.0, this component does not support compressed WebSocket frames; therefore, IIS is not capable of routing them. To make the WebSocket Proxy rule work, compression must not be enabled in AcuToWeb. Add the following to your gateway configuration file:
 
 ```
 WS_COMPRESSION 0
