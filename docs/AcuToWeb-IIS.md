@@ -71,7 +71,7 @@ For more information, visit http://www.iis.net/learn/get-started/whats-new-in-ii
 
 ### Install URL Rewrite
 
-1. Download and install URL Rewrite: http://www.iis.net/downloads/microsoft/url-rewrite
+Download and install URL Rewrite: http://www.iis.net/downloads/microsoft/url-rewrite
 
 ### Create and Import Server Certificates in IIS
 
