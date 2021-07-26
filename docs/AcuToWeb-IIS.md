@@ -6,6 +6,7 @@
     - [Install ARR](#install-arr)
     - [Install URL Rewrite](#install-url-rewrite)
     - [Create and Import Server Certificates in IIS](#create-and-import-server-certificates-in-iis)
+    - [OPEN ports 443 and 8080](#open-ports-443-and-8080)
 - [Rewrite Rules](#rewrite-rules)
 - [SSL Setup and Binding](#ssl-setup-and-binding)
 
@@ -75,6 +76,10 @@ For more information, visit http://www.iis.net/learn/get-started/whats-new-in-ii
 ### Create and Import Server Certificates in IIS
 
 If you plan to secure the ports with SSL, make sure you have created and/or imported your Server certificates in IIS for the domain you have asigned to your Server IP. We need these to be available when binding ports to the sites we will setup.  
+
+### OPEN ports 443 and 8080
+
+You must ensure that the ports you are assigning in IIS are OPEN in order to allow IIS to recieve the traffic that is being routed to AcuToWeb. In this setup I opened ports 443and 8080 in the Windows firewall.  
 
 ## Rewrite Rules
 
