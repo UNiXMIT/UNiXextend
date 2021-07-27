@@ -79,7 +79,7 @@ If you plan to secure the ports with SSL, make sure you have created and/or impo
 
 ### OPEN ports 443 and 8080
 
-You must ensure that the ports you are assigning in IIS are OPEN in order to allow IIS to receieve the traffic that is being routed to AcuToWeb. In this setup I opened ports 443 and 8080 in the Windows firewall.  
+You must ensure that the ports you are assigning in IIS are OPEN in order to allow IIS to receive the traffic that is being routed to AcuToWeb. In this setup I opened ports 443 and 8080 in the Windows firewall.  
 
 ## Rewrite Rules
 
