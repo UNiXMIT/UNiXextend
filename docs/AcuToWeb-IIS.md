@@ -209,5 +209,5 @@ and 'tour' can be dynamically replaced with any alias you have setup.
 </configuration>
 ```
 
-**NOTE:** Notice how the new ShortURL rule preceeds the original catch all rule. It is required to be this way otherwise the original rule will match everything and the ShortURL rule will not be used.  
+**NOTE:** Notice how the new ShortURL rule preceeds the original catch all rule that we created 'HTTP Proxy'. It is required to be this way otherwise the original rule will match everything and the ShortURL rule will not be used.  
 The ShortURL rule will only be used when the condition is matched i.e. when the URL contains the query string 'id=AliasName'.  
