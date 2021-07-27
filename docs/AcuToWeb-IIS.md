@@ -9,6 +9,8 @@
     - [OPEN ports 443 and 8080](#open-ports-443-and-8080)
 - [Rewrite Rules](#rewrite-rules)
 - [SSL Setup and Binding](#ssl-setup-and-binding)
+- [Optional](#optional)
+    - [Short URL](#short-url)
 
 ## Prerequisites
 
@@ -162,3 +164,50 @@ If you want to use SSL certificates to secure the connections in IIS, you need t
 ```
 http://domain.com?hostgw=domain.com&portgw=8080&alias=tour  
 ```
+
+## Optional
+
+### Short URL
+
+You can configure the URL Rewrite to proxy a short URL rather than using the URL with a long query string. For example:  
+
+```
+https://domain.com/?id=tour
+```
+
+will be proxied to
+
+```
+https://domain.com/?portgw=8080&hostgw=domain.com&alias=tour&theme=tour
+```
+
+and 'tour' can be dynamically replaced with any alias you have setup.
+
+#### HTTP web.config example
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                <clear />
+                <rule name="ShortURL" stopProcessing="true">
+                    <match url="(.*)" />
+                    <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
+                        <add input="{QUERY_STRING}" pattern="^id=([A-Za-z0-9-]+)$" />
+                    </conditions>
+                    <action type="Rewrite" url="http://127.0.0.1:3000/{R:1}?portgw=8080&amp;hostgw=domain.com&amp;alias={C:1}&amp;theme={C:1}" />
+                </rule>
+                <rule name="HTTP Proxy" stopProcessing="true">
+                    <match url="(.*)" />
+                    <conditions logicalGrouping="MatchAll" trackAllCaptures="false" />
+                    <action type="Rewrite" url="http://127.0.0.1:3000/{R:1}" />
+                </rule>
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>
+```
+
+**NOTE:** Notice how the new ShortURL rule preceeds the original catch all rule. It is required to be this way otherwise the original rule will match everything and the ShortURL rule will not be used.  
+The ShortURL rule will only be used when the condition is matched i.e. when the URL contains the query string 'id=AliasName'.  
