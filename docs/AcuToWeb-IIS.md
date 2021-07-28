@@ -78,6 +78,7 @@ Download and install URL Rewrite: http://www.iis.net/downloads/microsoft/url-rew
 ### Create and Import Server Certificates in IIS
 
 If you plan to secure the ports with SSL, make sure you have created and/or imported your Server certificates in IIS for the domain you have asigned to your Server IP. We need these to be available when binding ports to the sites we will setup.  
+You could use a 3rd party tool like [Certify The Web](https://certifytheweb.com/) to help you install, manage and renew your certificates on IIS.  
 
 ### OPEN ports 443 and 8080
 
