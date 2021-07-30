@@ -4,9 +4,9 @@ Network Shares can be fast when only one user is working with a Vision file, esp
 
 AcuServer is faster when more than one user starts working with the same file. It delivers consistent results despite the number of users.  
 
-The following tests show that Network Shares are very fast with one user, but as the number of users increase, the performance of Network Shares dramatically decreases. AcuServer results are not as fast with a single users but remain consistent as the number of users increase.  
+The following tests show that Network Shares are very fast with one user, but as the number of users increase, the performance of Network Shares dramatically decreases. AcuServer results are not as fast with a single user but remain consistent as the number of users increase.  
 
-**NOTE:** These tests may not reflect exactly how your program works but the general trend should still apply. You should perfor concurrent tests with your program/setup to see how AcuServer compare to Network Shares as numbers of user increase.  
+**NOTE:** These tests may not reflect exactly how your program works but the general trend should still apply. You should perform concurrent tests with your program/setup to see how AcuServer compare to Network Shares as numbers of user increase.  
 
 **Tests done with AcuCOBOL-GT extend 10.4.0 on Windows Server 2019 AWS VMs**  
 
