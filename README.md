@@ -54,6 +54,7 @@
 - [AcuXDBC MSSQL Linked Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-MSSQL-Linked-Server.md)
 
 ## KB Articles
+- [Network Share vs AcuServer Performance]()
 - [HTTPGET/HTTPPOST results in a MAV or returns garbage in the response](https://bit.ly/3h4wOXB)
 - [Windows Store (UWP) applications do not connect to AcuXDBC](https://bit.ly/3aLetLD)
 - [How to setup CGI in IIS 10 on Windows Server 2019](https://bit.ly/3nsWrmd)
