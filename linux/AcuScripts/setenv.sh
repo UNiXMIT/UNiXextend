@@ -32,6 +32,11 @@ set_acu()
     export A_TERMCAP=$ACUCOBOL/etc/a_termcap
     export GENESIS_HOME=$ACUCOBOL
     export VORTEX_HOME=$ACUCOBOL
+    export DEF=".:$ACUCOBOL/sample/def"
+    export XML=".:$ACUCOBOL/sample/xmlext"
+    export BMP=".:$ACUCOBOL/sample"
+    export ALL=".:$ACUCOBOL/sample/def:$ACUCOBOL/sample/xmlext:$ACUCOBOL/sample"
+    export COPYPATH=$ALL
 
     # Display output from runcbl -vv for set version to check. Only displays first line.
     echo
