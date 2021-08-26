@@ -1,4 +1,10 @@
 <?php
+// Source References
+// https://www.sitepoint.com/file-uploads-with-php/
+// https://www.w3schools.com/php/php_file_upload.asp
+// https://www.sitepoint.com/handle-file-uploads-php/
+// https://www.sitepoint.com/upload-large-files-in-php/
+
 define("UPLOAD_DIR", "/var/www/upload/");
 
 if (!empty($_FILES["myFile"])) {
