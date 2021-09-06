@@ -9,6 +9,8 @@ sudo docker logs MYSQL 2>&1 | grep GENERATED
 sudo docker exec -it MYSQL mysql -uroot -p
 
 # Create user and allow remote access
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'YourStrongRootPassword';
+FLUSH PRIVILEGES;
 CREATE USER 'support'@'localhost' IDENTIFIED BY 'YourStrongPassword';
 GRANT ALL PRIVILEGES ON *.* TO 'support'@'localhost' WITH GRANT OPTION;
 CREATE USER 'support'@'%' IDENTIFIED BY 'YourStrongPassword';
