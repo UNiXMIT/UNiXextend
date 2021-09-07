@@ -9,5 +9,8 @@ sudo docker exec -it MQ bash
 sudo docker stop MQ
 sudo docker rm MQ
 
+# Connection Test
+https://www.ibm.com/support/pages/using-telnet-test-connectivity-between-mq-client-and-mq-server
+
 # Source
 https://dockr.ly/3yU2Afk
