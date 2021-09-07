@@ -111,3 +111,4 @@
 - [DB2](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/db2.txt)
 - [MySQL](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/mysql.txt)
 - [Sybase](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/sybase.txt)
+- [IBM MQ](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/mq.txt)
