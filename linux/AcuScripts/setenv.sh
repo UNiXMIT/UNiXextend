@@ -120,14 +120,14 @@ set_mq()
 set_mq32()
 {
     export PATH=$MQ/bin:$PATH
-    export LD_LIBRARY_PATH=$MQ/lib64/:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$MQ/lib/:$LD_LIBRARY_PATH
     export SHARED_LIBRARY_LIST=libmqic_r.so:libmqmcs_r.so
 }
 
 set_mq64()
 {
     export PATH=$MQ/bin:$PATH
-    export LD_LIBRARY_PATH=$MQ/lib/:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=$MQ/lib64/:$LD_LIBRARY_PATH
     export SHARED_LIBRARY_LIST=libmqic_r.so:libmqmcs_r.so
 }
 
