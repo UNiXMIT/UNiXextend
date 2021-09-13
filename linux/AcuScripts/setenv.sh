@@ -6,6 +6,8 @@ export JAVA64=
 export ORACLE32=
 export ORACLE64=
 export INFORMIX_OPT=
+export MQ=
+export MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
 export FILE_TRACE_TIMESTAMP=TRUE
 
 set_acu()
@@ -102,6 +104,33 @@ set_oracle64()
     export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
 }
 
+set_mq()
+{
+    mq_bit="${2}" 
+    case ${mq_bit} in 
+       32) set_mq32
+          ;;
+       64) set_mq64
+          ;;  
+       *) set_mq64
+          ;; 
+    esac 
+}
+
+set_mq32()
+{
+    export PATH=$MQ/bin:$PATH
+    export LD_LIBRARY_PATH=$MQ/lib64/:$LD_LIBRARY_PATH
+    export SHARED_LIBRARY_LIST=libmqic_r.so:libmqmcs_r.so
+}
+
+set_mq64()
+{
+    export PATH=$MQ/bin:$PATH
+    export LD_LIBRARY_PATH=$MQ/lib/:$LD_LIBRARY_PATH
+    export SHARED_LIBRARY_LIST=libmqic_r.so:libmqmcs_r.so
+}
+
 set_informix()
 {
     export INFORMIX_HOME=$INFORMIX_OPT
@@ -121,6 +150,8 @@ case ${option} in
    oracle) set_oracle
       ;; 
    informix) set_informix
+      ;;
+   mq) set_mq
       ;;  
    *) set_acu
       ;; 
