@@ -3,6 +3,7 @@
 export ACU_OPT=/home/products
 export JAVA32=
 export JAVA64=
+export JDBC_DRIVER=
 export ORACLE32=
 export ORACLE64=
 export INFORMIX_OPT=
@@ -62,19 +63,19 @@ set_java()
 set_java32()
 {
     export JAVA_HOME=$JAVA32
-    export PATH=
-    export CLASSPATH=
+    export PATH=$JAVA32/bin:$PATH
+    export CLASSPATH=.:$ACUCOBOL/bin/CVM.jar:$ACUCOBOL/bin/vortex.jar:$JDBC_DRIVER
     export PRELOAD_JAVA_LIBRARY=1
-    export JAVA_LIBRARY_NAME=
+    export JAVA_LIBRARY_NAME=$JAVA_HOME/bin/server/libjvm.so
 }
 
 set_java64()
 {
     export JAVA_HOME=$JAVA64
-    export PATH=
-    export CLASSPATH=
+    export PATH=$JAVA64/bin:$PATH
+    export CLASSPATH=.:$ACUCOBOL/bin/CVM.jar:$ACUCOBOL/bin/vortex.jar:$JDBC_DRIVER
     export PRELOAD_JAVA_LIBRARY=1
-    export JAVA_LIBRARY_NAME=
+    export JAVA_LIBRARY_NAME=$JAVA_HOME/bin/server/libjvm.so
 }
 
 set_oracle()
