@@ -13,6 +13,8 @@ IF '%1'=='java' GOTO JAVA
 IF '%1'=='JAVA' GOTO JAVA
 IF '%1'=='oracle' GOTO ORACLE
 IF '%1'=='ORACLE' GOTO ORACLE
+IF '%1'=='mq' GOTO MQ
+IF '%1'=='MQ' GOTO MQ
 
 :: AcuVersion set here
 SET EXTEND=%1
@@ -62,6 +64,8 @@ IF '%3'=='java' GOTO JAVA
 IF '%3'=='JAVA' GOTO JAVA
 IF '%3'=='oracle' GOTO ORACLE
 IF '%3'=='ORACLE' GOTO ORACLE
+IF '%3'=='mq' GOTO MQ
+IF '%3'=='MQ' GOTO MQ
 GOTO END
 
 :PATCH
