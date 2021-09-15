@@ -1,159 +1,133 @@
-#!/bin/bash
-# Any scripts run after this to start/stop services will use the ACUCOBOL variable set here.
-export ACU_OPT=/home/products
-export JAVA32=
-export JAVA64=
-export JDBC_DRIVER=
-export ORACLE32=
-export ORACLE64=
-export INFORMIX_OPT=
-export MQ=
-export MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
-export FILE_TRACE_TIMESTAMP=TRUE
+@ECHO OFF
 
-set_acu()
-{
-    # Save current directory.
-    CURRENT_DIR=$(pwd)
+:: Ensure JAVA and ORACLE PATHS are correct
+SET JAVA32=C:\OpenJDK\x86\jdk-11.0.10+9
+SET JAVA64=
+SET ORACLE32=
+SET ORACLE64=
+SET MQ=
+SET MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
+SET FILE_TRACE_TIMESTAMP=TRUE
 
-    # Set the path of your Acu installations here.
-    cd $ACU_OPT
-    array=(*/)
+IF '%1'=='java' GOTO JAVA
+IF '%1'=='JAVA' GOTO JAVA
+IF '%1'=='oracle' GOTO ORACLE
+IF '%1'=='ORACLE' GOTO ORACLE
 
-    # Display a list of all Acu installations.
-    echo
-    PS3="Which version of AcuCOBOL-GT? "
-    select ACU in "${array[@]}"
-    do export ACUCOBOL=$(echo /home/products/$ACU | sed -e "s/\/*$//"); break;  done
+:: AcuVersion set here
+SET EXTEND=%1
 
-    # Change directory back to original.
-    cd $CURRENT_DIR
+:: Modify AcuPath here if not in default install location
+SET ACUPATH32=C:\Program Files (x86)\Micro Focus\extend %EXTEND%\
+SET ACUPATH64=C:\Program Files\Micro Focus\extend %EXTEND%\
 
-    # Set environment variables.
-    export PATH=$ACUCOBOL/bin:$PATH
-    export LD_LIBRARY_PATH=$ACUCOBOL/bin:$ACUCOBOL/lib:$LD_LIBRARY_PATH
-    export A_TERMCAP=$ACUCOBOL/etc/a_termcap
-    export GENESIS_HOME=$ACUCOBOL
-    export VORTEX_HOME=$ACUCOBOL
-    export DEF=".:$ACUCOBOL/sample/def"
-    export XML=".:$ACUCOBOL/sample/xmlext"
-    export BMP=".:$ACUCOBOL/sample"
-    export ALL=".:$ACUCOBOL/sample/def:$ACUCOBOL/sample/xmlext:$ACUCOBOL/sample"
-    export COPYPATH=$ALL
+SET DEF=".;%ACUPATH32%AcuGT\sample\def"
+SET XML=".;%ACUPATH32%AcuGT\sample\xmlext"
+SET BMP=".;%ACUPATH32%AcuGT\sample\acubench\resource"
+SET ALL=".;%ACUPATH32%AcuGT\sample\def;%ACUPATH32%AcuGT\sample\xmlext;%ACUPATH32%AcuGT\sample\acubench\resource"
+SET COPYPATH=%ALL%
 
-    # Display output from runcbl -vv for set version to check. Only displays first line.
-    echo
-    runcbl -vv 2>&1 | head -n 1
-    echo
-}
+IF '%2'=='32' GOTO 32BIT
+IF '%2'=='64' GOTO 64BIT
+IF '%2'=='b' GOTO ACUBENCH
+IF '%2'=='B' GOTO ACUBENCH
+IF '%2'=='atw' GOTO ACUTOWEB
+IF '%2'=='ATW' GOTO ACUTOWEB
 
-set_java()
-{
-    java_bit="${2}" 
-    case ${java_bit} in 
-       32) set_java32
-          ;;
-       64) set_java64
-          ;;  
-       *) set_java64
-          ;; 
-    esac 
-}
+:32BIT
+SET ACUPATH=%ACUPATH32%AcuGT\
+SET CHOICE=%EXTEND% 32bit
+IF '%3'=='p' GOTO PATCH
+IF '%3'=='P' GOTO PATCH
+IF '%3'=='d' GOTO DIRECTORY
+IF '%3'=='D' GOTO DIRECTORY
+GOTO SETPATH
 
-set_java32()
-{
-    export JAVA_HOME=$JAVA32
-    export PATH=$JAVA32/bin:$PATH
-    export CLASSPATH=.:$ACUCOBOL/bin/CVM.jar:$ACUCOBOL/bin/vortex.jar:$JDBC_DRIVER
-    export PRELOAD_JAVA_LIBRARY=1
-    export JAVA_LIBRARY_NAME=$JAVA_HOME/bin/server/libjvm.so
-}
+:64BIT
+SET ACUPATH=%ACUPATH64%AcuGT\
+SET CHOICE=%EXTEND% 64bit
+IF '%3'=='p' GOTO PATCH
+IF '%3'=='P' GOTO PATCH
+IF '%3'=='d' GOTO DIRECTORY
+IF '%3'=='D' GOTO DIRECTORY
+GOTO SETPATH
 
-set_java64()
-{
-    export JAVA_HOME=$JAVA64
-    export PATH=$JAVA64/bin:$PATH
-    export CLASSPATH=.:$ACUCOBOL/bin/CVM.jar:$ACUCOBOL/bin/vortex.jar:$JDBC_DRIVER
-    export PRELOAD_JAVA_LIBRARY=1
-    export JAVA_LIBRARY_NAME=$JAVA_HOME/bin/server/libjvm.so
-}
+:SETPATH
+SET ACUBENCH=%ACUPATH32%acubench\
+SET PATH=C:\etc\acu;%ACUPATH%bin%3;%ACUBENCH%;C:\WINDOWS\system32
+SET GENESIS_HOME=%ACUPATH%
+ECHO.
+ECHO %CHOICE% %3
+IF '%3'=='java' GOTO JAVA
+IF '%3'=='JAVA' GOTO JAVA
+IF '%3'=='oracle' GOTO ORACLE
+IF '%3'=='ORACLE' GOTO ORACLE
+GOTO END
 
-set_oracle()
-{
-    oracle_bit="${2}" 
-    case ${oracle_bit} in 
-       32) set_oracle32
-          ;;
-       64) set_oracle64
-          ;;  
-       *) set_oracle64
-          ;; 
-    esac 
-}
+:PATCH
+ECHO.
+DIR "%ACUPATH%bin1*" /b
+GOTO END
 
-set_oracle32()
-{
-    export ORACLE_HOME=$ORACLE32
-    export PATH=$ORACLE_HOME/bin:$PATH
-    export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
-}
+:DIRECTORY
+CD "%ACUPATH%"
+START .
+GOTO END
 
-set_oracle64()
-{
-    export ORACLE_HOME=$ORACLE64
-    export PATH=$ORACLE_HOME/bin:$PATH
-    export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH
-}
+:ACUBENCH
+START "" "%ACUPATH32%acubench\AcuBench.exe"
+GOTO END
 
-set_mq()
-{
-    mq_bit="${2}" 
-    case ${mq_bit} in 
-       32) set_mq32
-          ;;
-       64) set_mq64
-          ;;  
-       *) set_mq64
-          ;; 
-    esac 
-}
+:ACUTOWEB
+START "" "%ACUPATH32%AcuGT\bin\AcuToWeb.exe"
+GOTO END
 
-set_mq32()
-{
-    export PATH=$MQ/bin:$PATH
-    export LD_LIBRARY_PATH=$MQ/lib/:$LD_LIBRARY_PATH
-    export SHARED_LIBRARY_LIST=libmqic_r.so:libmqmcs_r.so
-}
+:JAVA
+IF '%2'=='32' GOTO JAVA32BIT
+IF '%2'=='64' GOTO JAVA64BIT
 
-set_mq64()
-{
-    export PATH=$MQ/bin:$PATH
-    export LD_LIBRARY_PATH=$MQ/lib64/:$LD_LIBRARY_PATH
-    export SHARED_LIBRARY_LIST=libmqic_r.so:libmqmcs_r.so
-}
+:JAVA32BIT
+set JAVA_HOME=%JAVA32%
+set PATH=C:\etc\acu;%ACUPATH%bin;%JAVA_HOME%\bin\client;%JAVA_HOME%\bin;C:\WINDOWS\system32
+set CLASSPATH=.;%ACUPATH%bin\CVM.jar;%ACUPATH%bin\vortex.jar
+set PRELOAD_JAVA_LIBRARY=1
+set JAVA_LIBRARY_NAME=%JAVA_HOME%\bin\client\JVM.dll
+GOTO END
 
-set_informix()
-{
-    export INFORMIX_HOME=$INFORMIX_OPT
-    export INFORMIXDIR=$INFORMIX_OPT/odbc
-    export INFORMIXSERVER=informix
-    export ONCONFIG=onconfig
-    export INFORMIXTERM=terminfo
-    export INFORMIXSQLHOSTS=$INFORMIX_HOME/sqlhosts
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$INFORMIX_HOME/lib:$INFORMIX_HOME/lib/esql:$INFORMIXDIR/lib:$INFORMIXDIR/lib/esql:$INFORMIXDIR/lib/cli
-    export PATH=$PATH:$INFORMIX_HOME/bin:$INFORMIXDIR/bin    
-}
+:JAVA64BIT
+set JAVA_HOME=%JAVA64%
+set PATH=C:\etc\acu;%ACUPATH%bin;%JAVA_HOME%\bin\client;%JAVA_HOME%\bin;C:\WINDOWS\system32
+set CLASSPATH=.;%ACUPATH%bin\CVM.jar;%ACUPATH%bin\vortex.jar
+set PRELOAD_JAVA_LIBRARY=1
+set JAVA_LIBRARY_NAME=%JAVA_HOME%\bin\client\JVM.dll
+GOTO END
 
-option="${1}" 
-case ${option} in 
-   java) set_java
-      ;;
-   oracle) set_oracle
-      ;; 
-   informix) set_informix
-      ;;
-   mq) set_mq
-      ;;  
-   *) set_acu
-      ;; 
-esac 
+:ORACLE
+IF '%2'=='32' GOTO ORA32BIT
+IF '%2'=='64' GOTO ORA64BIT
+
+:ORA32BIT
+SET ORACLE_HOME=%ORACLE32%
+SET PATH=C:\etc\acu;%ORACLE_HOME%;%ACUPATH%bin;C:\WINDOWS\system32
+GOTO END
+
+:ORA64BIT
+SET ORACLE_HOME=%ORACLE64%
+SET PATH=C:\etc\acu;%ORACLE_HOME%;%ACUPATH%bin;C:\WINDOWS\system32
+GOTO END
+
+:MQ
+IF '%2'=='32' GOTO MQ32BIT
+IF '%2'=='64' GOTO MQ64BIT
+
+:MQ32BIT
+SET PATH=C:\etc\acu;%MQ%bin;%ACUPATH%bin;C:\WINDOWS\system32
+SET SHARED_LIBRARY_LIST=mqic32.dll
+GOTO END
+
+:MQ64BIT
+SET PATH=C:\etc\acu;%MQ%bin64;%ACUPATH%bin;C:\WINDOWS\system32
+SET SHARED_LIBRARY_LIST=mqic64.dll
+GOTO END
+
+:END
