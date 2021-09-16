@@ -2,14 +2,30 @@
 # Any scripts run after this to start/stop services will use the ACUCOBOL variable set here.
 export ACU_OPT=/home/products
 export JAVA32=
-export JAVA64=
+export JAVA64=/opt/java64/jdk-11.0.12+7
 export JDBC_DRIVER=
 export ORACLE32=
 export ORACLE64=
 export INFORMIX_OPT=
-export MQ=
-export MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
+export MQ=/opt/mqm
 export FILE_TRACE_TIMESTAMP=TRUE
+
+usage()
+{
+  echo "
+Options:  
+ . setenv.sh                          Set the AcuCOBOL environment
+ . setenv.sh [options] <parameters>   Set the AcuCOBOL environment and Additional Binaries/Libraries     
+
+Usage: 
+ -i            INFORMIX
+ -j 32/64      JAVA 32 or 64 bit
+ -m 32/64      MQ 32 or 64 bit
+ -o 32/64      ORACLE 32 or 64 bit
+
+Example:
+ . setenv.sh -j 64      Sets AcuCOBOL and JAVA 64-Bit"
+}
 
 set_acu()
 {
@@ -52,11 +68,11 @@ set_java()
     java_bit="${2}" 
     case ${java_bit} in 
        32) set_java32
-          ;;
+           ;;
        64) set_java64
-          ;;  
-       *) set_java64
-          ;; 
+           ;;  
+       *)  set_java64
+           ;; 
     esac 
 }
 
@@ -83,11 +99,11 @@ set_oracle()
     oracle_bit="${2}" 
     case ${oracle_bit} in 
        32) set_oracle32
-          ;;
+           ;;
        64) set_oracle64
-          ;;  
-       *) set_oracle64
-          ;; 
+           ;;  
+       *)  set_oracle64
+           ;; 
     esac 
 }
 
@@ -108,13 +124,14 @@ set_oracle64()
 set_mq()
 {
     mq_bit="${2}" 
+    export MQSERVER=DEV.APP.SVRCONN/TCP/172.31.10.78
     case ${mq_bit} in 
        32) set_mq32
-          ;;
+           ;;
        64) set_mq64
-          ;;  
-       *) set_mq64
-          ;; 
+           ;;  
+       *)  set_mq64
+           ;; 
     esac 
 }
 
@@ -144,16 +161,38 @@ set_informix()
     export PATH=$PATH:$INFORMIX_HOME/bin:$INFORMIXDIR/bin    
 }
 
-option="${1}" 
-case ${option} in 
-   java) set_java
-      ;;
-   oracle) set_oracle
-      ;; 
-   informix) set_informix
-      ;;
-   mq) set_mq
-      ;;  
-   *) set_acu
-      ;; 
-esac 
+invalidARG=
+OPTIND=1
+while getopts ":j:m:o:hi" z; do
+    case "${z}" in
+        i)
+            set_informix
+            ;;
+        j)
+            set_java
+            ;;
+        m)  
+            set_mq
+            ;;
+        o)  
+            set_oracle
+            ;; 
+        h)  
+            usage
+            ;;       
+        :)  
+            echo "ERROR: Option -$OPTARG requires an argument"
+            usage
+            ;;
+        \?)
+            echo "ERROR: Invalid option -$OPTARG"
+            usage
+            invalidARG="true" 
+            ;;
+    esac
+done
+shift "$((OPTIND-1))"
+if [ -z "$invalidARG" ]
+then
+   set_acu
+fi
