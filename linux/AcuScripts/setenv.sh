@@ -25,6 +25,7 @@ Usage:
  -j 32/64      JAVA 32 or 64 bit
  -m 32/64      MQ 32 or 64 bit
  -o 32/64      ORACLE 32 or 64 bit
+ -h            Usage
 
 Example:
  . setenv.sh -j 64      Sets AcuCOBOL and JAVA 64-Bit"
