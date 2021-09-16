@@ -1,6 +1,8 @@
 #!/bin/bash
 # Any scripts run after this to start/stop services will use the ACUCOBOL variable set here.
+# ACU_OPT is the location of all your Acu installations
 export ACU_OPT=/home/products
+# Set the locations of other installations here:
 export JAVA32=
 export JAVA64=/opt/java64/jdk-11.0.12+7
 export JDBC_DRIVER=
@@ -8,6 +10,7 @@ export ORACLE32=
 export ORACLE64=
 export INFORMIX_OPT=
 export MQ=/opt/mqm
+
 export FILE_TRACE_TIMESTAMP=TRUE
 
 usage()
