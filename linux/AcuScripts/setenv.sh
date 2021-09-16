@@ -4,12 +4,12 @@
 export ACU_OPT=/home/products
 # Set the locations of other installations here:
 export JAVA32=
-export JAVA64=/opt/java64/jdk-11.0.12+7
+export JAVA64=
 export JDBC_DRIVER=
 export ORACLE32=
 export ORACLE64=
 export INFORMIX_OPT=
-export MQ=/opt/mqm
+export MQ=
 
 export FILE_TRACE_TIMESTAMP=TRUE
 
@@ -127,7 +127,7 @@ set_oracle64()
 set_mq()
 {
     mq_bit="${2}" 
-    export MQSERVER=DEV.APP.SVRCONN/TCP/172.31.10.78
+    export MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
     case ${mq_bit} in 
        32) set_mq32
            ;;
