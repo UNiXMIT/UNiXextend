@@ -50,7 +50,11 @@ start_atw()
     if [[ "$ACUCONFIG" == "stop" ]] ; then
         $ACUCOBOL/acutoweb/acutoweb-gateway -kill
     else
-        $ACUCOBOL/acutoweb/acutoweb-gateway -start
+        if [[ "$ACUCONFIG" = "status" ]] ; then
+            $ACUCOBOL/acutoweb/acutoweb-gateway -info
+        else
+            $ACUCOBOL/acutoweb/acutoweb-gateway -start
+        fi
     fi
 }
 
