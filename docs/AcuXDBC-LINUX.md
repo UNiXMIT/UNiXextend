@@ -242,3 +242,31 @@ C:\Windows\SysWOW64\odbcad32.exe
 
 In the ODBC Data Source Administrator, choose “Add…” and select your AcuXDBC driver.  
 Note that the description has changed in 9.1.0 to describe whether it is a 32 or 64-bit driver.
+
+**Manage AcuXDBC Server**
+
+To manage AcuXDBC Server, use acuxdbcs.sh
+
+```
+acuxdbcs –h
+Usage:
+       acuxdbcs.sh –help
+       acuxdbcs.sh -info [-n port] [server]
+       acuxdbcs.sh -kill [-n port] [server]
+       acuxdbcs.sh -start [-n port] [-l]
+```
+
+TO START ACUXDBC SERVER
+```
+acuxdbcs.sh –start –n 20222
+```
+
+TO GET INFO ABOUT ACUXDBC SERVER
+```
+acuxdbcs.sh –info –n 20222 server
+```
+
+TO STOP ACUXDBC SERVER
+```
+acuxdbcs.sh –kill –n 20222 server
+```  
