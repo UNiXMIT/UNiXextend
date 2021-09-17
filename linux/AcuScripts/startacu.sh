@@ -12,8 +12,8 @@ Options:
  startacu.sh [options] <parameters>   Start/Stop an AcuCOBOL service    
 
 Usage: 
- -c stop or status      Stop or Status of the service (1st Option)
- -l                     Set logging on the service (2nd Option)
+ -c stop or status      Stop or Status of the service
+ -l                     Set logging on the service
  -r port                AcuRCL with specified port
  -w                     AcuToWeb (Port is set in gateway.conf)
  -s port                AcuServer with specified port
@@ -63,12 +63,16 @@ start_acuserve()
     if [[ "$ACUCONFIG" == "stop" ]] ; then
         $ACUCOBOL/bin/acuserve -kill -n $ACUSERVE_PORT -@
     else
-        if [[ "$ACULOG" = "log" ]] ; then
-            export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACUSERVER_PORT
-            $ACUCOBOL/bin/acuserve -start -c $ACUSUP/etc/a_srvcfg -n $ACUSERVER_PORT -le $ACUSUP/AcuLogs/$ACUSERVER_PORT-acuserve.log -t7 -@
+        if [[ "$ACUCONFIG" = "status" ]] ; then
+            $ACUCOBOL/bin/acuserve -info -n $ACUSERVE_PORT
         else
-            export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACUSERVER_PORT
-            $ACUCOBOL/bin/acuserve -start -c $ACUSUP/etc/a_srvcfg -n $ACUSERVER_PORT -@
+            if [[ "$ACULOG" = "log" ]] ; then
+                export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACUSERVER_PORT
+                $ACUCOBOL/bin/acuserve -start -c $ACUSUP/etc/a_srvcfg -n $ACUSERVER_PORT -le $ACUSUP/AcuLogs/$ACUSERVER_PORT-acuserve.log -t7 -@
+            else
+                export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACUSERVER_PORT
+                $ACUCOBOL/bin/acuserve -start -c $ACUSUP/etc/a_srvcfg -n $ACUSERVER_PORT -@
+            fi
         fi
     fi
 }
@@ -93,23 +97,27 @@ start_acuxdbcs()
 invalidARG=
 ACULOG=
 ACUCONFIG=
+START_ACURCL=
+START_ATW=
+START_ACUSERVE=
+START_ACUXDBCS=
 OPTIND=1
 while getopts ":r:s:c:x:whl" z; do
     case "${z}" in
         r)
+            START_ACURCL=TRUE
             export ACURCL_PORT=$OPTARG
-            start_acurcl
             ;;
-        w)
-            start_atw
+        w)  
+            START_ATW=TRUE
             ;;
         s)  
+            START_ACUSERVE=TRUE
             export ACUSERVER_PORT=$OPTARG
-            start_acuserve
             ;;
         x)  
+            START_ACUXDBCS=TRUE
             export ACUXDBCS_PORT=$OPTARG
-            start_acuxdbcs
             ;;
         c)  
             ACUCONFIG=$OPTARG
@@ -132,3 +140,16 @@ while getopts ":r:s:c:x:whl" z; do
     esac
 done
 shift "$((OPTIND-1))"
+
+if [[ "$START_ACURCL" == "TRUE" ]] ; then
+    start_acurcl
+fi
+if [[ "$START_ATW" == "TRUE" ]] ; then
+    start_atw
+fi
+if [[ "$START_ACUSERVE" == "TRUE" ]] ; then
+    start_acuserve
+fi
+if [[ "$START_ACUXDBCS" == "TRUE" ]] ; then
+    start_acuxdbcs
+fi
