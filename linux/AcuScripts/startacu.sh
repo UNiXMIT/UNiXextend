@@ -1,5 +1,5 @@
 #!/bin/bash
-# Any scripts run after this to start/stop services will use the ACUCOBOL variable set here.
+
 ACU_OPT=/home/products
 ACUSUP=/home/support/AcuSupport
 export SERVER_ALIAS_FILE=$ACUSUP/etc/acurcl.ini
