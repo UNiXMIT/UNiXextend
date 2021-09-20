@@ -1,5 +1,9 @@
 @ECHO OFF
 
+:: Modify the Acu installations paths here, if not in default install location
+SET DEFPATH32=C:\Program Files (x86)\Micro Focus\
+SET DEFPATH32=C:\Program Files\Micro Focus\
+
 :: Set the path to other installations here:
 SET JAVA32=
 SET JAVA64=
@@ -9,6 +13,7 @@ SET MQ=
 
 SET FILE_TRACE_TIMESTAMP=TRUE
 
+:: Default AcuVersion
 SET EXTEND=10.4.0
 SET ACUBIT=
 SET CFLAGS=FALSE
@@ -100,9 +105,8 @@ ECHO  setenv -v 10.4.0 -a 64 -j      Sets AcuCOBOL 10.4.0 64-Bit and JAVA 64-Bit
 GOTO :END
 
 :SETACUENV
-:: Modify AcuPath here if not in default install location
-SET ACUPATH32=C:\Program Files (x86)\Micro Focus\extend %EXTEND%\
-SET ACUPATH64=C:\Program Files\Micro Focus\extend %EXTEND%\
+SET ACUPATH32=%DEFPATH32%extend %EXTEND%\
+SET ACUPATH64=%DEFPATH64%extend %EXTEND%\
 SET DEF=".;%ACUPATH32%AcuGT\sample\def"
 SET XML=".;%ACUPATH32%AcuGT\sample\xmlext"
 SET BMP=".;%ACUPATH32%AcuGT\sample\acubench\resource"
