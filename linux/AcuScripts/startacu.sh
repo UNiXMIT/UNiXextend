@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Default location for all your config files, logs etc.
 ACUSUP=/home/support/AcuSupport
 export SERVER_ALIAS_FILE=$ACUSUP/etc/acurcl.ini
 export FILE_TRACE_TIMESTAMP=TRUE
