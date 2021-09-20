@@ -2,7 +2,7 @@
 
 :: Modify the Acu installations paths here, if not in default install location
 SET DEFPATH32=C:\Program Files (x86)\Micro Focus\
-SET DEFPATH32=C:\Program Files\Micro Focus\
+SET DEFPATH64=C:\Program Files\Micro Focus\
 
 :: Set the path to other installations here:
 SET JAVA32=
@@ -10,7 +10,7 @@ SET JAVA64=
 SET ORACLE32=
 SET ORACLE64=
 SET MQ=
-
+SET MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
 SET FILE_TRACE_TIMESTAMP=TRUE
 
 :: Default AcuVersion
@@ -21,7 +21,6 @@ SET ACUPATCH=
 SET ACUJAVA=
 SET ACUORA=
 SET ACUMQ=
-SET MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
 
 :INITIAL
  SET RESULT=FALSE
@@ -95,8 +94,8 @@ ECHO  -j              JAVA
 ECHO  -m              MQ
 ECHO  -o              ORACLE
 ECHO  -c atw          Open ATW Control Panel   
-ECHO  -c d            Open AcuDirectory
-ECHO  -b              Open AcuBench 
+ECHO  -c dir          Open AcuDirectory
+ECHO  -c bench        Open AcuBench 
 ECHO  -h              Usage
 ECHO.
 ECHO Example:
@@ -114,7 +113,7 @@ SET ALL=".;%ACUPATH32%AcuGT\sample\def;%ACUPATH32%AcuGT\sample\xmlext;%ACUPATH32
 SET COPYPATH=%ALL%
 IF '%ACUBIT%'=='' SET ACUBIT=32
 IF '%CFLAGS%'=='atw' GOTO :ATW
-IF '%CFLAGS%'=='b' GOTO :ACUBENCH
+IF '%CFLAGS%'=='bench' GOTO :ACUBENCH
 IF '%CFLAGS%'=='dir' (GOTO :DIRECTORY) ELSE IF NOT '%CFLAGS%'=='FALSE' (ECHO INCORRECT ARGUEMENT FOR OPTION -- 'c' & GOTO :USAGE)
 IF '%ACUBIT%'=='32' GOTO :32BIT
 IF '%ACUBIT%'=='64' GOTO :64BIT
@@ -194,14 +193,14 @@ GOTO :SETEXTRAS
 
 :SETMQ32
 SET ACUMQ=FALSE
-SET PATH=%MQ%bin;%PATH%%
+SET PATH=%MQ%bin;%PATH%
 SET SHARED_LIBRARY_LIST=mqic32.dll
 GOTO :SETEXTRAS
 
 :SETMQ64
 SET ACUMQ=FALSE
-SET PATH=%MQ%bin;%ACUPATH%bin;%PATH%%
-SET SHARED_LIBRARY_LIST=mqic32.dll
+SET PATH=%MQ%bin64;%PATH%
+SET SHARED_LIBRARY_LIST=mqic.dll
 GOTO :SETEXTRAS
 
 :END
