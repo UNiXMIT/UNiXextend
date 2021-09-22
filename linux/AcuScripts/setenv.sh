@@ -183,10 +183,12 @@ while getopts ":j:m:o:hi" z; do
             set_oracle
             ;; 
         h)  
+            invalidARG="true"
             usage
             ;;       
         :)  
             echo "ERROR: Option -$OPTARG requires an argument"
+            invalidARG="true"
             usage
             ;;
         \?)
