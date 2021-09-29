@@ -36,7 +36,7 @@ SET ACUMQ=
     )     
     SHIFT & SHIFT & GOTO :INITIAL
  )
- IF "%1" == "-a" SET RESULT=TRUE
+ IF "%1" == "-b" SET RESULT=TRUE
  IF "%RESULT%" == "TRUE" (
     SET ACUBIT=%2
     IF "%2"=="" (
@@ -98,8 +98,8 @@ ECHO  -c bench        Open AcuBench
 ECHO  -h              Usage
 ECHO.
 ECHO Example:
-ECHO  setenv -v 10.3.1 -a 64         Sets AcuCOBOL 10.3.1 64-Bit
-ECHO  setenv -v 10.4.0 -a 64 -j      Sets AcuCOBOL 10.4.0 64-Bit and JAVA 64-Bit
+ECHO  setenv -v 10.3.1 -b 64         Sets AcuCOBOL 10.3.1 64-Bit
+ECHO  setenv -v 10.4.0 -b 64 -j      Sets AcuCOBOL 10.4.0 64-Bit and JAVA 64-Bit
 GOTO :END
 
 :SETACUENV
