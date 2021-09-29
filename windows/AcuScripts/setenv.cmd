@@ -100,6 +100,10 @@ ECHO.
 ECHO Example:
 ECHO  setenv -v 10.3.1 -b 64         Sets AcuCOBOL 10.3.1 64-Bit
 ECHO  setenv -v 10.4.0 -b 64 -j      Sets AcuCOBOL 10.4.0 64-Bit and JAVA 64-Bit
+ECHO.  
+ECHO Patches can be loaded using -p if you have copied the patched bin into the AcuGT directory and name it binXXXX where XXXX is the patch number like 'bin1785'
+ECHO Example:
+ECHO  setenv -v 10.4.0 -b 32 -p 1785        Sets AcuCOBOL 10.4.0 32-Bit Patch Number 1785
 GOTO :END
 
 :SETACUENV
