@@ -8,6 +8,7 @@
     - [AcuConnect](#acuconnect)
     - [AcuToWeb](#acutoweb)
     - [AcuXDBC](#acuxdbc) 
+    - [AcuServer](#acuserver)
 - [KB Articles](#kb-articles)
 - [Product Machine Keys](#product-machine-keys)
   - [Windows](#windows)
