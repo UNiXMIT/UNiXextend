@@ -58,7 +58,7 @@
 
 ## KB Articles
 - [Network Share vs AcuServer Performance](https://bit.ly/2Y59Ybe)
-- [HTTPGET/HTTPPOST results in a MAV or returns garbage in the response](https://bit.ly/3h4wOXB)
+- [HTTPGET/HTTPPOST results in a MAV or returns garbage in the response](https://bit.ly/3ikjsGP)
 - [Windows Store (UWP) applications do not connect to AcuXDBC](https://bit.ly/3aLetLD)
 - [How to setup CGI in IIS 10 on Windows Server 2019](https://bit.ly/3nsWrmd)
 - [Title bar of COBOL program changes style and minimize button stops working](https://bit.ly/3dYgBBx)
