@@ -9,4 +9,4 @@ Details of which version of AcuCOBOL-GT extend was first certified for a specifi
 | Windows Server 2016    | 10.1.0                    |
 | Windows Server 2019    | 10.2.1                    |
 | Windows 11             | 10.5.0 (May 2022)         |
-| Windows Server 2022    | TBA                       |
+| Windows Server 2022    | 10.5.0                    |
