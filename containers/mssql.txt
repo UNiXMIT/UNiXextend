@@ -1,9 +1,9 @@
 # Pull and Run container
-sudo docker pull mcr.microsoft.com/mssql/server:2019-latest
-sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrongPassword" -p 1433:1433 --name MSSQL -d mcr.microsoft.com/mssql/server:2019-latest
+podman pull mcr.microsoft.com/mssql/server:2019-latest
+podman run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrongPassword" -p 1433:1433 --name MSSQL -d mcr.microsoft.com/mssql/server:2019-latest
 
-# Attach to Docker container
-sudo docker exec -it MSSQL bash
+# Attach to container
+podman exec -it MSSQL bash
 
 # Container Details
 username: SA
@@ -33,8 +33,8 @@ DROP LOGIN [NewLogin]
 GO
 
 # Remove container
-sudo docker stop MSSQL
-sudo docker rm MSSQL
+podman stop MSSQL
+podman rm MSSQL
 
 # Source
 http://bit.ly/2N17YIN

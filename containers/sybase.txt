@@ -1,6 +1,6 @@
 # Pull and Run container
-sudo docker pull datagrip/sybase
-sudo docker run -d -t -p 5000:5000 --name SYBASE datagrip/sybase
+podman pull datagrip/sybase
+podman run -d -t -p 5000:5000 --name SYBASE datagrip/sybase
 
 # Guest User
 Environment variable	Default value
@@ -13,12 +13,12 @@ Environment variable	Default value
 SYBASE_USER	            sa
 SYBASE_PASSWORD         myPassword
 
-# Attach to Docker container
-sudo docker exec -it SYBASE bash
+# Attach to container
+podman exec -it SYBASE bash
 
 # Remove your container
-sudo docker stop SYBASE
-sudo docker rm SYBASE
+podman stop SYBASE
+podman rm SYBASE
 
 # Source
 https://dockr.ly/2VofqCc

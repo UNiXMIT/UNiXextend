@@ -1,12 +1,12 @@
 # Pull and Run container
-sudo docker pull mysql/mysql-server:latest
-sudo docker run --name=MYSQL -p 3306:3306 -d mysql/mysql-server:latest
+podman pull mysql/mysql-server:latest
+podman run --name=MYSQL -p 3306:3306 -d mysql/mysql-server:latest
 
 # Root password
-sudo docker logs MYSQL 2>&1 | grep GENERATED
+podman logs MYSQL 2>&1 | grep GENERATED
 
-# Attach to Docker container
-sudo docker exec -it MYSQL mysql -uroot -p
+# Attach to container
+podman exec -it MYSQL mysql -uroot -p
 
 # Create user and allow remote access
 ALTER USER 'root'@'localhost' IDENTIFIED BY 'YourStrongRootPassword';
@@ -17,8 +17,8 @@ CREATE USER 'support'@'%' IDENTIFIED BY 'YourStrongPassword';
 GRANT ALL PRIVILEGES ON *.* TO 'support'@'%' WITH GRANT OPTION;
 
 # Remove container
-sudo docker stop MYSQL
-sudo docker rm MYSQL
+podman stop MYSQL
+podman rm MYSQL
 
 # Source
 http://bit.ly/2JwvNGv

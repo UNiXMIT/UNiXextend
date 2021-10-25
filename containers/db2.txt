@@ -1,0 +1,13 @@
+# Pull and Run container
+podman pull ibmcom/db2
+podman run -itd --name DB2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INST1_PASSWORD=YourStrongPassword -e DBNAME=testdb -v <db storage dir>:/database ibmcom/db2
+
+# Attach to container
+podman exec -it DB2 bash
+
+# Remove your container
+podman stop DB2
+podman rm DB2
+
+# Source
+https://dockr.ly/2VsKKzQ
