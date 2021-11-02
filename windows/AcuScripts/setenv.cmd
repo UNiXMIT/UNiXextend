@@ -124,7 +124,12 @@ IF '%ACUBIT%'=='64' GOTO :64BIT
 GOTO :END
 
 :ATW
-START "" "%DEFPATH32%\AcuGT\bin%ACUPATCH%\AcuToWeb.exe"
+IF '%ACUBIT%'=='32' (
+    START "" "%DEFPATH32%\AcuGT\bin%ACUPATCH%\AcuToWeb.exe"
+)
+IF '%ACUBIT%'=='64' (
+    START "" "%DEFPATH64%\AcuGT\bin%ACUPATCH%\AcuToWeb.exe"
+)
 GOTO :END
 
 :ACUBENCH
