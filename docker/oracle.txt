@@ -40,8 +40,7 @@ Description     = Oracle ODBC Connection
 Driver          = /usr/lib/oracle/19.9/client64/lib/libsqora.so.19.1
 Database        = support
 Servername      = 127.0.0.1:1521/XE
-UserName        = support
-Password        = YourStrongPassword
+UserID          = support
 
 # tnsnames.ora
 # $ORACLE_HOME\network\admin\
