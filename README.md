@@ -1,5 +1,6 @@
-## [AcuCOBOL-GT extend 10.4.0 Documentation](https://bit.ly/3j4HvdO)
+## [AcuCOBOL-GT extend 10.4.1 Documentation](https://bit.ly/3C7G5Fy)
 
+- [AcuCOBOL-GT extend 10.4.1 Release Notes](https://bit.ly/3DdOLeE)
 - [AcuCommunity](https://community.microfocus.com/cobol/acucobol/)
 - [Documentation](#documentation)
   - [Official](#official)
@@ -17,13 +18,13 @@
 
 ## Documentation
 ### Official
-- [File Status Codes](https://bit.ly/3nxRfh5)
-- [Compiler Options](https://bit.ly/3nycbEQ)
-- [Runtime Options](https://bit.ly/3e1vL9h)
-- [License File Names](https://bit.ly/3t3Qc9A)
-- [Limits and Ranges](https://bit.ly/2PwEuXp)
-- [Memory Handling Descriptions](https://bit.ly/3nDb6LN)
-- [Machine Key Mismatch](https://bit.ly/331kOOF)
+- [File Status Codes](https://bit.ly/3wBPaFq)
+- [Compiler Options](https://bit.ly/3wDLB1r)
+- [Runtime Options](https://bit.ly/3CaHlrx)
+- [License File Names](https://bit.ly/3DbWt9l)
+- [Limits and Ranges](https://bit.ly/3nb9yu1)
+- [Memory Handling Descriptions](https://bit.ly/3c2D0Mg)
+- [Machine Key Mismatch](https://bit.ly/3n8jV1o)
 
 ### Wiki
 #### AcuRuntime  
