@@ -5,6 +5,12 @@ podman run -itd --name DB2 --privileged=true -p 50000:50000 -e LICENSE=accept -e
 # Attach to container
 podman exec -it DB2 bash -c "su - support"
 
+# Connect to database and execute SQL
+db2 connect to support
+db2 select * from support.schema
+# or from file
+db2 -t -vmf db2.sql |tee db2.sql.out
+
 # Remove your container
 podman stop DB2
 podman rm DB2
