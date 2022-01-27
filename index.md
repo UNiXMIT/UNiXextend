@@ -110,6 +110,8 @@
 - PMK: 118&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 10 (SPARC) 64-bit  
 - PMK: 49&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (SPARC) 32-bit  
 - PMK: 48&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (SPARC) 64-bit 
+- PMK: 43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (INTEL) 32-bit  
+- PMK: 42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (INTEL) 64-bit  
 
 ## Docker
 - [SQL Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/mssql.txt)
