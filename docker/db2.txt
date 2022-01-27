@@ -4,6 +4,7 @@ podman run -itd --name DB2 --privileged=true -p 50000:50000 -e LICENSE=accept -e
 
 # Attach to container
 podman exec -it DB2 bash
+podman exec -it DB2 bash -c "su - support"
 
 # Remove your container
 podman stop DB2
