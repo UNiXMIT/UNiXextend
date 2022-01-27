@@ -6,7 +6,8 @@ podman run -itd --name DB2 --privileged=true -p 50000:50000 -e LICENSE=accept -e
 podman exec -it DB2 bash -c "su - support"
 
 # Connect to database and execute SQL
-db2 connect to support
+db2 CONNECT TO SUPPORT
+db2 SET CURRENT SCHEMA SchemaName
 db2 select * from support.schema
 
 # Connect to database and execute SQL from file
