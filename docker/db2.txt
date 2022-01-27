@@ -9,5 +9,8 @@ podman exec -it DB2 bash
 podman stop DB2
 podman rm DB2
 
+# Clients and Driver Downloads
+https://ibm.co/3o3kucS
+
 # Source
 https://dockr.ly/2VsKKzQ
