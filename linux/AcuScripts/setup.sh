@@ -31,9 +31,8 @@ fi
 echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> ~/.bashrc
 
 cd /home
-sudo mkdir products
+sudo mkdir -m 755 products
 sudo chown $(whoami):$(id -gn) products
-sudo chmod 755 products
 
 cd ~
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/profile.sh
@@ -65,11 +64,21 @@ echo "#0 18 * * * root shutdown -h now" >> ~/AcuSupport/sudo-crontab
 sudo crontab ~/AcuSupport/sudo-crontab
 rm ~/AcuSupport/sudo-crontab
 
+. /etc/os-release
 if [[ $(grep microsoft /proc/version) ]]; then
-  echo "Linux is running on WSL"
+  sudo echo " " > /etc/update-motd.d/00-header
+  sudo echo " " >> /etc/update-motd.d/00-header
+  sudo echo "  $PRETTY_NAME" >> /etc/update-motd.d/00-header
+  sudo echo " " >> /etc/update-motd.d/00-header
+  sudo echo "    Set Environment:" >> /etc/update-motd.d/00-header
+  sudo echo "        . setenv.sh (-h for usage)" >> /etc/update-motd.d/00-header
+  sudo echo " " >> /etc/update-motd.d/00-header
+  sudo echo "    Start Services:" >> /etc/update-motd.d/00-header
+  sudo echo "        startacu.sh (-h for usage)" >> /etc/update-motd.d/00-header
+  sudo echo " " >> /etc/update-motd.d/00-header
 else
-  . /etc/os-release
-  sudo echo $'\n' > /etc/motd
+  sudo echo " " > /etc/motd
+  sudo echo " " >> /etc/motd
   sudo echo "  $PRETTY_NAME" >> /etc/motd
   sudo echo " " >> /etc/motd
   sudo echo "    Set Environment:" >> /etc/motd
