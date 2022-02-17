@@ -40,8 +40,7 @@ sudo mv profile.sh /etc/profile.d/profile.sh
 sudo chmod +x /etc/profile.d/profile.sh
 
 cd ~
-mkdir AcuSupport
-chmod 775 AcuSupport
+mkdir -m 775 AcuSupport
 cd ~/AcuSupport
 mkdir AcuDataFiles AcuLogs AcuResources AcuSamples AcuScripts CustomerPrograms etc
 cd ~/AcuSupport/AcuScripts
