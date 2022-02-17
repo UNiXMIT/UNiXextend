@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install Intructions
 # sudo (apt/yum/zypper) install -y curl
-# curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | bash 
+# curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | sudo bash 
 
 if command -v yum >/dev/null; then
   sudo yum update;
@@ -65,10 +65,17 @@ echo "#0 18 * * * root shutdown -h now" >> ~/AcuSupport/sudo-crontab
 sudo crontab ~/AcuSupport/sudo-crontab
 rm ~/AcuSupport/sudo-crontab
 
-# sudo echo " " > /etc/motd
-# sudo echo " " > /etc/motd
-# sudo echo "    Set Environment:" >> /etc/motd
-# sudo echo "        . setenv.sh (-h for usage)" >> /etc/motd
-# sudo echo " " >> /etc/motd
-# sudo echo "    Start Services:" >> /etc/motd
-# sudo echo "        startacu.sh (-h for usage)" >> /etc/motd
+if [[ $(grep microsoft /proc/version) ]]; then
+  echo "Linux is running on WSL"
+else
+  . /etc/os-release
+  sudo echo $'\n' > /etc/motd
+  sudo echo "  $PRETTY_NAME" >> /etc/motd
+  sudo echo " " >> /etc/motd
+  sudo echo "    Set Environment:" >> /etc/motd
+  sudo echo "        . setenv.sh (-h for usage)" >> /etc/motd
+  sudo echo " " >> /etc/motd
+  sudo echo "    Start Services:" >> /etc/motd
+  sudo echo "        startacu.sh (-h for usage)" >> /etc/motd
+  sudo echo " " >> /etc/motd
+fi
