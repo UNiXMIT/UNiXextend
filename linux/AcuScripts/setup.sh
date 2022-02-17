@@ -1,4 +1,7 @@
 #!/bin/bash
+# Install Intructions
+# sudo (apt/yum/zypper) install -y curl
+# curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | bash 
 
 if command -v yum >/dev/null; then
   sudo yum update;
