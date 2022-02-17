@@ -18,9 +18,7 @@ elif command -v apt >/dev/null; then
   sudo apt update;
   sudo apt upgrade -y;
   sudo dpkg --add-architecture i386;
-  sudo apt install -y build-essential podman unixodbc-dev wget curl dos2unix default-jdk htop tmux libstdc++6:i386 libc6:i386 lib32stdc++6 libaio-dev libncurses5-dev libncursesw5-dev;
-  sudo setenforce 0;
-  sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config;
+  sudo apt install -y build-essential podman unixodbc-dev wget curl dos2unix default-jdk htop tmux lib32stdc++6 libaio-dev libncurses5-dev libncursesw5-dev;
 elif command -v zypper >/dev/null; then
   sudo zypper refresh;
   sudo zypper update -y;
