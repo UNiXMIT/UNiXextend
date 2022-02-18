@@ -86,3 +86,4 @@ else
   sudo mv motd.temp /etc/motd
 fi
 rm motd.temp 
+EOF
