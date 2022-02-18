@@ -4,10 +4,10 @@
 # curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | sudo bash 
 
 if command -v yum >/dev/null; then
-  sudo yum update;
+  sudo yum update -y;
   sudo dnf group install -y "Development Tools";
   sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm;
-  sudo yum install -y libnsl podman unixODBC wget curl dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-compat-libs libaio-devel glibc.i686;
+  sudo yum install -y libnsl podman unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-compat-libs libaio-devel glibc.i686;
   sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5;
   sudo setenforce 0;
   sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config;
@@ -18,7 +18,7 @@ elif command -v apt >/dev/null; then
   sudo apt update;
   sudo apt upgrade -y;
   sudo dpkg --add-architecture i386;
-  sudo apt install -y build-essential podman unixodbc-dev wget curl dos2unix default-jdk htop tmux lib32stdc++6 libaio-dev libncurses5-dev libncursesw5-dev;
+  sudo apt install -y build-essential podman unixodbc-dev wget curl cron dos2unix default-jdk htop tmux lib32stdc++6 libaio-dev libncurses5-dev libncursesw5-dev;
 elif command -v zypper >/dev/null; then
   sudo zypper refresh;
   sudo zypper update -y;
@@ -31,7 +31,7 @@ fi
 echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> ~/.bashrc
 
 cd /home
-sudo mkdir -m 755 products
+[ ! -d "products" ] && sudo mkdir -m 755 products
 sudo chown $(whoami):$(id -gn) products
 
 cd ~
@@ -40,9 +40,15 @@ sudo mv profile.sh /etc/profile.d/profile.sh
 sudo chmod +x /etc/profile.d/profile.sh
 
 cd ~
-mkdir -m 775 AcuSupport
+[ ! -d "AcuSupport" ] && mkdir -m 775 AcuSupport
 cd ~/AcuSupport
-mkdir AcuDataFiles AcuLogs AcuResources AcuSamples AcuScripts CustomerPrograms etc
+[ ! -d "AcuDataFiles" ] && mkdir AcuDataFiles
+[ ! -d "AcuLogs" ] && mkdir AcuLogs
+[ ! -d "AcuResources" ] && mkdir AcuResources
+[ ! -d "AcuSamples" ] && mkdir AcuSamples
+[ ! -d "AcuScripts" ] && mkdir AcuScripts
+[ ! -d "CustomerPrograms" ] && mkdir CustomerPrograms
+[ ! -d "etc" ] && mkdir etc
 cd ~/AcuSupport/AcuScripts
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setenv.sh
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/startacu.sh
@@ -64,7 +70,7 @@ sudo crontab ~/AcuSupport/sudo-crontab
 rm ~/AcuSupport/sudo-crontab
 
 . /etc/os-release
-if [[ $(grep microsoft /proc/version) ]]; then
+if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
   sudo echo " " > /etc/update-motd.d/00-header
   sudo echo " " >> /etc/update-motd.d/00-header
   sudo echo "  $PRETTY_NAME" >> /etc/update-motd.d/00-header

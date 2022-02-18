@@ -1,4 +1,4 @@
 #!/bin/bash
 # /etc/profile.d/profile.sh
-cd /home/support/AcuSupport
-export PATH=$PATH:/home/support/AcuSupport/AcuScripts
+cd ~/AcuSupport
+export PATH=$PATH:~/AcuSupport/AcuScripts
