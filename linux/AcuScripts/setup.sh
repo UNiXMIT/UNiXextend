@@ -85,5 +85,3 @@ if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
 else
   sudo mv motd.temp /etc/motd
 fi
-rm motd.temp 
-EOF
