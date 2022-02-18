@@ -1,7 +1,7 @@
 #!/bin/bash
 # Install Intructions
 # sudo (apt/yum/zypper) install -y curl
-# curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | sudo bash 
+# curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | bash 
 
 if command -v yum >/dev/null; then
   sudo yum update -y;
@@ -70,26 +70,19 @@ sudo crontab ~/AcuSupport/sudo-crontab
 rm ~/AcuSupport/sudo-crontab
 
 . /etc/os-release
+echo " " > motd.temp
+echo " " >> motd.temp
+echo "  $PRETTY_NAME" >> motd.temp
+echo " " >> motd.temp
+echo "    Set Environment:" >> motd.temp
+echo "        . setenv.sh (-h for usage)" >> motd.temp
+echo " " >> motd.temp
+echo "    Start Services:" >> /etc/update-motd.d/00-header
+echo "        startacu.sh (-h for usage)" >> motd.temp
+echo " " >> motd.temp
 if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
-  sudo echo " " > /etc/update-motd.d/00-header
-  sudo echo " " >> /etc/update-motd.d/00-header
-  sudo echo "  $PRETTY_NAME" >> /etc/update-motd.d/00-header
-  sudo echo " " >> /etc/update-motd.d/00-header
-  sudo echo "    Set Environment:" >> /etc/update-motd.d/00-header
-  sudo echo "        . setenv.sh (-h for usage)" >> /etc/update-motd.d/00-header
-  sudo echo " " >> /etc/update-motd.d/00-header
-  sudo echo "    Start Services:" >> /etc/update-motd.d/00-header
-  sudo echo "        startacu.sh (-h for usage)" >> /etc/update-motd.d/00-header
-  sudo echo " " >> /etc/update-motd.d/00-header
+  sudo mv motd.temp /etc/update-motd.d/00-header
 else
-  sudo echo " " > /etc/motd
-  sudo echo " " >> /etc/motd
-  sudo echo "  $PRETTY_NAME" >> /etc/motd
-  sudo echo " " >> /etc/motd
-  sudo echo "    Set Environment:" >> /etc/motd
-  sudo echo "        . setenv.sh (-h for usage)" >> /etc/motd
-  sudo echo " " >> /etc/motd
-  sudo echo "    Start Services:" >> /etc/motd
-  sudo echo "        startacu.sh (-h for usage)" >> /etc/motd
-  sudo echo " " >> /etc/motd
+  sudo mv motd.temp /etc/motd
 fi
+rm motd.temp
