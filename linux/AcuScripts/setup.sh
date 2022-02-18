@@ -77,7 +77,7 @@ echo " " >> motd.temp
 echo "    Set Environment:" >> motd.temp
 echo "        . setenv.sh (-h for usage)" >> motd.temp
 echo " " >> motd.temp
-echo "    Start Services:" >> /etc/update-motd.d/00-header
+echo "    Start Services:" >> motd.temp
 echo "        startacu.sh (-h for usage)" >> motd.temp
 echo " " >> motd.temp
 if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
