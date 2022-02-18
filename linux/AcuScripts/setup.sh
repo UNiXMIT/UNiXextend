@@ -82,6 +82,10 @@ echo "        startacu.sh (-h for usage)" >> motd.temp
 echo " " >> motd.temp
 if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
   sudo mv motd.temp /etc/update-motd.d/00-header
+elif if [[ $(grep microsoft /proc/version) ]] ; then
+  sudo mkdir /etc/update-motd.d/;
+  echo "run-parts /etc/update-motd.d" >> ~/.bashrc;
+  sudo mv motd.temp /etc/update-motd.d/00-header;
 else
   sudo mv motd.temp /etc/motd
 fi
