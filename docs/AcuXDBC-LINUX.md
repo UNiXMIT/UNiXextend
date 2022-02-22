@@ -5,9 +5,7 @@ The following steps are for Unix/Linux.
 
 ---
 
-Unzip the tar.gz archive into the desired folder on the machine where you would like XDBC to run.  
-
-tar-zxvf archivetoextract.tar.gz
+Execute the installation media and install into the desired folder on the machine where you would like XDBC to run.  
 
 **Set environment variables**
 
