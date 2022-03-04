@@ -25,5 +25,8 @@ podman rm DB2
 # Clients and Driver Downloads
 https://ibm.co/3o3kucS
 
+# Install ODBC Driver (cmd as Admin)
+db2cli install -setup
+
 # Source
 https://dockr.ly/2VsKKzQ
