@@ -60,6 +60,7 @@
 - [Network Share vs AcuServer Performance](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/NetworkShares-VS-AcuServer.md)
 
 ## KB Articles
+- [Very slow performance of XML EXPORT FILE on Linux](https://bit.ly/35XPHrK)
 - [Rebuilding a Vision file with Vutil gives an unrelated error message](https://bit.ly/32chaok)
 - [Strange behaviour of a program using AcuToWeb on an Apple CPU machine](https://bit.ly/3BhBe4a)
 - [Network Share vs AcuServer Performance](https://bit.ly/2Y59Ybe)
