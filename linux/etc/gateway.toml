@@ -35,7 +35,7 @@ path_fill_combo = "/etc/fillcombo.js"
 append_log_file = false
 
 # NUMBER OF MILLISECONDS ACUTOWEB DESKTOP AND THE BROWSER AWAIT TO ESTABLISH A CONNECTION BEFORE TIMING-OUT (DEFAULT VALUE IS 100)
-timeout_atw_conn = 450
+timeout_atw_conn = 2500
 
 # NEW ATW 10.3.0 ----------------------------------------------------------------
 
