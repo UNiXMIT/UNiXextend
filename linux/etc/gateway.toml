@@ -1,11 +1,23 @@
-# ORGINAL ATW ----------------------------------------------------------------
-
+# GENERAL
 acurcl = "127.0.0.1"
 acurcl_port = 5632
 webserver_port = 3000
 tcp_port = 8000
 public_root_dir = "./Web"
 file_cache = "./Web/cache"
+path_fill_combo = "/home/support/AcuSupport/etc/fillcombo.js"
+append_log_file = false
+timeout_atw_conn = 2500
+probing_connection = 10000
+
+# enable_rsa_enc = false
+# path_custom_js = "/home/support/AcuSupport/etc/customJSFunctionality.js"
+# reconnect_interval = 1000
+# max_reconnect_interval = 30000
+# reconnect_decay = 1
+# timeout_interval = 200000
+# max_reconnect_attempts = 30
+# path_resources = "/AcuResources"
 
 # PROTOCOL
 authorized_access = false
@@ -15,71 +27,17 @@ max_pkg_size = 64000
 
 # LOG
 log_level = 15
-logfile = "/etc/logs/gateway.log"
+logfile = "/home/support/AcuSupport/etc/logs/gateway.log"
 
 # SSL
 use_ssl = false
-ssl_key_file = "/etc/SSL/server.key"
-ssl_crt_file = "/etc/SSL/server.crt"
+ssl_key_file = "/home/support/AcuSupport/etc/SSL/server.key"
+ssl_crt_file = "/home/support/AcuSupport/etc/SSL/server.crt"
 
-[customize_css]
+# [custom_return]
+# DEFAULT = "https://www.microfocus.com"
+# MY_ALIAS = "https://www.google.com"
+
+# [customize_css]
 # Example1 = "./Web/_CSS/examples/defaultCustomCSS.css"
 # FX = "./Web/_CSS/examples/ThemeFX.css"
-
-# NEW ATW 10.2.1 ----------------------------------------------------------------
-
-# SET THE LOCATION OF A JAVASCRIPT FILE THAT HOLDS ENTRIES FOR THE ALIASES IN THE ACUTOWEB CONNECTION SETUP SCREEN
-path_fill_combo = "/etc/fillcombo.js"
-
-# RESTARTING THE GATEWAY, THE LOG FILE WILL BE APPENDED TO THE EXISTING ONE (false, A NEW LOG FILE WILL BE CREATED; true, THE DEFAULT)
-append_log_file = false
-
-# NUMBER OF MILLISECONDS ACUTOWEB DESKTOP AND THE BROWSER AWAIT TO ESTABLISH A CONNECTION BEFORE TIMING-OUT (DEFAULT VALUE IS 100)
-timeout_atw_conn = 2500
-
-# NEW ATW 10.3.0 ----------------------------------------------------------------
-
-# WHEN USING THE OBFUSCATE PARAM CHECK BOX, SET THIS VARIABLE TO false TO HAVE A BASE64 ENCODING ENCRYPTION (THE DEFAULT).
-# SET THIS VARIABLE TO true TO HAVE AN EXTRA 2048 BIT RSA KEY BEFORE USING THE BASE64 ENCODING.
-# enable_rsa_enc = false
-
-# SET THE LOCATION OF YOUR OWN JAVA SCRIPT FILE INTO THE HEAD OF THE HOST PAGE
-# path_custom_js = "/etc/customJSFunctionality.js"
-
-# THE NUMBER OF MILLISECONDS TO DELAY BEFORE ATTEMPTING TO RECONNECT.
-# reconnect_interval = 1000
-
-# THE MAXIMUM NUMBER OF MILLISECONDS TO DELAY A RECONNECTION ATTEMPT.
-# max_reconnect_interval = 30000
-
-# THE RATE OF INCREASE OF THE RECONNECT DELAY. ALLOWS RECONNECT ATTEMPTS TO BACK OFF WHEN PROBLEMS PERSIST.
-# reconnect_decay = 1
-
-# THE MAXIMUM TIME IN MILLISECONDS TO WAIT FOR A CONNECTION TO SUCCEED BEFORE CLOSING AND RETRYING.
-# timeout_interval = 200000
-
-# THE MAXIMUM NUMBER OF RECONNECTION ATTEMPTS TO MAKE. UNLIMITED IF -1. RECOMMENDED 30.
-# max_reconnect_attempts = 30
-
-# NEW ATW 10.3.1 ----------------------------------------------------------------
-
-# THE WAITING TIME, IN MILLISECONDS, ON THE INTERNAL PING SENT TO VERIFY THAT THE CONNECTION IS ACTIVE.
-# THE DEFAULT MINIMUM VALUE IS 3000.
-# SET TO false TO DISABLE THE RE-CONNECT FEATURE
-
-# probing_connection = 3000
- 
-#  NEW ATW 10.4.0 ----------------------------------------------------------------
-
-# TELLS THE CLIENT BROWSER WHERE TO LOOK FOR RESOURCES.
-
-# path_resources = "/AcuResources"
-
-#  NEW ATW 10.5.0 ----------------------------------------------------------------
-
-# THE ALIAS NAME AND URL TO REDIRECT WHEN THE ALIAS WILL BE CLOSED. YOU MAY SPECIFY MORE THAN ONE CUSTOM_RETURN OPTION TO HAVE A DIFFERENT REDIRECT BY ALIAS NAME.
-# IT'S POSSIBLE SET A DEFAULT REDIRECT BY DEFAULT ALIAS NAME.
-
-[custom_return]
-default = "https://www.microfocus.com"
-MY_ALIAS = "https://www.google.com"
