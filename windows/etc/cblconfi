@@ -1,30 +1,116 @@
-#!copy \etc\cblconfi_ThinClient.cfg
-#!copy \etc\cblconfi_ECN.cfg
-#!copy \etc\cblconfi_TRACE.cfg
-#!copy \etc\cblconfi_ThinClient_AutoUpdate.cfg
-#!copy \etc\cblconfi_keystroke.cfg
-#!copy \etc\cblconfi_keystroke_CopyPaste.cfg
-#!copy \etc\cblconfi_acuserver.cfg
-#!copy \etc\cblconfi_oracle.cfg
-#!copy \etc\cblconfi_mssql.cfg
-#!copy \etc\cblconfi_acusql.cfg
-#!copy \etc\cblconfi_ODBC.cfg
+### GENERAL
+# FILE_PREFIX               C:\AcuDataFiles
+# CODE_PREFIX               .
+WIN32_NATIVECTLS            1
+IO_CREATES                  1
+EXTEND_CREATES              1
+ACU_USER_DIR                C:\etc
+A_REMOVE_EMPTY_ERROR_FILE 1
+# V_VERSION                 6
+# DECIMAL_POINT             ,
+# COBOL_CHARACTER_SET       UTF-8
+# USE_UNICODE_FONTS         TRUE
+# TRANSLATE_TO_ANSI         TRUE
+# SHARED_LIBRARY_LIST       xmlif.dll rmnet.dll
+# SHARED_LIBRARY_PREFIX     C:\temp
+# ERRORS_OK                 1
+# A-ASSERT-ACTION           SILENT
 
-#FILE_PREFIX         C:\AcuDataFiles
-WIN32_NATIVECTLS    1
-IO_CREATES          1
-EXTEND_CREATES      1
-ACU_USER_DIR        C:\etc
+### TRACE
+# FILE_TRACE            9
+# FILE_TRACE_FLUSH      1
+# FILE_TRACE_TIMESTAMP  0
+# PARAGRAPH_TRACE       1
+# A_TRACE_LICENSE       1
+# A_TRACE               9
+# A_TRACE_LICENSE       1
+# ACU_DUMP              1
+# ACU_DUMP_FILE         C:\temp\acudump.txt
+# WARNINGS              3
 
-#V_VERSION              6
-#ACU_DUMP               1
-#ACU_DUMP_FILE          C:\temp\acudumpMIT.txt
-#DECIMAL_POINT          ,
-#COBOL_CHARACTER_SET    UTF-8
-#USE_UNICODE_FONTS      TRUE
-#TRANSLATE_TO_ANSI      TRUE
-#SHARED_LIBRARY_LIST    xmlif.dll rmnet.dll
-#SHARED_LIBRARY_PREFIX  C:\temp
-#ERRORS_OK              1
+### KEYSTROKE COPY/PASTE
+# KEYSTROKE EXCEPTION=1001 ^X
+# KEYSTROKE EXCEPTION=1002 ^C
+# KEYSTROKE EXCEPTION=1003 ^V
+# KEYSTROKE EXCEPTION=1004 ^A
+#    THESE LINES GOES INSIDE THE PROGRAM:
+#           SET EXCEPTION 1001 TO CUT-SELECTION 
+#           SET EXCEPTION 1002 TO COPY-SELECTION 
+#           SET EXCEPTION 1003 TO PASTE-SELECTION 
+#           SET EXCEPTION 1004 TO SELECT-ALL-SELECTION
 
+### ACUTHIN
+TC_SERVER_TIMEOUT               60
+TC_CHECK_ALIVE_INTERVAL         60
+TC_QUIT_MODE                    -1
+AGS_SOCKET_COMPRESS             ZLIB
+# AGS_BLOCK_SLEEP_TIME          1
+# AGS_RETRY_COUNT               1000
+# !COPY AcuThin-AutoUpdate.cfg
 
+### ACUSERVER
+# FILE_PREFIX           @hostname:C:\AcuDataFiles
+# ACUSERVER_PORT        6523
+# USE_LOCAL_SERVER      0
+# AGS_PING_TIME         60
+# AGS_BLOCK_SLEEP_TIME  1
+# SECURITY_METHOD       NAMED-PIPE
+# AGS_SOCKET_COMPRESS   ZLIB
+
+### ACUSQL
+# ACUSQL_RUNTIME_DLL    asqlsrvr.dll
+# ACUSQL_RUNTIME_DLL    esqllib.dll
+# ASQL_CONNECT_DATABASE support
+
+### ACU4GL FOR MSSQL
+# DEFAULT_HOST                  MSSQL
+# XFD_PREFIX                    .
+# A_MSSQL_DEFAULT_CONNECTION    127.0.0.1
+# A_MSSQL_DATABASE              support
+# A_MSSQL_LOCK_DB               support
+# A_MSSQL_LOGIN                 support	
+# A_MSSQL_PASSWD                YourStrongPassword
+# A_MSSQL_DEFAULT_OWNER         support
+# A_MSSQL_ODBC_DRIVER_NAME      ODBC Driver 13 for SQL Server
+
+### ACU4GL FOR ORACLE
+# DEFAULT_HOST              ORACLE
+# XFD_PREFIX                .
+# ORA_LOGIN                 user@server:port/instance
+# ORA_PASSWD                password
+# A_ORA_DATABASE            network-service set in tnsnames.ora
+# COMMIT_COUNT              1
+# A_ORA_MAX_FILE_CURSORS    20
+# MAX_CURSORS               20
+
+### ACU4GL FOR ODBC
+# DEFAULT_HOST          ODBC
+# XFD_PREFIX            .
+# A_ODBC_DATASOURCE     MS Access Databases
+# A_ODBC_LOGIN          user 
+# A_ODBC_PASSWD         password
+# 4GL_EXTRA_DB_COLS_OK  1
+
+### ACU4GL FOR INFORMIX
+# DEFAULT_HOST          INFORMIX
+# XFD_PREFIX            .
+# INF_LOGIN             support
+# INF_PASSWORD          YourStrongPassword
+# Databases             support
+# INFORMIX_TYPE         SE
+
+### ACU4GL FOR DB2
+# DEFAULT_HOST          DB2
+# XFD_PREFIX            .
+# A_DB2_LOGIN           support
+# A_DB2_PASSWD          YourStrongPassword
+# USER_PATH             user1
+
+### ACU4GL FOR SYBASE
+# DEFAULT_HOST              SYBASE
+# XFD_PREFIX                .
+# A_SYB_DEFAULT_CONNECTION  127.0.0.1
+# A_SYB_DATABASE            support
+# A_SYB_LOCK_DB             support
+# A_SYB_LOGIN               support
+# A_SYB_PASSWD              YourStrongPassword
