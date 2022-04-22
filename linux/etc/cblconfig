@@ -40,10 +40,10 @@ A_REMOVE_EMPTY_ERROR_FILE 1
 #           SET EXCEPTION 1004 TO SELECT-ALL-SELECTION
 
 ### ACUTHIN
-TC_SERVER_TIMEOUT             60
-TC_CHECK_ALIVE_INTERVAL       60
-TC_QUIT_MODE                  -1
-AGS_SOCKET_COMPRESS           ZLIB
+TC_SERVER_TIMEOUT               60
+TC_CHECK_ALIVE_INTERVAL         60
+TC_QUIT_MODE                    -1
+AGS_SOCKET_COMPRESS             ZLIB
 # AGS_BLOCK_SLEEP_TIME          1
 # AGS_RETRY_COUNT               1000
 # !COPY AcuThin-AutoUpdate.cfg
@@ -76,8 +76,8 @@ AGS_SOCKET_COMPRESS           ZLIB
 ### ACU4GL FOR ORACLE
 # DEFAULT_HOST              ORACLE
 # XFD_PREFIX                .
-# ORA_LOGIN                 user@server:port/instance
-# ORA_PASSWD                password
+# ORA_LOGIN                 support@server:port/instance
+# ORA_PASSWD                YourStrongPassword
 # A_ORA_DATABASE            network-service set in tnsnames.ora
 # COMMIT_COUNT              1
 # A_ORA_MAX_FILE_CURSORS    20

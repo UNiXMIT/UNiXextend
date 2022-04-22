@@ -1,4 +1,4 @@
-# GENERAL
+### GENERAL
 acurcl = "127.0.0.1"
 acurcl_port = 5632
 webserver_port = 3000
@@ -19,17 +19,17 @@ probing_connection = 10000
 # max_reconnect_attempts = 30
 # path_resources = "/AcuResources"
 
-# PROTOCOL
+### PROTOCOL
 authorized_access = false
 handshake_timeout = 3
 ws_compression = true
 max_pkg_size = 64000
 
-# LOG
+### LOG
 log_level = 15
 logfile = "/home/support/AcuSupport/etc/logs/gateway.log"
 
-# SSL
+### SSL
 use_ssl = false
 ssl_key_file = "/home/support/AcuSupport/etc/SSL/server.key"
 ssl_crt_file = "/home/support/AcuSupport/etc/SSL/server.crt"
