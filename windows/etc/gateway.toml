@@ -5,13 +5,13 @@ webserver_port = 3000
 tcp_port = 8000
 public_root_dir = "./Web"
 file_cache = "./Web/cache"
-path_fill_combo = "C:\etc\fillcombo.js"
+path_fill_combo = "C:\\etc\\fillcombo.js"
 append_log_file = false
 timeout_atw_conn = 2500
 probing_connection = 10000
 
 # enable_rsa_enc = false
-# path_custom_js = "C:\etc\customJSFunctionality.js"
+# path_custom_js = "C:\\etc\\customJSFunctionality.js"
 # reconnect_interval = 1000
 # max_reconnect_interval = 30000
 # reconnect_decay = 1
@@ -27,12 +27,12 @@ max_pkg_size = 64000
 
 ### LOG
 log_level = 15
-logfile = "C:\etc\logs\gateway.log"
+logfile = "C:\\etc\\logs\\gateway.log"
 
 ### SSL
 use_ssl = false
-ssl_key_file = "C:\etc\SSL\server.key"
-ssl_crt_file = "C:\etc\SSL\server.crt"
+ssl_key_file = "C:\\etc\\SSL\\server.key"
+ssl_crt_file = "C:\\etc\\SSL\\server.crt"
 
 # [custom_return]
 # DEFAULT = "https://www.microfocus.com"
