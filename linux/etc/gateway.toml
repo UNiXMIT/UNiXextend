@@ -9,6 +9,7 @@ path_fill_combo = "/home/support/AcuSupport/etc/fillcombo.js"
 append_log_file = false
 timeout_atw_conn = 2500
 probing_connection = 10000
+path_resources = "/home/support/AcuSupport/AcuResources"
 
 # enable_rsa_enc = false
 # path_custom_js = "/home/support/AcuSupport/etc/customJSFunctionality.js"
@@ -17,7 +18,6 @@ probing_connection = 10000
 # reconnect_decay = 1
 # timeout_interval = 200000
 # max_reconnect_attempts = 30
-# path_resources = "/AcuResources"
 
 ### PROTOCOL
 authorized_access = false
