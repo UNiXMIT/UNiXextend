@@ -119,7 +119,7 @@ To include timestamps on each line of the log files (does not apply to AcuXDBC l
 
 ## AcuToWeb Build:
 
-You can check the build number of AcuToWeb in thew following way:
+You can check the build number of AcuToWeb in the following way:
 
 1. In your browser enter the URL to access the initial AcuToWeb Connection Setup screen. Check the box 'Enable Logging Client'.  
 
