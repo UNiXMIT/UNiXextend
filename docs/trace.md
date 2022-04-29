@@ -43,8 +43,11 @@ All of the log and list files described below may be assigned any name which can
 The Runtime, AcuServer, and AcuConnect can automatically produce compressed log files by adding the -g option. It is advisable to give the log file an extension of .gz or .zip to indicate it is a compressed archive.
 
 #### Timestamps:
-To include timestamps on each line of the log files (does not apply to AcuXDBC logs), before proceeding with the following instructions set this in the environment, or add it to the related configuration file:  FILE_TRACE_TIMESTAMP 1
+To include timestamps on each line of the log files (does not apply to AcuXDBC logs), before proceeding with the following instructions set this in the environment, or add it to the related configuration file:  
 
+```
+FILE_TRACE_TIMESTAMP 1  
+```
 
 ## Runtime:
 
@@ -186,7 +189,7 @@ To customise the filename you can set the following variable to the path and nam
 ACU_DUMP_FILE       /path/to/file/fileName  
 ```
 
-More information about ADR can be found in the documentation - https://bit.ly/3a7e1p6  
+More information about ADR can be found in the documentation - https://bit.ly/3voSVip  
 
 
 ## Process Monitor Log
