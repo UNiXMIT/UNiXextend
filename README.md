@@ -60,6 +60,7 @@
 - [Network Share vs AcuServer Performance](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/NetworkShares-VS-AcuServer.md)
 
 ## KB Articles
+- [What is the cause for the transaction error 9E-12? What can be done to fix it?](https://bit.ly/3Lw1yxm)
 - [Very slow performance of XML EXPORT FILE on Linux](https://bit.ly/35XPHrK)
 - [Rebuilding a Vision file with Vutil gives an unrelated error message](https://bit.ly/32chaok)
 - [Strange behaviour of a program using AcuToWeb on an Apple CPU machine](https://bit.ly/3BhBe4a)
