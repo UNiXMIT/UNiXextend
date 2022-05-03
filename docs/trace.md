@@ -121,13 +121,14 @@ FILE_TRACE_TIMESTAMP TRUE
      acuthin.exe server:port -dlxe runtime.log aliasName
      ```
 
-3. At the debugger prompt enter 'tf 9', then 't flush' *, then 't timestamp', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.  If you did not include the path for the log file name it will be located in the working directory specified in the alias.
+3. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.  If you did not include the path for the log file name it will be located in the working directory specified in the alias.
 
 *Alternatively, if you don't want to or can't run the program in debug mode, add the following variables to the environment or to the runtime configuration file:  
 
 ```
 FILE_TRACE 9  
 FILE_TRACE_FLUSH 1  
+FILE_TRACE_TIMESTAMP TRUE  
 ```
 
 4. Zip up acurcl.log and runtime.log, and attach to the support case.
