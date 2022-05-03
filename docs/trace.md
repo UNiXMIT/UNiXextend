@@ -39,6 +39,18 @@ All of the log and list files described below may be assigned any name which can
 %h - hostname
 ```
 
+For example, the following:  
+
+```
+wrun32.%p.log
+```
+
+will generate a log which includes the PID value in the file name:  
+
+```
+wrun32.12345.log
+```
+
 #### Compressed logs:
 The Runtime, AcuServer, and AcuConnect can automatically produce compressed log files by adding the -g option. It is advisable to give the log file an extension of .gz or .zip to indicate it is a compressed archive.
 
@@ -63,7 +75,14 @@ FILE_TRACE_TIMESTAMP 1
      wrun32 -dlxe runtime.log <other options> programName
      ```
 
-2. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
+2. At the debugger prompt enter 'tf 9', then 't flush' *, then 't timestamp', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
+
+*Alternatively, if you don't want to or can't run the program in debug mode, add the following variables to the environment or to the runtime configuration file:  
+
+```
+FILE_TRACE 9  
+FILE_TRACE_FLUSH 1  
+```
 
 3. Zip up runtime.log and attach to the support case.
 
@@ -101,7 +120,14 @@ FILE_TRACE_TIMESTAMP 1
      acuthin.exe server:port -dlxe runtime.log aliasName
      ```
 
-3. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.  If you did not include the path for the log file name it will be located in the working directory specified in the alias.
+3. At the debugger prompt enter 'tf 9', then 't flush' *, then 't timestamp', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.  If you did not include the path for the log file name it will be located in the working directory specified in the alias.
+
+*Alternatively, if you don't want to or can't run the program in debug mode, add the following variables to the environment or to the runtime configuration file:  
+
+```
+FILE_TRACE 9  
+FILE_TRACE_FLUSH 1  
+```
 
 4. Zip up acurcl.log and runtime.log, and attach to the support case.
 
