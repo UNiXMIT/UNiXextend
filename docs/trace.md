@@ -75,7 +75,7 @@ FILE_TRACE_TIMESTAMP 1
      wrun32 -dlxe runtime.log <other options> programName
      ```
 
-2. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
+2. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *.  Exercise your program to produce the bad behaviour, and then exit if the Runtime hasn't already terminated.
 
 *Alternatively, if you don't want to or can't run the program in debug mode, add the following variables to the environment or to the runtime configuration file:  
 
@@ -121,7 +121,7 @@ FILE_TRACE_TIMESTAMP TRUE
      acuthin.exe server:port -dlxe runtime.log aliasName
      ```
 
-3. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.  If you did not include the path for the log file name it will be located in the working directory specified in the alias.
+3. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *.  Exercise your program to produce the bad behaviour, and then exit if the Runtime hasn't already terminated.  If you did not include the path for the log file name it will be located in the working directory specified in the alias.
 
 *Alternatively, if you don't want to or can't run the program in debug mode, add the following variables to the environment or to the runtime configuration file:  
 
@@ -144,7 +144,7 @@ FILE_TRACE_TIMESTAMP TRUE
      LOG_LEVEL      15
      LOGFILE        /path/to/gateway.log
      ```
-3. Start AcuToWeb then exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
+3. Start AcuToWeb then exercise your program to produce the bad behaviour, and then exit if the Runtime hasn't already terminated.
 
 4. Zip up the gateway.log and attach to the support case.
 
@@ -234,7 +234,7 @@ Note: Please have your program ready to run before starting procmon.exe in step 
  
 4.  Start your program i.e. Excel
  
-5.  Exercise your program to produce the bad behavior.
+5.  Exercise your program to produce the bad behaviour.
  
 6.  In Process Monitor click the little magnifying glass icon to stop event capture. 
  
