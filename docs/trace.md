@@ -75,13 +75,14 @@ FILE_TRACE_TIMESTAMP 1
      wrun32 -dlxe runtime.log <other options> programName
      ```
 
-2. At the debugger prompt enter 'tf 9', then 't flush' *, then 't timestamp', then 'g'.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
+2. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *.  Exercise your program to produce the bad behavior, and then exit if the Runtime hasn't already terminated.
 
 *Alternatively, if you don't want to or can't run the program in debug mode, add the following variables to the environment or to the runtime configuration file:  
 
 ```
 FILE_TRACE 9  
 FILE_TRACE_FLUSH 1  
+FILE_TRACE_TIMESTAMP TRUE  
 ```
 
 3. Zip up runtime.log and attach to the support case.
