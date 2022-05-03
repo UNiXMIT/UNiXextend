@@ -29,7 +29,7 @@
 
 ### Wiki
 #### AcuRuntime  
-- [ACUCOBOL-GT Trace Files For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/trace.md)
+- [ACUCOBOL-GT Trace Files For Troubleshooting](https://bit.ly/3vGdWpa)
 - [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ProgramCutDown.md)
 - [New Activator Wizard README](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/NewActivatorREADME.md)
 - [Supported Windows Versions](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/windowsVersions.md)
@@ -60,6 +60,7 @@
 - [Network Share vs AcuServer Performance](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/NetworkShares-VS-AcuServer.md)
 
 ## KB Articles
+- [ACUCOBOL-GT Trace Files For Troubleshooting](https://bit.ly/3vGdWpa)
 - [What is the cause for the transaction error 9E-12? What can be done to fix it?](https://bit.ly/3Lw1yxm)
 - [Very slow performance of XML EXPORT FILE on Linux](https://bit.ly/35XPHrK)
 - [Rebuilding a Vision file with Vutil gives an unrelated error message](https://bit.ly/32chaok)
