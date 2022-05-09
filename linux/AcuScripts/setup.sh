@@ -62,9 +62,11 @@ curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/fillCombo.js
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/gateway.conf
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/gateway.toml
+curl -s -O https://gist.githubusercontent.com/UNiXMIT/72e2459663464c3c512b4f9d87e66da3/raw/a2a07a5bcabc0f2cd67583f8132a3feabbcfb3f3/TCPtuning.conf
 cd ~/AcuSupport
 
 echo "#0 18 * * * root shutdown -h now" >> ~/AcuSupport/sudo-crontab
+echo "@reboot sysctl -p ~/AcuSupport/etc/TCPtuning.conf" >> ~/AcuSupport/sudo-crontab
 sudo crontab ~/AcuSupport/sudo-crontab
 rm ~/AcuSupport/sudo-crontab
 
@@ -83,4 +85,5 @@ if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
   sudo mv motd.temp /etc/update-motd.d/00-header
 else
   sudo mv motd.temp /etc/motd
+  sysctl -p ~/AcuSupport/etc/TCPtuning.conf
 fi
