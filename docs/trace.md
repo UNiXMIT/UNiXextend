@@ -164,9 +164,9 @@ You can check the build number of AcuToWeb in the following way:
 
 ## AcuToWeb Desktop
 
-AcuToWeb Desktop stores logs locally within the GUI. The Log Level can be changed from the menu Tool -> Log Level. These can be saved to a file using the menu Tool -> Save Log to File.  
+AcuToWeb Desktop stores logs locally within the GUI. The Log Level can be changed from the menu Tools -> Log Level. These can be saved to a file using the menu Tools -> Save Log to File.  
 
-If AcuToWeb Desktop crashes, those log files are lost and cannot be recovered. To write the log straight into a file you can modify the registry:  
+If AcuToWeb Desktop crashes, those log files are lost and cannot be recovered. To write the log straight into a file, you can modify the registry:  
 
 HKEY_CURRENT_USER\SOFTWARE\Micro Focus\AcuToWeb Desktop   
 
