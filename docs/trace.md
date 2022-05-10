@@ -160,6 +160,24 @@ You can check the build number of AcuToWeb in the following way:
 
 ![1](images/atw-build.png)
 
+## AcuToWeb Desktop
+
+AcuToWeb Desktop stores logs locally within the GUI. The Log Level can be changed from the menu Tool -> Log Level. These can be saved to a file using the menu Tool -> Save Log to File.  
+
+If AcuToWeb Desktop crashes, those log files are lost and cannot be recovered. To write the log straight into a file you can modify the registry:  
+
+HKEY_CURRENT_USER\SOFTWARE\Micro Focus\AcuToWeb Desktop   
+
+LogFileName    C:\temp\ATWDesktop.log  
+LogOnFile      1  
+
+```
+reg add "HKEY_CURRENT_USER\SOFTWARE\Micro Focus\AcuToWeb Desktop" /v LogFileName /t REG_SZ /d "\temp\ATWDesktop.log" /f
+reg add "HKEY_CURRENT_USER\SOFTWARE\Micro Focus\AcuToWeb Desktop" /v LogOnFile /t REG_DWORD /d 1 /f
+```
+
+Note: Make sure you don't have any instances of AcuToWebDesktop running when you make these registry changes.
+
 ## AcuServer:  
 
   Note: Please send this trace in addition to the runtime.log above.
