@@ -13,6 +13,8 @@ SupportLine engineers frequently require a log file in order to troubleshoot an 
 
 [AcuToWeb Build](#AcuToWeb-Build)
 
+[AcuToWeb Desktop](#AcuToWeb-Desktop)
+
 [AcuServer](#AcuServer)
 
 [AcuXDBC](#AcuXDBC)
