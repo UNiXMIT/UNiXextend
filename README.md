@@ -60,6 +60,9 @@
 - [Network Share vs AcuServer Performance](https://portal.microfocus.com/s/article/KM000002013)
 
 ## KB Articles
+- [AcuToWeb Desktop does not resolve "Waiting for alias" then closes all instances on page refresh](https://portal.microfocus.com/s/article/KM000006433)
+- [Is AcuToWeb Desktop aware of different remote desktop sessions?](https://portal.microfocus.com/s/article/KM000006434)
+- [When using AcuToWeb, require.js times out and the program won't load](https://portal.microfocus.com/s/article/KM000006435)
 - [ACUCOBOL-GT Trace Files For Troubleshooting](https://portal.microfocus.com/s/article/KM000005044)
 - [What is the cause for the transaction error 9E-12? What can be done to fix it?](https://portal.microfocus.com/s/article/KM000006299)
 - [Very slow performance of XML EXPORT FILE on Linux](https://portal.microfocus.com/s/article/KM000003850)
