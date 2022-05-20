@@ -114,3 +114,7 @@ AGS_SOCKET_COMPRESS             ZLIB
 # A_SYB_LOCK_DB             support
 # A_SYB_LOGIN               support
 # A_SYB_PASSWD              YourStrongPassword
+
+### EXTFH
+# DEFAULT_FILESYSTEM EXTFH
+# A_EXTFH_LIB C:\Program Files (x86)\Micro Focus\Visual COBOL\bin\cblrtsm.dll
