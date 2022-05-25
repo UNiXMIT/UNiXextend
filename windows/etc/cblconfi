@@ -6,6 +6,7 @@ IO_CREATES                  1
 EXTEND_CREATES              1
 ACU_USER_DIR                C:\etc
 A_REMOVE_EMPTY_ERROR_FILE   1
+# QUIT_MODE                 -2
 # V_VERSION                 6
 # DECIMAL_POINT             ,
 # COBOL_CHARACTER_SET       UTF-8
