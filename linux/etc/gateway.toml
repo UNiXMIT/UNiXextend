@@ -1,43 +1,59 @@
-### GENERAL
-acurcl = "127.0.0.1"
-acurcl_port = 5632
+[gateway]
 webserver_port = 3000
 tcp_port = 8000
-public_root_dir = "./Web"
 file_cache = "./Web/cache"
-path_fill_combo = "/home/support/AcuSupport/etc/fillcombo.js"
-append_log_file = false
-timeout_atw_conn = 2500
 probing_connection = 10000
-path_resources = "/home/support/AcuSupport/AcuResources"
-
-# enable_rsa_enc = false
-# path_custom_js = "/home/support/AcuSupport/etc/customJSFunctionality.js"
-# reconnect_interval = 1000
-# max_reconnect_interval = 30000
-# reconnect_decay = 1
-# timeout_interval = 200000
-# max_reconnect_attempts = 30
-
-### PROTOCOL
-authorized_access = false
-handshake_timeout = 3
 ws_compression = true
 max_pkg_size = 64000
-
-### LOG
+enable_rsa_enc = false
+reconnect_interval = 1000
+max_reconnect_interval = 30000
+reconnect_decay = 1
+timeout_interval = 200000
+max_reconnect_attempts = 30
 log_level = 15
 logfile = "/home/support/AcuSupport/etc/logs/gateway.log"
-
-### SSL
+append_log_file = false
 use_ssl = false
 ssl_key_file = "/home/support/AcuSupport/etc/SSL/server.key"
 ssl_crt_file = "/home/support/AcuSupport/etc/SSL/server.crt"
 
-# [custom_return]
+[acuconnect]
+acurcl = "127.0.0.1"
+acurcl_port = 5632
+authorized_access = false
+handshake_timeout = 3
+
+[web]
+public_root_dir = "./Web"
+file_cache = "./Web/cache"
+path_fill_combo = "/home/support/AcuSupport/etc/fillcombo.js"
+path_resources = "/home/support/AcuSupport/AcuResources"
+# path_custom_js = "/home/support/AcuSupport/etc/customJSFunctionality.js"
+
+# [web.customize_css]
+# Example1 = "./Web/_CSS/examples/defaultCustomCSS.css"
+# FX = "./Web/_CSS/examples/ThemeFX.css"
+
+# [web.custom_return]
 # DEFAULT = "https://www.microfocus.com"
 # MY_ALIAS = "https://www.google.com"
 
-# [customize_css]
-# Example1 = "./Web/_CSS/examples/defaultCustomCSS.css"
-# FX = "./Web/_CSS/examples/ThemeFX.css"
+[web.resize]
+
+[desktop]
+timeout_atw_conn = 2500
+
+# [desktop.autoupdate]
+# atwdt_disable_auto_update = false
+# atwdt_auto_update_query = false
+# atwdt_auto_update_query_title = "ACUCOBOL-GT AcuToWeb Desktop"
+# atwdt_auto_update_query_message = "Your AcuToWeb Desktop requires an update.\\n\\nPlease click OK to launch the update."
+# atwdt_download_dialog = false
+# atwdt_download_dialog_title = "ACUCOBOL-GT AcuToWeb Desktop Automatic Update"
+# atwdt_download_description = "Downloading installation file..."
+# atwdt_installer_args = ""
+# atwdt_installer_run_async = false
+# atwdt_auto_update_notify_fail = false
+# atwdt_auto_update_failed_title = ""
+# atwdt_auto_update_failed_message = "The update was not completed.\\n\\nPlease try again using the installer."
