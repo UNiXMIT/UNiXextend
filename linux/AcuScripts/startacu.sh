@@ -11,18 +11,19 @@ Options:
  startacu.sh [options] <parameters>   Start/Stop an AcuCOBOL service    
 
 Usage: 
- -c stop or status      Stop or Status of the service
- -l                     Set logging on the service
- -r port                AcuRCL with specified port
- -w                     AcuToWeb (Port is set in gateway.conf)
- -s port                AcuServer with specified port
- -x port                AcuXDBC Server with specified port
- -h                     Usage
+ -c stop or status          Stop or Status of the service
+ -l                         Set logging on the service
+ -r port                    AcuRCL with specified port
+ -w config path + filename  AcuToWeb (Port is set in gateway.conf)
+ -s port                    AcuServer with specified port
+ -x port                    AcuXDBC Server with specified port
+ -h                         Usage
 
 Example:
- startacu.sh -l -r 10400          Start AcuRCL on port 10400 with logging enabled
- startacu.sh -c stop -r 10400     Stop AcuRCL started on port 10400
- startacu.sh -c status -r 10400   Status of AcuRCL started on port 10400"
+ startacu.sh -l -r 10400                    Start AcuRCL on port 10400 with logging enabled
+ startacu.sh -c stop -r 10400               Stop AcuRCL started on port 10400
+ startacu.sh -c status -r 10400             Status of AcuRCL started on port 10400
+ startacu.sh -w /home/support/gateway.conf  Start AcuToWeb with specified config file"
 }
 
 start_acurcl()
@@ -52,7 +53,11 @@ start_atw()
         if [[ "$ACUCONFIG" = "status" ]] ; then
             $ACUCOBOL/acutoweb/acutoweb-gateway -info
         else
-            $ACUCOBOL/acutoweb/acutoweb-gateway -start
+            if [ -z "$ATW_CFG" ] ; then
+                $ACUCOBOL/acutoweb/acutoweb-gateway -start
+            else
+                $ACUCOBOL/acutoweb/acutoweb-gateway -start -c $ATW_CFG
+            fi
         fi
     fi
 }
@@ -109,6 +114,7 @@ while getopts ":r:s:c:x:whl" z; do
             ;;
         w)  
             START_ATW=TRUE
+            export ATW_CFG=$OPTARG
             ;;
         s)  
             START_ACUSERVE=TRUE
