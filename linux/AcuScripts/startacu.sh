@@ -53,7 +53,7 @@ start_atw()
         if [[ "$ACUOP" = "status" ]] ; then
             $ACUCOBOL/acutoweb/acutoweb-gateway -info
         else
-            if [ -z "$ATW_CFG" ] ; then
+            if [[ -z "$ATW_CFG" ]] ; then
                 $ACUCOBOL/acutoweb/acutoweb-gateway -start
             else
                 $ACUCOBOL/acutoweb/acutoweb-gateway -start -c $ATW_CFG
