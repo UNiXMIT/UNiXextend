@@ -33,9 +33,17 @@ If you need to connect to a remote AcuXDBC Server, use the related fields Networ
 
 Click OK to save the DSN.  
 
-**Create the Linked Server in SSMS**
+**Create the Linked Server in SSMS**  
 
-![3](images/mssql-2.png)
+via the GUI 
+
+![3](images/mssql-2.png)  
+
+Or via script  
+
+```
+EXEC master.dbo.sp_addlinkedserver @server = N'ACUXDBCLINK', @srvproduct=N'AcuXDBC 10.4.1', @provider=N'SQLOLEDB', @datasrc=N'XDBC'  
+```
 
 **Provider String Examples**  
 
