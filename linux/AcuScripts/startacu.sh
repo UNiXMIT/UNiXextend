@@ -53,10 +53,10 @@ start_atw()
         if [[ "$ACUOP" = "status" ]] ; then
             $ACUCOBOL/acutoweb/acutoweb-gateway -info
         else
-            if [ -z "$ATWCFG" ] ; then
+            if [ -z "$ATW_CFG" ] ; then
                 $ACUCOBOL/acutoweb/acutoweb-gateway -start
             else
-                $ACUCOBOL/acutoweb/acutoweb-gateway -start -c $ATWCFG
+                $ACUCOBOL/acutoweb/acutoweb-gateway -start -c $ATW_CFG
             fi
         fi
     fi
@@ -101,7 +101,10 @@ start_acuxdbcs()
 invalidARG=
 ACULOG=
 ACUOP=
-ATWCFG=
+ACURCL_PORT=
+ATW_CFG=
+ACUSERVER_PORT=
+ACUXDBCS_PORT=
 START_ACURCL=
 START_ATW=
 START_ACUSERVE=
@@ -115,7 +118,7 @@ while getopts ":r:s:c:x:whl" z; do
             ;;
         w)  
             START_ATW=TRUE
-            export ATWCFG=$OPTARG
+            export ATW_CFG=$OPTARG
             ;;
         s)  
             START_ACUSERVE=TRUE
