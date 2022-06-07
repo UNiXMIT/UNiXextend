@@ -110,7 +110,7 @@ START_ATW=
 START_ACUSERVE=
 START_ACUXDBCS=
 OPTIND=1
-while getopts ":r:s:c:x:whl" z; do
+while getopts ":r:s:c:x:w:hl" z; do
     case "${z}" in
         r)
             START_ACURCL=TRUE
