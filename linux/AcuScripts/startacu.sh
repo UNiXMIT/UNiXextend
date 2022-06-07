@@ -28,10 +28,10 @@ Example:
 
 start_acurcl()
 {
-    if [[ "$ACUCONFIG" == "stop" ]] ; then
+    if [[ "$ACUOP" == "stop" ]] ; then
         $ACUCOBOL/bin/acurcl -kill -n $ACURCL_PORT -@
     else
-        if [[ "$ACUCONFIG" = "status" ]] ; then
+        if [[ "$ACUOP" = "status" ]] ; then
             $ACUCOBOL/bin/acurcl -info -n $ACURCL_PORT
         else
             if [[ "$ACULOG" = "log" ]] ; then
@@ -47,16 +47,16 @@ start_acurcl()
 
 start_atw()
 {
-    if [[ "$ACUCONFIG" == "stop" ]] ; then
+    if [[ "$ACUOP" == "stop" ]] ; then
         $ACUCOBOL/acutoweb/acutoweb-gateway -kill
     else
-        if [[ "$ACUCONFIG" = "status" ]] ; then
+        if [[ "$ACUOP" = "status" ]] ; then
             $ACUCOBOL/acutoweb/acutoweb-gateway -info
         else
-            if [ -z "$ATW_CFG" ] ; then
+            if [ -z "$ATWCFG" ] ; then
                 $ACUCOBOL/acutoweb/acutoweb-gateway -start
             else
-                $ACUCOBOL/acutoweb/acutoweb-gateway -start -c $ATW_CFG
+                $ACUCOBOL/acutoweb/acutoweb-gateway -start -c $ATWCFG
             fi
         fi
     fi
@@ -64,10 +64,10 @@ start_atw()
 
 start_acuserve()
 {
-    if [[ "$ACUCONFIG" == "stop" ]] ; then
+    if [[ "$ACUOP" == "stop" ]] ; then
         $ACUCOBOL/bin/acuserve -kill -n $ACUSERVE_PORT -@
     else
-        if [[ "$ACUCONFIG" = "status" ]] ; then
+        if [[ "$ACUOP" = "status" ]] ; then
             $ACUCOBOL/bin/acuserve -info -n $ACUSERVE_PORT
         else
             if [[ "$ACULOG" = "log" ]] ; then
@@ -83,10 +83,10 @@ start_acuserve()
 
 start_acuxdbcs()
 {
-    if [[ "$ACUCONFIG" == "stop" ]] ; then
+    if [[ "$ACUOP" == "stop" ]] ; then
         $ACUCOBOL/bin/acuxdbcs.sh -kill -n $ACUXDBCS_PORT
     else
-        if [[ "$ACUCONFIG" = "status" ]] ; then
+        if [[ "$ACUOP" = "status" ]] ; then
             $ACUCOBOL/bin/acuxdbcs.sh -info -n $ACUXDBCS_PORT
         else
             if [[ "$ACULOG" = "log" ]] ; then
@@ -100,7 +100,8 @@ start_acuxdbcs()
 
 invalidARG=
 ACULOG=
-ACUCONFIG=
+ACUOP=
+ATWCFG=
 START_ACURCL=
 START_ATW=
 START_ACUSERVE=
@@ -114,7 +115,7 @@ while getopts ":r:s:c:x:whl" z; do
             ;;
         w)  
             START_ATW=TRUE
-            export ATW_CFG=$OPTARG
+            export ATWCFG=$OPTARG
             ;;
         s)  
             START_ACUSERVE=TRUE
@@ -125,7 +126,7 @@ while getopts ":r:s:c:x:whl" z; do
             export ACUXDBCS_PORT=$OPTARG
             ;;
         c)  
-            ACUCONFIG=$OPTARG
+            ACUOP=$OPTARG
             ;;
         l)  
             ACULOG=log
