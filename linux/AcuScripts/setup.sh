@@ -85,5 +85,5 @@ if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
   sudo mv motd.temp /etc/update-motd.d/00-header
 else
   sudo mv motd.temp /etc/motd
-  sysctl -p ~/AcuSupport/etc/TCPtuning.conf
+  sudo sysctl -p ~/AcuSupport/etc/TCPtuning.conf
 fi
