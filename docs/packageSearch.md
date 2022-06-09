@@ -8,4 +8,4 @@ yum provides [filename]
 apt-file search [filename] 
 
 ## SLES/SUSE 
-zypper wp [filename]
+zypper se --provides --match-exact [filename]

@@ -7,8 +7,7 @@ if command -v yum >/dev/null; then
   sudo yum update -y;
   sudo dnf group install -y "Development Tools";
   sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm;
-  sudo yum install -y libnsl podman unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-compat-libs libaio-devel glibc.i686;
-  sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5;
+  sudo yum install -y libnsl podman unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686;
   sudo setenforce 0;
   sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config;
 elif command -v apt >/dev/null; then
@@ -18,12 +17,13 @@ elif command -v apt >/dev/null; then
   sudo apt update;
   sudo apt upgrade -y;
   sudo dpkg --add-architecture i386;
-  sudo apt install -y build-essential podman unixodbc-dev wget curl cron dos2unix default-jdk htop tmux lib32stdc++6 libaio-dev libncurses5-dev libncursesw5-dev;
+  sudo apt install -y build-essential podman unixodbc-dev wget curl cron dos2unix default-jdk htop tmux lib32stdc++6 libaio-dev libncurses5 apt-file;
+  sudo apt-file update;
 elif command -v zypper >/dev/null; then
   sudo zypper refresh;
   sudo zypper update -y;
   sudo zypper install -y -t pattern devel_C_C++;
-  sudo zypper install -y cronie podman unixODBC wget curl dos2unix java-11-openjdk htop tmux libaio-devel libstdc++6-32bit;
+  sudo zypper install -y cronie podman unixODBC wget curl dos2unix java-11-openjdk htop tmux libncurses5-32bit libaio-devel libstdc++6-32bit;
 else
   echo "Install CMD not identified"
 fi
