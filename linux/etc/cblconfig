@@ -70,7 +70,7 @@ AGS_SOCKET_COMPRESS             ZLIB
 # A_MSSQL_LOCK_DB               support
 # A_MSSQL_LOGIN                 support	
 # A_MSSQL_PASSWD                YourStrongPassword
-# A_MSSQL_DEFAULT_OWNER         support
+# A_MSSQL_DEFAULT_OWNER         dbo
 # A_MSSQL_ODBC_DRIVER_NAME      ODBC Driver 13 for SQL Server
 
 ### ACU4GL FOR ORACLE
