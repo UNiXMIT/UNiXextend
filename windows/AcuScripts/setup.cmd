@@ -23,6 +23,8 @@ choco install tinytask
 choco install nircmd
 choco install speedtest
 choco install hashtab
+del C:\Users\support\Desktop\*
+del C:\Users\support\Desktop\*
 
 :: Create directories, change permissions and set PATH
 md \temp
