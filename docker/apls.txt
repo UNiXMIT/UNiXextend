@@ -6,8 +6,8 @@ podman run -d --name APLS --privileged=true -p 5814:5814 -e EULA='true' -e TIME_
 podman exec -it APLS bash
 
 # Remove your container
-podman stop REDIS
-podman rm REDIS
+podman stop APLS
+podman rm APLS
 
 # Source
 https://dockr.ly/3MRFDAr
