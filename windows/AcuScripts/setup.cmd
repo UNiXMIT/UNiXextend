@@ -14,25 +14,26 @@ choco install sysinternals
 choco install vcredist140
 choco install dotnet3.5
 choco install 7zip
-choco install adobereader
 :: choco install visualstudio2017professional
 :: choco install visualstudio2019professional
 :: choco install visualstudio2022professional
-choco install microsoft-windows-terminal
-choco install revo-uninstaller
-choco install lockhunter
-choco install insomnia-rest-api-client
-choco install lessmsi
-choco install linkshellextension
-choco install dotpeek
-choco install tinytask
-choco install nircmd
-choco install speedtest
-choco install hashtab
-choco install clumsy
+:: choco install microsoft-windows-terminal
+:: choco install revo-uninstaller
+:: choco install lockhunter
+:: choco install adobereader
+:: choco install insomnia-rest-api-client
+:: choco install lessmsi
+:: choco install linkshellextension
+:: choco install dotpeek
+:: choco install tinytask
+:: choco install nircmd
+:: choco install speedtest
+:: choco install hashtab
+:: choco install clumsy
 
-del \Users\support\Desktop\*
-del \Users\Public\Desktop\*
+del /q \Users\support\Desktop\*
+del /q \Users\Public\Desktop\*
+del /q \Users\Administrator\Desktop\*
 
 :: Create directories, change permissions and set PATH
 md \temp
@@ -80,7 +81,8 @@ Rundll32 iesetup.dll, IEHardenLMSettings
 Rundll32 iesetup.dll, IEHardenUser 
 Rundll32 iesetup.dll, IEHardenAdmin
 
-reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}" /f /va REG DELETE "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}" /f /va
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}" /f /va
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}" /f /va
 
 :: Enable OpenSSH Server
 powershell -command "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0"
