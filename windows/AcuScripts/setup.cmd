@@ -1,7 +1,7 @@
 @ECHO OFF
 :: Create Admin user
-:: net user /add support Unidos30
-:: net localgroup administrators support /add
+net user /add support Unidos30
+net localgroup administrators support /add
 
 :: Install Chocolatey
 powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
@@ -30,6 +30,9 @@ choco install nircmd
 choco install speedtest
 choco install hashtab
 choco install clumsy
+
+del \Users\support\Desktop\*
+del \Users\Public\Desktop\*
 
 :: Create directories, change permissions and set PATH
 md \temp
