@@ -29,6 +29,7 @@ choco install tinytask
 choco install nircmd
 choco install speedtest
 choco install hashtab
+choco install clumsy
 
 :: Create directories, change permissions and set PATH
 md \temp

@@ -3,6 +3,8 @@
 # sudo (apt/yum/zypper) install -y curl
 # curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | bash 
 
+user=support
+
 if command -v yum >/dev/null; then
   sudo yum update -y;
   sudo dnf group install -y "Development Tools";
@@ -28,20 +30,20 @@ else
   echo "Install CMD not identified"
 fi
 
-echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> ~/.bashrc
+echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> /home/$user/.bashrc
 
 cd /home
 [ ! -d "products" ] && sudo mkdir -m 755 products
 sudo chown $(whoami):$(id -gn) products
 
-cd ~
+cd /home/$user
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/profile.sh
 sudo mv profile.sh /etc/profile.d/profile.sh
 sudo chmod +x /etc/profile.d/profile.sh
 
-cd ~
+cd /home/$user
 [ ! -d "AcuSupport" ] && mkdir -m 775 AcuSupport
-cd ~/AcuSupport
+cd /home/$user/AcuSupport
 [ ! -d "AcuDataFiles" ] && mkdir AcuDataFiles
 [ ! -d "AcuLogs" ] && mkdir AcuLogs
 [ ! -d "AcuResources" ] && mkdir AcuResources
@@ -49,11 +51,11 @@ cd ~/AcuSupport
 [ ! -d "AcuScripts" ] && mkdir AcuScripts
 [ ! -d "CustomerPrograms" ] && mkdir CustomerPrograms
 [ ! -d "etc" ] && mkdir etc
-cd ~/AcuSupport/AcuScripts
+cd /home/$user/AcuSupport/AcuScripts
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setenv.sh
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/startacu.sh
 chmod +x setenv.sh startacu.sh
-cd ~/AcuSupport/etc
+cd /home/$user/AcuSupport/etc
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/a_srvcfg
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/acurcl.cfg
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/acurcl.ini
@@ -63,12 +65,10 @@ curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/gateway.conf
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/gateway.toml
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/TCPtuning.conf
-cd ~/AcuSupport
+cd /home/$user/AcuSupport
 
-echo "#0 18 * * * root shutdown -h now" >> ~/AcuSupport/sudo-crontab
-echo "@reboot sysctl -p ~/AcuSupport/etc/TCPtuning.conf" >> ~/AcuSupport/sudo-crontab
-sudo crontab ~/AcuSupport/sudo-crontab
-rm ~/AcuSupport/sudo-crontab
+(crontab -l ; echo "#0 18 * * * root shutdown -h now")| crontab -
+(crontab -l ; echo "@reboot sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf")| crontab -
 
 . /etc/os-release
 echo " " > motd.temp
@@ -85,5 +85,5 @@ if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
   sudo mv motd.temp /etc/update-motd.d/00-header
 else
   sudo mv motd.temp /etc/motd
-  sudo sysctl -p ~/AcuSupport/etc/TCPtuning.conf
+  sudo sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf
 fi
