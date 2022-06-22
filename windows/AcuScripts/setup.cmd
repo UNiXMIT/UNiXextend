@@ -15,7 +15,7 @@ choco install vcredist140 --force --params "ALLUSERS=1"
 choco install dotnet3.5 --force --params "ALLUSERS=1"
 choco install 7zip --force --params "ALLUSERS=1"
 :: choco install visualstudio2017professional
-:: choco install visualstudio2019professional
+choco install visualstudio2019professional --force --params "ALLUSERS=1"
 :: choco install visualstudio2022professional
 :: choco install microsoft-windows-terminal
 :: choco install revo-uninstaller
