@@ -8,14 +8,14 @@ powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[Syste
 
 :: Install Software
 choco feature enable -n=allowGlobalConfirmation
-choco install googlechrome --force --params "ALLUSERS=1"
-choco install vscode /NoDesktopIcon --force --params "ALLUSERS=1"
-choco install sysinternals --force --params "ALLUSERS=1"
-choco install vcredist140 --force --params "ALLUSERS=1"
-choco install dotnet3.5 --force --params "ALLUSERS=1"
-choco install 7zip --force --params "ALLUSERS=1"
+choco install googlechrome 
+choco install vscode /NoDesktopIcon 
+choco install sysinternals 
+choco install vcredist140 
+choco install dotnet3.5 
+choco install 7zip 
 :: choco install visualstudio2017professional
-choco install visualstudio2019professional --force --params "ALLUSERS=1"
+choco install visualstudio2019professional
 :: choco install visualstudio2022professional
 :: choco install microsoft-windows-terminal
 :: choco install revo-uninstaller
