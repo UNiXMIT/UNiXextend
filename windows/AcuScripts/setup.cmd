@@ -15,7 +15,7 @@ choco install vcredist140
 choco install dotnet3.5 
 choco install 7zip 
 :: choco install visualstudio2017professional
-choco install visualstudio2019professional
+:: choco install visualstudio2019professional
 :: choco install visualstudio2022professional
 :: choco install microsoft-windows-terminal
 :: choco install revo-uninstaller
