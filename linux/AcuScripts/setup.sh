@@ -4,6 +4,7 @@
 # curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | bash 
 
 user=support
+echo"$USER:Unidos30" | chpasswd
 
 if command -v yum >/dev/null; then
   sudo yum update -y;
