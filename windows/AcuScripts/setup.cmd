@@ -13,6 +13,8 @@ choco install vscode /NoDesktopIcon
 choco install sysinternals 
 choco install vcredist140 
 choco install dotnet3.5 
+choco install windows-sdk-11-version-22h2-all
+choco install visualstudio2017buildtools
 choco install 7zip 
 choco install winscp
 :: choco install visualstudio2017professional
