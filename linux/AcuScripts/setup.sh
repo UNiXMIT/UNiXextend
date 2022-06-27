@@ -32,6 +32,7 @@ else
 fi
 
 echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> /home/$user/.bashrc
+sed -i -E 's/#?PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config && service ssh restart
 
 cd /home
 [ ! -d "products" ] && sudo mkdir -m 755 products
