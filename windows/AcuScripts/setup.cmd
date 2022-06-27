@@ -14,6 +14,7 @@ choco install sysinternals
 choco install vcredist140 
 choco install dotnet3.5 
 choco install 7zip 
+choco install winscp
 :: choco install visualstudio2017professional
 :: choco install visualstudio2019professional
 :: choco install visualstudio2022professional
