@@ -13,7 +13,7 @@ choco install vscode /NoDesktopIcon
 choco install sysinternals 
 choco install vcredist140 
 choco install dotnet3.5 
-choco install windows-sdk-11-version-22h2-all
+choco install windows-sdk-10.1
 choco install microsoft-build-tools
 choco install 7zip 
 choco install winscp
