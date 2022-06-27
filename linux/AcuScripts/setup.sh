@@ -36,7 +36,7 @@ sed -i -E 's/#?PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/s
 
 cd /home
 [ ! -d "products" ] && sudo mkdir -m 755 products
-sudo chown $(whoami):$(id -gn) products
+sudo chown $user:$user products
 
 cd /home/$user
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/profile.sh
