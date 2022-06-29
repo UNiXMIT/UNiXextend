@@ -20,6 +20,7 @@ choco install winscp
 :: choco install visualstudio2022professional
 :: choco install windows-sdk-10.1
 :: choco install microsoft-build-tools
+:: choco install office365business
 :: choco install microsoft-windows-terminal
 :: choco install revo-uninstaller
 :: choco install lockhunter
