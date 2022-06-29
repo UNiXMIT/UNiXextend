@@ -6,7 +6,7 @@ podman run -dit --name NODE -p 8081:8081 node
 podman exec -it NODE bash
 
 # Setup api.js
-podman exec -it NODE curl -s -o /home/node/api.js https://gist.githubusercontent.com/UNiXMIT/8a6cea066ffe595073c7489f1d6027d7/raw/api.js
+podman exec -it NODE curl -s -o /home/node/api.js https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/api.js
 podman exec -it NODE npm install --prefix /home/node busboy
 podman exec -it NODE node /home/node/api.js
 
