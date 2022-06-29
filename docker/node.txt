@@ -13,6 +13,12 @@ podman exec -it NODE node /home/node/api.js
 # See Uploaded files in /tmp
 podman exec -it NODE ls /tmp
 
+# Run api.js as a service using Forever
+podman exec -it NODE npm install forever -g
+podman exec -it NODE forever start /home/node/api.js
+podman exec -it NODE forever stop /home/node/api.js
+podman exec -it NODE forever list
+
 # Remove your container
 podman stop NODE
 podman rm NODE
