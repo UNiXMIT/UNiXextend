@@ -60,6 +60,8 @@
 - [Network Share vs AcuServer Performance](https://portal.microfocus.com/s/article/KM000002013)
 
 ## KB Articles
+- [Install and setup of AcuXDBC client and server on Linux](https://portal.microfocus.com/s/article/KM000008030)
+- [Install and setup of AcuXDBC client and server on Windows](https://portal.microfocus.com/s/article/KM000008028)
 - [What is the difference between the Shared and Static installation of AcuCOBOL-GT Extend on Linux?](https://portal.microfocus.com/s/article/KM000007682)
 - [Why is there a number in the installer name and what do they all mean?](https://portal.microfocus.com/s/article/KM000007680)
 - [Prevent users closing/reloading the browser window and disconnecting AcuToWeb](https://portal.microfocus.com/s/article/KM000007349)
