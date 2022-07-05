@@ -6,7 +6,7 @@
 - [Documentation](#documentation)
   - [Official](#official)
   - [Wiki](#wiki)
-    - [AcuRuntime](#acuruntime) 
+    - [AcuRuntime](#acuruntime)
     - [AcuConnect](#acuconnect)
     - [AcuToWeb](#acutoweb)
     - [AcuXDBC](#acuxdbc) 
@@ -30,13 +30,11 @@
 ### Wiki
 #### AcuRuntime  
 - [ACUCOBOL-GT Trace Files For Troubleshooting](https://portal.microfocus.com/s/article/KM000005044)
-- [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ProgramCutDown.md)
+- [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://portal.microfocus.com/s/article/KM000007773)
 - [New Activator Wizard README](https://portal.microfocus.com/s/article/KM000004829)
 - [Supported Windows Versions](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/windowsVersions.md)
 - [ISV License Utility](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ISVLicenseUtility.md)
-- [Shared or Static](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Shared_OR_Static.md)
-- [64-bit native for Windows](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuRuntime-64bit-NATIVE.md)
-- [Dynamic Runtime Tracing](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/DynamicRuntimeTracing.md)
+- [Shared or Static](https://portal.microfocus.com/s/article/KM000007682)
 - [Performance issues on Windows Server 2012 / 2016](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/EnableFairShare.md)
 - [Registry Key Location for FEATURE_BROWSER EMULATION](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/FEATURE_BROWSER_EMULATION.md)
 - [Install IIS/CGI on Windows Server 2019](https://portal.microfocus.com/s/article/KM000006780)
@@ -46,14 +44,14 @@
 - [Investigating Memory Leaks](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/MemoryTracking.md)
 #### AcuConnect
 - [AcuConnect - Multiple Services Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuConnect-Multiple-Setup.md)
-- [AcuConnect Thin Client Performance](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuThinPerformance.md)
+- [AcuConnect Thin Client Performance](https://portal.microfocus.com/s/article/KM000007770)
 #### AcuToWeb
 - [Installation / Setup of AcuToWeb - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-WINDOWS.md)
 - [Installation / Setup of AcuToWeb - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-LINUX.md)
 - [Configure IIS with AcuToWeb](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-IIS.md)
 #### AcuXDBC
-- [Installing AcuXDBC Client and Server - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-WINDOWS.md)
-- [Installing AcuXDBC Client and Server - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUX.md)
+- [Installing AcuXDBC Client and Server - WINDOWS](https://portal.microfocus.com/s/article/KM000008028)
+- [Installing AcuXDBC Client and Server - LINUX](https://portal.microfocus.com/s/article/KM000008030)
 - [AcuXDBC Linux Client Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUXClient.md)
 - [AcuXDBC MSSQL Linked Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-MSSQL-Linked-Server.md)
 #### AcuServer
@@ -107,7 +105,7 @@
 - PMK: 53&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 7.1 (32-bit) PowerPC  
 - PMK: 52&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 7.1 (64-bit) PowerPC  
 - PMK: 41&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 7.2 (32-bit) PowerPC  
-- PMK: 40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 7.2 (64-bit) PowerPC 
+- PMK: 40&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 7.2 (64-bit) PowerPC  
 - PMK: 36&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 7.3 (32-bit) PowerPC  
 - PMK: 35&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AIX 7.3 (64-bit) PowerPC  
 - PMK: 47&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FreeBSD 9.x, Intel x64, 64-bit  
@@ -126,7 +124,7 @@
 - PMK: 43&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (INTEL) 32-bit  
 - PMK: 42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (INTEL) 64-bit  
 
-## Docker  
+## Docker
 - [SQL Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/mssql.txt)
 - [Oracle](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/oracle.txt)
 - [PostgreSQL](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/postgres.txt)
