@@ -21,7 +21,7 @@ C:\Windows\SysWOW64\odbcad32.exe
 In the ODBC Data Source Administrator, choose “Add…” and select your AcuXDBC driver.    
 Note that the description has changed in 9.1.0 to describe whether it is a 32 or 64-bit driver.    
 
-![1](images/xdbc-w-2.png)
+![1](images/xdbc-w-2.jpg)
 
 Fill in the information required:  
 

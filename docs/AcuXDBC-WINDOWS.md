@@ -3,7 +3,7 @@
 The following steps are for Windows.  
 To install the product on Windows, use the extend® setup and choose one of the following flags:
 
-![1](images/xdbc-w-1.png)
+![1](images/xdbc-w-1.jpg)
 
 AcuXDBC Data Interface for Windows installs the ODBC driver and it’s the Client side of AcuXDBC.
 
@@ -15,11 +15,9 @@ AcuXDBC Client can be installed using a standalone installer, too.
 
 The installers are now downloadable from the Micro Focus Support Portal - https://portal.microfocus.com/
 
-Once logged in navigate to Product Updates to find products available to you for download.
-
 During the installation you will be asked to enter your product code and key.
 
-**Set environment variables**
+### Set environment variables
 
 ```
 set PATH=\pathtotheinstallation\folder\AcuGT\bin;%PATH%
@@ -37,19 +35,19 @@ These next steps must be accomplished to complete your installation/configuratio
 
 ---
 
-**Quick Start Demo Program**
+### Quick Start Demo Program
 
 It is a good idea to run and inspect the quick start demo program before testing with your own data and setup. This way you can understand the process in a working environment first.  
 
-https://www.microfocus.com/documentation/extend-acucobol/1031/extend-Interoperability-Suite/BKXDXDINSTXD5.1.1.html  
+extend Product Guides > AcuXDBC Version 10.4.1 User's Guide > Installation and Licensing > General Setup Procedures > Quick-start Demo Program  
 
-Once you are happy with how it works, you can continue on to **Configuration of AcuXDBC** and test with your own data.
+Once you are happy with how it works, you can continue on to [Configuration of AcuXDBC](configuration-of-acuxdbc) and test with your own data.
 
-**Configuration of AcuXDBC**
+### Configuration of AcuXDBC
 
 Open your installation directory i.e.
 
-C:\Program Files (x86)\Micro Focus\extend 10.3.0\AcuGT
+C:\Program Files (x86)\Micro Focus\extend 10.4.1\AcuGT
 
 This is where your acuxdbc.cfg config file must be located.   
 If it's not present, enter the BIN directory and use the batch program genxconf.bat to generate it.  
@@ -61,6 +59,7 @@ These are the two most important configuration variables:
 ```
 #  The path to your system catalog directory. This is a required variable
 DICTSOURCE  "C:\any-path-you-like\syscat" 
+
 #  The path to your data files.  You must prepend the line with a semi-colon, 
 #  use either double backslashes ("\\") or forward slashes ("/"), 
 #  and separate your paths by semi-colons. This is a required variable
@@ -77,19 +76,18 @@ For instance:
 ```
 FILE_SUFFIX   			DAT
 INVALID_NUMERIC_DATA	ZERO
-READ_ONLY			YES
+READ_ONLY			    YES
 ```
 
 Each variable has a brief description in the file itself, so have a look at it before you run the first tests.
 
 ---
 
-**Creation of a system catalog**
+### Creation of a system catalog
 
 Next step is to create the SYSTEM CATALOG and load xfd files in it.  
-**N.B.** Please note that the syscat directory has to be before proceeding to the next step.
 
-TO CREATE A SYSCAT, use ainit.bat (ainit -help to show the usage)
+To create a syscat, use ainit.bat (ainit -help to show the usage)
 
 ```
 ainit -d C:\any-path-you-like\syscat
@@ -104,9 +102,9 @@ xdbcutil -d C:\any-path-you-like\syscat –c
 ```
 
 OR put “” around the path i.e. 
-“C:\Users\Public\Documents\Micro Focus\extend 10.0.1”
+“C:\Users\Public\Documents\Micro Focus\extend 10.4.1”
 
-**Load an XFD file**
+### Load an XFD file
 
 Use addfile.bat (addfile -help to show the usage)
 
@@ -121,7 +119,7 @@ xdbcutil –d C:\path-to-the\syscat –x C:\path-to-the\xfd-directory  -v -a fil
 ```
 
 Where file-name is the name of the Vision/XFD file that you want to load.  
-When the names of the Vision and xfd files are the same, you can use just its file-name without any extension.  
+**NOTE:** When the names of the Vision and xfd files are the same, you can use just its file-name without any extension.  
 When you have different names or you want to use aliases, you can use this syntax: 
 
 ```
@@ -149,13 +147,16 @@ Run this command line:
 ```
 addfile -d C:\path-to-the\syscat -x C:\path-to-the\xfd-directory -f file-list.txt
 ```
+**Update an XFD**
 
-TO UPDATE A XFD that's been already loaded, this is the syntax to use: 
+To update an XFD that's already been loaded:
 ```
 xdbcutil -d C:\path-to-the\syscat -x C:\path-to-the\xfd-directory -u TAB000001
 ```
 
-TO LOAD THE TABLE WITHOUT THE PUBLIC. PREFIX, you can run:
+**How to load a table without the 'PUBLIC.' prefix**
+
+To load a table without the 'PUBLIC.' prefix:  
 ```
 xdbcutil -d C:\path-to-the\syscat -x C:\path-to-the\xfd-directory  -o " " -a TAB000001
 ```
@@ -165,17 +166,19 @@ AND activate this variable inside acuxdbc.cfg file:
 IGNORE_OWNER	ON
 ```
 
-TO LOAD SOME USEFUL VIEWS, use this syntax and the file sql provided with your installation (This is automatically loaded by the 'ainit' script): 
+**Load some useful views**
+
+To load some useful views, use this syntax and the file 'cview.sql' provided with your installation (this is automatically loaded by the 'ainit' script):  
 ```
 asql -r "C:\pathtotheinstallation\folder\bin\cview.sql"
 ```
 
 ---
 
-**Test the system catalog directly (NO ODBC)**
+### Test the system catalog directly (NO ODBC)
 
 Now it's possible to test AcuXDBC using the tool asql.bat   
-**Note:** that this tool will NOT use ODBC libraries, but it will access directly to the Vision files. It is very useful to test paths and syscat)
+**NOTE:** This tool will NOT use ODBC libraries, but it will access directly to the Vision files. It is very useful to test paths and syscat)
 
 ```
 asql
@@ -232,7 +235,7 @@ C:\Windows\SysWOW64\odbcad32.exe
 In the ODBC Data Source Administrator, choose “Add…” and select your AcuXDBC driver.  
 Note that the description has changed in 9.1.0 to describe whether it is a 32 or 64-bit driver.  
 
-![2](images/xdbc-w-2.png)
+![2](images/xdbc-w-2.jpg)
 
 Fill in the information required:
 
@@ -281,17 +284,17 @@ Usage:
        acuxdbcs -start [-n port] [-l]
 ```
 
-TO START ACUXDBC SERVER
+To start AcuXDBC server
 ```
 acuxdbcs –start –n 20222
 ```
 
-TO GET INFO ABOUT ACUXDBC SERVER
+To get info about AcuXDBC server
 ```
 acuxdbcs –info –n 20222 server
 ```
 
-TO STOP ACUXDBC SERVER
+To stop AcuXDBC server
 ```
 acuxdbcs –kill –n 20222 server
 ```  
