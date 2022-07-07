@@ -15,8 +15,6 @@ if command -v yum >/dev/null; then
   sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config;
 elif command -v apt >/dev/null; then
   . /etc/os-release
-  sudo sh -c "echo 'deb http://download.opensuse.org/repositories/devel:/kubic:/libcontainers:/stable/xUbuntu_${VERSION_ID}/ /' > /etc/apt/sources.list.d/devel:kubic:libcontainers:stable.list"
-  wget -nv https://download.opensuse.org/repositories/devel:kubic:libcontainers:stable/xUbuntu_${VERSION_ID}/Release.key -O- | sudo apt-key add -
   sudo apt update;
   sudo apt upgrade -y;
   sudo dpkg --add-architecture i386;
@@ -32,13 +30,14 @@ else
 fi
 
 echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> /home/$user/.bashrc
-sed -i -E 's/#?AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config
-sed -i -E 's/#?PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
-service sshd restart
+sudo sed -i -E 's/#?AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config
+sudo sed -i -E 's/#?PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+sudo service ssh restart &>/dev/null
+sudo service sshd restart &>/dev/null  
 
 cd /home
 [ ! -d "products" ] && sudo mkdir -m 755 products
-sudo chown $user:$user products
+sudo chown -R $user:$user products
 
 cd /home/$user
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/profile.sh
@@ -70,9 +69,10 @@ curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/gateway.toml
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/TCPtuning.conf
 cd /home/$user/AcuSupport
+sudo chown -R $user:$user /home/support
 
-(crontab -l ; echo "#0 18 * * * root shutdown -h now")| crontab -
-(crontab -l ; echo "@reboot sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf")| crontab -
+(sudo crontab -l ; echo "#0 18 * * * root shutdown -h now")| sudo crontab -
+(sudo crontab -l ; echo "@reboot sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf")| sudo crontab -
 
 . /etc/os-release
 echo " " > motd.temp
