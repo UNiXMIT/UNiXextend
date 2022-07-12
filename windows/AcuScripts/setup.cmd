@@ -85,9 +85,6 @@ Rundll32 iesetup.dll, IEHardenLMSettings
 Rundll32 iesetup.dll, IEHardenUser 
 Rundll32 iesetup.dll, IEHardenAdmin
 
-reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}" /f /va
-reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}" /f /va
-
 :: Enable OpenSSH Server
 powershell -command "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0"
 sc config sshd start=auto
