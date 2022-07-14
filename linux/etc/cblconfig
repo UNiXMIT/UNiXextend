@@ -52,15 +52,17 @@ AGS_SOCKET_COMPRESS             ZLIB
 # ASQL_CONNECT_DATABASE support
 
 ### ACU4GL FOR MSSQL
-# DEFAULT_HOST                  MSSQL
-# XFD_PREFIX                    .
-# A_MSSQL_DEFAULT_CONNECTION    127.0.0.1
-# A_MSSQL_DATABASE              support
-# A_MSSQL_LOCK_DB               support
-# A_MSSQL_LOGIN                 support	
-# A_MSSQL_PASSWD                YourStrongPassword
-# A_MSSQL_DEFAULT_OWNER         dbo
-# A_MSSQL_ODBC_DRIVER_NAME      ODBC Driver 13 for SQL Server
+# DEFAULT_HOST                      MSSQL
+# XFD_PREFIX                        .
+# A_MSSQL_DEFAULT_CONNECTION        127.0.0.1
+# A_MSSQL_DATABASE                  support
+# A_MSSQL_LOCK_DB                   support
+# A_MSSQL_LOGIN                     support	
+# A_MSSQL_PASSWD                    YourStrongPassword
+# A_MSSQL_DEFAULT_OWNER             dbo
+# A_MSSQL_ODBC_DRIVER_NAME          ODBC Driver 18 for SQL Server
+# A-MSSQL-ENCRYPT-CONNECTION        TRUE
+# A-MSSQL-TRUST-SERVER-CERTIFICATE  TRUE
 
 ### ACU4GL FOR ORACLE
 # DEFAULT_HOST              ORACLE

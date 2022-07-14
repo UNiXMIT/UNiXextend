@@ -60,7 +60,7 @@ AGS_SOCKET_COMPRESS             ZLIB
 # A_MSSQL_LOGIN                     support	
 # A_MSSQL_PASSWD                    YourStrongPassword
 # A_MSSQL_DEFAULT_OWNER             dbo
-# A_MSSQL_ODBC_DRIVER_NAME          ODBC Driver 13 for SQL Server
+# A_MSSQL_ODBC_DRIVER_NAME          ODBC Driver 18 for SQL Server
 # A-MSSQL-ENCRYPT-CONNECTION        TRUE
 # A-MSSQL-TRUST-SERVER-CERTIFICATE  TRUE
 
