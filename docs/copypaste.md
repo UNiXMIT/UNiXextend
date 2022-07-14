@@ -31,3 +31,10 @@ SET EXCEPTION 1003 TO PASTE-SELECTION
 SET EXCEPTION 1004 TO CUT-SELECTION
 SET EXCEPTION 1005 TO UNDO 
 ```
+
+## Using the INSERT Key
+
+Without any modifications to source or config files:
+```
+CTRL + INSERT       COPY
+SHIFT + INSERT      PASTE
