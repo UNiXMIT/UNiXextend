@@ -1,7 +1,7 @@
 [gateway]
 webserver_port = 3000
 tcp_port = 8000
-file_cache = "./Web/cache"
+file_cache = './Web/cache'
 probing_connection = 10000
 ws_compression = true
 max_pkg_size = 64000
@@ -12,32 +12,32 @@ reconnect_decay = 1
 timeout_interval = 200000
 max_reconnect_attempts = 30
 log_level = 15
-logfile = "/home/support/AcuSupport/etc/logs/gateway.log"
+logfile = '/home/support/AcuSupport/etc/logs/gateway.log'
 append_log_file = false
 use_ssl = false
-ssl_key_file = "/home/support/AcuSupport/etc/SSL/server.key"
-ssl_crt_file = "/home/support/AcuSupport/etc/SSL/server.crt"
+ssl_key_file = '/home/support/AcuSupport/etc/SSL/server.key'
+ssl_crt_file = '/home/support/AcuSupport/etc/SSL/server.crt'
 
 [acuconnect]
-acurcl = "127.0.0.1"
+acurcl = '127.0.0.1'
 acurcl_port = 5632
 authorized_access = false
 handshake_timeout = 3
 
 [web]
-public_root_dir = "./Web"
-file_cache = "./Web/cache"
-path_fill_combo = "/home/support/AcuSupport/etc/fillcombo.js"
-path_resources = "/home/support/AcuSupport/AcuResources"
-# path_custom_js = "/home/support/AcuSupport/etc/customJSFunctionality.js"
+public_root_dir = './Web'
+file_cache = './Web/cache'
+path_fill_combo = '/home/support/AcuSupport/etc/fillcombo.js'
+path_resources = '/home/support/AcuSupport/AcuResources'
+# path_custom_js = '/home/support/AcuSupport/etc/customJSFunctionality.js'
 
 # [web.customize_css]
-# Example1 = "./Web/_CSS/examples/defaultCustomCSS.css"
-# FX = "./Web/_CSS/examples/ThemeFX.css"
+# Example1 = './Web/_CSS/examples/defaultCustomCSS.css'
+# FX = './Web/_CSS/examples/ThemeFX.css'
 
 # [web.custom_return]
-# DEFAULT = "https://www.microfocus.com"
-# MY_ALIAS = "https://www.google.com"
+# DEFAULT = 'https://www.microfocus.com'
+# MY_ALIAS = 'https://www.google.com'
 
 [web.resize]
 
