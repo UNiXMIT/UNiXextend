@@ -24,7 +24,7 @@ elif command -v zypper >/dev/null; then
   sudo zypper refresh;
   sudo zypper update -y;
   sudo zypper install -y -t pattern devel_C_C++;
-  sudo zypper install -y cronie podman unixODBC wget curl dos2unix java-11-openjdk htop tmux libcrypt1-32bit libncurses5-32bit libaio-devel libstdc++6-32bit libgcc_s1-32bit libz1-32bit;
+  sudo zypper install -y cronie podman unixODBC wget curl dos2unix glibc-32bit java-11-openjdk htop tmux libcrypt1-32bit libncurses5-32bit libaio-devel libstdc++6-32bit libgcc_s1-32bit libz1-32bit;
 else
   echo "Install CMD not identified"
 fi
