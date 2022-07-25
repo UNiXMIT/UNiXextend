@@ -27,7 +27,7 @@ handshake_timeout = 3
 [web]
 public_root_dir = "./Web"
 file_cache = "./Web/cache"
-path_fill_combo = "C:\\etc\\fillcombo.js"
+path_fill_combo = "C:\\etc\\fillCombo.js"
 path_resources = "C:\\AcuResources"
 # path_custom_js = "C:\\etc\\customJSFunctionality.js"
 
