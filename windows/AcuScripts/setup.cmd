@@ -91,6 +91,7 @@ sc config sshd start=auto
 
 :: Create Auto Shutdown Schedule
 schtasks /create /sc daily /tn "AutoShutdown" /tr "shutdown -s -f -t 0" /st 18:00 /ru support /rp Unidos30 /rl highest
+schtasks /change /tn "AutoShutdown" /disable
 
 :: Defer Updates
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate" /v DeferFeatureUpdates /t REG_DWORD /d 1 /f
