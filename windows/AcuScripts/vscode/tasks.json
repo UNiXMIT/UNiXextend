@@ -32,6 +32,11 @@
                 "kind": "build",
                 "isDefault": true
             },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            },
             "problemMatcher": [
                 "$acucobol-warning-ccbl",
                 "$acucobol-ccbl"
@@ -49,6 +54,11 @@
                     "ACUSW": "${config:ACUSW}",
                     "ACUCOBOL": "\"${config:DEFPATH32} ${input:EXTEND}\"\\AcuGT"
                 }
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
             },
             "problemMatcher": []
         },
@@ -71,6 +81,11 @@
                     "ACUCOBOL": "\"${config:DEFPATH32} ${input:EXTEND}\"\\AcuGT"
                 }
             },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            },
             "problemMatcher": []
         },
         {
@@ -85,6 +100,11 @@
                     "ACUSW": "${config:ACUSW}",
                     "ACUCOBOL": "\"${config:DEFPATH64} ${input:EXTEND}\"\\AcuGT"
                 }
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
             },
             "problemMatcher": []
         },
@@ -106,6 +126,11 @@
                     "RMFM_DETACH": "1",
                     "ACUCOBOL": "\"${config:DEFPATH64} ${input:EXTEND}\"\\AcuGT"
                 }
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
             },
             "problemMatcher": []
         }
