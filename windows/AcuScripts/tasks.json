@@ -1,0 +1,23 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "AcuCompiler",
+            "type": "shell",
+            "command": "SET CBLFLAGS=-ga && C:\\AcuScripts\\tasks.cmd compile 10.4.1 32 ${fileBasename}",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "AcuRuntime",
+            "type": "shell",
+            "command": "SET ACUSW=-d && C:\\AcuScripts\\tasks.cmd run 10.4.1 32 ${fileBasename}",
+            "problemMatcher": []
+        }
+    ]
+}
