@@ -1,6 +1,6 @@
 {
-    "DEFPATH32": "C:\\AcuProducts\\extend",
-    "DEFPATH64": "C:\\AcuProducts\\extend",
+    "DEFPATH32": "C:\\Program Files (x86)\\Micro Focus\\extend",
+    "DEFPATH64": "C:\\Program Files\\Micro Focus\\extend",
     "CBLFLAGS": "-ga",
     "ACUSW": "",
     "ACURFAP-HOST": "",
