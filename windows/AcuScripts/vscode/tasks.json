@@ -55,7 +55,7 @@
             ]
         },
         {
-            "label": "AcuRuntime 32-Bit",
+            "label": "AcuRuntime",
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
@@ -75,74 +75,7 @@
             "problemMatcher": []
         },
         {
-            "label": "AcuRuntime 32-Bit Debug",
-            "type": "shell",
-            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
-            "args": [
-                "-d",
-                "${fileBasename}"
-            ],
-            "options": {
-                "env": {
-                    "ACUSW": "${config:ACUSW}",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
-                }
-            },
-            "presentation": {
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "close": true
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "AcuRuntime 32-Bit Debug + Log",
-            "type": "shell",
-            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
-            "args": [
-                "-dlxe", "${fileBasenameNoExtension}.err",
-                "${fileBasename}"
-            ],
-            "options": {
-                "env": {
-                    "ACUSW": "${config:ACUSW}",
-                    "FILE_TRACE": "9",
-                    "FILE_TRACE_FLUSH": "1",
-                    "FILE_TRACE_TIMESTAMP": "1",
-                    "A_TRACE": "9",
-                    "RMFM_DETACH": "1",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
-                }
-            },
-            "presentation": {
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "close": true
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "AcuRuntime 64-Bit",
-            "type": "shell",
-            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
-            "args": [
-                "${fileBasename}"
-            ],
-            "options": {
-                "env": {
-                    "ACUSW": "${config:ACUSW}",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
-                }
-            },
-            "presentation": {
-                "reveal": "silent",
-                "revealProblems": "onProblem",
-                "close": true
-            },
-            "problemMatcher": []
-        },
-        {
-            "label": "AcuRuntime 64-Bit Debug",
+            "label": "AcuRuntime Debug",
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
@@ -163,7 +96,7 @@
             "problemMatcher": []
         },
         {
-            "label": "AcuRuntime 64-Bit Debug + Log",
+            "label": "AcuRuntime Debug + Log",
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
