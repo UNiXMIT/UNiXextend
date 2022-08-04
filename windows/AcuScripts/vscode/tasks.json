@@ -9,7 +9,7 @@
           "id": "EXTEND",
           "type": "promptString",
           "description": "What version of AcuCOBOL?",
-          "default": "10.4.1"
+          "default": "10.5.0"
         },
         {
             "id": "VUTIL",
@@ -28,7 +28,7 @@
         {
             "label": "AcuCompiler",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\ccbl32",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\ccbl32",
             "args": [
                 "-sp", ".",
                 "-sp", "%ACUCOBOL%\\sample\\def;%ACUCOBOL%\\sample\\xmlext;%ACUCOBOL%\\sample\\AcuBench\\resource",
@@ -37,7 +37,7 @@
             "options": {
                 "env": {
                     "CBLFLAGS": "${config:CBLFLAGS}",
-                    "ACUCOBOL": "\"${config:DEFPATH32} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "group": {
@@ -57,14 +57,14 @@
         {
             "label": "AcuRuntime 32-Bit",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\wrun32",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
                 "${fileBasename}"
             ],
             "options": {
                 "env": {
                     "ACUSW": "${config:ACUSW}",
-                    "ACUCOBOL": "\"${config:DEFPATH32} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -77,7 +77,7 @@
         {
             "label": "AcuRuntime 32-Bit Debug",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\wrun32",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
                 "-d",
                 "${fileBasename}"
@@ -85,7 +85,7 @@
             "options": {
                 "env": {
                     "ACUSW": "${config:ACUSW}",
-                    "ACUCOBOL": "\"${config:DEFPATH32} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -98,7 +98,7 @@
         {
             "label": "AcuRuntime 32-Bit Debug + Log",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\wrun32",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
                 "-dlxe", "${fileBasenameNoExtension}.err",
                 "${fileBasename}"
@@ -111,7 +111,7 @@
                     "FILE_TRACE_TIMESTAMP": "1",
                     "A_TRACE": "9",
                     "RMFM_DETACH": "1",
-                    "ACUCOBOL": "\"${config:DEFPATH32} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -124,14 +124,14 @@
         {
             "label": "AcuRuntime 64-Bit",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\wrun32",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
                 "${fileBasename}"
             ],
             "options": {
                 "env": {
                     "ACUSW": "${config:ACUSW}",
-                    "ACUCOBOL": "\"${config:DEFPATH64} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -144,7 +144,7 @@
         {
             "label": "AcuRuntime 64-Bit Debug",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\wrun32",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
                 "-d",
                 "${fileBasename}"
@@ -152,7 +152,7 @@
             "options": {
                 "env": {
                     "ACUSW": "${config:ACUSW}",
-                    "ACUCOBOL": "\"${config:DEFPATH64} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -165,7 +165,7 @@
         {
             "label": "AcuRuntime 64-Bit Debug + Log",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\wrun32",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
                 "-dlxe", "${fileBasenameNoExtension}.err",
                 "${fileBasename}"
@@ -178,7 +178,30 @@
                     "FILE_TRACE_TIMESTAMP": "1",
                     "A_TRACE": "9",
                     "RMFM_DETACH": "1",
-                    "ACUCOBOL": "\"${config:DEFPATH64} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
+                }
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "AcuThin",
+            "type": "shell",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\acuthin",
+            "args": [
+                "%ACUTHIN%",
+                "${config:ACUSW}",
+                "${config:ACURCL-ALIAS}"
+            ],
+            "options": {
+                "env": {
+                    "ACUSW": "${config:ACUSW}",
+                    "ACUTHIN": "${config:ACURCL-HOST}:${config:ACURCL-PORT}",
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -191,7 +214,7 @@
         {
             "label": "AcuRFAP",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\ccbl32",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\ccbl32",
             "args": [
                 "-sp", ".",
                 "-sp", "%ACUCOBOL%\\sample\\def;%ACUCOBOL%\\sample\\xmlext;%ACUCOBOL%\\sample\\AcuBench\\resource",
@@ -201,8 +224,8 @@
             "options": {
                 "env": {
                     "CBLFLAGS": "${config:CBLFLAGS}",
-                    "ACURFAP": "acurfap://${config:ACURFAP-HOST}:${config:ACURFAP-PORT}:${config:ACURFAP-PATH}",
-                    "ACUCOBOL": "\"${config:DEFPATH32} ${input:EXTEND}\"\\AcuGT"
+                    "ACURFAP": "acurfap://${config:ACURCL-HOST}:${config:ACURCL-PORT}:${config:ACURFAP-PATH}",
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "group": {
@@ -222,14 +245,14 @@
         {
             "label": "AcuVutil",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\vutil32 %VUTIL%",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\vutil32 %VUTIL%",
             "args": [
                 "${fileBasename}"
             ],
             "options": {
                 "env": {
                     "VUTIL": "${input:VUTIL}",
-                    "ACUCOBOL": "\"${config:DEFPATH32} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "problemMatcher": []
@@ -237,14 +260,14 @@
         {
             "label": "AcuCblutil",
             "type": "shell",
-            "command": "%ACUCOBOL%\\bin\\cblutl32 %CBLUTIL%",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\cblutl32 %CBLUTIL%",
             "args": [
                 "${fileBasename}"
             ],
             "options": {
                 "env": {
                     "CBLUTIL": "${input:CBLUTIL}",
-                    "ACUCOBOL": "\"${config:DEFPATH32} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "problemMatcher": []

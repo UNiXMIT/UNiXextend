@@ -1,13 +1,18 @@
 {
     // Default installation PATH of AcuCOBOL-GT extend
-    "DEFPATH32": "C:\\Program Files (x86)\\Micro Focus\\extend",
-    "DEFPATH64": "C:\\Program Files\\Micro Focus\\extend",
+    // Choose 32 or 64 bit
+    "DEFPATH": "C:\\Program Files (x86)\\Micro Focus\\extend",
+    // "DEFPATH": "C:\\Program Files\\Micro Focus\\extend",
+    // Patch Number
+    "ACUPATCH": "",
     // Additional Compiler Options
     "CBLFLAGS": "-ga",
     // Additional Runtime Options
-    "ACUSW": "",
-    // AcuRFAP Connection Details
-    "ACURFAP-HOST": "",
-    "ACURFAP-PORT": "",
+    "ACUSW": "-d",
+    // AcuRcl Connection Details
+    "ACURCL-HOST": "",
+    "ACURCL-PORT": "",
+    "ACURCL-ALIAS": "",
+    // AcuRFAP Remote Path
     "ACURFAP-PATH": ""
 }
