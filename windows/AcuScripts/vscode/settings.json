@@ -8,7 +8,7 @@
     // Additional Compiler Options
     "CBLFLAGS": "-ga",
     // Additional Runtime Options
-    "ACUSW": "-d",
+    "ACUSW": "",
     // Additional Parameters
     "ACUPARAMS": "",
     // Source File Extension
