@@ -9,7 +9,7 @@
           "id": "EXTEND",
           "type": "promptString",
           "description": "What version of AcuCOBOL?",
-          "default": "10.5.0"
+          "default": "10.4.1"
         },
         {
             "id": "VUTIL",
@@ -32,7 +32,7 @@
             "args": [
                 "-sp", ".",
                 "-sp", "%ACUCOBOL%\\sample\\def;%ACUCOBOL%\\sample\\xmlext;%ACUCOBOL%\\sample\\AcuBench\\resource",
-                "${fileBasename}"
+                "${fileBasenameNoExtension}${config:SOURCEEXT}"
             ],
             "options": {
                 "env": {
@@ -59,7 +59,8 @@
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
-                "${fileBasename}"
+                "${fileBasenameNoExtension}${config:FILEEXT}",
+                "${config:ACUPARAMS}"
             ],
             "options": {
                 "env": {
@@ -80,7 +81,8 @@
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
                 "-d",
-                "${fileBasename}"
+                "${fileBasenameNoExtension}${config:FILEEXT}",
+                "${config:ACUPARAMS}"
             ],
             "options": {
                 "env": {
@@ -100,8 +102,9 @@
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\wrun32",
             "args": [
-                "-dlxe", "${fileBasenameNoExtension}.err",
-                "${fileBasename}"
+                "-dlxe", "${fileBasenameNoExtensionNoExtension}.err",
+                "${fileBasenameNoExtension}${config:FILEEXT}",
+                "${config:ACUPARAMS}"
             ],
             "options": {
                 "env": {
@@ -128,7 +131,8 @@
             "args": [
                 "%ACUTHIN%",
                 "${config:ACUSW}",
-                "${config:ACURCL-ALIAS}"
+                "${config:ACURCL-ALIAS}",
+                "${config:ACUPARAMS}"
             ],
             "options": {
                 "env": {
@@ -151,8 +155,8 @@
             "args": [
                 "-sp", ".",
                 "-sp", "%ACUCOBOL%\\sample\\def;%ACUCOBOL%\\sample\\xmlext;%ACUCOBOL%\\sample\\AcuBench\\resource",
-                "-o", "%ACURFAP%/@.acu",
-                "${fileBasename}"
+                "-o", "%ACURFAP%/@${config:FILEEXT}",
+                "${fileBasenameNoExtension}${config:SOURCEEXT}"
             ],
             "options": {
                 "env": {
@@ -195,7 +199,7 @@
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\cblutl32 %CBLUTIL%",
             "args": [
-                "${fileBasename}"
+                "${fileBasenameNoExtension}${config:FILEEXT}"
             ],
             "options": {
                 "env": {

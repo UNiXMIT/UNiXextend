@@ -9,6 +9,12 @@
     "CBLFLAGS": "-ga",
     // Additional Runtime Options
     "ACUSW": "-d",
+    // Additional Parameters
+    "ACUPARAMS": "",
+    // Source File Extension
+    "SOURCEEXT": ".cbl",
+    // Compiled Object Extension
+    "FILEEXT": ".acu",
     // AcuRcl Connection Details
     "ACURCL-HOST": "",
     "ACURCL-PORT": "",
