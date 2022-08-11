@@ -1,13 +1,13 @@
 {
     // Default installation PATH of AcuCOBOL-GT extend
     // Choose 32 or 64 bit
-    "ACUDIR": "C:\\Program Files (x86)\\Micro Focus\\extend",
-    // "ACUDIR": "C:\\Program Files\\Micro Focus\\extend",
+    "INSTALLDIR": "C:\\Program Files (x86)\\Micro Focus\\extend",
+    // "INSTALLDIR": "C:\\Program Files\\Micro Focus\\extend",
     // Compiler Directory
     "CCBLDIR": "C:\\Program Files (x86)\\Micro Focus\\extend",
     // "CCBLDIR": "C:\\Program Files\\Micro Focus\\extend",
     // Sample Directory
-    "SAMPLEDIR": "C:\\Users\\Public\\Documents\\Micro Focus\\extend",
+    "PUBLICDIR": "C:\\Users\\Public\\Documents\\Micro Focus\\extend",
     // Patch Number
     "ACUPATCH": "",
     // Additional Compiler Options
