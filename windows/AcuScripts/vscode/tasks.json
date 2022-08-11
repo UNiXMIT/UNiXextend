@@ -31,13 +31,14 @@
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\ccbl32",
             "args": [
                 "-sp", ".",
-                "-sp", "%ACUCOBOL%\\sample\\def;%ACUCOBOL%\\sample\\xmlext;%ACUCOBOL%\\sample\\AcuBench\\resource",
+                "-sp", "%SAMPLEDIR%\\sample\\def;%SAMPLEDIR%\\sample\\xmlext;%SAMPLEDIR%\\sample\\AcuBench\\resource",
                 "${fileBasenameNoExtension}${config:SOURCEEXT}"
             ],
             "options": {
                 "env": {
                     "CBLFLAGS": "${config:CBLFLAGS}",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:CCBLDIR} ${input:EXTEND}\"\\AcuGT",
+                    "SAMPLEDIR": "\"${config:SAMPLEDIR} ${input:EXTEND}\""   
                 }
             },
             "group": {
@@ -65,7 +66,7 @@
             "options": {
                 "env": {
                     "ACUSW": "${config:ACUSW}",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:ACUDIR} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -87,7 +88,7 @@
             "options": {
                 "env": {
                     "ACUSW": "${config:ACUSW}",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:ACUDIR} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -114,7 +115,7 @@
                     "FILE_TRACE_TIMESTAMP": "1",
                     "A_TRACE": "9",
                     "RMFM_DETACH": "1",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:ACUDIR} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -138,7 +139,7 @@
                 "env": {
                     "ACUSW": "${config:ACUSW}",
                     "ACUTHIN": "${config:ACURCL-HOST}:${config:ACURCL-PORT}",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:ACUDIR} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "presentation": {
@@ -154,7 +155,7 @@
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\ccbl32",
             "args": [
                 "-sp", ".",
-                "-sp", "%ACUCOBOL%\\sample\\def;%ACUCOBOL%\\sample\\xmlext;%ACUCOBOL%\\sample\\AcuBench\\resource",
+                "-sp", "%SAMPLEDIR%\\sample\\def;%SAMPLEDIR%\\sample\\xmlext;%SAMPLEDIR%\\sample\\AcuBench\\resource",
                 "-o", "%ACURFAP%/@${config:FILEEXT}",
                 "${fileBasenameNoExtension}${config:SOURCEEXT}"
             ],
@@ -162,7 +163,8 @@
                 "env": {
                     "CBLFLAGS": "${config:CBLFLAGS}",
                     "ACURFAP": "acurfap://${config:ACURCL-HOST}:${config:ACURCL-PORT}:${config:ACURFAP-PATH}",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:CCBLDIR} ${input:EXTEND}\"\\AcuGT",
+                    "SAMPLEDIR": "\"${config:SAMPLEDIR} ${input:EXTEND}\""
                 }
             },
             "group": {
@@ -189,7 +191,7 @@
             "options": {
                 "env": {
                     "VUTIL": "${input:VUTIL}",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:ACUDIR} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "problemMatcher": []
@@ -204,7 +206,7 @@
             "options": {
                 "env": {
                     "CBLUTIL": "${input:CBLUTIL}",
-                    "ACUCOBOL": "\"${config:DEFPATH} ${input:EXTEND}\"\\AcuGT"
+                    "ACUCOBOL": "\"${config:ACUDIR} ${input:EXTEND}\"\\AcuGT"
                 }
             },
             "problemMatcher": []
