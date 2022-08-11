@@ -36,6 +36,7 @@ AGS_SOCKET_COMPRESS             ZLIB
 # TC_QUIT_MODE                  -1
 # AGS_BLOCK_SLEEP_TIME          1
 # AGS_RETRY_COUNT               1000
+# TC-STORE-INQUIRE-EVENTS       OFF
 # !COPY AcuThin-AutoUpdate.cfg
 
 ### ACUSERVER
