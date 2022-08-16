@@ -21,3 +21,13 @@ reg add "HKEY_LOCAL_MACHINE\Software\Policies\BraveSoftware\Brave\InsecurePrivat
 defaults write com.google.Chrome InsecurePrivateNetworkRequestsAllowed -bool true  
 defaults write com.google.Chrome InsecurePrivateNetworkRequestsAllowedForUrls -string "http://www.example.com:8080"  
 defaults write com.google.Chrome InsecurePrivateNetworkRequestsAllowedForUrls -string "[*.]example.com"  
+
+## EDGE
+defaults write com.microsoft.Edge InsecurePrivateNetworkRequestsAllowed -bool true  
+defaults write com.microsoft.Edge InsecurePrivateNetworkRequestsAllowedForUrls -string "http://www.example.com:8080"  
+defaults write com.microsoft.Edge InsecurePrivateNetworkRequestsAllowedForUrls -string "[*.]example.com"  
+
+## BRAVE
+defaults write com.brave.Browser InsecurePrivateNetworkRequestsAllowed -bool true  
+defaults write com.brave.Browser InsecurePrivateNetworkRequestsAllowedForUrls -string "http://www.example.com:8080"  
+defaults write com.brave.Browser InsecurePrivateNetworkRequestsAllowedForUrls -string "[*.]example.com"
