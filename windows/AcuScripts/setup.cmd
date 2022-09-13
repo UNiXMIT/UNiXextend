@@ -1,5 +1,6 @@
 @ECHO OFF
 :: Create Admin user
+net accounts /maxpwage:unlimited
 net user /add support Unidos30
 net localgroup administrators support /add
 
