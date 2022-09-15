@@ -11,7 +11,8 @@ SET FILE_TRACE_TIMESTAMP=TRUE
 
 :: Default AcuVersion
 SET EXTEND=
-IF '%EXTEND%'=='' FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT" /S /V "DefaultVersion" 2^>NUL ^| FIND "REG_SZ"') DO SET "EXTEND=%%B"
+:: SET EXTEND=10.4.1
+IF "%EXTEND%"=="" FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT" /S /V "DefaultVersion" 2^>NUL ^| FIND "REG_SZ"') DO SET "EXTEND=%%B"
 
 SET INSTALLDIR32=
 SET INSTALLDIR64=
@@ -36,7 +37,7 @@ SET ACUMQ=
  IF "%RESULT%" == "TRUE" (
     SET EXTEND=%2
     IF "%2"=="" (
-        ECHO OPTION REQUIRES AN ARGUMENT -- 'v'
+        ECHO OPTION REQUIRES AN ARGUMENT -- "v"
         GOTO :USAGE  
     )     
     SHIFT & SHIFT & GOTO :INITIAL
@@ -45,7 +46,7 @@ SET ACUMQ=
  IF "%RESULT%" == "TRUE" (
     SET ACUBIT=%2
     IF "%2"=="" (
-        ECHO OPTION REQUIRES AN ARGUMENT -- 'a'
+        ECHO OPTION REQUIRES AN ARGUMENT -- "a"
         GOTO :USAGE  
     )     
     SHIFT & SHIFT & GOTO :INITIAL
@@ -54,7 +55,7 @@ SET ACUMQ=
  IF "%RESULT%" == "TRUE" (
     SET CFLAGS=%2
     IF "%2"=="" (
-        ECHO OPTION REQUIRES AN ARGUMENT -- 'c'
+        ECHO OPTION REQUIRES AN ARGUMENT -- "c"
         GOTO :USAGE  
     )     
     SHIFT & SHIFT & GOTO :INITIAL
@@ -63,7 +64,7 @@ SET ACUMQ=
  IF "%RESULT%" == "TRUE" (
     SET ACUPATCH=%2
     IF "%2"=="" (
-        ECHO OPTION REQUIRES AN ARGUMENT -- 'p'
+        ECHO OPTION REQUIRES AN ARGUMENT -- "p"
         GOTO :USAGE  
     )     
     SHIFT & SHIFT & GOTO :INITIAL
@@ -106,51 +107,51 @@ ECHO Example:
 ECHO  setenv -v 10.3.1 -b 64         Sets AcuCOBOL 10.3.1 64-Bit
 ECHO  setenv -v 10.4.0 -b 64 -j      Sets AcuCOBOL 10.4.0 64-Bit and JAVA 64-Bit
 ECHO.  
-ECHO Patches can be loaded using -p if you have copied the patched bin into the AcuGT directory and name it binXXXX where XXXX is the patch number like 'bin1785'
+ECHO Patches can be loaded using -p if you have copied the patched bin into the AcuGT directory and name it binXXXX where XXXX is the patch number like "bin1785"
 ECHO Example:
 ECHO  setenv -v 10.4.0 -b 32 -p 1785        Sets AcuCOBOL 10.4.0 32-Bit Patch Number 1785
 GOTO :END
 
 :SETACUENV
-IF "%INSTALLDIR32%"=='' (FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT\%EXTEND%" /S /V "INSTALLDIR" 2^>NUL ^| FIND "REG_SZ"') DO SET "INSTALLDIR32=%%B") ELSE (SET "INSTALLDIR32=%INSTALLDIR32%\extend %EXTEND%\")
-IF "%INSTALLDIR64%"=='' (FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Micro Focus\ACUCOBOL-GT\%EXTEND%" /S /V "INSTALLDIR" 2^>NUL ^| FIND "REG_SZ"') DO SET "INSTALLDIR64=%%B") ELSE (SET "INSTALLDIR64=%INSTALLDIR64%\extend %EXTEND%\")
-IF "%PUBLICDIR%"=='' (FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT\%EXTEND%" /S /V "PUBLICDIR" 2^>NUL ^| FIND "REG_SZ"') DO SET "PUBLICDIR=%%B") ELSE (SET "PUBLICDIR=%PUBLICDIR%\extend %EXTEND%\")
+IF "%INSTALLDIR32%"=="" (FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT\%EXTEND%" /S /V "INSTALLDIR" 2^>NUL ^| FIND "REG_SZ"') DO SET "INSTALLDIR32=%%B") ELSE (SET "INSTALLDIR32=%INSTALLDIR32%\extend %EXTEND%\")
+IF "%INSTALLDIR64%"=="" (FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Micro Focus\ACUCOBOL-GT\%EXTEND%" /S /V "INSTALLDIR" 2^>NUL ^| FIND "REG_SZ"') DO SET "INSTALLDIR64=%%B") ELSE (SET "INSTALLDIR64=%INSTALLDIR64%\extend %EXTEND%\")
+IF "%PUBLICDIR%"=="" (FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT\%EXTEND%" /S /V "PUBLICDIR" 2^>NUL ^| FIND "REG_SZ"') DO SET "PUBLICDIR=%%B") ELSE (SET "PUBLICDIR=%PUBLICDIR%\extend %EXTEND%\")
 SET DEF=".;%PUBLICDIR%sample\def"
 SET XML=".;%PUBLICDIR%sample\xmlext"
 SET BMP=".;%PUBLICDIR%sample\acubench\resource"
 SET ALL=".;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource"
 SET COPYPATH=%ALL%
-IF '%ACUBIT%'=='' SET ACUBIT=32
-IF '%CFLAGS%'=='atw' GOTO :ATW
-IF '%CFLAGS%'=='bench' GOTO :ACUBENCH
-IF '%CFLAGS%'=='dir' (GOTO :DIRECTORY) ELSE IF NOT '%CFLAGS%'=='FALSE' (ECHO INCORRECT ARGUEMENT FOR OPTION -- 'c' & GOTO :USAGE)
-IF '%ACUBIT%'=='32' GOTO :32BIT
-IF '%ACUBIT%'=='64' GOTO :64BIT
+IF "%ACUBIT%"=="" SET ACUBIT=32
+IF "%CFLAGS%"=="atw" GOTO :ATW
+IF "%CFLAGS%"=="bench" GOTO :ACUBENCH
+IF "%CFLAGS%"=="dir" (GOTO :DIRECTORY) ELSE IF NOT "%CFLAGS%"=="FALSE" (ECHO INCORRECT ARGUEMENT FOR OPTION -- "c" & GOTO :USAGE)
+IF "%ACUBIT%"=="32" GOTO :32BIT
+IF "%ACUBIT%"=="64" GOTO :64BIT
 GOTO :END
 
 :ATW
-IF '%ACUBIT%'=='32' (
+IF "%ACUBIT%"=="32" (
     START "" "%INSTALLDIR32%AcuGT\bin%ACUPATCH%\AcuToWeb.exe"
 )
-IF '%ACUBIT%'=='64' (
+IF "%ACUBIT%"=="64" (
     START "" "%INSTALLDIR64%AcuGT\bin%ACUPATCH%\AcuToWeb.exe"
 )
 GOTO :END
 
 :ACUBENCH
-IF '%ACUBIT%'=='32' (
+IF "%ACUBIT%"=="32" (
     START "" "%INSTALLDIR32%acubench\AcuBench.exe"
 )
-IF '%ACUBIT%'=='64' (
+IF "%ACUBIT%"=="64" (
     START "" "%INSTALLDIR64%acubench\AcuBench.exe"
 )
 GOTO :END
 
 :DIRECTORY
-IF '%ACUBIT%'=='32' (
+IF "%ACUBIT%"=="32" (
     START "" "%INSTALLDIR32%"
 )
-IF '%ACUBIT%'=='64' (
+IF "%ACUBIT%"=="64" (
     START "" "%INSTALLDIR64%"
 )
 GOTO :END
@@ -168,15 +169,15 @@ SET GENESIS_HOME=%INSTALLDIR64%AcuGT
 GOTO :SETEXTRAS
 
 :SETEXTRAS
-IF '%ACUBIT%'=='32' (
-    IF '%ACUJAVA%'=='TRUE' GOTO :SETJAVA32
-    IF '%ACUMQ%'=='TRUE' GOTO :SETMQ32
-    IF '%ACUORA%'=='TRUE' GOTO :SETORA32
+IF "%ACUBIT%"=="32" (
+    IF "%ACUJAVA%"=="TRUE" GOTO :SETJAVA32
+    IF "%ACUMQ%"=="TRUE" GOTO :SETMQ32
+    IF "%ACUORA%"=="TRUE" GOTO :SETORA32
 )
-IF '%ACUBIT%'=='64' (
-    IF '%ACUJAVA%'=='TRUE' GOTO :SETJAVA64
-    IF '%ACUMQ%'=='TRUE' GOTO :SETMQ64
-    IF '%ACUORA%'=='TRUE' GOTO :SETORA64
+IF "%ACUBIT%"=="64" (
+    IF "%ACUJAVA%"=="TRUE" GOTO :SETJAVA64
+    IF "%ACUMQ%"=="TRUE" GOTO :SETMQ64
+    IF "%ACUORA%"=="TRUE" GOTO :SETORA64
 )
 GOTO :END
 
