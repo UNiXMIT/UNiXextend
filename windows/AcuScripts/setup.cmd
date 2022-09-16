@@ -59,8 +59,6 @@ setx /m PATH "C:\AcuScripts;%PATH%"
 
 :: Download AcuScripts
 cd \AcuScripts
-curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/AcuScripts/admin.cmd
-curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/AcuScripts/version.cmd
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/AcuScripts/setenv.cmd
 md .vscode
 cacls .vscode /e /p Everyone:f
