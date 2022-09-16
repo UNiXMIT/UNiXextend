@@ -26,6 +26,9 @@ SET ACUPATCH=
 SET ACUJAVA=
 SET ACUORA=
 SET ACUMQ=
+SET ACUDEF=
+SET ACUADMIN=
+SET ADMINPATH=
 
 :INITIAL
  SET RESULT=FALSE
@@ -84,6 +87,16 @@ SET ACUMQ=
     SET ACUORA=TRUE
     SHIFT & GOTO :INITIAL
  )
+ IF "%1" == "-d" SET RESULT=TRUE
+ IF "%RESULT%" == "TRUE" (
+    SET ACUDEF=TRUE
+    SHIFT & GOTO :INITIAL
+ )
+ IF "%1" == "-a" SET RESULT=TRUE
+ IF "%RESULT%" == "TRUE" (
+    SET ACUADMIN=TRUE
+    SHIFT & GOTO :INITIAL
+ )
 GOTO :SETACUENV
 
 :USAGE
@@ -92,20 +105,22 @@ ECHO  setenv                         Set the AcuCOBOL environment
 ECHO  setenv options parameters      Set the AcuCOBOL environment and Additional Binaries/DLLs
 ECHO.    
 ECHO Usage: 
-ECHO  -v 10.4.0       AcuCOBOL Version
+ECHO  -v 10.5.0       AcuCOBOL Version
 ECHO  -b 32           32 or 64 bit
 ECHO  -p 1785         Patch number
 ECHO  -j              JAVA
 ECHO  -m              MQ
 ECHO  -o              ORACLE
 ECHO  -c atw          Open ATW Control Panel   
-ECHO  -c dir          Open INSTALLDIRectory
+ECHO  -c dir          Open Install Directory
 ECHO  -c bench        Open AcuBench 
+ECHO  -d              Set Default AcuCOBOL Version in Registry (Example: setenv -d -v 10.5.0)
+ECHO  -a              Set RUNASADMIN for acurcl.exe AcuToWeb.exe and acuserve.exe (Example: setenv -a -v 10.5.0)
 ECHO  -h              Usage
 ECHO.
 ECHO Example:
-ECHO  setenv -v 10.3.1 -b 64         Sets AcuCOBOL 10.3.1 64-Bit
-ECHO  setenv -v 10.4.0 -b 64 -j      Sets AcuCOBOL 10.4.0 64-Bit and JAVA 64-Bit
+ECHO  setenv -v 10.3.1 -b 64         Sets AcuCOBOL 10.5.0 64-Bit
+ECHO  setenv -v 10.4.0 -b 64 -j      Sets AcuCOBOL 10.5.0 64-Bit and JAVA 64-Bit
 ECHO.  
 ECHO Patches can be loaded using -p if you have copied the patched bin into the AcuGT directory and name it binXXXX where XXXX is the patch number like "bin1785"
 ECHO Example:
@@ -122,6 +137,8 @@ SET BMP=".;%PUBLICDIR%sample\acubench\resource"
 SET ALL=".;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource"
 SET COPYPATH=%ALL%
 IF "%ACUBIT%"=="" SET ACUBIT=32
+IF "%ACUDEF%"=="TRUE" GOTO :SET-DEFAULT-VERSION
+IF "%ACUADMIN%"=="TRUE" GOTO :ACUADMIN
 IF "%CFLAGS%"=="atw" GOTO :ATW
 IF "%CFLAGS%"=="bench" GOTO :ACUBENCH
 IF "%CFLAGS%"=="dir" (GOTO :DIRECTORY) ELSE IF NOT "%CFLAGS%"=="FALSE" (ECHO INCORRECT ARGUEMENT FOR OPTION -- "c" & GOTO :USAGE)
@@ -222,5 +239,44 @@ SET ACUMQ=FALSE
 SET PATH=%MQ%bin64;%PATH%
 SET SHARED_LIBRARY_LIST=mqic.dll
 GOTO :SETEXTRAS
+
+:SET-DEFAULT-VERSION
+IF "%ACUBIT%"=="32" REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT" /V "DefaultVersion" /t REG_SZ /d "%EXTEND%" /f
+IF "%ACUBIT%"=="64" REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Micro Focus\ACUCOBOL-GT" /V "DefaultVersion" /t REG_SZ /d "%EXTEND%" /f
+GOTO :END
+
+:ACUADMIN
+IF "%ACUBIT%"=="32" (
+    IF "%ACUADMIN%"=="TRUE" GOTO :ACUADMIN32
+)
+IF "%ACUBIT%"=="64" (
+    IF "%ACUADMIN%"=="TRUE" GOTO :ACUADMIN64
+)
+
+:ACUADMIN32
+SET "ADMINPATH=%INSTALLDIR32%AcuGT\bin%ACUPATCH%"
+GOTO :ADMINACURCL
+
+:ACUADMIN64
+SET "ADMINPATH=%INSTALLDIR64%AcuGT\bin%ACUPATCH%"
+GOTO :ADMINACURCL
+
+:ADMINACURCL
+REG QUERY "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "%ADMINPATH%\acurcl.exe" >nul 2>&1
+IF %ERRORLEVEL% == 0 GOTO :ADMINATW
+REG ADD "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "%ADMINPATH%\acurcl.exe" /t REG_SZ /d "~ RUNASADMIN" /f
+GOTO :ADMINATW
+
+:ADMINATW
+REG QUERY "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "%ADMINPATH%\AcuToWeb.exe" >nul 2>&1
+IF %ERRORLEVEL% == 0 GOTO :ADMINACUSERVE
+REG ADD "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "%ADMINPATH%\AcuToWeb.exe" /t REG_SZ /d "~ RUNASADMIN" /f
+GOTO :ADMINACUSERVE
+
+:ADMINACUSERVE
+REG QUERY "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "%ADMINPATH%\acuserve.exe" >nul 2>&1
+IF %ERRORLEVEL% == 0 GOTO :END
+REG ADD "HKCU\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /v "%ADMINPATH%\acuserve.exe" /t REG_SZ /d "~ RUNASADMIN" /f
+GOTO :END
 
 :END
