@@ -30,8 +30,7 @@
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\ccbl32",
             "args": [
-                "-sp", ".",
-                "-sp", "%PUBLICDIR%\\sample\\def;%PUBLICDIR%\\sample\\xmlext;%PUBLICDIR%\\sample\\AcuBench\\resource",
+                "-sp", ".;%PUBLICDIR%\\sample\\def;%PUBLICDIR%\\sample\\xmlext;%PUBLICDIR%\\sample\\AcuBench\\resource",
                 "${fileBasenameNoExtension}${config:SOURCEEXT}"
             ],
             "options": {
@@ -154,8 +153,7 @@
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\ccbl32",
             "args": [
-                "-sp", ".",
-                "-sp", "%PUBLICDIR%\\sample\\def;%PUBLICDIR%\\sample\\xmlext;%PUBLICDIR%\\sample\\AcuBench\\resource",
+                "-sp", ".;%PUBLICDIR%\\sample\\def;%PUBLICDIR%\\sample\\xmlext;%PUBLICDIR%\\sample\\AcuBench\\resource",
                 "-o", "%ACURFAP%/@${config:FILEEXT}",
                 "${fileBasenameNoExtension}${config:SOURCEEXT}"
             ],
