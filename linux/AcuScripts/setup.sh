@@ -75,7 +75,6 @@ cd /home/$user
 cd /home/$user/MFSupport
 [ ! -d "MFScripts" ] && mkdir MFScripts
 [ ! -d "MFSamples" ] && mkdir MFSamples
-[ ! -d "MFLicenses" ] && mkdir MFLicenses
 cd /home/$user/MFSupport/MFScripts
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/setupmf.sh
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/startmf.sh
