@@ -69,6 +69,16 @@ curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/gateway.toml
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/TCPtuning.conf
 cd /home/$user/AcuSupport
+
+cd /home/$user
+[ ! -d "MFSupport" ] && mkdir -m 775 MFSupport
+cd /home/$user/MFSupport
+[ ! -d "MFScripts" ] && mkdir MFScripts
+cd /home/$user/MFSupport/MFScripts
+curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/setup.sh
+curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/startmf.sh
+chmod +x setup.sh startmf.sh
+cd /home/$user/AcuSupport
 sudo chown -R $user:$user /home/support
 
 (sudo crontab -l ; echo "#0 18 * * * root shutdown -h now")| sudo crontab -
