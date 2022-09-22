@@ -81,7 +81,7 @@ cd /home/$user/MFSupport/MFScripts
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/setupmf.sh
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/startmf.sh
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/setenvmf.sh
-chmod +x setupmf.sh startmf.sh
+chmod +x setupmf.sh startmf.sh setenvmf.sh
 cd /home/$user/AcuSupport
 sudo chown -R $user:$user /home/support
 
