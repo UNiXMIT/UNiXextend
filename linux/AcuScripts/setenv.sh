@@ -39,7 +39,6 @@ set_acu()
     # Save current directory.
     CURRENT_DIR=$(pwd)
 
-    # Set the path of your Acu installations here.
     cd $ACU_OPT
     array=(*/)
 
@@ -47,7 +46,7 @@ set_acu()
     echo
     PS3="Which version of AcuCOBOL-GT? "
     select ACU in "${array[@]}"
-    do export ACUCOBOL=$(echo /home/products/$ACU | sed -e "s/\/*$//"); break;  done
+    do export ACUCOBOL=$(echo $ACU_OPT/$ACU | sed -e "s/\/*$//"); break;  done
 
     # Change directory back to original.
     cd $CURRENT_DIR
