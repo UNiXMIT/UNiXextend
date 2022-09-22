@@ -92,11 +92,19 @@ echo " " > motd.temp
 echo " " >> motd.temp
 echo "  $PRETTY_NAME" >> motd.temp
 echo " " >> motd.temp
+echo "  AcuCOBOL" >> motd.temp
 echo "    Set Environment:" >> motd.temp
 echo "        . setenv.sh (-h for usage)" >> motd.temp
 echo " " >> motd.temp
 echo "    Start Services:" >> motd.temp
 echo "        startacu.sh (-h for usage)" >> motd.temp
+echo " " >> motd.temp
+echo "  MFCOBOL" >> motd.temp
+echo "    Set Environment:" >> motd.temp
+echo "        . setenvmf.sh" >> motd.temp
+echo " " >> motd.temp
+echo "    Start Services:" >> motd.temp
+echo "        startmf.sh (-h for usage)" >> motd.temp
 echo " " >> motd.temp
 if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
   sudo mv motd.temp /etc/update-motd.d/00-header
