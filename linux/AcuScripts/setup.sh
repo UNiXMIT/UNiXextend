@@ -83,8 +83,6 @@ curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/se
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/startmf.sh
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/MFScripts/linux/setenvmf.sh
 chmod +x setupmf.sh startmf.sh setenvmf.sh
-cd /home/$user/MFSupport/MFDataFiles
-curl -O https://github.com/UNiXMIT/UNiXMF/raw/main/MFScripts/linux/MFTEST.DAT
 cd /home/$user/AcuSupport
 sudo chown -R $user:$user /home/support
 
