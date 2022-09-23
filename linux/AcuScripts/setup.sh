@@ -86,7 +86,7 @@ chmod +x setupmf.sh startmf.sh setenvmf.sh
 cd /home/$user/AcuSupport
 sudo chown -R $user:$user /home/support
 
-(sudo crontab -l ; echo "#0 18 * * * root shutdown -h now")| sudo crontab -
+(sudo crontab -l ; echo "#0 18 * * * shutdown -h now")| sudo crontab -
 (sudo crontab -l ; echo "@reboot sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf")| sudo crontab -
 
 . /etc/os-release
