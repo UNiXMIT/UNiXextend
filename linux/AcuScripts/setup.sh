@@ -90,7 +90,6 @@ sudo chown -R $user:$user /home/support
 
 . /etc/os-release
 echo " " > motd.temp
-echo " " >> motd.temp
 echo "  $PRETTY_NAME" >> motd.temp
 echo " " >> motd.temp
 echo "  AcuCOBOL" >> motd.temp
@@ -106,6 +105,9 @@ echo "        . setenvmf.sh" >> motd.temp
 echo " " >> motd.temp
 echo "    Start Services:" >> motd.temp
 echo "        startmf.sh (-h for usage)" >> motd.temp
+echo " " >> motd.temp
+echo "    Install Options:" >> motd.temp
+echo "        -skipsafenet -skipautopass -IacceptEULA -ESadminID=support -il=/home/products/esXXpuXX" >> motd.temp
 echo " " >> motd.temp
 if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
   sudo mv motd.temp /etc/update-motd.d/00-header
