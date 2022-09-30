@@ -241,11 +241,23 @@ SET SHARED_LIBRARY_LIST=mqic.dll
 GOTO :SETEXTRAS
 
 :SET-DEFAULT-VERSION
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if '%ERRORLEVEL%' NEQ '0' (
+    ECHO Admin privileges are required!
+    timeout /t 5
+    GOTO :END
+)
 IF "%ACUBIT%"=="32" REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT" /V "DefaultVersion" /t REG_SZ /d "%EXTEND%" /f
 IF "%ACUBIT%"=="64" REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Micro Focus\ACUCOBOL-GT" /V "DefaultVersion" /t REG_SZ /d "%EXTEND%" /f
 GOTO :END
 
 :ACUADMIN
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if '%ERRORLEVEL%' NEQ '0' (
+    ECHO Admin privileges are required!
+    timeout /t 5
+    GOTO :END
+)
 IF "%ACUBIT%"=="32" (
     IF "%ACUADMIN%"=="TRUE" GOTO :ACUADMIN32
 )

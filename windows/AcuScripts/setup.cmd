@@ -1,4 +1,13 @@
 @ECHO OFF
+
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+if '%ERRORLEVEL%' NEQ '0' (
+    ECHO "Admin privileges are required!"
+    timeout /t 5
+    GOTO :END
+)
+
+:SETUP
 :: Create Admin user
 net accounts /maxpwage:unlimited
 net user /add support Unidos30
@@ -110,3 +119,5 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\S
 reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFilesExt /t REG_DWORD /d 0 /f
 
 cd \temp
+
+:END
