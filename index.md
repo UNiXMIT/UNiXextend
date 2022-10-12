@@ -25,6 +25,7 @@
 - [Limits and Ranges](https://bit.ly/3nb9yu1)
 - [Memory Handling Descriptions](https://bit.ly/3c2D0Mg)
 - [Machine Key Mismatch](https://bit.ly/3n8jV1o)
+- [VM Support Statement](https://portal.microfocus.com/s/article/KM000010632)
 
 ### Wiki
 #### AcuRuntime  
