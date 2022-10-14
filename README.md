@@ -32,28 +32,28 @@
 - [ACUCOBOL-GT Trace Files For Troubleshooting](https://portal.microfocus.com/s/article/KM000005044)
 - [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://portal.microfocus.com/s/article/KM000007773)
 - [New Activator Wizard README](https://portal.microfocus.com/s/article/KM000004829)
-- [Supported Windows Versions](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/windowsVersions.md)
-- [ISV License Utility](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/ISVLicenseUtility.md)
+- [Supported Windows Versions](docs/windowsVersions.md)
+- [ISV License Utility](ISVLicenseUtility.md)
 - [Shared or Static](https://portal.microfocus.com/s/article/KM000007682)
-- [Performance issues on Windows Server 2012 / 2016](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/EnableFairShare.md)
-- [Registry Key Location for FEATURE_BROWSER EMULATION](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/FEATURE_BROWSER_EMULATION.md)
+- [Performance issues on Windows Server 2012 / 2016](docs/EnableFairShare)
+- [Registry Key Location for FEATURE_BROWSER EMULATION](docs/FEATURE_BROWSER_EMULATION.md)
 - [Install IIS/CGI on Windows Server 2019](https://portal.microfocus.com/s/article/KM000006780)
-- [Libraries Required](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/LibrariesRequired.md)
-- [Storing external documents in your Vision files](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/Vision-Document-Storage.md)
+- [Libraries Required](docs/LibrariesRequired.md)
+- [Storing external documents in your Vision files](docs/Vision-Document-Storage.md)
 - [Opportunistic Locking System](https://portal.microfocus.com/s/article/KM000006730)
-- [Investigating Memory Leaks](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/MemoryTracking.md)
+- [Investigating Memory Leaks](docs/MemoryTracking.md)
 #### AcuConnect
-- [AcuConnect - Multiple Services Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuConnect-Multiple-Setup.md)
+- [AcuConnect - Multiple Services Setup](docs/AcuConnect-Multiple-Setup.md)
 - [AcuConnect Thin Client Performance](https://portal.microfocus.com/s/article/KM000007770)
 #### AcuToWeb
-- [Installation / Setup of AcuToWeb - WINDOWS](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-WINDOWS.md)
-- [Installation / Setup of AcuToWeb - LINUX](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-LINUX.md)
-- [Configure IIS with AcuToWeb](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuToWeb-IIS.md)
+- [Installation / Setup of AcuToWeb - WINDOWS](docs/AcuToWeb-WINDOWS.md)
+- [Installation / Setup of AcuToWeb - LINUX](docs/AcuToWeb-LINUX.md)
+- [Configure IIS with AcuToWeb](docs/AcuToWeb-IIS.md)
 #### AcuXDBC
 - [Installing AcuXDBC Client and Server - WINDOWS](https://portal.microfocus.com/s/article/KM000008028)
 - [Installing AcuXDBC Client and Server - LINUX](https://portal.microfocus.com/s/article/KM000008030)
-- [AcuXDBC Linux Client Setup](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-LINUXClient.md)
-- [AcuXDBC MSSQL Linked Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docs/AcuXDBC-MSSQL-Linked-Server.md)
+- [AcuXDBC Linux Client Setup](docs/AcuXDBC-LINUXClient.md)
+- [AcuXDBC MSSQL Linked Server](docs/AcuXDBC-MSSQL-Linked-Server.md)
 #### AcuServer
 - [Network Share vs AcuServer Performance](https://portal.microfocus.com/s/article/KM000002013)
 
@@ -88,7 +88,7 @@
 - PMK: 42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (INTEL) 64-bit  
 
 ## Docker
-- [SQL Server](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/mssql.txt)
+- [SQL Server](docker/mssql.txt)
 - [Oracle](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/oracle.txt)
 - [PostgreSQL](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/postgres.txt)
 - [Informix](https://github.com/UNiXMIT/UNiXextend/blob/master/docker/informix.txt)
