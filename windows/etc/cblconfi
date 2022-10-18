@@ -23,6 +23,7 @@ RMFM_DETACH                 1
 # FILE_TRACE_FLUSH      1
 # FILE_TRACE_TIMESTAMP  1
 # PARAGRAPH_TRACE       1
+# EVENT_TRACE           1
 # A_TRACE               9
 # A_TRACE_LICENSE       1
 # ACU_DUMP              1
