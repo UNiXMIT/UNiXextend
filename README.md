@@ -48,7 +48,7 @@
 #### AcuToWeb
 - [Installation / Setup of AcuToWeb - WINDOWS](docs/AcuToWeb-WINDOWS.md)
 - [Installation / Setup of AcuToWeb - LINUX](docs/AcuToWeb-LINUX.md)
-- [Configure IIS with AcuToWeb](docs/AcuToWeb-IIS.md)
+- [Configure IIS with AcuToWeb](https://portal.microfocus.com/s/article/KM000011382)
 #### AcuXDBC
 - [Installing AcuXDBC Client and Server - WINDOWS](https://portal.microfocus.com/s/article/KM000008028)
 - [Installing AcuXDBC Client and Server - LINUX](https://portal.microfocus.com/s/article/KM000008030)
