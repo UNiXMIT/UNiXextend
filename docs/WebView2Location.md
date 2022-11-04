@@ -4,6 +4,6 @@ This policy configures WebView2 applications to use the WebView2 Runtime in the 
 
 To set the value for the folder path, provide a Value name and Value pair. Set value name to the Application User Model ID or the executable file name. You can use the "*" wildcard as value name to apply to all applications.  
 
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder" /v wrun32.exe /t REG_SZ /d "C:\PathToThe\WebView2Directory" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder" /v * /t REG_SZ /d "C:\PathToThe\WebView2Directory" /f
 
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder" /v wrun32.exe /t REG_SZ /d "C:\PathToThe\WebView2Directory" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder" /v * /t REG_SZ /d "C:\PathToThe\WebView2Directory" /f
