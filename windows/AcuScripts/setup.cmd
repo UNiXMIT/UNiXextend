@@ -48,7 +48,7 @@ choco install winscp
 :: choco install clumsy
 
 :: Install VSCode Extensions
-set VSCODEDIR="C:\Users\support\AppData\Local\Programs\Microsoft VS Code"
+set VSCODEDIR="C:\Program Files\Microsoft VS Code"
 %VSCODEDIR%\code --install-extension zhuangtongfa.material-theme
 %VSCODEDIR%\code --install-extension bitlang.cobol
 %VSCODEDIR%\code --install-extension micro-focus-amc.mfcobol
