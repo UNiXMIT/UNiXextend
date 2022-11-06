@@ -20,7 +20,9 @@ powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[Syste
 choco feature enable -n=allowGlobalConfirmation
 choco install googlechrome 
 choco install vscode /NoDesktopIcon 
-choco install sysinternals 
+choco install autoruns
+choco install procmon
+choco install procexp
 choco install vcredist140 
 choco install dotnet3.5 
 choco install 7zip 
@@ -45,9 +47,13 @@ choco install winscp
 :: choco install hashtab
 :: choco install clumsy
 
-del /q \Users\support\Desktop\*
-del /q \Users\Public\Desktop\*
-del /q \Users\Administrator\Desktop\*
+:: Install VSCode Extensions
+set VSCODEDIR="C:\Users\support\AppData\Local\Programs\Microsoft VS Code"
+%VSCODEDIR%\code --install-extension zhuangtongfa.material-theme
+%VSCODEDIR%\code --install-extension bitlang.cobol
+%VSCODEDIR%\code --install-extension micro-focus-amc.mfcobol
+%VSCODEDIR%\code --install-extension micro-focus-amc.mfenterprise
+%VSCODEDIR%\code --install-extension ms-vscode-remote.remote-ssh
 
 :: Create directories, change permissions and set PATH
 md \temp
