@@ -8,6 +8,11 @@ if '%ERRORLEVEL%' NEQ '0' (
 )
 
 :SETUP
+:: Create Admin user
+net user admin Unidos30
+net accounts /maxpwage:unlimited
+net user /add support Unidos30
+net localgroup administrators support /add
 
 :: Install Chocolatey
 powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
