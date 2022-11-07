@@ -42,6 +42,10 @@ choco install winscp
 :: choco install hashtab
 :: choco install clumsy
 
+del /q \Users\support\Desktop\*
+del /q \Users\Public\Desktop\*
+del /q \Users\Administrator\Desktop\*
+
 :: Install VSCode Extensions
 set VSCODEDIR="C:\Program Files\Microsoft VS Code\bin"
 call "%VSCODEDIR%\code" --install-extension zhuangtongfa.material-theme
@@ -50,29 +54,33 @@ call "%VSCODEDIR%\code" --install-extension micro-focus-amc.mfenterprise
 call "%VSCODEDIR%\code" --install-extension ms-vscode-remote.remote-ssh
 call "%VSCODEDIR%\code" --install-extension esbenp.prettier-vscode
 
-:: Create directories, change permissions, set PATH and add to QuickAccess
+:: Create directories, change permissions and set PATH
 md \temp
 cacls \temp /e /p Everyone:f
-powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\temp').Self.InvokeVerb('pintohome');"
 md \etc
 cacls \etc /e /p Everyone:f
-powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\etc').Self.InvokeVerb('pintohome');"
 md \AcuSupport
 cacls \AcuSupport /e /p Everyone:f
-powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuSupport').Self.InvokeVerb('pintohome');"
 md \AcuResources
 cacls \AcuResources /e /p Everyone:f
-powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuResources').Self.InvokeVerb('pintohome');"
 md \AcuDataFiles
 cacls \AcuDataFiles /e /p Everyone:f
-powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuDataFiles').Self.InvokeVerb('pintohome');"
 md \AcuSamples
 cacls \AcuSamples /e /p Everyone:f
-powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuSamples').Self.InvokeVerb('pintohome');"
 md \AcuScripts
 cacls \AcuScripts /e /p Everyone:f
-powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuScripts').Self.InvokeVerb('pintohome');"
 setx /m PATH "C:\AcuScripts;%PATH%"
+
+:: Add directories to QuickAccess at Login
+ECHO @ECHO OFF > \users\Public\Documents\QuickAccess.cmd
+ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\temp').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
+ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\etc').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
+ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuSupport').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
+ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuResources').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
+ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuDataFiles').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
+ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuSamples').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
+ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuScripts').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
+schtasks /create /sc ONLOGON /tn "ModifyQuickAccess" /tr "QuickAccess.cmd" /ru support /rp Unidos30 /rl highest
 
 :: Download AcuScripts
 cd \AcuScripts
