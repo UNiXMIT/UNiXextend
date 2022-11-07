@@ -80,7 +80,7 @@ ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuDataFiles').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuSamples').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuScripts').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
-schtasks /create /sc ONLOGON /tn "ModifyQuickAccess" /tr "QuickAccess.cmd" /ru support /rp Unidos30 /rl highest
+schtasks /create /sc ONLOGON /tn "ModifyQuickAccess" /tr "\users\Public\Documents\QuickAccess.cmd" /ru support /rp Unidos30 /rl highest /f
 
 :: Download AcuScripts
 cd \AcuScripts
@@ -119,7 +119,7 @@ powershell -command "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1
 sc config sshd start=auto
 
 :: Create Auto Shutdown Schedule
-schtasks /create /sc daily /tn "AutoShutdown" /tr "shutdown -s -f -t 0" /st 18:00 /ru support /rp Unidos30 /rl highest
+schtasks /create /sc daily /tn "AutoShutdown" /tr "shutdown -s -f -t 0" /st 18:00 /ru support /rp Unidos30 /rl highest /f
 schtasks /change /tn "AutoShutdown" /disable
 
 :: Defer Updates
