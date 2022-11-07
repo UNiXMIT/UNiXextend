@@ -10,8 +10,9 @@ if '%ERRORLEVEL%' NEQ '0' (
 :SETUP
 :: Create Admin user
 net user admin Unidos30
+md \Users\support
 net accounts /maxpwage:unlimited
-net user /add support Unidos30
+net user /add support Unidos30 /homedir:\Users\support
 net localgroup administrators support /add
 
 :: Install Chocolatey
