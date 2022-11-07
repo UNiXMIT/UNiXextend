@@ -10,7 +10,7 @@ if '%ERRORLEVEL%' NEQ '0' (
 :SETUP
 :: Create Admin user
 net accounts /maxpwage:unlimited
-net user Administrator Unidos30
+net user admin Unidos30
 net user /add support Unidos30
 net localgroup administrators support /add
 
