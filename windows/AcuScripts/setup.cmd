@@ -9,10 +9,10 @@ if '%ERRORLEVEL%' NEQ '0' (
 
 :SETUP
 :: Create Admin user
+net accounts /maxpwage:unlimited
 net user admin Unidos30
 md \Users\support
 cacls \Users\support /e /p Everyone:f
-net accounts /maxpwage:unlimited
 net user /add support Unidos30 /homedir:\Users\support
 net localgroup administrators support /add
 
