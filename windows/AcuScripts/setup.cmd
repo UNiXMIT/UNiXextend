@@ -51,7 +51,6 @@ choco install winscp
 set VSCODEDIR="C:\Program Files\Microsoft VS Code"
 %VSCODEDIR%\bin\code --install-extension zhuangtongfa.material-theme
 %VSCODEDIR%\bin\code --install-extension bitlang.cobol
-%VSCODEDIR%\bin\code --install-extension micro-focus-amc.mfcobol
 %VSCODEDIR%\bin\code --install-extension micro-focus-amc.mfenterprise
 %VSCODEDIR%\bin\code --install-extension ms-vscode-remote.remote-ssh
 
