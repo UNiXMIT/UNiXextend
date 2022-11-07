@@ -49,11 +49,11 @@ choco install winscp
 
 :: Install VSCode Extensions
 set VSCODEDIR="C:\Program Files\Microsoft VS Code"
-%VSCODEDIR%\code --install-extension zhuangtongfa.material-theme
-%VSCODEDIR%\code --install-extension bitlang.cobol
-%VSCODEDIR%\code --install-extension micro-focus-amc.mfcobol
-%VSCODEDIR%\code --install-extension micro-focus-amc.mfenterprise
-%VSCODEDIR%\code --install-extension ms-vscode-remote.remote-ssh
+%VSCODEDIR%\bin\code --install-extension zhuangtongfa.material-theme
+%VSCODEDIR%\bin\code --install-extension bitlang.cobol
+%VSCODEDIR%\bin\code --install-extension micro-focus-amc.mfcobol
+%VSCODEDIR%\bin\code --install-extension micro-focus-amc.mfenterprise
+%VSCODEDIR%\bin\code --install-extension ms-vscode-remote.remote-ssh
 
 :: Create directories, change permissions and set PATH
 md \temp
