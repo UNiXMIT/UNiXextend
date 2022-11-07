@@ -53,6 +53,7 @@ call %VSCODEDIR%\code --install-extension bitlang.cobol
 call %VSCODEDIR%\code --install-extension micro-focus-amc.mfenterprise
 call %VSCODEDIR%\code --install-extension ms-vscode-remote.remote-ssh
 call %VSCODEDIR%\code --install-extension esbenp.prettier-vscode
+xcopy /e /i \Users\Administrator\.vscode\extensions \Users\support\.vscode\extensions
 
 :: Create directories, change permissions and set PATH
 md \temp
