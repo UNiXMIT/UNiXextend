@@ -11,9 +11,7 @@ if '%ERRORLEVEL%' NEQ '0' (
 :: Create Admin user
 net accounts /maxpwage:unlimited
 net user admin Unidos30
-md \Users\support
-cacls \Users\support /e /p Everyone:f
-net user /add support Unidos30 /homedir:\Users\support
+net user /add support Unidos30
 net localgroup administrators support /add
 
 :: Install Chocolatey
