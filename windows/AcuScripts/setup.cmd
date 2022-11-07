@@ -48,12 +48,12 @@ del /q \Users\Administrator\Desktop\*
 
 :: Install VSCode Extensions
 set VSCODEDIR="C:\Program Files\Microsoft VS Code\bin"
-call %VSCODEDIR%\code --install-extension zhuangtongfa.material-theme
-call %VSCODEDIR%\code --install-extension bitlang.cobol
-call %VSCODEDIR%\code --install-extension micro-focus-amc.mfenterprise
-call %VSCODEDIR%\code --install-extension ms-vscode-remote.remote-ssh
-call %VSCODEDIR%\code --install-extension esbenp.prettier-vscode
-xcopy /e /i \Users\Administrator\.vscode\extensions \Users\support\.vscode\extensions
+call %VSCODEDIR%\code --extensions-dir "\Program Files\Microsoft VS Code\resources\app\extensions" --user-data-dir \Users\support\.vscode --install-extension zhuangtongfa.material-theme
+call %VSCODEDIR%\code --extensions-dir "\Program Files\Microsoft VS Code\resources\app\extensions" --user-data-dir \Users\support\.vscode --install-extension bitlang.cobol
+call %VSCODEDIR%\code --extensions-dir "\Program Files\Microsoft VS Code\resources\app\extensions" --user-data-dir \Users\support\.vscode --install-extension micro-focus-amc.mfenterprise
+call %VSCODEDIR%\code --extensions-dir "\Program Files\Microsoft VS Code\resources\app\extensions" --user-data-dir \Users\support\.vscode --install-extension ms-vscode-remote.remote-ssh
+call %VSCODEDIR%\code --extensions-dir "\Program Files\Microsoft VS Code\resources\app\extensions" --user-data-dir \Users\support\.vscode --install-extension esbenp.prettier-vscode
+:: xcopy /e /i \Users\Administrator\.vscode\extensions \Users\support\.vscode\extensions
 
 :: Create directories, change permissions and set PATH
 md \temp
