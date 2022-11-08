@@ -133,7 +133,7 @@ powershell -command "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1
 sc config sshd start=auto
 
 :: Create Auto Shutdown Schedule
-schtasks /create /sc daily /tn "AutoShutdown" /tr "shutdown -s -f -t 0" /st 18:00 /ru support /rp Unidos30 /rl highest /f
+schtasks /create /sc daily /tn "AutoShutdown" /tr "shutdown -s -f -t 0" /st 18:00 /f
 schtasks /change /tn "AutoShutdown" /disable
 
 :: Defer Updates
