@@ -53,7 +53,8 @@ ECHO @ECHO OFF > \users\Public\Documents\CleanupDesktop.cmd
 ECHO del /q \Users\support\Desktop\* >> \users\Public\Documents\CleanupDesktop.cmd
 ECHO del /q \Users\Public\Desktop\* >> \users\Public\Documents\CleanupDesktop.cmd
 ECHO del /q \Users\Administrator\Desktop\* >> \users\Public\Documents\CleanupDesktop.cmd
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v CleanupDesktop /t REG_SZ /d \users\Public\Documents\CleanupDesktop.cmd /f 
+ECHO schtasks /change /tn "CleanupDesktop" /DISABLE >> \users\Public\Documents\CleanupDesktop.cmd
+schtasks /create /sc ONLOGON /tn "CleanupDesktop" /tr "\users\Public\Documents\CleanupDesktop.cmd" /f
 
 :: Import VSCode settings and install VSCode Extensions at 'support' first Logon
 ECHO @ECHO OFF > \users\Public\Documents\VSCode.cmd
@@ -63,7 +64,8 @@ ECHO call %VSCODEDIR%\code --install-extension bitlang.cobol >> \users\Public\Do
 ECHO call %VSCODEDIR%\code --install-extension micro-focus-amc.mfenterprise >> \users\Public\Documents\VSCode.cmd
 ECHO curl -s -o C:\Users\support\AppData\Roaming\Code\User\settings.json https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/etc/settings.json >> \users\Public\Documents\VSCode.cmd
 ECHO curl -s -o C:\Users\support\AppData\Roaming\Code\User\keybindings.json https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/etc/keybindings.json >> \users\Public\Documents\VSCode.cmd
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v VSCodeExt /t REG_SZ /d \users\Public\Documents\VSCode.cmd /f 
+ECHO schtasks /change /tn "VSCode" /DISABLE >> \users\Public\Documents\VSCode.cmd
+schtasks /create /sc ONLOGON /tn "VSCode" /tr "\users\Public\Documents\VSCode.cmd" /f
 
 :: Create directories, change permissions and set PATH
 md \temp
@@ -91,7 +93,8 @@ ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuDataFiles').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuSamples').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuScripts').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v QuickAccess /t REG_SZ /d \users\Public\Documents\QuickAccess.cmd /f 
+ECHO schtasks /change /tn "ModifyQuickAccess" /DISABLE >> \users\Public\Documents\QuickAccess.cmd
+schtasks /create /sc ONLOGON /tn "ModifyQuickAccess" /tr "\users\Public\Documents\QuickAccess.cmd" /f
 
 :: Download AcuScripts
 cd \AcuScripts
