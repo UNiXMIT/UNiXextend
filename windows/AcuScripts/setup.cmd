@@ -97,7 +97,7 @@ schtasks /create /sc ONLOGON /tn "ModifyQuickAccess" /tr "\users\Public\Document
 
 :: Download AcuScripts
 cd \AcuScripts
-curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/AcuScripts/setenvExt.cmd
+curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/AcuScripts/setenv.cmd
 md .vscode
 cacls .vscode /e /p Everyone:f
 cd \AcuScripts\.vscode
