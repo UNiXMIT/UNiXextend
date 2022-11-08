@@ -19,9 +19,7 @@ powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[Syste
 
 :: Install/Configure Software
 choco feature enable -n=allowGlobalConfirmation
-choco install brave
-:: choco install googlechrome
-:: choco install firefox
+choco install googlechrome
 choco install vscode /NoDesktopIcon 
 choco install autoruns
 choco install procmon
