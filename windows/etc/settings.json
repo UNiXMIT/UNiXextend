@@ -5,21 +5,10 @@
     "files.autoGuessEncoding": true,
     "terminal.integrated.automationShell.windows": "",
     "terminal.integrated.defaultProfile.windows": "Command Prompt",
-    "remote.SSH.remotePlatform": {
-        "mfmit.ddns.net": "linux",
-        "18.169.240.128": "windows",
-        "AWSwindows": "windows",
-        "AWSlinux": "linux",
-        "Axure": "linux",
-        "AWSwindows2": "windows",
-        "Azure": "linux",
-        "DevOps": "linux"
-    },
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "git.enableCommitSigning": true,
     "window.newWindowDimensions": "offset",
     "diffEditor.ignoreTrimWhitespace": false,
-    "editor.wordWrap": "on",
-    "editor.maxTokenizationLineLength": 50000
+    "editor.wordWrap": "on"
 }

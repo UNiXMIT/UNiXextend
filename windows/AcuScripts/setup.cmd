@@ -48,16 +48,22 @@ choco install winscp
 :: choco install hashtab
 :: choco install clumsy
 
-del /q \Users\support\Desktop\*
-del /q \Users\Public\Desktop\*
-del /q \Users\Administrator\Desktop\*
+:: Desktop CleanUp at 'support' first Logon
+ECHO @ECHO OFF > \users\Public\Documents\CleanupDesktop.cmd
+ECHO del /q \Users\support\Desktop\* >> \users\Public\Documents\CleanupDesktop.cmd
+ECHO del /q \Users\Public\Desktop\* >> \users\Public\Documents\CleanupDesktop.cmd
+ECHO del /q \Users\Administrator\Desktop\* >> \users\Public\Documents\CleanupDesktop.cmd
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v CleanupDesktop /t REG_SZ /d \users\Public\Documents\CleanupDesktop.cmd /f 
 
-:: Install VSCode Extensions
-set VSCODEDIR="C:\Program Files\Microsoft VS Code\bin"
-call %VSCODEDIR%\code --install-extension zhuangtongfa.material-theme
-call %VSCODEDIR%\code --install-extension bitlang.cobol
-call %VSCODEDIR%\code --install-extension micro-focus-amc.mfenterprise
-xcopy /e /i \Users\Administrator\.vscode\extensions "\Program Files\Microsoft VS Code\resources\app\extensions"
+:: Import VSCode settings and install VSCode Extensions at 'support' first Logon
+ECHO @ECHO OFF > \users\Public\Documents\VSCode.cmd
+ECHO set VSCODEDIR="C:\Program Files\Microsoft VS Code\bin" >> \users\Public\Documents\VSCode.cmd
+ECHO call %VSCODEDIR%\code --install-extension zhuangtongfa.material-theme >> \users\Public\Documents\VSCode.cmd
+ECHO call %VSCODEDIR%\code --install-extension bitlang.cobol >> \users\Public\Documents\VSCode.cmd
+ECHO call %VSCODEDIR%\code --install-extension micro-focus-amc.mfenterprise >> \users\Public\Documents\VSCode.cmd
+ECHO curl -s -o C:\Users\support\AppData\Roaming\Code\User\settings.json https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/etc/settings.json >> \users\Public\Documents\VSCode.cmd
+ECHO curl -s -o C:\Users\support\AppData\Roaming\Code\User\keybindings.json https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/etc/keybindings.json >> \users\Public\Documents\VSCode.cmd
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v VSCodeExt /t REG_SZ /d \users\Public\Documents\VSCode.cmd /f 
 
 :: Create directories, change permissions and set PATH
 md \temp
@@ -76,7 +82,7 @@ md \AcuScripts
 cacls \AcuScripts /e /p Everyone:f
 setx /m PATH "C:\AcuScripts;%PATH%"
 
-:: Add directories to QuickAccess at Login
+:: Add directories to QuickAccess at 'support' first Login
 ECHO @ECHO OFF > \users\Public\Documents\QuickAccess.cmd
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\temp').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\etc').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
@@ -85,11 +91,11 @@ ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuDataFiles').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuSamples').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
 ECHO powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "$o = new-object -com shell.application;$o.Namespace('c:\AcuScripts').Self.InvokeVerb('pintohome');" >> \users\Public\Documents\QuickAccess.cmd
-schtasks /create /sc ONLOGON /tn "ModifyQuickAccess" /tr "\users\Public\Documents\QuickAccess.cmd" /ru support /rp Unidos30 /rl highest /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\RunOnce" /v QuickAccess /t REG_SZ /d \users\Public\Documents\QuickAccess.cmd /f 
 
 :: Download AcuScripts
 cd \AcuScripts
-curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/AcuScripts/setenv.cmd
+curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/AcuScripts/setenvExt.cmd
 md .vscode
 cacls .vscode /e /p Everyone:f
 cd \AcuScripts\.vscode
