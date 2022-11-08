@@ -17,9 +17,11 @@ net localgroup administrators support /add
 :: Install Chocolatey
 powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
-:: Install Software
+:: Install/Configure Software
 choco feature enable -n=allowGlobalConfirmation
-choco install googlechrome 
+choco install brave
+:: choco install googlechrome
+:: choco install firefox
 choco install vscode /NoDesktopIcon 
 choco install autoruns
 choco install procmon
@@ -58,10 +60,9 @@ schtasks /create /sc ONLOGON /tn "CleanupDesktop" /tr "\users\Public\Documents\C
 
 :: Import VSCode settings and install VSCode Extensions at 'support' first Logon
 ECHO @ECHO OFF > \users\Public\Documents\VSCode.cmd
-ECHO set VSCODEDIR="C:\Program Files\Microsoft VS Code\bin" >> \users\Public\Documents\VSCode.cmd
-ECHO call %VSCODEDIR%\code --install-extension zhuangtongfa.material-theme >> \users\Public\Documents\VSCode.cmd
-ECHO call %VSCODEDIR%\code --install-extension bitlang.cobol >> \users\Public\Documents\VSCode.cmd
-ECHO call %VSCODEDIR%\code --install-extension micro-focus-amc.mfenterprise >> \users\Public\Documents\VSCode.cmd
+ECHO call "C:\Program Files\Microsoft VS Code\bin\code" --install-extension zhuangtongfa.material-theme >> \users\Public\Documents\VSCode.cmd
+ECHO call "C:\Program Files\Microsoft VS Code\bin\code" --install-extension bitlang.cobol >> \users\Public\Documents\VSCode.cmd
+ECHO call "C:\Program Files\Microsoft VS Code\bin\code" --install-extension micro-focus-amc.mfenterprise >> \users\Public\Documents\VSCode.cmd
 ECHO curl -s -o C:\Users\support\AppData\Roaming\Code\User\settings.json https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/etc/settings.json >> \users\Public\Documents\VSCode.cmd
 ECHO curl -s -o C:\Users\support\AppData\Roaming\Code\User\keybindings.json https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/etc/keybindings.json >> \users\Public\Documents\VSCode.cmd
 ECHO schtasks /change /tn "VSCode" /DISABLE >> \users\Public\Documents\VSCode.cmd
