@@ -7,7 +7,6 @@ if '%ERRORLEVEL%' NEQ '0' (
     GOTO :END
 )
 
-:SETUP
 :: Create Admin user
 net accounts /maxpwage:unlimited
 net user administrator Unidos30
@@ -42,9 +41,7 @@ choco install winscp
 :: choco install linkshellextension
 :: choco install dotpeek
 :: choco install tinytask
-:: choco install nircmd
 :: choco install speedtest
-:: choco install hashtab
 :: choco install clumsy
 
 :: Desktop CleanUp at 'support' first Logon
