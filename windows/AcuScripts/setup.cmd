@@ -66,6 +66,13 @@ ECHO curl -s -o C:\Users\support\AppData\Roaming\Code\User\keybindings.json http
 ECHO schtasks /change /tn "VSCode" /DISABLE >> \users\Public\Documents\VSCode.cmd
 schtasks /create /sc ONLOGON /tn "VSCode" /tr "\users\Public\Documents\VSCode.cmd" /ru support /rp Unidos30 /rl highest /f
 
+:: extractMSI
+reg add "HKEY_CLASSES_ROOT\Msi.Package\shell\extractMSI\command" /ve /t REG_SZ /d "msiexec /a \"%1\" /qb TARGETDIR=\"%1 Contents\"" /f
+
+:: AcuSilent MSI Install Option
+reg add "HKEY_CLASSES_ROOT\Msi.Package\shell\runas" /ve /t REG_SZ /d "AcuSilent" /f
+reg add "HKEY_CLASSES_ROOT\Msi.Package\shell\runas\command" /ve /t REG_SZ /d "msiexec /i \"%1\" ADDLOCAL=ALL WINDOWSVERSION=PostWindows7 /qb" /f
+
 :: Create directories, change permissions and set PATH
 md \temp
 cacls \temp /e /p Everyone:f
