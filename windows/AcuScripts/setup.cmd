@@ -39,7 +39,6 @@ choco install winscp
 :: choco install lockhunter
 :: choco install adobereader
 :: choco install insomnia-rest-api-client
-:: choco install lessmsi
 :: choco install linkshellextension
 :: choco install dotpeek
 :: choco install tinytask
