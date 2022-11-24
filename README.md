@@ -31,6 +31,7 @@
 #### AcuRuntime  
 - [ACUCOBOL-GT Trace Files For Troubleshooting](https://portal.microfocus.com/s/article/KM000005044)
 - [Cutting Down An ACUCOBOL-GT Application To Submit For Troubleshooting](https://portal.microfocus.com/s/article/KM000007773)
+- [How to read information returned by a MAV](https://portal.microfocus.com/s/article/KM000012023)
 - [New Activator Wizard README](https://portal.microfocus.com/s/article/KM000004829)
 - [Supported Windows Versions](docs/windowsVersions.md)
 - [ISV License Utility](ISVLicenseUtility.md)
