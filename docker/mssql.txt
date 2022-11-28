@@ -1,6 +1,6 @@
 # Pull and Run container
-podman pull mcr.microsoft.com/mssql/server:2019-latest
-podman run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrongPassword" -p 1433:1433 --name MSSQL -d mcr.microsoft.com/mssql/server:2019-latest
+podman pull mcr.microsoft.com/mssql/server:2022-latest
+podman run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=YourStrongPassword" -p 1433:1433 --name MSSQL -d mcr.microsoft.com/mssql/server:2022-latest
 
 # Attach to container
 podman exec -it MSSQL bash
