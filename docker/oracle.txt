@@ -2,6 +2,7 @@
 git clone https://github.com/oracle/docker-images.git
 cd docker-images/OracleDatabase/SingleInstance/dockerfiles
 export BUILDAH_FORMAT=docker
+export BUILDAH_ISOLATION=chroot
 ./buildContainerImage.sh -v 21.3.0 -x
 podman run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=YourStrongPassword -e ORACLE_CHARACTERSET=AL32UTF8 oracle/database:21.3.0-xe
 
