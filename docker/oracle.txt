@@ -54,3 +54,9 @@ oracle =
     (SERVICE_NAME=XE)
   )
 )
+
+# ORA-12526, TNS:listener: all appropriate instances are in restricted mode.
+sqlplus /nolog
+conn sys as sysdba
+password: YourStrongPassword
+alter system disable restricted session;
