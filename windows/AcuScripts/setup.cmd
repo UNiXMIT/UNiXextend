@@ -84,6 +84,8 @@ md \AcuSamples
 cacls \AcuSamples /e /p Everyone:f
 md \AcuScripts
 cacls \AcuScripts /e /p Everyone:f
+md \AcuLogs
+cacls \AcuLogs /e /p Everyone:f
 setx /m PATH "C:\AcuScripts;%PATH%"
 
 :: Add directories to QuickAccess at 'support' first Login
