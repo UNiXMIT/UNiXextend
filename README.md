@@ -1,6 +1,6 @@
-## [AcuCOBOL-GT extend 10.4.1 Documentation](https://bit.ly/3C7G5Fy)
+## [AcuCOBOL-GT extend 10.4.1 Documentation](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/index.html)
 
-- [AcuCOBOL-GT extend 10.4.1 Release Notes](https://bit.ly/3DdOLeE)
+- [AcuCOBOL-GT extend 10.4.1 Release Notes](https://www.microfocus.com/documentation/extend-acucobol/1050/extend_release_notes/index.html)
 - [AcuCommunity](https://community.microfocus.com/cobol/acucobol/)
 - [GitHub Repo](https://github.com/UNiXMIT/UNiXextend)
 - [Documentation](#documentation)
@@ -18,13 +18,13 @@
 
 ## Documentation
 ### Official
-- [File Status Codes](https://bit.ly/3wBPaFq)
-- [Compiler Options](https://bit.ly/3wDLB1r)
-- [Runtime Options](https://bit.ly/3CaHlrx)
-- [License File Names](https://bit.ly/3DbWt9l)
-- [Limits and Ranges](https://bit.ly/3nb9yu1)
-- [Memory Handling Descriptions](https://bit.ly/3c2D0Mg)
-- [Machine Key Mismatch](https://bit.ly/3n8jV1o)
+- [File Status Codes](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKTRTRDOSSS021.html)
+- [Compiler Options](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKUSUSCOMPUS2.2.html)
+- [Runtime Options](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKUSUSCOMPS031.html)
+- [License File Names](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKGCGCSTRTS005.html)
+- [Limits and Ranges](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKPPPPSPECS002.html)
+- [Memory Handling Descriptions](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKUSUSPROGS044.html)
+- [Machine Key Mismatch](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKGCGCTRBLS002.html)
 - [VM Support Statement](https://portal.microfocus.com/s/article/KM000010632)
 
 ### Wiki
