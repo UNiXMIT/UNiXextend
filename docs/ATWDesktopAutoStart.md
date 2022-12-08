@@ -1,0 +1,1 @@
+reg add "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v "AcuToWeb Desktop" /t REG_SZ /d "C:\Program Files (x86)\Micro Focus\extend 10.5.0\ACUTOWEBDESKTOP\ATWDesktop.exe" /f
