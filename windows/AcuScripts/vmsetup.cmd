@@ -23,6 +23,7 @@ winget install Microsoft.VisualStudioCode --accept-source-agreements --accept-pa
 winget install Microsoft.VCRedist.2015+.x86 --accept-source-agreements --accept-package-agreements
 winget install Microsoft.VCRedist.2015+.x64 --accept-source-agreements --accept-package-agreements
 winget install WinSCP.WinSCP --accept-source-agreements --accept-package-agreements
+:: winget install Microsoft.VisualStudio.2022.Professional --accept-source-agreements --accept-package-agreements --override "--wait --quiet --add Microsoft.Net.Component.4.5.TargetingPack --add Microsoft.Net.Component.4.5.2.TargetingPack --add Microsoft.VisualStudio.Component.Debugger.JustInTime --add Microsoft.VisualStudio.Component.GraphDocument --add Microsoft.VisualStudio.Component.NuGet --add Microsoft.VisualStudio.Component.DockerTools --add Microsoft.VisualStudio.Component.VisualStudioData --add Microsoft.VisualStudio.Component.Web --add Microsoft.VisualStudio.Component.ManagedDesktop.Core --add Microsoft.VisualStudio.Workload.Azure --add Microsoft.VisualStudio.Component.Wcf.Tooling --add Microsoft.VisualStudio.Component.SQL.SSDT --add Microsoft.VisualStudio.Workload.NetCoreTools --downloadThenInstall"
 
 :: Desktop CleanUp
 del /q \Users\support\Desktop\*
