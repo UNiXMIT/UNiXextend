@@ -6,6 +6,11 @@
 user=support
 echo "root:Unidos30" | chpasswd
 echo "$user:Unidos30" | chpasswd
+echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> /home/$user/.bashrc
+sudo sed -i -E 's/#?AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config
+sudo sed -i -E 's/#?PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+sudo service ssh restart &>/dev/null
+sudo service sshd restart &>/dev/null  
 
 if command -v yum >/dev/null; then
   sudo yum update -y;
@@ -29,12 +34,6 @@ elif command -v zypper >/dev/null; then
 else
   echo "Install CMD not identified"
 fi
-
-echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> /home/$user/.bashrc
-sudo sed -i -E 's/#?AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config
-sudo sed -i -E 's/#?PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
-sudo service ssh restart &>/dev/null
-sudo service sshd restart &>/dev/null  
 
 cd /home
 [ ! -d "products" ] && sudo mkdir -m 755 products
