@@ -18,7 +18,7 @@
 
 ## Documentation
 ### Official
-- [File Status Codes](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKTRTRDOSSS021.html)
+- [File Status Codes](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/GUID-1C271F93-56FD-4CA7-8C6C-0826B061C5C1.html)
 - [Compiler Options](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKUSUSCOMPUS2.2.html)
 - [Runtime Options](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKUSUSCOMPS031.html)
 - [License File Names](https://www.microfocus.com/documentation/extend-acucobol/1050/extend-interoperability-suite/BKGCGCSTRTS005.html)
