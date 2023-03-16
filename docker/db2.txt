@@ -1,6 +1,6 @@
 # Pull and Run container
-podman pull ibmcom/db2
-podman run -itd --name DB2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INSTANCE=support -e DB2INST1_PASSWORD=YourStrongPassword -e DBNAME=support ibmcom/db2
+podman pull icr.io/db2_community/db2
+podman run -itd --name DB2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INSTANCE=support -e DB2INST1_PASSWORD=YourStrongPassword -e DBNAME=support icr.io/db2_community/db2
 
 # Attach to container
 podman exec -it DB2 bash -c "su - support"
@@ -23,10 +23,10 @@ podman stop DB2
 podman rm DB2
 
 # Clients and Driver Downloads
-https://ibm.co/3o3kucS
+https://ibm.co/3JKDGaL
 
 # Install ODBC Driver (cmd as Admin)
 db2cli install -setup
 
 # Source
-https://dockr.ly/2VsKKzQ
+https://ibm.co/3JuuQga
