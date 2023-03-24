@@ -201,7 +201,10 @@
                 "revealProblems": "onProblem",
                 "close": true
             },
-            "problemMatcher": []
+            "problemMatcher": [
+                "$acucobol-warning-ccbl",
+                "$acucobol-ccbl"
+            ]
         },
         {
             "label": "AcuVutil",
