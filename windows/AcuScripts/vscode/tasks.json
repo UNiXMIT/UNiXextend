@@ -180,6 +180,30 @@
             ]
         },
         {
+            "label": "Boomerang",
+            "type": "shell",
+            "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\boomerang",
+            "args": [
+                "-server", "%BOOMERANG%",
+                "-alias", "${config:BOOMERANG-ALIAS}",
+                "-include", "${config:BOOMERANG-INCLUDE}",
+                "-sf", "${fileBasenameNoExtension}${config:BOOMERANG-EXTENSION}"
+
+            ],
+            "options": {
+                "env": {
+                    "BOOMERANG": "${config:BOOMERANG-HOST}:${config:BOOMERANG-PORT}",
+                    "ACUCOBOL": "\"${config:INSTALLDIR} ${input:EXTEND}\"\\AcuGT"
+                }
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "AcuVutil",
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\vutil32 %VUTIL%",

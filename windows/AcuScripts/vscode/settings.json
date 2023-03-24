@@ -20,10 +20,16 @@
     "SOURCEEXT": ".cbl",
     // Compiled Object Extension
     "FILEEXT": ".acu",
-    // AcuRcl Connection Details
+    // AcuRCL Connection Details
     "ACURCL-HOST": "",
     "ACURCL-PORT": "",
     "ACURCL-ALIAS": "",
     // AcuRFAP Remote Path
-    "ACURFAP-PATH": ""
+    "ACURFAP-PATH": "",
+    // Acu Boomerang Configuration
+    "BOOMERANG-HOST": "",
+    "BOOMERANG-PORT": "",
+    "BOOMERANG-ALIAS": "",
+    "BOOMERANG-INCLUDE": "EXEC SQL INCLUDE",
+    "BOOMERANG-EXTENSION": ""
 }
