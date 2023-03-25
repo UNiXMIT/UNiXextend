@@ -26,10 +26,40 @@
       ],
     "tasks": [
         {
-            "label": "AcuCompiler",
+            "label": "AcuCompile Selected",
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\ccbl32",
             "args": [
+                "-sp", ".;%PUBLICDIR%\\sample\\def;%PUBLICDIR%\\sample\\xmlext;%PUBLICDIR%\\sample\\AcuBench\\resource",
+                "${fileBasenameNoExtension}${config:SOURCEEXT}"
+            ],
+            "options": {
+                "env": {
+                    "CBLFLAGS": "${config:CBLFLAGS}",
+                    "ACUCOBOL": "\"${config:CCBLDIR} ${input:EXTEND}\"\\AcuGT",
+                    "PUBLICDIR": "\"${config:PUBLICDIR} ${input:EXTEND}\""   
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            },
+            "problemMatcher": [
+                "$acucobol-warning-ccbl",
+                "$acucobol-ccbl"
+            ]
+        },
+        {
+            "label": "AcuCompile All",
+            "type": "shell",
+            "command": "for %f in (*${config:SOURCEEXT}) do",
+            "args": [
+                "%ACUCOBOL%\\bin${config:ACUPATCH}\\ccbl32",
                 "-sp", ".;%PUBLICDIR%\\sample\\def;%PUBLICDIR%\\sample\\xmlext;%PUBLICDIR%\\sample\\AcuBench\\resource",
                 "${fileBasenameNoExtension}${config:SOURCEEXT}"
             ],
