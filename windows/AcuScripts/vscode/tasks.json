@@ -61,7 +61,7 @@
             "args": [
                 "%ACUCOBOL%\\bin${config:ACUPATCH}\\ccbl32",
                 "-sp", ".;%PUBLICDIR%\\sample\\def;%PUBLICDIR%\\sample\\xmlext;%PUBLICDIR%\\sample\\AcuBench\\resource",
-                "${fileBasenameNoExtension}${config:SOURCEEXT}"
+                "%f"
             ],
             "options": {
                 "env": {
