@@ -219,7 +219,6 @@
                 "-include", "%INCLUDE%",
                 "-po", "${fileBasenameNoExtension}${config:BOOMERANG-POSTEXT}",
                 "-sf", "${fileBasenameNoExtension}${config:BOOMERANG-PREEXT}"
-
             ],
             "options": {
                 "env": {
@@ -253,7 +252,6 @@
                 "-include", "%INCLUDE%",
                 "-po", "%~nf${config:BOOMERANG-POSTEXT}",
                 "-sf", "%f"
-
             ],
             "options": {
                 "env": {
