@@ -216,13 +216,15 @@
             "args": [
                 "-server", "%BOOMERANG%",
                 "-alias", "${config:BOOMERANG-ALIAS}",
-                "-include", "${config:BOOMERANG-INCLUDE}",
-                "-sf", "${fileBasenameNoExtension}${config:BOOMERANG-EXTENSION}"
+                "-include", "%INCLUDE%",
+                "-po", "${fileBasenameNoExtension}${config:BOOMERANG-POSTEXT}",
+                "-sf", "${fileBasenameNoExtension}${config:BOOMERANG-PREEXT}"
 
             ],
             "options": {
                 "env": {
                     "BOOMERANG": "${config:BOOMERANG-HOST}:${config:BOOMERANG-PORT}",
+                    "INCLUDE": "${config:BOOMERANG-INCLUDE}",
                     "ACUCOBOL": "\"${config:INSTALLDIR} ${input:EXTEND}\"\\AcuGT"
                 }
             },
@@ -243,18 +245,20 @@
         {
             "label": "AcuPrecompile All - Boomerang",
             "type": "shell",
-            "command": "for %f in (*${config:BOOMERANG-EXTENSION}) do",
+            "command": "for %f in (*${config:BOOMERANG-PREEXT}) do",
             "args": [
                 "%ACUCOBOL%\\bin${config:ACUPATCH}\\boomerang",
                 "-server", "%BOOMERANG%",
                 "-alias", "${config:BOOMERANG-ALIAS}",
-                "-include", "${config:BOOMERANG-INCLUDE}",
+                "-include", "%INCLUDE%",
+                "-po", "%~nf${config:BOOMERANG-POSTEXT}",
                 "-sf", "%f"
 
             ],
             "options": {
                 "env": {
                     "BOOMERANG": "${config:BOOMERANG-HOST}:${config:BOOMERANG-PORT}",
+                    "INCLUDE": "${config:BOOMERANG-INCLUDE}",
                     "ACUCOBOL": "\"${config:INSTALLDIR} ${input:EXTEND}\"\\AcuGT"
                 }
             },
