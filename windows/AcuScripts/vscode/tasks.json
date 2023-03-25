@@ -72,7 +72,7 @@
             },
             "group": {
                 "kind": "build",
-                "isDefault": true
+                "isDefault": false
             },
             "presentation": {
                 "reveal": "silent",
@@ -210,7 +210,7 @@
             ]
         },
         {
-            "label": "Boomerang",
+            "label": "AcuPrecompile Selected - Boomerang",
             "type": "shell",
             "command": "%ACUCOBOL%\\bin${config:ACUPATCH}\\boomerang",
             "args": [
@@ -225,6 +225,42 @@
                     "BOOMERANG": "${config:BOOMERANG-HOST}:${config:BOOMERANG-PORT}",
                     "ACUCOBOL": "\"${config:INSTALLDIR} ${input:EXTEND}\"\\AcuGT"
                 }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "reveal": "silent",
+                "revealProblems": "onProblem",
+                "close": true
+            },
+            "problemMatcher": [
+                "$acucobol-warning-ccbl",
+                "$acucobol-ccbl"
+            ]
+        },
+        {
+            "label": "AcuPrecompile All - Boomerang",
+            "type": "shell",
+            "command": "for %f in (*${config:BOOMERANG-EXTENSION}) do",
+            "args": [
+                "%ACUCOBOL%\\bin${config:ACUPATCH}\\boomerang",
+                "-server", "%BOOMERANG%",
+                "-alias", "${config:BOOMERANG-ALIAS}",
+                "-include", "${config:BOOMERANG-INCLUDE}",
+                "-sf", "%f"
+
+            ],
+            "options": {
+                "env": {
+                    "BOOMERANG": "${config:BOOMERANG-HOST}:${config:BOOMERANG-PORT}",
+                    "ACUCOBOL": "\"${config:INSTALLDIR} ${input:EXTEND}\"\\AcuGT"
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
             },
             "presentation": {
                 "reveal": "silent",
