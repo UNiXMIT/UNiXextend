@@ -2,7 +2,11 @@
     // See https://go.microsoft.com/fwlink/?LinkId=733558
     // for the documentation about the tasks.json format
     //
+    // The following VSCode setting should be set to 'Command Prompt'
+    // 'Terminal > Integrated > Default Profile: Windows'
+    //
     // ProblemMatcher requires COBOL extension by BitLang - https://marketplace.visualstudio.com/items?itemName=bitlang.cobol
+    //
     "version": "2.0.0",
     "inputs": [
         {
