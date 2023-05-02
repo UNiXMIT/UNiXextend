@@ -1,23 +1,19 @@
 # Build and Run container
-git clone https://github.com/oracle/docker-images.git
-cd docker-images/OracleDatabase/SingleInstance/dockerfiles
-export BUILDAH_FORMAT=docker
-export BUILDAH_ISOLATION=chroot
-./buildContainerImage.sh -v 21.3.0 -x
-podman run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=YourStrongPassword -e ORACLE_CHARACTERSET=AL32UTF8 oracle/database:21.3.0-xe
+podman pull container-registry.oracle.com/database/free:latest
+podman run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=YourStrongPassword -e ORACLE_CHARACTERSET=AL32UTF8 container-registry.oracle.com/database/free:latest
 
 # Attach to container
 podman exec -it ORACLE bash
 
 # Container Details
-sid: XE
+sid: FREE
 username: sys
 password: YourStrongPassword
 
 # Create User and Schema
-sqlplus sys/YourStrongPassword@//localhost:1521/XE as sysdba
-sqlplus system/YourStrongPassword@//localhost:1521/XE
-sqlplus pdbadmin/YourStrongPassword@//localhost:1521/XEPDB1
+podman exec -it ORACLE sqlplus sys/YourStrongPassword@//localhost:1521/FREE as sysdba
+podman exec -it ORACLE sqlplus system/YourStrongPassword@//localhost:1521/FREE
+podman exec -it ORACLE sqlplus pdbadmin/YourStrongPassword@//localhost:1521/FREEPDB1
 
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 CREATE USER support IDENTIFIED BY YourPassword;
@@ -28,7 +24,7 @@ podman stop ORACLE
 podman rm ORACLE
 
 # Source
-https://github.com/oracle/docker-images
+https://bit.ly/44fijqt
 
 # ODBC Driver Setup
 sudo yum install [Oracle Instant Client + ODBC .rpm]
@@ -41,7 +37,7 @@ rpm -ql oracle-instantclient-odbc-*
 Description     = Oracle ODBC Connection
 Driver          = /usr/lib/oracle/19.9/client64/lib/libsqora.so.19.1
 Database        = support
-Servername      = 127.0.0.1:1521/XE
+Servername      = 127.0.0.1:1521/FREE
 UserID          = support
 
 # tnsnames.ora
