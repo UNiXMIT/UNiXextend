@@ -1,6 +1,6 @@
 # Pull and Run container
-podman pull mysql/mysql-server:latest
-podman run --name=MYSQL -p 3306:3306 -d mysql/mysql-server:latest
+podman pull container-registry.oracle.com/mysql/community-server:latest
+podman run --name=MYSQL -p 3306:3306 -d container-registry.oracle.com/mysql/community-server:latest
 
 # Root password
 podman logs MYSQL 2>&1 | grep GENERATED
@@ -21,4 +21,4 @@ podman stop MYSQL
 podman rm MYSQL
 
 # Source
-http://bit.ly/2JwvNGv
+https://bit.ly/44fijqt
