@@ -100,3 +100,4 @@
 - [Redis](docker/redis.txt)
 - [APLS](docker/apls.txt)
 - [NODE](docker/node.txt)
+- [Squid](docker/squid.txt)
