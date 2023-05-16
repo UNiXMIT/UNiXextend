@@ -48,7 +48,7 @@ oracle =
     (ADDRESS = (PROTOCOL = TCP)(HOST = xxx.xxx.xxx.xxx)(PORT = 1521)
   )
   (CONNECT_DATA =
-    (SERVICE_NAME=XE)
+    (SERVICE_NAME=FREE)
   )
 )
 
