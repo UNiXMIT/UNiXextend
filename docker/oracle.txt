@@ -27,7 +27,7 @@ podman rm ORACLE
 https://bit.ly/44fijqt
 
 # ODBC Driver Setup
-sudo yum install [Oracle Instant Client + ODBC .rpm]
+sudo dnf install [Oracle Instant Client + ODBC .rpm]
 
 # ODBC Driver Location example
 rpm -ql oracle-instantclient-odbc-*

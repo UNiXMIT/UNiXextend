@@ -22,13 +22,13 @@
     "FILEEXT": ".acu",
     // AcuRCL Connection Details
     "ACURCL-HOST": "",
-    "ACURCL-PORT": "",
+    "ACURCL-PORT": "5632",
     "ACURCL-ALIAS": "",
     // AcuRFAP Remote Path
     "ACURFAP-PATH": "",
     // AcuBoomerang Configuration
     "BOOMERANG-HOST": "",
-    "BOOMERANG-PORT": "",
+    "BOOMERANG-PORT": "7770",
     "BOOMERANG-ALIAS": "",
     "BOOMERANG-INCLUDE": "EXEC SQL INCLUDE",
     "BOOMERANG-PREEXT": ".pco",
