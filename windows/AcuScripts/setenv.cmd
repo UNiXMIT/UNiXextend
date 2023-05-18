@@ -135,7 +135,7 @@ SET DEF=".;%PUBLICDIR%sample\def;%PUBLICDIR%sample"
 SET XML=".;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample"
 SET BMP=".;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample"
 SET ALL=".;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample"
-SET COPYPATH=%ALL%
+SET "COPYPATH=.;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample"
 IF "%ACUBIT%"=="" SET ACUBIT=32
 IF "%ACUDEF%"=="TRUE" GOTO :SET-DEFAULT-VERSION
 IF "%ACUADMIN%"=="TRUE" GOTO :ACUADMIN
