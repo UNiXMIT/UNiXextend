@@ -26,8 +26,6 @@ choco install procexp
 choco install vcredist140 
 choco install 7zip 
 choco install winscp
-choco install caffeine
-mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\caffeine64.exe" "%ALLUSERSPROFILE%\chocolatey\bin\caffeine64.exe"
 :: choco install visualstudio2017professional
 :: choco install visualstudio2019professional
 :: choco install visualstudio2022professional
@@ -131,6 +129,10 @@ reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\S
 
 :: Show file extensions
 reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v HideFilesExt /t REG_DWORD /d 0 /f
+
+:: Disable Monitor Timeout
+powercfg -change -monitor-timeout-ac 0
+powercfg -change -monitor-timeout-dc 0
 
 :: Turn off IE Enhanced Security Configuration 
 :: reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}" /v "IsInstalled" /t REG_DWORD /d 0 /f 
