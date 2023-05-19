@@ -14,7 +14,7 @@ net localgroup administrators support /add
 
 :: Install Chocolatey
 powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-setx /m PATH "C:\ProgramData\chocolatey\bin;%PATH%"
+setx /m PATH "%ALLUSERSPROFILE%\chocolatey\bin;%PATH%"
 
 :: Install/Configure Software
 choco feature enable -n=allowGlobalConfirmation
@@ -26,6 +26,8 @@ choco install procexp
 choco install vcredist140 
 choco install 7zip 
 choco install winscp
+choco install caffeine
+copy "%ALLUSERSPROFILE%\chocolatey\bin\caffeine64.exe" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
 :: choco install visualstudio2017professional
 :: choco install visualstudio2019professional
 :: choco install visualstudio2022professional
