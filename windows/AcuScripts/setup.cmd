@@ -27,7 +27,7 @@ choco install vcredist140
 choco install 7zip 
 choco install winscp
 choco install caffeine
-copy "%ALLUSERSPROFILE%\chocolatey\bin\caffeine64.exe" "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup"
+mklink "%APPDATA%\Microsoft\Windows\Start Menu\Programs\Startup\caffeine64.exe" "%ALLUSERSPROFILE%\chocolatey\bin\caffeine64.exe"
 :: choco install visualstudio2017professional
 :: choco install visualstudio2019professional
 :: choco install visualstudio2022professional
