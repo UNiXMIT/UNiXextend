@@ -9,16 +9,23 @@ echo "$user:Unidos30" | chpasswd
 echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> /home/$user/.bashrc
 sudo sed -i -E 's/#?AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config
 sudo sed -i -E 's/#?PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+echo $user' ALL=(ALL:ALL) ALL' | sudo EDITOR='tee -a' visudo
 sudo service ssh restart &>/dev/null
 sudo service sshd restart &>/dev/null  
 
-if command -v yum >/dev/null; then
-  sudo yum update -y;
+if command -v dnf >/dev/null; then
+  sudo dnf update -y;
   sudo dnf group install -y "Development Tools";
-  sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm;
-  sudo dnf install -y libnsl podman buildah unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686 zlib-1.2.11-18.el8_5.i686 tcpdump ed glibc-devel.i686 spax;
-  sudo setenforce 0;
-  sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config;
+  . /etc/os-release
+  if [ $VERSION -le 8 ]
+    sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm;
+    sudo dnf install -y libnsl podman buildah unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686 zlib-1.2.11-18.el8_5.i686 tcpdump ed glibc-devel.i686 spax;
+  elif [ $VERSION -ge 9 ]
+    sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.noarch.rpm;
+    sudo dnf install -y libnsl podman buildah unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686 zlib-1.2.11-18.el8_5.i686 tcpdump ed glibc-devel.i686;
+  fi
+    sudo setenforce 0;
+    sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config;
 elif command -v apt >/dev/null; then
   . /etc/os-release
   sudo apt update;
@@ -85,30 +92,32 @@ chmod +x setupmf.sh startmf.sh setenvmf.sh
 cd /home/$user/AcuSupport
 sudo chown -R $user:$user /home/support
 
-(sudo crontab -l ; echo "#0 18 * * * shutdown -h now")| sudo crontab -
+(sudo crontab -l ; echo "#0 20 * * * shutdown -h now")| sudo crontab -
 (sudo crontab -l ; echo "@reboot sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf")| sudo crontab -
 
 . /etc/os-release
-echo " " > motd.temp
-echo "  $PRETTY_NAME" >> motd.temp
+echo "****************************************************************************************************" > motd.temp
 echo " " >> motd.temp
-echo "  AcuCOBOL" >> motd.temp
-echo "    Set Environment:" >> motd.temp
+echo "    $PRETTY_NAME" >> motd.temp
+echo " " >> motd.temp
+echo "    AcuCOBOL" >> motd.temp
+echo "      Set Environment:" >> motd.temp
 echo "        . setenv.sh (-h for usage)" >> motd.temp
 echo " " >> motd.temp
-echo "    Start Services:" >> motd.temp
+echo "      Start Services:" >> motd.temp
 echo "        startacu.sh (-h for usage)" >> motd.temp
 echo " " >> motd.temp
-echo "  MFCOBOL" >> motd.temp
-echo "    Set Environment:" >> motd.temp
+echo "    MFCOBOL" >> motd.temp
+echo "      Set Environment:" >> motd.temp
 echo "        . setenvmf.sh" >> motd.temp
 echo " " >> motd.temp
-echo "    Start Services:" >> motd.temp
+echo "      Start Services:" >> motd.temp
 echo "        startmf.sh (-h for usage)" >> motd.temp
 echo " " >> motd.temp
-echo "    Install Options:" >> motd.temp
+echo "      Install Options:" >> motd.temp
 echo "        -skipsafenet -skipautopass -IacceptEULA -ESadminID=support -il=/home/products/esXXpuXX" >> motd.temp
 echo " " >> motd.temp
+echo "****************************************************************************************************" >> motd.temp
 if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
   sudo mv motd.temp /etc/update-motd.d/00-header
 else
