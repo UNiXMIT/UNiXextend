@@ -14,7 +14,7 @@ net localgroup administrators support /add
 
 :: Install Chocolatey
 powershell -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "[System.Net.ServicePointManager]::SecurityProtocol = 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-setx /m PATH "%ALLUSERSPROFILE%\chocolatey\bin;%PATH%"
+setx /m PATH "%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 
 :: Install/Configure Software
 choco feature enable -n=allowGlobalConfirmation
