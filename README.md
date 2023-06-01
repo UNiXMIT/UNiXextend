@@ -34,7 +34,7 @@
 - [How to read information returned by a MAV](https://portal.microfocus.com/s/article/KM000012023)
 - [New Activator Wizard README](https://portal.microfocus.com/s/article/KM000004829)
 - [Supported Windows Versions](docs/windowsVersions.md)
-- [ISV License Utility](ISVLicenseUtility.md)
+- [ISV License Utility](docs/ISVLicenseUtility.md)
 - [Shared or Static](https://portal.microfocus.com/s/article/KM000007682)
 - [Performance issues on Windows Server 2012 / 2016](docs/EnableFairShare)
 - [Registry Key Location for FEATURE_BROWSER EMULATION](docs/FEATURE_BROWSER_EMULATION.md)
