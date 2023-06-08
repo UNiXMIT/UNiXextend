@@ -2,8 +2,8 @@
 podman pull ibmcom/mq:latest
 podman run --name MQ -e LICENSE=accept -e MQ_QMGR_NAME=QM1 -p 1414:1414 -p 9443:9443 -e MQ_ADMIN_PASSWORD=yourPassword123 -e MQ_APP_PASSWORD=yourPassword123 -d icr.io/ibm-messaging/mq:latest
 
-# Attach to container
-podman exec -it MQ bash
+# MQ Version Information
+podman exec -it MQ dspmqver
 
 # Remove your container
 podman stop MQ
