@@ -51,9 +51,12 @@ AGS_SOCKET_COMPRESS             ZLIB
 # AGS_SOCKET_COMPRESS   ZLIB
 
 ### ACUSQL
-# ACUSQL_RUNTIME_DLL    asqlsrvr.dll
-# ACUSQL_RUNTIME_DLL    esqllib.dll
-# ASQL_CONNECT_DATABASE support
+# ACUSQL_RUNTIME_DLL                esqllib.dll
+# ACUSQL_RUNTIME_DLL                asqlsrvr.dll
+# ASQL_CONNECT_DATABASE             support
+# ASQL_ODBC_DRIVER_NAME             ODBC Driver 18 for SQL Server
+# ASQL_ENCRYPT_CONNECTION           TRUE
+# ASQL_TRUST_SERVER_CERTIFICATE     TRUE
 
 ### ACU4GL FOR MSSQL
 # DEFAULT_HOST                      MSSQL
