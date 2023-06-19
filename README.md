@@ -102,3 +102,5 @@
 - [NODE](docker/node.txt)
 - [Squid](docker/squid.txt)
 - [OpenLDAP](docker/openldap.txt)
+- [NGiNX](docker/nginx.md)
+- [MiniCA](docker/minica.md)
