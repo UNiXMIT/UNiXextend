@@ -89,7 +89,7 @@
 - PMK: 42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (INTEL) 64-bit  
 
 ## Docker
-- [SQL Server](docker/mssql.txt)
+- [SQL Server](docker/mssql.md)
 - [Oracle](docker/oracle.txt)
 - [PostgreSQL](docker/postgres.txt)
 - [Informix](docker/informix.txt)

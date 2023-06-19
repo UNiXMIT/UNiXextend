@@ -2,7 +2,7 @@
 ### Pull and Run container
 ```
 podman pull golang:latest
-podman run -itd --name MINICA golang:latest
+podman run -itd --name MINICA -v /home/support/minica:/go golang:latest
 ```
 
 ### Install MiniCA
