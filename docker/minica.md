@@ -21,6 +21,11 @@ Wildcard
 podman exec -it MINICA minica --domains '*.foo.com'
 ```
 
+### Install Root CA on Windows
+```
+certutil -user -addstore "Root" minica.pem
+```
+
 ### Remove your container
 ```
 podman stop MINICA
