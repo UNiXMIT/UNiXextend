@@ -38,13 +38,11 @@ https://ibm.co/3JKDGaL
 
 ### Catalog remote database on client
 ```
-db2 catalog tcpip node <NODENAME> remote <REMOTE> server <PORT>
+db2 catalog tcpip node <NODENAME> remote hostname|ip_address server service_name|port_number
 db2 catalog database <DBNAME> at node <NODENAME>
 db2 terminate
 ```
-REMOTE - Fully qualified hostname OR IP address.   
-SERVER - Port number the DB2 server is listening on.  
-NODENAME - Nodename of your choice.  
+NODENAME - A local nickname you can set for the computer that has the database you want to catalog.  
 DBNAME - Name of remote database to catalog.  
 
 ### Install ODBC Driver (cmd as Admin)
