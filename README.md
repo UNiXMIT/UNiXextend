@@ -93,7 +93,7 @@
 - [Oracle](docker/oracle.txt)
 - [PostgreSQL](docker/postgres.txt)
 - [Informix](docker/informix.txt)
-- [DB2](docker/db2.txt)
+- [DB2](docker/db2.md)
 - [MySQL](docker/mysql.txt)
 - [Sybase](docker/sybase.txt)
 - [IBM MQ](docker/mq.txt)
