@@ -14,7 +14,7 @@ podman exec -it DB2 bash -c "su - support"
 ```
 db2 CONNECT TO SUPPORT
 db2 SET CURRENT SCHEMA SchemaName
-db2 select * from support.schema
+db2 SELECT * FROM SUPPORT.SchemaName
 ```
 
 ### Connect to database and execute SQL from file
@@ -22,10 +22,10 @@ db2 select * from support.schema
 db2 -t -vmf db2.sql |tee db2.sql.out
 ```
 
-t – terminated – the statements are terminated with a delimiter. The default delimiter is the semi-colon  
-v – verbose – the statement will be echoed in output prior to the result of the statement. This is extremely useful when reviewing output or troubleshooting failed statements  
-m – prints the number of lines affected by DML  
-f – file – indicates that db2 should execute statements from a file, with the filename specified one space after the f  
+t – terminated – the statements are terminated with a delimiter. The default delimiter is the semi-colon.  
+v – verbose – the statement will be echoed in output prior to the result of the statement. This is extremely useful when reviewing output or troubleshooting failed statements.  
+m – prints the number of lines affected by DML.  
+f – file – indicates that db2 should execute statements from a file, with the filename specified one space after the f.  
 
 ### Remove your container
 ```
