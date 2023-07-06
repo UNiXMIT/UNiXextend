@@ -90,7 +90,7 @@
 
 ## Docker
 - [SQL Server](docker/mssql.md)
-- [Oracle](docker/oracle.txt)
+- [Oracle](docker/oracle.md)
 - [PostgreSQL](docker/postgres.txt)
 - [Informix](docker/informix.txt)
 - [DB2](docker/db2.md)
