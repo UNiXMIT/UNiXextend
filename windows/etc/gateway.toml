@@ -1,7 +1,6 @@
 [gateway]
 webserver_port = 3000
 tcp_port = 8000
-file_cache = "./Web/cache"
 # Reconnection feature disabled when probing_connection = 0
 probing_connection = 10000
 ws_compression = true
