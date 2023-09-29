@@ -18,9 +18,9 @@ if command -v dnf >/dev/null; then
   sudo dnf group install -y "Development Tools";
   . /etc/os-release;
   sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-${VERSION_ID%.*}.noarch.rpm;
-  if [[ $VERSION -le 8 ]]; then
+  if [[ ${VERSION_ID%.*} -le 8 ]]; then
     sudo dnf install -y libnsl podman buildah unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686 zlib-1.2.11-18.el8_5.i686 tcpdump ed glibc-devel.i686 spax;
-  elif [[ $VERSION -ge 9 ]]; then
+  elif [[ ${VERSION_ID%.*} -ge 9 ]]; then
     sudo dnf install -y libnsl podman buildah unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686 zlib-1.2.11-18.el8_5.i686 tcpdump ed glibc-devel.i686;
   fi
     sudo setenforce 0;
