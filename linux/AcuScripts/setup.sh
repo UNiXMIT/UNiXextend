@@ -117,8 +117,8 @@ cat > motd.temp <<EOF
 
 ****************************************************************************************************
 EOF
-if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
-  sudo mv motd.temp /etc/update-motd.d/00-header
+if [[ $(grep microsoft /proc/version) ]]; then
+  sudo rm motd.temp
   cat > /etc/wsl.conf <<EOF
   [boot]
   systemd=true
