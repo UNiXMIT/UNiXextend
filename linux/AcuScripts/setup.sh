@@ -119,6 +119,10 @@ cat > motd.temp <<EOF
 EOF
 if [[ $(grep microsoft /proc/version) ]] && [ -d "/etc/update-motd.d/" ] ; then
   sudo mv motd.temp /etc/update-motd.d/00-header
+  cat > /etc/wsl.conf <<EOF
+  [boot]
+  systemd=true
+  EOF
 else
   sudo mv motd.temp /etc/motd
   sudo sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf
