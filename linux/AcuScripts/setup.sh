@@ -113,7 +113,7 @@ cat > motd.temp <<EOF
         startmf.sh (-h for usage)
 
       Install Options:
-        -skipsafenet -skipautopass -IacceptEULA -ESadminID={{ myUsername }} -il=/home/products/esXXpuXX
+        -skipsafenet -skipautopass -IacceptEULA -ESadminID=${user} -il=/home/products/esXXpuXX
 
 ****************************************************************************************************
 EOF
