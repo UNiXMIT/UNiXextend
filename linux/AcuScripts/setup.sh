@@ -117,13 +117,13 @@ cat > motd.temp <<EOF
 
 ****************************************************************************************************
 EOF
+sudo mv motd.temp /etc/motd
 if [[ $(grep microsoft /proc/version) ]]; then
-  sudo rm motd.temp
+  echo "cat /etc/motd" >> /etc/profile.d/profile.sh
   cat > /etc/wsl.conf <<EOF
   [boot]
   systemd=true
   EOF
 else
-  sudo mv motd.temp /etc/motd
   sudo sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf
 fi
