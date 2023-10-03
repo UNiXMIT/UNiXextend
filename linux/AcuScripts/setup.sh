@@ -4,11 +4,13 @@
 # sudo curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | bash 
 
 user=support
-echo "root:Unidos30" | chpasswd
-echo "$user:Unidos30" | chpasswd
+echo "root:Unidos30" | sudo chpasswd
+echo "$user:Unidos30" | sudo chpasswd
 echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> /home/$user/.bashrc
-sudo sed -i -E 's/#?AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config
-sudo sed -i -E 's/#?PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config
+if [[ -f /etc/ssh/sshd_config ]]; then
+  sudo sed -i -E 's/#?AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config;
+  sudo sed -i -E 's/#?PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_config;
+fi
 echo $user' ALL=(ALL:ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo
 sudo service ssh restart &>/dev/null
 sudo service sshd restart &>/dev/null  
@@ -121,9 +123,9 @@ sudo mv motd.temp /etc/motd
 if [[ $(grep microsoft /proc/version) ]]; then
   echo "cat /etc/motd" >> /etc/profile.d/profile.sh
   cat > /etc/wsl.conf <<EOF
-  [boot]
-  systemd=true
-  EOF
+[boot]
+systemd=true
+EOF
 else
   sudo sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf
 fi
