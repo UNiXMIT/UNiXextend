@@ -122,7 +122,7 @@ EOF
 sudo mv motd.temp /etc/motd
 if [[ $(grep microsoft /proc/version) ]]; then
   echo "cat /etc/motd" >> /etc/profile.d/profile.sh
-  cat > /etc/wsl.conf <<EOF
+  sudo cat > /etc/wsl.conf <<EOF
 [boot]
 systemd=true
 EOF
