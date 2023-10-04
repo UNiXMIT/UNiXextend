@@ -1,11 +1,17 @@
 #!/bin/bash
 # Install Intructions
-# sudo (apt/yum/zypper) install -y curl
+# sudo (apt/yum/zypper) install -y curl sudo
 # sudo curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | bash 
 
-user=support
-echo "root:Unidos30" | sudo chpasswd
-echo "$user:Unidos30" | sudo chpasswd
+read -p "User to create: " user
+read -p "${user} password to set: " upasswd
+if id "$user" >/dev/null 2>&1; then
+    echo $user user found, continuing...
+else
+    sudo adduser support
+fi
+echo "root:$upasswd" | sudo chpasswd
+echo "$user:$upasswd" | sudo chpasswd
 echo "if [[ -t 0 && $- = *i* ]]; then stty -ixon; fi" >> /home/$user/.bashrc
 if [[ -f /etc/ssh/sshd_config ]]; then
   sudo sed -i -E 's/#?AllowTcpForwarding no/AllowTcpForwarding yes/' /etc/ssh/sshd_config;
