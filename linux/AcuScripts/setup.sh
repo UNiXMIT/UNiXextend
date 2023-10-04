@@ -131,6 +131,8 @@ if [[ $(grep microsoft /proc/version) ]]; then
   sudo cat > /etc/wsl.conf <<EOF
 [boot]
 systemd=true
+[user]
+default=${user}
 EOF
 else
   sudo sysctl -p /home/$user/AcuSupport/etc/TCPtuning.conf
