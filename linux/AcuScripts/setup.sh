@@ -27,9 +27,9 @@ if command -v dnf >/dev/null; then
   . /etc/os-release;
   sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-${VERSION_ID%.*}.noarch.rpm;
   if [[ ${VERSION_ID%.*} -le 8 ]]; then
-    sudo dnf install -y --skip-broken libnsl podman buildah unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686 zlib-1.2.11-18.el8_5.i686 tcpdump ed glibc-devel.i686 spax;
+    sudo dnf install -y --skip-broken libnsl podman buildah unixODBC-devel wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686 zlib-1.2.11-18.el8_5.i686 tcpdump ed glibc-devel.i686 spax;
   elif [[ ${VERSION_ID%.*} -ge 9 ]]; then
-    sudo dnf install -y --skip-broken libnsl podman buildah unixODBC wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt-compat-4.4.18-3.el9.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686 zlib-1.2.11-39.el9.i686 tcpdump ed glibc-devel.i686 procps;
+    sudo dnf install -y --skip-broken libnsl podman buildah unixODBC-devel wget curl cronie dos2unix java-11-openjdk htop tmux libstdc++.i686 libxcrypt-compat-4.4.18-3.el9.i686 ncurses-libs-6.1-9.20180224.el8.i686 libaio-devel glibc.i686 zlib-1.2.11-39.el9.i686 tcpdump ed glibc-devel.i686 procps;
   fi
     sudo setenforce 0;
     sudo sed -i 's/enforcing/disabled/g' /etc/selinux/config /etc/selinux/config;
@@ -44,7 +44,7 @@ elif command -v zypper >/dev/null; then
   sudo zypper refresh;
   sudo zypper update -y;
   sudo zypper install -y -t pattern devel_C_C++;
-  sudo zypper install -y cronie podman buildah unixODBC wget curl dos2unix glibc-32bit java-11-openjdk htop tmux libcrypt1-32bit libncurses5-32bit libaio-devel libstdc++6-32bit libgcc_s1-32bit libz1-32bit tcpdump ed spax;
+  sudo zypper install -y cronie podman buildah unixODBC-devel wget curl dos2unix glibc-32bit java-11-openjdk htop tmux libcrypt1-32bit libncurses5-32bit libaio-devel libstdc++6-32bit libgcc_s1-32bit libz1-32bit tcpdump ed spax;
 else
   echo "Install CMD not identified"
 fi
