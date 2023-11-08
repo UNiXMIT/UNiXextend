@@ -77,13 +77,15 @@ md \AcuScripts
 cacls \AcuScripts /e /p Everyone:f
 md \AcuLogs
 cacls \AcuLogs /e /p Everyone:f
-setx /m PATH "C:\AcuScripts;%PATH%"
 md \MFSamples
 cacls \MFSamples /e /p Everyone:f
 md \MFSamples\JCL
 cacls \MFSamples\JCL /e /p Everyone:f
 md \MFDataFiles
 cacls \MFDataFiles /e /p Everyone:f
+md \MFScripts
+cacls \MFScripts /e /p Everyone:f
+setx /m PATH "C:\AcuScripts;C:\MFScripts;%PATH%"
 
 :: Download AcuScripts
 cd \AcuScripts
@@ -105,6 +107,11 @@ curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/e
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/etc/fillCombo.js
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/etc/gateway.conf
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/etc/gateway.toml
+
+:: Download MFScripts
+cd \MFScripts
+curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/windows/MFScripts/FormatDumps.cmd
+curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/windows/MFScripts/AutoPAC.cmd
 
 :: Download JCL
 cd \MFSamples\JCL

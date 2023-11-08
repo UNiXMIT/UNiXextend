@@ -95,7 +95,9 @@ cd /home/$user/MFSupport/MFScripts
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/linux/MFScripts/setupmf.sh
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/linux/MFScripts/startmf.sh
 curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/linux/MFScripts/setenvmf.sh
-chmod +x setupmf.sh startmf.sh setenvmf.sh
+curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/linux/MFScripts/formatdumps.sh
+curl -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/linux/MFScripts/autopac.sh
+chmod +x setupmf.sh startmf.sh setenvmf.sh formatdumps.sh autopac.sh
 cd /home/$user/AcuSupport
 sudo chown -R $user:$user /home/support
 
