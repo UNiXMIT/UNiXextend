@@ -1,7 +1,4 @@
 #!/bin/bash
-# Install Intructions
-# sudo (apt/yum/zypper) install -y curl sudo
-# sudo curl -s https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setup.sh | bash 
 
 read -p "User to create: " user
 read -p "${user} password to set: " upasswd
