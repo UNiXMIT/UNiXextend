@@ -89,7 +89,7 @@ setx /m PATH "C:\AcuScripts;C:\MFScripts;%PATH%"
 
 :: Download AcuScripts
 cd \AcuScripts
-curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/AcuScripts/setenv.cmd
+curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/AcuScripts/setenvacu.cmd
 md .vscode
 cacls .vscode /e /p Everyone:f
 cd \AcuScripts\.vscode
@@ -110,6 +110,7 @@ curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/windows/e
 
 :: Download MFScripts
 cd \MFScripts
+curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/windows/MFScripts/setenvmf.cmd
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/windows/MFScripts/FormatDumps.cmd
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXMF/main/windows/MFScripts/AutoPAC.cmd
 
