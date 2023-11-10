@@ -28,7 +28,7 @@ podman pull ibmcom/informix-developer-sandbox
 podman run -d -it --name IFX -h IFX --privileged -e LICENSE=accept ibmcom/informix-developer-sandbox
 podman cp IFX:/home/informix /home/
 export INFORMIX_OPT=/home/informix/odbc
-. setenv.sh informix
+. setenvacu.sh informix
 sudo mkdir -p /usr/informix/lib/esql
 sudo ln -s /home/informix/odbc/lib/esql/checkapi.o /usr/informix/lib/esql
 

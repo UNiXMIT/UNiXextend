@@ -66,9 +66,9 @@ cd /home/$user/AcuSupport
 [ ! -d "CustomerPrograms" ] && mkdir CustomerPrograms
 [ ! -d "etc" ] && mkdir etc
 cd /home/$user/AcuSupport/AcuScripts
-curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setenv.sh
+curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/setenvacu.sh
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/AcuScripts/startacu.sh
-chmod +x setenv.sh startacu.sh
+chmod +x setenvacu.sh startacu.sh
 cd /home/$user/AcuSupport/etc
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/a_srvcfg
 curl -s -O https://raw.githubusercontent.com/UNiXMIT/UNiXextend/master/linux/etc/acurcl.cfg
@@ -109,7 +109,7 @@ cat > motd.temp <<EOF
 
     AcuCOBOL
       Set Environment:
-        . setenv.sh (-h for usage)
+        . setenvacu.sh (-h for usage)
           
         startacu.sh (-h for usage)
 

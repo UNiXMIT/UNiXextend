@@ -20,8 +20,8 @@ usage()
 {
   echo "
 Options:  
- . setenv.sh                          Set the AcuCOBOL environment
- . setenv.sh [options] <parameters>   Set the AcuCOBOL environment and Additional Binaries/Libraries     
+ . setenvacu.sh                          Set the AcuCOBOL environment
+ . setenvacu.sh [options] <parameters>   Set the AcuCOBOL environment and Additional Binaries/Libraries     
 
 Usage: 
  -i            INFORMIX
@@ -31,7 +31,7 @@ Usage:
  -h            Usage
 
 Example:
- . setenv.sh -j 64      Sets AcuCOBOL and JAVA 64-Bit"
+ . setenvacu.sh -j 64      Sets AcuCOBOL and JAVA 64-Bit"
 }
 
 set_acu()
