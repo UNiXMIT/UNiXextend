@@ -46,7 +46,7 @@ sudo ln -s /home/informix/odbc/lib/esql/checkapi.o /usr/informix/lib/esql
 ```
 
 ### sqlhosts
-informix        onsoctcp        localhost         9088
+informix        onsoctcp        localhost         9088  
 
 ### Source
 https://dockr.ly/2BWRpaH

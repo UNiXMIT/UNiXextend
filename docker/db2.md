@@ -52,4 +52,4 @@ db2cli install -setup
 ```
 
 ### Source
-https://ibm.co/3JuuQga
+https://ibm.co/3JuuQga  
