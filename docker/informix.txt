@@ -1,17 +1,17 @@
 # Pull and Run container
 podman pull ibmcom/informix-developer-database:latest
-podman run -d -it --name INFORMIX -h INFORMIX --privileged -p 9088:9088 -e LICENSE=accept ibmcom/informix-developer-database:latest
+podman run -d -it --name informix -h informix --privileged -p 9088:9088 -e LICENSE=accept ibmcom/informix-developer-database:latest
 
 # Attach to container
-podman exec -it INFORMIX bash
+podman exec -it informix bash
 
 # Container Details
 Username: informix
 Password: in4mix
 
 # Remove container
-podman stop INFORMIX
-podman rm INFORMIX
+podman stop informix
+podman rm informix
 
 # Commandline utility
 dbaccess
@@ -27,7 +27,7 @@ dbaccess
 podman pull ibmcom/informix-developer-sandbox
 podman run -d -it --name IFX -h IFX --privileged -e LICENSE=accept ibmcom/informix-developer-sandbox
 podman cp IFX:/home/informix /home/
-export INFORMIX_OPT=/home/informix/odbc
+export informix_OPT=/home/informix/odbc
 . setenvacu.sh informix
 sudo mkdir -p /usr/informix/lib/esql
 sudo ln -s /home/informix/odbc/lib/esql/checkapi.o /usr/informix/lib/esql

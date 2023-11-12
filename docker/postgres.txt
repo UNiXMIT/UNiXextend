@@ -1,9 +1,9 @@
 # Pull and Run container
 podman pull postgres:latest
-podman run -d -p 5432:5432 --name POSTGRES -e POSTGRES_USER=support -e POSTGRES_PASSWORD=strongPassword123 -e POSTGRES_DB=support postgres:latest
+podman run -d -p 5432:5432 --name postgres -e POSTGRES_USER=support -e POSTGRES_PASSWORD=strongPassword123 -e POSTGRES_DB=support postgres:latest
 
 # Attach to container
-podman exec -it POSTGRES bash
+podman exec -it postgres bash
 
 # Container Details
 Username: support
@@ -11,8 +11,8 @@ Password: strongPassword123
 DB: support
 
 # Remove your container
-podman stop POSTGRES
-podman rm POSTGRES
+podman stop postgres
+podman rm postgres
 
 # Source
 https://dockr.ly/3borF7q
