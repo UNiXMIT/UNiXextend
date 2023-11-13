@@ -2,12 +2,12 @@
 ### Pull and Run container
 ```
 podman pull icr.io/db2_community/db2
-podman run -itd --name DB2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INSTANCE=support -e DB2INST1_PASSWORD=strongPassword123 -e DBNAME=support icr.io/db2_community/db2
+podman run -itd --name db2 --privileged=true -p 50000:50000 -e LICENSE=accept -e DB2INSTANCE=support -e DB2INST1_PASSWORD=strongPassword123 -e DBNAME=support icr.io/db2_community/db2
 ```
 
 ### Attach to container
 ```
-podman exec -it DB2 bash -c "su - support"
+podman exec -it db2 bash -c "su - support"
 ```
 
 ### Connect to database and execute SQL
@@ -29,8 +29,8 @@ f – file – indicates that db2 should execute statements from a file, with th
 
 ### Remove your container
 ```
-podman stop DB2
-podman rm DB2
+podman stop db2
+podman rm db2
 ```
 
 ### Clients and Driver Downloads
@@ -52,4 +52,4 @@ db2cli install -setup
 ```
 
 ### Source
-https://ibm.co/3JuuQga
+https://ibm.co/3JuuQga  

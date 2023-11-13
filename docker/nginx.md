@@ -2,16 +2,16 @@
 ### Pull and Run container
 ```
 podman pull nginx:latest
-podman run --name NGINX -p 8080:80 -v /some/content:/usr/share/nginx/html:ro -v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx:latest
+podman run --name nginx -p 80:80 -p 443:443 -v /home/support/nginx:/config -e PUID=1000 -e PGID=1000 -e TZ=Europe/London -d lscr.io/linuxserver/nginx:latest
 ```
 
 ### Attach to container
 ```
-podman exec -it NGINX bash
+podman exec -it nginx bash
 ```
 
 ### Remove your container
 ```
-podman stop NGINX
-podman rm NGINX
+podman stop nginx
+podman rm nginx
 ```

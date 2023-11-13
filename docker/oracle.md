@@ -2,12 +2,12 @@
 #### Pull and Run container
 ```
 podman pull container-registry.oracle.com/database/free:latest
-podman run -d -p 1521:1521 --name ORACLE -e ORACLE_PWD=strongPassword123 -e ORACLE_CHARACTERSET=AL32UTF8 container-registry.oracle.com/database/free:latest
+podman run -d -p 1521:1521 --name oracle -e ORACLE_PWD=strongPassword123 -e ORACLE_CHARACTERSET=AL32UTF8 container-registry.oracle.com/database/free:latest
 ```
 
 #### Attach to container
 ```
-podman exec -it ORACLE bash
+podman exec -it oracle bash
 ```
 
 ### Container Details
@@ -17,14 +17,14 @@ password: strongPassword123
 
 ### Connect to Database
 ```
-podman exec -it ORACLE sqlplus sys/strongPassword123@//localhost:1521/FREE as sysdba
-podman exec -it ORACLE sqlplus system/strongPassword123@//localhost:1521/FREE
-podman exec -it ORACLE sqlplus pdbadmin/strongPassword123@//localhost:1521/FREEPDB1
+podman exec -it oracle sqlplus sys/strongPassword123@//localhost:1521/FREE as sysdba
+podman exec -it oracle sqlplus system/strongPassword123@//localhost:1521/FREE
+podman exec -it oracle sqlplus pdbadmin/strongPassword123@//localhost:1521/FREEPDB1
 ```
 
 ### Create User and Schema
 ```
-podman exec -it ORACLE sqlplus sys/strongPassword123@//localhost:1521/FREE as sysdba <<EOF
+podman exec -it oracle sqlplus sys/strongPassword123@//localhost:1521/FREE as sysdba <<EOF
 ALTER SESSION SET "_ORACLE_SCRIPT"=true;
 CREATE USER support IDENTIFIED BY strongPassword123;
 GRANT ALL PRIVILEGES TO support;
@@ -34,8 +34,8 @@ EOF
 
 ### Remove your container
 ```
-podman stop ORACLE
-podman rm ORACLE
+podman stop oracle
+podman rm oracle
 ```
 
 ### Source
