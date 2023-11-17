@@ -1,0 +1,10 @@
+#!/usr/bin/expect
+spawn bash -c "./setup*"
+expect "y/n"
+send "y\r"
+expect "Installation directory"
+send "\r"
+expect "The product has been extracted in the current directory."
+send "\r"
+expect eof
+exit 0
