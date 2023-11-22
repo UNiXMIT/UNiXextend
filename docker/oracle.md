@@ -39,7 +39,7 @@ podman rm oracle
 ```
 
 ### Source
-https://bit.ly/44fijqt  
+[https://bit.ly/44fijqt](https://bit.ly/44fijqt)  
 
 ### ODBC Driver Setup
 ```
