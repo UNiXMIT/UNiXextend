@@ -36,7 +36,8 @@ podman rm mssql
 ### odbc.ini
 ```
 [MSSQL]  
-Driver = ODBC Driver 17 for SQL Server  
+Driver = /opt/microsoft/msodbcsql17/lib64/libmsodbcsql-17.10.so.5.1  
 Server = tcp:localhost,1433
-Encrypt = no
+Encrypt = yes
+TrustServerCertificate = yes
 ```
