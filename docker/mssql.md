@@ -32,3 +32,11 @@ podman rm mssql
 
 ### Source
 [https://bit.ly/3Jn5D7i](https://bit.ly/3Jn5D7i)  
+
+### odbc.ini
+```
+[MSSQL]  
+Driver = ODBC Driver 17 for SQL Server  
+Server = tcp:localhost,1433
+Encrypt = no
+```
