@@ -28,7 +28,7 @@ STD-SMALL-FONT              1
 # A_TRACE               9
 # A_TRACE_LICENSE       1
 # ACU_DUMP              1
-# ACU_DUMP_FILE         /home/support/AcuSupport/AcuLogs/acudump.txt
+# ACU_DUMP_FILE         /home/support/AcuSupport/AcuLogs/acudump_%p.log
 # WARNINGS              3
 
 ### ACUTHIN
