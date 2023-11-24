@@ -2,7 +2,17 @@
 ### Pull and Run container
 ```
 podman pull mcr.microsoft.com/mssql/server:2022-latest
-podman run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=strongPassword123" -e "MSSQL_COLLATION=SQL_Latin1_General_CP1_CI_AS" -p 1433:1433 --name mssql -d mcr.microsoft.com/mssql/server:2022-latest
+podman run -d --name mssql \
+-e "SA_PASSWORD=strongPassword123" \
+-e "ACCEPT_EULA=Y" \
+-e "MSSQL_COLLATION=SQL_Latin1_General_CP1_CI_AS" \
+-p 1433:1433 \
+--health-cmd '/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P "strongPassword123" -Q "SELECT 1" -b -o /dev/null' \
+--health-interval 10s \
+--health-timeout 3s \
+--health-retries 10 \
+--health-start-period 10s \
+mcr.microsoft.com/mssql/server:2022-latest
 ```
 
 ### Rotate/Limit Logs
