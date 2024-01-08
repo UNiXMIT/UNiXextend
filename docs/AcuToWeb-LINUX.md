@@ -2,34 +2,27 @@
 
 AcuToWeb on Linux doesn’t have a graphical control panel. The service is started using the acutoweb-gateway command. The AcuToWeb Gateway provides a method where the client specifies an AcuConnect alias to be run. The AcuToWeb Gateway sends the alias information to AcuConnect; therefore, in order to use AcuToWeb, the following are prerequisites:
 
-1.	Install AcuConnect - http://bit.ly/2Gfolh1
-2.	Establish system security - http://bit.ly/30LiI3v
-3.	Create the required aliases - http://bit.ly/37nocnt
+1.	Install AcuConnect - https://bit.ly/47pNCiE
+2.	Establish system security - https://bit.ly/48Lj6AU
+3.	Create the required aliases - https://bit.ly/48NvdNR
 
 **N.B.** Starting with AcuToWeb 10.3.0 a minimum GCC version is now required:
 
 ```
-AIX 6.1  -   GCC 7.1.0  
-AIX 7.1  -   GCC 7.1.0  
-AIX 7.2  -   GCC 7.1.0  
-HP 11.31 PA-RISC	-   GCC 4.3.1  
-HP 11.31 IA 	-   GCC 4.2.3  
 Linux	-   GCC 4.8.0  
-Linux PPC	-   GCC 4.1.2-46  
-Sun Solaris 10  -   GCC 3.4.3  
-Sun Solaris 11	-   GCC 4.8.2  
 ```
 
-This KB article may help you to diagnose and resolve any issues that may be caused by a GCC version that is too low - http://bit.ly/37FXI15
-
-Because AcuToWeb is only 32 bit, even in the 64 bit version of 10.3.0, you will need to make sure you have installed the 32 bit libraries on your server to allow it to run 32 bit applications. For instance on CentOS this can be achieved by running the following command:
+Because AcuToWeb is only 32 bit, even in the 64 bit version of 10.3.0, you will need to make sure you have installed the 32 bit libraries on your server to allow it to run 32 bit applications. For instance on RHEL/CentOS this can be achieved by running the following command:
 
 ```
 yum install libstdc++.i686
+zlib.i686
+libgcc.i686
+glibc.i686 
 ```
 
-After performing the steps above (configuring the AcuAccess file, creating an alias in the acurcl.ini file, and starting the AcuConnect service), you can modify the Gateway configuration file 'gateway.conf'. This is found in the 'acutoweb' directory of the installation.  
-An example gateway.conf can be found in the documentation (http://bit.ly/36kOeGs). Amend it to fit your needs and make sure ACURCL_PORT matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set USE_SSL to 0.  
+After performing the steps above (configuring the AcuAccess file, creating an alias in the acurcl.ini file, and starting the AcuConnect service), you can modify the Gateway configuration file 'gateway.toml'. This is found in the 'acutoweb/conf' directory of the installation.  
+An example gateway.toml can be found in the documentation (https://bit.ly/41P8pL7). Amend it to fit your needs and make sure acurcl_port matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set use_ssl to false.  
 
 To start the gateway from the acutoweb directory, enter the following command in the terminal:  
 
