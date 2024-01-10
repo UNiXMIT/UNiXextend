@@ -27,3 +27,37 @@ Please refer to upstream's excellent (and comprehensive) documentation on the su
 
 ### Source
 [https://bit.ly/48OLcLm](https://bit.ly/48OLcLm)  
+
+### Example haproxy.cfg
+```
+global
+    log /dev/log    local0
+    log /dev/log    local1 notice
+    chroot /var/lib/haproxy
+    stats socket /run/haproxy/admin.sock mode 660 level admin expose-fd listeners
+    stats timeout 30s
+    user haproxy
+    group haproxy
+    daemon
+
+defaults
+    log     global
+    mode    http
+    option  httplog
+    option  dontlognull
+    timeout connect 5000
+    timeout client  50000
+    timeout server  50000
+
+frontend http_front
+   bind *:80
+   stats uri /haproxy?stats
+   default_backend http_back
+
+backend http_back
+   balance roundrobin
+   stick-table type ip size 200k expire 30m
+   stick on src
+   server server1 10.0.0.1:3000 check
+   server server2 10.0.0.2:3000 check
+```
