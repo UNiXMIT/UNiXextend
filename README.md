@@ -104,3 +104,4 @@
 - [OpenLDAP](docker/openldap.md)
 - [NGiNX](docker/nginx.md)
 - [MiniCA](docker/minica.md)
+- [HAProxy](docker/haproxy.md)
