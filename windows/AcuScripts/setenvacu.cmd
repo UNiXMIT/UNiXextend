@@ -7,7 +7,6 @@ SET ORACLE32=
 SET ORACLE64=
 SET MQ=
 SET MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
-SET FILE_TRACE_TIMESTAMP=TRUE
 
 :: Default AcuVersion
 SET EXTEND=
@@ -49,9 +48,14 @@ SET ADMINPATH=
  IF "%RESULT%" == "TRUE" (
     SET ACUBIT=%2
     IF "%2"=="" (
-        ECHO OPTION REQUIRES AN ARGUMENT -- "a"
+        ECHO OPTION REQUIRES AN ARGUMENT -- "b"
         GOTO :USAGE  
     )     
+    SHIFT & SHIFT & GOTO :INITIAL
+ )
+ IF "%1" == "-t" SET RESULT=TRUE
+ IF "%RESULT%" == "TRUE" (
+    SET FILE_TRACE_TIMESTAMP=TRUE   
     SHIFT & SHIFT & GOTO :INITIAL
  )
  IF "%1" == "-c" SET RESULT=TRUE
@@ -107,6 +111,7 @@ ECHO.
 ECHO Usage: 
 ECHO  -v 10.5.0       AcuCOBOL Version
 ECHO  -b 32           32 or 64 bit
+ECHO  -t              Enable timestamp in AcuLOGS
 ECHO  -p 1785         Patch number
 ECHO  -j              JAVA
 ECHO  -m              MQ
@@ -145,6 +150,9 @@ IF "%CFLAGS%"=="dir" (GOTO :DIRECTORY) ELSE IF NOT "%CFLAGS%"=="FALSE" (ECHO INC
 IF "%ACUBIT%"=="32" GOTO :32BIT
 IF "%ACUBIT%"=="64" GOTO :64BIT
 GOTO :END
+
+:SETTIMESTAMP
+SET FILE_TRACE_TIMESTAMP=TRUE
 
 :ATW
 IF "%ACUBIT%"=="32" (

@@ -14,8 +14,6 @@ export INFORMIX_OPT=
 export MQ=
 export MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
 
-export FILE_TRACE_TIMESTAMP=TRUE
-
 usage()
 {
   echo "
@@ -24,6 +22,7 @@ Options:
  . setenvacu.sh [options] <parameters>   Set the AcuCOBOL environment and Additional Binaries/Libraries     
 
 Usage: 
+ -t            Enable timestamp in AcuLOGS
  -i            INFORMIX
  -j 32/64      JAVA 32 or 64 bit
  -m 32/64      MQ 32 or 64 bit
@@ -67,6 +66,11 @@ set_acu()
     echo
     runcbl -vv 2>&1 | head -n 1
     echo
+}
+
+set_timestamp()
+{
+    export FILE_TRACE_TIMESTAMP=TRUE
 }
 
 set_java()
@@ -170,6 +174,9 @@ invalidARG=
 OPTIND=1
 while getopts ":j:m:o:hi" z; do
     case "${z}" in
+        t)
+            set_timestamp
+            ;;
         i)
             set_informix
             ;;
