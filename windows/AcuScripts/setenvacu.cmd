@@ -10,7 +10,7 @@ SET MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
 
 :: Default AcuVersion
 SET EXTEND=
-:: SET EXTEND=10.4.1
+:: SET EXTEND=10.5.1
 IF "%EXTEND%"=="" FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT" /S /V "DefaultVersion" 2^>NUL ^| FIND "REG_SZ"') DO SET "EXTEND=%%B"
 
 SET INSTALLDIR32=
@@ -109,7 +109,7 @@ ECHO  setenv                         Set the AcuCOBOL environment
 ECHO  setenv options parameters      Set the AcuCOBOL environment and Additional Binaries/DLLs
 ECHO.    
 ECHO Usage: 
-ECHO  -v 10.5.0       AcuCOBOL Version
+ECHO  -v 10.5.1       AcuCOBOL Version
 ECHO  -b 32           32 or 64 bit
 ECHO  -t              Enable timestamp in AcuLOGS
 ECHO  -p 1785         Patch number
