@@ -89,19 +89,4 @@
 - PMK: 42&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Solaris 11 (INTEL) 64-bit  
 
 ## Docker
-- [SQL Server](docker/mssql.md)
-- [Oracle](docker/oracle.md)
-- [PostgreSQL](docker/postgres.md)
-- [Informix](docker/informix.md)
-- [DB2](docker/db2.md)
-- [MySQL](docker/mysql.md)
-- [Sybase](docker/sybase.md)
-- [IBM MQ](docker/mq.md)
-- [Redis](docker/redis.md)
-- [APLS](docker/apls.md)
-- [NODE](docker/node.md)
-- [Squid](docker/squid.md)
-- [OpenLDAP](docker/openldap.md)
-- [NGiNX](docker/nginx.md)
-- [MiniCA](docker/minica.md)
-- [HAProxy](docker/haproxy.md)
+- [Moved to UNiXPod](https://unixmit.github.io/UNiXPod)
