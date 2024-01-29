@@ -5,11 +5,11 @@ Specifies whether to allow all insecure websites (http) to make requests to more
 ```
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome" /v InsecurePrivateNetworkRequestsAllowed /t REG_DWORD /d 1 /f  
 ```
-Allow the listed sites to make requests to more-private network endpoints in an insecure manner.   
+Allow the listed sites to make requests to more-private network endpoints in an insecure manner. Run the command for every URL you want to allow, modifying the URL each time.     
 ```
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\InsecurePrivateNetworkRequestsAllowedForUrls" /v 1 /t REG_SZ /d http://www.example.com /f  
 ```
-Allow the listed sites, using a wildcard, to make requests to more-private network endpoints in an insecure manner.   
+Allow the listed sites, using a wildcard, to make requests to more-private network endpoints in an insecure manner. Run the command for every URL you want to allow, modifying the URL each time.   
 ```
 reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\InsecurePrivateNetworkRequestsAllowedForUrls" /v 2 /t REG_SZ /d [*.]example.com /f  
 ```
