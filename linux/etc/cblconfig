@@ -93,7 +93,7 @@ AGS_SOCKET_COMPRESS             ZLIB
 # DEFAULT_HOST          INFORMIX
 # XFD_PREFIX            .
 # INF_LOGIN             support
-# INF_PASSWORD          YourStrongPassword
+# INF_PASSWD            YourStrongPassword
 # DATABASE              informix
 # INFORMIX_TYPE         SE
 

@@ -93,8 +93,8 @@ AGS_SOCKET_COMPRESS             ZLIB
 # DEFAULT_HOST          INFORMIX
 # XFD_PREFIX            .
 # INF_LOGIN             support
-# INF_PASSWORD          YourStrongPassword
-# DATABASE              support
+# INF_PASSWD            YourStrongPassword
+# DATABASE              informix
 # INFORMIX_TYPE         SE
 
 ### ACU4GL FOR DB2
