@@ -94,7 +94,7 @@ AGS_SOCKET_COMPRESS             ZLIB
 # XFD_PREFIX            .
 # INF_LOGIN             support
 # INF_PASSWORD          YourStrongPassword
-# Databases             support
+# DATABASE              informix
 # INFORMIX_TYPE         SE
 
 ### ACU4GL FOR DB2
