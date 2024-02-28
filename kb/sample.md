@@ -1,6 +1,8 @@
 # TITLE
 ## Environment
-
+AcuCOBOL-GT extend  
+Windows
+Linux/UNIX
 
 ## Situation
 
