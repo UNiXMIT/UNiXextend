@@ -6,7 +6,7 @@ All versions of AcuCOBOL-GT extend on all platforms
 How to generate logs for all AcuCOBOL-GT extend products?
 
 ## Resolution
-Customer support engineers frequently require a log file in order to troubleshoot an issue; therefore it is expedient to include these files when reporting a problem. Following are instructions for obtaining commonly required logs to attach to your support case. There are alternatives for some of these instructions, such as setting configuration variables. Use those ways if they are more familiar to you.
+Customer Support engineers frequently require a log file in order to troubleshoot an issue; therefore it is expedient to include these files when reporting a problem. Following are instructions for obtaining commonly required logs to attach to your support case. There are alternatives for some of these instructions, such as setting configuration variables. Use those ways if they are more familiar to you.
 
 - [General Information](#general-information)
 - [Runtime](#runtime)
@@ -21,11 +21,11 @@ Customer support engineers frequently require a log file in order to troubleshoo
 - [Abend Diagnostic Report](#abend-diagnostic-report)
 - [Process Monitor Log](#process-monitor-log)
 
-**Note:** The log files described here are a helpful starting place; additional tracing may be requested by Customer Care to further troubleshoot.  
+**Note:** The log files described here are a helpful starting place; additional tracing may be requested by Customer Support to further troubleshoot.  
 
 ### General Information
 #### Log Name
-All of the log and list files described below may be assigned any name which can include the path. The Runtime log in recent versions may use wildcards to include unique information in the name:  
+All of the log and list files described below may be assigned any name which can include the path. The Runtime log may use wildcards to include unique information in the name:  
 
 ```
 %p - process id
@@ -51,7 +51,7 @@ wrun32.12345.log
 The Runtime, AcuServer, and AcuConnect can automatically produce compressed log files by adding the -g option. It is advisable to give the log file an extension of .gz or .zip to indicate it is a compressed archive.  
 
 #### Timestamps
-To include timestamps on each line of the log files (does not apply to AcuXDBC logs), before proceeding with the following instructions set this in the environment, or add it to the related configuration file:  
+To include timestamps on each line of the log files (does not apply to AcuXDBC logs). Before proceeding with the following instructions, set this in the environment, or add it to the related configuration file:  
 
 ```
 FILE_TRACE_TIMESTAMP 1
