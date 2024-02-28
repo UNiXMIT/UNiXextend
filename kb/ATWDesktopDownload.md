@@ -20,6 +20,6 @@ In 10.5.0 there is also a AcuToWeb Desktop Auto-update feature that may also be 
 Details on this new feature can be found in the documentation at:  
 extend Product Guides > AcuToWeb Version 10.5.0 User's Guide > AcuToWeb Desktop > AcuToWeb Desktop Auto-update  
 
-#### Additional Information
+## Additional Information
 The AcuCOBOL Documentation and Resources are available here:  
 https://www.microfocus.com/en-us/support/ACUCOBOL-GT%20(Extend)  

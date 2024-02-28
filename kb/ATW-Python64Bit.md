@@ -61,8 +61,8 @@ It is recommended that you upgrade to 10.5.x if Python 64 bit is needed. Install
 
 In version 11.0.0 and higher, this will no longer be an issue and the workaround will not be needed.  
 
-#### Additional Information
-##### Python 2.7 64 bit
+## Additional Information
+### Python 2.7 64 bit
 ```
 yum install glibc-devel glibc-devel.i686 zlib-devel zlib-devel.i686 openssl openssl-devel
 cd /tmp
@@ -74,7 +74,7 @@ cd Python-2.7.18
 /home/products/python27/bin/python -m pip install cffi pillow pyOpenSSL==21.0.0 twisted==20.3.0 autobahn==0.13.0 txsockjs pycrypto Service_Identity==18.1.0 cryptography==2.7
 ```
 
-##### Python 3.8.13 64 bit
+### Python 3.8.13 64 bit
 ```
 dnf install glibc-devel glibc-devel.i686 zlib-devel zlib-devel.i686 openssl openssl-devel
 cd /tmp/

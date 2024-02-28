@@ -32,6 +32,6 @@ More information on working with containers can be found in the documentation at
 extend Programming Guides > A Guide to Interoperating with ACUCOBOL-GT Version 10.x.y > Working with Containerization Technologies  
 
  
-#### Additional Information
+## Additional Information
 The AcuCOBOL Documentation and Resources are available here:  
 https://www.microfocus.com/en-us/support/ACUCOBOL-GT%20(Extend)  

@@ -17,6 +17,6 @@ and
 ACUCOBOL-GT Version 10.5.0 Documentation Set > Appendices > Appendix C. Changes Affecting Previous Versions > Changes Affecting Version 8.1.2  
 
  
-#### Additional Information
+## Additional Information
 The AcuCOBOL Documentation and Resources are available here:  
 https://www.microfocus.com/en-us/support/ACUCOBOL-GT%20(Extend)  
