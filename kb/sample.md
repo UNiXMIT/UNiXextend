@@ -9,7 +9,7 @@
 
 
 ## Additional Information
-More information can be found in the documentation at:   
+More information can be found in the documentation:   
 ACUCOBOL-GT Version x.y.z Documentation Set > ACUCOBOL-GT Reference Manual    
 
 The AcuCOBOL Documentation and Resources are available here:  
