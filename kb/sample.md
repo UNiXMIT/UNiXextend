@@ -8,7 +8,7 @@
 ## Resolution
 
 
-#### Additional Information
+## Additional Information
 More information can be found in the documentation at:   
 ACUCOBOL-GT Version x.y.z Documentation Set > ACUCOBOL-GT Reference Manual    
 

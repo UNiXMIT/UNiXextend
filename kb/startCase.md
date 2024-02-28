@@ -38,10 +38,10 @@ FILE-CONTROL.
 ```
 
 Any START performed on this file will now be case-insensitive.  
-This will only work on new Vision files created after setting the sections previously mentioned. Any exisiting Vision files that require a case-insensitive START will need to be re-created as a new Vision file which has the new SELECT.  
+This will only work on new Vision files created after setting the sections previously mentioned. Any existing Vision files that require a case-insensitive START will need to be re-created as a new Vision file which has the new SELECT.  
 This custom ALPHABET can also be used for the COLLATING SEQUENCE in other areas like SORT and MERGE.  
 
-#### Additional Information
+## Additional Information
 For more information about the ALPHABET entry and COLLATION SEQUENCE can be found in the documentation at:   
 ACUCOBOL-GT Version x.y.z Documentation Set > ACUCOBOL-GT Reference Manual > Environment Division > Input-Output Section > File-Control Paragraph   
 ACUCOBOL-GT Version x.y.z Documentation Set > ACUCOBOL-GT Reference Manual > Environment Division > Configuration Section > Special-Names Paragraph  
