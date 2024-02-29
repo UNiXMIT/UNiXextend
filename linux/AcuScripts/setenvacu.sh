@@ -22,7 +22,6 @@ Options:
  . setenvacu.sh [options] <parameters>   Set the AcuCOBOL environment and Additional Binaries/Libraries     
 
 Usage: 
- -t            Enable timestamp in AcuLOGS
  -i            INFORMIX
  -j 32/64      JAVA 32 or 64 bit
  -m 32/64      MQ 32 or 64 bit
