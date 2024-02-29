@@ -68,11 +68,6 @@ set_acu()
     echo
 }
 
-set_timestamp()
-{
-    export FILE_TRACE_TIMESTAMP=TRUE
-}
-
 set_java()
 {
     java_bit="${2}" 
@@ -174,9 +169,6 @@ invalidARG=
 OPTIND=1
 while getopts ":j:m:o:hi" z; do
     case "${z}" in
-        t)
-            set_timestamp
-            ;;
         i)
             set_informix
             ;;

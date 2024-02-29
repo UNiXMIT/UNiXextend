@@ -53,11 +53,6 @@ SET ADMINPATH=
     )     
     SHIFT & SHIFT & GOTO :INITIAL
  )
- IF "%1" == "-t" SET RESULT=TRUE
- IF "%RESULT%" == "TRUE" (
-    SET FILE_TRACE_TIMESTAMP=TRUE   
-    SHIFT & SHIFT & GOTO :INITIAL
- )
  IF "%1" == "-c" SET RESULT=TRUE
  IF "%RESULT%" == "TRUE" (
     SET CFLAGS=%2
@@ -111,7 +106,6 @@ ECHO.
 ECHO Usage: 
 ECHO  -v 10.5.1       AcuCOBOL Version
 ECHO  -b 32           32 or 64 bit
-ECHO  -t              Enable timestamp in AcuLOGS
 ECHO  -p 1785         Patch number
 ECHO  -j              JAVA
 ECHO  -m              MQ
