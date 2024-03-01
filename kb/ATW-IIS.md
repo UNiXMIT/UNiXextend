@@ -90,8 +90,8 @@ Download and install URL Rewrite: http://www.iis.net/downloads/microsoft/url-rew
 If you plan to secure the ports with SSL, make sure you have created and/or imported your Server certificates in IIS for the domain you have asigned to your Server IP. We need these to be available when binding ports to the sites we will setup.  
 You could use a 3rd party tool like [Certify The Web](https://certifytheweb.com/) to help you install, manage and renew your certificates on IIS.  
 
-##### OPEN ports 443 and 8080
-You must ensure that the ports you are assigning in IIS are OPEN in order to allow IIS to receive the traffic that is being routed to AcuToWeb. In this setup I opened ports 443 and 8080 in the Windows firewall.  
+##### OPEN port 443
+You must ensure that the ports you are assigning in IIS are OPEN in order to allow IIS to receive the traffic that is being routed to AcuToWeb. In this setup I opened port 443 in the Windows firewall.  
 
 #### Rewrite Rules
 1. In IIS, under the section 'Sites' on the left hand side, select 'Default Web Site', then double-click URL Rewrite.  
@@ -108,7 +108,7 @@ You must ensure that the ports you are assigning in IIS are OPEN in order to all
 
     4. In the Action section, select Rewrite in the Action Type field.
 
-    5. Type http://127.0.0.1:8000/websocket{R:1} in the Rewrite URL field (In my example I am using AcuToWeb WebServer port 8000 but yours may be different).
+    5. Type http://127.0.0.1:8000/websocket{R:1} in the Rewrite URL field (In my example I am using AcuToWeb TCP port 8000 but yours may be different).
 
     6. Check Stop Processing, the click Apply.
 
@@ -130,7 +130,7 @@ You must ensure that the ports you are assigning in IIS are OPEN in order to all
 
     ![5](images/atw-iis5.png)
 
-4. IIS should now route your request through the ports assigned via IIS to AcuToWeb on the server. HTTP requests route from port 80 on IIS to port 3000 in AcuToWeb. Websocket requests route from port 443 on IIS to port 8000 in AcuToWeb.  
+4. IIS should now route your request through port 443 assigned via IIS to AcuToWeb on the server. HTTP requests route from port 80 on IIS to port 3000 in AcuToWeb. Websocket requests route from port 80 on IIS to port 8000 in AcuToWeb.  
 
 **IMPORTANT:** With this configuration, the AcuToWeb Gateway is hidden behind IIS and it is only reachable via the ports bound in IIS; therefore, it is mandatory to use the portgw and hostgw parameters to override the gateway configuration; for example:  
 
@@ -139,7 +139,7 @@ http://12.345.678.912?hostgw=12.345.678.912&portgw=80&alias=tour
 ```
 
 #### SSL Setup and Binding
-If you want to use SSL certificates to secure the connections in IIS, you need to modify the bindings on the sites we have already created and assign the SSL certificates to port 443.
+If you want to use SSL certificates to secure the connection in IIS, you need to modify the bindings on the site we have already created and assign the SSL certificate to port 443.
 
 1. In IIS click Default Web Site -> Bindings -> then click Add in the new window.
 
@@ -149,14 +149,15 @@ If you want to use SSL certificates to secure the connections in IIS, you need t
 
     3. In the SSL Certificate box select the SSL certificates, which you should have already created and imported in IIS, then click OK.
 
-    4. Port 443 is now secure with SSL.
+    4. Port 443 is now secure with SSL.  
+    ![6](images/atw-iis6.png)
 
 2. IIS should now route your requests through port 443 assigned via IIS to AcuToWeb on the server. HTTPS requests route from port 443 on IIS to port 3000 in AcuToWeb. Secure Websocket requests route from port 443 on IIS to port 8000 in AcuToWeb.
 
 IMPORTANT: With this configuration, the AcuToWeb Gateway is hidden behind IIS and it is only reachable via the ports bound in IIS; therefore, it is mandatory to use the portgw and hostgw parameters to override the gateway configuration; for example:
 
 ```
-http://domain.com?hostgw=domain.com&portgw=443&alias=tour  
+https://domain.com?hostgw=domain.com&portgw=443&alias=tour  
 ```
 
 #### Optional
