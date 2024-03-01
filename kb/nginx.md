@@ -92,11 +92,11 @@ server {
 
 NGINX configured to dynamically proxy a short URL i.e.  
 ```
-http://domain.com/?id=tour  
+https://domain.com/?id=tour  
 ```
 proxies to  
 ```
-http://domain.com/?portgw=443&alias=tour&theme=tour  
+https://domain.com/?portgw=443&alias=tour&theme=tour  
 ```
 ```
 server {
