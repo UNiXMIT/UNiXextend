@@ -132,7 +132,7 @@ You must ensure that the ports you are assigning in IIS are OPEN in order to all
 
 4. IIS should now route your request through port 443 assigned via IIS to AcuToWeb on the server. HTTP requests route from port 80 on IIS to port 3000 in AcuToWeb. Websocket requests route from port 80 on IIS to port 8000 in AcuToWeb.  
 
-**IMPORTANT:** With this configuration, the AcuToWeb Gateway is hidden behind IIS and it is only reachable via the ports bound in IIS; therefore, it is mandatory to use the portgw and hostgw parameters to override the gateway configuration; for example:  
+**IMPORTANT:** With this configuration, the AcuToWeb Gateway is hidden behind IIS and it is only reachable via the port bound in IIS; therefore, it is mandatory to use the portgw and hostgw parameters to override the gateway configuration; for example:  
 
 ```
 http://12.345.678.912?hostgw=12.345.678.912&portgw=80&alias=tour 
@@ -154,7 +154,7 @@ If you want to use SSL certificates to secure the connection in IIS, you need to
 
 2. IIS should now route your requests through port 443 assigned via IIS to AcuToWeb on the server. HTTPS requests route from port 443 on IIS to port 3000 in AcuToWeb. Secure Websocket requests route from port 443 on IIS to port 8000 in AcuToWeb.
 
-IMPORTANT: With this configuration, the AcuToWeb Gateway is hidden behind IIS and it is only reachable via the ports bound in IIS; therefore, it is mandatory to use the portgw and hostgw parameters to override the gateway configuration; for example:
+**IMPORTANT:** With this configuration, the AcuToWeb Gateway is hidden behind IIS and it is only reachable via the port bound in IIS; therefore, it is mandatory to use the portgw and hostgw parameters to override the gateway configuration; for example:
 
 ```
 https://domain.com?hostgw=domain.com&portgw=443&alias=tour  

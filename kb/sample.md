@@ -1,8 +1,8 @@
 # TITLE
 ## Environment
 AcuCOBOL-GT extend  
-Windows
-Linux/UNIX
+Windows  
+Linux/UNIX  
 
 ## Situation
 
