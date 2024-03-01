@@ -54,8 +54,10 @@ The Runtime, AcuServer, and AcuConnect can automatically produce compressed log 
 To include timestamps on each line of the log files (does not apply to AcuXDBC logs). Before proceeding with the following instructions, set this in the environment, or add it to the related configuration file:  
 
 ```
-FILE_TRACE_TIMESTAMP 1
+FILE_TRACE_TIMESTAMP TRUE
 ```
+
+or in the debugger prompt enter 't timestamp'.  
 
 ### Runtime
 1. Add "-dlxe runtime.log" to the Runtime command line. So it will be something like this on Unix-like OS:  
@@ -134,6 +136,7 @@ FILE_TRACE_TIMESTAMP 1
     ```
     ```
     # gateway.toml
+    [gateway]
     log_level = 15
     logfile = '/path/to/gateway.log'
     ```
