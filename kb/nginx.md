@@ -58,15 +58,15 @@ server {
 NGINX as a load balancer for multiple instances of AcuToWeb:
 ```
 upstream backend {
-    ip_hash;
-    server 127.0.0.1:3000;
-    server 127.0.0.1:3001;
+    hash $remote_addr consistent;
+    server server1:3000;
+    server server2:3001;
 }
 
 upstream websocket {
-    ip_hash;
-    server 127.0.0.1:8000;
-    server 127.0.0.1:8001;
+    hash $remote_addr consistent;
+    server server1:8000;
+    server server2:8001;
 }
 
 server {

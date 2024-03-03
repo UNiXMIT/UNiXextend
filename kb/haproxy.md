@@ -91,13 +91,13 @@ frontend all_traffic
     use_backend app_backend
 
 backend app_backend
-    balance source
+    balance source hash-type consistent
     http-request set-header Host %[hdr(host)]
     server app_server1 127.0.0.1:3000 check
     server app_server2 127.0.0.1:3001 check
 
 backend websocket_backend
-    balance source
+    balance source hash-type consistent
     http-request set-header Host %[hdr(host)]
     server websocket_server1 127.0.0.1:8000 check
     server websocket_server2 127.0.0.1:8001 check
