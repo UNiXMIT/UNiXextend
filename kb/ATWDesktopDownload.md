@@ -12,7 +12,7 @@ Starting in 10.5.0 there is a permanent link to allow users to download AcuToWeb
 The URL will differ depending on the domain/port where ATW is hosted but the URI will be the same.  
 
 ```
-https://domain.com:3000/desktop/download
+http://example.com/desktop/download
 ```
 
 This link will download the AcuToWeb_Desktop_Setup.msi installer.  

@@ -92,11 +92,11 @@ server {
 
 NGINX configured to dynamically proxy a short URL i.e.  
 ```
-https://domain.com/?id=tour  
+http://example.com/?id=tour  
 ```
 proxies to  
 ```
-https://domain.com/?portgw=443&alias=tour&theme=tour  
+http://example.com/?portgw=443&alias=tour&theme=tour  
 ```
 ```
 server {
@@ -126,5 +126,5 @@ server {
 **IMPORTANT:** With these configurations, the AcuToWeb Gateway is hidden behind NGINX and it is only reachable via the port bound in NGINX; therefore, it is mandatory to use the portgw parameter to override the gateway configuration; for example:  
 
 ```
-https://domain.com/?portgw=443
+http://example.com/?portgw=443
 ```

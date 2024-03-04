@@ -157,7 +157,7 @@ If you want to use SSL certificates to secure the connection in IIS, you need to
 **IMPORTANT:** With this configuration, the AcuToWeb Gateway is hidden behind IIS and it is only reachable via the port bound in IIS; therefore, it is mandatory to use the portgw and hostgw parameters to override the gateway configuration; for example:
 
 ```
-https://domain.com?hostgw=domain.com&portgw=443&alias=tour  
+http://example.com/?hostgw=example.com&portgw=443&alias=tour  
 ```
 
 #### Optional
@@ -165,13 +165,13 @@ https://domain.com?hostgw=domain.com&portgw=443&alias=tour
 You can configure the URL Rewrite to proxy a short URL rather than using the URL with a long query string. For example:  
 
 ```
-https://domain.com/?id=tour
+http://example.com/?id=tour
 ```
 
 will be proxied to  
 
 ```
-https://domain.com/?portgw=443&hostgw=domain.com&alias=tour&theme=tour
+http://example.com/?portgw=443&hostgw=example.com&alias=tour&theme=tour
 ```
 
 and 'tour' can be dynamically replaced with any alias you have setup.    
@@ -189,7 +189,7 @@ and 'tour' can be dynamically replaced with any alias you have setup.
                     <conditions logicalGrouping="MatchAll" trackAllCaptures="false">
                         <add input="{QUERY_STRING}" pattern="^id=([A-Za-z0-9-]+)$" />
                     </conditions>
-                    <action type="Redirect" url="https://domain.com/{R:1}?portgw=443&amp;hostgw=domain.com&amp;alias={C:1}&amp;theme={C:1}" appendQueryString="false" />
+                    <action type="Redirect" url="http://example.com/{R:1}?portgw=443&amp;hostgw=example.com&amp;alias={C:1}&amp;theme={C:1}" appendQueryString="false" />
                 </rule>
                 <rule name="Websocket" stopProcessing="true">
                     <match url="websocket(.*)" />
