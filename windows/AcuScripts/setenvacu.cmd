@@ -130,11 +130,11 @@ GOTO :END
 IF "%INSTALLDIR32%"=="" (FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT\%EXTEND%" /S /V "INSTALLDIR" 2^>NUL ^| FIND "REG_SZ"') DO SET "INSTALLDIR32=%%B") ELSE (SET "INSTALLDIR32=%INSTALLDIR32%\extend %EXTEND%\")
 IF "%INSTALLDIR64%"=="" (FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Micro Focus\ACUCOBOL-GT\%EXTEND%" /S /V "INSTALLDIR" 2^>NUL ^| FIND "REG_SZ"') DO SET "INSTALLDIR64=%%B") ELSE (SET "INSTALLDIR64=%INSTALLDIR64%\extend %EXTEND%\")
 IF "%PUBLICDIR%"=="" (FOR /F "tokens=2*" %%A IN ('REG.EXE QUERY "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Micro Focus\ACUCOBOL-GT\%EXTEND%" /S /V "PUBLICDIR" 2^>NUL ^| FIND "REG_SZ"') DO SET "PUBLICDIR=%%B") ELSE (SET "PUBLICDIR=%PUBLICDIR%\extend %EXTEND%\")
-SET DEF=".;%PUBLICDIR%sample\def;%PUBLICDIR%sample"
-SET XML=".;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample"
-SET BMP=".;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample"
-SET ALL=".;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample"
-SET "COPYPATH=.;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample"
+SET DEF=".;%PUBLICDIR%sample\def;%PUBLICDIR%sample;%PUBLICDIR%AcuGT\sample\def;%PUBLICDIR%AcuGT\sample"
+SET XML=".;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample;%PUBLICDIR%AcuGT\sample\xmlext;%PUBLICDIR%AcuGT\sample"
+SET BMP=".;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample;%PUBLICDIR%AcuGT\sample\acubench\resource;%PUBLICDIR%AcuGT\sample"
+SET ALL=".;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample;%PUBLICDIR%AcuGT\sample\def;%PUBLICDIR%AcuGT\sample\xmlext;%PUBLICDIR%AcuGT\sample\acubench\resource;%PUBLICDIR%AcuGT\sample"
+SET "COPYPATH=.;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample;%PUBLICDIR%AcuGT\sample\def;%PUBLICDIR%AcuGT\sample\xmlext;%PUBLICDIR%AcuGT\sample\acubench\resource;%PUBLICDIR%AcuGT\sample"
 IF "%ACUBIT%"=="" SET ACUBIT=32
 IF "%ACUDEF%"=="TRUE" GOTO :SET-DEFAULT-VERSION
 IF "%ACUADMIN%"=="TRUE" GOTO :ACUADMIN
