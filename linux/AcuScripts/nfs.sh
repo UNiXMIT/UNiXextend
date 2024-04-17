@@ -18,3 +18,10 @@ sudo exportfs -s
 ## sudo mount -t nfs serverHostOrIP:/mnt/nfs /mnt/nfs
 # Persistent NFS Mount
 ## echo 'serverHostOrIP:/mnt/nfs  /mnt/nfs  nfs  defaults  0  0' /etc/fstab | sudo tee -a /etc/fstab
+
+# Enable Quotas
+## echo 'serverHostOrIP:/mnt/nfs  /mnt/nfs  nfs  defaults,usrquota 0 0' /etc/fstab | sudo tee -a /etc/fstab
+## sudo quotacheck -cug /mnt/nfs
+## sudo edquota -u username
+## sudo quotaon /mnt/nfs
+## quota -u username
