@@ -10,3 +10,11 @@ sudo systemctl restart nfs-utils.service
 echo '/mnt/nfs *(rw,sync,no_subtree_check)' | sudo tee -a /etc/exports
 sudo exportfs -arv
 sudo exportfs -s
+
+# Client Setup
+## sudo dnf install nfs-utils nfs4-acl-tools -y
+## showmount -e serverHostOrIP
+## sudo mkdir p /mnt/nfs
+## sudo mount -t nfs serverHostOrIP:/mnt/nfs /mnt/nfs
+# Persistent NFS Mount
+## echo 'serverHostOrIP:/mnt/nfs  /mnt/nfs  nfs  defaults  0  0' /etc/fstab | sudo tee -a /etc/fstab
