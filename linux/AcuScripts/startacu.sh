@@ -97,6 +97,7 @@ start_acuxdbcs()
     fi
 }
 
+argProcessed=false
 invalidARG=
 ACULOG=
 ACUOP=
@@ -110,6 +111,7 @@ START_ACUSERVE=
 START_ACUXDBCS=
 OPTIND=1
 while getopts ":r:s:c:x:w:hl" z; do
+    argProcessed=true
     case "${z}" in
         r)
             START_ACURCL=TRUE
@@ -148,6 +150,17 @@ while getopts ":r:s:c:x:w:hl" z; do
     esac
 done
 shift "$((OPTIND-1))"
+
+if [ "$argProcessed" = false ]; then
+    echo DEFAULT
+    START_ACURCL=TRUE
+    export ACURCL_PORT=5632
+    START_ATW=TRUE
+    START_ACUSERVE=TRUE
+    export ACUSERVER_PORT=6523
+    START_ACUXDBCS=TRUE
+    export ACUXDBCS_PORT=20222
+fi
 
 if [[ "$START_ACURCL" == "TRUE" ]] ; then
     start_acurcl
