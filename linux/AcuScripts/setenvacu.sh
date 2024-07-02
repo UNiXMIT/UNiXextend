@@ -3,6 +3,7 @@
 
 # ACU_OPT is the default location of all your Acu installations
 export ACU_OPT=/home/products
+export TERM=xterm
 
 # Set the path to other installations here:
 export JAVA32=
