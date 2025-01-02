@@ -2,7 +2,7 @@
 ## [AcuCOBOL-GT extend 10.5.1 Documentation](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/GUID-982EA3C1-D37B-47E3-AE86-344E4BAB5C7C.html)
 
 - [AcuCOBOL-GT extend 10.5.1 Release Notes](https://docs.rocketsoftware.com/bundle/acucobolgt_rn_1051_html/page/GUID-C7E7EA9A-F2C4-475E-AD3E-99D1C0B99683.html)
-- [AcuCommunity](https://community.microfocus.com/cobol/acucobol/)
+- [AcuCommunity](https://community.rocketsoftware.com/forums/forum-home?CommunityKey=78880ba8-1519-45f3-8d5e-01928efe3598)
 - [Documentation](#documentation)
   - [Official](#official)
   - [Wiki](#wiki)
