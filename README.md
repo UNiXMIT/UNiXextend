@@ -1,7 +1,7 @@
 # [UNiXextend](https://github.com/UNiXMIT/UNiXextend)
-## [AcuCOBOL-GT extend 10.5.1 Documentation](https://www.microfocus.com/documentation/extend-acucobol/1051/extend-interoperability-suite/index.html)
+## [AcuCOBOL-GT extend 10.5.1 Documentation](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/GUID-982EA3C1-D37B-47E3-AE86-344E4BAB5C7C.html)
 
-- [AcuCOBOL-GT extend 10.5.1 Release Notes](https://www.microfocus.com/documentation/extend-acucobol/1051/extend_release_notes/index.html)
+- [AcuCOBOL-GT extend 10.5.1 Release Notes](https://docs.rocketsoftware.com/bundle/acucobolgt_rn_1051_html/page/GUID-C7E7EA9A-F2C4-475E-AD3E-99D1C0B99683.html)
 - [AcuCommunity](https://community.microfocus.com/cobol/acucobol/)
 - [Documentation](#documentation)
   - [Official](#official)
@@ -18,13 +18,13 @@
 
 ## Documentation
 ### Official
-- [File Status Codes](https://www.microfocus.com/documentation/extend-acucobol/1051/extend-interoperability-suite/GUID-1C271F93-56FD-4CA7-8C6C-0826B061C5C1.html)
-- [Compiler Options](https://www.microfocus.com/documentation/extend-acucobol/1051/extend-interoperability-suite/BKUSUSCOMPUS2.2.html)
-- [Runtime Options](https://www.microfocus.com/documentation/extend-acucobol/1051/extend-interoperability-suite/BKUSUSCOMPS031.html)
-- [License File Names](https://www.microfocus.com/documentation/extend-acucobol/1051/extend-interoperability-suite/BKGCGCSTRTS005.html)
-- [Limits and Ranges](https://www.microfocus.com/documentation/extend-acucobol/1051/extend-interoperability-suite/BKPPPPSPECS002.html)
-- [Memory Handling Descriptions](https://www.microfocus.com/documentation/extend-acucobol/1051/extend-interoperability-suite/BKUSUSPROGS044.html)
-- [Machine Key Mismatch](https://www.microfocus.com/documentation/extend-acucobol/1051/extend-interoperability-suite/BKGCGCTRBLS002.html)
+- [File Status Codes](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKTRTRDOSSS021.html)
+- [Compiler Options](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKUSUSCOMPUS2.2.html)
+- [Runtime Options](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKTRTRAREMS002.html)
+- [License File Names](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKGCGCSTRTS005.html)
+- [Limits and Ranges](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKPPPPSPECS002.html)
+- [Memory Handling Descriptions](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKUSUSPROGS045.html)
+- [Machine Key Mismatch](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKGCGCTRBLS002.html)
 - [VM Support Statement](https://portal.microfocus.com/s/article/KM000010632)
 
 ### Wiki
