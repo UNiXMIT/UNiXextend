@@ -13,7 +13,7 @@ export ORACLE32=
 export ORACLE64=
 export INFORMIX_OPT=
 export MQ=
-export MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1
+export MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1(1414)
 
 usage()
 {
