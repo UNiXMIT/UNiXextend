@@ -16,6 +16,7 @@ Usage:
  -w config path + filename  AcuToWeb (Port is set in gateway.conf)
  -s port                    AcuServer with specified port
  -x port                    AcuXDBC Server with specified port
+ -b port                    Boomerang Server with specified port
  -h                         Usage
 
 Example:
@@ -97,6 +98,21 @@ start_acuxdbcs()
     fi
 }
 
+start_boomerang()
+{
+    if [[ "$ACUOP" == "stop" ]] ; then
+        $ACUCOBOL/bin/boomerang -kill -n $BOOMERANG_PORT -@
+    else
+        if [[ "$ACULOG" = "log" ]] ; then
+            export ACCESS_FILE=$ACUSUP/etc/AcuAccess$BOOMERANG_PORT
+            $ACUCOBOL/bin/boomerang -start -c $ACUSUP/etc/boomerang.cfg -n $BOOMERANG_PORT  -t 7 -e $ACUSUP/AcuLogs/boomerang-$BOOMERANG_PORT.log -@
+        else
+            export ACCESS_FILE=$ACUSUP/etc/AcuAccess$BOOMERANG_PORT
+            $ACUCOBOL/bin/boomerang -start -c $ACUSUP/etc/boomerang.cfg -n $BOOMERANG_PORT -@
+        fi
+    fi
+}
+
 argProcessed=false
 invalidARG=
 ACULOG=
@@ -106,16 +122,23 @@ ATW_CFG=
 ACUSERVER_PORT=
 ACUXDBCS_PORT=
 START_ACURCL=
+START_BOOMERANG=
 START_ATW=
 START_ACUSERVE=
 START_ACUXDBCS=
 OPTIND=1
-while getopts ":r:s:c:x:w:hl" z; do
+while getopts ":r:b:s:c:x:w:hl" z; do
     argProcessed=true
     case "${z}" in
         r)
             START_ACURCL=TRUE
             export ACURCL_PORT=$OPTARG
+            : "${ACURCL_PORT:=5632}"
+            ;;
+        b)
+            START_BOOMERANG=TRUE
+            export BOOMERANG_PORT=$OPTARG
+            : "${BOOMERANG_PORT:=7770}"
             ;;
         w)  
             START_ATW=TRUE
@@ -124,10 +147,12 @@ while getopts ":r:s:c:x:w:hl" z; do
         s)  
             START_ACUSERVE=TRUE
             export ACUSERVER_PORT=$OPTARG
+            : "${ACUSERVER_PORT:=6523}"
             ;;
         x)  
             START_ACUXDBCS=TRUE
             export ACUXDBCS_PORT=$OPTARG
+            : "${ACUXDBCS_PORT:=20222}"
             ;;
         c)  
             ACUOP=$OPTARG
@@ -155,6 +180,8 @@ if [ "$argProcessed" = false ]; then
     echo DEFAULT
     START_ACURCL=TRUE
     export ACURCL_PORT=5632
+    START_BOOMERANG=TRUE
+    export BOOMERANG_PORT=7770
     START_ATW=TRUE
     START_ACUSERVE=TRUE
     export ACUSERVER_PORT=6523
@@ -164,6 +191,9 @@ fi
 
 if [[ "$START_ACURCL" == "TRUE" ]] ; then
     start_acurcl
+fi
+if [[ "$START_BOOMERANG" == "TRUE" ]] ; then
+    start_boomerang
 fi
 if [[ "$START_ATW" == "TRUE" ]] ; then
     start_atw
