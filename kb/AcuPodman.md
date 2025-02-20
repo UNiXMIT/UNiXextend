@@ -33,5 +33,5 @@ extend Programming Guides > A Guide to Interoperating with ACUCOBOL-GT Version 1
 
  
 ## Additional Information
-The AcuCOBOL Documentation and Resources are available here:  
-https://www.microfocus.com/en-us/support/ACUCOBOL-GT%20(Extend)  
+The AcuCOBOL-GT extend Documentation and Release Notes are available here:  
+https://docs.rocketsoftware.com/bundle?cluster=true&labelkey=prod_acucobol_gt  
