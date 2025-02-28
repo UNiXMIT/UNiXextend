@@ -241,13 +241,13 @@ ACU_DUMP            1
 
 The default value for ACU_DUMP_FILE is acudump.#, where # is an integer, starting at one and incrementing by one each time a new ADR is created in the current directory (acudump.1, acudump.2, and so on).  
 
-To customise the filename you can set the following variable to the path and name of the file:  
+To customise the filename, you can set the following variable to the path and name of the file:  
 
 ```
 ACU_DUMP_FILE       /path/to/file/fileName  
 ```
 
-More information about ADR can be found in the [documentation](https://www.microfocus.com/en-us/support/ACUCOBOL-GT%20(Extend)) - ACUCOBOL-GT Version x.y.z Documentation Set > ACUCOBOL-GT User's Guide > Debugger and Utilities > Run-Time Debugger > Using the Abend Diagnostic Report (ADR) > Generating a Report  
+More information about ADR can be found in the [documentation](https://docs.rocketsoftware.com/bundle?labelkey=prod_acucobol_gt) - ACUCOBOL-GT Version x.y.z Documentation Set > ACUCOBOL-GT User's Guide > Debugger and Utilities > Run-Time Debugger > Using the Abend Diagnostic Report (ADR) > Generating a Report  
 
 ### Process Monitor Log
 This log is useful to find out what paths and DLLs a program is searching when attempting to load a DLL, like Microsofts query tool MSQUERY.EXE  
