@@ -1,6 +1,7 @@
 # [UNiXextend](https://github.com/UNiXMIT/UNiXextend)
 ## [AcuCOBOL-GT extend Documentation](https://docs.rocketsoftware.com/bundle?labelkey=prod_acucobol_gt)
 
+-[Rocket ACUCOBOL-GT Extension for VSCode](https://docs.rocketsoftware.com/bundle?labelkey=prod_acucobol_gt&name_filter.value=Visual+Studio+Code)
 - [AcuCOBOL-GT extend Release Notes](https://docs.rocketsoftware.com/bundle?labelkey=prod_acucobol_gt&name_filter.value=Release+Notes)
 - [AcuCommunity](https://community.rocketsoftware.com/forums/forum-home?CommunityKey=78880ba8-1519-45f3-8d5e-01928efe3598)
 - [Documentation](#documentation)
