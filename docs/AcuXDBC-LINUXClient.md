@@ -62,13 +62,13 @@ db_cursors          64    -- max # of DB cursors
 If the information above is for use on a local machine, add the following to the odbc.ini:
 
 ```
-dsn_vision_sys "acuxdbc04:%s/%s/xvision:acuxdbc.cfg"
+dsn_acuxdbc "acuxdbc04:%s/%s/xvision:acuxdbc.cfg"
 ```
 
 If the information above is for use on a server, add the following to the odbc.ini:
 
 ```
-dsn_vision_sys "acuxdbc03:%s/%s/xvision:acuxdbc.cfg@20222:servername!acuxdbc04"
+dsn_acuxdbc "acuxdbc03:%s/%s/xvision:acuxdbc.cfg@20222:servername!acuxdbc04"
 ```
 
 5.	Environment variables need to be set or modified that point the location of the AcuXDBC executables and to tell the operating system where to find the AcuXDBC shared libraries:
