@@ -101,7 +101,7 @@ FILE_PREFIX     ;/home/products/acu1100shx64/data;/home/products/acu1100shx64/sa
 
 
 ```
-$ isql acuxdbc system manager
+$ isql -v acuxdbc system manager
 
 +---------------------------------------+  
 
