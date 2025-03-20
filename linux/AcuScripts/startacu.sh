@@ -2,6 +2,7 @@
 # Default location for all your config files, logs etc.
 ACUSUP=/home/support/AcuSupport
 export SERVER_ALIAS_FILE=$ACUSUP/etc/acurcl.ini
+export DEFAULT_USER=support
 
 usage()
 {
@@ -36,11 +37,9 @@ start_acurcl()
         else
             if [[ "$ACULOG" = "log" ]] ; then
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACURCL_PORT
-                export DEFAULT_USER=support
                 $ACUCOBOL/bin/acurcl -start -c $ACUSUP/etc/acurcl.cfg -n $ACURCL_PORT -le $ACUSUP/AcuLogs/$ACURCL_PORT-acurcl.log -t7 -@
             else
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACURCL_PORT
-                export DEFAULT_USER=support
                 $ACUCOBOL/bin/acurcl -start -c $ACUSUP/etc/acurcl.cfg -n $ACURCL_PORT -@
             fi
         fi
@@ -74,11 +73,9 @@ start_acuserve()
         else
             if [[ "$ACULOG" = "log" ]] ; then
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACUSERVER_PORT
-                export DEFAULT_USER=support
                 $ACUCOBOL/bin/acuserve -start -c $ACUSUP/etc/a_srvcfg -n $ACUSERVER_PORT -le $ACUSUP/AcuLogs/$ACUSERVER_PORT-acuserve.log -t7 -@
             else
                 export ACCESS_FILE=$ACUSUP/etc/AcuAccess$ACUSERVER_PORT
-                export DEFAULT_USER=support
                 $ACUCOBOL/bin/acuserve -start -c $ACUSUP/etc/a_srvcfg -n $ACUSERVER_PORT -@
             fi
         fi
@@ -109,11 +106,9 @@ start_boomerang()
     else
         if [[ "$ACULOG" = "log" ]] ; then
             export ACCESS_FILE=$ACUSUP/etc/AcuAccess$BOOMERANG_PORT
-            export DEFAULT_USER=support
             $ACUCOBOL/bin/boomerang -start -c $ACUSUP/etc/boomerang.cfg -n $BOOMERANG_PORT  -t 7 -e $ACUSUP/AcuLogs/boomerang-$BOOMERANG_PORT.log -@
         else
             export ACCESS_FILE=$ACUSUP/etc/AcuAccess$BOOMERANG_PORT
-            export DEFAULT_USER=support
             $ACUCOBOL/bin/boomerang -start -c $ACUSUP/etc/boomerang.cfg -n $BOOMERANG_PORT -@
         fi
     fi
