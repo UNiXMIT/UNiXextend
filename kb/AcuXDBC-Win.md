@@ -19,7 +19,7 @@ AcuXDBC Enterprise Edition installs the Server side of AcuXDBC and the JDBC libr
 
 AcuXDBC Client can be installed using a standalone installer, too.  
 
-The installers are available to download from the Micro Focus Support Portal - https://portal.microfocus.com/  
+The installers are available to download from the Rocket Support Portal - https://my.rocketsoftware.com/RocketCommunity/s  
 During the installation you will be asked to enter your product code and key.  
 
 #### Set Environment Variables

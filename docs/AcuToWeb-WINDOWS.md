@@ -2,9 +2,9 @@
 
 The AcuToWeb Gateway provides a method where the client specifies an AcuConnect alias to be run. The AcuToWeb Gateway sends the alias information to AcuConnect; therefore, in order to use AcuToWeb, the following are prerequisites:
 
-1.	Install AcuConnect - https://bit.ly/47pNCiE
-2.	Establish system security - https://bit.ly/48Lj6AU
-3.	Create the required aliases - https://bit.ly/48NvdNR
+1.	[Install AcuConnect](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN22.html)
+2.	[Establish system security](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN23.html)
+3.	[Create the required aliases](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN24.html)
 
 **Configure AcuConnect Thin Client**
 
@@ -57,7 +57,7 @@ acuthin 127.0.0.1:5632 Tour
 
 You need to create a new Gateway Service:
 
-First create your gateway.toml file. An example Gateway configuration file can be found in the documentation (https://bit.ly/41P8pL7). Amend it to fit your needs and make sure acurcl_port matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set use_ssl to 0
+First create your gateway.toml file. An example Gateway configuration file can be found in the [documentation](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/GUID-F17A95F4-172C-43B3-8C22-915643243CED.html). Amend it to fit your needs and make sure acurcl_port matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set use_ssl to 0
 
 Now when you click 'New' in the 'Gateway Services' tab a new window will appear prompting you to load your gateway.toml file. Click 'Browse' then find and select the gateway.toml you just created.
 
@@ -69,7 +69,7 @@ Now click OK to take you back to the previous window. Select the AcuToWeb servic
 
 NOTE: Prior to extend 10.5.0, a gateway.conf was used and was a different format to the gateway.toml file. Please check the correct documentation for the version of AcuToWeb being used.
 
-NOTE: Prior to extend 10.3.0 the properties of the AcuToWeb service were created directly in the AcuToWeb Control Panel as shown below. This was an intentional change (http://bit.ly/36kJzVc)
+NOTE: Prior to extend 10.3.0 the properties of the AcuToWeb service were created directly in the AcuToWeb Control Panel as shown below. This was an intentional change Iintroduced in 10.3.0 by ECN-AW141).  
 
 ![10](images/atw-w-10.png)
 

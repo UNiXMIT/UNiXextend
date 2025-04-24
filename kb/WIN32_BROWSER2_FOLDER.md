@@ -19,4 +19,4 @@ More information can be found in the documentation:
 ACUCOBOL-GT Version x.y.z Documentation Set > Appendices > Appendix H. Configuration Variables > Configuration Variables > WIN32_BROWSER2_FOLDER
 
 The AcuCOBOL Documentation and Resources are available here:  
-https://www.microfocus.com/en-us/support/ACUCOBOL-GT%20(Extend)  
+https://docs.rocketsoftware.com/bundle?labelkey=prod_acucobol_gt  

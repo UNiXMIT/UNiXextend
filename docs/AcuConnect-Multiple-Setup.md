@@ -2,10 +2,9 @@
 
 This guide does not go into the initial setup of AcuConnect but rather focuses on setting up multiple services on a server. The following prerequisites should have already been setup:  
 
-1.	Install AcuConnect - http://bit.ly/2Gfolh1  
-2.	Establish system security - http://bit.ly/30LiI3v  
-3.	Create the required aliases - http://bit.ly/37nocnt  
-
+1.	[Install AcuConnect](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN22.html)
+2.	[Establish system security](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN23.html)
+3.	[Create the required aliases](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN24.html)
 
 **Create the Server Configuration File**
 

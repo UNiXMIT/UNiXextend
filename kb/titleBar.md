@@ -17,4 +17,4 @@ There are 2 solutions:
     WIN32-NATIVECTLS TRUE
     ```
 
-2. Instead of connecting to the server via RDP and then running the COBOL program, run the program remotely using AcuConnect Thin Client. More information about AcuConnect Thin Client can be found here - https://www.microfocus.com/media/data-sheet/acuconnect_ds.pdf  
+2. Instead of connecting to the server via RDP and then running the COBOL program, run the program remotely using AcuConnect Thin Client. More information about AcuConnect Thin Client can be found here - https://www.rocketsoftware.com/sites/default/files/resource_files/acuconnect.pdf  

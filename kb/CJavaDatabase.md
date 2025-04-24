@@ -24,4 +24,4 @@ A_JAVA_TRACE_VALUE -1
 A_JAVA_TRACE_FILENAME javatrace.txt
 ```
 
-Additional values for A_JAVA_TRACE_VALUE can be found in the documentation - https://www.microfocus.com/documentation/extend-acucobol/1041/extend-interoperability-suite/BKUSUSCONFS019.html  
+Additional values for A_JAVA_TRACE_VALUE can be found in the documentation - https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKUSUSCONFS019.html  

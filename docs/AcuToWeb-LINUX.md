@@ -2,9 +2,9 @@
 
 AcuToWeb on Linux doesn’t have a graphical control panel. The service is started using the acutoweb-gateway command. The AcuToWeb Gateway provides a method where the client specifies an AcuConnect alias to be run. The AcuToWeb Gateway sends the alias information to AcuConnect; therefore, in order to use AcuToWeb, the following are prerequisites:
 
-1.	Install AcuConnect - https://bit.ly/47pNCiE
-2.	Establish system security - https://bit.ly/48Lj6AU
-3.	Create the required aliases - https://bit.ly/48NvdNR
+1.	[Install AcuConnect](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN22.html)
+2.	[Establish system security](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN23.html)
+3.	[Create the required aliases](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN24.html)
 
 **N.B.** Starting with AcuToWeb 10.3.0 a minimum GCC version is now required:
 
@@ -22,7 +22,7 @@ glibc.i686
 ```
 
 After performing the steps above (configuring the AcuAccess file, creating an alias in the acurcl.ini file, and starting the AcuConnect service), you can modify the Gateway configuration file 'gateway.toml'. This is found in the 'acutoweb/conf' directory of the installation.  
-An example gateway.toml can be found in the documentation (https://bit.ly/41P8pL7). Amend it to fit your needs and make sure acurcl_port matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set use_ssl to false.  
+An example gateway.toml can be found in the [documentation](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/GUID-F17A95F4-172C-43B3-8C22-915643243CED.html). Amend it to fit your needs and make sure acurcl_port matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set use_ssl to false.  
 
 To start the gateway from the acutoweb directory, enter the following command in the terminal:  
 

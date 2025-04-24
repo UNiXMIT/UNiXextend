@@ -19,5 +19,5 @@ The user should be a member of whatever group gives it the appropriate permissio
 
 AcuRCL creates a registry key, HKLM\Software\Micro Focus\AcuConnect\SocketHandles, which it uses to pass information to the child runtime. If it can't create this registry key, it will halt the child runtime and display the mentioned error in the log.  
 
-For help with generating a log from the acurcl service, see the instructions here - https://portal.microfocus.com/s/article/KM000005044#ThinClient  
+For help with generating a log from the acurcl service, see the instructions here - https://my.rocketsoftware.com/RocketCommunity/s/article/ACUCOBOL-GT-Trace-Files-For-Troubleshooting-1739541603825  
 The log can help to see which user is being used, on the server, to start the program etc.  

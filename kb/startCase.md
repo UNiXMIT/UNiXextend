@@ -47,5 +47,5 @@ ACUCOBOL-GT Version x.y.z Documentation Set > ACUCOBOL-GT Reference Manual > Env
 ACUCOBOL-GT Version x.y.z Documentation Set > ACUCOBOL-GT Reference Manual > Environment Division > Configuration Section > Special-Names Paragraph  
 
 The AcuCOBOL Documentation and Resources are available here:  
-https://www.microfocus.com/en-us/support/ACUCOBOL-GT%20(Extend)  
+https://docs.rocketsoftware.com/bundle?labelkey=prod_acucobol_gt  
  

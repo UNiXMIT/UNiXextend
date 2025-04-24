@@ -36,7 +36,7 @@ path_resources = '/home/support/AcuSupport/AcuResources'
 # FX = './Web/_CSS/examples/ThemeFX.css'
 
 # [web.custom_return]
-# DEFAULT = 'https://www.microfocus.com'
+# DEFAULT = 'https://www.rocketsoftware.com/'
 # MY_ALIAS = 'https://www.google.com'
 
 [web.resize]

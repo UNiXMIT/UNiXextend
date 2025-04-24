@@ -1,7 +1,7 @@
 # New Activator Wizard README
-If you are activating licenses generated and issued by Micro Focus after January 2021, please download and use the NEW activator.  
+If you are activating licenses generated and issued by Micro Focus/Opentext between January 2021 and December 2024, please download and use the NEW activator.  
 
-If you are activating old licenses, issued prior to January 2021, you can continue to use the original Activator that is installed with the product. The 'activator.exe' can be found in the 'bin' directory of the AcuCOBOL installation.  
+If you are activating old licenses issued by Micro Focus prior to January 2021 or by Rocket Software from January 2025 onward, you can continue to use the original Activator that is installed with the product. The 'activator' can be found in the 'bin' directory of the AcuCOBOL installation.  
 
 From 10.4.0 onwards, the activator that is installed with the product can be used to activate licenses.  
  
@@ -132,20 +132,20 @@ Or the AcuGT\bin directory.
 
 Your product is now licensed.  
 
-If you encounter and problems then please contact Micro Focus Support - https://portal.microfocus.com  
+If you encounter and problems then please contact Rocket Software Support - https://www.rocketsoftware.com/support    
 
 ## NEW Activator Download Links
 
-[NEW 9.0.x Activator](https://core.opentext.com/pdfjs/web/viewer.html?shortLink=f0919677b3d2b915453191a5765b73f892a6b6c83f3b5a04)
+[NEW 9.0.x Activator](https://mturner.s3.eu-west-2.amazonaws.com/Public/NEWActivators/acu_activator_wizard_90.zip)
 
-[NEW 9.1.x Activator](https://core.opentext.com/pdfjs/web/viewer.html?shortLink=bbf737c76129a3067eeb31284098ca4d0692df7611345249)
+[NEW 9.1.x Activator](https://mturner.s3.eu-west-2.amazonaws.com/Public/NEWActivators/acu_activator_wizard_91.zip)
 
-[NEW 9.2.x Activator](https://core.opentext.com/pdfjs/web/viewer.html?shortLink=f581812fa0606a682d978353691c491cbf9fed9ad8b75376)
+[NEW 9.2.x Activator](https://mturner.s3.eu-west-2.amazonaws.com/Public/NEWActivators/acu_activator_wizard_92.zip)
 
-[NEW 10.0.x Activator](https://core.opentext.com/pdfjs/web/viewer.html?shortLink=cbd384b5794046834618ec0b0fbbcd8b53478d6b2c40f22c)
+[NEW 10.0.x Activator](https://mturner.s3.eu-west-2.amazonaws.com/Public/NEWActivators/acu_activator_wizard_100.zip)
 
-[NEW 10.1.x Activator](https://core.opentext.com/pdfjs/web/viewer.html?shortLink=3bd21920a120306e2b471a615c7af94426bcc666d7adaba6)
+[NEW 10.1.x Activator](https://mturner.s3.eu-west-2.amazonaws.com/Public/NEWActivators/acu_activator_wizard_101.zip)
 
-[NEW 10.2.x Activator](https://core.opentext.com/pdfjs/web/viewer.html?shortLink=b1bc0e7af81484a2635ecc8363effb23ad571a5ca34bd897)
+[NEW 10.2.x Activator](https://mturner.s3.eu-west-2.amazonaws.com/Public/NEWActivators/acu_activator_wizard_102.zip)
 
-[NEW 10.3.x Activator](https://core.opentext.com/pdfjs/web/viewer.html?shortLink=6f9d79c2280530aa859e6fbbca505e37661e1bcda7002cb5)
+[NEW 10.3.x Activator](https://mturner.s3.eu-west-2.amazonaws.com/Public/NEWActivators/acu_activator_wizard_103.zip)

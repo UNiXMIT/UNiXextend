@@ -2,8 +2,8 @@
 
 There are few methods, included with the AcuCOBOL-GT extend, that can help in tracking down memory leaks:
 
-- [The debugger U command](https://bit.ly/2TKTDqr) 
-- [Memory Handling Descriptions](https://bit.ly/3nDb6LN)
+- [The debugger U command](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKUSUSDBUGS011.html) 
+- [Memory Handling Descriptions](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKUSUSPROGS045.html)
 
 ## The debugger U command
 This command displays the amount of dynamically allocated memory currently used by the runtime system, in the debugger window. Its shows how much memory is allocated for various subsystems, and it is possible to find a loop in the COBOL (say, at a top-level menu) that allows you to test memory at the top of each loop. If you see something increasing consistently, you can start to narrow down where it is happening.  
