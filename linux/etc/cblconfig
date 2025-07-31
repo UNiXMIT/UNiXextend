@@ -102,6 +102,7 @@ AGS_SOCKET_COMPRESS             ZLIB
 # XFD_PREFIX            .
 # A_DB2_LOGIN           support
 # A_DB2_PASSWD          YourStrongPassword
+# A_DB2_DATASOURCE      support
 # USER_PATH             user1
 
 ### ACU4GL FOR SYBASE
