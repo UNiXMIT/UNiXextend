@@ -178,7 +178,6 @@ done
 shift "$((OPTIND-1))"
 
 if [ "$argProcessed" = false ]; then
-    echo DEFAULT
     START_ACURCL=TRUE
     export ACURCL_PORT=5632
     START_BOOMERANG=TRUE
