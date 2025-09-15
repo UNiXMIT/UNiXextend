@@ -1,5 +1,7 @@
 # Installation / Setup of AcuToWeb - WINDOWS
 
+This guide applies to AcuToWeb versions 10.5.1 and earlier.  
+
 The AcuToWeb Gateway provides a method where the client specifies an AcuConnect alias to be run. The AcuToWeb Gateway sends the alias information to AcuConnect; therefore, in order to use AcuToWeb, the following are prerequisites:
 
 1.	[Install AcuConnect](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN22.html)
@@ -10,7 +12,7 @@ The AcuToWeb Gateway provides a method where the client specifies an AcuConnect 
 
 Choose the AcuToWeb control panel from the “All Programs” menu. On Windows 10 you will need to right click the 'extend' Start Menu item and select 'Run as administrator'.
 
-On the Access tab we want to add a new user to the Access file (AcuAccess by default). Click 'New' to open up a new window that will alow you to enter the user access details.
+On the Access tab we want to add a new user to the Access file (AcuAccess by default). Click 'New' to open up a new window that will allow you to enter the user access details.
 
 ![1](images/atw-w-1.png)
 
@@ -20,7 +22,7 @@ In this setup, all users on any machine are mapped to the user 'support' on the 
 
 ![3](images/atw-w-3.png)
 
-On the Alias tab you can set any programs to be launched in AcuToWeb. We create an alias for each program and any command line options. Click 'New' tp open a new window where you can create an alias.
+On the Alias tab you can set any programs to be launched in AcuToWeb. We create an alias for each program and any command line options. Click 'New' to open a new window where you can create an alias.
 
 ![4](images/atw-w-4.png)
 

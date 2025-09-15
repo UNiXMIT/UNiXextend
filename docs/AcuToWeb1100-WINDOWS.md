@@ -1,5 +1,7 @@
 # Installation / Setup of AcuToWeb 11.0.0 - WINDOWS
 
+This guide applies to AcuToWeb versions 11.0.0 and later.  
+
 The AcuToWeb Gateway provides a method where the client specifies an AcuConnect alias to be run. The AcuToWeb Gateway sends the alias information to AcuConnect; therefore, in order to use AcuToWeb, the following are prerequisites:
 
 1.	[Install AcuConnect](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/ddy1742856351216.html)
@@ -10,7 +12,7 @@ The AcuToWeb Gateway provides a method where the client specifies an AcuConnect 
 
 Choose the AcuToWeb control panel from the “All Programs” menu. On Windows 10 you will need to right click the 'extend' Start Menu item and select 'Run as administrator'.
 
-On the Access tab we want to add a new user to the Access file (AcuAccess by default). Click 'New' to open up a new window that will alow you to enter the user access details.
+On the Access tab we want to add a new user to the Access file (AcuAccess by default). Click 'New' to open up a new window that will allow you to enter the user access details.
 
 ![1](images/atw-w-1.png)
 
@@ -20,7 +22,7 @@ In this setup, all users on any machine are mapped to the user 'support' on the 
 
 ![3](images/atw-w-3.png)
 
-On the Alias tab you can set any programs to be launched in AcuToWeb. We create an alias for each program and any command line options. Click 'New' tp open a new window where you can create an alias.
+On the Alias tab you can set any programs to be launched in AcuToWeb. We create an alias for each program and any command line options. Click 'New' to open a new window where you can create an alias.
 
 ![4](images/atw-w-4.png)
 
@@ -57,7 +59,7 @@ acuthin 127.0.0.1:5632 Tour
 
 You need to create a new Gateway Service:
 
-First create your gateway.toml file. An example Gateway configuration file can be found in the [documentation](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/GUID-F17A95F4-172C-43B3-8C22-915643243CED.html). Amend it to fit your needs and make sure acurcl_port matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set use_ssl to 0
+First create your gateway.toml file. An example Gateway configuration file can be found in the [documentation](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/rzw1742856391366.html). Amend it to fit your needs and make sure acurcl_port matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set use_ssl to 0
 
 Now when you click 'New' in the 'Gateway Services' tab a new window will appear prompting you to load your gateway.toml file. Click 'Browse' then find and select the gateway.toml you just created.
 
@@ -65,20 +67,15 @@ Now when you click 'New' in the 'Gateway Services' tab a new window will appear 
 
 Now click OK to take you back to the previous window. Select the AcuToWeb service that you just created and click 'Start'. The status should change from red to green to show that it is now running.
 
-![9](images/atw-w-9.png)
+![9](images/atw-w-9-1100.png)
 
-NOTE: Prior to extend 10.5.0, a gateway.conf was used and was a different format to the gateway.toml file. Please check the correct documentation for the version of AcuToWeb being used.
+When the Gateway service is up and running, Open a browser and navigate to the AcuToWeb start page using the syntax: http://[server ip/hostname]:[configured webserver_port] The default value is http://127.0.0.1:3000. The Connection Setup page appears, which confirms that the Gateway is running:
 
-NOTE: Prior to extend 10.3.0 the properties of the AcuToWeb service were created directly in the AcuToWeb Control Panel as shown below. This was an intentional change Iintroduced in 10.3.0 by ECN-AW141).  
+![11](images/atw-w-11-1100.png)
 
-![10](images/atw-w-10.png)
+The Alias 'Select From List' entry field specifies the alias of the program to be executed. You can populate a list of values by adding them to the fillCombo.js file. The location of the fillCombo.js file is set using the path_fill_combo variable in the gateway.toml file.  
 
-When the Gateway service is up and running, Open a browser and navigate to the AcuToWeb start page using the syntax: http://[server ip]:[configured port] The default value is http://127.0.0.1:3000. The Connection Setup dialog box appears, which confirms that the Gateway is running:
-
-![11](images/atw-w-11.png)
-
-The Alias entry field specifies the alias of the AcuConnect to be executed. You can populate a list of values by adding them to the fillCombo.js file, which is located in the AcuToWeb\Web\js sub-directory of your installation path.
-The following excerpt adds aliases for the Calculator and Tour applications:
+The following excerpt adds aliases for the Calculator and Tour applications:  
 
 ```
 [
@@ -88,8 +85,8 @@ The following excerpt adds aliases for the Calculator and Tour applications:
 ]
 ```
 
-You can also type an alias name into the field, then click Make URL, which will generate a URL that you can distribute to customers, which will allow them to paste into their browser and connect to the gateway directly.
+You can also type a defined alias name directly into the 'Type Alias Name' field.  
 
 ---
 
-![gif](images/atw-w.gif)
+![mp4](images/atw-w-1100.mp4)
