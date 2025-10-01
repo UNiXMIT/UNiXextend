@@ -1,7 +1,4 @@
 # How to use Rocket SFTP to upload and download files
-## Environment
-Windows  
-Linux/UNIX  
 
 ## Solution
 Rocket SFTP can be used to upload/download large files.  
