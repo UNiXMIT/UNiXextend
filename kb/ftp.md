@@ -19,8 +19,7 @@ Files made available to download will be available for 14 days after they were u
 
 ### Using an SFTP Client  
 Open your SFTP client and locate the session manager or connection dialog.  
-Enter your credentials in the appropriate fields.  
-Use the credentials sent by the support engineer, ensure the protocol is SFTP and port is 22.  
+Enter your credentials in the appropriate fields; Use the credentials sent by the support engineer, ensure the protocol is SFTP and port is 22.  
 
 Once connected, most clients display a dual-pane interface:  
 
