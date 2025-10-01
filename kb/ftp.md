@@ -29,8 +29,6 @@ Once connected, most clients display a dual-pane interface:
 
 Navigate these panes just like a computer's file explorer.  
 
-#### Core Actions  
-
 - Uploading: Select file(s) on the local pane and drag them to the remote pane.  
 
 - Downloading: Select file(s) in the remote pane and drag them to the local pane.  
