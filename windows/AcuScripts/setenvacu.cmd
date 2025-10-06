@@ -111,6 +111,7 @@ ECHO  -j              JAVA
 ECHO  -m              MQ
 ECHO  -o              ORACLE
 ECHO  -c atw          Open ATW Control Panel   
+ECHO  -c as           Open AcuServer Control Panel
 ECHO  -c dir          Open Install Directory
 ECHO  -c bench        Open AcuBench 
 ECHO  -d              Set Default AcuCOBOL Version in Registry (Example: setenv -d -v 10.5.0)
@@ -139,6 +140,7 @@ IF "%ACUBIT%"=="" SET ACUBIT=32
 IF "%ACUDEF%"=="TRUE" GOTO :SET-DEFAULT-VERSION
 IF "%ACUADMIN%"=="TRUE" GOTO :ACUADMIN
 IF "%CFLAGS%"=="atw" GOTO :ATW
+IF "%CFLAGS%"=="as" GOTO :ACUSERVE
 IF "%CFLAGS%"=="bench" GOTO :ACUBENCH
 IF "%CFLAGS%"=="dir" (GOTO :DIRECTORY) ELSE IF NOT "%CFLAGS%"=="FALSE" (ECHO INCORRECT ARGUEMENT FOR OPTION -- "c" & GOTO :USAGE)
 IF "%ACUBIT%"=="32" GOTO :32BIT
@@ -151,6 +153,15 @@ IF "%ACUBIT%"=="32" (
 )
 IF "%ACUBIT%"=="64" (
     START "" "%INSTALLDIR64%AcuGT\bin%ACUPATCH%\AcuToWeb.exe"
+)
+GOTO :END
+
+:ACUSERVE
+IF "%ACUBIT%"=="32" (
+    START "" "%INSTALLDIR32%AcuGT\bin%ACUPATCH%\acuserve.exe"
+)
+IF "%ACUBIT%"=="64" (
+    START "" "%INSTALLDIR64%AcuGT\bin%ACUPATCH%\acuserve.exe"
 )
 GOTO :END
 
