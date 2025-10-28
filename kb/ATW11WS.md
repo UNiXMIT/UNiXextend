@@ -10,4 +10,4 @@ The 'portgw' and 'hostgw' URL parameters are no longer supported or used in vers
 When attempting to connect to the gateway web server via a proxy using a different port, the client still tries to establish WebSocket connections to the gateway using the original 'webserver_port' defined in the TOML configuration file.  
 
 ## Resolution
-This is a known issue. A fix will be provided in version 11.0.0 PU 1. Once available, it can be downloaded from the [RCC portal](https://my.rocketsoftware.com/RocketCommunity/s/).
+This is a known issue. A fix will be provided in version 11.0.0 PU 1. Once available, it can be downloaded from the [RCC Portal](https://my.rocketsoftware.com/RocketCommunity/s/).  
