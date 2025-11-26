@@ -43,7 +43,7 @@ set_acu()
 
     # Display a list of all Acu installations.
     echo
-    PS3="Which version of AcuCOBOL-GT? "
+    PS3="Enter the NUMBER of the AcuCOBOL-GT installation to use: "
     select ACU in "${array[@]}"
     do export ACUCOBOL=$(echo $ACU_OPT/$ACU | sed -e "s/\/*$//"); break;  done
 
