@@ -72,13 +72,16 @@ or in the debugger prompt enter 't timestamp'.
     wrun32 -dlxe runtime.log <other options> programName
     ```
 
-2. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *. Exercise your program to produce the bad behaviour, and then exit if the Runtime hasn't already terminated.  
+2. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *. Exercise your program to produce the bad behaviour, and then exit if the Runtime hasn't already terminated. Optional debugger commands that can be helpful are 'tp', which enables paragraph tracing, and 'te', which enables event tracing.    
 *Alternatively, if you don't want to or can't run the program in debug mode, add the following variables to the environment or to the runtime configuration file:  
 
     ```
     FILE_TRACE 9
     FILE_TRACE_FLUSH 1
     FILE_TRACE_TIMESTAMP TRUE
+    # OPTIONAL
+    PARAGRAPH_TRACE 1
+    EVENT_TRACE 1
     ```
 
 3. Zip up runtime.log and attach to the support case.
@@ -113,19 +116,43 @@ or in the debugger prompt enter 't timestamp'.
     acuthin.exe server:port -dlxe runtime.log aliasName
     ```
 
-3. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *. Exercise your program to produce the bad behaviour, and then exit if the Runtime hasn't already terminated. If you did not include the path for the log file name it will be located in the working directory specified in the alias.  
+3. At the debugger prompt enter 'tf 9', then 't flush', then 't timestamp', then 'g' *. Exercise your program to produce the bad behaviour, and then exit if the Runtime hasn't already terminated. If you did not include the path for the log file name it will be located in the working directory specified in the alias. Optional debugger commands that can be helpful are 'tp', which enables paragraph tracing, and 'te', which enables event tracing.  
 *Alternatively, if you don't want to or can't run the program in debug mode, add the following variables to the environment or to the runtime configuration file:  
 
     ```
     FILE_TRACE 9
     FILE_TRACE_FLUSH 1
     FILE_TRACE_TIMESTAMP TRUE
+    # OPTIONAL
+    PARAGRAPH_TRACE 1
+    EVENT_TRACE 1
     ```
     
 4. Zip up acurcl.log and runtime.log, and attach to the support case.
 
+#### Advanced AcuThin tracing
+AcuThin provides an advanced tracing option, -t n, which enables detailed logging of Thin client activity. This includes request flows, event information, window handles, socket operations, MODIFY control actions, configuration activity, signals, and control handles. These trace details are typically only useful to AcuCOBOL developers, though the technical support team may occasionally request them for diagnostic purposes.  
+
+- AcuThin produces a disp.\<pid\>.trc file and, optionally, a socks.\<pid\>.trc file. These files are written to the current directory when AcuThin is launched.  
+- The runtime produces an app.\<pid\>.trc file and, optionally, a socks.\<pid\>.trc. These files are written to the runtime’s working directory, as specified in the alias.  
+
+The socks.\<pid\>.trc file captures low-level socket activity. The app.\<pid\>.trc file serves as the runtime's equivalent of AcuThin's disp.\<pid\>.trc, providing a record of all messages the runtime sends and receives.  
+
+Any trace level greater than 3 will turn on socket level tracing.  
+
+Useful values for the '-t n' AcuThin command flag are:  
+```
+1 = Thin client requests only
+3 = Add event details
+7 = Add window handles and socket level tracing
+63 = Add MODIFY control, configuration and signal details
+127 = Thin client requests, event details, window handles, sockets, MODIFY control, configuration, signals,
+control handles
+255 = Everything
+```
+
 ### AcuToWeb
-1. Stop the AcuToWeb service. Open the gateway.conf or gateway.toml (depending on AcuVersion) file in Notepad or other text editor.
+1. Stop the AcuToWeb service. Open the gateway.conf or gateway.toml (depending on the version of ATW) file in Notepad or other text editor.
 
 2. Adjust the following options to assign the following values (change gateway.log path to suit your setup):
 
@@ -148,6 +175,14 @@ or in the debugger prompt enter 't timestamp'.
 ### AcuToWeb Build
 You can check the build number of AcuToWeb in the following way:  
 
+#### ATW Version 11.0.0 and later
+1. In your browser enter the URL to access the initial AcuToWeb Connection Setup screen.
+
+2. Click the ? icon in the top right hand side of the screen. 
+
+3. A pop-up window displays the ATW version, including any hotfixes or patch update version.  
+
+#### ATW Version 10.5.1 and earlier
 1. In your browser enter the URL to access the initial AcuToWeb Connection Setup screen. Check the box 'Enable Logging Client'.
 
 2. A monitor icon will appear in the top left of the browser window. Left click it once to make the AcuToWeb Console appear.
