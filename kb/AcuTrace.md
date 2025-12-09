@@ -180,7 +180,7 @@ You can check the build number of AcuToWeb in the following way:
 
 2. Click the ? icon in the top right hand side of the screen. 
 
-3. A pop-up window displays the ATW version, including any hotfixes or patch update version.  
+3. A pop-up window displays the ATW version, including any hotfixe or patch update version.  
 
 #### ATW Version 10.5.1 and earlier
 1. In your browser enter the URL to access the initial AcuToWeb Connection Setup screen. Check the box 'Enable Logging Client'.
