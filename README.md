@@ -3,20 +3,20 @@
 
 - [Rocket ACUCOBOL-GT Extension for VSCode](https://docs.rocketsoftware.com/bundle?labelkey=prod_acucobol_gt&name_filter.value=Visual+Studio+Code)
 - [AcuCOBOL-GT extend Release Notes](https://docs.rocketsoftware.com/bundle?labelkey=prod_acucobol_gt&name_filter.value=Release+Notes)
-- [AcuCommunity](https://community.rocketsoftware.com/forums/forum-home?CommunityKey=78880ba8-1519-45f3-8d5e-01928efe3598)
+- [AcuCommunity](https://community.rocketsoftware.com/rocket-acucobol-29)
 - [Documentation](#documentation)
 - [Product Machine Keys](#product-machine-keys)
   - [Windows](#windows)
   - [LINUX](#linux) 
 
 ## Documentation
-- [File Status Codes](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKTRTRDOSSS021.html)
-- [Compiler Options](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKUSUSCOMPUS2.2.html)
-- [Runtime Options](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKUSUSCOMPS031.html)
-- [Licence File Names](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKGCGCSTRTS005.html)
-- [Limits and Ranges](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKPPPPSPECS002.html)
-- [Memory Handling Descriptions](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKUSUSPROGS045.html)
-- [Machine Key Mismatch](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKGCGCTRBLS002.html)
+- [File Status Codes](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/zvt1742856101985.html)
+- [Compiler Options](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/qea1742856104220.html)
+- [Runtime Options](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/vzg1742856107640.html)
+- [Licence File Names](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/nxl1742856091503.html)
+- [Limits and Ranges](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/bdt1742856144751.html)
+- [Memory Handling Descriptions](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/qcq1742856110020.html)
+- [Machine Key Mismatch](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/mgt1742856093435.html)
 
 ## Product Machine Keys
 ### Windows
