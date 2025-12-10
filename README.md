@@ -10,13 +10,13 @@
   - [LINUX](#linux) 
 
 ## Documentation
-- [File Status Codes](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/zvt1742856101985.html)
-- [Compiler Options](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/qea1742856104220.html)
-- [Runtime Options](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/vzg1742856107640.html)
-- [Licence File Names](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/nxl1742856091503.html)
-- [Limits and Ranges](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/bdt1742856144751.html)
-- [Memory Handling Descriptions](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/qcq1742856110020.html)
-- [Machine Key Mismatch](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/mgt1742856093435.html)
+- [File Status Codes](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=File%20Status%20Codes)
+- [Compiler Options](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Using%20the%20Compiler)
+- [Runtime Options](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Runtime%20Options)
+- [Licence File Names](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=License%20file%20names)
+- [Limits and Ranges](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Limits%20and%20Ranges)
+- [Memory Handling Descriptions](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Memory%20Handling%20Descriptions)
+- [Machine Key Mismatch](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Machine%20Key%20Mismatch)
 
 ## Product Machine Keys
 ### Windows
