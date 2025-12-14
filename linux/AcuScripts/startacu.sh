@@ -24,7 +24,7 @@ Example:
  startacu.sh -l -r 10400                    Start AcuRCL on port 10400 with logging enabled
  startacu.sh -c stop -r 10400               Stop AcuRCL started on port 10400
  startacu.sh -c status -r 10400             Status of AcuRCL started on port 10400
- startacu.sh -w /home/support/gateway.conf  Start AcuToWeb with specified config file"
+ startacu.sh -w /etc/gateway.toml           Start AcuToWeb with specified config file"
 }
 
 start_acurcl()
