@@ -1,0 +1,13 @@
+[Unit]
+Description=AcuConnect
+
+[Service]
+Type=oneshot
+ExecStart=/etc/systemd/system/acuServices.sh acurcl start
+ExecStop=/etc/systemd/system/acuServices.sh acurcl stop
+ExecReload=/etc/systemd/system/acuServices.sh acurcl restart
+TimeoutStartSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

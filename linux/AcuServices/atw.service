@@ -1,0 +1,13 @@
+[Unit]
+Description=AcuToWeb
+
+[Service]
+Type=oneshot
+ExecStart=/etc/systemd/system/acuServices.sh atw start
+ExecStop=/etc/systemd/system/acuServices.sh atw stop
+ExecReload=/etc/systemd/system/acuServices.sh atw restart
+TimeoutStartSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

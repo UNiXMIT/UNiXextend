@@ -1,0 +1,13 @@
+[Unit]
+Description=Boomerang
+
+[Service]
+Type=oneshot
+ExecStart=/etc/systemd/system/acuServices.sh boomerang start
+ExecStop=/etc/systemd/system/acuServices.sh boomerang stop
+ExecReload=/etc/systemd/system/acuServices.sh boomerang restart
+TimeoutStartSec=0
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,8 +1,9 @@
 #!/bin/bash
 # The startacu.sh script, run after this to start/stop services, will use the ACUCOBOL variable set here.
 
-# ACU_OPT is the default location of all your Acu installations
-export ACU_OPT=/home/products
+# ACUPROD is the default location of all your Acu installations
+export ACUPROD=/home/products
+export ACUSUP=/home/support/AcuSupport
 export TERM=xterm
 
 # Set the path to other installations here:
@@ -19,8 +20,8 @@ usage()
 {
   echo "
 Options:  
- . setenvacu.sh                          Set the AcuCOBOL environment
- . setenvacu.sh [options] <parameters>   Set the AcuCOBOL environment and Additional Binaries/Libraries     
+ . acu.env.sh                          Set the AcuCOBOL environment
+ . acu.env.sh [options] <parameters>   Set the AcuCOBOL environment and Additional Binaries/Libraries     
 
 Usage: 
  -i            INFORMIX
@@ -30,7 +31,7 @@ Usage:
  -h            Usage
 
 Example:
- . setenvacu.sh -j 64      Sets AcuCOBOL and JAVA 64-Bit"
+ . acu.env.sh -j 64      Sets AcuCOBOL and JAVA 64-Bit"
 }
 
 set_acu()
@@ -38,14 +39,14 @@ set_acu()
     # Save current directory.
     CURRENT_DIR=$(pwd)
 
-    cd $ACU_OPT
+    cd $ACUPROD
     array=(*/)
 
     # Display a list of all Acu installations.
     echo
     PS3="Enter the NUMBER of the AcuCOBOL-GT installation to use: "
     select ACU in "${array[@]}"
-    do export ACUCOBOL=$(echo $ACU_OPT/$ACU | sed -e "s/\/*$//"); break;  done
+    do export ACUCOBOL=$(echo $ACUPROD/$ACU | sed -e "s/\/*$//"); break;  done
 
     # Change directory back to original.
     cd $CURRENT_DIR
@@ -61,6 +62,16 @@ set_acu()
     export BMP=".:$ACUCOBOL/sample"
     export ALL=".:$ACUCOBOL/sample/def:$ACUCOBOL/sample/xmlext:$ACUCOBOL/sample"
     export COPYPATH=$ALL
+
+    rm -f /tmp/.acu.env
+    echo "export ACUCOBOL=\"$ACUCOBOL\"" > /tmp/.acu.env
+    echo "export ACUSUP=\"$ACUSUP\"" >> /tmp/.acu.env
+    echo "export TERM=\"$TERM\"" >> /tmp/.acu.env
+    echo "export PATH=\"$PATH\"" >> /tmp/.acu.env
+    echo "export LD_LIBRARY_PATH=\"$LD_LIBRARY_PATH\"" >> /tmp/.acu.env
+    echo "export A_TERMCAP=\"$A_TERMCAP\"" >> /tmp/.acu.env
+    echo "export GENESIS_HOME=\"$GENESIS_HOME\"" >> /tmp/.acu.env
+    echo "export VORTEX_HOME=\"$VORTEX_HOME\"" >> /tmp/.acu.env
 
     # Display output from runcbl -vv for set version to check. Only displays first line.
     echo
