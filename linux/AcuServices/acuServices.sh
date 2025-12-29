@@ -56,7 +56,7 @@ atw() {
     esac
 }
 
-acuserve() {
+acuserver() {
     case "$arg2" in
         start)
             $ACUCOBOL/bin/acuserve -start -c $ACUSUP/etc/a_srvcfg -n $ACUSERVER_PORT -@
@@ -68,7 +68,7 @@ acuserve() {
             ;;
         restart)
             for arg2 in stop start; do
-                acuserve
+                acuserver
             done
             ;;
         *)
@@ -129,8 +129,8 @@ case "$arg1" in
     atw)
         atw
         ;;
-    acuserve)
-        acuserve
+    acuserver)
+        acuserver
         ;;
     acuxdbcs)
         acuxdbcs

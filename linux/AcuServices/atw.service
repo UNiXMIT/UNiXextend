@@ -2,12 +2,11 @@
 Description=AcuToWeb
 
 [Service]
-Type=oneshot
+Type=forking
 ExecStart=/home/support/AcuSupport/AcuServices/acuServices.sh atw start
 ExecStop=/home/support/AcuSupport/AcuServices/acuServices.sh atw stop
 ExecReload=/home/support/AcuSupport/AcuServices/acuServices.sh atw restart
 TimeoutStartSec=0
-RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target

@@ -2,12 +2,11 @@
 Description=AcuConnect
 
 [Service]
-Type=oneshot
+Type=forking
 ExecStart=/home/support/AcuSupport/AcuServices/acuServices.sh acurcl start
 ExecStop=/home/support/AcuSupport/AcuServices/acuServices.sh acurcl stop
 ExecReload=/home/support/AcuSupport/AcuServices/acuServices.sh acurcl restart
 TimeoutStartSec=0
-RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target

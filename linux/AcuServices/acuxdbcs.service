@@ -2,12 +2,11 @@
 Description=AcuXDBC Server
 
 [Service]
-Type=oneshot
+Type=forking
 ExecStart=/home/support/AcuSupport/AcuServices/acuServices.sh acuxdbcs start
 ExecStop=/home/support/AcuSupport/AcuServices/acuServices.sh acuxdbcs stop
 ExecReload=/home/support/AcuSupport/AcuServices/acuServices.sh acuxdbcs restart
 TimeoutStartSec=0
-RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.targets

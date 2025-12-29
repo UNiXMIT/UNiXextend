@@ -2,12 +2,11 @@
 Description=AcuServer
 
 [Service]
-Type=oneshot
-ExecStart=/home/support/AcuSupport/AcuServices/acuServices.sh acuserve start
-ExecStop=/home/support/AcuSupport/AcuServices/acuServices.sh acuserve stop
-ExecReload=/home/support/AcuSupport/AcuServices/acuServices.sh acuserve restart
+Type=forking
+ExecStart=/home/support/AcuSupport/AcuServices/acuServices.sh acuserver start
+ExecStop=/home/support/AcuSupport/AcuServices/acuServices.sh acuserver stop
+ExecReload=/home/support/AcuSupport/AcuServices/acuServices.sh acuserver restart
 TimeoutStartSec=0
-RemainAfterExit=yes
 
 [Install]
 WantedBy=multi-user.target
