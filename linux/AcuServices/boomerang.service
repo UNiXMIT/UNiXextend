@@ -3,9 +3,9 @@ Description=Boomerang
 
 [Service]
 Type=oneshot
-ExecStart=/etc/systemd/system/acuServices.sh boomerang start
-ExecStop=/etc/systemd/system/acuServices.sh boomerang stop
-ExecReload=/etc/systemd/system/acuServices.sh boomerang restart
+ExecStart=/home/support/AcuSupport/AcuServices/acuServices.sh boomerang start
+ExecStop=/home/support/AcuSupport/AcuServices/acuServices.sh boomerang stop
+ExecReload=/home/support/AcuSupport/AcuServices/acuServices.sh boomerang restart
 TimeoutStartSec=0
 RemainAfterExit=yes
 

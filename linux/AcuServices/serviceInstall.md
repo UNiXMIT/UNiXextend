@@ -12,4 +12,5 @@ sudo systemctl daemon-reload
 sudo systemctl start serviceName
 sudo systemctl stop serviceName
 sudo systemctl restart serviceName
+sudo systemctl enable serviceName
 ```

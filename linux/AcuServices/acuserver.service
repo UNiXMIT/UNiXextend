@@ -3,9 +3,9 @@ Description=AcuServer
 
 [Service]
 Type=oneshot
-ExecStart=/etc/systemd/system/acuServices.sh acuserve start
-ExecStop=/etc/systemd/system/acuServices.sh acuserve stop
-ExecReload=/etc/systemd/system/acuServices.sh acuserve restart
+ExecStart=/home/support/AcuSupport/AcuServices/acuServices.sh acuserve start
+ExecStop=/home/support/AcuSupport/AcuServices/acuServices.sh acuserve stop
+ExecReload=/home/support/AcuSupport/AcuServices/acuServices.sh acuserve restart
 TimeoutStartSec=0
 RemainAfterExit=yes
 

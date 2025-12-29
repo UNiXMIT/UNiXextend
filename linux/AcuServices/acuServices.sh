@@ -1,4 +1,7 @@
 #!/bin/bash
+arg1="$1"
+arg2="$2"
+shift 2
 source /tmp/.acu.env
 export SERVER_ALIAS_FILE=$ACUSUP/etc/acurcl.ini
 export BOOMERANG_ALIAS_FILE=$ACUSUP/etc/boomerang.ini
@@ -10,7 +13,7 @@ export ACUXDBCS_PORT=20222
 export BOOMERANG_PORT=7770
 
 acurcl() {
-    case "$1" in
+    case "$arg2" in
         start)
             $ACUCOBOL/bin/acurcl -start -c $ACUSUP/etc/acurcl.cfg -n $ACURCL_PORT -@
             # $ACUCOBOL/bin/acurcl -start -c $ACUSUP/etc/acurcl.cfg -n $ACURCL_PORT -le $ACUSUP/AcuLogs/acurcl.log -t7 -@
@@ -20,8 +23,9 @@ acurcl() {
             sleep 5
             ;;
         restart)
-            acurcl stop
-            acurcl start
+            for arg2 in stop start; do
+                acurcl
+            done
             ;;
         *)
             echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
@@ -31,7 +35,7 @@ acurcl() {
 }
 
 atw() {
-    case "$1" in
+    case "$arg2" in
         start)
             # $ACUCOBOL/acutoweb/acutoweb-gateway -start
             $ACUCOBOL/acutoweb/acutoweb-gateway -start -c $ACUSUP/etc/gateway.toml
@@ -41,8 +45,9 @@ atw() {
             sleep 5
             ;;
         restart)
-            atw stop
-            atw start
+            for arg2 in stop start; do
+                atw
+            done
             ;;
         *)
             echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
@@ -52,7 +57,7 @@ atw() {
 }
 
 acuserve() {
-    case "$1" in
+    case "$arg2" in
         start)
             $ACUCOBOL/bin/acuserve -start -c $ACUSUP/etc/a_srvcfg -n $ACUSERVER_PORT -@
             # $ACUCOBOL/bin/acuserve -start -c $ACUSUP/etc/a_srvcfg -n $ACUSERVER_PORT -le $ACUSUP/AcuLogs/acuserve.log -t7 -@
@@ -62,8 +67,9 @@ acuserve() {
             sleep 5
             ;;
         restart)
-            acuserve stop
-            acuserve start
+            for arg2 in stop start; do
+                acuserve
+            done
             ;;
         *)
             echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
@@ -73,7 +79,7 @@ acuserve() {
 }
 
 acuxdbcs() {
-    case "$1" in
+    case "$arg2" in
         start)
             $ACUCOBOL/bin/acuxdbcs.sh -start -n $ACUXDBCS_PORT
             # $ACUCOBOL/bin/acuxdbcs.sh -start -n $ACUXDBCS_PORT -l
@@ -83,8 +89,9 @@ acuxdbcs() {
             sleep 5
             ;;
         restart)
-            acuxdbcs stop
-            acuxdbcs start
+            for arg2 in stop start; do
+                acuxdbcs
+            done
             ;;
         *)
             echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
@@ -94,7 +101,7 @@ acuxdbcs() {
 }
 
 boomerang() {
-    case "$1" in
+    case "$arg2" in
         start)
             $ACUCOBOL/bin/boomerang -start -c $ACUSUP/etc/boomerang.cfg -n $BOOMERANG_PORT -@
             # $ACUCOBOL/bin/boomerang -start -c $ACUSUP/etc/boomerang.cfg -n $BOOMERANG_PORT -t 7 -e $ACUSUP/AcuLogs/boomerang.log -@
@@ -104,8 +111,9 @@ boomerang() {
             sleep 5
             ;;
         restart)
-            boomerang stop
-            boomerang start
+            for arg2 in stop start; do
+                boomerang
+            done
             ;;
         *)
             echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
@@ -114,26 +122,21 @@ boomerang() {
     esac
 }
 
-case "$1" in
+case "$arg1" in
     acurcl)
-        shift
-        acurcl $@
+        acurcl
         ;;
     atw)
-        shift
-        atw $@
+        atw
         ;;
     acuserve)
-        shift
-        acuserve $@
+        acuserve
         ;;
     acuxdbcs)
-        shift
-        acuxdbcs $@
+        acuxdbcs
         ;;
     boomerang)
-        shift
-        boomerang $@
+        boomerang
         ;;
     *)
         echo -e "Incorrect parms. Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"

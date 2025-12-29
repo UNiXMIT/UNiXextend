@@ -3,9 +3,9 @@ Description=AcuXDBC Server
 
 [Service]
 Type=oneshot
-ExecStart=/etc/systemd/system/acuServices.sh acuxdbcs start
-ExecStop=/etc/systemd/system/acuServices.sh acuxdbcs stop
-ExecReload=/etc/systemd/system/acuServices.sh acuxdbcs restart
+ExecStart=/home/support/AcuSupport/AcuServices/acuServices.sh acuxdbcs start
+ExecStop=/home/support/AcuSupport/AcuServices/acuServices.sh acuxdbcs stop
+ExecReload=/home/support/AcuSupport/AcuServices/acuServices.sh acuxdbcs restart
 TimeoutStartSec=0
 RemainAfterExit=yes
 
