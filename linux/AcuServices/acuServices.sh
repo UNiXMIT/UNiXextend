@@ -28,7 +28,7 @@ acurcl() {
             done
             ;;
         *)
-            echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
+            echo -e "Incorrect parms. Usage: $0 (acurcl|atw|acuserver|acuxdbcs|boomerang) (start|stop|restart)"
             exit 1;
             ;;
     esac
@@ -50,7 +50,7 @@ atw() {
             done
             ;;
         *)
-            echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
+            echo -e "Incorrect parms. Usage: $0 (acurcl|atw|acuserver|acuxdbcs|boomerang) (start|stop|restart)"
             exit 1;
             ;;
     esac
@@ -72,7 +72,7 @@ acuserver() {
             done
             ;;
         *)
-            echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
+            echo -e "Incorrect parms. Usage: $0 (acurcl|atw|acuserver|acuxdbcs|boomerang) (start|stop|restart)"
             exit 1;
             ;;
     esac
@@ -94,7 +94,7 @@ acuxdbcs() {
             done
             ;;
         *)
-            echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
+            echo -e "Incorrect parms. Usage: $0 (acurcl|atw|acuserver|acuxdbcs|boomerang) (start|stop|restart)"
             exit 1;
             ;;
     esac
@@ -116,7 +116,7 @@ boomerang() {
             done
             ;;
         *)
-            echo -e "Incorrect parms.  Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
+            echo -e "Incorrect parms. Usage: $0 (acurcl|atw|acuserver|acuxdbcs|boomerang) (start|stop|restart)"
             exit 1;
             ;;
     esac
@@ -139,7 +139,7 @@ case "$arg1" in
         boomerang
         ;;
     *)
-        echo -e "Incorrect parms. Usage: $0 (acurcl|atw|acuserve|acuxdbcs|boomerang) (start|stop|restart)"
+        echo -e "Incorrect parms. Usage: $0 (acurcl|atw|acuserver|acuxdbcs|boomerang) (start|stop|restart)"
         exit 1;
         ;;
 esac
