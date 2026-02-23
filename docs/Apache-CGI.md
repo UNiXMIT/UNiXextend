@@ -1,4 +1,4 @@
-# Setup Apache/CGI on RHEL 9
+# How to setup AcuCOBOL-GT extend with Apache/CGI in RHEL 9
 
 ## Prerequisites
 - Apache HTTP Server installed  
