@@ -4,10 +4,10 @@ AcuCOBOL-GT extend
 Windows  
 Linux/UNIX  
 
-## Situation
+## Symptoms
 
 
-## Resolution
+## Solution
 
 
 ## Additional Information
