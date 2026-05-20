@@ -63,6 +63,9 @@ set_acu()
     export ALL=".:$ACUCOBOL/sample/def:$ACUCOBOL/sample/xmlext:$ACUCOBOL/sample"
     export COPYPATH=$ALL
 
+    # Workaround for Acu4GL/AcuSQL for MSSQL 11.0.x
+    export LD_PRELOAD=/usr/lib64/libssl.so.3
+
     rm -f /tmp/.acu.env
     echo "export ACUCOBOL=\"$ACUCOBOL\"" > /tmp/.acu.env
     echo "export ACUSUP=\"$ACUSUP\"" >> /tmp/.acu.env
