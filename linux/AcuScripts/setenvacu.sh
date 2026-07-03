@@ -16,6 +16,9 @@ export INFORMIX_OPT=
 export MQ=
 export "MQSERVER=DEV.APP.SVRCONN/TCP/127.0.0.1(1414)"
 
+export ACUARGS=$@
+set --
+
 usage()
 {
   echo "
@@ -39,17 +42,32 @@ set_acu()
     # Save current directory.
     CURRENT_DIR=$(pwd)
 
-    cd $ACUPROD
+    cd "$ACUPROD" || exit 1
     array=(*/)
 
-    # Display a list of all Acu installations.
-    echo
-    PS3="Enter the NUMBER of the AcuCOBOL-GT installation to use: "
-    select ACU in "${array[@]}"
-    do export ACUCOBOL=$(echo $ACUPROD/$ACU | sed -e "s/\/*$//"); break;  done
+    if [[ -n "$ACUARGS" ]]; then
+        # Non-interactive mode
+        index=$(( $ACUARGS - 1 ))
+        if (( index < 0 || index >= ${#array[@]} )); then
+            echo "Invalid selection: ${ACUARGS}"
+            echo "Valid selections are 1-${#array[@]}"
+            exit 1
+        fi
+        ACU="${array[$index]}"
+    else
+        # Interactive mode
+        echo
+        PS3="Enter the NUMBER of the AcuCOBOL-GT installation to use: "
+        select ACU in "${array[@]}"; do
+            [[ -n "$ACU" ]] && break
+            echo "Invalid selection"
+        done
+    fi
+
+    export ACUCOBOL="${ACUPROD}/${ACU%/}"
 
     # Change directory back to original.
-    cd $CURRENT_DIR
+    cd "$CURRENT_DIR" || exit 1
 
     # Set environment variables.
     export PATH=$ACUCOBOL/bin:$PATH
