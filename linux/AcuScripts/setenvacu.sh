@@ -84,16 +84,18 @@ set_acu()
     # Workaround for Acu4GL/AcuSQL for MSSQL 11.0.x
     export LD_PRELOAD=/usr/lib64/libssl.so.3
 
-    rm -f /tmp/.acu.env
-    echo "export ACUCOBOL=\"$ACUCOBOL\"" > /tmp/.acu.env
-    echo "export ACUSUP=\"$ACUSUP\"" >> /tmp/.acu.env
-    echo "export TERM=\"$TERM\"" >> /tmp/.acu.env
-    echo "export PATH=\"$PATH\"" >> /tmp/.acu.env
-    echo "export LD_LIBRARY_PATH=\"$LD_LIBRARY_PATH\"" >> /tmp/.acu.env
-    echo "export A_TERMCAP=\"$A_TERMCAP\"" >> /tmp/.acu.env
-    echo "export GENESIS_HOME=\"$GENESIS_HOME\"" >> /tmp/.acu.env
-    echo "export VORTEX_HOME=\"$VORTEX_HOME\"" >> /tmp/.acu.env
-
+    cat > /tmp/.acu.env <<EOF
+export ACUCOBOL="$ACUCOBOL"
+export ACUSUP="$ACUSUP"
+export TERM="$TERM"
+export PATH="$PATH"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH"
+export A_TERMCAP="$A_TERMCAP"
+export GENESIS_HOME="$GENESIS_HOME"
+export VORTEX_HOME="$VORTEX_HOME"
+EOF
+    chmod 775 /tmp/.acu.env
+    
     # Display output from runcbl -vv for set version to check. Only displays first line.
     echo
     runcbl -vv 2>&1 | head -n 1
