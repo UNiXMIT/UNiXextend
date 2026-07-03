@@ -94,7 +94,6 @@ export A_TERMCAP="$A_TERMCAP"
 export GENESIS_HOME="$GENESIS_HOME"
 export VORTEX_HOME="$VORTEX_HOME"
 EOF
-    chmod 775 /tmp/.acu.env
     
     # Display output from runcbl -vv for set version to check. Only displays first line.
     echo
