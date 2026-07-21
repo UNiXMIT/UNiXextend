@@ -84,7 +84,16 @@ set_acu()
     # Workaround for Acu4GL/AcuSQL for MSSQL 11.0.x
     export LD_PRELOAD=/usr/lib64/libssl.so.3
 
-    cat > /tmp/.acu.env <<EOF
+
+    ENVFILE=/tmp/.acu.env
+
+    if [ -e "$ENVFILE" ]; then
+        ENVCHK=true
+    else
+        ENVCHK=false
+    fi
+
+    cat > "$ENVFILE" <<EOF
 export ACUCOBOL="$ACUCOBOL"
 export ACUSUP="$ACUSUP"
 export TERM="$TERM"
@@ -94,7 +103,10 @@ export A_TERMCAP="$A_TERMCAP"
 export GENESIS_HOME="$GENESIS_HOME"
 export VORTEX_HOME="$VORTEX_HOME"
 EOF
-chmod 666 /tmp/.acu.env
+
+    if [ "$ENVCHK" = false ]; then
+        chmod 666 "$ENVFILE"
+    fi
     
     # Display output from runcbl -vv for set version to check. Only displays first line.
     echo
