@@ -4,9 +4,9 @@ This guide applies to AcuToWeb versions 11.0.0 and later.
 
 The AcuToWeb Gateway provides a method where the client specifies an AcuConnect alias to be run. The AcuToWeb Gateway sends the alias information to AcuConnect; therefore, in order to use AcuToWeb, the following are prerequisites:
 
-1.	[Install AcuConnect](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/ddy1742856351216.html)
-2.	[Establish system security](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/xch1742856350489.html)
-3.	[Creating a Server Alias File in Thin Client](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/qme1742856350732.html)
+1.	[Install AcuConnect](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Install%20AcuConnect)
+2.	[Establish system security](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Establish+system+security)
+3.	[Creating a Server Alias File in Thin Client](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Creating+a+Server+Alias+File+in+Thin+Client)
 
 **Configure AcuConnect Thin Client**
 
@@ -59,7 +59,7 @@ acuthin 127.0.0.1:5632 Tour
 
 You need to create a new Gateway Service:
 
-First create your gateway.toml file. An example Gateway configuration file can be found in the [documentation](https://docs.rocketsoftware.com/bundle/acuextendsuite_ug_1100/page/rzw1742856391366.html). Amend it to fit your needs and make sure acurcl_port matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set use_ssl to 0
+First create your gateway.toml file. An example Gateway configuration file can be found in the [documentation](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Example+Gateway+Configuration+File). Amend it to fit your needs and make sure acurcl_port matches the port you selected when you created the AcuConnect service earlier. If you are not planning on using SSL then be sure to set use_ssl to 0
 
 Now when you click 'New' in the 'Gateway Services' tab a new window will appear prompting you to load your gateway.toml file. Click 'Browse' then find and select the gateway.toml you just created.
 
