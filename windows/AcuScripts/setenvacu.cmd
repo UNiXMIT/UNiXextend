@@ -136,6 +136,8 @@ SET XML=".;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample;%PUBLICDIR%AcuGT\sample\xm
 SET BMP=".;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample;%PUBLICDIR%AcuGT\sample\acubench\resource;%PUBLICDIR%AcuGT\sample"
 SET ALL=".;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample;%PUBLICDIR%AcuGT\sample\def;%PUBLICDIR%AcuGT\sample\xmlext;%PUBLICDIR%AcuGT\sample\acubench\resource;%PUBLICDIR%AcuGT\sample"
 SET "COPYPATH=.;%PUBLICDIR%sample\def;%PUBLICDIR%sample\xmlext;%PUBLICDIR%sample\acubench\resource;%PUBLICDIR%sample;%PUBLICDIR%AcuGT\sample\def;%PUBLICDIR%AcuGT\sample\xmlext;%PUBLICDIR%AcuGT\sample\acubench\resource;%PUBLICDIR%AcuGT\sample.\CopyLib;.\FD;.\Report;.\Resource;.\Screen;.\Source"
+ECHO.
+ccbl32 -vv | powershell -Command "$input | Select-Object -First 1"
 IF "%ACUBIT%"=="" SET ACUBIT=32
 IF "%ACUDEF%"=="TRUE" GOTO :SET-DEFAULT-VERSION
 IF "%ACUADMIN%"=="TRUE" GOTO :ACUADMIN
