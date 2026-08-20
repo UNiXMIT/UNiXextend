@@ -34,7 +34,7 @@ wrun32.exe
 
 The value specifies the IE version as follows.  
 
-The value to set this key to is (taken from [MSDN](https://bit.ly/3ix6Edx)) as decimal values:  
+The value to set this key to is (taken from [MSDN](https://learn.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/general-info/ee330730%28v=vs.85%29?redirectedfrom=MSDN#browser-emulation)) as decimal values:  
 
 **11001 (0x2AF9)**  
 Internet Explorer 11. Webpages are displayed in IE11 Standards mode, regardless of the !DOCTYPE directive.  

@@ -2,9 +2,9 @@
 
 This guide does not go into the initial setup of AcuConnect but rather focuses on setting up multiple services on a server. The following prerequisites should have already been setup:  
 
-1.	[Install AcuConnect](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN22.html)
-2.	[Establish system security](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN23.html)
-3.	[Create the required aliases](https://docs.rocketsoftware.com/bundle/acucobolgt_dg_1051_html/page/BKCNCNSERVCN24.html)
+1.	[Install AcuConnect](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Install%20AcuConnect)
+2.	[Establish system security](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Establish+system+security)
+3.	[Creating a Server Alias File in Thin Client](https://docs.rocketsoftware.com/search?labelkey=prod_acucobol_gt&q=Creating+a+Server+Alias+File+in+Thin+Client)
 
 **Create the Server Configuration File**
 
