@@ -50,13 +50,8 @@ Once you are happy with how it works, you can continue on to [Configuration of A
 
 #### Configuration of AcuXDBC
 
-Change directory to the installation directory.  
-
-```
-cd /pathtotheinstallation/folder
-```
-
-This is where your acuxdbc.cfg config file must be located.  
+Change directory to the `$GENESIS_HOME` directory.  
+The acuxdbc.cfg file must be located in the `$GENESIS_HOME` directory.   
 If it's not present, enter the BIN directory and use the batch program genxconf.sh to generate it.  
 When created, open acuxdbc.cfg with an editor to customize it.  
 These are the two most important configuration variables:  

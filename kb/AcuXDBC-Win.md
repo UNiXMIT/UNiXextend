@@ -45,11 +45,8 @@ extend Product Guides > AcuXDBC Version 10.4.1 User's Guide > Installation and L
 Once you are happy with how it works, you can continue on to [Configuration of AcuXDBC](#configuration-of-acuxdbc) and test with your own data.   
 
 #### Configuration of AcuXDBC
-Open your installation directory i.e.  
-
-C:\Program Files (x86)\Micro Focus\extend 10.4.1\AcuGT  
-
-This is where your acuxdbc.cfg config file must be located.  
+Open the `%GENESIS_HOME%` directory.  
+The acuxdbc.cfg file must be located in the `%GENESIS_HOME%` directory.  
 If it's not present, enter the BIN directory and use the batch program genxconf.bat to generate it.  
 Run this batch file with Administrator privileges if necessary.  
 When created, open acuxdbc.cfg with an editor to customize it.  
