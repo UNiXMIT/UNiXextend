@@ -1,0 +1,222 @@
+      * BookSF.evt
+      * BookSF.evt is generated from C:\ACUTOWEB\cobol\NewBookSF\BookSF.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+
+       Acu-Screen1-Event-Extra.
+           EVALUATE Event-Type
+           WHEN Msg-Close
+              PERFORM Acu-Screen1-Msg-Close
+           END-EVALUATE
+           .
+
+       Acu-Screen1-Msg-Close.
+           ACCEPT Quit-Mode-Flag FROM ENVIRONMENT "QUIT_MODE"
+           IF Quit-Mode-Flag = ZERO
+              PERFORM Acu-Screen1-Exit
+              PERFORM Acu-Exit-Rtn
+           END-IF
+           .
+
+       Screen1-Event-Proc.
+      * 
+           PERFORM Acu-Screen1-Event-Extra
+           .
+
+       Screen1-Dpt-Cb-Event-Proc.
+      * 
+           EVALUATE Event-Type
+           WHEN Ntf-Selchange
+              PERFORM Screen1-Dpt-Cb-Ev-Ntf-Selchange
+           END-EVALUATE
+           .
+
+       Screen1-SubDpt-Cb-Event-Proc.
+           .
+
+       Screen1-SubDpt-Cb-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Ntf-Selchange
+                 PERFORM Screen1-SubDpt-Cb-Ev-Ntf-Selchange
+              END-EVALUATE
+           END-IF
+           .
+      ***   start event editor code   ***
+      *
+       Screen1-Aft-Initdata.
+           read Department next
+           perform until Depart-status(1:1) > "0"                 
+              move Departme-key to old-departme-key
+              modify Screen1-Dpt-Cb, item-to-add(Departme-key)
+              perform until (Departme-key not equal to old-departme-key) 
+                   or  (Depart-status(1:1) > "0")
+                   read Department next
+               end-perform
+           end-perform
+           modify Screen1-Dpt-Cb, value="Fantasy"
+           perform Screen1-Dpt-Cb-Ev-Ntf-Selchange
+           .
+      *
+       Screen1-Dpt-Cb-Ev-Ntf-Selchange.
+           inquire Screen1-Dpt-Cb, value W90-DISPLAY 
+           close DEPARTMENT
+           open input DEPARTMENT           
+           modify Screen1-Subdpt-Cb, reset-list = 1
+           move W90-DISPLAY to Departme-key
+
+           start DEPARTMENT key is equal to Departme-key
+           end-start
+
+           read DEPARTMENT next
+           perform until (Departme-key not equal to W90-DISPLAY) or
+              (Depart-status(1:1) > "0" )
+              modify Screen1-SubDpt-Cb, item-to-add(Departme-sub)
+              read DEPARTMENT next        
+           end-perform
+           .
+      *
+       Screen1-SubDpt-Cb-Ev-Ntf-Selchange.
+           inquire Screen1-SubDpt-Cb, value W90-DISPLAY
+           move 4 to accept-control
+           move 11 to control-id           
+           .
+      *
+       Screen1-selprice-Ef-Aft-Procedure.       
+            .
+      
+       load-grid.           
+           move 1 to WS-CURSOR
+           perform until (Books-branch is not equal to branchToKeep) or
+                   (books-status(1:1) > "0" ) or (ws-cursor = 15)
+               initialize Gd-1-Col-6
+               move books-id       to  Gd-1-Col-1
+               move books-dr       to  Gd-1-Col-2
+               move books-title    to  Gd-1-Col-3
+               move books-price    to  Gd-1-Col-4
+               move books-stock    to  Gd-1-Col-5
+               if books-sales = "N"
+                   move books-sales    to  Gd-1-Col-6
+               end-if
+               move books-order    to  Gd-1-Col-7
+               move books-date     to  Gd-1-Col-8
+               move books-author   to  Gd-1-Col-9
+
+               modify Screen2-Gd-1, record-to-add(Screen2-Gd-1-Record)
+
+               perform bitmap-grid
+
+               read BOOKS next
+           end-perform
+           
+           .
+      *
+       bitmap-grid.
+           INQUIRE Screen2-Gd-1, LAST-ROW IN WS-CURSOR
+           modify Screen2-Gd-1, y = ws-cursor
+
+           if books-sales = "Y" 
+           then 
+               modify Screen2-Gd-1, x = 6
+                                   bitmap = 2DPB-BMP
+                                   bitmap-number = 269
+                                   bitmap-width = 16
+               modify Screen2-Gd-1, x = 2
+                                    cell-data = spaces
+           end-if
+
+          
+           if books-dr = "AA" or books-dr = "BB"
+           then 
+               modify Screen2-Gd-1, x = 2
+                                   bitmap = CRD-bmp
+                                   bitmap-number =  1                                           
+                                   bitmap-width =   24 
+               modify Screen2-Gd-1, x = 2
+                                    cell-data = spaces
+           else if  books-dr = "CC"
+                then
+                modify Screen2-Gd-1, x = 2
+                                   bitmap = CRD-bmp
+                                   bitmap-number =  2                                           
+                                   bitmap-width =   24                                     
+               modify Screen2-Gd-1, x = 2
+                                    cell-data = spaces
+               end-if                   
+           end-if        
+           .
+
+       Screen2-Pb-1-Link.
+           perform Acu-Screen2-Exit      
+           .
+      *
+       Screen2-Pb-1a-Link.
+           if (( Books-branch is not equal to branchToKeep )
+                OR (books-status is equal to 10))
+              
+               then display message box "End of Branch"
+           else     
+               modify Screen2-Gd-1, reset-grid 1
+               perform Acu-Screen2-Gd-1-Content
+               perform load-grid
+           end-if
+           .
+      *
+       Screen2-Pb-2-Link.
+           modify Screen2-Gd-1, reset-grid 1
+           perform Acu-Screen2-Gd-1-Content
+      *     move low-values to books-id
+      *     start BOOKS key is higher than books-id
+
+           close BOOKS
+           Open input books
+           move branchToKeep to books-branch          
+           start BOOKS key is equal to Books-branch
+           end-start
+           read BOOKS next
+
+           perform load-grid 
+           .
+      *
+       Screen2-Pb-3-Link.   
+           display message box "Didn't you see the red button? Applicati
+      -     "cation not finished! Okay, maybe it is just a demo!"
+      *     call "ModifyBook" using departme-rec 
+           .
+      *
+       Screen1-Pb-1a-Link.
+           inquire Screen1-SubDpt-Cb, value W90-DISPLAY
+           move W90-DISPLAY to Departme-sub
+           inquire Screen1-Dpt-Cb, value W90-DISPLAY
+           move W90-DISPLAY to Departme-key
+
+           close DEPARTMENT
+           open input DEPARTMENT    
+
+           start DEPARTMENT key is equal to mkey
+           end-start
+
+           read DEPARTMENT
+           
+
+           move Departme-branch to branchToKeep
+                      
+           perform Acu-Screen2-Create-Win
+           perform Acu-Screen2-Init-Data
+
+           move branchToKeep to Books-branch
+           start BOOKS key is equal to Books-branch
+           read BOOKS next
+
+           perform Control-screen2
+           .
+
+       Control-screen2.
+           perform Load-Grid
+           perform Acu-Screen2-Proc 
+           .                                  
+      *
+      
+
+       

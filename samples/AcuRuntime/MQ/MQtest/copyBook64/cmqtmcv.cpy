@@ -1,0 +1,70 @@
+      ******************************************************************
+      **                                                              **
+      **                      IBM MQ for Windows                      **
+      **                                                              **
+      **  FILE NAME:      CMQTMCV                                     **
+      **                                                              **
+      **  DESCRIPTION:    MQTMC Structure -- Trigger Message          **
+      **                  (Character)                                 **
+      **                                                              **
+      ******************************************************************
+      **  <copyright                                                  **
+      **  notice="lm-source-program"                                  **
+      **  pids="5724-H72,5655-R36,5724-L26"                           **
+      **  years="1993,2025"                                           **
+      **  crc="1616507131" >                                          **
+      **  Licensed Materials - Property of IBM                        **
+      **                                                              **
+      **  5724-H72                                                    **
+      **                                                              **
+      **  (C) Copyright IBM Corp. 1993, 2025 All Rights Reserved.     **
+      **                                                              **
+      **  US Government Users Restricted Rights - Use, duplication or **
+      **  disclosure restricted by GSA ADP Schedule Contract with     **
+      **  IBM Corp.                                                   **
+      **  </copyright>                                                **
+      ******************************************************************
+      **                                                              **
+      **  FUNCTION:       This file declares the structure MQTMC,     **
+      **                  which is used by the main MQI.              **
+      **                                                              **
+      **  PROCESSOR:      COBOL                                       **
+      **                                                              **
+      ******************************************************************
+
+      ******************************************************************
+      ** <BEGIN_BUILDINFO>                                            **
+      ** Generated on:  14/02/25 09:48                                **
+      ** Build Level:   p942-L250214                                  **
+      ** Build Type:    Production                                    **
+      ** Pointer Size:  32 Bit                                        **
+      ** Source File:                                                 **
+      ** CMQTMCV                                                      **
+      ** <END_BUILDINFO>                                              **
+      ******************************************************************
+
+      ** MQTMC structure
+       10  MQTMC.
+      ** Structure identifier
+       15  MQTMC-STRUCID PIC X(4) VALUE 'TMC '.
+      ** Structure version number
+       15  MQTMC-VERSION PIC X(4) VALUE '   1'.
+      ** Name of triggered queue
+       15  MQTMC-QNAME PIC X(48) VALUE SPACES.
+      ** Name of process object
+       15  MQTMC-PROCESSNAME PIC X(48) VALUE SPACES.
+      ** Trigger data
+       15  MQTMC-TRIGGERDATA PIC X(64) VALUE SPACES.
+      ** Application type
+       15  MQTMC-APPLTYPE PIC X(4) VALUE SPACES.
+      ** Application identifier
+       15  MQTMC-APPLID PIC X(256) VALUE SPACES.
+      ** Environment data
+       15  MQTMC-ENVDATA PIC X(128) VALUE SPACES.
+      ** User data
+       15  MQTMC-USERDATA PIC X(128) VALUE SPACES.
+
+
+      ******************************************************************
+      **  End of CMQTMCV                                              **
+      ******************************************************************

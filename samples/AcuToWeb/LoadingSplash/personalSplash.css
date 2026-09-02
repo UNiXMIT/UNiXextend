@@ -1,0 +1,36 @@
+#wt-loading
+{
+    position: absolute;
+    width: 300px;
+    height: 36px;
+    margin-left: -150px;
+    margin-top: -50px;
+    left: 50%;
+    top: 50%;
+    color: #000;
+    /* background-color: #F0F0F0; */
+    background: #007cd0 url(https://www.microfocus.com/documentation/doc-inc/mf-hdr.svg) no-repeat;
+    color: #c4defc;
+    overflow: hidden;
+    padding: 2px;
+    border: 1px solid #0955f6;
+}
+
+#wt-loading div
+{
+    margin-top: 14px;
+    text-align: center;
+    font-family: 'MS Sans Serif';
+    font-size: 12pt;
+}
+
+#wt-loading div::before{
+    background-image: url(https://www.microfocus.com/documentation/doc-inc/mf-logo.svg);
+    background-size: 100px 25px;
+    display: inline-block;
+    width: 100px;
+    height: 25px;
+    margin-top: -10px;
+    margin-right: 10px;
+    content: "";
+}

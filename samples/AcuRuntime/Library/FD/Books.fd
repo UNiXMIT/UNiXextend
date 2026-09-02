@@ -1,0 +1,12 @@
+       FD  Books.
+       01 Books-rec.
+           05 Books-branch     PIC  x(3).
+           05 Books-id         PIC  x(9).
+           05 Books-dr         PIC  x(2).
+           05 Books-title      PIC  x(25).
+           05 Books-price      PIC  9(8)v9(2).
+           05 Books-stock      PIC  s9(6).
+           05 Books-sales      PIC  x.
+           05 Books-order      PIC  s9(6).
+           05 Books-date       PIC  x(4).
+           05 Books-author     PIC  x(10).

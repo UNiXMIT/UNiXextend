@@ -1,0 +1,893 @@
+.ui-cblwindow .ui-winbase, .ui-msgbox-base{
+  background-color: #ebedef !important;
+}
+
+/* Main Titlebar */
+/*.ui-cblwindow-active:not(#ACU-DEBUGGER_cnt) .ui-wintitle {*/
+.ui-cblwindow-active .ui-wintitle {
+  background-color: #3c424f !important;
+  font-family: "Roboto", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  height: 56px !important;
+  left: 0;
+  line-height: 17px;
+  /*position: fixed;*/
+  top: 0px;
+  width: 100vw;
+}
+
+/* Titlebar Content */
+/*.ui-cblwindow-active:not(#ACU-DEBUGGER_cnt) .ui-wintitle .ui-wintitle-text {*/
+.ui-wintitle-text {
+  background-image: url(images/NewBookSF-product-logo.svg);
+  background-repeat: no-repeat;
+  background-position: 1vw top !important;
+  color: #ffffff;
+  overflow: hidden;
+  margin: 14px 27vw 0px 0px !important;
+  padding-right: calc(((100vw - 1400px) / 2) - 20px) !important;
+  padding-top: 0px;
+  text-align: right !important;
+}
+
+/* Window Close Button */
+/*.ui-wintitle:not(#ACU-DEBUGGER_title) .ui-winbtn.ui-winbtn-close {*/
+.ui-winbtn.ui-winbtn-maximize,
+.ui-winbtn.ui-winbtn-close {
+  display: none !important;
+}
+
+/* Terminal Page Consits out of Rows/Columns */
+/*.ui-terminal-layer:not(#ACU-DEBUGGER_term_layer) td {*/
+.ui-terminal-layer td {
+  background-color: #ebedef !important;
+}
+
+/* Table Width - Primarily for terminal Window */
+/*table.ui-terminal-layer:not(#ACU-DEBUGGER_term_layer) {*/
+table.ui-terminal-layer {
+  width: auto !important;
+}
+
+/* Main Window Container Style */
+/*.ui-cblwindow.ui-draggable.ui-cblwindow-active:not(#ACU-DEBUGGER_cnt) {*/
+.ui-cblwindow.ui-draggable {
+  background-color: #ebedef !important;
+  border: solid 0px !important;
+  height: 100vh !important;  
+  width: 100vw !important;  
+  top: 0px !important;
+  left: 0px !important;
+}
+.ui-control-frame-legend,
+.ui-control-label{
+  background-color: #ebedef !important;
+}
+
+#fonts_dialog{
+    width: 99% !important;
+}
+
+/* Smartphone Smaller (iPhone5) */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374.9px){
+  .ui-cblwindow.ui-draggable {    
+    height: 100vh !important;
+    top: 0px !important;
+    width: 100vw !important;
+  }
+
+  .ui-cblwindow .ui-winbase.ui-mouseflags-allowed{
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  .ui-terminal-layer{
+    display: none;
+  }
+
+  #ATW-BookSF-Frame_cnt{
+    left: 1vw !important;
+  }
+
+  #ATW-BookSF-JPG_cnt{
+    left: 1vw !important;
+  }
+
+  .ui-cblwindow-active .ui-wintitle {
+    height: 70px !important;
+  }
+
+  .ui-wintitle-text {
+    margin-right: 0px !important;
+    padding-top: 35px !important;
+    text-align: unset !important;
+    font-size: 3.3vw;
+  }
+
+  #ATW-ModBook-Frame_cnt{
+    left: 1vw !important;
+  }
+
+  #ATW-ModBook-Frame_cnt .ui-control-frame:nth-of-type(1){
+    width: 98vw !important;
+    height: 80px !important;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 374.9px) and (orientation: portrait){
+
+  #ATW-BookSF-JPG_cnt{
+    top: 58vw !important;
+  }
+
+  .ui-control[id^="ATW-ModBook-"][id$="Label_cnt"] {
+    left: 5vw !important;
+  }
+
+  .ui-control[id$="Label_cnt"] {
+    left: 7vw !important;
+  }
+
+  .ui-control[id$="Combo_cnt"] {
+    left: 48vw !important;
+  }
+
+  .ui-control[id$="Combo_cnt"] select {
+    width: 42vw !important;
+  }
+
+  #ATW-BookSF-ExitButton_cnt {
+    left: 10vw !important;
+    top: 25vh !important;
+  }
+
+  #ATW-BookSF-ExitButton_cnt button{
+    width: 80vw !important;
+  }
+
+  #ATW-BookSF-FindButton_cnt {
+    left: 10vw !important;
+    top: 18vh !important;
+  }
+
+  #ATW-BookSF-FindButton_cnt button{
+    width: 80vw !important;    
+  } 
+
+  .ui-control[id^="button_cnt_"]:nth-of-type(1) {
+    left: 20vw !important;
+  }
+
+  #ATW-BookSF-Frame_cnt .ui-control-frame{
+    width: 98vw !important;
+    height: 55vw !important;
+  }
+
+  #ATW-BookSF-JPG_cnt .ui-bitmap,
+  #ATW-BookSF-JPG_cnt .ui-bitmap img {
+    width: 98vw !important;
+  }
+
+  #ATW-BookSF-Grid_cnt{
+    left: 1vw !important;
+  }
+
+  #ATW-BookSF-Grid_container{
+    height: 60vh !important;
+  }
+
+  .ui-grid-container{
+    width: 98vw !important;
+  }
+
+  .ui-grid-container tbody td:nth-of-type(2){ /* Column DR*/
+    display: none;
+  }
+
+  .ui-grid-container tbody td:nth-of-type(3){ /* Column Price*/
+    padding-right: 24px;
+  }
+
+  .ui-grid-container tbody td:nth-of-type(n+4):nth-of-type(-n+888){
+    display: none;
+  }
+
+  .ui-control[id^="ATW-BookSF-ExitButton2"]{
+    left: 10vw !important;
+    top: 72vh !important;
+  }
+
+  .ui-control[id^="ATW-BookSF-ExitButton2"] button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-NewInputButton_cnt{
+    left: 50vw !important;
+    top: 72vh !important;
+  }
+
+  #ATW-BookSF-NewInputButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-BackButton_cnt{
+    left: 50vw !important;
+    top: 65vh !important;
+  }
+
+  #ATW-BookSF-BackButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-ForwardButton_cnt{
+    left: 10vw !important;
+    top: 65vh !important;
+  }
+
+  #ATW-BookSF-ForwardButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-ModBook-SubCombo_cnt,
+  #ATW-ModBook-SubLabel_cnt{
+    top: 9vh !important;
+  }
+
+  #ATW-ModBook-SubCombo_cnt select{
+    width: 40vw !important;
+  }
+
+  #ATW-ModBook-KeyLabel_cnt{
+    left: 5vw;
+  }
+
+  #ATW-ModBook-KeyCombo_cnt select{    
+     width: 40vw !important;
+  }
+
+  #ATW-ModBook-IdLabel_cnt,
+  #ATW-ModBook-IdEF_cnt{
+    top: 93px !important;
+  }
+
+  #ATW-ModBook-DrLabel_cnt{
+    top: 123px !important;
+  }
+
+  #ATW-ModBook-DrCombo_cnt{
+    top: 123px !important;
+    left: 145px !important;
+  }
+
+  #ATW-ModBook-TitleLabel_cnt,
+  #ATW-ModBook-TitleEF_cnt{
+    top: 153px !important;
+  }
+
+  #ATW-ModBook-TitleEF_cnt input{
+    width: 53vw !important;
+  }
+
+  #ATW-ModBook-PriceLabel_cnt,
+  #ATW-ModBook-PriceEF_cnt{
+    top: 183px !important;
+  }
+
+  #ATW-ModBook-StockLabel_cnt,
+  #ATW-ModBook-StockEF_cnt{
+    top: 213px !important;
+  }
+
+  #ATW-ModBook-OrderLabel_cnt,
+  #ATW-ModBook-OrderEF_cnt{
+    top: 243px !important;
+  }
+
+  #ATW-ModBook-DateLabel_cnt,
+  #ATW-ModBook-DatePicker_cnt{
+    top: 273px !important;
+  }
+
+  #ATW-ModBook-AuthorLabel_cnt,
+  #ATW-ModBook-AuthorEF_cnt{
+    top: 303px !important;
+  }
+
+  #ATW-ModBook-SalesCBox_cnt{
+    top: 339px !important; 
+    left: 40vw !important; 
+  }
+
+  #ATW-ModBook-AddButton_cnt{
+    left: 1vw !important;
+    top: 368px !important;
+  }
+
+  #ATW-ModBook-AddButton_cnt button{
+    width: 98vw !important;
+  }
+
+  #ATW-ModBook-CancelButton_cnt{
+    left: 1vw !important;
+    top: 415px !important;
+  }
+
+  #ATW-ModBook-CancelButton_cnt button{
+    width: 98vw !important;
+  }
+}
+
+/* Smartphone */
+@media only screen and (min-device-width: 375px) and (max-device-width: 767.9px){
+  .ui-cblwindow.ui-draggable {    
+    height: 100vh !important;
+    top: 0px !important;
+    width: 100vw !important;
+  }
+
+  .ui-cblwindow .ui-winbase.ui-mouseflags-allowed{
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  .ui-terminal-layer{
+    display: none;
+  }
+
+  #ATW-BookSF-Frame_cnt{
+    left: 1vw !important;
+  }
+
+  #ATW-BookSF-JPG_cnt{
+    left: 1vw !important;
+  }
+
+  .ui-cblwindow-active .ui-wintitle {
+    height: 70px !important;
+  }
+
+  .ui-wintitle-text {
+    margin-right: 0px !important;
+    padding-top: 35px !important;
+    text-align: unset !important;
+    font-size: 3.3vw;
+  }
+
+  #ATW-ModBook-Frame_cnt{
+    left: 1vw !important;
+  }
+
+  #ATW-ModBook-Frame_cnt .ui-control-frame:nth-of-type(1){
+    width: 98vw !important;
+    height: 80px !important;
+  }
+}
+
+/* Smartphone Portrait */
+@media only screen and (min-device-width: 375px) and (max-device-width: 767.9px) and (orientation: portrait){
+
+  #ATW-BookSF-JPG_cnt{
+    top: 58vw !important;
+  }
+
+  .ui-control[id^="ATW-ModBook-"][id$="Label_cnt"] {
+    left: 5vw !important;
+  }
+
+  .ui-control[id$="Label_cnt"] {
+    left: 10vw !important;
+  }
+
+  .ui-control[id$="Combo_cnt"] {
+    left: 48vw !important;
+  }
+
+  .ui-control[id$="Combo_cnt"] select {
+    width: 42vw !important;
+  }
+
+  #ATW-BookSF-ExitButton_cnt {
+    left: 10vw !important;
+    top: 168px !important;
+  }
+
+  #ATW-BookSF-ExitButton_cnt button{
+    width: 80vw !important;
+  }
+
+  #ATW-BookSF-FindButton_cnt {
+    left: 10vw !important;
+  }
+
+  #ATW-BookSF-FindButton_cnt button{
+    width: 80vw !important;    
+  } 
+
+  .ui-control[id^="button_cnt_"]:nth-of-type(1) {
+    left: 20vw !important;
+  }
+
+  #ATW-BookSF-Frame_cnt .ui-control-frame{
+    width: 98vw !important;
+    height: 55vw !important;
+  }
+
+  #ATW-BookSF-JPG_cnt .ui-bitmap,
+  #ATW-BookSF-JPG_cnt .ui-bitmap img {
+    width: 98vw !important;
+  }
+
+  #ATW-BookSF-Grid_cnt{
+    left: 1vw !important;
+  }
+
+  .ui-grid-container{
+    width: 98vw !important;
+    height: 60vh !important;
+  }
+
+  .ui-grid-container tbody td:nth-of-type(2){ /* Column DR*/
+    display: none;
+  }
+
+  .ui-grid-container tbody td:nth-of-type(4) .ui-grid-celltext{ /* Column Price*/
+    left: 15px !important;
+  }
+
+  .ui-grid-container tbody td:nth-of-type(n+5):nth-of-type(-n+888){
+    display: none;
+  }
+
+  .ui-control[id^="ATW-BookSF-ExitButton2"]{
+    left: 10vw !important;
+    top: 72vh !important;
+  }
+
+  .ui-control[id^="ATW-BookSF-ExitButton2"] button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-NewInputButton_cnt{
+    left: 50vw !important;
+    top: 72vh !important;
+  }
+
+  #ATW-BookSF-NewInputButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-BackButton_cnt{
+    left: 50vw !important;
+    top: 65vh !important;
+  }
+
+  #ATW-BookSF-BackButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-ForwardButton_cnt{
+    left: 10vw !important;
+    top: 65vh !important;
+  }
+
+  #ATW-BookSF-ForwardButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-ModBook-SubCombo_cnt,
+  #ATW-ModBook-SubLabel_cnt{
+    top: 6vh !important;
+  }
+
+  #ATW-ModBook-SubCombo_cnt select{
+    width: 40vw !important;
+  }
+
+  #ATW-ModBook-KeyLabel_cnt{
+    left: 5vw;
+  }
+
+  #ATW-ModBook-KeyCombo_cnt select{    
+     width: 40vw !important;
+  }
+
+  #ATW-ModBook-IdLabel_cnt,
+  #ATW-ModBook-IdEF_cnt{
+    top: 93px !important;
+  }
+
+  #ATW-ModBook-DrLabel_cnt{
+    top: 123px !important;
+  }
+
+  #ATW-ModBook-DrCombo_cnt{
+    top: 123px !important;
+    left: 145px !important;
+  }
+
+  #ATW-ModBook-TitleLabel_cnt,
+  #ATW-ModBook-TitleEF_cnt{
+    top: 153px !important;
+  }
+
+  #ATW-ModBook-TitleEF_cnt input{
+    width: 60vw !important;
+  }
+
+  #ATW-ModBook-PriceLabel_cnt,
+  #ATW-ModBook-PriceEF_cnt{
+    top: 183px !important;
+  }
+
+  #ATW-ModBook-StockLabel_cnt,
+  #ATW-ModBook-StockEF_cnt{
+    top: 213px !important;
+  }
+
+  #ATW-ModBook-OrderLabel_cnt,
+  #ATW-ModBook-OrderEF_cnt{
+    top: 243px !important;
+  }
+
+  #ATW-ModBook-DateLabel_cnt,
+  #ATW-ModBook-DatePicker_cnt{
+    top: 273px !important;
+  }
+
+  #ATW-ModBook-AuthorLabel_cnt,
+  #ATW-ModBook-AuthorEF_cnt{
+    top: 303px !important;
+  }
+
+  #ATW-ModBook-SalesCBox_cnt{
+    top: 339px !important; 
+    left: 40vw !important; 
+  }
+
+  #ATW-ModBook-AddButton_cnt{
+    left: 1vw !important;
+    top: 368px !important;
+  }
+
+  #ATW-ModBook-AddButton_cnt button{
+    width: 98vw !important;
+  }
+
+  #ATW-ModBook-CancelButton_cnt{
+    left: 1vw !important;
+    top: 415px !important;
+  }
+
+  #ATW-ModBook-CancelButton_cnt button{
+    width: 98vw !important;
+  }
+}
+
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px)
+  and (orientation: landscape) {
+
+  #ATW-BookSF-Frame_cnt{
+    left: 1vw !important;
+  }
+
+  #ATW-BookSF-Frame_cnt .ui-control-frame{
+    height: 27vh !important;
+    width: 98vw !important;
+  }
+
+  #ATW-BookSF-JPG_cnt{
+    top: 30vh !important;
+    left: calc((100vw - 38vw) / 2) !important;
+  }
+
+  #ATW-BookSF-JPG_cnt .ui-bitmap,
+  #ATW-BookSF-JPG_cnt .ui-bitmap img {
+    height: unset !important;
+    width: 38vw !important;
+  }
+
+  .ui-control[id$="Label_cnt"] {
+    left: 4vw !important;
+  }
+
+  .ui-control[id$="Combo_cnt"] {
+    left: 24vw !important;
+  }
+
+  .ui-control[id$="Combo_cnt"] select {
+    width: 40vw !important;
+  }
+
+  #ATW-BookSF-FindButton_cnt{
+    top: 3vw !important;
+    left: 65vw !important;
+  }
+
+  #ATW-BookSF-ExitButton_cnt{
+    top: 8vw !important;
+    left: 65vw !important;
+  }
+
+  #ATW-BookSF-FindButton_cnt button{
+    width: 33vw !important;
+  }
+
+  #ATW-BookSF-ExitButton_cnt button{
+    width: 33vw !important;
+  } 
+
+  #ATW-ModBook-SalesCBox_cnt{
+    top: 339px !important; 
+    left: 40vw !important; 
+  }
+
+  #ATW-ModBook-AddButton_cnt{
+    left: 1vw !important;
+    top: 368px !important;
+  }
+
+  #ATW-ModBook-AddButton_cnt button{
+    width: 98vw !important;
+  }
+
+  #ATW-ModBook-CancelButton_cnt{
+    left: 1vw !important;
+    top: 415px !important;
+  }
+
+  #ATW-ModBook-CancelButton_cnt button{
+    width: 98vw !important;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width : 1366px){
+  .ui-cblwindow.ui-draggable {    
+    height: 100vh !important;
+    top: 0px !important;
+    width: 100vw !important;
+  }
+
+  .ui-cblwindow .ui-winbase.ui-mouseflags-allowed{
+    width: 100vw !important;
+    height:100vh !important;
+  }
+
+  .ui-terminal-layer{
+    display: none;
+  }
+
+  .ui-wintitle-text{
+    margin-right: 7px !important;
+    font-size: 2.7vw;
+  }
+
+  #ATW-BookSF-Frame_cnt{
+    left: 1vw !important;
+  }
+
+  #ATW-BookSF-Frame_cnt .ui-control-frame:nth-of-type(1){
+    width: 98vw !important;
+    height: 19vw !important;
+  }
+
+  #ATW-BookSF-JPG_cnt{
+    left: 1vw !important;
+    top: 21vw !important;
+  }
+
+  #ATW-BookSF-JPG_cnt .ui-bitmap,
+  #ATW-BookSF-JPG_cnt .ui-bitmap img {
+    width: 98vw !important;
+    height: unset !important;
+  }
+
+  .ui-grid-container{
+    width: calc(100vw - 12px) !important;
+  }
+
+  .ui-grid-container .dom-scrollbar.h-scrollbar{
+    width: calc(100vw - 30px) !important;
+  }
+
+
+  #ATW-ModBook-Frame_cnt{
+    left: 1vw !important;
+  }
+
+  #ATW-ModBook-Frame_cnt .ui-control-frame:nth-of-type(1){
+    width: 98vw !important;
+  }
+
+  #ATW-ModBook-SubCombo_cnt{
+    left: unset !important;
+    right: 5vw !important;
+  }
+
+  #ATW-ModBook-SubCombo_cnt select{
+    width: 25vw !important;
+  }
+
+  #ATW-ModBook-SubLabel_cnt{
+    left: unset !important;
+    right: 30vw !important;
+  }
+
+  #ATW-ModBook-KeyLabel_cnt{
+    left: 5vw;
+  }
+
+  #ATW-ModBook-KeyCombo_cnt select{    
+     width: 25vw !important;
+  }
+}
+
+/* Tablet Portrait*/
+@media only screen and (min-device-width: 768px) and (max-device-width : 1366px) and (orientation : portrait){
+
+  #ATW-BookSF-ExitButton_cnt {
+    right: 10vw !important;
+    /* top: 168px !important; */
+    left: unset !important;
+  }
+
+  #ATW-BookSF-ExitButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-FindButton_cnt {
+    left: 10vw !important;
+  }
+
+  #ATW-BookSF-FindButton_cnt button{
+    width: 35vw !important;    
+  }
+
+  .ui-control[id^="label_cnt_"] {
+    left: 10vw !important;
+  }
+
+  .ui-control[id^="button_cnt_"] {
+    left: 15vw !important;
+    top: 122px !important;
+  }
+
+  .ui-control[id^="button_cnt_"] button {
+      width: 30vw !important;
+  }
+
+  .ui-control[id^="ATW-BookSF-ExitButton2"]{
+    left: 10vw !important;
+    top: 70vh !important;
+  }
+
+  .ui-control[id^="ATW-BookSF-ExitButton2"] button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-NewInputButton_cnt{
+    left: 50vw !important;
+    top: 70vh !important;
+  }
+
+  #ATW-BookSF-NewInputButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-BackButton_cnt{
+    left: 50vw !important;
+    top: 65vh !important;
+  }
+
+  #ATW-BookSF-BackButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-ForwardButton_cnt{
+    left: 10vw !important;
+    top: 65vh !important;
+  }
+
+  #ATW-BookSF-ForwardButton_cnt button{
+    width: 35vw !important;
+  }
+
+/*   .ui-grid-container tbody td:nth-of-type(9),
+  .ui-grid-container tbody td:nth-of-type(9) div{
+    margin-left: -40px;
+  } */
+}
+
+/* Tablet landscape*/
+@media only screen and (min-device-width: 1024px) and (max-device-width : 1366px) and (orientation : landscape){
+  .ui-cblwindow.ui-draggable{
+    height: 100vh !important;
+    width: 100vw !important;
+  }
+
+  .ui-wintitle-text {
+    font-size: 2.2vw;
+  }
+
+  [id$="Label_cnt"]{
+      font-size: 1.2vw !important;
+  }
+
+  .ui-control[id$="Combo_cnt"] select {
+    width: 42vw !important;
+  }
+
+  #ATW-BookSF-ExitButton_cnt{
+    left: unset !important;
+    right: 20vw !important;
+  }
+
+  #ATW-BookSF-ExitButton_cnt button{
+    width: 20vw !important;
+    height: 4vw !important;
+    font-size: 1.2vw;
+  }
+
+  #ATW-BookSF-FindButton_cnt{
+    left: 20vw !important;
+  }
+
+  #ATW-BookSF-FindButton_cnt button{
+    width: 20vw !important;
+    height: 4vw !important;
+    font-size: 1.2vw;
+  }
+
+  .ui-grid-container tbody td:nth-of-type(9),
+  .ui-grid-container tbody td:nth-of-type(9) div{
+    padding-right: 45px;
+    margin-left: 45px;
+  }
+
+  .ui-control[id^="ATW-BookSF-ExitButton2"]{
+    left: 10vw !important;
+    top: 70vh !important;
+  }
+
+  .ui-control[id^="ATW-BookSF-ExitButton2"] button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-NewInputButton_cnt{
+    left: 50vw !important;
+    top: 70vh !important;
+  }
+
+  #ATW-BookSF-NewInputButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-BackButton_cnt{
+    left: 50vw !important;
+    top: 65vh !important;
+  }
+
+  #ATW-BookSF-BackButton_cnt button{
+    width: 35vw !important;
+  }
+
+  #ATW-BookSF-ForwardButton_cnt{
+    left: 10vw !important;
+    top: 65vh !important;
+  }
+
+  #ATW-BookSF-ForwardButton_cnt button{
+    width: 35vw !important;
+  }
+}
+
+/* Tablet (IPAD not PRO) landscape*/
+@media only screen and (min-device-width: 768px) and (max-device-width : 1024px) and (orientation : landscape){
+  /* .ui-grid-container tbody td:nth-of-type(9),
+  .ui-grid-container tbody td:nth-of-type(9) div{
+    margin-left: -40px;
+  } */
+}

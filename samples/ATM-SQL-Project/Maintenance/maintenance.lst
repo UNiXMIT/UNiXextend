@@ -1,0 +1,789 @@
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0001
+"C:\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\bin\ccbl32" -lfo .\Maintenance\@.lst -ga -ps -sl -sp "C:\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def" -o .\maintenance\@.acu .\Maintenance\maintenance.sqb
+
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.                      Maintenance.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           CURSOR     IS  CURSOR-POS.
+
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+
+       DATA DIVISION.
+       FILE SECTION.
+
+       WORKING-STORAGE SECTION.
+       EXEC SQL INCLUDE SQLCA END-EXEC.
+
+       01  SQLCA IS EXTERNAL.
+           05  SQLCAID                PIC X(8).
+           05  SQLCABC         COMP-5 PIC S9(9).
+           05  SQLCODE         COMP-5 PIC S9(9).
+           05  SQLERRM.
+               10  SQLERRML    COMP-5 PIC S9(4).
+               10  SQLERRMC           PIC X(70).
+           05  SQLERRP                PIC X(8).
+           05  SQLERRD OCCURS 6 TIMES COMP-5 PIC S9(9).
+           05  SQLWARN.
+               10  SQLWARN0           PIC X.
+               10  SQLWARN1           PIC X.
+               10  SQLWARN2           PIC X.
+               10  SQLWARN3           PIC X.
+               10  SQLWARN4           PIC X.
+               10  SQLWARN5           PIC X.
+               10  SQLWARN6           PIC X.
+               10  SQLWARN7           PIC X.
+               10  SQLWARN8           PIC X.
+               10  SQLWARN9           PIC X.
+               10  SQLWARNA           PIC X.
+           05  SQLSTATE               PIC X(5).
+           05  SQLERRM-PREFIX.
+               10  SQLERRPL    COMP-5 PIC S9(4).
+               10  SQLERRPC           PIC X(70).
+
+
+
+       EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01 MASTER-RECORD.
+           05 MASTER-ACCOUNT                    PIC 9(4) COMP-5 VALUE 0.
+           05 MASTER-NAME                       PIC X(30).
+           05 MASTER-ADDRESS.
+               10 MASTER-STREET                 PIC X(30).
+               10 MASTER-CITY                   PIC X(30).
+               10 MASTER-STATE                  PIC X(2).
+               10 MASTER-ZIP                    PIC X(10).
+           05 MASTER-PHONE.
+               10 MASTER-PHONE-AREA     PIC X(3).
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0002
+
+
+               10 MASTER-PHONE-PREFIX   PIC X(3).
+               10 MASTER-PHONE-BASE     PIC X(4).
+               10 MASTER-PHONE-EXT      PIC X(5).
+           05 MASTER-START-DATE.
+               10 MASTER-START-YYYY     PIC X(4).
+               10 MASTER-START-MM       PIC X(2).
+               10 MASTER-START-DD       PIC X(2).
+           05 MASTER-BALANCE            PIC S9(5)V9(2) COMP-3 VALUE 0.
+
+       01 SERVER-NAME                   PIC X(30).
+       01 USERID                        PIC X(8).
+       01 PASSWD.
+           49 PASSWD-LENGTH             PIC S9(4) COMP-5 VALUE 0.
+           49 PASSWD-NAME               PIC X(18).
+       EXEC SQL END DECLARE SECTION END-EXEC.
+
+       EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01 TRANS-RECORD.
+           05 TRANS-ACCOUNT                     PIC 9(4) COMP-5 VALUE 0.
+           05 TRANS-DATE.
+                           10 TRANS-YEAR                PIC X(4).
+                           10 TRANS-MONTH               PIC X(2).
+                           10 TRANS-DAY                 PIC X(2).
+           05 TRANS-TIME.
+               10 TRANS-HOURS           PIC X(2).
+               10 TRANS-MINUTES                 PIC X(2).
+               10 TRANS-SECONDS                 PIC X(2).
+               10 TRANS-HUNDREDS                PIC X(2).
+           05 TRANS-TYPE                        PIC X.
+           05 TRANS-AMOUNT                  PIC S9(5)V9(2) COMP-3 VALUE 0.
+       EXEC SQL END DECLARE SECTION END-EXEC.
+
+       01 FILE-STATUS.
+          05 FS-BYTE1                  PIC X VALUE SPACE.
+          05 FS-BYTE2                  PIC X COMP-5 VALUE ZEROS.
+       01 USER-OPTION                  PIC X VALUE SPACE.
+       01 EDITED-BALANCE               PIC -$$$$$9.99.
+       01 YES-NO                       PIC X VALUE SPACE.
+       01 MENU-TITLE                   PIC X(30).
+       01 VALIDATE                     PIC X VALUE SPACES.
+           88 VALID-DATA               VALUE "Y".
+           88 NOT-VALID                VALUE "N".
+       01 UPDATES                      PIC X VALUE "N".
+       01 UPDATES-ACCOUNT              PIC X(4) COMP-5.
+       01 CURSOR-POS.
+           05 CURSOR-LINE              PIC 9(2).
+           05 CURSOR-COL               PIC 9(2).
+       01 CURRENT-DATE.
+          05 DATE-YYYY                PIC 9(4).
+          05 DATE-MM                  PIC 9(2).
+          05 DATE-DD                  PIC 9(2).
+       01 MONTH-DATA                  PIC X(24) VALUE "312831303130313130313031".
+       01 MONTH-TABLE REDEFINES MONTH-DATA.
+          05 MONTH PIC 9(2) OCCURS 12 TIMES.
+       01 MONTH-COUNTER PIC 9(2).
+       01 WS-MASTER-ACCOUNT            PIC 9(4).
+       01 WS-MASTER-BALANCE            PIC S9(5)V99.
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0003
+
+
+
+       01 SQL-ERROR-CHECK              PIC X VALUE SPACES.
+           88 SQL-ERROR                VALUE "Y".
+           88 SQL-NO-ERROR             VALUE "N".
+
+       LINKAGE SECTION.
+
+       SCREEN SECTION.
+       01 MAIN-MENU.
+           05 BLANK SCREEN.
+           05 LINE 01 COLUMN 35 "MAIN MENU".
+           05 LINE 04 COLUMN 15 "1 = ADD CUSTOMER".
+           05 LINE 06 COLUMN 15 "2 = VIEW CUSTOMER".
+           05 LINE 08 COLUMN 15 "3 = UPDATE CUSTOMER".
+           05 LINE 04 COLUMN 45 "4 = DELETE CUSTOMER".
+           05 LINE 06 COLUMN 45 "5 = INITIALIZE DB".
+           05 LINE 08 COLUMN 45 "9 = QUIT".
+           05 LINE 11 COLUMN 30 "CHOOSE AN OPTION - ".
+           05 LINE 11 COLUMN 49 TO USER-OPTION REQUIRED AUTO.
+
+       01 DISPLAY-RECORD.
+           05 BLANK SCREEN .
+           05 LINE 01 COLUMN 30 FROM MENU-TITLE.
+           05 LINE 04 COLUMN 11 "ACCOUNT NUMBER: ".
+           05 LINE 04 COLUMN 27 PIC 9(4) USING WS-MASTER-ACCOUNT REQUIRED.
+           05 LINE 06 COLUMN 11 "NAME: ".
+           05 LINE 06 COLUMN 17 PIC X(30) USING MASTER-NAME REQUIRED.
+           05 LINE 08 COLUMN 11 "STREET: ".
+           05 LINE 08 COLUMN 19 PIC X(30) USING MASTER-STREET REQUIRED.
+           05 LINE 10 COLUMN 11 "CITY: ".
+           05 LINE 10 COLUMN 17 PIC X(30) USING MASTER-CITY REQUIRED.
+           05 LINE 12 COLUMN 11 "STATE: ".
+           05 LINE 12 COLUMN 18 PIC X(2) USING MASTER-STATE REQUIRED.
+           05 LINE 14 COLUMN 11 "ZIP CODE: ".
+           05 LINE 14 COLUMN 21 PIC X(10) USING MASTER-ZIP REQUIRED.
+           05 LINE 16 COLUMN 11 "TELEPHONE: ".
+           05 LINE 16 COLUMN 22 "(".
+           05 LINE 16 COLUMN 23 PIC 9(3) USING MASTER-PHONE-AREA REQUIRED AUTO.
+           05 LINE 16 COLUMN 26 ")".
+           05 LINE 16 COLUMN 28 PIC 9(3) USING MASTER-PHONE-PREFIX REQUIRED AUTO.
+           05 LINE 16 COLUMN 31 "-".
+           05 LINE 16 COLUMN 32 PIC 9(4) USING MASTER-PHONE-BASE REQUIRED.
+           05 LINE 18 COLUMN 11 "EXTENSION: ".
+           05 LINE 18 COLUMN 22 PIC 9(5) USING MASTER-PHONE-EXT.
+           05 LINE 20 COLUMN 11 "START DATE YYYYMMDD: ".
+           05 LINE 20 COLUMN 32 PIC 9(4) USING MASTER-START-YYYY REQUIRED AUTO.
+           05 LINE 20 COLUMN 36 "-".
+           05 LINE 20 COLUMN 37 PIC 9(2) USING MASTER-START-MM REQUIRED AUTO.
+           05 LINE 20 COLUMN 39 "-".
+           05 LINE 20 COLUMN 40 PIC 9(2) USING MASTER-START-DD REQUIRED.
+           05 LINE 22 COLUMN 11 "BALANCE: ".
+           05 LINE 22 COLUMN 20 PIC $$$$$9.99CR USING WS-MASTER-BALANCE REQUIRED.
+                   05 LINE 24 COLUMN 10 "TAB TO MOVE BETWEEN FIELDS. ENTER TO SUBMIT. ESC KEY TO EXIT.".
+
+       PROCEDURE DIVISION.
+
+000005     EXEC SQL WHENEVER SQLERROR PERFORM ERROR-EXIT END-EXEC
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0004
+
+
+
+00000B     PERFORM SQL-CONNECT
+00000F     PERFORM MAIN-SCREEN
+000013     PERFORM SQL-DISCONNECT
+000017     GOBACK.
+
+       INITIALIZATION-ROUTINE.
+000021     PERFORM CONNECTION-ANIMATION
+000025     ACCEPT SERVER-NAME FROM ENVIRONMENT "SQL_SERVER_NAME"
+00002D     ACCEPT USERID FROM ENVIRONMENT "SQL_USERNAME"
+000035     ACCEPT PASSWD-NAME FROM ENVIRONMENT "SQL_PASSWORD"
+00003D     INSPECT PASSWD-NAME TALLYING PASSWD-LENGTH FOR CHARACTERS BEFORE INITIAL " ".
+
+       SQL-CONNECT.
+000055     IF USERID NOT = SPACES
+                   EXEC SQL CONNECT TO :SERVER-NAME AS C1
+                           USER :USERID USING :PASSWD
+000088             END-EXEC
+
+                   EXEC SQL CONNECT TO :SERVER-NAME AS C1
+0000B5             END-EXEC
+
+0000BC     IF SQLCODE < 0
+0000C5         PERFORM ERROR-EXIT
+           END-IF.
+
+       MAIN-SCREEN.
+0000CD     PERFORM UNTIL 1 = 2
+0000D7         PERFORM DISPLAY-INITIALIZE
+0000DB                     ACCEPT CURRENT-DATE FROM DATE YYYYMMDD
+0000E1         EVALUATE USER-OPTION
+                   WHEN 1
+0000EA                                     MOVE "ADD CUSTOMER" TO MENU-TITLE
+0000F2                 PERFORM ADD-USER
+                   WHEN 2
+000101                                     MOVE "VIEW CUSTOMER" TO MENU-TITLE
+000109                 PERFORM VIEW-USER
+                   WHEN 3
+000118                                     MOVE "UPDATE CUSTOMER" TO MENU-TITLE
+000120                 PERFORM UPDATE-USER
+                   WHEN 4
+00012F                                     MOVE "DELETE CUSTOMER" TO MENU-TITLE
+000137                 PERFORM DELETE-USER
+                   WHEN 9
+000146                 DISPLAY "EXITING PROGRAM!" AT 1430
+00014F                 PERFORM SLEEP-TIMER
+000153                 EXIT PERFORM
+                   WHEN 5
+000162                 PERFORM INITIALIZE-DB
+                   WHEN OTHER
+000169                 DISPLAY "INCORRECT OPTION!" AT 1430
+000172                 PERFORM SLEEP-TIMER
+               END-EVALUATE
+           END-PERFORM.
+
+       DISPLAY-INITIALIZE.
+00017D     INITIALIZE USER-OPTION MASTER-RECORD EDITED-BALANCE YES-NO VALIDATE CURSOR-POS
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0005
+
+
+                      MENU-TITLE UPDATES UPDATES-ACCOUNT WS-MASTER-ACCOUNT WS-MASTER-BALANCE SQL-ERROR-CHECK
+                      SQLCODE
+0001C5     DISPLAY MAIN-MENU
+0001CD     ACCEPT MAIN-MENU.
+
+       SLEEP-TIMER.
+0001DE     CALL "C$SLEEP" USING 2.
+
+       ADD-USER.
+0001ED     PERFORM UNTIL 1 = 2
+0001F6                     MOVE CURRENT-DATE TO MASTER-START-DATE
+0001FD         MOVE 0417 TO CURSOR-POS
+000203         DISPLAY DISPLAY-RECORD
+00025F         ACCEPT DISPLAY-RECORD
+0002B8             ON EXCEPTION EXIT PERFORM
+               END-ACCEPT
+0002BC         PERFORM VALIDATE-DATA
+0002C0                     IF VALID-DATA
+0002C9                             INITIALIZE YES-NO
+0002CE                             DISPLAY "ARE YOU SURE YOU WANT TO ADD THE RECORD? Y/N" AT 2420 ERASE LINE
+0002D7             ACCEPT YES-NO AT 2465
+0002E2             IF YES-NO = "Y" OR "y"
+0002F3                 MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+0002F9                 MOVE WS-MASTER-BALANCE TO MASTER-BALANCE
+0002FF                 PERFORM WRITE-DATA
+000303                 EXIT PERFORM
+00030A             ELSE
+00030B                 IF NOT (YES-NO = "N" OR "n")
+00031C                     DISPLAY "WRONG OPTION, TRY AGAIN!" AT 2420 ERASE LINE
+000325                                             INITIALIZE YES-NO
+00032A                     PERFORM SLEEP-TIMER
+                       ELSE
+000331                     EXIT PERFORM
+                       END-IF
+                   END-IF
+                           END-IF
+           END-PERFORM.
+
+       VIEW-USER.
+00033C     PERFORM UNTIL 1 = 2
+000346         DISPLAY "ENTER ACCOUNT NUMBER: " AT 0625 ERASE SCREEN
+00034F         ACCEPT WS-MASTER-ACCOUNT AT 0647
+00035A         IF WS-MASTER-ACCOUNT = 0
+000363             DISPLAY "PLEASE ENTER AN ACCOUNT NUMBER" AT 1025 ERASE LINE
+00036C             PERFORM SLEEP-TIMER
+               ELSE
+000373             MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+                   EXEC SQL
+                       SELECT
+                           MASTER_NAME,
+                           MASTER_STREET,
+                           MASTER_CITY,
+                           MASTER_STATE,
+                           MASTER_ZIP,
+                           MASTER_PHONE_AREA,
+                           MASTER_PHONE_PREFIX,
+                           MASTER_PHONE_BASE,
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0006
+
+
+                           MASTER_PHONE_EXT,
+                           MASTER_START_YYYY,
+                           MASTER_START_MM,
+                           MASTER_START_DD,
+                           MASTER_BALANCE
+                       INTO
+                           :MASTER-NAME,
+                           :MASTER-STREET,
+                           :MASTER-CITY,
+                           :MASTER-STATE,
+                           :MASTER-ZIP,
+                           :MASTER-PHONE-AREA,
+                           :MASTER-PHONE-PREFIX,
+                           :MASTER-PHONE-BASE,
+                           :MASTER-PHONE-EXT,
+                           :MASTER-START-YYYY,
+                           :MASTER-START-MM,
+                           :MASTER-START-DD,
+                           :MASTER-BALANCE
+                          FROM CUSTOMER
+                               WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+000594             END-EXEC
+
+0005AB                 DISPLAY "ACCOUNT DOESN'T EXIST!" AT 0625 ERASE SCREEN
+0005B4                 DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+0005BE                 ACCEPT OMITTED AT 0850
+0005CA                 EXIT PERFORM
+0005D1             ELSE
+0005D2                 MOVE MASTER-BALANCE to WS-MASTER-BALANCE
+0005D8                 DISPLAY DISPLAY-RECORD
+000634                 DISPLAY "PRESS ENTER TO RETURN TO THE MAIN MENU!" AT 2420 ERASE LINE
+00063D                 ACCEPT OMITTED AT 2460
+000649                 EXIT PERFORM
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+       UPDATE-USER.
+000654             DISPLAY "ENTER ACCOUNT NUMBER: " AT 0625 ERASE SCREEN
+00065D     ACCEPT WS-MASTER-ACCOUNT AT 0647
+000668     MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+00066E             MOVE WS-MASTER-ACCOUNT TO UPDATES-ACCOUNT
+           EXEC SQL
+               SELECT
+                   MASTER_NAME,
+                   MASTER_STREET,
+                   MASTER_CITY,
+                   MASTER_STATE,
+                   MASTER_ZIP,
+                   MASTER_PHONE_AREA,
+                   MASTER_PHONE_PREFIX,
+                   MASTER_PHONE_BASE,
+                   MASTER_PHONE_EXT,
+                   MASTER_START_YYYY,
+                   MASTER_START_MM,
+                   MASTER_START_DD,
+                   MASTER_BALANCE
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0007
+
+
+               INTO
+                   :MASTER-NAME,
+                   :MASTER-STREET,
+                   :MASTER-CITY,
+                   :MASTER-STATE,
+                   :MASTER-ZIP,
+                   :MASTER-PHONE-AREA,
+                   :MASTER-PHONE-PREFIX,
+                   :MASTER-PHONE-BASE,
+                   :MASTER-PHONE-EXT,
+                   :MASTER-START-YYYY,
+                   :MASTER-START-MM,
+                   :MASTER-START-DD,
+                   :MASTER-BALANCE
+                  FROM CUSTOMER
+                       WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+00088F     END-EXEC
+
+0008A6         DISPLAY "ACCOUNT DOESN'T EXIST!" AT 0625 ERASE SCREEN
+0008AF         DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+0008B9         ACCEPT OMITTED AT 0850
+0008C8     ELSE
+0008C9         MOVE MASTER-BALANCE to WS-MASTER-BALANCE
+0008CF         PERFORM REWRITE-DATA
+           END-IF.
+
+       DELETE-USER.
+0008D7             DISPLAY "ENTER ACCOUNT NUMBER: " AT 0625 ERASE SCREEN
+0008E0     ACCEPT WS-MASTER-ACCOUNT AT 0647
+0008EB     MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+           EXEC SQL
+               SELECT
+                   MASTER_NAME,
+                   MASTER_STREET,
+                   MASTER_CITY,
+                   MASTER_STATE,
+                   MASTER_ZIP,
+                   MASTER_PHONE_AREA,
+                   MASTER_PHONE_PREFIX,
+                   MASTER_PHONE_BASE,
+                   MASTER_PHONE_EXT,
+                   MASTER_START_YYYY,
+                   MASTER_START_MM,
+                   MASTER_START_DD,
+                   MASTER_BALANCE
+               INTO
+                   :MASTER-NAME,
+                   :MASTER-STREET,
+                   :MASTER-CITY,
+                   :MASTER-STATE,
+                   :MASTER-ZIP,
+                   :MASTER-PHONE-AREA,
+                   :MASTER-PHONE-PREFIX,
+                   :MASTER-PHONE-BASE,
+                   :MASTER-PHONE-EXT,
+                   :MASTER-START-YYYY,
+                   :MASTER-START-MM,
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0008
+
+
+                   :MASTER-START-DD,
+                   :MASTER-BALANCE
+                  FROM CUSTOMER
+                       WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+000B0C     END-EXEC
+
+000B23         DISPLAY "ACCOUNT DOESN'T EXIST!" AT 0625 ERASE SCREEN
+000B2C         DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+000B36         ACCEPT OMITTED AT 0850
+000B45     ELSE
+000B46         MOVE MASTER-BALANCE TO WS-MASTER-BALANCE
+000B4C         DISPLAY DISPLAY-RECORD
+000BA8         PERFORM CONFIRM-DELETE
+           END-IF.
+
+       INITIALIZE-DB.
+000BB0     PERFORM UNTIL 1 = 2
+000BB9         INITIALIZE YES-NO
+000BBE         DISPLAY "Initializing the Database will DELETE all" AT 0510 ERASE SCREEN
+000BC8         DISPLAY "the data stored in the database." AT 0610
+000BD2         DISPLAY "ARE YOU SURE YOU WANT TO PROCEED? Y/N" AT 0810
+000BDC         ACCEPT YES-NO AT 0849
+000BE8         IF YES-NO = "Y" OR "y"
+000BF9             PERFORM DROP-TABLE
+000BFD             PERFORM CREATE-TABLE
+000C01             EXIT PERFORM
+000C08         ELSE
+000C09             IF NOT (YES-NO = "N" OR "n")
+000C1A                 DISPLAY "WRONG OPTION, TRY AGAIN!" AT 2420 ERASE LINE
+000C23                         INITIALIZE YES-NO
+000C28                 PERFORM SLEEP-TIMER
+                   ELSE
+000C2F                 EXIT PERFORM
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+       WRITE-DATA.
+000C3A     EXEC SQL
+               INSERT INTO CUSTOMER VALUES
+                   (:MASTER-ACCOUNT,
+                    :MASTER-NAME,
+                    :MASTER-STREET,
+                    :MASTER-CITY,
+                    :MASTER-STATE,
+                    :MASTER-ZIP,
+                    :MASTER-PHONE-AREA,
+                    :MASTER-PHONE-PREFIX,
+                    :MASTER-PHONE-BASE,
+                    :MASTER-PHONE-EXT,
+                    :MASTER-START-YYYY,
+                    :MASTER-START-MM,
+                    :MASTER-START-DD,
+                    :MASTER-BALANCE)
+           END-EXEC.
+
+       REWRITE-DATA.
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0009
+
+
+000E1C             MOVE 0607 TO CURSOR-POS
+000E22             PERFORM UNTIL 1 = 2
+000E2B         DISPLAY DISPLAY-RECORD
+000E87         ACCEPT DISPLAY-RECORD
+000EE0             ON EXCEPTION EXIT PERFORM
+               END-ACCEPT
+000EE4                     MOVE "Y" TO UPDATES
+000EEA         PERFORM VALIDATE-DATA
+000EEE                     IF VALID-DATA
+000EF7                             INITIALIZE YES-NO
+000EFC                             DISPLAY "ARE YOU SURE YOU WANT TO UPDATE THE RECORD? Y/N" AT 2420 ERASE LINE
+000F05             ACCEPT YES-NO AT 2468
+000F11             IF YES-NO = "Y" OR "y"
+000F22                 MOVE WS-MASTER-BALANCE TO MASTER-BALANCE
+                       EXEC SQL
+                                              UPDATE CUSTOMER
+                              SET MASTER_NAME = :MASTER-NAME,
+                                  MASTER_STREET = :MASTER-STREET,
+                                  MASTER_CITY = :MASTER-CITY,
+                                  MASTER_STATE = :MASTER-STATE,
+                                  MASTER_ZIP = :MASTER-ZIP,
+                                  MASTER_PHONE_AREA = :MASTER-PHONE-AREA,
+                                  MASTER_PHONE_PREFIX = :MASTER-PHONE-PREFIX,
+                                  MASTER_PHONE_BASE = :MASTER-PHONE-BASE,
+                                  MASTER_PHONE_EXT = :MASTER-PHONE-EXT,
+                                  MASTER_START_YYYY = :MASTER-START-YYYY,
+                                  MASTER_START_MM = :MASTER-START-MM,
+                                  MASTER_START_DD = :MASTER-START-DD,
+                                  MASTER_BALANCE = :MASTER-BALANCE
+                                      WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+0010F8                 END-EXEC
+
+00110D             ELSE
+00110E                 IF NOT (YES-NO = "N" OR "n")
+00111F                     DISPLAY "WRONG OPTION, TRY AGAIN!" AT 2420 ERASE LINE
+001128                                             INITIALIZE YES-NO
+00112D                     PERFORM SLEEP-TIMER
+                       ELSE
+001134                     EXIT PERFORM
+                       END-IF
+                   END-IF
+                           END-IF
+           END-PERFORM.
+
+       CONFIRM-DELETE.
+00113F             PERFORM UNTIL 1 = 2
+001149                       INITIALIZE YES-NO
+00114E                   DISPLAY "ARE YOU SURE YOU WANT TO DELETE THIS RECORD? Y/N" AT 2420 ERASE LINE
+001157                 ACCEPT YES-NO AT 2460
+001163                 IF YES-NO = "Y" OR "y"
+                                               EXEC SQL
+                               DELETE FROM CUSTOMER
+                                   WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+0011CB                     END-EXEC
+
+0011E0                 ELSE
+0011E1                     IF NOT (YES-NO = "N" OR "n")
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0010
+
+
+0011F2                         DISPLAY "WRONG OPTION, TRY AGAIN!" AT 2420 ERASE LINE
+0011FB                                                 INITIALIZE YES-NO
+001200                         PERFORM SLEEP-TIMER
+                           ELSE
+001207                         EXIT PERFORM
+                           END-IF
+                       END-IF
+                   END-PERFORM.
+
+       DROP-TABLE.
+001212     EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC
+
+               DROP TABLE CUSTOMER
+001238     END-EXEC
+
+               DROP TABLE TRANSACTIONS
+00126A     END-EXEC
+
+
+       CREATE-TABLE.
+00127E     EXEC SQL
+              CREATE TABLE CUSTOMER (
+                   MASTER_ACCOUNT        INTEGER
+                         CONSTRAINT MASTER_ACCOUNT PRIMARY KEY,
+                   MASTER_NAME         CHAR(30),
+                   MASTER_STREET       CHAR(30),
+                   MASTER_CITY         CHAR(30),
+                   MASTER_STATE        CHAR(02),
+                   MASTER_ZIP          CHAR(10),
+                   MASTER_PHONE_AREA   CHAR(03),
+                   MASTER_PHONE_PREFIX CHAR(03),
+                   MASTER_PHONE_BASE   CHAR(04),
+                   MASTER_PHONE_EXT    CHAR(05),
+                   MASTER_START_YYYY   CHAR(04),
+                   MASTER_START_MM     CHAR(02),
+                   MASTER_START_DD     CHAR(02),
+                   MASTER_BALANCE      DECIMAL(7,2)
+                   )
+           END-EXEC
+
+               CREATE TABLE TRANSACTIONS (
+                   TRANS_ACCOUNT       INTEGER,
+                   TRANS_YEAR          CHAR(04),
+                   TRANS_MONTH         CHAR(02),
+                   TRANS_DAY           CHAR(02),
+                   TRANS_HOURS         CHAR(02),
+                   TRANS_MINUTES       CHAR(02),
+                   TRANS_SECONDS       CHAR(02),
+                   TRANS_HUNDREDS      CHAR(02),
+                   TRANS_TYPE          CHAR(01),
+                   TRANS_AMOUNT        DECIMAL(7,2)
+                   )
+001300     END-EXEC.
+
+       SQL-DISCONNECT.
+001312     EXEC SQL COMMIT END-EXEC.
+001333     EXEC SQL DISCONNECT ALL END-EXEC
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0011
+
+
+
+
+       CONNECTION-ANIMATION.
+001364     DISPLAY "CONNECTING TO THE SERVER." AT 0525
+00136E     CALL "C$SLEEP" USING 0.5
+001379     DISPLAY "." at 0550
+001383     CALL "C$SLEEP" USING 0.5
+00138E     DISPLAY "." at 0551
+001398     CALL "C$SLEEP" USING 0.5
+0013A3     DISPLAY "." at 0552
+0013AD     CALL "C$SLEEP" USING 0.5
+0013B8     DISPLAY "." at 0553.
+
+
+       ERROR-EXIT.
+0013C6     EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC
+
+0013D2         DISPLAY "ACCOUNT ALREADY EXISTS!" AT 0625 ERASE SCREEN
+0013DB         DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+0013E5         SET SQL-ERROR To TRUE
+0013EB         ACCEPT OMITTED AT 0850
+0013FA     ELSE
+0013FB         DISPLAY "SQL ERROR: SQLCODE  " AT 0510 ERASE SCREEN
+001405         DISPLAY SQLCODE OF SQLCA AT 0535
+00140F         DISPLAY "           SQLSTATE " AT 0710
+               SQLSTATE OF SQLCA AT 0735
+001422         DISPLAY SQLERRMC OF SQLCA AT 0935
+00142C         ACCEPT OMITTED
+001442         EXEC SQL DISCONNECT ALL END-EXEC
+
+            END-IF.
+
+       VALIDATE-DATA.
+001454     IF UPDATES = "Y"
+00145D                     IF WS-MASTER-ACCOUNT NOT = UPDATES-ACCOUNT
+001468                             DISPLAY "YOU CANNOT UPDATE THE ACCOUNT NUMBER!" AT 2420 ERASE LINE
+001471                             ACCEPT OMITTED AT 2460
+00147D             MOVE UPDATES-ACCOUNT TO WS-MASTER-ACCOUNT
+001483                             MOVE 0417 TO CURSOR-POS
+001489                             EXIT PARAGRAPH
+                           END-IF
+                   END-IF
+00148D     IF WS-MASTER-ACCOUNT = SPACES
+001496         DISPLAY "ACCOUNT NUMBER IS REQUIRED!" AT 2420 ERASE LINE
+00149F         ACCEPT OMITTED AT 2450
+0014AB         MOVE 0417 TO CURSOR-POS
+0014B1         EXIT PARAGRAPH
+           END-IF
+0014B5     IF MASTER-NAME = SPACES
+0014BE         DISPLAY "NAME IS REQUIRED!" AT 2420 ERASE LINE
+0014C7         ACCEPT OMITTED AT 2450
+0014D3         MOVE 0607 TO CURSOR-POS
+0014D9         EXIT PARAGRAPH
+           END-IF
+0014DD             IF MASTER-STREET = SPACES
+0014E6                     DISPLAY "STREET IS REQUIRED!" AT 2420 ERASE LINE
+0014EF                     ACCEPT OMITTED AT 2450
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0012
+
+
+0014FB                     MOVE 0809 TO CURSOR-POS
+001501                     EXIT PARAGRAPH
+                   END-IF
+001505             IF MASTER-CITY = SPACES
+00150E                     DISPLAY "CITY IS REQUIRED!" AT 2420 ERASE LINE
+001517                     ACCEPT OMITTED AT 2450
+001523                     MOVE 1007 TO CURSOR-POS
+001529                     EXIT PARAGRAPH
+                   END-IF
+00152D             IF MASTER-STATE = SPACES
+001536                     DISPLAY "STATE IS REQUIRED!" AT 2420 ERASE LINE
+00153F                     ACCEPT OMITTED AT 2450
+00154B                     MOVE 1208 TO CURSOR-POS
+001551                     EXIT PARAGRAPH
+                   END-IF
+001555             IF MASTER-ZIP = SPACES
+00155E                     DISPLAY "ZIP CODE IS REQUIRED!" AT 2420 ERASE LINE
+001567                     ACCEPT OMITTED AT 2450
+001573                     MOVE 1411 TO CURSOR-POS
+001579                     EXIT PARAGRAPH
+                   END-IF
+00157D             IF MASTER-PHONE-AREA = SPACES
+001586                     DISPLAY "AREA CODE IS REQUIRED!" AT 2420 ERASE LINE
+00158F                     ACCEPT OMITTED AT 2450
+00159B                     MOVE 1613 TO CURSOR-POS
+0015A1                     EXIT PARAGRAPH
+                   END-IF
+0015A5             IF MASTER-PHONE-PREFIX = SPACES
+0015AE                     DISPLAY "PHONE PREFIX IS REQUIRED!" AT 2420 ERASE LINE
+0015B7                     ACCEPT OMITTED AT 2450
+0015C3                     MOVE 1618 TO CURSOR-POS
+0015C9                     EXIT PARAGRAPH
+                   END-IF
+0015CD             IF MASTER-PHONE-BASE = SPACES
+0015D6                     DISPLAY "PHONE NUMBER IS REQUIRED!" AT 2420 ERASE LINE
+0015DF                     ACCEPT OMITTED AT 2450
+0015EB                     MOVE 1622 TO CURSOR-POS
+0015F1                     EXIT PARAGRAPH
+                   END-IF
+0015F5             IF MASTER-START-YYYY = SPACES
+0015FE                     DISPLAY "YEAR IS REQUIRED!" AT 2420 ERASE LINE
+001607                     ACCEPT OMITTED AT 2450
+001613                     MOVE 2022 TO CURSOR-POS
+001619                     EXIT PARAGRAPH
+                   END-IF
+00161D             IF MASTER-START-MM = SPACES
+001626                     DISPLAY "MONTH IS REQUIRED!" AT 2420 ERASE LINE
+00162F                     ACCEPT OMITTED AT 2450
+00163B                     MOVE 2027 TO CURSOR-POS
+001641                     EXIT PARAGRAPH
+001648             ELSE
+001649                     IF MASTER-START-MM > 12
+001652                          DISPLAY "INVALID MONTH!" AT 2420 ERASE LINE
+00165B              ACCEPT OMITTED AT 2450
+001667                          MOVE 2027 TO CURSOR-POS
+00166D                          EXIT PARAGRAPH
+                           END-IF
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0013
+
+
+                   END-IF
+001671             IF MASTER-START-DD = SPACES
+00167A                     DISPLAY "DAY IS REQUIRED!" AT 2420 ERASE LINE
+001683                     ACCEPT OMITTED AT 2450
+00168F                     MOVE 2030 TO CURSOR-POS
+001695                     EXIT PARAGRAPH
+                   END-IF
+001699         MOVE MASTER-START-MM TO MONTH-COUNTER
+00169F             IF MASTER-START-DD > MONTH(MONTH-COUNTER)
+0016AE                     DISPLAY "DAY CAN'T BE GREATER THAN " AT 2420 ERASE LINE
+0016B7         DISPLAY MONTH(MONTH-COUNTER) AT 2446
+0016C5                     ACCEPT OMITTED AT 2449
+0016D1         MOVE 2030 TO CURSOR-POS
+0016D7                     EXIT PARAGRAPH
+                   END-IF
+0016DB             IF MASTER-START-DATE > CURRENT-DATE
+0016E5                     DISPLAY "DATE CANNOT BE IN THE FUTURE!" AT 2420 ERASE LINE
+0016EE         ACCEPT OMITTED AT 2455
+0016FA                     MOVE 2022 TO CURSOR-POS
+001700                     EXIT PARAGRAPH
+                   END-IF
+001704             IF WS-MASTER-BALANCE = ZEROS OR WS-MASTER-BALANCE IS NEGATIVE
+001718                     DISPLAY "BALANCE CANNOT BE NEGATIVE OR ZERO!" AT 2420 ERASE LINE
+001721                     ACCEPT OMITTED AT 2455
+00172D                     MOVE 2210 TO CURSOR-POS
+001733                     INITIALIZE MASTER-BALANCE
+001739                     EXIT PARAGRAPH
+                   END-IF
+00173D     SET VALID-DATA TO TRUE.
+
+
+.\Maintenance\maintenance.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0014
+
+
+STATISTICS
+
+Total Lines:         713
+# of Files:            0
+# of Data Items:     134
+# of Paragraphs:      20
+
+Elapsed Time:        0.1 seconds
+Lines/Minute:     388909
+
+
+Code Size:          5962 (00174A)
+Data Size:          4452 (001164)
+Shared Data:         264 (000108)
+Extra Segment:      1026 (000402)
+Thread Segment:       80 (000050)
+Address Table:       472 (0001D8)
+Program Size:      12256 (002FE0)
+
+0 Error(s), 0 Warning(s)

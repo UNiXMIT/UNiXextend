@@ -1,0 +1,127 @@
+SUBJECT: Grid control - variety of enhancements.
+Change Number: ECN-4756
+Status: Complete
+Type of Change: Enhancement
+Priority: Medium
+Defect Number: FE-51126
+
+Date: 2021-12-21
+Product: ACUCOBOL-GT
+Module: Runtime
+New Version: 10.5.0
+
+Machines Affected: Windows
+Known Versions Affected: N/A
+DESCRIPTION of problem or enhancement:
+
+Implemented runtime functionality for the ROW-HEIGHTS, VALIGNMENT and WRAP-TEXT 
+properties, and the ADJUSTABLE-ROWS and CENTERED-ROW-HEADINGS styles.
+
+INSTRUCTIONS for use:
+
+ ADJUSTABLE-ROWS
+     Name: ADJUSTABLE-ROWS
+	 Scope: Grid
+	 Type: Style
+     Description: This style enables the adjustment of row heights by dragging 
+	 row dividers using the mouse. If the ROW-HEADINGS style is also enabled, 
+	 the row dividers will only be draggable within the row headings column.
+	 This style is set when declaring the grid in the screen section.
+	 Resized row heights can be stored in the registry, in the same manner as 
+	 resized column widths are when the ADJUSTABLE-COLUMNS style is enabled.
+	 
+ ROW-HEIGHTS
+     Name: ROW-HEIGHTS
+	 Scope: Grid
+	 Type: Property
+	 Description: This property sets the heights of rows in the grid. It accepts 
+	 an array of positive, non-zero integers. Heights are specified in units of 
+	 lines of text. If the number of rows is greater than the size of the array 
+	 given to this property, the remaining rows will default to a height of 1 
+	 line. 
+ 
+ CENTERED-ROW-HEADINGS
+     Name: CENTERED-ROW-HEADINGS
+	 Scope: Grid
+	 Type: Style
+	 Description: This style, when enabled, vertically centers the grid's row 
+	 headings.
+	 This style is set when declaring the grid in the screen section. 
+	 This style has no effect if the ROW-HEADINGS style is not also enabled.
+	 
+ VALIGNMENT
+     Name: VALIGNMENT
+	 Scope: Cell
+	 Type: Property
+	 Description: This property sets the vertical alignment of text within the 
+	 targeted cell. Accepted values are "T" (top aligned), "B" (bottom aligned),
+	 "C" (vertically center aligned) or "U" (unaligned). Unaligned is equivalent
+	 to top aligned, and is the default setting. 
+	 This property is targeted at a cell after the grid has been loaded, using a 
+	 "modify" statement, similarly to the existing "CELL-DATA" and "CELL-COLOR" 
+	 properties.
+     If VALIGNMENT is set to "B" or "C", the WRAP-TEXT property is disabled for 
+	 that cell. If both WRAP-TEXT and VALIGNMENT are present, whichever is 
+	 specified first takes precedence. 
+	 
+	 
+ WRAP-TEXT
+     Name: WRAP-TEXT
+	 Scope: Cell
+	 Type: Property
+	 Description: This property enables or disables text wrapping within a
+	 cell. Accepted values are 1 (enabled) or 0 (disabled). 
+	 This property is targeted at a cell after the grid has been loaded, using a 
+	 "modify" statement, similarly to the existing "CELL-DATA" and "CELL-COLOR" 
+	 properties. 
+	 WRAP-TEXT is set to 0 (disabled) by default in all cells.
+	 The WRAP-TEXT property cannot be enabled if the targeted cell also has a 
+	 VALIGNMENT property which is set to "B" or "C". If both WRAP-TEXT and 
+	 VALIGNMENT are present, whichever is specified first takes precedence. 
+	 Text wrapping is when text, which is wider than the width of the 
+	 column its cell occupies, is split across multiple lines to reduce its 
+	 width.
+
+
+-=-=- everything below this line gets removed before the ECN is published -=-=-
+
+IMPACTS ON DOCUMENTATION:
+
+Documentation for the new styles and properties will have to be introduced.
+
+WORKAROUND:
+
+None
+
+
+IMPLEMENTATION:
+
+Added functionality to runtime. Most of this was in win3grid.c and grid.c.
+
+
+QA notes:
+
+
+
+
+PATCH notes:
+
+These changes are only for 10.5.0+
+
+
+TIME spent: 30 hours
+
+
+Author: Lachlan Merrill
+
+
+Revisions:
+2022-01-11: Row-heights property is now measured in number of lines of text 
+			rather than pixels. - Lachlan
+2022-01-13: Reformatted descriptions to be more clear and readable. Introduced 
+			descriptions for the WRAP-TEXT and VALIGNMENT properties, and the 
+			CENTERED-ROW-HEADINGS style. Rewrote descriptions for the 
+			ROW-HEIGHTS property and ADJUSTABLE-ROWS style.
+2022-03-07: Correction: WRAP-TEXT does not always take precedence over 
+			VALIGNMENT. Whichever is specified first takes precedence.
+			-- Lachlan

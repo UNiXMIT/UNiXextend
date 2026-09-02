@@ -1,0 +1,6 @@
+MY_VARIABLE I've found my cblconfig
+CODE_PREFIX C:\AcuSamples\dotNetCallsAcu\acu-section
+
+FILE_TRACE           9
+FILE_TRACE_FLUSH     1
+FILE_TRACE_TIMESTAMP 1

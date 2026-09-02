@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<meta http-equiv="Content-Language" content="en-us">
+		<title>ACUCOBOL-GT WrunNetUtil Help</title>
+		<STYLE>
+			h1 { font: 10pt Arial; color:black; font-weight:bold}	
+			h2 { font: 10pt Arial; color:black; font-weight:bold}	
+			h3 { font: 10pt Arial; color:red; font-weight:bold}
+			pre { font: 10pt Arial; color:black;}	
+		</STYLE>
+	</head>
+		<body bgcolor="#C0C0C0" text="#333333" link="#0000FF" vlink="#0000FF" alink="#0000FF">
+			<div style="width: 400px;">
+			<p>
+				<h1 align="center"><a name="#Top">WrunNetUtil Help</h1>	
+			</p>
+			<DIV align="center">
+				<a href="#Overview">Overview</a><BR>
+				<a href="#ProgramPath">Program Path</a><BR>
+				<a href="#Entry">Entry Name</a><BR>
+				<a href="#RuntimePath">Runtime Path</a><BR>
+				<a href="#Parameters">Parameters</a><BR>
+				<a href="#Options">Global Runtime Options</a><BR>
+				<a href="#Debug">Program instance option Debug</a><BR>
+				<a href="#Cache">Program instance option Cache</a><BR>
+			</DIV>
+			<p>
+				<h2 align="center"><a name="#Overview"></a>Overview Of WrunNetUtil</h2>
+			</p>
+			<pre>
+WrunNetUtil demonstrates the use of WrunNet and provides a generic
+.NET interface to the Acucobol runtime.  This utility can be
+used as a .NET testing aid for Acucobol non GUI programs.
+When used with an Acucobol GUI program, this utility will end
+when the Acucobol GUI program is ended because they both are using
+a main window in the same process. 
+WrunNet is added to a project as a reference; therefore, all
+ecncapsulated methods are exposed allowing the programmer native
+.NET interfaces to the Acucobol runtime. 
+See the WrunNet specification. 
+</pre>
+<h3 align="center"><a name="#ProgramPath"></a>Program Path  <a href="#Top">Top</a></h3>
+<pre>				
+The location of the Acucobol object file. This is the full path
+file name. EX: c:\AcuObjects\MyProg.acu 
+If you are executing an entry point, other than the
+main entry, leave this field blank and enter the information
+under Runtime Options preceded by -y.
+EX: -y c:\AcuObjects\MyProg.acu. 
+</pre>
+<h3 align="center"><a name="#Entry"></a>Entry Name  <a href="#Top">Top</a></h3>
+<pre>	
+If the Acucobol program contains Entry Point Names enter a
+name here to start execution at that point. This is used with
+the -y option.
+</pre>
+<h3 align="center"><a name="#RuntimePath"></a>Runtime Path  <a href="#Top">Top</a></h3>
+<pre>
+Directory path where wrun32.dll, Acucobol runtime, is located.
+WrunNet uses the installation registry setting for Runtime Path when
+this field is empty.   
+</pre>
+<h3 align="center"><a name="#Parameters"></a>Parameters  <a href="#Top">Top</a></h3>
+<pre>
+To pass parameter data to the Acucobol program press the AddParam button.
+A dialog will display showing a parameter number, a combo box populated
+with data types and an edit box for the field value.  For each parameter
+enter values and select a data type then press the Add button.
+When all parameters are entered press the Done button.  As each parameter
+is added it will display in the list view on the main screen.
+Upon return from execution the Return-Value column in the list view will
+display the updated field values. 
+</pre>
+<h3 align="center"><a name="#Options"></a>Global Runtime Options  <a href="#Top">Top</a></h3>
+<pre>
+Any runtime options, see Acucobol runtime command line options.
+If you enter command line options press the AcuInitialize button before
+pressing the Execute button.  Acuinitialize is for global options which
+are in effect for the entire life of WrunNetUtil. Only one AcuInitIalize
+is allowed per WrunNetUtil execution. 
+</pre>
+<h3 align="center"><a name="#Debug"></a>Debug  <a href="#Top">Top</a></h3>
+<pre>
+Program instance option Debug invokes the Acucobol Debuger.
+See related Acucobol runtime documentation.			
+</pre>		
+<h3 align="center"><a name="#Cache"></a>Cache  <a href="#Top">Top</a></h3>
+<pre>
+Program instance option Cache Sets program caching on.
+See related Acucobol runtime documentation.						
+</pre>
+</div>
+</body>
+</html>
+

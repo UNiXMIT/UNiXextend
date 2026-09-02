@@ -1,0 +1,19 @@
+      * WebBrowser.wrk
+      * WebBrowser.wrk is generated from C:\Work\Demo\extend10.1\WebBrowser.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       77 Key-Status IS SPECIAL-NAMES CRT STATUS PIC 9(4) VALUE 0.
+           88 Exit-Pushed VALUE 27.
+           88 Message-Received VALUE 95.
+           88 Event-Occurred VALUE 96.
+           88 Screen-No-Input-Field VALUE 97.
+           88 Screen-Time-Out VALUE 99.
+      * property-defined variable
+
+      * user-defined variable
+       77 WebBrowser-Handle
+                  USAGE IS HANDLE OF WINDOW VALUE NULL.
+       77 WebBrowser-Mn-1-Handle
+                  USAGE IS HANDLE OF MENU VALUE NULL.
+       77 WebBrowser-Wb-1-Value        PIC  X(26)
+                  VALUE IS "http://www.microfocus.com".

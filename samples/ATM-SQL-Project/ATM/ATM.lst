@@ -1,0 +1,320 @@
+.\ATM\ATM.sqb        Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0001
+"C:\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\bin\ccbl32" -lfo .\ATM\@.lst -ga -ps -sl -sp "C:\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def" -o .\ATM\@.acu .\ATM\ATM.sqb
+
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.                      ATM.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+
+       DATA DIVISION.
+       FILE SECTION.
+
+       WORKING-STORAGE SECTION.
+       01 CURRENT-DATE.
+              05 DATE-YYYY                 PIC 9(4).
+              05 DATE-MM                   PIC 9(2).
+              05 DATE-DD                   PIC 9(2).
+       01 MENU-TITLE                    PIC X(30) VALUE SPACES.
+       01 USER-OPTION                   PIC X VALUE SPACE.
+       01 ERROR-FLAG                    PIC X VALUE SPACES.
+              88 VALID                     VALUE "Y".
+              88 NOT-VALID                 VALUE "N".
+              88 STOP-RUN                  VALUE "S".
+       01 ERROR-MESSAGE                 PIC X(30) VALUE SPACES.
+       01 ENTER-AMOUNT                  PIC S9(5)V99 VALUE ZEROS.
+       01 RECEIPT-REQUIRED              PIC X VALUE SPACE.
+       01 WS-MASTER-RECORD.
+              05 WS-MASTER-ACCOUNT              PIC X(4) VALUE SPACES.
+           05 WS-MASTER-NAME            PIC X(30) VALUE SPACES.
+              05 WS-MASTER-BALANCE         PIC S9(5)V99 VALUE ZEROS.
+
+       01 TRANS-COUNT                   PIC 9 VALUE ZEROS.
+       01 TRANSACTIONS.
+           05 TRANSACTION-TABLE OCCURS 3 TIMES.
+               10 TABLE-DATE.
+                   15 TABLE-YEAR            PIC 9(4).
+                   15 TABLE-MONTH           PIC 9(2).
+                   15 TABLE-DAY             PIC 9(2).
+               10 TABLE-TIME.
+                   15 TABLE-HOURS           PIC 9(2).
+                   15 TABLE-MINUTES         PIC 9(2).
+                   15 TABLE-SECONDS         PIC 9(2).
+                   15 TABLE-HUNDREDS        PIC 9(2).
+               10 TABLE-TYPE                PIC X.
+                   88 TABLE-DEPOSIT         VALUE "D".
+                   88 TABLE-WITHDRAW        VALUE "W".
+               10 TABLE-AMOUNT              PIC -$$$$$9.99.
+
+       SCREEN SECTION.
+       01 WELCOME-SCREEN.
+                   05 BLANK SCREEN.
+                   05 LINE 01 COLUMN 33 "WELCOME TO".
+                   05 LINE 03 COLUMN 26 "THE BANK OF VISUAL COBOL".
+                   05 LINE 05 COLUMN 31 FROM DATE-DD.
+                   05 LINE 05 COLUMN 34 "/".
+
+.\ATM\ATM.sqb        Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0002
+
+
+                   05 LINE 05 COLUMN 36 FROM DATE-MM.
+                   05 LINE 05 COLUMN 39 "/".
+                   05 LINE 05 COLUMN 41 FROM DATE-YYYY.
+                   05 LINE 09 COLUMN 20 "PLEASE ENTER YOUR ACCOUNT CODE TO BEGIN".
+                   05 LINE 11 COLUMN 36 USING WS-MASTER-ACCOUNT.
+
+       01 MAIN-MENU.
+                   05 BLANK SCREEN.
+                   05 LINE 01 COLUMN 30 "WELCOME".
+                   05 LINE 01 COLUMN 38 FROM WS-MASTER-NAME.
+                   05 LINE 04 COLUMN 15 "1 = WITHDRAWL".
+                   05 LINE 06 COLUMN 15 "2 = DEPOSIT".
+               05 LINE 08 COLUMN 15 "3 = TRANSACTION ENQUIRY".
+                   05 LINE 10 COLUMN 15 "4 = QUIT".
+                   05 LINE 13 COLUMN 15 "CHOOSE AN OPTION - ".
+           05 LINE 13 COLUMN 34 TO USER-OPTION REQUIRED AUTO.
+
+       01 AMOUNT-SCREEN.
+                   05 BLANK SCREEN.
+                   05 LINE 01 COLUMN 35 FROM MENU-TITLE.
+                   05 LINE 06 COLUMN 20 "CURRENT BALANCE: ".
+                   05 LINE 06 COLUMN 38 PIC -$$$$$9.99 FROM WS-MASTER-BALANCE.
+                   05 LINE 10 COLUMN 20 "PLEASE ENTER AN AMOUNT: ".
+                   05 LINE 10 COLUMN 43 PIC -$$$$$9.99 USING ENTER-AMOUNT.
+
+       01 TRANSACTION-SCREEN.
+                   05 BLANK SCREEN.
+                   05 LINE 01 COLUMN 20 "TRANSACTION ENQUIRY FOR ".
+                   05 LINE 01 COLUMN 44 USING WS-MASTER-NAME.
+                   05 LINE 06 COLUMN 18 "DATE".
+                   05 LINE 06 COLUMN 31 "TIME".
+                   05 LINE 06 COLUMN 42 "TYPE".
+                   05 LINE 06 COLUMN 49 "AMOUNT".
+                   05 LINE 08 COLUMN 18 "----------".
+                   05 LINE 08 COLUMN 31 "--------".
+                   05 LINE 08 COLUMN 42 "----".
+                   05 LINE 08 COLUMN 49 "----------".
+                   05 LINE 10 COLUMN 18 FROM TABLE-DAY(1).
+           05 LINE 10 COLUMN 20 "/".
+                   05 LINE 10 COLUMN 21 FROM TABLE-MONTH(1).
+                   05 LINE 10 COLUMN 23 "/".
+                   05 LINE 10 COLUMN 24 FROM TABLE-YEAR(1).
+                   05 LINE 10 COLUMN 31 FROM TABLE-HOURS(1).
+                   05 LINE 10 COLUMN 33 ":".
+                   05 LINE 10 COLUMN 34 FROM TABLE-MINUTES(1).
+                   05 LINE 10 COLUMN 36 ":".
+                   05 LINE 10 COLUMN 37 FROM TABLE-SECONDS(1).
+                   05 LINE 10 COLUMN 42 FROM TABLE-TYPE(1).
+                   05 LINE 10 COLUMN 49 PIC -$$$$$9.99 USING TABLE-AMOUNT(1).
+                   05 LINE 12 COLUMN 18 FROM TABLE-DAY(2).
+           05 LINE 12 COLUMN 20 "/".
+                   05 LINE 12 COLUMN 21 FROM TABLE-MONTH(2).
+                   05 LINE 12 COLUMN 23 "/".
+                   05 LINE 12 COLUMN 24 FROM TABLE-YEAR(2).
+                   05 LINE 12 COLUMN 31 FROM TABLE-HOURS(2).
+                   05 LINE 12 COLUMN 33 ":".
+                   05 LINE 12 COLUMN 34 FROM TABLE-MINUTES(2).
+
+.\ATM\ATM.sqb        Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0003
+
+
+                   05 LINE 12 COLUMN 36 ":".
+                   05 LINE 12 COLUMN 37 FROM TABLE-SECONDS(2).
+                   05 LINE 12 COLUMN 42 FROM TABLE-TYPE(2).
+                   05 LINE 12 COLUMN 49 PIC -$$$$$9.99 USING TABLE-AMOUNT(2).
+                   05 LINE 14 COLUMN 18 FROM TABLE-DAY(3).
+           05 LINE 14 COLUMN 20 "/".
+                   05 LINE 14 COLUMN 21 FROM TABLE-MONTH(3).
+                   05 LINE 14 COLUMN 23 "/".
+                   05 LINE 14 COLUMN 24 FROM TABLE-YEAR(3).
+                   05 LINE 14 COLUMN 31 FROM TABLE-HOURS(3).
+                   05 LINE 14 COLUMN 33 ":".
+                   05 LINE 14 COLUMN 34 FROM TABLE-MINUTES(3).
+                   05 LINE 14 COLUMN 36 ":".
+                   05 LINE 14 COLUMN 37 FROM TABLE-SECONDS(3).
+                   05 LINE 14 COLUMN 42 FROM TABLE-TYPE(3).
+                   05 LINE 14 COLUMN 49 PIC -$$$$$9.99 USING TABLE-AMOUNT(3).
+
+       PROCEDURE DIVISION.
+
+000005     CALL "processing"
+00000C     PERFORM DISPLAY-WELCOME-SCREEN
+000010     CALL "SQL-DISCONNECT"
+000017     CANCEL "processing"
+00001B     GOBACK.
+
+       DISPLAY-WELCOME-SCREEN.
+000025             PERFORM UNTIL 1 = 2
+00002E                     INITIALIZE WS-MASTER-RECORD ERROR-MESSAGE ERROR-FLAG
+000046                 ACCEPT CURRENT-DATE FROM DATE YYYYMMDD
+00004C                 DISPLAY WELCOME-SCREEN
+000068                 ACCEPT WELCOME-SCREEN
+000075         IF WS-MASTER-ACCOUNT = 9999
+00007F             EXIT PERFORM
+000086         ELSE
+000087                             CALL "INITIAL" USING WS-MASTER-RECORD ERROR-FLAG ERROR-MESSAGE
+00009A                             PERFORM ERROR-HANDLING
+00009E                             IF VALID
+0000A7                 PERFORM MAIN-MENU
+                                   ELSE
+0000AE                                     DISPLAY "ACCOUNT DOESN'T EXIST!" AT 0625 ERASE SCREEN
+0000B7                 DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+0000C0                 ACCEPT OMITTED AT 0850
+                                   END-IF
+                           END-IF
+                   END-PERFORM.
+
+       MAIN-MENU.
+0000D2     PERFORM UNTIL 1 = 2
+0000DB                 DISPLAY MAIN-MENU
+0000E9         ACCEPT MAIN-MENU
+0000F6         EVALUATE USER-OPTION
+                                   WHEN "1"
+0000FF                                     PERFORM WITHDRAWL
+                                   WHEN "2"
+00010E                                     PERFORM DEPOSIT
+                                   WHEN "3"
+00011D                                     PERFORM ENQUIRY
+
+.\ATM\ATM.sqb        Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0004
+
+
+                                   WHEN "4"
+00012C                                     EXIT PERFORM
+                                   WHEN OTHER
+000133                             DISPLAY "WRONG OPTION!" AT 1515
+00013C                             DISPLAY "PRESS ENTER TO CONTINUE." AT 1715
+000145                             ACCEPT OMITTED AT 1740
+                           END-EVALUATE
+           END-PERFORM.
+
+       WITHDRAWL.
+000157             MOVE "WITHDRAWL" TO MENU-TITLE
+00015F             PERFORM UNTIL 1 = 2
+000168                     INITIALIZE ENTER-AMOUNT RECEIPT-REQUIRED ERROR-MESSAGE ERROR-FLAG
+00017B                 DISPLAY AMOUNT-SCREEN
+000195                 ACCEPT AMOUNT-SCREEN
+0001A3         EVALUATE ENTER-AMOUNT
+                                   WHEN <= 0
+0001AE                                     DISPLAY "AMOUNT CANNOT BE ZERO OR NEGATIVE!" AT 2420
+0001B7                                     ACCEPT OMITTED AT 2455
+                                   WHEN > WS-MASTER-BALANCE
+0001CF                                     DISPLAY "INSUFFICIENT FUNDS! PRESS ENTER TO CONTINUE." AT 2420
+0001D8                                     ACCEPT OMITTED AT 2465
+0001E3                                     EXIT PERFORM
+                                   WHEN OTHER
+0001EA                                     PERFORM RECEIPT-CHECK
+0001EE                                     CALL "WITHDRAWL" USING WS-MASTER-RECORD ENTER-AMOUNT RECEIPT-REQUIRED ERROR-MESSAGE ERROR
+000209                                     PERFORM ERROR-HANDLING
+00020D                                     EXIT PERFORM
+               END-EVALUATE
+           END-PERFORM.
+
+       DEPOSIT.
+000218             MOVE "DEPOSIT" TO MENU-TITLE
+000220             PERFORM UNTIL 1 = 2
+000229                     INITIALIZE ENTER-AMOUNT RECEIPT-REQUIRED ERROR-MESSAGE ERROR-FLAG
+00023C                 DISPLAY AMOUNT-SCREEN
+000256                 ACCEPT AMOUNT-SCREEN
+000264         EVALUATE ENTER-AMOUNT
+                                   WHEN <= 0
+00026F                                     DISPLAY "AMOUNT CANNOT BE ZERO OR NEGATIVE!" AT 2420
+000278                                     ACCEPT OMITTED AT 2455
+                                   WHEN OTHER
+000286                                     IF (ENTER-AMOUNT + WS-MASTER-BALANCE) >= 100000
+000293                                             DISPLAY "TOO MUCH MONEY. OPEN AN ISA!" AT 2420
+00029C                                             ACCEPT OMITTED AT 2455
+0002AA                                     ELSE
+0002AB                                         PERFORM RECEIPT-CHECK
+0002AF                                         CALL "DEPOSIT" USING WS-MASTER-RECORD ENTER-AMOUNT RECEIPT-REQUIRED ERROR-MESSAGE ERR
+0002CA                                             PERFORM ERROR-HANDLING
+0002CE                                         EXIT PERFORM
+                                           END-IF
+               END-EVALUATE
+           END-PERFORM.
+
+       ENQUIRY.
+0002D9             INITIALIZE TRANS-COUNT TRANSACTIONS ERROR-MESSAGE ERROR-FLAG
+00032D             CALL "ENQUIRY" USING WS-MASTER-RECORD TRANS-COUNT TRANSACTIONS ERROR-MESSAGE ERROR-FLAG
+
+.\ATM\ATM.sqb        Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0005
+
+
+000348             PERFORM ERROR-HANDLING
+00034C     PERFORM DISPLAY-TRANSACTION-SCREEN.
+
+       RECEIPT-CHECK.
+000354             PERFORM UNTIL 1 = 2
+00035D                 DISPLAY "WOULD YOU LIKE A RECEIPT? Y/N" AT 2420
+000366                 ACCEPT RECEIPT-REQUIRED AT 2450
+000372                     IF RECEIPT-REQUIRED = "Y" OR "y"
+000383             EXIT PERFORM
+00038A         ELSE
+00038B             IF NOT (RECEIPT-REQUIRED = "N" OR "n")
+00039C                 DISPLAY "WRONG OPTION, TRY AGAIN!" AT 2420 ERASE SCREEN
+0003A5                                     INITIALIZE RECEIPT-REQUIRED
+0003AA                 ACCEPT OMITTED AT 2445
+0003B9             ELSE
+0003BA                 EXIT PERFORM
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+       DISPLAY-TRANSACTION-SCREEN.
+0003C5             EVALUATE TRANS-COUNT
+                           WHEN <= 0
+0003CE                             DISPLAY "NO TRANSACTIONS RECORDED!" AT 0625 ERASE SCREEN
+0003D7                         DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+0003E0                         ACCEPT OMITTED AT 0850
+                       WHEN 1
+0003F6                     DISPLAY TRANSACTION-SCREEN
+000486                     DISPLAY "PRESS ENTER TO CONTINUE." AT 1218 ERASE END SCREEN
+000490                         ACCEPT OMITTED AT 1443
+                           WHEN 2
+0004A7                             DISPLAY TRANSACTION-SCREEN
+000537                     DISPLAY "PRESS ENTER TO CONTINUE." AT 1418 ERASE END SCREEN
+000541                         ACCEPT OMITTED AT 1443
+                           WHEN 3
+000558                             DISPLAY TRANSACTION-SCREEN
+0005E8                     DISPLAY "PRESS ENTER TO CONTINUE." AT 1618 ERASE END SCREEN
+0005F2                         ACCEPT OMITTED AT 1643
+                   END-EVALUATE.
+
+       ERROR-HANDLING.
+000602             IF NOT (ERROR-MESSAGE = SPACES)
+00060B                     DISPLAY ERROR-MESSAGE AT 2420 ERASE END SCREEN
+000614                     ACCEPT OMITTED AT 2455
+00061F                     IF STOP-RUN
+000628                          STOP RUN
+                           END-IF
+                   END-IF.
+
+
+.\ATM\ATM.sqb        Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0006
+
+
+STATISTICS
+
+Total Lines:         276
+# of Files:            0
+# of Data Items:     110
+# of Paragraphs:       9
+
+Elapsed Time:        0.0 seconds
+Lines/Minute:     828000
+
+
+Code Size:          1587 (000633)
+Data Size:          2066 (000812)
+Shared Data:          56 (000038)
+Extra Segment:       618 (00026A)
+Thread Segment:       36 (000024)
+Address Table:       256 (000100)
+Program Size:       4619 (00120B)
+
+0 Error(s), 0 Warning(s)

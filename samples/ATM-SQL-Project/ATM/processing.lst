@@ -1,0 +1,473 @@
+.\ATM\processing.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0001
+"C:\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\bin\ccbl32" -lfo .\ATM\@.lst -ga -ps -sl -sp "C:\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def" -o .\ATM\@.acu .\ATM\processing.sqb
+
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.                      Processing.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+       SELECT RECEIPT-FILE     ASSIGN TO DYNAMIC RECEIPT-NAME
+                                                           ORGANIZATION IS LINE SEQUENTIAL
+                                                           FILE STATUS IS FILE-STATUS.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD RECEIPT-FILE.
+       01 RECEIPT-RECORD                PIC X(80).
+
+       WORKING-STORAGE SECTION.
+       01 FILE-STATUS.
+              05 FS-BYTE1                   PIC X VALUE SPACE.
+          05 FS-BYTE2                   PIC X COMP-5 VALUE ZEROS.
+       01 RECEIPT-COUNTER               PIC 99 VALUE ZERO.
+       01 RECEIPT-NAME                  PIC X(13) VALUE SPACES.
+       01 PRINT-RECEIPT               PIC X(100) VALUE SPACES.
+
+       01 PRINT-HEADING.
+                   05 FILLER                    PIC X(30) VALUE SPACES.
+                   05 FILLER                    PIC X(20) VALUE "BANK OF VISUAL COBOL".
+       01 PRINT-LINE-1.
+                   05 FILLER                    PIC X(9) VALUE "ACCOUNT: ".
+                   05 PRINT-ACCOUNT             PIC X(4) VALUE SPACES.
+       01 PRINT-LINE-2.
+                   05 FILLER                    PIC X(6) VALUE "DATE: ".
+                   05 PRINT-DATE.
+                           10 PRINT-DAY                 PIC 9(2) VALUE ZEROS.
+                           10 FILLER                PIC X VALUE "/".
+               10 PRINT-MONTH                   PIC 9(2) VALUE ZEROS.
+                           10 FILLER                PIC X VALUE "/".
+                           10 PRINT-YEAR                PIC 9(4) VALUE ZEROS.
+       01 PRINT-LINE-3.
+                   05 FILLER                    PIC X(6) VALUE "TIME: ".
+           05 PRINT-TIME.
+               10 PRINT-HOURS           PIC 9(2) VALUE ZEROS.
+                           10 FILLER                PIC X VALUE ":".
+               10 PRINT-MINUTES                 PIC 9(2) VALUE ZEROS.
+                           10 FILLER                PIC X VALUE ":".
+               10 PRINT-SECONDS                 PIC 9(2) VALUE ZEROS.
+       01 PRINT-LINE-4.
+                   05 FILLER                    PIC X(19) VALUE "TRANSACTION TYPE: ".
+                   05 PRINT-TYPE                PIC X VALUE SPACES.
+       01 PRINT-LINE-5.
+                   05 FILLER                    PIC X(21) VALUE "TRANSACTION AMOUNT: ".
+                   05 PRINT-AMOUNT              PIC $$$,$$9.99 VALUE ZEROS.
+       01 PRINT-LINE-6.
+                   05 FILLER                    PIC X(18) VALUE "CURRENT BALANCE: ".
+
+.\ATM\processing.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0002
+
+
+                   05 PRINT-BALANCE             PIC $$$,$$9.99 VALUE ZEROS.
+
+       EXEC SQL INCLUDE SQLCA END-EXEC.
+
+       01  SQLCA IS EXTERNAL.
+           05  SQLCAID                PIC X(8).
+           05  SQLCABC         COMP-5 PIC S9(9).
+           05  SQLCODE         COMP-5 PIC S9(9).
+           05  SQLERRM.
+               10  SQLERRML    COMP-5 PIC S9(4).
+               10  SQLERRMC           PIC X(70).
+           05  SQLERRP                PIC X(8).
+           05  SQLERRD OCCURS 6 TIMES COMP-5 PIC S9(9).
+           05  SQLWARN.
+               10  SQLWARN0           PIC X.
+               10  SQLWARN1           PIC X.
+               10  SQLWARN2           PIC X.
+               10  SQLWARN3           PIC X.
+               10  SQLWARN4           PIC X.
+               10  SQLWARN5           PIC X.
+               10  SQLWARN6           PIC X.
+               10  SQLWARN7           PIC X.
+               10  SQLWARN8           PIC X.
+               10  SQLWARN9           PIC X.
+               10  SQLWARNA           PIC X.
+           05  SQLSTATE               PIC X(5).
+           05  SQLERRM-PREFIX.
+               10  SQLERRPL    COMP-5 PIC S9(4).
+               10  SQLERRPC           PIC X(70).
+
+
+
+       EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01 MASTER-RECORD.
+           05 MASTER-ACCOUNT                    PIC 9(4) COMP-5 VALUE 0.
+           05 MASTER-NAME                       PIC X(30).
+           05 MASTER-ADDRESS.
+               10 MASTER-STREET                 PIC X(30).
+               10 MASTER-CITY                   PIC X(30).
+               10 MASTER-STATE                  PIC X(2).
+               10 MASTER-ZIP                    PIC X(10).
+           05 MASTER-PHONE.
+               10 MASTER-PHONE-AREA     PIC X(3).
+               10 MASTER-PHONE-PREFIX   PIC X(3).
+               10 MASTER-PHONE-BASE     PIC X(4).
+               10 MASTER-PHONE-EXT      PIC X(5).
+           05 MASTER-START-DATE.
+               10 MASTER-START-YYYY     PIC X(4).
+               10 MASTER-START-MM       PIC X(2).
+               10 MASTER-START-DD       PIC X(2).
+           05 MASTER-BALANCE            PIC S9(5)V9(2) COMP-3 VALUE 0.
+
+       01 SERVER-NAME                   PIC X(30).
+       01 USERID                        PIC X(8).
+       01 PASSWD.
+           49 PASSWD-LENGTH             PIC S9(4) COMP-5 VALUE 0.
+           49 PASSWD-NAME               PIC X(18).
+
+.\ATM\processing.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0003
+
+
+       EXEC SQL END DECLARE SECTION END-EXEC.
+
+       EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01 TRANS-RECORD.
+           05 TRANS-ACCOUNT                     PIC 9(4) COMP-5 VALUE 0.
+           05 TRANS-DATE.
+                           10 TRANS-YEAR                PIC X(4).
+                           10 TRANS-MONTH               PIC X(2).
+                           10 TRANS-DAY                 PIC X(2).
+           05 TRANS-TIME.
+               10 TRANS-HOURS           PIC X(2).
+               10 TRANS-MINUTES                 PIC X(2).
+               10 TRANS-SECONDS                 PIC X(2).
+               10 TRANS-HUNDREDS                PIC X(2).
+           05 TRANS-TYPE                        PIC X.
+           05 TRANS-AMOUNT                  PIC S9(5)V9(2) COMP-3 VALUE 0.
+       EXEC SQL END DECLARE SECTION END-EXEC.
+
+       LINKAGE SECTION.
+       01 WS-MASTER-RECORD.
+           05 WS-MASTER-ACCOUNT                 PIC X(4) VALUE SPACES.
+           05 WS-MASTER-NAME            PIC X(30) VALUE SPACES.
+           05 WS-MASTER-BALANCE         PIC S9(5)V99 VALUE ZEROS.
+
+       01 ERROR-FLAG                    PIC X VALUE SPACES.
+           88 VALID                     VALUE "Y".
+           88 NOT-VALID                 VALUE "N".
+           88 STOP-RUN                  VALUE "S".
+       01 ERROR-MESSAGE                 PIC X(30) VALUE SPACES.
+       01 ENTER-AMOUNT                  PIC S9(5)V99 VALUE ZEROS.
+       01 RECEIPT-REQUIRED              PIC X VALUE SPACES.
+
+       01 TRANS-COUNT                   PIC 9 VALUE ZEROS.
+       01 TRANSACTIONS.
+           05 TRANSACTION-TABLE OCCURS 3 TIMES.
+               10 TABLE-DATE.
+                   15 TABLE-YEAR            PIC 9(4).
+                   15 TABLE-MONTH           PIC 9(2).
+                   15 TABLE-DAY             PIC 9(2).
+               10 TABLE-TIME.
+                   15 TABLE-HOURS           PIC 9(2).
+                   15 TABLE-MINUTES         PIC 9(2).
+                   15 TABLE-SECONDS         PIC 9(2).
+                   15 TABLE-HUNDREDS        PIC 9(2).
+               10 TABLE-TYPE                PIC X.
+               10 TABLE-AMOUNT              PIC -$$$$$9.99.
+
+       01 SQL-ERROR-CHECK              PIC X VALUE SPACES.
+           88 SQL-ERROR                VALUE "Y".
+           88 SQL-NO-ERROR             VALUE "N".
+
+       SCREEN SECTION.
+
+       PROCEDURE DIVISION.
+       DECLARATIVES.
+
+       FILE-ERROR-HANDLING SECTION.
+
+.\ATM\processing.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0004
+
+
+000005             USE AFTER EXCEPTION PROCEDURE ON RECEIPT-FILE.
+                   EVALUATE FILE-STATUS
+              WHEN "10"
+00000E           MOVE "NO MORE RECORDS FOUND!" TO ERROR-MESSAGE
+                          WHEN "30"
+000021                           MOVE "PERMANENT ERROR!" TO ERROR-MESSAGE
+000029                       SET STOP-RUN TO TRUE
+                          WHEN "35"
+00003A                           MOVE "FILE NOT FOUND!" TO ERROR-MESSAGE
+000042                       SET STOP-RUN TO TRUE
+              WHEN OTHER
+00004B               IF FS-BYTE1 = "9"
+000054              IF FS-BYTE2 = 65
+00005E                 MOVE "FILE LOCKED!" TO ERROR-MESSAGE
+                    ELSE
+000069                 IF FS-BYTE2 = 68
+000073                    MOVE "RECORD LOCKED!" TO ERROR-MESSAGE
+                        ELSE
+00007E                     STRING "ERROR: FILE STATUS = " FILE-STATUS INTO ERROR-MESSAGE
+00008A                     SET STOP-RUN TO TRUE
+                        END-IF
+                    END-IF
+000093           ELSE
+000094              STRING "ERROR: FILE STATUS = " FILE-STATUS INTO ERROR-MESSAGE
+0000A0              SET STOP-RUN TO TRUE
+                 END-IF
+           END-EVALUATE
+0000A6     GOBACK.
+
+       END DECLARATIVES.
+
+0000AF     EXEC SQL WHENEVER SQLERROR PERFORM ERROR-EXIT END-EXEC
+
+0000B6     PERFORM SQL-CONNECT
+0000BA     GOBACK.
+
+       READ-RECORD.
+0000C4             ENTRY "INITIAL" USING WS-MASTER-RECORD ERROR-FLAG ERROR-MESSAGE
+0000C5             MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+           EXEC SQL
+               SELECT
+                   MASTER_NAME,
+                   MASTER_BALANCE
+               INTO
+                   :MASTER-NAME,
+                   :MASTER-BALANCE
+                  FROM CUSTOMER
+                       WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+0001A8     END-EXEC
+
+0001BF         SET NOT-VALID TO TRUE
+0001C8     ELSE
+0001C9         SET VALID TO TRUE
+0001CF         MOVE MASTER-NAME TO WS-MASTER-NAME
+0001D6         MOVE MASTER-BALANCE TO WS-MASTER-BALANCE
+           END-IF
+0001DC     GOBACK.
+
+.\ATM\processing.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0005
+
+
+
+       WITHDRAWL.
+0001E6             ENTRY "WITHDRAWL" USING WS-MASTER-RECORD ENTER-AMOUNT RECEIPT-REQUIRED ERROR-FLAG ERROR-MESSAGE
+0001E7             MOVE "W" TO TRANS-TYPE
+0001ED     SUBTRACT ENTER-AMOUNT FROM MASTER-BALANCE
+0001F7     MOVE MASTER-BALANCE TO WS-MASTER-BALANCE
+           EXEC SQL
+               UPDATE CUSTOMER
+                   SET MASTER_BALANCE = :MASTER-BALANCE
+                           WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+000271     END-EXEC
+
+000283     PERFORM RECEIPT
+000287     GOBACK.
+
+       DEPOSIT.
+000291             ENTRY "DEPOSIT" USING WS-MASTER-RECORD ENTER-AMOUNT RECEIPT-REQUIRED ERROR-FLAG ERROR-MESSAGE
+000292             MOVE "D" TO TRANS-TYPE
+000298     ADD ENTER-AMOUNT TO MASTER-BALANCE
+00029E     MOVE MASTER-BALANCE TO WS-MASTER-BALANCE
+           EXEC SQL
+               UPDATE CUSTOMER
+                   SET MASTER_BALANCE = :MASTER-BALANCE
+                           WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+000318     END-EXEC
+
+00032A     PERFORM RECEIPT
+00032E     GOBACK.
+
+       TRANSACTION-ENQUIRY.
+000338             ENTRY "ENQUIRY" USING WS-MASTER-RECORD TRANS-COUNT TRANSACTIONS ERROR-FLAG ERROR-MESSAGE
+000339     MOVE WS-MASTER-ACCOUNT TO TRANS-ACCOUNT
+           EXEC SQL
+               SET ROWCOUNT 3
+00037A     END-EXEC
+
+               DECLARE COBCUR1 CURSOR FOR
+                   SELECT TRANS_YEAR,
+                          TRANS_MONTH,
+                          TRANS_DAY,
+                          TRANS_HOURS,
+                          TRANS_MINUTES,
+                          TRANS_SECONDS,
+                          TRANS_HUNDREDS,
+                          TRANS_TYPE,
+                          TRANS_AMOUNT
+                   FROM TRANSACTIONS
+                   WHERE TRANS_ACCOUNT = :TRANS-ACCOUNT
+                   ORDER BY TRANS_YEAR DESC,
+                            TRANS_MONTH DESC,
+                            TRANS_DAY DESC,
+                            TRANS_HOURS DESC,
+                            TRANS_MINUTES DESC,
+                            TRANS_SECONDS DESC,
+                            TRANS_HUNDREDS DESC
+000388     END-EXEC
+
+
+.\ATM\processing.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0006
+
+
+               OPEN COBCUR1
+0003F7     END-EXEC
+
+               EXEC SQL
+                   FETCH COBCUR1 INTO :TRANS-YEAR,
+                                      :TRANS-MONTH,
+                                      :TRANS-DAY,
+                                      :TRANS-HOURS,
+                                      :TRANS-MINUTES,
+                                      :TRANS-SECONDS,
+                                      :TRANS-HUNDREDS,
+                                      :TRANS-TYPE,
+                                      :TRANS-AMOUNT
+00053A         END-EXEC
+
+00054A             ADD 1 TO TRANS-COUNT
+00054F             MOVE TRANS-DATE TO TABLE-DATE(TRANS-COUNT)
+00055C             MOVE TRANS-TIME TO TABLE-TIME(TRANS-COUNT)
+000569             MOVE TRANS-TYPE TO TABLE-TYPE(TRANS-COUNT)
+000575             MOVE TRANS-AMOUNT TO TABLE-AMOUNT(TRANS-COUNT)
+               END-IF
+           END-PERFORM
+           EXEC SQL
+               CLOSE COBCUR1
+0005A6     END-EXEC
+
+
+       UPDATE-TRANSACTIONS.
+0005BE             MOVE MASTER-ACCOUNT TO TRANS-ACCOUNT
+0005C4             ACCEPT TRANS-DATE FROM DATE YYYYMMDD
+0005CA             ACCEPT TRANS-TIME FROM TIME
+0005D0             MOVE ENTER-AMOUNT TO TRANS-AMOUNT
+           EXEC SQL
+               INSERT INTO TRANSACTIONS VALUES
+                   (:TRANS-ACCOUNT,
+                    :TRANS-YEAR,
+                    :TRANS-MONTH,
+                    :TRANS-DAY,
+                    :TRANS-HOURS,
+                    :TRANS-MINUTES,
+                    :TRANS-SECONDS,
+                    :TRANS-HUNDREDS,
+                    :TRANS-TYPE,
+                    :TRANS-AMOUNT)
+000732     END-EXEC.
+
+       RECEIPT.
+000744             IF RECEIPT-REQUIRED = "Y" OR "y"
+000755                     ADD 1 TO RECEIPT-COUNTER
+00075A                     STRING  "RECEIPT" DELIMITED BY SIZE
+                                       RECEIPT-COUNTER DELIMITED BY SIZE
+                                           ".TXT" DELIMITED BY SIZE
+                                           INTO RECEIPT-NAME
+                           END-STRING
+00076B                     PERFORM RECEIPT-DATA
+00076F                     OPEN OUTPUT RECEIPT-FILE
+00077A                             PERFORM RECEIPT-PRINT
+
+.\ATM\processing.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0007
+
+
+00077E                     CLOSE RECEIPT-FILE
+000789         STRING "NOTEPAD " DELIMITED BY SIZE
+                      RECEIPT-NAME DELIMITED BY SIZE
+                      INTO PRINT-RECEIPT
+000796         CALL "C$SYSTEM" USING PRINT-RECEIPT 97
+           END-IF.
+
+       RECEIPT-DATA.
+0007A9             MOVE MASTER-ACCOUNT TO PRINT-ACCOUNT
+0007B0             MOVE TRANS-DAY TO PRINT-DAY
+0007B6             MOVE TRANS-MONTH TO PRINT-MONTH
+0007BC             MOVE TRANS-YEAR TO PRINT-YEAR
+0007C2             MOVE TRANS-HOURS TO PRINT-HOURS
+0007C8             MOVE TRANS-MINUTES TO PRINT-MINUTES
+0007CE             MOVE TRANS-SECONDS TO PRINT-SECONDS
+0007D4             MOVE TRANS-TYPE TO PRINT-TYPE
+0007DA             MOVE TRANS-AMOUNT TO PRINT-AMOUNT
+0007E1             MOVE MASTER-BALANCE TO PRINT-BALANCE.
+
+       RECEIPT-PRINT.
+0007EC             WRITE RECEIPT-RECORD FROM PRINT-HEADING
+0007FF     WRITE RECEIPT-RECORD FROM PRINT-LINE-1
+                           AFTER ADVANCING 2 LINES
+000817             WRITE RECEIPT-RECORD FROM PRINT-LINE-2
+                           AFTER ADVANCING 2 LINES
+00082F             WRITE RECEIPT-RECORD FROM PRINT-LINE-3
+                           AFTER ADVANCING 2 LINES
+000847             WRITE RECEIPT-RECORD FROM PRINT-LINE-4
+                           AFTER ADVANCING 2 LINES
+00085F             WRITE RECEIPT-RECORD FROM PRINT-LINE-5
+                           AFTER ADVANCING 2 LINES
+000877             WRITE RECEIPT-RECORD FROM PRINT-LINE-6
+                           AFTER ADVANCING 2 LINES.
+
+       INITIALIZATION-ROUTINE.
+000893     ACCEPT SERVER-NAME FROM ENVIRONMENT "SQL_SERVER_NAME"
+00089B     ACCEPT USERID FROM ENVIRONMENT "SQL_USERNAME"
+0008A3     ACCEPT PASSWD-NAME FROM ENVIRONMENT "SQL_PASSWORD"
+0008AB     INSPECT PASSWD-NAME TALLYING PASSWD-LENGTH FOR CHARACTERS BEFORE INITIAL " ".
+
+       SQL-CONNECT.
+0008C3     IF USERID NOT = SPACES
+                   EXEC SQL CONNECT TO :SERVER-NAME AS C1
+                           USER :USERID USING :PASSWD
+0008F6             END-EXEC
+
+                   EXEC SQL CONNECT TO :SERVER-NAME AS C1
+000923             END-EXEC
+
+00092A     IF SQLCODE < 0
+000933         PERFORM ERROR-EXIT
+           END-IF.
+
+       SQL-DISCONNECT.
+00093B     ENTRY "SQL-DISCONNECT"
+000956     EXEC SQL COMMIT END-EXEC
+
+
+.\ATM\processing.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0008
+
+
+
+
+       ERROR-EXIT.
+000988     EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC
+
+000994         DISPLAY "ACCOUNT ALREADY EXISTS!" AT 0625 ERASE SCREEN
+00099D         DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+0009A6         SET SQL-ERROR To TRUE
+0009AC         ACCEPT OMITTED AT 0850
+0009BA     ELSE
+0009BB         DISPLAY "SQL ERROR: SQLCODE  " AT 0510 ERASE SCREEN
+0009C4         DISPLAY SQLCODE OF SQLCA AT 0535
+0009CD         DISPLAY "           SQLSTATE " AT 0710
+               SQLSTATE OF SQLCA AT 0735
+0009DE         DISPLAY SQLERRMC OF SQLCA AT 0935
+0009E7         ACCEPT OMITTED
+0009FD         EXEC SQL DISCONNECT ALL END-EXEC
+
+            END-IF.
+
+.\ATM\processing.sqb Tue Feb 26 15:54:45 2019  ACUCOBOL-GT v10.2.1  Page: 0009
+
+
+STATISTICS
+
+Total Lines:         418
+# of Files:            1
+# of Data Items:     128
+# of Paragraphs:      14
+
+Elapsed Time:        0.0 seconds
+Lines/Minute:     278666
+
+
+Code Size:          2578 (000A12)
+Data Size:          1846 (000736)
+Shared Data:         264 (000108)
+Extra Segment:       434 (0001B2)
+Thread Segment:       56 (000038)
+Address Table:       540 (00021C)
+Program Size:       5718 (001656)
+
+0 Error(s), 0 Warning(s)

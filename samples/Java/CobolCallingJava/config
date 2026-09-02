@@ -1,0 +1,3 @@
+JAVA_LIBRARY_NAME jvm.dll
+JAVA_OPTIONS=-Djava.class.path=C:\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\bin\CVM.jar;.;
+PRELOAD_JAVA_LIBRARY 1

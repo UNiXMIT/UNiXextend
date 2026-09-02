@@ -1,0 +1,16 @@
+.basicwinclass td {
+	background-color: lightcyan !important;
+}
+
+.basicpbclass {
+    border-width: 1px;
+    border-radius: 4px;
+}
+
+#specwinid td{
+    background-color: #ff2247 !important;
+}
+
+#specpbid{
+    background: #ff2247 !important;
+)

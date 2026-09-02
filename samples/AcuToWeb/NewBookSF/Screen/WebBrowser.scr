@@ -1,0 +1,13 @@
+      * WebBrowser.scr
+      * WebBrowser.scr is generated from C:\Work\Demo\extend10.1\WebBrowser.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       01 WebBrowser.
+           03 WebBrowser-Wb-1, Web-Browser, 
+              COL 1.00, LINE 1.00, LINES 47.00 CELLS, SIZE 70.00 CELLS, 
+              ID IS 1, VALUE WebBrowser-Wb-1-Value.
+           03 WebBrowser-Pb-1, Push-Button, 
+              COL 27.00, LINE 50.00, LINES 3.00 CELLS, 
+              SIZE 14.00 CELLS, 
+              ID IS 2, SELF-ACT, CANCEL-BUTTON, 
+              TITLE "Exit".

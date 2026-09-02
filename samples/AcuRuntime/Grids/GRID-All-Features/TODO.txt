@@ -1,0 +1,98 @@
+
+> KNOWN ISUES in the COBOL source code to optimize:
+
+update-hidden-columns - OK
+update-moved-columns  - OK
+move-column-back      - OK
+move-column-forward   - OK
+reset-columns         - OK
+search-grid           - OK
+
+--------------------------------------------------------------------------------
+
+> Defects to raise as definitely they don't depend from my code:
+
+AcuRuntime 10.5.0 Alpha (2022-03-31):
+OCTCR50A258057 - 10.5 Alpha: MODIFY ROW-HEIGHTS should be better documented
+OCTCR50A260061 - 10.5 Alpha: MODIFY ROW-HEIGHTS = 0 does not update the Registry
+ROW-HEIGHTS is similar to DISPLAY-COLUMNS - Should be better documented
+ROW-HEIGHTS should better be similar to ROW-COLOR-PATTERN property - Enhancement Request?
+
+AcuRuntime 10.5.0 Alpha (2022-03-31):
+OCTCR50A259052 - 10.5 Alpha: WRAP-TEXT can be applied only once
+
+AcuRuntime 10.5.0 Alpha (2022-03-31):
+WRAP-TEXT cannot be applied to the whole Grid in a single MODIFY (you have to go CELL by CELL) - Enhancement Request?
+
+AcuRuntime 10.5.0 Alpha (2022-03-31):
+OCTCR50A260069 - 10.5 Alpha: CENTERED-ROW-HEADINGS is NOT saved in the Registry
+
+AcuRuntime 10.5.0 Alpha (2022-03-31):
+OCTCR50A259056 - 10.5 Alpha: VALIGNMENT does not work properly at the second attempt
+
+
+AcuRuntime:
+when adjustable-pressed and moveable-pressed
+When you click on either the "ADJUSTABLE-COLUMNS" or the "MOVEABLE-COLUMNS",
+a "modify grid-1" is executed.
+This makes the down-ward arrow of the grid scroll-bar to disappear.
+
+AcuRuntime:
+At the same time, the horizontal scroll-bar should appear as soon as you enlarge a column enough.
+Unfortunately, this does not occur easily and always.
+(if you take the standard gridctl.cbl the horizontal scroll-bar is shown every time the grid goes beyond the right-hand side border)
+I tried to add HSCROLL directly in the screen section, but I see it gives no improvements.
+Just compile with the following command-line to include:
+ccbl32 -ga -si HSCROLL gridctl-MoveAndHide.cbl
+or exclude (default) the horizontal bar:
+ccbl32 -ga -sx HSCROLL gridctl-MoveAndHide.cbl
+
+AcuRuntime:
+You can hide the first column, even if it's designed as a row header.
+I can avoid this in the code, by starting loops from 2 (ws-first-usable-col), but it should be automatic.
+Unless I've missed anything in my code.
+Just compile with the following command-line to include (default):
+ccbl32 -ga -si ROW gridctl-MoveAndHide.cbl
+or exclude the Row Header from the count and make it hideable:
+ccbl32 -ga -sx ROW gridctl-MoveAndHide.cbl
+
+AcuRuntime:
+If I set "lines 36" in the "display standard graphical window",
+then the screen is displayed way larger.
+Just move the screen and it takes the expected size.
+Keep "lines 35" and this does not occur.
+
+
+AcuThin/AcuToWeb:
+The work made by the two Check-Boxes is delayed.
+You have to click twice to enable the related Labels and Combo-Boxes.
+At runtime, you need to click only once.
+! SOLVED (It may be interesting to understand if it's actually an issue. See the exception-handler old and new.)
+
+AcuThin/AcuToWeb:
+The sort of the columns is slow in Thin Client.
+You can click on the "TITLE" col header 10 times.
+One of the clicks will go lost.
+In AcuToWeb, this is much more evident.
+You have to click 10 times to have 1 sort working.
+RPI 647776 - AcuThin: Click on Grid Col Header does not answer every time  
+OCTCR50A27039 - AcuThin: When a thread updates the UI, mouse clicks can be lost 
+
+AcuToWeb:
+If you hide a column and then you try to move it, the Grid is not correct anymore.
+I am not sure it's "legal" to move a hidden column, but it works fine at runtime and Thin Client.
+
+AcuToWeb:
+The status bar is displayed mid-way when you are using a mobile or a tablet.
+It may hide buttons.
+Tapping around is very difficult, if not impossible at all.
+For example, try to resize a column manually tapping and dragging a column header.
+
+--------------------------------------------------------------------------------
+
+> TO DO
+
+In verify-cell-settings, inquire the current status of the cell for WRAP-TEXT and VALIGNEMENT.
+Then update the check-boxes for each click on a cell.
+
+--------------------------------------------------------------------------------

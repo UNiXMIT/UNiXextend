@@ -1,0 +1,27 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.                      called.
+       AUTHOR.  MIT. 
+       REMARKS.
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           DECIMAL-POINT IS COMMA.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+      *SELECT
+
+       DATA DIVISION.
+       FILE SECTION.
+      *FD
+
+       WORKING-STORAGE SECTION.
+       01 WS-TEST-DATA             PIC X(10) IS EXTERNAL.
+
+       LINKAGE SECTION.
+
+       SCREEN SECTION.
+
+       PROCEDURE DIVISION.
+           DISPLAY MESSAGE WS-TEST-DATA TITLE "CALLED"
+           MOVE "Hello B" TO WS-TEST-DATA
+           GOBACK.

@@ -1,0 +1,66 @@
+
+> KNOWN ISUES in the COBOL source code to optimize:
+
+update-hidden-columns - OK
+update-moved-columns  - OK
+move-column-back      - OK
+move-column-forward   - OK
+reset-columns         - OK
+search-grid           - OK
+
+--------------------------------------------------------------------------------
+
+> RPIs to raise as definitely they don't depend from my code:
+
+AcuRuntime:
+when adjustable-pressed and moveable-pressed
+When you click on either the "ADJUSTABLE-COLUMNS" or the "MOVEABLE-COLUMNS",
+a "modify grid-1" is executed.
+This makes the down-ward arrow of the grid scroll-bar to disappear.
+
+AcuRuntime:
+At the same time, the horizontal scroll-bar should appear as soon as you enlarge a column enough.
+Unfortunately, this does not occur easily and always.
+(if you take the standard gridctl.cbl the horizontal scroll-bar is shown every time the grid goes beyond the right-hand side border)
+I had to add HSCROLL directly in the screen section.
+Just compile with the following command-line to show this behaviour:
+ccbl32 -ga -sx HSCROLL gridctl-MoveAndHide.cbl
+
+AcuRuntime:
+You can hide the first column, even if it's designed as a row header.
+I can avoid this in the code, by starting two loops from 2 (ws-num-row-h + 1), but it should be automatic.
+Unless I've missed anything in the code.
+
+AcuThin/AcuToWeb:
+The work made by the two Check-Boxes is delayed.
+You have to click twice to enable the related Labels and Combo-Boxes.
+At runtime, you need to click only once.
+
+AcuToWeb:
+The status bar is displayed mid-way when you are using a mobile or a tablet.
+It may hide buttons.
+Tapping around is very difficult, if not impossible at all.
+For example, try to resize a column manually tapping and dragging a column header.
+
+--------------------------------------------------------------------------------
+
+> TO DO
+
+1. REGISTRY-KEY is a new property. By setting this, the runtime will store
+information about the user's modifications to the grid (sort-column,
+physical-columns, column widths) in the registry, and load those again
+when a COBOL program with the same key name is run. (Hopefully, this
+will be unique for each grid in your application.) If the number of
+columns in the grid doesn't match the number of columns stored in the
+registry, the values in the registry are ignored. This should be one
+of the last properties to be set, because when the runtime is notified
+that this property is set is when it actually loads the values.
+
+2. CURSOR-PHYS-X is a new property that corresponds to the physical column the 
+cursor occupies (CURSOR-X corresponds to the logical column instead).  When 
+either CURSOR-PHYS-X or CURSOR-X is set, both properties are updated appropriately after
+the cursor is moved.
+
+--------------------------------------------------------------------------------
+
+

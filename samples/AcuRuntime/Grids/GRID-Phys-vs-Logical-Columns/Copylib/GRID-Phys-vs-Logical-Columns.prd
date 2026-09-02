@@ -1,0 +1,100 @@
+      * GRID-Phys-vs-Logical-Columns.prd
+      * GRID-Phys-vs-Logical-Columns.prd is generated from C:\AcuSamples\GRID\GRID-MoveAndHide-1040-ECN-4697\GRID-Phys-vs-Logical-Columns\GRID-Phys-vs-Logical-Columns.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       Acu-Initial-Routine.
+      *    Before-Init
+      * get system information
+           ACCEPT System-Information FROM System-Info
+      * get terminal information
+           ACCEPT Terminal-Abilities FROM Terminal-Info
+      *    After-Init
+           .
+
+       Acu-Exit-Rtn.
+      * destroy font
+           PERFORM Acu-Exit-Font
+      * destroy bitmap
+           PERFORM Acu-Exit-Bmp
+      *    After-Program
+           EXIT PROGRAM
+           STOP RUN
+           .
+       Acu-Exit-Font.
+      * font destroy
+           .
+
+       Acu-Exit-Bmp.
+      * bitmap destroy
+           .
+
+       Acu-Screen1-Routine.
+      *    Before-Routine
+           PERFORM Acu-Screen1-Scrn
+           PERFORM Acu-Screen1-Proc
+      *    After-Routine
+           .
+
+       Acu-Screen1-Scrn.
+           PERFORM Acu-Screen1-Create-Win
+           PERFORM Acu-Screen1-Init-Data
+           .
+
+       Acu-Screen1-Create-Win.
+      *    Before-Create
+      * display screen
+              DISPLAY Standard GRAPHICAL WINDOW
+                 LINES 43.00, SIZE 64.00, CELL HEIGHT 10, 
+                 CELL WIDTH 10, AUTO-MINIMIZE, COLOR IS 65793, 
+                 LABEL-OFFSET 0, LINK TO THREAD, MODELESS, NO SCROLL, 
+                 WITH SYSTEM MENU, 
+                 TITLE "Screen", TITLE-BAR, NO WRAP, 
+                 EVENT PROCEDURE Screen1-Event-Proc, 
+                 HANDLE IS Screen1-Handle
+      * toolbar
+           DISPLAY Screen1 UPON Screen1-Handle
+           PERFORM Screen1-Aft-Create
+           .
+
+       Acu-Screen1-Init-Data.
+      *    Before-Initdata
+           PERFORM Acu-Screen1-Gd-1-Content
+           PERFORM Acu-Screen1-Gd-2-Content
+      *    After-Initdata
+           .
+      * Screen1
+       Acu-Screen1-Proc.
+           PERFORM UNTIL Exit-Pushed
+              ACCEPT Screen1  
+                 ON EXCEPTION PERFORM Acu-Screen1-Evaluate-Func
+              END-ACCEPT
+           END-PERFORM
+           DESTROY Screen1-Handle
+           INITIALIZE Key-Status
+           .
+
+      * Screen1-Gd-1
+       Acu-Screen1-Gd-1-Content.
+           .
+
+      * Screen1-Gd-2
+       Acu-Screen1-Gd-2-Content.
+           .
+
+      * Screen1
+       Acu-Screen1-Evaluate-Func.
+           EVALUATE TRUE
+              WHEN Exit-Pushed
+                 PERFORM Acu-Screen1-Exit
+              WHEN Event-Occurred
+                 IF Event-Type = Cmd-Close
+                    PERFORM Acu-Screen1-Exit
+                 END-IF
+           END-EVALUATE
+           MOVE 1 TO Accept-Control
+           .
+
+       Acu-Screen1-Exit.
+           SET Exit-Pushed TO TRUE
+           .
+

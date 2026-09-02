@@ -1,0 +1,685 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.                      Maintenance.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+           CURSOR     IS  CURSOR-POS.
+
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+
+       DATA DIVISION.
+       FILE SECTION.
+
+       WORKING-STORAGE SECTION.
+       EXEC SQL INCLUDE SQLCA END-EXEC.
+
+       EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01 MASTER-RECORD.
+           05 MASTER-ACCOUNT    		PIC 9(4) COMP-5 VALUE 0.
+           05 MASTER-NAME        		PIC X(30).
+           05 MASTER-ADDRESS.
+               10 MASTER-STREET  		PIC X(30).
+               10 MASTER-CITY      		PIC X(30).
+               10 MASTER-STATE   		PIC X(2).
+               10 MASTER-ZIP       		PIC X(10).
+           05 MASTER-PHONE.
+               10 MASTER-PHONE-AREA     PIC X(3).
+               10 MASTER-PHONE-PREFIX  	PIC X(3).
+               10 MASTER-PHONE-BASE    	PIC X(4).
+               10 MASTER-PHONE-EXT      PIC X(5).
+           05 MASTER-START-DATE.
+               10 MASTER-START-YYYY     PIC X(4).
+               10 MASTER-START-MM     	PIC X(2).
+               10 MASTER-START-DD       PIC X(2).
+           05 MASTER-BALANCE            PIC S9(5)V9(2) COMP-3 VALUE 0.
+
+       01 SERVER-NAME                   PIC X(30).
+       01 USERID                        PIC X(8).
+       01 PASSWD.
+           49 PASSWD-LENGTH             PIC S9(4) COMP-5 VALUE 0.
+           49 PASSWD-NAME               PIC X(18).
+       EXEC SQL END DECLARE SECTION END-EXEC.
+
+       EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01 TRANS-RECORD.
+           05 TRANS-ACCOUNT     		PIC 9(4) COMP-5 VALUE 0.
+           05 TRANS-DATE.
+			   10 TRANS-YEAR       		PIC X(4).
+			   10 TRANS-MONTH      		PIC X(2).
+			   10 TRANS-DAY         	PIC X(2).
+           05 TRANS-TIME.
+               10 TRANS-HOURS        	PIC X(2).
+               10 TRANS-MINUTES   		PIC X(2).
+               10 TRANS-SECONDS   		PIC X(2).
+               10 TRANS-HUNDREDS 		PIC X(2).     
+           05 TRANS-TYPE        		PIC X.
+           05 TRANS-AMOUNT   		    PIC S9(5)V9(2) COMP-3 VALUE 0.
+       EXEC SQL END DECLARE SECTION END-EXEC.
+       
+       01 FILE-STATUS.
+          05 FS-BYTE1                  PIC X VALUE SPACE.
+          05 FS-BYTE2                  PIC X COMP-5 VALUE ZEROS.
+       01 USER-OPTION                  PIC X VALUE SPACE.
+       01 EDITED-BALANCE               PIC -$$$$$9.99.
+       01 YES-NO                       PIC X VALUE SPACE.
+       01 MENU-TITLE                   PIC X(30).
+       01 VALIDATE                     PIC X VALUE SPACES.
+           88 VALID-DATA               VALUE "Y".
+           88 NOT-VALID                VALUE "N".
+       01 UPDATES                      PIC X VALUE "N".
+       01 UPDATES-ACCOUNT              PIC X(4) COMP-5.
+       01 CURSOR-POS.
+           05 CURSOR-LINE              PIC 9(2).
+           05 CURSOR-COL               PIC 9(2).
+       01 CURRENT-DATE.
+          05 DATE-YYYY                PIC 9(4).
+          05 DATE-MM                  PIC 9(2).
+          05 DATE-DD                  PIC 9(2).
+       01 MONTH-DATA                  PIC X(24) VALUE "312831303130313130313031".
+       01 MONTH-TABLE REDEFINES MONTH-DATA.
+          05 MONTH PIC 9(2) OCCURS 12 TIMES.
+       01 MONTH-COUNTER PIC 9(2).
+       01 WS-MASTER-ACCOUNT            PIC 9(4).
+       01 WS-MASTER-BALANCE            PIC S9(5)V99.
+
+       01 SQL-ERROR-CHECK              PIC X VALUE SPACES.
+           88 SQL-ERROR                VALUE "Y".
+           88 SQL-NO-ERROR             VALUE "N".
+
+       LINKAGE SECTION.
+
+       SCREEN SECTION.
+       01 MAIN-MENU.
+           05 BLANK SCREEN.
+           05 LINE 01 COLUMN 35 "MAIN MENU".
+           05 LINE 04 COLUMN 15 "1 = ADD CUSTOMER".
+           05 LINE 06 COLUMN 15 "2 = VIEW CUSTOMER".
+           05 LINE 08 COLUMN 15 "3 = UPDATE CUSTOMER".
+           05 LINE 04 COLUMN 45 "4 = DELETE CUSTOMER".
+           05 LINE 06 COLUMN 45 "5 = INITIALIZE DB".
+           05 LINE 08 COLUMN 45 "9 = QUIT".
+           05 LINE 11 COLUMN 30 "CHOOSE AN OPTION - ".
+           05 LINE 11 COLUMN 49 TO USER-OPTION REQUIRED AUTO.
+      
+       01 DISPLAY-RECORD.
+           05 BLANK SCREEN .
+           05 LINE 01 COLUMN 30 FROM MENU-TITLE.
+           05 LINE 04 COLUMN 11 "ACCOUNT NUMBER: ".
+           05 LINE 04 COLUMN 27 PIC 9(4) USING WS-MASTER-ACCOUNT REQUIRED.
+           05 LINE 06 COLUMN 11 "NAME: ".
+           05 LINE 06 COLUMN 17 PIC X(30) USING MASTER-NAME REQUIRED.
+           05 LINE 08 COLUMN 11 "STREET: ".
+           05 LINE 08 COLUMN 19 PIC X(30) USING MASTER-STREET REQUIRED.
+           05 LINE 10 COLUMN 11 "CITY: ".
+           05 LINE 10 COLUMN 17 PIC X(30) USING MASTER-CITY REQUIRED.
+           05 LINE 12 COLUMN 11 "STATE: ".
+           05 LINE 12 COLUMN 18 PIC X(2) USING MASTER-STATE REQUIRED.
+           05 LINE 14 COLUMN 11 "ZIP CODE: ".
+           05 LINE 14 COLUMN 21 PIC X(10) USING MASTER-ZIP REQUIRED.
+           05 LINE 16 COLUMN 11 "TELEPHONE: ".
+           05 LINE 16 COLUMN 22 "(".
+           05 LINE 16 COLUMN 23 PIC 9(3) USING MASTER-PHONE-AREA REQUIRED AUTO.
+           05 LINE 16 COLUMN 26 ")".
+           05 LINE 16 COLUMN 28 PIC 9(3) USING MASTER-PHONE-PREFIX REQUIRED AUTO.
+           05 LINE 16 COLUMN 31 "-".
+           05 LINE 16 COLUMN 32 PIC 9(4) USING MASTER-PHONE-BASE REQUIRED.
+           05 LINE 18 COLUMN 11 "EXTENSION: ".
+           05 LINE 18 COLUMN 22 PIC 9(5) USING MASTER-PHONE-EXT.
+           05 LINE 20 COLUMN 11 "START DATE YYYYMMDD: ".
+           05 LINE 20 COLUMN 32 PIC 9(4) USING MASTER-START-YYYY REQUIRED AUTO.
+           05 LINE 20 COLUMN 36 "-".
+           05 LINE 20 COLUMN 37 PIC 9(2) USING MASTER-START-MM REQUIRED AUTO.
+           05 LINE 20 COLUMN 39 "-".
+           05 LINE 20 COLUMN 40 PIC 9(2) USING MASTER-START-DD REQUIRED.
+           05 LINE 22 COLUMN 11 "BALANCE: ".
+           05 LINE 22 COLUMN 20 PIC $$$$$9.99CR USING WS-MASTER-BALANCE REQUIRED.
+		   05 LINE 24 COLUMN 10 "TAB TO MOVE BETWEEN FIELDS. ENTER TO SUBMIT. ESC KEY TO EXIT.".
+
+       PROCEDURE DIVISION.
+           
+           EXEC SQL WHENEVER SQLERROR PERFORM ERROR-EXIT END-EXEC
+           PERFORM INITIALIZATION-ROUTINE
+           PERFORM SQL-CONNECT
+           PERFORM MAIN-SCREEN
+           PERFORM SQL-DISCONNECT
+           GOBACK.
+       
+       INITIALIZATION-ROUTINE.
+           PERFORM CONNECTION-ANIMATION
+           ACCEPT SERVER-NAME FROM ENVIRONMENT "SQL_SERVER_NAME"
+           ACCEPT USERID FROM ENVIRONMENT "SQL_USERNAME"
+           ACCEPT PASSWD-NAME FROM ENVIRONMENT "SQL_PASSWORD"
+           INSPECT PASSWD-NAME TALLYING PASSWD-LENGTH FOR CHARACTERS BEFORE INITIAL " ".
+
+       SQL-CONNECT.
+           IF USERID NOT = SPACES
+	           EXEC SQL CONNECT TO :SERVER-NAME AS C1
+		           USER :USERID USING :PASSWD
+	           END-EXEC
+           ELSE
+	           EXEC SQL CONNECT TO :SERVER-NAME AS C1
+	           END-EXEC
+           END-IF
+           IF SQLCODE < 0
+               PERFORM ERROR-EXIT
+           END-IF.
+
+       MAIN-SCREEN.
+           PERFORM UNTIL 1 = 2
+               PERFORM DISPLAY-INITIALIZE
+			   ACCEPT CURRENT-DATE FROM DATE YYYYMMDD
+               EVALUATE USER-OPTION
+                   WHEN 1
+					   MOVE "ADD CUSTOMER" TO MENU-TITLE
+                       PERFORM ADD-USER
+                   WHEN 2
+					   MOVE "VIEW CUSTOMER" TO MENU-TITLE
+                       PERFORM VIEW-USER
+                   WHEN 3
+					   MOVE "UPDATE CUSTOMER" TO MENU-TITLE
+                       PERFORM UPDATE-USER
+                   WHEN 4
+					   MOVE "DELETE CUSTOMER" TO MENU-TITLE
+                       PERFORM DELETE-USER
+                   WHEN 9
+                       DISPLAY "EXITING PROGRAM!" AT 1430
+                       PERFORM SLEEP-TIMER
+                       EXIT PERFORM
+                   WHEN 5
+                       PERFORM INITIALIZE-DB
+                   WHEN OTHER
+                       DISPLAY "INCORRECT OPTION!" AT 1430
+                       PERFORM SLEEP-TIMER
+               END-EVALUATE
+           END-PERFORM.
+
+       DISPLAY-INITIALIZE.
+           INITIALIZE USER-OPTION MASTER-RECORD EDITED-BALANCE YES-NO VALIDATE CURSOR-POS
+                      MENU-TITLE UPDATES UPDATES-ACCOUNT WS-MASTER-ACCOUNT WS-MASTER-BALANCE SQL-ERROR-CHECK
+                      SQLCODE
+           DISPLAY MAIN-MENU
+           ACCEPT MAIN-MENU.  
+
+       SLEEP-TIMER.
+           CALL "C$SLEEP" USING 2.
+
+       ADD-USER.
+           PERFORM UNTIL 1 = 2
+			   MOVE CURRENT-DATE TO MASTER-START-DATE
+               MOVE 0417 TO CURSOR-POS
+               DISPLAY DISPLAY-RECORD
+               ACCEPT DISPLAY-RECORD
+                   ON EXCEPTION EXIT PERFORM
+               END-ACCEPT
+               PERFORM VALIDATE-DATA
+			   IF VALID-DATA
+				   INITIALIZE YES-NO
+				   DISPLAY "ARE YOU SURE YOU WANT TO ADD THE RECORD? Y/N" AT 2420 ERASE LINE
+                   ACCEPT YES-NO AT 2465
+                   IF YES-NO = "Y" OR "y"
+                       MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+                       MOVE WS-MASTER-BALANCE TO MASTER-BALANCE
+                       PERFORM WRITE-DATA
+                       EXIT PERFORM
+                   ELSE
+                       IF NOT (YES-NO = "N" OR "n")
+                           DISPLAY "WRONG OPTION, TRY AGAIN!" AT 2420 ERASE LINE
+						   INITIALIZE YES-NO
+                           PERFORM SLEEP-TIMER
+                       ELSE
+                           EXIT PERFORM
+                       END-IF
+                   END-IF
+			   END-IF
+           END-PERFORM. 
+
+       VIEW-USER.
+           PERFORM UNTIL 1 = 2
+               DISPLAY "ENTER ACCOUNT NUMBER: " AT 0625 ERASE SCREEN
+               ACCEPT WS-MASTER-ACCOUNT AT 0647
+               IF WS-MASTER-ACCOUNT = 0
+                   DISPLAY "PLEASE ENTER AN ACCOUNT NUMBER" AT 1025 ERASE LINE
+                   PERFORM SLEEP-TIMER
+               ELSE
+                   MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+                   EXEC SQL
+                       SELECT
+                           MASTER_NAME,        
+                           MASTER_STREET, 
+                           MASTER_CITY,     
+                           MASTER_STATE,      
+                           MASTER_ZIP,         
+                           MASTER_PHONE_AREA,  
+                           MASTER_PHONE_PREFIX,
+                           MASTER_PHONE_BASE,  
+                           MASTER_PHONE_EXT,   
+                           MASTER_START_YYYY,  
+                           MASTER_START_MM,    
+                           MASTER_START_DD,    
+                           MASTER_BALANCE
+                       INTO
+                           :MASTER-NAME,        
+                           :MASTER-STREET,  
+                           :MASTER-CITY,   
+                           :MASTER-STATE,       
+                           :MASTER-ZIP,         
+                           :MASTER-PHONE-AREA,  
+                           :MASTER-PHONE-PREFIX,
+                           :MASTER-PHONE-BASE,  
+                           :MASTER-PHONE-EXT,   
+                           :MASTER-START-YYYY,  
+                           :MASTER-START-MM,    
+                           :MASTER-START-DD,    
+                           :MASTER-BALANCE
+                          FROM CUSTOMER
+                               WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+                   END-EXEC
+                   IF SQLCODE = 100
+                       DISPLAY "ACCOUNT DOESN'T EXIST!" AT 0625 ERASE SCREEN
+                       DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+                       ACCEPT OMITTED AT 0850
+                       EXIT PERFORM
+                   ELSE
+                       MOVE MASTER-BALANCE to WS-MASTER-BALANCE
+                       DISPLAY DISPLAY-RECORD
+                       DISPLAY "PRESS ENTER TO RETURN TO THE MAIN MENU!" AT 2420 ERASE LINE
+                       ACCEPT OMITTED AT 2460
+                       EXIT PERFORM
+                   END-IF
+               END-IF
+           END-PERFORM.
+       
+       UPDATE-USER.
+		   DISPLAY "ENTER ACCOUNT NUMBER: " AT 0625 ERASE SCREEN
+           ACCEPT WS-MASTER-ACCOUNT AT 0647
+           MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+		   MOVE WS-MASTER-ACCOUNT TO UPDATES-ACCOUNT
+           EXEC SQL
+               SELECT
+                   MASTER_NAME,        
+                   MASTER_STREET, 
+                   MASTER_CITY,     
+                   MASTER_STATE,      
+                   MASTER_ZIP,         
+                   MASTER_PHONE_AREA,  
+                   MASTER_PHONE_PREFIX,
+                   MASTER_PHONE_BASE,  
+                   MASTER_PHONE_EXT,   
+                   MASTER_START_YYYY,  
+                   MASTER_START_MM,    
+                   MASTER_START_DD,    
+                   MASTER_BALANCE
+               INTO
+                   :MASTER-NAME,        
+                   :MASTER-STREET,  
+                   :MASTER-CITY,   
+                   :MASTER-STATE,       
+                   :MASTER-ZIP,         
+                   :MASTER-PHONE-AREA,  
+                   :MASTER-PHONE-PREFIX,
+                   :MASTER-PHONE-BASE,  
+                   :MASTER-PHONE-EXT,   
+                   :MASTER-START-YYYY,  
+                   :MASTER-START-MM,    
+                   :MASTER-START-DD,    
+                   :MASTER-BALANCE
+                  FROM CUSTOMER
+                       WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+           END-EXEC
+           IF SQLCODE = 100
+               DISPLAY "ACCOUNT DOESN'T EXIST!" AT 0625 ERASE SCREEN
+               DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+               ACCEPT OMITTED AT 0850
+           ELSE
+               MOVE MASTER-BALANCE to WS-MASTER-BALANCE
+               PERFORM REWRITE-DATA
+           END-IF.
+
+       DELETE-USER.
+		   DISPLAY "ENTER ACCOUNT NUMBER: " AT 0625 ERASE SCREEN
+           ACCEPT WS-MASTER-ACCOUNT AT 0647
+           MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+           EXEC SQL
+               SELECT
+                   MASTER_NAME,        
+                   MASTER_STREET, 
+                   MASTER_CITY,     
+                   MASTER_STATE,      
+                   MASTER_ZIP,         
+                   MASTER_PHONE_AREA,  
+                   MASTER_PHONE_PREFIX,
+                   MASTER_PHONE_BASE,  
+                   MASTER_PHONE_EXT,   
+                   MASTER_START_YYYY,  
+                   MASTER_START_MM,    
+                   MASTER_START_DD,    
+                   MASTER_BALANCE
+               INTO
+                   :MASTER-NAME,        
+                   :MASTER-STREET,  
+                   :MASTER-CITY,   
+                   :MASTER-STATE,       
+                   :MASTER-ZIP,         
+                   :MASTER-PHONE-AREA,  
+                   :MASTER-PHONE-PREFIX,
+                   :MASTER-PHONE-BASE,  
+                   :MASTER-PHONE-EXT,   
+                   :MASTER-START-YYYY,  
+                   :MASTER-START-MM,    
+                   :MASTER-START-DD,    
+                   :MASTER-BALANCE
+                  FROM CUSTOMER
+                       WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+           END-EXEC
+           IF SQLCODE = 100
+               DISPLAY "ACCOUNT DOESN'T EXIST!" AT 0625 ERASE SCREEN
+               DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+               ACCEPT OMITTED AT 0850
+           ELSE
+               MOVE MASTER-BALANCE TO WS-MASTER-BALANCE
+               DISPLAY DISPLAY-RECORD
+               PERFORM CONFIRM-DELETE
+           END-IF.
+       
+       INITIALIZE-DB.
+           PERFORM UNTIL 1 = 2
+               INITIALIZE YES-NO
+               DISPLAY "Initializing the Database will DELETE all" AT 0510 ERASE SCREEN
+               DISPLAY "the data stored in the database." AT 0610
+               DISPLAY "ARE YOU SURE YOU WANT TO PROCEED? Y/N" AT 0810
+               ACCEPT YES-NO AT 0849
+               IF YES-NO = "Y" OR "y"
+                   PERFORM DROP-TABLE
+                   PERFORM CREATE-TABLE
+                   EXIT PERFORM
+               ELSE
+                   IF NOT (YES-NO = "N" OR "n")
+                       DISPLAY "WRONG OPTION, TRY AGAIN!" AT 2420 ERASE LINE
+		               INITIALIZE YES-NO
+                       PERFORM SLEEP-TIMER
+                   ELSE    
+                       EXIT PERFORM
+                   END-IF
+               END-IF
+           END-PERFORM.
+
+       WRITE-DATA.
+           EXEC SQL
+               INSERT INTO CUSTOMER VALUES
+                   (:MASTER-ACCOUNT,
+                    :MASTER-NAME,        
+                    :MASTER-STREET, 
+                    :MASTER-CITY,     
+                    :MASTER-STATE,       
+                    :MASTER-ZIP,         
+                    :MASTER-PHONE-AREA,  
+                    :MASTER-PHONE-PREFIX,
+                    :MASTER-PHONE-BASE,  
+                    :MASTER-PHONE-EXT,   
+                    :MASTER-START-YYYY,  
+                    :MASTER-START-MM,    
+                    :MASTER-START-DD,    
+                    :MASTER-BALANCE)
+           END-EXEC.
+
+       REWRITE-DATA.
+		   MOVE 0607 TO CURSOR-POS
+		   PERFORM UNTIL 1 = 2
+               DISPLAY DISPLAY-RECORD
+               ACCEPT DISPLAY-RECORD
+                   ON EXCEPTION EXIT PERFORM
+               END-ACCEPT
+			   MOVE "Y" TO UPDATES
+               PERFORM VALIDATE-DATA
+			   IF VALID-DATA
+				   INITIALIZE YES-NO
+				   DISPLAY "ARE YOU SURE YOU WANT TO UPDATE THE RECORD? Y/N" AT 2420 ERASE LINE
+                   ACCEPT YES-NO AT 2468
+                   IF YES-NO = "Y" OR "y"
+                       MOVE WS-MASTER-BALANCE TO MASTER-BALANCE
+                       EXEC SQL
+					      UPDATE CUSTOMER
+                              SET MASTER_NAME = :MASTER-NAME,        
+                                  MASTER_STREET = :MASTER-STREET,
+                                  MASTER_CITY = :MASTER-CITY,    
+                                  MASTER_STATE = :MASTER-STATE,     
+                                  MASTER_ZIP = :MASTER-ZIP,       
+                                  MASTER_PHONE_AREA = :MASTER-PHONE-AREA,
+                                  MASTER_PHONE_PREFIX = :MASTER-PHONE-PREFIX,
+                                  MASTER_PHONE_BASE = :MASTER-PHONE-BASE,
+                                  MASTER_PHONE_EXT = :MASTER-PHONE-EXT,  
+                                  MASTER_START_YYYY = :MASTER-START-YYYY, 
+                                  MASTER_START_MM = :MASTER-START-MM,  
+                                  MASTER_START_DD = :MASTER-START-DD,   
+                                  MASTER_BALANCE = :MASTER-BALANCE
+                                      WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT 
+                       END-EXEC
+                       EXIT PERFORM
+                   ELSE
+                       IF NOT (YES-NO = "N" OR "n")
+                           DISPLAY "WRONG OPTION, TRY AGAIN!" AT 2420 ERASE LINE
+						   INITIALIZE YES-NO
+                           PERFORM SLEEP-TIMER
+                       ELSE
+                           EXIT PERFORM
+                       END-IF
+                   END-IF
+			   END-IF
+           END-PERFORM.
+
+       CONFIRM-DELETE.
+		   PERFORM UNTIL 1 = 2
+			     INITIALIZE YES-NO
+		         DISPLAY "ARE YOU SURE YOU WANT TO DELETE THIS RECORD? Y/N" AT 2420 ERASE LINE
+                       ACCEPT YES-NO AT 2460
+                       IF YES-NO = "Y" OR "y"
+					       EXEC SQL
+                               DELETE FROM CUSTOMER
+                                   WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+                           END-EXEC
+                           EXIT PERFORM
+                       ELSE
+                           IF NOT (YES-NO = "N" OR "n")
+                               DISPLAY "WRONG OPTION, TRY AGAIN!" AT 2420 ERASE LINE
+						       INITIALIZE YES-NO
+                               PERFORM SLEEP-TIMER
+                           ELSE
+                               EXIT PERFORM
+                           END-IF
+                       END-IF
+		   END-PERFORM.
+       
+       DROP-TABLE.
+           EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC
+           EXEC SQL
+               DROP TABLE CUSTOMER
+           END-EXEC
+           EXEC SQL
+               DROP TABLE TRANSACTIONS
+           END-EXEC
+           EXEC SQL WHENEVER SQLERROR PERFORM ERROR-EXIT END-EXEC.
+
+       CREATE-TABLE.
+           EXEC SQL
+              CREATE TABLE CUSTOMER (
+                   MASTER_ACCOUNT        INTEGER 
+                         CONSTRAINT MASTER_ACCOUNT PRIMARY KEY,
+                   MASTER_NAME         CHAR(30),
+                   MASTER_STREET       CHAR(30),
+                   MASTER_CITY         CHAR(30),
+                   MASTER_STATE        CHAR(02),
+                   MASTER_ZIP          CHAR(10),
+                   MASTER_PHONE_AREA   CHAR(03),
+                   MASTER_PHONE_PREFIX CHAR(03),
+                   MASTER_PHONE_BASE   CHAR(04),
+                   MASTER_PHONE_EXT    CHAR(05),
+                   MASTER_START_YYYY   CHAR(04),
+                   MASTER_START_MM     CHAR(02),
+                   MASTER_START_DD     CHAR(02),
+                   MASTER_BALANCE      DECIMAL(7,2)
+                   )
+           END-EXEC
+           EXEC SQL
+               CREATE TABLE TRANSACTIONS (
+                   TRANS_ACCOUNT       INTEGER,
+                   TRANS_YEAR          CHAR(04),
+                   TRANS_MONTH         CHAR(02),
+                   TRANS_DAY           CHAR(02),
+                   TRANS_HOURS         CHAR(02),
+                   TRANS_MINUTES       CHAR(02),
+                   TRANS_SECONDS       CHAR(02),
+                   TRANS_HUNDREDS      CHAR(02),
+                   TRANS_TYPE          CHAR(01),
+                   TRANS_AMOUNT        DECIMAL(7,2)
+                   )
+           END-EXEC.
+
+       SQL-DISCONNECT.
+           EXEC SQL COMMIT END-EXEC.
+           EXEC SQL DISCONNECT ALL END-EXEC
+           IF SQLCODE < 0 PERFORM ERROR-EXIT.
+
+       CONNECTION-ANIMATION.
+           DISPLAY "CONNECTING TO THE SERVER." AT 0525
+           CALL "C$SLEEP" USING 0.5
+           DISPLAY "." at 0550
+           CALL "C$SLEEP" USING 0.5
+           DISPLAY "." at 0551
+           CALL "C$SLEEP" USING 0.5
+           DISPLAY "." at 0552
+           CALL "C$SLEEP" USING 0.5
+           DISPLAY "." at 0553.
+
+
+       ERROR-EXIT.
+           EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC
+           IF SQLSTATE OF SQLCA = 23000
+               DISPLAY "ACCOUNT ALREADY EXISTS!" AT 0625 ERASE SCREEN
+               DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+               SET SQL-ERROR To TRUE
+               ACCEPT OMITTED AT 0850
+           ELSE
+               DISPLAY "SQL ERROR: SQLCODE  " AT 0510 ERASE SCREEN
+               DISPLAY SQLCODE OF SQLCA AT 0535
+               DISPLAY "           SQLSTATE " AT 0710
+               SQLSTATE OF SQLCA AT 0735
+               DISPLAY SQLERRMC OF SQLCA AT 0935
+               ACCEPT OMITTED
+               EXEC SQL DISCONNECT ALL END-EXEC
+               STOP RUN
+            END-IF.
+
+       VALIDATE-DATA.
+           IF UPDATES = "Y"
+			   IF WS-MASTER-ACCOUNT NOT = UPDATES-ACCOUNT
+				   DISPLAY "YOU CANNOT UPDATE THE ACCOUNT NUMBER!" AT 2420 ERASE LINE
+				   ACCEPT OMITTED AT 2460
+                   MOVE UPDATES-ACCOUNT TO WS-MASTER-ACCOUNT
+				   MOVE 0417 TO CURSOR-POS
+				   EXIT PARAGRAPH
+			   END-IF
+		   END-IF
+           IF WS-MASTER-ACCOUNT = SPACES
+               DISPLAY "ACCOUNT NUMBER IS REQUIRED!" AT 2420 ERASE LINE
+               ACCEPT OMITTED AT 2450
+               MOVE 0417 TO CURSOR-POS
+               EXIT PARAGRAPH
+           END-IF
+           IF MASTER-NAME = SPACES
+               DISPLAY "NAME IS REQUIRED!" AT 2420 ERASE LINE
+               ACCEPT OMITTED AT 2450
+               MOVE 0607 TO CURSOR-POS
+               EXIT PARAGRAPH
+           END-IF
+		   IF MASTER-STREET = SPACES
+			   DISPLAY "STREET IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 0809 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF MASTER-CITY = SPACES
+			   DISPLAY "CITY IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 1007 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF MASTER-STATE = SPACES
+			   DISPLAY "STATE IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 1208 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF MASTER-ZIP = SPACES
+			   DISPLAY "ZIP CODE IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 1411 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF MASTER-PHONE-AREA = SPACES
+			   DISPLAY "AREA CODE IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 1613 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF MASTER-PHONE-PREFIX = SPACES
+			   DISPLAY "PHONE PREFIX IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 1618 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF MASTER-PHONE-BASE = SPACES
+			   DISPLAY "PHONE NUMBER IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 1622 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF MASTER-START-YYYY = SPACES
+			   DISPLAY "YEAR IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 2022 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF MASTER-START-MM = SPACES
+			   DISPLAY "MONTH IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 2027 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   ELSE
+			   IF MASTER-START-MM > 12
+			        DISPLAY "INVALID MONTH!" AT 2420 ERASE LINE
+                    ACCEPT OMITTED AT 2450
+			        MOVE 2027 TO CURSOR-POS
+			        EXIT PARAGRAPH
+			   END-IF
+		   END-IF
+		   IF MASTER-START-DD = SPACES
+			   DISPLAY "DAY IS REQUIRED!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2450
+			   MOVE 2030 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+	       MOVE MASTER-START-MM TO MONTH-COUNTER
+		   IF MASTER-START-DD > MONTH(MONTH-COUNTER)
+			   DISPLAY "DAY CAN'T BE GREATER THAN " AT 2420 ERASE LINE 
+               DISPLAY MONTH(MONTH-COUNTER) AT 2446
+			   ACCEPT OMITTED AT 2449
+               MOVE 2030 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF MASTER-START-DATE > CURRENT-DATE
+			   DISPLAY "DATE CANNOT BE IN THE FUTURE!" AT 2420 ERASE LINE
+               ACCEPT OMITTED AT 2455
+			   MOVE 2022 TO CURSOR-POS
+			   EXIT PARAGRAPH
+		   END-IF
+		   IF WS-MASTER-BALANCE = ZEROS OR WS-MASTER-BALANCE IS NEGATIVE
+			   DISPLAY "BALANCE CANNOT BE NEGATIVE OR ZERO!" AT 2420 ERASE LINE
+			   ACCEPT OMITTED AT 2455
+			   MOVE 2210 TO CURSOR-POS
+			   INITIALIZE MASTER-BALANCE
+			   EXIT PARAGRAPH
+		   END-IF
+           SET VALID-DATA TO TRUE.
+

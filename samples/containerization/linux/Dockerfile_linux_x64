@@ -1,0 +1,46 @@
+# Dockerfile_ubuntu_x64 - Used to create the base image
+
+# Name of the repository tag used to create the base image
+# Can be overridden with the --build-arg option in bld.sh
+ARG BASEOSIMAGE=${BASEOSIMAGE}
+
+# Use the base operating system image to build the base extend image
+FROM ${BASEOSIMAGE}
+
+# Default Dockerfile values
+# Values can be overridden with the --build-arg options in bld.sh
+# These need to come after the FROM command or else they will not have a value
+ARG ACCEPTEULA=sorryIDontAcceptEULA
+ARG SETUPEXE=${SETUPEXE}
+ARG LICENSE_DIRECTORY=${LICENSE_DIRECTORY}
+ARG INSTALL_DIRECTORY=${INSTALL_DIRECTORY}
+ARG EXTEND_VERSION=${EXTEND_VERSION}
+
+# Embed the label information into the base image for identification.
+# This can be viewed with podman image inspect <image-id>
+LABEL vendor="Micro Focus" \
+      com.microfocus.name="extend" \
+      com.microfocus.version="$EXTEND_VERSION" \
+      com.microfocus.eula.url="https://supportline.microfocus.com/licensing/lvcontract.aspx" \
+      com.microfocus.is-base-image="true"
+
+# Copy the extend setup to a temporary directory in the image
+COPY ${SETUPEXE} /tmp/ 
+
+# Add execute permission to the extend setup
+RUN chmod +x /tmp/${SETUPEXE}
+
+# Create the installation directory before running the setup
+RUN mkdir -p ${INSTALL_DIRECTORY}
+
+# Install the extend products, providing answers to the prompts,
+# redirecting the output to a file in the temporary directory
+RUN	(echo "y"; echo "${INSTALL_DIRECTORY}") | /tmp/${SETUPEXE} > /tmp/${SETUPEXE}.out 2>&1
+
+# Copy the extend license files to the bin directory
+COPY ["${LICENSE_DIRECTORY}", "${INSTALL_DIRECTORY}/bin/"]
+
+# Install packages needed to run 32-bit applications like python
+RUN	dpkg --add-architecture i386 && \
+	apt-get update -y && \
+	apt-get install -y libc6:i386 libncurses5:i386 libstdc++6:i386 zlib1g:i386

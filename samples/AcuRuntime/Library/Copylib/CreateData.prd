@@ -1,0 +1,139 @@
+      * CreateData.prd
+      * CreateData.prd is generated from C:\Work\Demo\extend10.1\CreateData.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       Acu-Initial-Routine.
+      *    Before-Init
+      * get system information
+           ACCEPT System-Information FROM System-Info
+      * get terminal information
+           ACCEPT Terminal-Abilities FROM Terminal-Info
+      * open file
+           PERFORM Acu-Open-Files
+      *    After-Init
+           .
+
+       Acu-Exit-Rtn.
+           PERFORM Acu-Close-Files
+      *    After-Program
+           EXIT PROGRAM
+           STOP RUN
+           .
+
+       Acu-Open-Files.
+      *    Before-Open
+           PERFORM Acu-Open-Department
+           PERFORM Acu-Open-Books
+      *    After-Open
+           .
+
+       Acu-Open-Department.
+      *    Before-Open
+           OPEN OUTPUT Department 
+           IF NOT Depart-status(1:1) = "0"
+              PERFORM Acu-Extended-File-Status
+              GO TO Acu-Exit-Rtn
+           END-IF
+      *    After-Open
+           .
+
+       Acu-Open-Books.
+      *    Before-Open
+           OPEN OUTPUT Books 
+           IF NOT Books-status(1:1) = "0"
+              PERFORM Acu-Extended-File-Status
+              GO TO Acu-Exit-Rtn
+           END-IF
+      *    After-Open
+           .
+
+       Acu-CreateScr-Routine.
+      *    Before-Routine
+           PERFORM Acu-CreateScr-Scrn
+           PERFORM Acu-CreateScr-Proc
+      *    After-Routine
+           .
+
+       Acu-CreateScr-Scrn.
+           PERFORM Acu-CreateScr-Create-Win
+           PERFORM Acu-CreateScr-Init-Data
+           .
+
+       Acu-CreateScr-Create-Win.
+      *    Before-Create
+      * display screen
+              DISPLAY Standard GRAPHICAL WINDOW
+                 LINES 16.00, SIZE 38.00, CELL HEIGHT 10, 
+                 CELL WIDTH 10, AUTO-MINIMIZE, COLOR IS 65793, 
+                 LABEL-OFFSET 0, LINK TO THREAD, MODELESS, NO SCROLL, 
+                 WITH SYSTEM MENU, 
+                 TITLE "Screen", TITLE-BAR, NO WRAP, 
+                 EVENT PROCEDURE Create-Event-Proc, 
+                 HANDLE IS Create-Handle
+      * toolbar
+           DISPLAY CreateScr UPON Create-Handle
+      *    After-Create
+           .
+
+       Acu-CreateScr-Init-Data.
+      *    Before-Initdata
+      *    After-Initdata
+           .
+      * CreateScr
+       Acu-CreateScr-Proc.
+           PERFORM UNTIL Exit-Pushed
+              ACCEPT CreateScr  
+                 ON EXCEPTION PERFORM Acu-CreateScr-Evaluate-Func
+              END-ACCEPT
+           END-PERFORM
+           DESTROY Create-Handle
+           INITIALIZE Key-Status
+           .
+
+      * CreateScr
+       Acu-CreateScr-Evaluate-Func.
+           EVALUATE TRUE
+              WHEN Exit-Pushed
+                 PERFORM Acu-CreateScr-Exit
+              WHEN Event-Occurred
+                 IF Event-Type = Cmd-Close
+                    PERFORM Acu-CreateScr-Exit
+                 END-IF
+      * Create-Pb-1 Link To
+              WHEN Key-Status = 7
+                 PERFORM Create-Pb-1-Link
+           END-EVALUATE
+           MOVE 1 TO Accept-Control
+           .
+
+       Acu-Close-Files.
+      *    Before-Close
+           CLOSE Department
+           CLOSE Books
+      *    After-Close
+           .
+
+      * Department
+
+       Acu-Department-Rec-Write.
+           WRITE Departme-rec
+           .
+
+       Acu-Department-Delete.
+           DELETE FILE Department
+           .
+
+      * Books
+
+       Acu-Books-Rec-Write.
+           WRITE Books-rec
+           .
+
+       Acu-Books-Delete.
+           DELETE FILE Books
+           .
+
+       Acu-CreateScr-Exit.
+           SET Exit-Pushed TO TRUE
+           .
+

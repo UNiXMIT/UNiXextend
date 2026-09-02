@@ -1,0 +1,7 @@
+      * ModifyBook.lks
+      * ModifyBook.lks is generated from C:\COBOL\extend10.1\ModifyBook.Psf
+      * This is a generated file. DO NOT modify this file directly.
+       01 Lnk-Departme-rec.
+           05 Lnk-Departme-key PIC  x(26).
+           05 Lnk-Departme-sub PIC  x(26).
+           05 Lnk-Departme-branch          PIC  x(3).

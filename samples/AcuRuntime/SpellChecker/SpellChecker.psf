@@ -1,0 +1,749 @@
+; CASEMaker AcuBench Program Structure File, Version 10.1
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=DataEntryScreen
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=Form1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_nType=10
+m_strName=DataEntryField-Value
+m_strRawPic=x(1024)
+m_strPic=x(1024)
+m_strDefaultValue="Here is somme sample datta that lookks better when spelledd correctly!"
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_nType=10
+m_strName=Arial12BI
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+[FDITEM3_WK]
+m_nType=10
+m_strName=ActiveX-Res
+m_nUsage=52
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM3_WK
+
+@}}
+[FDITEM4_WK]
+m_nType=10
+m_strName=Form1-Ef-2-Value
+m_strRawPic=X(21)
+m_strPic=X(21)
+m_strDefaultValue="www.polarsoftware.com"
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM4_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen DataEntryScreen
+   PREFIX            = Form1
+   LOCK-CONTROL      = FALSE
+   (Name)            = DataEntryScreen
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = TRUE
+   Auto Resize       = FALSE
+   Bind To Thread    = TRUE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = TRUE
+   Font              = Default Font
+   Handle Variable   = Form1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 42.40
+   Link To Thread    = FALSE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 51.90
+   System Menu       = TRUE
+   Title             = "AcuCorp Workbench 5.0 ActiveX SpellChecker Sample"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Standard
+   Wrap              = FALSE
+   Event Procedure   = Form1-Event-Proc
+   After Create      = DataEntryScreen-Aft-Create
+   Begin Frame Form1-Fr-1a
+      SCREEN-COL        = 2.40
+      SCREEN-LINE       = 1.30
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-Fr-1a
+      3D Style          = Engraved
+      Alternate         = FALSE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 2.40
+      Csize             = 0
+      Destroy Type      = Automatic
+      Font              = Default Font
+      Full Height       = FALSE
+      Help ID           = 0
+      High Color        = 0
+      ID                = 2
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 1.30
+      Lines             = 30.40
+      Low Color         = 0
+      Size              = 49.10
+      Tab Order         = 1
+      Thickness         = Default
+      Title Position    = 0:Unaligned
+      Visible           = 1:TRUE
+      Begin Entry-Field DataEntryField
+         SCREEN-COL        = 5.60
+         SCREEN-LINE       = 11.80
+         LOCK-CONTROL      = TRUE
+         (Name)            = DataEntryField
+         Auto              = FALSE
+         Auto Decimal      = 0
+         Autofill ID       = 0
+         Autofill Max Lines = 0
+         Border            = 3D
+         Case              = Mixed
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 0
+         Column            = 4.20
+         Csize             = 0
+         Cursor            = 0
+         Cursor Col        = 0
+         Cursor Row        = 0
+         Destroy Type      = Automatic
+         Enable            = 1:TRUE
+         Font              = Default Font
+         Help ID           = 0
+         ID                = 3
+         Justification     = Unaligned
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 11.50
+         Lines             = 14.40
+         Max Lines         = 0
+         Max Text          = 0
+         Max Value         = 0
+         Min Value         = 0
+         No AutoSel        = FALSE
+         No Tab            = FALSE
+         Notify Change     = FALSE
+         Numeric           = FALSE
+         Read Only         = FALSE
+         Required          = FALSE
+         Secure            = FALSE
+         Size              = 42.60
+         Style             = Multiline
+         Tab Order         = 1
+         Use Return        = FALSE
+         Use Tab           = FALSE
+         Value             = "Here is somme sample datta that lookks better when spelledd correctly!"
+         Value Multiple    = FALSE
+         Value Picture     = x(1024)
+         Value Variable    = DataEntryField-Value
+         Visible           = 1:TRUE
+      End
+      Begin Push-Button SpellCheckButton
+         SCREEN-COL        = 5.60
+         SCREEN-LINE       = 28.00
+         LOCK-CONTROL      = TRUE
+         (Name)            = SpellCheckButton
+         Bitmap Frame      = FALSE
+         Bitmap Number     = 1
+         Bitmap Square     = TRUE
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 0
+         Column            = 4.20
+         Copy Resource     = TRUE
+         Csize             = 0
+         Destroy Type      = Automatic
+         Enable            = 1:TRUE
+         Exception Value   = 0
+         Flat              = FALSE
+         Font              = Default Font
+         Help ID           = 0
+         ID                = 7
+         Is Link           = FALSE
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 27.70
+         Lines             = 2.40
+         Multiline         = FALSE
+         No Auto Default   = FALSE
+         No Tab            = FALSE
+         Self Act          = FALSE
+         Size              = 21.30
+         Style             = Other
+         Tab Order         = 2
+         Termination Value = 0
+         Title             = "Check &Spelling"
+         Transparent Color = -1
+         Visible           = 1:TRUE
+         Exception Procedure = SpellCheckButton-Exception-Proc
+         Cmd-Clicked(ex)   = SpellCheckButton-Ex-Cmd-Clicked
+      End
+      Begin Push-Button ExitButton
+         SCREEN-COL        = 26.90
+         SCREEN-LINE       = 28.00
+         LOCK-CONTROL      = TRUE
+         (Name)            = ExitButton
+         Bitmap Frame      = FALSE
+         Bitmap Number     = 1
+         Bitmap Square     = TRUE
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 0
+         Column            = 25.50
+         Copy Resource     = TRUE
+         Csize             = 0
+         Destroy Type      = Automatic
+         Enable            = 1:TRUE
+         Exception Value   = 0
+         Flat              = FALSE
+         Font              = Default Font
+         Help ID           = 0
+         ID                = 12
+         Is Link           = FALSE
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 27.70
+         Lines             = 2.40
+         Multiline         = FALSE
+         No Auto Default   = FALSE
+         No Tab            = FALSE
+         Self Act          = FALSE
+         Size              = 21.30
+         Style             = Other
+         Tab Order         = 3
+         Termination Value = 0
+         Title             = "E&xit Program"
+         Transparent Color = -1
+         Visible           = 1:TRUE
+         Exception Procedure = ExitButton-Exception-Proc
+         Cmd-Clicked(ex)   = ExitButton-Ex-Cmd-Clicked
+      End
+      Begin Label Form1-La-1aa
+         SCREEN-COL        = 5.80
+         SCREEN-LINE       = 4.80
+         LOCK-CONTROL      = TRUE
+         (Name)            = Form1-La-1aa
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 5
+         Column            = 4.40
+         Csize             = 0
+         Destroy Type      = Automatic
+         Enable            = 1:TRUE
+         Font              = Arial/12/B/I:0
+         Font Variable     = Arial12BI
+         Help ID           = 0
+         ID                = 4
+         Justification     = Center
+         Label Offset      = 0
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 4.50
+         Lines             = 2.00
+         No Key Letter     = FALSE
+         Size              = 42.00
+         Tab Order         = 4
+         Title             = "Enter text into the space below,"
+         Transparent       = FALSE
+         Visible           = 1:TRUE
+      End
+      Begin Bar Form1-Br-1ba
+         SCREEN-COL        = 4.40
+         SCREEN-LINE       = 3.60
+         LOCK-CONTROL      = TRUE
+         (Name)            = Form1-Br-1ba
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 2
+         Column            = 3.00
+         Csize             = 0
+         Destroy Type      = Automatic
+         Help ID           = 0
+         ID                = 5
+         Kind              = Horizontal
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 3.30
+         Line Styles       = Solid
+         Position Shift    = 0
+         Size (Lines)      = 45.10
+         Size (Lines) in Pixels = 451
+         Tab Order         = 5
+         Visible           = 1:TRUE
+         Width             = 2
+      End
+      Begin Bar Form1-Br-1aaa
+         SCREEN-COL        = 4.40
+         SCREEN-LINE       = 9.90
+         LOCK-CONTROL      = TRUE
+         (Name)            = Form1-Br-1aaa
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 2
+         Column            = 3.00
+         Csize             = 0
+         Destroy Type      = Automatic
+         Help ID           = 0
+         ID                = 6
+         Kind              = Horizontal
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 9.60
+         Line Styles       = Solid
+         Position Shift    = 0
+         Size (Lines)      = 45.10
+         Size (Lines) in Pixels = 451
+         Tab Order         = 6
+         Visible           = 1:TRUE
+         Width             = 2
+      End
+      Begin Label Form1-La-1aaa
+         SCREEN-COL        = 5.30
+         SCREEN-LINE       = 6.80
+         LOCK-CONTROL      = TRUE
+         (Name)            = Form1-La-1aaa
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 5
+         Column            = 3.90
+         Csize             = 0
+         Destroy Type      = Automatic
+         Enable            = 1:TRUE
+         Font              = Arial/12/B/I:0
+         Font Variable     = Arial12BI
+         Help ID           = 0
+         ID                = 1
+         Justification     = Center
+         Label Offset      = 0
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 6.50
+         Lines             = 2.00
+         No Key Letter     = FALSE
+         Size              = 42.00
+         Tab Order         = 7
+         Title             = "then click on the ""Check Spelling"" button"
+         Transparent       = FALSE
+         Visible           = 1:TRUE
+      End
+      Begin OCX.SpellChecker SpellCheckerControl
+         SCREEN-COL        = 30.00
+         SCREEN-LINE       = 17.60
+         LOCK-CONTROL      = TRUE
+         CLSID             = {9E3C8247-FB0C-11D1-AA5E-008048E292F1}
+         SYMBOL            = SC
+         (Name)            = SpellCheckerControl
+         Column            = 28.60
+         Enable            = 1:TRUE
+         Help ID           = 0
+         ID                = 13
+         License Key       = "Copyright (c) 1998 POLAR"
+         Line              = 17.30
+         Lines             = 2.80
+         Resource Tag      = ResTag1
+         Size              = 2.80
+         Tab Order         = 8
+         Use Alt           = TRUE
+         Use Return        = TRUE
+         Use Tab           = TRUE
+         Visible           = 0:FALSE
+      End
+   End
+   Begin Frame Form1-Fr-1
+      SCREEN-COL        = 2.40
+      SCREEN-LINE       = 32.20
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-Fr-1
+      3D Style          = Engraved
+      Alternate         = FALSE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 2.40
+      Csize             = 0
+      Destroy Type      = Automatic
+      Font              = Default Font
+      Full Height       = FALSE
+      Help ID           = 0
+      High Color        = 0
+      ID                = 11
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 32.20
+      Lines             = 10.50
+      Low Color         = 0
+      Size              = 49.10
+      Tab Order         = 2
+      Thickness         = Default
+      Title Position    = 0:Unaligned
+      Visible           = 1:TRUE
+   End
+   Begin Label Form1-La-2
+      SCREEN-COL        = 4.70
+      SCREEN-LINE       = 33.50
+      LOCK-CONTROL      = TRUE
+      (Name)            = Form1-La-2
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 4.70
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 9
+      Justification     = Center
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 33.50
+      Lines             = 1.60
+      No Key Letter     = FALSE
+      Size              = 44.40
+      Tab Order         = 3
+      Title             = "We hope you like this demo of Polar Software's SpellChecker ActiveX Control."
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Label Form1-La-2a
+      SCREEN-COL        = 4.70
+      SCREEN-LINE       = 35.90
+      LOCK-CONTROL      = TRUE
+      (Name)            = Form1-La-2a
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 4.70
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 10
+      Justification     = Center
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 35.90
+      Lines             = 1.60
+      No Key Letter     = FALSE
+      Size              = 44.40
+      Tab Order         = 4
+      Title             = "To develop an application using this control, contact:"
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Entry-Field Form1-Ef-2
+      SCREEN-COL        = 16.30
+      SCREEN-LINE       = 38.70
+      LOCK-CONTROL      = TRUE
+      (Name)            = Form1-Ef-2
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = 3D
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 260
+      Column            = 16.30
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Arial/12/B/I:0
+      Font Variable     = Arial12BI
+      Help ID           = 0
+      ID                = 8
+      Justification     = Center
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 38.70
+      Lines             = 2.60
+      Max Lines         = 0
+      Max Text          = 0
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = TRUE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 22.00
+      Style             = Singleline
+      Tab Order         = 5
+      Use Return        = FALSE
+      Use Tab           = FALSE
+      Value             = "www.polarsoftware.com"
+      Value Multiple    = FALSE
+      Value Picture     = X(21)
+      Value Variable    = Form1-Ef-2-Value
+      Visible           = 1:TRUE
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       ExitButton-Ex-Cmd-Clicked.
+           Modify SpellCheckerControl CloseDictionary().
+           PERFORM Acu-DataEntryScreen-Msg-Close.
+      *
+       SpellCheckButton-Ex-Cmd-Clicked.
+           Inquire DataEntryField value in DataEntryField-Value.
+           Modify SpellCheckerControl CheckTextVBS(DataEntryField-Value)
+                                          giving DataEntryField-Value.
+           Modify DataEntryField value is DataEntryField-Value.
+           Display Message Box "Spell Checking is Complete.".
+      *
+       DataEntryScreen-Aft-Create.
+           Modify SpellCheckerControl 
+                  OpenDictionary("SpellUS.lex", " ").
+      *
+      *
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=1
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

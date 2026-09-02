@@ -1,0 +1,333 @@
+; CASEMaker AcuBench Program Structure File, Version 10.3
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=Screen1
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=Screen1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_strName=ws-saved-text
+m_strRawPic=x(30)
+m_strPic=x(30)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_strName=ws-saved-parent-text
+m_strRawPic=x(30)
+m_strPic=x(30)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+[FDITEM3_WK]
+m_nType=10
+m_strName=Screen1-Cb-1-Value
+m_strRawPic=9
+m_strPic=9
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM3_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen Screen1
+   PREFIX            = Screen1
+   LOCK-CONTROL      = FALSE
+   (Name)            = Screen1
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = TRUE
+   Auto Resize       = FALSE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = FALSE
+   Font              = Default Font
+   Handle Variable   = Screen1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 9.10
+   Link To Thread    = TRUE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 52.10
+   System Menu       = TRUE
+   Title             = "Screen"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Standard
+   Wrap              = FALSE
+   Event Procedure   = Screen1-Event-Proc
+   After Initdata    = Screen1-Aft-Initdata
+   Begin Label Screen1-La-1
+      SCREEN-COL        = 8.90
+      SCREEN-LINE       = 2.60
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-1
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 8.90
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 1
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 2.60
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 10.60
+      Tab Order         = 1
+      Title             = "You have chosen:"
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Label Screen1-La-2
+      SCREEN-COL        = 21.30
+      SCREEN-LINE       = 2.60
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-2
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 21.30
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 2.60
+      Lines             = 2.10
+      No Key Letter     = FALSE
+      Size              = 23.50
+      Tab Order         = 2
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Push-Button Screen1-Pb-1
+      SCREEN-COL        = 1.60
+      SCREEN-LINE       = 1.70
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-1
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 1.60
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 123
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 3
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 1.70
+      Lines             = 3.30
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 4.60
+      Style             = Other
+      Tab Order         = 3
+      Termination Value = 0
+      Title             = "<<<"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen1-Pb-1-Link
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       Screen1-Aft-Initdata.
+           modify Screen1-La-2, title = ws-saved-text
+           .
+      *
+       Screen1-Pb-1-Link.
+           destroy screen1
+           chain "treeview2-dss" 
+                 using ws-saved-text 
+                       ws-saved-parent-text 
+                       Screen1-Cb-1-Value
+           .
+
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=0
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

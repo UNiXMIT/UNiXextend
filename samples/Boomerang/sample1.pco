@@ -1,0 +1,113 @@
+      *****************************************************************
+      * Sample Program 1:  Simple Query                               *
+      *                                                               *
+      * This program logs on to ORACLE, prompts the user for an       *
+      * employee number, queries the database for the employee's      *
+      * name, salary, and commission, then displays the result.       *
+      * The program terminates when the user enters a 0.              *
+      *****************************************************************
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. QUERY.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+           EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01  CONNAME           PIC X(50).
+       01  USERNAME          PIC X(10) VARYING.
+       01  PASSWD            PIC X(10) VARYING.
+       01  EMP-REC-VARS.
+           05  EMP-NAME      PIC X(10) VARYING.
+           05  EMP-NUMBER    PIC S9(4) COMP VALUE ZERO.
+           05  SALARY        PIC S9(5)V99 COMP-3 VALUE ZERO.
+           05  COMMISSION    PIC S9(5)V99 COMP-3 VALUE ZERO.
+           05  COMM-IND      PIC S9(4) COMP VALUE ZERO.
+           EXEC SQL END DECLARE SECTION END-EXEC.
+
+           EXEC SQL INCLUDE SQLCA END-EXEC.
+      *     EXEC SQL INCLUDE USERPASSW END-EXEC.
+
+       01  DISPLAY-VARIABLES.
+           05  D-EMP-NAME    PIC X(10).
+           05  D-SALARY      PIC Z(4)9.99.
+           05  D-COMMISSION  PIC Z(4)9.99.
+           05  D-EMP-NUMBER  PIC 9(4).
+
+       01 D-TOTAL-QUERIED   PIC 9(4) VALUE ZERO.
+        
+       PROCEDURE DIVISION.
+       BEGIN-PGM.
+           EXEC SQL WHENEVER SQLERROR
+              DO PERFORM SQL-ERROR END-EXEC.
+           PERFORM LOGON.
+
+       QUERY-LOOP.
+      *     EXEC SQL INCLUDE MONINCLUDE END-EXEC.
+           DISPLAY " ".
+           DISPLAY "ENTER EMP NUMBER (0 TO QUIT): "
+               WITH NO ADVANCING.
+           ACCEPT D-EMP-NUMBER.
+           MOVE D-EMP-NUMBER TO EMP-NUMBER.
+           IF (EMP-NUMBER = 0)
+               PERFORM SIGN-OFF.
+           MOVE SPACES TO EMP-NAME-ARR.
+           EXEC SQL WHENEVER NOT FOUND GOTO NO-EMP END-EXEC.
+           EXEC SQL SELECT ENAME, SAL, COMM
+               INTO :EMP-NAME, :SALARY, :COMMISSION:COMM-IND
+               FROM EMP
+               WHERE EMPNO = :EMP-NUMBER
+           END-EXEC.
+           PERFORM DISPLAY-INFO.
+           ADD 1 TO D-TOTAL-QUERIED.
+           GO TO QUERY-LOOP.
+
+       NO-EMP.
+           DISPLAY "NOT A VALID EMPLOYEE NUMBER - TRY AGAIN.".
+           GO TO QUERY-LOOP.
+
+       LOGON.
+      *     MOVE "SCOTT/TIGER@ACUCORP" TO CONNAME.
+      *     EXEC SQL
+      *         CONNECT :CONNAME
+      *     END-EXEC.
+           MOVE "scott" TO USERNAME-ARR.
+           MOVE 5 TO USERNAME-LEN.
+           MOVE "tiger" TO PASSWD-ARR.
+           MOVE 5 TO PASSWD-LEN.
+           EXEC SQL
+               CONNECT :USERNAME IDENTIFIED BY :PASSWD
+           END-EXEC.
+           DISPLAY " ".
+           DISPLAY "CONNECTED TO ORACLE AS USER: ", USERNAME-ARR.
+        
+       DISPLAY-INFO.
+           DISPLAY " ".
+           DISPLAY "EMPLOYEE    SALARY    COMMISSION".
+           DISPLAY "--------    ------    ----------". 
+           MOVE EMP-NAME-ARR TO D-EMP-NAME.
+           MOVE SALARY TO D-SALARY.
+           IF COMM-IND = -1
+               DISPLAY D-EMP-NAME, D-SALARY, "          NULL"
+           ELSE
+               MOVE COMMISSION TO D-COMMISSION
+               DISPLAY D-EMP-NAME, D-SALARY, "      ", D-COMMISSION
+           END-IF.
+
+       SIGN-OFF.
+           DISPLAY " ".
+           DISPLAY "TOTAL NUMBER QUERIED WAS ",
+               D-TOTAL-QUERIED, ".".
+           DISPLAY " ".
+           DISPLAY "HAVE A GOOD DAY.".
+           DISPLAY " ".
+           EXEC SQL COMMIT WORK RELEASE END-EXEC.
+           STOP RUN.
+
+       SQL-ERROR.
+           EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC.
+           DISPLAY " ".
+           DISPLAY "ORACLE ERROR DETECTED:".
+           DISPLAY " ".
+           DISPLAY SQLERRMC.
+           EXEC SQL ROLLBACK WORK RELEASE END-EXEC.
+           STOP RUN.

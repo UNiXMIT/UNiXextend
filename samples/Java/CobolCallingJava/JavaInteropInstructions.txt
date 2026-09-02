@@ -1,0 +1,46 @@
+Java Interoperability Sample Instructions
+
+prerequiste: ACUCOBOL-GT should already be installed.
+
+1. Install JDK 1.4.2 or greater. A JDK is required because the compiler is required to build the samples.
+
+2. Add CVM.jar and the current directory to the CLASSPATH environment variable. This CLASSPATH entry is used
+for Java calling COBOL. This CVM.jar file is in the install bin directory. You will have an entry that looks
+like this CLASSPATH=C:\Acucorp\Acucbl700\AcuGT\bin\CVM.jar;.;
+
+3. There is a file called config that can be edited and used as a config file for running the samples.
+For COBOL calling Java, the library (jvm.dll or libjvm.so) is specified by JAVA_LIBRARY_NAME. The entry would
+look like JAVA_LIBRARY_NAME=jvm.dll on windows. A fully qualified path can be added with the name.
+   
+4. Add the options Config variable for interoperability (JAVA_OPTIONS, PRELOAD_JAVA_LIBRARY). For Java calling
+COBOL, JAVA_OPTIONS should specify the same CLASSPATH as the environment like this:
+JAVA_OPTIONS=-Djava.class.path=C:\Acucorp\Acucbl700\AcuGT\bin\CVM.jar;.;
+The variable PRELOAD_JAVA_LIBRARY=1 tells the runtime to load the jvm upon initialization.
+
+5. Add the location of jvm.dll/libjvm.so to the PATH environment variable. On windows, the entry
+will look like: PATH=<additional path info>;C:\Program Files\Java\jdk1.5.0_03\jre\bin\client;
+For convenience, it may be helpful to have the Java bin directory in the PATH as well. On windows, that 
+directory might be C:\Program Files\Java\jdk1.5.0_03\bin.
+
+6. Add the location of the runtime dlls/shared libraries to the variable LD_LIBRARY_PATH so 
+the entry will look like LD_LIBRARY_PATH=C:\Acucorp\Acucbl700\AcuGT\bin
+
+7. Compile JavaCallingCobol.java (javac JavaCallingCobol.java)
+
+8. Compile CobolCallingJava.java (javac CobolCallingJava.java)
+
+9. Ensure that COPYPATH includes the acugt\sample\directory.  The program CobolCallingJava.cbl requires
+   the copyfile java.def.
+   
+10. Compile JavaCallingCobol.cbl (ccbl/ccbl32 -x -Ga JavaCallingCobol.cbl)
+
+11. Compile CobolCallingJava.cbl (ccbl/ccbl32 -x -Ga CobolCallingJava.cbl)
+
+12. Run the Java calling Cobol test - java -Djava.library.path=<directory runcbl/wrun32 located> JavaCallingCobol cvm
+
+13. Check the console log output to ensure it is correct
+
+14. Run the Cobol calling Java test - runcbl/wrun32 CobolCallingJava
+
+15. Check the log file CVM.log to ensure it is correct
+

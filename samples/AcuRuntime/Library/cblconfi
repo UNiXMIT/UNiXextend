@@ -1,0 +1,4 @@
+CODE_PREFIX         object
+FILE_PREFIX         data
+ERRORS_OK           ON
+WIN32_NATIVECTLS    1

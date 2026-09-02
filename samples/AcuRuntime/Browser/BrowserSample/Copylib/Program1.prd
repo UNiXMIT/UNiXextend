@@ -1,0 +1,144 @@
+      * Program1.prd
+      * Program1.prd is generated from C:\AcuSamples\Browser\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       Acu-Initial-Routine.
+      *    Before-Init
+      * get system information
+           ACCEPT System-Information FROM System-Info
+      * get terminal information
+           ACCEPT Terminal-Abilities FROM Terminal-Info
+      *    After-Init
+           .
+
+       Acu-Exit-Rtn.
+      *    After-Program
+           EXIT PROGRAM
+           STOP RUN
+           .
+
+       Acu-Screen1-Routine.
+      *    Before-Routine
+           PERFORM Acu-Screen1-Scrn
+           PERFORM Acu-Screen1-Proc
+      *    After-Routine
+           .
+
+       Acu-Screen2-Routine.
+      *    Before-Routine
+           PERFORM Acu-Screen2-Scrn
+           PERFORM Acu-Screen2-Proc
+      *    After-Routine
+           .
+
+       Acu-Screen1-Scrn.
+           PERFORM Acu-Screen1-Create-Win
+           PERFORM Acu-Screen1-Init-Data
+           .
+
+       Acu-Screen2-Scrn.
+           PERFORM Acu-Screen2-Create-Win
+           PERFORM Acu-Screen2-Init-Data
+           .
+
+       Acu-Screen1-Create-Win.
+      *    Before-Create
+      * display screen
+              DISPLAY Standard GRAPHICAL WINDOW
+                 LINES 16.00, SIZE 36.00, CELL HEIGHT 10, 
+                 CELL WIDTH 10, AUTO-MINIMIZE, COLOR IS 65793, 
+                 LABEL-OFFSET 0, LINK TO THREAD, MODELESS, NO SCROLL, 
+                 WITH SYSTEM MENU, 
+                 TITLE "Screen", TITLE-BAR, NO WRAP, 
+                 EVENT PROCEDURE Screen1-Event-Proc, 
+                 HANDLE IS Screen1-Handle
+      * toolbar
+           DISPLAY Screen1 UPON Screen1-Handle
+      *    After-Create
+           .
+
+       Acu-Screen2-Create-Win.
+      *    Before-Create
+      * display screen
+              DISPLAY Floating GRAPHICAL WINDOW
+                 LINES 56.00, SIZE 64.00, CELL HEIGHT 10, 
+                 CELL WIDTH 10, COLOR IS 65793, LABEL-OFFSET 0, 
+                 LINK TO THREAD, MODELESS, NO SCROLL, WITH SYSTEM MENU, 
+                 TITLE "Screen", TITLE-BAR, NO WRAP, 
+                 EVENT PROCEDURE Screen2-Event-Proc, 
+                 HANDLE IS Screen2-Handle
+      * toolbar
+           DISPLAY Screen2 UPON Screen2-Handle
+           PERFORM Screen2-Aft-Create
+           .
+
+       Acu-Screen1-Init-Data.
+      *    Before-Initdata
+      *    After-Initdata
+           .
+
+       Acu-Screen2-Init-Data.
+      *    Before-Initdata
+      *    After-Initdata
+           .
+      * Screen1
+       Acu-Screen1-Proc.
+           PERFORM UNTIL Exit-Pushed
+              ACCEPT Screen1  
+                 ON EXCEPTION PERFORM Acu-Screen1-Evaluate-Func
+              END-ACCEPT
+           END-PERFORM
+           DESTROY Screen1-Handle
+           INITIALIZE Key-Status
+           .
+      * Screen2
+       Acu-Screen2-Proc.
+           PERFORM UNTIL Exit-Pushed
+              ACCEPT Screen2  
+                 ON EXCEPTION PERFORM Acu-Screen2-Evaluate-Func
+              END-ACCEPT
+           END-PERFORM
+           DESTROY Screen2-Handle
+           INITIALIZE Key-Status
+           .
+
+      * Screen1
+       Acu-Screen1-Evaluate-Func.
+           EVALUATE TRUE
+              WHEN Exit-Pushed
+                 PERFORM Acu-Screen1-Exit
+              WHEN Event-Occurred
+                 IF Event-Type = Cmd-Close
+                    PERFORM Acu-Screen1-Exit
+                 END-IF
+      * Screen1-Pb-1a Link To
+              WHEN Key-Status = 1000
+                 PERFORM Acu-Screen1-Exit
+           END-EVALUATE
+           MOVE 1 TO Accept-Control
+           .
+
+      * Screen2
+       Acu-Screen2-Evaluate-Func.
+           EVALUATE TRUE
+              WHEN Exit-Pushed
+                 PERFORM Acu-Screen2-Exit
+              WHEN Event-Occurred
+                 IF Event-Type = Cmd-Close
+                    PERFORM Acu-Screen2-Exit
+                 END-IF
+      * Screen2-Pb-1 Link To
+              WHEN Key-Status = 1000
+                 PERFORM Acu-Screen2-Exit
+           END-EVALUATE
+           MOVE 1 TO Accept-Control
+           .
+
+       Acu-Screen1-Exit.
+           SET Exit-Pushed TO TRUE
+           .
+
+       Acu-Screen2-Exit.
+           SET Exit-Pushed TO TRUE
+           .
+

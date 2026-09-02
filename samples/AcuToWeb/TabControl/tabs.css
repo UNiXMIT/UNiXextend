@@ -1,0 +1,101 @@
+.ui-terminal-layer {
+    background-color: white;
+}
+
+#tab1_cnt {
+    background-color: white;
+}
+
+#tab1_page {
+    height: 582px !important;
+    /*width: 661px;*/
+    /*margin-left: 96px;*/
+    background-color: white;
+    border: none;
+}
+
+#tab1.ui-control-tabs ul li {
+    color: lightgrey;
+    border-right: 2px solid #eec8c8;
+}
+
+#tab1.ui-control-tabs {
+    width: 150px !important;
+    position: absolute;
+    top: 0;
+    left: -150px;
+    transform: none;
+    background-color: #eec8c8;
+    border: 2px solid #eec8c8 !important;
+    border-right-width: 0!important;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#tab1.ui-control-tabs .tabs-divider {
+    border: none;
+}
+
+#tab1.ui-control-tabs ul li span {
+    text-align: end;
+    width: 100%;
+    padding-right: 0;
+}
+
+#tab1.ui-control-tabs ul li:before {
+    font-family: emoji;
+    content: attr(data-before);
+}
+
+#tab1.ui-control-tabs ul li {
+    border: none;
+    color: lightgrey;
+    border-right: 2px solid #eec8c8;
+    background-color: transparent;
+    padding: 5px;
+    /*margin-bottom: 1px;*/
+    /*width: 100% !important;*/
+    display: flex;
+    outline: none;
+    /*cursor: pointer;*/
+}
+
+#tab1.ui-control-tabs ul li:last-child {
+    margin-bottom: 0px;
+}
+
+#tab1.ui-control-tabs ul {
+    background-color: white;
+}
+
+/*#tab1.ui-control-tabs ul li:nth-child(1) {*/
+/*    color: green;*/
+/*    border-right: 2px solid green;*/
+/*}*/
+
+/*#tab1.ui-control-tabs ul li:nth-child(1)::before {*/
+/*    content: "✔";*/
+/*}*/
+
+/*#tab1.ui-control-tabs ul li:nth-child(2) {*/
+/*    color: green;*/
+/*    border-right: 2px solid green;*/
+/*}*/
+
+/*#tab1.ui-control-tabs ul li:nth-child(2)::before {*/
+/*    content: "✔";*/
+/*}*/
+
+/*#tab1.ui-control-tabs ul li:nth-child(3) {*/
+/*    color: black;*/
+/*    border-right: 2px solid indianred;*/
+/*}*/
+
+/*#tab1.ui-control-tabs ul li:nth-child(3)::before {*/
+/*    content: "→";*/
+/*}*/
+
+/*#tab1.ui-control-tabs ul li:nth-child(4) {*/
+/*    color: lightgrey;*/
+/*    border-right: 2px solid #eec8c8;*/
+/*}*/

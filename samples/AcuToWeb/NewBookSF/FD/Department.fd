@@ -1,0 +1,5 @@
+       FD  Department.
+       01 Departme-rec.
+           05 Departme-key     PIC  x(26).
+           05 Departme-sub     PIC  x(26).
+           05 Departme-branch  PIC  x(3).

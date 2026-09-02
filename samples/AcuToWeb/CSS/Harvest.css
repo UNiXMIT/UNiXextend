@@ -1,0 +1,119 @@
+/* This is the FallTheme. The colors in the palette are:
+  umber:       hex #c34711 rgb(195,71,17)
+  mustard:     hex #d2a723 rgb(210,167,35)
+  dark green   hex #416d2d rgb(79,109,45)
+  deep red     hex #9c0b0b rgb(156,11,11)
+  brown        hex #7a4e17 rgb(122,78,23)
+*/
+.ui-paged-pgprev
+{	
+    background-image: url('images/pager-prevpage.png');
+}
+
+.ui-paged-pgnext
+{	
+    background-image: url('images/pager-nextpage.png');
+}
+
+.ui-paged-prev
+{	
+    background-image: url('images/pager-prev.png');
+}
+
+.ui-paged-next
+{	
+    background-image: url('images/pager-next.png');
+}
+
+.ui-paged-pgprev,
+.ui-paged-pgnext,
+.ui-paged-prev,
+.ui-paged-next
+{
+    border-width: 1px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;  
+    background-color : #008000  !important ;	
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    border-radius: 3px;
+}
+
+
+.ui-button,
+.ui-control-button,
+.ui-control button
+{   border:1px solid #d7dada; 
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-decoration:none; 
+	font-weight:bold;
+    background-color: #7a4e17;	
+}
+
+/*
+  inactive window title-bar colors
+*/
+
+/*
+  active/current window title-bar colors
+*/
+.ui-cblwindow .ui-wintitle,
+.ui-cblwindow-active .ui-wintitle
+{
+
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e9f6fd+0,d3eefb+100;Blue+3D+%233 */
+   /* http://www.w3schools.com/colors/colors_picker.asp */
+	background: #c34711; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d2a723 0%, #416d2d 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #d2a723 0%,#416d2d 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #d2a723 0%,#416d2d 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2a723', endColorstr='#416d2d',GradientType=0 ); /* IE6-9 */
+   	color: #7a4e17; /* Text color */
+}
+.ui-cblwindow-active 
+{
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e9f6fd+0,d3eefb+100;Blue+3D+%233 */
+   /* http://www.w3schools.com/colors/colors_picker.asp */
+	background: #c34711 !important; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d2a723 0%, #416d2d 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #d2a723 0%,#416d2d 100%) !important; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #d2a723 0%,#416d2d 100%)!important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2a723', endColorstr='#416d2d',GradientType=0 )!important; /* IE6-9 */
+	color: #7a4e17 !important; /* Text color */
+}
+.ui-winbase.ui-mouseflags-allowed
+{
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e9f6fd+0,d3eefb+100;Blue+3D+%233 */
+   /* http://www.w3schools.com/colors/colors_picker.asp */
+	background: #c34711 !important; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d2a723 0%, #416d2d 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #d2a723 0%,#416d2d 100%) !important; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #d2a723 0%,#416d2d 100%)!important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2a723', endColorstr='#416d2d',GradientType=0 )!important; /* IE6-9 */
+	color: #7a4e17 !important; /* Text color */
+} 
+.ui-cblwindow.ui-draggable.ui-cblwindow-active
+{
+   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e9f6fd+0,d3eefb+100;Blue+3D+%233 */
+   /* http://www.w3schools.com/colors/colors_picker.asp */
+	background: #c34711 !important; /* Old browsers */
+	background: -moz-linear-gradient(top,  #d2a723 0%, #416d2d 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #d2a723 0%,#416d2d 100%) !important; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #d2a723 0%,#416d2d 100%)!important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2a723', endColorstr='#416d2d',GradientType=0 )!important; /* IE6-9 */
+	color: #7a4e17 !important;
+} 
+table.ui-terminal-layer td
+{
+  background-color: transparent !important;	
+  color: #7a4e17 !important; /* Text color */ 
+}
+   
+}
+
+
+

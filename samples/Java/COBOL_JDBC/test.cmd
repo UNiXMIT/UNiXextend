@@ -1,0 +1,3 @@
+SET PATH=C:\Program Files (x86)\Java\jre1.8.0_151\bin\client;C:\Program Files (x86)\Java\jre1.8.0_151\bin;C:\Program Files (x86)\Java\jre1.8.0_151\lib;%PATH%
+SET CLASSPATH=D:\Temp\COBOL_JDBC\ucanload.jar;D:\Temp\COBOL_JDBC\ucanaccess-5.0.0.jar;D:\Temp\COBOL_JDBC\commons-lang3-3.8.1.jar;D:\Temp\COBOL_JDBC\commons-logging-1.2.jar;D:\Temp\COBOL_JDBC\hsqldb-2.5.0.jar;D:\Temp\COBOL_JDBC\jackcess-3.0.1.jar;D:\Temp\COBOL_JDBC;.;%CLASSPATH%
+wrun32 -d -c cblconfig -le error.txt CobolCallingJava.acu

@@ -1,0 +1,10 @@
+@echo on
+REM Run the base container in the foreground
+
+docker run -it --rm ^
+	--publish 5632:5632 ^
+	--publish 3000:3000 ^
+	--publish 8009:8009 ^
+	--name acu_base_interactive ^
+	--volume "%CD%\SharedContainerDirectory":"C:\SharedContainerDirectory" ^
+	microfocus/extend:win_10.5.0_x64

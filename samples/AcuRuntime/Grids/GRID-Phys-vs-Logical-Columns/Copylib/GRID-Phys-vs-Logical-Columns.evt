@@ -1,0 +1,36 @@
+      * GRID-Phys-vs-Logical-Columns.evt
+      * GRID-Phys-vs-Logical-Columns.evt is generated from C:\AcuSamples\GRID\GRID-MoveAndHide-1040-ECN-4697\GRID-Phys-vs-Logical-Columns\GRID-Phys-vs-Logical-Columns.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+
+       Acu-Screen1-Event-Extra.
+           EVALUATE Event-Type
+           WHEN Msg-Close
+              PERFORM Acu-Screen1-Msg-Close
+           END-EVALUATE
+           .
+
+       Acu-Screen1-Msg-Close.
+           ACCEPT Quit-Mode-Flag FROM ENVIRONMENT "QUIT_MODE"
+           IF Quit-Mode-Flag = ZERO
+              PERFORM Acu-Screen1-Exit
+              PERFORM Acu-Exit-Rtn
+           END-IF
+           .
+
+       Screen1-Event-Proc.
+      * 
+           PERFORM Acu-Screen1-Event-Extra
+           .
+
+       Screen1-Gd-1-Event-Proc.
+           .
+      ***   start event editor code   ***
+      *
+       Screen1-Aft-Create.
+           MODIFY Screen1-Gd-1, Y = 1, 
+                                RECORD-TO-ADD = "    A       B       C  
+      -    "     D       E       F       G       H       I       J"
+           .
+
+       

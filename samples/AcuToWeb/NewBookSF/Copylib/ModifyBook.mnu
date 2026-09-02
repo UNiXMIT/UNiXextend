@@ -1,0 +1,43 @@
+      * ModifyBook.mnu
+      * ModifyBook.mnu is generated from C:\COBOL\extend10.1\ModifyBook.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+      * Form1-Mn-1
+       Acu-Form1-Mn-1-Menu.
+           PERFORM Acu-Form1-Mn-1
+              THRU Acu-Form1-Mn-1-Exit.
+
+       Acu-Form1-Mn-1.
+           CALL "W$MENU" USING Wmenu-New-Popup GIVING Menu-Handle
+           IF Menu-Handle = ZERO
+              GO TO Acu-Form1-Mn-1-Exit
+           END-IF
+           CALL "W$MENU" USING Wmenu-New GIVING Sub-Handle-1
+           IF Sub-Handle-1 = ZERO
+              MOVE ZERO TO Menu-Handle
+              GO TO Acu-Form1-Mn-1-EXIT
+           END-IF
+           CALL "W$MENU" USING WMENU-ADD, Menu-Handle, 0, 0, 
+              "Test Popup Menu", 1000, Sub-Handle-1
+           CALL "W$MENU" USING WMENU-ADD, Sub-Handle-1, 0, 0, 
+              "We have the First Choice", 1001
+           CALL "W$MENU" USING WMENU-ADD, Sub-Handle-1, 0, 0, 
+              "Here is the Second", 1002
+           CALL "W$MENU" USING WMENU-ADD, Sub-Handle-1, 0, 0, 
+              "Okay This is a Real Menu!", 1006
+           CALL "W$MENU" USING Wmenu-New GIVING Sub-Handle-1
+           IF Sub-Handle-1 = ZERO
+              MOVE ZERO TO Menu-Handle
+              GO TO Acu-Form1-Mn-1-EXIT
+           END-IF
+           CALL "W$MENU" USING WMENU-ADD, Menu-Handle, 0, 0, 
+              "We want another Menu test", 1003, Sub-Handle-1
+           CALL "W$MENU" USING WMENU-ADD, Sub-Handle-1, 0, 0, 
+              "A First Choice", 1004
+           CALL "W$MENU" USING WMENU-ADD, Sub-Handle-1, 0, 0, 
+              "A Second Choice", 1005
+           .
+
+       Acu-Form1-Mn-1-Exit.
+           MOVE ZERO TO Return-Code.
+

@@ -1,0 +1,88 @@
+      * Scrollbar.prd
+      * Scrollbar.prd is generated from C:\AcuSamples\scrollbar\Scrollbar.Psf
+      * This is a generated file. DO NOT modify this file directly.      
+
+       Acu-Initial-Routine.
+      *    Before-Init
+      * get system information
+           ACCEPT System-Information FROM System-Info
+      * get terminal information
+           ACCEPT Terminal-Abilities FROM Terminal-Info
+      *    After-Init
+           .
+
+       Acu-Exit-Rtn.
+      *    After-Program
+           EXIT PROGRAM
+           STOP RUN
+           .
+
+       Acu-Form1-Routine.
+      *    Before-Routine
+           PERFORM Acu-Form1-Scrn
+           PERFORM Acu-Form1-Proc
+      *    After-Routine
+           .
+
+       Acu-Form1-Scrn.
+           PERFORM Acu-Form1-Create-Win
+           PERFORM Acu-Form1-Init-Data
+           .
+
+       Acu-Form1-Create-Win.
+      *    Before-Create
+      * display screen
+              DISPLAY Standard GRAPHICAL WINDOW
+                 LINES 33,00, SIZE 38,00, CELL HEIGHT 10, 
+                 CELL WIDTH 10, AUTO-MINIMIZE, COLOR IS 65793, 
+                 CONTROLS-UNCROPPED, ERASE, LABEL-OFFSET 0, 
+                 LINK TO THREAD, MODELESS, NO SCROLL, WITH SYSTEM MENU, 
+                 TITLE "Scroll-bar demo", TITLE-BAR, NO WRAP, 
+                 EVENT PROCEDURE Form1-Event-Proc, 
+                 HANDLE IS Form1-Handle
+      * toolbar
+           DISPLAY Form1 UPON Form1-Handle
+      *    After-Create
+           .
+
+       Acu-Form1-Init-Data.
+      *    Before-Initdata
+           PERFORM Acu-Form1-Lb-1-Content
+      *    After-Initdata
+           .
+      * Form1
+       Acu-Form1-Proc.
+           PERFORM UNTIL key-entered = 27
+              ACCEPT Form1  
+                 ON EXCEPTION PERFORM Acu-Form1-Evaluate-Func
+              END-ACCEPT
+           END-PERFORM
+           DESTROY Form1-Handle
+           INITIALIZE key-entered
+           .
+
+      * Form1-Lb-1
+       Acu-Form1-Lb-1-Content.
+           MODIFY Form1-Lb-1, MASS-UPDATE = 1, RESET-LIST = 1
+           MODIFY Form1-Lb-1, ITEM-TO-ADD = TABLE Form1-Lb-1-Container
+           MODIFY Form1-Lb-1, MASS-UPDATE = 0
+           MODIFY Form1-Lb-1, VALUE Form1-Lb-1-Value
+           .
+
+      * Form1
+       Acu-Form1-Evaluate-Func.
+           EVALUATE TRUE
+              WHEN key-entered = 27
+                 PERFORM Acu-Form1-Exit
+              WHEN key-entered = 96
+                 IF Event-Type = Cmd-Close
+                    PERFORM Acu-Form1-Exit
+                 END-IF
+           END-EVALUATE
+           MOVE 1 TO Accept-Control
+           . 
+
+       Acu-Form1-Exit.
+           MOVE 27 TO key-entered
+           .
+

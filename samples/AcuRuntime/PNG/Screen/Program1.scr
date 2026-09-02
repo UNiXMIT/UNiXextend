@@ -1,0 +1,9 @@
+      * Program1.scr
+      * Program1.scr is generated from C:\Project1\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       01 Screen1.
+           03 Screen1-Bt-1, Bitmap, 
+              COL 2.10, LINE 2.00, LINES 260, SIZE 248, 
+              BITMAP-HANDLE SW-png, BITMAP-NUMBER 1, 
+              ID IS 1.

@@ -1,0 +1,97 @@
+      * BookSF.wrk
+      * BookSF.wrk is generated from C:\ACUTOWEB\cobol\NewBookSF\BookSF.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       77 Quit-Mode-Flag PIC S9(5) COMP-4 VALUE 0.
+       77 Key-Status IS SPECIAL-NAMES CRT STATUS PIC 9(4) VALUE 0.
+           88 Exit-Pushed VALUE 27.
+           88 Message-Received VALUE 95.
+           88 Event-Occurred VALUE 96.
+           88 Screen-No-Input-Field VALUE 97.
+           88 Screen-Time-Out VALUE 99.
+      * property-defined variable
+
+      * user-defined variable
+       77 Arial10
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 Screen1-Handle
+                  USAGE IS HANDLE OF WINDOW VALUE NULL.
+       77 Calibri12B
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 Extend10b_937x2896-215605-png            PIC  S9(6)
+                  USAGE IS COMP-4
+                  VALUE IS 0.
+       77 Calibri9B
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 W90-DISPLAY      PIC  X(26).
+       77 Arial9B
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 ws-detail-visible            PIC  9
+                  VALUE IS 1.
+       77 W20-A41-3        PIC  X(21)
+                  VALUE IS "Department No.".
+       77 W20-A41-4        PIC  X(18)
+                  VALUE IS "Sub-department No.".
+       77 Screen2-Handle
+                  USAGE IS HANDLE OF WINDOW VALUE NULL.
+       77 Calibri-Light10
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 Trebuchet-MS10B
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 MS-Sans-Serif12B
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       01 Screen2-Gd-1-Record.
+           05 Gd-1-Col-1       PIC  X(09).
+           05 Gd-1-Col-2       PIC  X(2).
+           05 Gd-1-Col-3       PIC  X(25).
+           05 Gd-1-Col-4       PIC  ZZZZ,ZZ9.99.
+           05 Gd-1-Col-5       PIC  ZZZZ9-.
+           05 Gd-1-Col-6       PIC  X.
+           05 Gd-1-Col-7       PIC  ZZZZ9-.
+           05 Gd-1-Col-8       PIC  X(4).
+           05 Gd-1-Col-9       PIC  X(10).
+       77 2DPB-BMP         PIC  S9(6)
+                  USAGE IS COMP-4
+                  VALUE IS 0.
+       77 CRD-bmp          PIC  S9(6)
+                  USAGE IS COMP-4
+                  VALUE IS 0.
+       77 Arial10I
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 Arial10B
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 Depart-status    PIC  X(2).
+           88 Valid-Department VALUE IS "00" THRU "09". 
+       77 Books-status     PIC  X(2).
+           88 Valid-Books VALUE IS "00" THRU "09". 
+       77 old-Departme-key PIC  x(26).
+       77 branchToKeep     PIC  x(3).
+       77 ws-cursor        PIC  9(3).
+       77 Default-Font
+                  USAGE IS HANDLE OF FONT DEFAULT-FONT.
+       77 Calibri10
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 books-jpg        PIC  S9(6)
+                  USAGE IS COMP-4
+                  VALUE IS 0.
+       77 Extend10b-jpg    PIC  S9(6)
+                  USAGE IS COMP-4
+                  VALUE IS 0.
+       77 AcuToWeb_resize1-jpg         PIC  S9(6)
+                  USAGE IS COMP-4
+                  VALUE IS 0.
+       77 AcuToWeb_resize2-jpg         PIC  S9(6)
+                  USAGE IS COMP-4
+                  VALUE IS 0.
+       77 AcuToWeb_resize3-jpg         PIC  S9(6)
+                  USAGE IS COMP-4
+                  VALUE IS 0.
+       77 AcuToWeb_resize4-jpg         PIC  S9(6)
+                  USAGE IS COMP-4
+                  VALUE IS 0.
+       77 Calibri11B
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 Calibri11
+                  USAGE IS HANDLE OF FONT VALUE NULL.
+       77 Calibri14B
+                  USAGE IS HANDLE OF FONT VALUE NULL.

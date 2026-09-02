@@ -1,0 +1,423 @@
+* Menu.prd
+* Menu.prd is generated from C:\Work\Demo\classid\Menu.Psf
+* This is a generated file. DO NOT modify this file directly.
+
+ Acu-Initial-Routine.
+*    Before-Init
+* get system information
+     ACCEPT System-Information FROM System-Info
+* get terminal information
+     ACCEPT Terminal-Abilities FROM Terminal-Info
+* set font
+     PERFORM Acu-Init-Font
+* load bitmap
+     PERFORM Acu-Init-Bmp
+* open file
+     PERFORM Acu-Open-Files
+*    After-Init
+     .
+
+ Acu-Init-Font.
+* font setting
+     INITIALIZE WFONT-DATA Arial10
+     MOVE 10 TO WFONT-SIZE
+     MOVE "Arial" TO WFONT-NAME
+     SET WFCHARSET-DEFAULT TO TRUE
+     SET WFONT-BOLD TO FALSE
+     SET WFONT-ITALIC TO FALSE
+     SET WFONT-UNDERLINE TO FALSE
+     SET WFONT-STRIKEOUT TO FALSE
+     SET WFFAMILY-DONT-CARE TO TRUE
+     SET WFONT-FIXED-PITCH TO FALSE
+     CALL "W$FONT" USING WFONT-GET-FONT, Arial10, WFONT-DATA
+     INITIALIZE WFONT-DATA Calibri12B
+     MOVE 12 TO WFONT-SIZE
+     MOVE "Calibri" TO WFONT-NAME
+     SET WFCHARSET-DEFAULT TO TRUE
+     SET WFONT-BOLD TO TRUE
+     SET WFONT-ITALIC TO FALSE
+     SET WFONT-UNDERLINE TO FALSE
+     SET WFONT-STRIKEOUT TO FALSE
+     SET WFFAMILY-DONT-CARE TO TRUE
+     SET WFONT-FIXED-PITCH TO FALSE
+     CALL "W$FONT" USING WFONT-GET-FONT, Calibri12B, WFONT-DATA
+     INITIALIZE WFONT-DATA Calibri9B
+     MOVE 9 TO WFONT-SIZE
+     MOVE "Calibri" TO WFONT-NAME
+     SET WFCHARSET-DEFAULT TO TRUE
+     SET WFONT-BOLD TO TRUE
+     SET WFONT-ITALIC TO FALSE
+     SET WFONT-UNDERLINE TO FALSE
+     SET WFONT-STRIKEOUT TO FALSE
+     SET WFFAMILY-DONT-CARE TO TRUE
+     SET WFONT-FIXED-PITCH TO FALSE
+     CALL "W$FONT" USING WFONT-GET-FONT, Calibri9B, WFONT-DATA
+     INITIALIZE WFONT-DATA Arial9B
+     MOVE 9 TO WFONT-SIZE
+     MOVE "Arial" TO WFONT-NAME
+     SET WFCHARSET-DEFAULT TO TRUE
+     SET WFONT-BOLD TO TRUE
+     SET WFONT-ITALIC TO FALSE
+     SET WFONT-UNDERLINE TO FALSE
+     SET WFONT-STRIKEOUT TO FALSE
+     SET WFFAMILY-DONT-CARE TO TRUE
+     SET WFONT-FIXED-PITCH TO FALSE
+     CALL "W$FONT" USING WFONT-GET-FONT, Arial9B, WFONT-DATA
+     INITIALIZE WFONT-DATA MS-Sans-Serif12B
+     MOVE 12 TO WFONT-SIZE
+     MOVE "MS Sans Serif" TO WFONT-NAME
+     SET WFCHARSET-DEFAULT TO TRUE
+     SET WFONT-BOLD TO TRUE
+     SET WFONT-ITALIC TO FALSE
+     SET WFONT-UNDERLINE TO FALSE
+     SET WFONT-STRIKEOUT TO FALSE
+     SET WFFAMILY-DONT-CARE TO TRUE
+     SET WFONT-FIXED-PITCH TO FALSE
+     CALL "W$FONT" USING WFONT-GET-FONT, MS-Sans-Serif12B, WFONT-DATA
+     INITIALIZE WFONT-DATA Trebuchet-MS10B
+     MOVE 10 TO WFONT-SIZE
+     MOVE "Trebuchet MS" TO WFONT-NAME
+     SET WFCHARSET-DEFAULT TO TRUE
+     SET WFONT-BOLD TO TRUE
+     SET WFONT-ITALIC TO FALSE
+     SET WFONT-UNDERLINE TO FALSE
+     SET WFONT-STRIKEOUT TO FALSE
+     SET WFFAMILY-DONT-CARE TO TRUE
+     SET WFONT-FIXED-PITCH TO FALSE
+     CALL "W$FONT" USING WFONT-GET-FONT, Trebuchet-MS10B, WFONT-DATA
+     INITIALIZE WFONT-DATA Calibri10
+     MOVE 10 TO WFONT-SIZE
+     MOVE "Calibri" TO WFONT-NAME
+     SET WFCHARSET-DEFAULT TO TRUE
+     SET WFONT-BOLD TO FALSE
+     SET WFONT-ITALIC TO FALSE
+     SET WFONT-UNDERLINE TO FALSE
+     SET WFONT-STRIKEOUT TO FALSE
+     SET WFFAMILY-DONT-CARE TO TRUE
+     SET WFONT-FIXED-PITCH TO FALSE
+     CALL "W$FONT" USING WFONT-GET-FONT, Calibri10, WFONT-DATA
+     INITIALIZE WFONT-DATA Arial10I
+     MOVE 10 TO WFONT-SIZE
+     MOVE "Arial" TO WFONT-NAME
+     SET WFCHARSET-DEFAULT TO TRUE
+     SET WFONT-BOLD TO FALSE
+     SET WFONT-ITALIC TO TRUE
+     SET WFONT-UNDERLINE TO FALSE
+     SET WFONT-STRIKEOUT TO FALSE
+     SET WFFAMILY-DONT-CARE TO TRUE
+     SET WFONT-FIXED-PITCH TO FALSE
+     CALL "W$FONT" USING WFONT-GET-FONT, Arial10I, WFONT-DATA
+     INITIALIZE WFONT-DATA Arial10B
+     MOVE 10 TO WFONT-SIZE
+     MOVE "Arial" TO WFONT-NAME
+     SET WFCHARSET-DEFAULT TO TRUE
+     SET WFONT-BOLD TO TRUE
+     SET WFONT-ITALIC TO FALSE
+     SET WFONT-UNDERLINE TO FALSE
+     SET WFONT-STRIKEOUT TO FALSE
+     SET WFFAMILY-DONT-CARE TO TRUE
+     SET WFONT-FIXED-PITCH TO FALSE
+     CALL "W$FONT" USING WFONT-GET-FONT, Arial10B, WFONT-DATA
+     .
+
+ Acu-Init-Bmp.
+* bitmap loading
+     COPY RESOURCE "Extend10b.jpg".
+     CALL "W$BITMAP" USING WBITMAP-LOAD "Extend10b.jpg", GIVING 
+        Extend10b-jpg
+     COPY RESOURCE "2DPB.BMP".
+     CALL "W$BITMAP" USING WBITMAP-LOAD "2DPB.BMP", GIVING 2DPB-BMP
+     COPY RESOURCE "CRD.bmp".
+     CALL "W$BITMAP" USING WBITMAP-LOAD "CRD.bmp", GIVING CRD-bmp
+     .
+
+ Acu-Exit-Rtn.
+     PERFORM Acu-Close-Files
+*    After-Program
+     EXIT PROGRAM
+     STOP RUN
+     .
+
+ Acu-Open-Files.
+*    Before-Open
+     PERFORM Acu-Open-Department
+     PERFORM Acu-Open-Books
+*    After-Open
+     .
+
+ Acu-Open-Department.
+*    Before-Open
+     OPEN I-O Department 
+     IF Depart-status = "35"
+        OPEN OUTPUT Department
+        IF Depart-status(1:1) = "0"
+           CLOSE Department
+           OPEN I-O Department
+        END-IF
+     END-IF
+     IF NOT Depart-status(1:1) = "0"
+        PERFORM Acu-Extended-File-Status
+        GO TO Acu-Exit-Rtn
+     END-IF
+*    After-Open
+     .
+
+ Acu-Open-Books.
+*    Before-Open
+     OPEN I-O Books 
+     IF Books-status = "35"
+        OPEN OUTPUT Books
+        IF Books-status(1:1) = "0"
+           CLOSE Books
+           OPEN I-O Books
+        END-IF
+     END-IF
+     IF NOT Books-status(1:1) = "0"
+        PERFORM Acu-Extended-File-Status
+        GO TO Acu-Exit-Rtn
+     END-IF
+*    After-Open
+     .
+
+ Acu-Screen1-Routine.
+*    Before-Routine
+     PERFORM Acu-Screen1-Scrn
+     PERFORM Acu-Screen1-Proc
+*    After-Routine
+     .
+
+ Acu-Screen2-Routine.
+*    Before-Routine
+     PERFORM Acu-Screen2-Scrn
+     PERFORM Acu-Screen2-Proc
+*    After-Routine
+     .
+
+ Acu-Screen1-Scrn.
+     PERFORM Acu-Screen1-Create-Win
+     PERFORM Acu-Screen1-Init-Data
+     .
+
+ Acu-Screen2-Scrn.
+     PERFORM Acu-Screen2-Create-Win
+     PERFORM Acu-Screen2-Init-Data
+     .
+
+ Acu-Screen1-Create-Win.
+*    Before-Create
+* display screen
+        DISPLAY Standard GRAPHICAL WINDOW
+           LINES 12.17, SIZE 67.14, CELL HEIGHT 23, CELL WIDTH 7, 
+           AUTO-MINIMIZE, COLOR IS 65793, CONTROL FONT Arial10, ERASE, 
+           LABEL-OFFSET 0, WITH SYSTEM MENU, 
+           TITLE "Scan by Dept/Sub-Dept/R.S.P./Item", TITLE-BAR, 
+           USER-GRAY, USER-WHITE, 
+           EVENT PROCEDURE Screen1-Event-Proc, 
+           HANDLE IS Screen1-Handle
+* toolbar
+     DISPLAY Screen1 UPON Screen1-Handle
+*    After-Create
+     .
+
+ Acu-Screen2-Create-Win.
+*    Before-Create
+* display screen
+        DISPLAY Floating GRAPHICAL WINDOW
+           LINES 57.00, SIZE 105.00, CELL HEIGHT 10, CELL WIDTH 10, 
+           COLOR IS 65793, CONTROL FONT Arial10, LABEL-OFFSET 0, 
+           LINK TO THREAD, MODELESS, NO SCROLL, WITH SYSTEM MENU, 
+           TITLE "Scan by Dept/Sub-Dept/R.S.P./Item", TITLE-BAR, 
+           NO WRAP, 
+           HANDLE IS Screen2-Handle
+* toolbar
+     DISPLAY Screen2 UPON Screen2-Handle
+*    After-Create
+     .
+
+ Acu-Screen1-Init-Data.
+*    Before-Initdata
+     PERFORM Acu-Screen1-Dpt-Cb-Content
+     PERFORM Acu-Screen1-SubDpt-Cb-Content
+     PERFORM Screen1-Aft-Initdata
+     .
+
+ Acu-Screen2-Init-Data.
+*    Before-Initdata
+     PERFORM Acu-Screen2-Gd-1-Content
+*    After-Initdata
+     .
+* Screen1
+ Acu-Screen1-Proc.
+     PERFORM UNTIL Exit-Pushed
+        ACCEPT Screen1  
+           ON EXCEPTION PERFORM Acu-Screen1-Evaluate-Func
+        END-ACCEPT
+     END-PERFORM
+     DESTROY Screen1-Handle
+     INITIALIZE Key-Status
+     .
+* Screen2
+ Acu-Screen2-Proc.
+     PERFORM UNTIL Exit-Pushed
+        ACCEPT Screen2  
+           ON EXCEPTION PERFORM Acu-Screen2-Evaluate-Func
+        END-ACCEPT
+     END-PERFORM
+     DESTROY Screen2-Handle
+     INITIALIZE Key-Status
+     .
+
+* Screen1-Dpt-Cb
+ Acu-Screen1-Dpt-Cb-Content.
+     .
+
+* Screen1-SubDpt-Cb
+ Acu-Screen1-SubDpt-Cb-Content.
+     .
+
+* Screen2-Gd-1
+ Acu-Screen2-Gd-1-Content.
+* Cells Settings
+     MODIFY Screen2-Gd-1, X = 1, Y = 1, CELL-DATA = "Id No", 
+     MODIFY Screen2-Gd-1, X = 2, Y = 1, CELL-DATA = "DR", 
+     MODIFY Screen2-Gd-1, X = 3, Y = 1, CELL-DATA = "Title", 
+     MODIFY Screen2-Gd-1, X = 4, Y = 1, CELL-DATA = "Price", 
+     MODIFY Screen2-Gd-1, X = 5, Y = 1, CELL-DATA = "Curr. Stock", 
+     MODIFY Screen2-Gd-1, X = 6, Y = 1, CELL-DATA = "FY16 Sales", 
+     MODIFY Screen2-Gd-1, X = 7, Y = 1, CELL-DATA = "Ordered", 
+     MODIFY Screen2-Gd-1, X = 8, Y = 1, CELL-DATA = "Last DATE", 
+     MODIFY Screen2-Gd-1, X = 9, Y = 1, CELL-DATA = "Author", 
+* Columns' Setting
+     MODIFY Screen2-Gd-1, X = 1, X = 1, COLUMN-FONT = Default-Font, 
+     MODIFY Screen2-Gd-1, X = 2, X = 2, COLUMN-FONT = Default-Font, 
+     MODIFY Screen2-Gd-1, X = 3, X = 3, COLUMN-FONT = Calibri10, 
+     MODIFY Screen2-Gd-1, X = 4, X = 4, COLUMN-FONT = Calibri10, 
+     MODIFY Screen2-Gd-1, X = 5, X = 5, COLUMN-FONT = Calibri10, 
+     MODIFY Screen2-Gd-1, X = 6, X = 6, COLUMN-FONT = Calibri10, 
+     MODIFY Screen2-Gd-1, X = 7, X = 7, COLUMN-FONT = Calibri10, 
+     MODIFY Screen2-Gd-1, X = 8, X = 8, COLUMN-FONT = Calibri10, 
+     MODIFY Screen2-Gd-1, X = 9, X = 9, COLUMN-FONT = Calibri10, 
+     .
+
+* Screen1
+ Acu-Screen1-Evaluate-Func.
+     EVALUATE TRUE
+        WHEN Exit-Pushed
+           PERFORM Acu-Screen1-Exit
+        WHEN Event-Occurred
+           IF Event-Type = Cmd-Close
+              PERFORM Acu-Screen1-Exit
+           END-IF
+* Screen1-Pb-1a Link To
+        WHEN Key-Status = 101
+           PERFORM Screen1-Pb-1a-Link
+     END-EVALUATE
+     MOVE 1 TO Accept-Control
+     .
+
+* Screen2
+ Acu-Screen2-Evaluate-Func.
+     EVALUATE TRUE
+        WHEN Exit-Pushed
+           PERFORM Acu-Screen2-Exit
+        WHEN Event-Occurred
+           IF Event-Type = Cmd-Close
+              PERFORM Acu-Screen2-Exit
+           END-IF
+* Screen2-Pb-1 Link To
+        WHEN Key-Status = 124
+           PERFORM Screen2-Pb-1-Link
+* Screen2-Pb-1a Link To
+        WHEN Key-Status = 123
+           PERFORM Screen2-Pb-1a-Link
+* Screen2-Pb-2 Link To
+        WHEN Key-Status = 126
+           PERFORM Screen2-Pb-2-Link
+* Screen2-Pb-3 Link To
+        WHEN Key-Status = 125
+           PERFORM Screen2-Pb-3-Link
+     END-EVALUATE
+     MOVE 1 TO Accept-Control
+     .
+
+ Acu-Close-Files.
+*    Before-Close
+     CLOSE Department
+     CLOSE Books
+*    After-Close
+     .
+
+* Department
+
+ Acu-Department-Read.
+     READ Department WITH NO LOCK KEY mkey OF Department
+     .
+
+ Acu-Department-Read-Next.
+     READ Department NEXT WITH NO LOCK
+     .
+
+ Acu-Department-Read-Prev.
+     READ Department PREVIOUS WITH NO LOCK
+     .
+
+ Acu-Department-Rec-Write.
+     WRITE Departme-rec
+     .
+
+ Acu-Department-Rec-Rewrite.
+     REWRITE Departme-rec
+     .
+
+ Acu-Department-Rec-Delete.
+     DELETE Department
+     .
+
+ Acu-Department-Delete.
+     DELETE FILE Department
+     .
+
+* Books
+
+ Acu-Books-Read.
+     READ Books WITH NO LOCK KEY Books-id OF Books
+     .
+
+ Acu-Books-Read-Next.
+     READ Books NEXT WITH NO LOCK
+     .
+
+ Acu-Books-Read-Prev.
+     READ Books PREVIOUS WITH NO LOCK
+     .
+
+ Acu-Books-Rec-Write.
+     WRITE Books-rec
+     .
+
+ Acu-Books-Rec-Rewrite.
+     REWRITE Books-rec
+     .
+
+ Acu-Books-Rec-Delete.
+     DELETE Books
+     .
+
+ Acu-Books-Delete.
+     DELETE FILE Books
+     .
+
+ Acu-Books-Ref-Department.
+     INITIALIZE Departme-rec OF Department
+     MOVE Books-branch OF Books TO Departme-key OF Department
+     PERFORM Acu-Department-Read
+     .
+
+ Acu-Screen1-Exit.
+     SET Exit-Pushed TO TRUE
+     .
+
+ Acu-Screen2-Exit.
+     SET Exit-Pushed TO TRUE
+     .
+

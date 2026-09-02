@@ -1,0 +1,8 @@
+*.acu
+*.adb
+*.dll
+*.DLL
+*.so
+.vscode/
+.vs/
+err.txt

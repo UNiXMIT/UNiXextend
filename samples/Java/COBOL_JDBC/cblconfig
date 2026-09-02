@@ -1,0 +1,3 @@
+#A_JAVA_TRACE_VALUE 32767 
+#A_JAVA_TRACE_FILENAME trace.txt
+JAVA_LIBRARY_NAME C:\Program Files (x86)\Java\jre1.8.0_151\bin\client\jvm.dll

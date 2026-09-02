@@ -1,0 +1,27 @@
+      * Program1.evt
+      * Program1.evt is generated from C:\Project1\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+
+       Acu-Screen1-Event-Extra.
+           EVALUATE Event-Type
+           WHEN Msg-Close
+              PERFORM Acu-Screen1-Msg-Close
+           END-EVALUATE
+           .
+
+       Acu-Screen1-Msg-Close.
+           ACCEPT Quit-Mode-Flag FROM ENVIRONMENT "QUIT_MODE"
+           IF Quit-Mode-Flag = ZERO
+              PERFORM Acu-Screen1-Exit
+              PERFORM Acu-Exit-Rtn
+           END-IF
+           .
+
+       Screen1-Event-Proc.
+      * 
+           PERFORM Acu-Screen1-Event-Extra
+           .
+      ***   start event editor code   ***
+
+       

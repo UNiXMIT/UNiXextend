@@ -1,0 +1,1027 @@
+; CASEMaker AcuBench Workspace File, Version 10.4
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[WORKSPACE_CONTENT]
+PROJECT_LIST=SI-3170105-DRAG-COLOR
+CONFIGURATION_LIST=9.2.5,10.0.1,10.1.0,10.4.0,10.3.1
+CURRENT_CONFIGURATION=10.4.0
+
+[PROJECT_CONTENT-SI-3170105-DRAG-COLOR]
+RELATIVE_PATH=.
+REMOTE_PATH=myserver:5632:/
+MAIN_PROGRAM_TYPE=2
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+
+[PROGRAM_CONTENT-SI-3170105-DRAG-COLOR:PROGRAM1]
+RELATIVE_PATH=Grid-Drag.psf
+
+[FOLDER_CONTENT-SI-3170105-DRAG-COLOR:Source]
+ACCEPTED_FILE_EXTENSION=*.cbl;*.cob
+CREATED_TIME=16:24:54, lunedì 18 dicembre 2017
+
+[FOLDER_CONTENT-SI-3170105-DRAG-COLOR:Screen]
+ACCEPTED_FILE_EXTENSION=*.scr;*.stf
+CREATED_TIME=16:24:54, lunedì 18 dicembre 2017
+
+[FOLDER_CONTENT-SI-3170105-DRAG-COLOR:Report]
+ACCEPTED_FILE_EXTENSION=*.rpt;*.rtf
+CREATED_TIME=16:24:54, lunedì 18 dicembre 2017
+
+[FOLDER_CONTENT-SI-3170105-DRAG-COLOR:Copylib]
+ACCEPTED_FILE_EXTENSION=*.cpy;*.wrk;*.lnk;*.lks;*.mnu;*.prd;*.evt;*.def
+CREATED_TIME=16:24:54, lunedì 18 dicembre 2017
+
+[FOLDER_CONTENT-SI-3170105-DRAG-COLOR:Object]
+ACCEPTED_FILE_EXTENSION=*.acu;*.cbx;*.obj;*.lib
+CREATED_TIME=16:24:54, lunedì 18 dicembre 2017
+
+[FOLDER_CONTENT-SI-3170105-DRAG-COLOR:List]
+ACCEPTED_FILE_EXTENSION=*.lst;*.log;*.asq
+CREATED_TIME=16:24:54, lunedì 18 dicembre 2017
+
+[FOLDER_CONTENT-SI-3170105-DRAG-COLOR:Resource]
+ACCEPTED_FILE_EXTENSION=*.ico;*.bmp;*.jpg;*.jpe;*.jpeg;*.tif;*.tiff;*.png
+CREATED_TIME=16:24:54, lunedì 18 dicembre 2017
+
+[FOLDER_CONTENT-SI-3170105-DRAG-COLOR:FD]
+ACCEPTED_FILE_EXTENSION=*.fd;*.sd;*.sl
+CREATED_TIME=16:24:54, lunedì 18 dicembre 2017
+
+[FOLDER_CONTENT-SI-3170105-DRAG-COLOR:Remote]
+ACCEPTED_FILE_EXTENSION=*.acu;*.cbx;*.obj;*.lib
+CREATED_TIME=16:24:54, lunedì 18 dicembre 2017
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE1]
+RELATIVE_PATH=Source\SI-3137817-Drag.cbl
+FOLDER_NAME=Source
+OWNER_PATH=SI-3137817-Drag.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE2]
+RELATIVE_PATH=Source\SI-3170105-DRAG-COLOR.cbl
+FOLDER_NAME=Source
+OWNER_PATH=SI-3170105-DRAG-COLOR.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE3]
+RELATIVE_PATH=Source\Grid-Drag.cbl
+FOLDER_NAME=Source
+OWNER_PATH=Grid-Drag.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE4]
+RELATIVE_PATH=Screen\Grid-Drag.scr
+FOLDER_NAME=Screen
+OWNER_PATH=Grid-Drag.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE5]
+RELATIVE_PATH=Report\Grid-Drag.rpt
+FOLDER_NAME=Report
+OWNER_PATH=Grid-Drag.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE6]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\acugui.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE7]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\acucobol.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE8]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\crtvars.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE9]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\showmsg.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE10]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\showmsg.cpy
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE11]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\acugui.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE12]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\acucobol.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE13]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\crtvars.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE14]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\showmsg.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE15]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\showmsg.cpy
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE16]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\acugui.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE17]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\acucobol.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE18]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\crtvars.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE19]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\showmsg.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE20]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\showmsg.cpy
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE21]
+RELATIVE_PATH=Copylib\Grid-Drag.wrk
+FOLDER_NAME=Copylib
+OWNER_PATH=Grid-Drag.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE22]
+RELATIVE_PATH=Copylib\Grid-Drag.prd
+FOLDER_NAME=Copylib
+OWNER_PATH=Grid-Drag.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE23]
+RELATIVE_PATH=Copylib\Grid-Drag.mnu
+FOLDER_NAME=Copylib
+OWNER_PATH=Grid-Drag.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE24]
+RELATIVE_PATH=Copylib\Grid-Drag.evt
+FOLDER_NAME=Copylib
+OWNER_PATH=Grid-Drag.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE25]
+RELATIVE_PATH=Copylib\Grid-Drag.lks
+FOLDER_NAME=Copylib
+OWNER_PATH=Grid-Drag.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE26]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.3.1\AcuGT\sample\def\acugui.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE27]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.3.1\AcuGT\sample\def\acucobol.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE28]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.3.1\AcuGT\sample\def\crtvars.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE29]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.3.1\AcuGT\sample\def\showmsg.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE30]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.3.1\AcuGT\sample\def\showmsg.cpy
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE31]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\acugui.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE32]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\acucobol.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE33]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\crtvars.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE34]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\showmsg.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE35]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\showmsg.cpy
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE36]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\acugui.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE37]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\acucobol.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE38]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\crtvars.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE39]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\showmsg.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE40]
+RELATIVE_PATH=\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\showmsg.cpy
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Grid-Drag.cbl
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE41]
+RELATIVE_PATH=object\SI-3137817-Drag.acu
+FOLDER_NAME=Object
+OWNER_PATH=Source\SI-3137817-Drag.cbl
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE42]
+RELATIVE_PATH=object\SI-3170105-DRAG-COLOR.acu
+FOLDER_NAME=Object
+OWNER_PATH=Source\SI-3170105-DRAG-COLOR.cbl
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE43]
+RELATIVE_PATH=object\Grid-Drag.acu
+FOLDER_NAME=Object
+OWNER_PATH=Source\Grid-Drag.cbl
+ATTRIBUTE=0
+
+[FILE_CONTENT-SI-3170105-DRAG-COLOR:FILE44]
+RELATIVE_PATH=object\Grid-Drag_1040NGF.acu
+FOLDER_NAME=Object
+OWNER_PATH=Source\Grid-Drag.cbl
+ATTRIBUTE=0
+
+[PROJECT_COMPILE_SETTING-SI-3170105-DRAG-COLOR:9.2.5]
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_RUNTIME_SETTING-SI-3170105-DRAG-COLOR:9.2.5]
+; Common Options
+NAME_CONFIGURATION_FILE=\etc\cblconfi
+; Io Options
+; Debug Options
+; ThinClient Options
+REMOTE_CONFIG_NAME=myserver:5632:/etc/cblconfig
+REMOTE_CONFIG_DEBUG=0
+REMOTE_CONFIG_DEBUG_PORT=5632
+
+[PROJECT_ENVIRONMENT_SETTING-SI-3170105-DRAG-COLOR:9.2.5]
+VARIABLE0=RUNNAME,Wrun32.exe
+VARIABLE1=COMPILERNAME,Ccbl32.exe
+VARIABLE2=CODE_PREFIX,.\object
+VARIABLE3=ACUPATH,c:\program files (x86)\micro focus\acucbl925\acugt\bin
+VARIABLE4=COPYPATH,.\screen;.\copylib;.\report;.\resource;.\fd;%acudir%\sample\def;%screendir%;%reportdir%;%copydir%
+VARIABLE5=THINNAME,AcuThin.exe
+
+[PROJECT_LIBRARY_SETTING-SI-3170105-DRAG-COLOR:9.2.5]
+NAME_LIBRARY_FILE=.\object\@.lib
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:9.2.5:Source\Grid-Drag.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:9.2.5:Source\SI-3137817-Drag.cbl]
+COPY_DEPENDENCE=\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\acugui.def;\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\acucobol.def;\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\crtvars.def;\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\showmsg.def;\Program Files (x86)\Micro Focus\extend 10.1.1\AcuGT\sample\def\showmsg.cpy
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:9.2.5:Source\SI-3170105-DRAG-COLOR.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_COMPILE_SETTING-SI-3170105-DRAG-COLOR:10.0.1]
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_RUNTIME_SETTING-SI-3170105-DRAG-COLOR:10.0.1]
+; Common Options
+NAME_CONFIGURATION_FILE=\etc\cblconfi
+; Io Options
+; Debug Options
+; ThinClient Options
+REMOTE_CONFIG_NAME=myserver:5632:/etc/cblconfig
+REMOTE_CONFIG_DEBUG=0
+REMOTE_CONFIG_DEBUG_PORT=5632
+
+[PROJECT_ENVIRONMENT_SETTING-SI-3170105-DRAG-COLOR:10.0.1]
+VARIABLE0=RUNNAME,Wrun32.exe
+VARIABLE1=COMPILERNAME,Ccbl32.exe
+VARIABLE2=CODE_PREFIX,.\object
+VARIABLE3=ACUPATH,c:\program files (x86)\micro focus\extend 10.0.1\acugt\bin
+VARIABLE4=COPYPATH,.\screen;.\copylib;.\report;.\resource;.\fd;c:\program files (x86)\micro focus\extend 10.0.1\acugt\sample\def;%copydir%;%screendir%;%reportdir%
+VARIABLE5=THINNAME,AcuThin.exe
+
+[PROJECT_LIBRARY_SETTING-SI-3170105-DRAG-COLOR:10.0.1]
+NAME_LIBRARY_FILE=.\object\@.lib
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.0.1:Source\Grid-Drag.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.0.1:Source\SI-3137817-Drag.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.0.1:Source\SI-3170105-DRAG-COLOR.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_COMPILE_SETTING-SI-3170105-DRAG-COLOR:10.1.0]
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_RUNTIME_SETTING-SI-3170105-DRAG-COLOR:10.1.0]
+; Common Options
+NAME_CONFIGURATION_FILE=\etc\cblconfi
+; Io Options
+; Debug Options
+; ThinClient Options
+REMOTE_CONFIG_NAME=myserver:5632:/etc/cblconfig
+REMOTE_CONFIG_DEBUG=0
+REMOTE_CONFIG_DEBUG_PORT=5632
+
+[PROJECT_ENVIRONMENT_SETTING-SI-3170105-DRAG-COLOR:10.1.0]
+VARIABLE0=RUNNAME,Wrun32.exe
+VARIABLE1=COMPILERNAME,Ccbl32.exe
+VARIABLE2=CODE_PREFIX,.\object
+VARIABLE3=ACUPATH,c:\program files (x86)\micro focus\extend 10.1.0\acugt\bin
+VARIABLE4=COPYPATH,.\screen;.\copylib;.\report;.\resource;.\fd;c:\program files (x86)\micro focus\extend 10.1.0\acugt\sample\def;%copydir%;%screendir%;%reportdir%
+VARIABLE5=THINNAME,AcuThin.exe
+
+[PROJECT_LIBRARY_SETTING-SI-3170105-DRAG-COLOR:10.1.0]
+NAME_LIBRARY_FILE=.\object\@.lib
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.1.0:Source\Grid-Drag.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.1.0:Source\SI-3137817-Drag.cbl]
+COPY_DEPENDENCE=\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\acugui.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\acucobol.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\crtvars.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\showmsg.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\showmsg.cpy
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.1.0:Source\SI-3170105-DRAG-COLOR.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_COMPILE_SETTING-SI-3170105-DRAG-COLOR:10.4.0]
+; Standard Options
+NAME_OBJECT_FILE=.\object\@_1040NGF.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_RUNTIME_SETTING-SI-3170105-DRAG-COLOR:10.4.0]
+; Common Options
+NAME_CONFIGURATION_FILE=\etc\cblconfi
+; Io Options
+; Debug Options
+; ThinClient Options
+REMOTE_CONFIG_NAME=myserver:5632:/etc/cblconfig
+REMOTE_CONFIG_DEBUG=0
+REMOTE_CONFIG_DEBUG_PORT=5632
+
+[PROJECT_ENVIRONMENT_SETTING-SI-3170105-DRAG-COLOR:10.4.0]
+VARIABLE0=RUNNAME,Wrun32.exe
+VARIABLE1=COMPILERNAME,Ccbl32.exe
+VARIABLE2=CODE_PREFIX,.\object
+VARIABLE3=ACUPATH,c:\program files (x86)\micro focus\extend 10.4.0\acugt\bin
+VARIABLE4=COPYPATH,.\screen;.\copylib;.\report;.\resource;.\fd;C:\Users\Public\Documents\Micro Focus\extend 10.4.0\sample;C:\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def;%copydir%;%screendir%;%reportdir%
+VARIABLE5=THINNAME,AcuThin.exe
+
+[PROJECT_LIBRARY_SETTING-SI-3170105-DRAG-COLOR:10.4.0]
+NAME_LIBRARY_FILE=.\object\@.lib
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.4.0:Source\Grid-Drag.cbl]
+COPY_DEPENDENCE=\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\acugui.def;\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\acucobol.def;\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\crtvars.def;\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\showmsg.def;Copylib\Grid-Drag.wrk;Screen\Grid-Drag.scr;\Users\Public\Documents\Micro Focus\extend 10.4.0\sample\def\showmsg.cpy;Copylib\Grid-Drag.prd;Copylib\Grid-Drag.evt
+FOLLOW_PROJECT=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.4.0:Source\SI-3137817-Drag.cbl]
+COPY_DEPENDENCE=\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\acugui.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\acucobol.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\crtvars.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\showmsg.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\showmsg.cpy
+FOLLOW_PROJECT=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.4.0:Source\SI-3170105-DRAG-COLOR.cbl]
+FOLLOW_PROJECT=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_COMPILE_SETTING-SI-3170105-DRAG-COLOR:10.3.1]
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+CODE_VERSION=1
+CODE_VERSION_NUMBER=100
+
+[PROJECT_RUNTIME_SETTING-SI-3170105-DRAG-COLOR:10.3.1]
+; Common Options
+NAME_CONFIGURATION_FILE=\etc\cblconfi
+; Io Options
+; Debug Options
+; ThinClient Options
+REMOTE_CONFIG_NAME=myserver:5632:/etc/cblconfig
+REMOTE_CONFIG_DEBUG=0
+REMOTE_CONFIG_DEBUG_PORT=5632
+
+[PROJECT_ENVIRONMENT_SETTING-SI-3170105-DRAG-COLOR:10.3.1]
+VARIABLE0=RUNNAME,Wrun32.exe
+VARIABLE1=COMPILERNAME,Ccbl32.exe
+VARIABLE2=CODE_PREFIX,.\object
+VARIABLE3=ACUPATH,c:\program files (x86)\micro focus\extend 10.3.1\acugt\bin
+VARIABLE4=COPYPATH,.\screen;.\copylib;.\report;.\resource;.\fd;C:\Users\Public\Documents\Micro Focus\extend 10.3.1\sample;C:\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def;%copydir%;%screendir%;%reportdir%
+VARIABLE5=THINNAME,AcuThin.exe
+
+[PROJECT_LIBRARY_SETTING-SI-3170105-DRAG-COLOR:10.3.1]
+NAME_LIBRARY_FILE=.\object\@.lib
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.3.1:Source\Grid-Drag.cbl]
+COPY_DEPENDENCE=\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\acugui.def;\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\acucobol.def;\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\crtvars.def;\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\showmsg.def;Copylib\Grid-Drag.wrk;Screen\Grid-Drag.scr;\Users\Public\Documents\Micro Focus\extend 10.3.1\sample\def\showmsg.cpy;Copylib\Grid-Drag.prd;Copylib\Grid-Drag.evt
+FOLLOW_PROJECT=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.3.1:Source\SI-3137817-Drag.cbl]
+COPY_DEPENDENCE=\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\acugui.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\acucobol.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\crtvars.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\showmsg.def;\Program Files (x86)\Micro Focus\extend 10.1.0\AcuGT\sample\def\showmsg.cpy
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[FILE_COMPILE_OPTION-SI-3170105-DRAG-COLOR:10.3.1:Source\SI-3170105-DRAG-COLOR.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1

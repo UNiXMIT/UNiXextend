@@ -1,0 +1,48 @@
+      * Scrollbar.wrk
+      * Scrollbar.wrk is generated from C:\AcuSamples\scrollbar\Scrollbar.Psf
+      * This is a generated file. DO NOT modify this file directly. 
+                 
+       77 Quit-Mode-Flag PIC S9(5) COMP-4 VALUE 0. 
+      * property-defined variable
+
+      * user-defined variable
+       01 key-entered IS SPECIAL-NAMES CRT STATUS  PIC  9(3)
+                  VALUE IS zeroes.
+       01 exception-values.
+           05 quit PIC  9(3).
+       78 ws-max-lines VALUE IS 13. 
+       78 scroll-line VALUE IS 14,25. 
+       78 ws-window-lines VALUE IS 16,5. 
+       78 ws-button-lines VALUE IS 15,5. 
+       78 ws-max-line-length VALUE IS 132. 
+       78 ws-col-start VALUE IS 7. 
+       77 ws-win-size      PIC  9(5)
+                  VALUE IS 00060.
+       77 ws-size          PIC  9(3).
+       77 ws-scroll-value  PIC  9(5)
+                  VALUE IS 0001.
+       77 ws-sub           PIC  9(3).
+       77 ws-string        PIC  x(ws-max-line-length).
+       01 data-table
+                  OCCURS WS-MAX-LINES TIMES.
+           05 table-item       PIC  x(ws-max-line-length)
+                      VALUE IS all "123456789 ".
+       01 ws-rd-line
+                  OCCURS WS-MAX-LINES TIMES.
+           05 FILLER           PIC  x(ws-max-line-length).
+       77 Form1-Handle
+                  USAGE IS HANDLE OF WINDOW.
+       01 .
+           03 Form1-Lb-1-Container-Item.
+               05      PIC  X(30).
+           78 Form1-Lb-1-Container-Num VALUE IS 1. 
+           03 Form1-Lb-1-Container REDEFINES Form1-Lb-1-Container-Item  
+           PIC  X(30)
+                      OCCURS 1 TIMES
+                      INDEXED  Form1-Lb-1-Container-Idx.
+       77 Form1-Lb-1-Value PIC  X(30).
+       77 Medium-Font
+                  USAGE IS HANDLE OF FONT MEDIUM-FONT.
+       77 EVENT-DATA-2     PIC  X(30).
+       77 EVENTO-DATA-2    PIC  X(30).
+       77 EVENTO-TYPE      PIC  X(30).

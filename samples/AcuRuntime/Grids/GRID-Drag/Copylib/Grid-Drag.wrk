@@ -1,0 +1,31 @@
+      * Grid-Drag.wrk
+      * Grid-Drag.wrk is generated from C:\AcuSamples\GRID\GRID-Drag\Grid-Drag.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       77 Quit-Mode-Flag PIC S9(5) COMP-4 VALUE 0.
+       77 Key-Status IS SPECIAL-NAMES CRT STATUS PIC 9(4) VALUE 0.
+           88 Exit-Pushed VALUE 27.
+           88 Message-Received VALUE 95.
+           88 Event-Occurred VALUE 96.
+           88 Screen-No-Input-Field VALUE 97.
+           88 Screen-Time-Out VALUE 99.
+      * property-defined variable
+
+      * user-defined variable
+       77 Screen1-Handle
+                  USAGE IS HANDLE OF WINDOW VALUE NULL.
+       01 ws-x PIC  999.
+       01 ws-y PIC  999.
+       01 ws-start-value   PIC  X(08).
+       01 ws-end-value     PIC  X(08).
+       01 Screen1-Gd-1-Record.
+           05 Gd-1-Col-1       PIC  X(08).
+           05 Gd-1-Col-2       PIC  X(08).
+           05 Gd-1-Col-3       PIC  X(08).
+           05 Gd-1-Col-4       PIC  X(08).
+           05 Gd-1-Col-5       PIC  X(08).
+           05 Gd-1-Col-6       PIC  X(08).
+           05 Gd-1-Col-7       PIC  X(08).
+           05 Gd-1-Col-8       PIC  X(08).
+           05 Gd-1-Col-9       PIC  X(08).
+           05 Gd-1-Col-10      PIC  X(08).

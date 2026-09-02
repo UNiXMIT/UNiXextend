@@ -1,0 +1,112 @@
+      * Scrollbar.evt
+      * Scrollbar.evt is generated from C:\AcuSamples\scrollbar\Scrollbar.Psf
+      * This is a generated file. DO NOT modify this file directly.
+      
+
+       Acu-Form1-Event-Extra.
+           EVALUATE Event-Type
+           WHEN Msg-Close
+              PERFORM Acu-Form1-Msg-Close
+           END-EVALUATE
+           .
+
+       Acu-Form1-Msg-Close.
+           ACCEPT Quit-Mode-Flag FROM ENVIRONMENT "QUIT_MODE"
+           IF Quit-Mode-Flag = ZERO
+              PERFORM Acu-Form1-Exit
+              PERFORM Acu-Exit-Rtn
+           END-IF
+           .
+
+       Form1-Event-Proc.
+      * 
+           PERFORM Acu-Form1-Event-Extra
+           .
+
+       Form1-Sb-1-Event-Proc.
+      * 
+           EVALUATE Event-Type
+           WHEN Msg-Sb-Next
+              PERFORM Form1-Sb-1-Ev-Msg-Sb-Next
+           WHEN Msg-Sb-Nextpage
+              PERFORM Form1-Sb-1-Ev-Msg-Sb-Nextpage
+           WHEN Msg-Sb-Prev
+              PERFORM Form1-Sb-1-Ev-Msg-Sb-Prev
+           WHEN Msg-Sb-Prevpage
+              PERFORM Form1-Sb-1-Ev-Msg-Sb-Prevpage
+           WHEN Msg-Sb-Thumbtrack
+              PERFORM Form1-Sb-1-Ev-Msg-Sb-Thumbtrack
+           END-EVALUATE
+           .
+      ***   start event editor code   ***
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Next.
+           if ws-scroll-value <= ws-max-line-length - ws-size
+                   add 1 to ws-scroll-value
+           end-if
+               perform redraw-sb-lb
+           .
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Prev.
+           if ws-scroll-value > 1
+                   subtract 1 from ws-scroll-value
+           end-if
+               perform redraw-sb-lb
+           .
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Nextpage.
+           if ws-scroll-value + (ws-size * 2) 
+                             < ws-max-line-length
+                   add ws-size to ws-scroll-value
+               else
+                   compute ws-scroll-value = 
+                   ws-max-line-length + 1 - ws-size 
+           end-if
+               perform redraw-sb-lb
+           .
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Prevpage.
+           if ws-scroll-value - ws-size > 1
+                  subtract ws-size from ws-scroll-value
+           else
+                   compute ws-scroll-value = 1
+           end-if
+               perform redraw-sb-lb
+           .
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Thumbtrack.
+           if evento-data-2 > 0
+                    move evento-data-2 to ws-scroll-value
+           end-if
+               perform redraw-sb-lb
+           .
+       redraw-sb-lb.
+           modify Form1-Sb-1,    value = ws-scroll-value.
+           perform reload-listbox.
+
+       reload-listbox.
+           compute ws-size = ws-window-lines - ws-col-start + 1
+           
+           if ws-size > ws-max-line-length
+               move ws-max-line-length to ws-size
+               modify Form1-Sb-1,  visible = false
+           else
+               modify Form1-Sb-1,  visible = true    
+           end-if.     
+           
+           modify Form1-Lb-1, , reset-list 1 mass-update = 1.
+           perform varying ws-sub from 1 by 1 
+                   until ws-sub > ws-max-lines
+               move table-item(ws-sub) to ws-string
+               move ws-string(ws-scroll-value:ws-size) 
+                    to ws-rd-line(ws-sub)
+               modify Form1-Lb-1,  
+                    item-to-add = ws-rd-line(ws-sub)
+           end-perform.
+           modify Form1-Lb-1,  mass-update = 0.
+           display Form1. 
+      *
+
+            
+           .
+       

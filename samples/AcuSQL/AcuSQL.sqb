@@ -1,0 +1,98 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.                         AcuSQL.
+       AUTHOR.                             MIT.
+       ENVIRONMENT DIVISION.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+       DATA DIVISION.
+       FILE SECTION.
+       WORKING-STORAGE SECTION.
+       
+       EXEC SQL INCLUDE SQLCA END-EXEC.
+
+       EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01  DSN-NAME                            PIC X(20).
+       01  USERID                              PIC X(8).
+       01  PASSWD.
+           49 PASSWD-LENGTH                    PIC S9(4) COMP-5 VALUE 0.
+           49 PASSWD-NAME                      PIC X(20).
+       EXEC SQL END DECLARE SECTION END-EXEC.
+
+       PROCEDURE DIVISION.
+
+           EXEC SQL WHENEVER SQLERROR GO TO ERROR-EXIT END-EXEC
+           PERFORM INITIALIZATION-ROUTINE
+           PERFORM MAKE-CONNECTION
+           EXEC SQL SET CONNECTION C1 END-EXEC
+           PERFORM SQL-COMMANDS
+           PERFORM DISCONNECT-CONNECTION
+           GOBACK.
+
+       INITIALIZATION-ROUTINE.
+           DISPLAY "HOSTNAME/DSN: " NO
+           ACCEPT DSN-NAME DEFAULT "localhost"
+           DISPLAY "USER ID: " NO
+	       ACCEPT USERID DEFAULT "support" 
+	       IF USERID NOT = SPACES
+               DISPLAY "PASSWORD: " NO
+               ACCEPT PASSWD-NAME DEFAULT "strongPassword123"
+               INSPECT PASSWD-NAME TALLYING PASSWD-LENGTH 
+                                   FOR CHARACTERS BEFORE INITIAL " "
+	       END-IF.
+
+       MAKE-CONNECTION.
+           IF USERID NOT = SPACES
+               EXEC SQL 
+                   CONNECT TO :DSN-NAME AS C1
+                   USER :USERID USING :PASSWD
+               END-EXEC
+           ELSE
+               EXEC SQL 
+                   CONNECT TO :DSN-NAME AS C1
+               END-EXEC
+           END-IF
+           IF SQLCODE < 0 PERFORM ERROR-EXIT
+           IF SQLCODE = 0 DISPLAY "CONNECTION SUCCESSFUL".
+
+       SQL-COMMANDS.
+           EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC
+           EXEC SQL
+               DROP TABLE sampleTable
+           END-EXEC
+           EXEC SQL WHENEVER SQLERROR GO TO ERROR-EXIT END-EXEC
+           EXEC SQL
+               CREATE TABLE sampleTable (
+                   ID INT PRIMARY KEY,
+                   Name NVARCHAR(50),
+                   Age INT,
+                   Note NVARCHAR(50))
+           END-EXEC
+           EXEC SQL
+               INSERT INTO sampleTable VALUES (1, 'John', 25, '')
+           END-EXEC
+           EXEC SQL
+               INSERT INTO sampleTable VALUES (2, 'Mike', 26, '')
+           END-EXEC
+           EXEC SQL
+               INSERT INTO sampleTable VALUES (3, 'Martin', 31, '')
+           END-EXEC
+           EXEC SQL
+               INSERT INTO sampleTable VALUES (4, 'Dave', 35, '')
+           END-EXEC
+           EXEC SQL
+               INSERT INTO sampleTable VALUES (5, 'Jack', 56, '')
+           END-EXEC.
+
+       DISCONNECT-CONNECTION.
+           EXEC SQL COMMIT END-EXEC
+           EXEC SQL DISCONNECT ALL END-EXEC
+           IF SQLCODE < 0 PERFORM ERROR-EXIT.
+
+       ERROR-EXIT.
+           EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC
+           DISPLAY "SQL ERROR: SQLCODE  " SQLCODE OF SQLCA
+           DISPLAY "           SQLSTATE " SQLSTATE OF SQLCA
+           DISPLAY SQLERRMC OF SQLCA
+           ACCEPT OMITTED
+           EXEC SQL DISCONNECT ALL END-EXEC
+           GOBACK.

@@ -1,0 +1,111 @@
+      * ModifyBook.scr
+      * ModifyBook.scr is generated from C:\COBOL\extend10.1\ModifyBook.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       01 Form1.
+           03 Form1-Pb-1, Push-Button, 
+              COL 10.80, LINE 34.80, LINES 4.00 CELLS, 
+              SIZE 16.00 CELLS, 
+              EXCEPTION-VALUE 101, ID IS 1, SELF-ACT, 
+              TITLE "Add/Modify".
+           03 Form1-Pb-2, Push-Button, 
+              COL 31.10, LINE 34.80, LINES 4.00 CELLS, 
+              SIZE 16.00 CELLS, 
+              ID IS 2, SELF-ACT, CANCEL-BUTTON, 
+              TITLE "Cancel".
+           03 Form1-La-4, Label, 
+              COL 3.00, LINE 7.30, LINES 2.10 CELLS, SIZE 8.60 CELLS, 
+              ID IS 10, LABEL-OFFSET 0, 
+              TITLE "Lnk-Books-id".
+           03 Form1-Ef-1, Entry-Field, 
+              COL 15.50, LINE 7.30, LINES 2.10 CELLS, SIZE 12.80 CELLS, 
+              3-D, ID IS 11, VALUE Lnk-Books-id.
+           03 Form1-La-5, Label, 
+              COL 3.00, LINE 10.30, LINES 2.10 CELLS, SIZE 8.70 CELLS, 
+              ID IS 12, LABEL-OFFSET 0, 
+              TITLE "Lnk-Books-dr".
+           03 Form1-La-6, Label, 
+              COL 3.00, LINE 13.30, LINES 2.10 CELLS, SIZE 9.80 CELLS, 
+              ID IS 14, LABEL-OFFSET 0, 
+              TITLE "Lnk-Books-title".
+           03 Form1-Ef-3, Entry-Field, 
+              COL 15.50, LINE 13.30, LINES 2.10 CELLS, 
+              SIZE 35.20 CELLS, 
+              3-D, ID IS 15, VALUE Lnk-Books-title.
+           03 Form1-La-7, Label, 
+              COL 3.00, LINE 16.30, LINES 2.10 CELLS, SIZE 10.60 CELLS, 
+              ID IS 16, LABEL-OFFSET 0, 
+              TITLE "Lnk-Books-price".
+           03 Form1-Ef-4, Entry-Field, 
+              COL 15.50, LINE 16.30, LINES 2.10 CELLS, 
+              SIZE 15.60 CELLS, 
+              3-D, ID IS 17, VALUE Lnk-Books-price.
+           03 Form1-La-8, Label, 
+              COL 3.00, LINE 19.30, LINES 2.10 CELLS, SIZE 10.80 CELLS, 
+              ID IS 18, LABEL-OFFSET 0, 
+              TITLE "Lnk-Books-stock".
+           03 Form1-Ef-5, Entry-Field, 
+              COL 15.50, LINE 19.30, LINES 2.10 CELLS, 
+              SIZE 10.00 CELLS, 
+              3-D, ID IS 19, VALUE Lnk-Books-stock.
+           03 Form1-La-9, Label, 
+              COL 3.00, LINE 22.30, LINES 2.10 CELLS, SIZE 10.80 CELLS, 
+              ID IS 20, LABEL-OFFSET 0, 
+              TITLE "Lnk-Books-order".
+           03 Form1-Ef-6, Entry-Field, 
+              COL 15.50, LINE 22.30, LINES 2.10 CELLS, 
+              SIZE 10.00 CELLS, 
+              3-D, ID IS 21, VALUE Lnk-Books-order.
+           03 Form1-La-10, Label, 
+              COL 3.00, LINE 25.30, LINES 2.10 CELLS, SIZE 10.20 CELLS, 
+              ID IS 22, LABEL-OFFSET 0, 
+              TITLE "Lnk-Books-date".
+           03 Form1-La-11, Label, 
+              COL 3.00, LINE 28.30, LINES 2.10 CELLS, SIZE 11.50 CELLS, 
+              ID IS 24, LABEL-OFFSET 0, 
+              TITLE "Lnk-Books-author".
+           03 Form1-Ef-8, Entry-Field, 
+              COL 15.50, LINE 28.30, LINES 2.10 CELLS, 
+              SIZE 14.20 CELLS, 
+              3-D, ID IS 25, VALUE Lnk-Books-author.
+           03 Form1-La-1, Label, 
+              COL 3.00, LINE 2.90, LINES 2.10 CELLS, SIZE 11.90 CELLS, 
+              ID IS 3, LABEL-OFFSET 0, 
+              TITLE "Lnk-Departme-key".
+           03 Form1-Cm-1, Combo-Box, 
+              COL 15.50, LINE 2.90, LINES 15.00 CELLS, 
+              SIZE 11.40 CELLS, 
+              3-D, EXCEPTION-VALUE 102, ID IS 4, MASS-UPDATE 0, 
+              NOTIFY-SELCHANGE, DROP-LIST, UNSORTED, 
+              VALUE Lnk-Departme-key, 
+              EXCEPTION PROCEDURE Form1-Cm-2-Exception-Proc.
+           03 Form1-La-2, Label, 
+              COL 28.30, LINE 2.90, LINES 2.10 CELLS, SIZE 12.00 CELLS, 
+              ID IS 5, LABEL-OFFSET 0, 
+              TITLE "Lnk-Departme-sub".
+           03 Form1-Cm-2, Combo-Box, 
+              COL 41.30, LINE 2.90, LINES 15.90 CELLS, 
+              SIZE 14.00 CELLS, 
+              3-D, EXCEPTION-VALUE 101, ID IS 6, MASS-UPDATE 0, 
+              NOTIFY-SELCHANGE, DROP-LIST, UNSORTED, 
+              VALUE Lnk-Departme-sub, 
+              EXCEPTION PROCEDURE Form1-Cm-2-Exception-Proc.
+           03 Form1-Cm-3, Combo-Box, 
+              COL 15.50, LINE 10.30, LINES 11.30 CELLS, 
+              SIZE 6.00 CELLS, 
+              3-D, ID IS 7, MASS-UPDATE 0, DROP-DOWN, UNSORTED, 
+              VALUE Lnk-Books-dr.
+           03 Form1-Fr-1, Frame, 
+              COL 2.00, LINE 1.00, LINES 5.00 CELLS, SIZE 54.00 CELLS, 
+              ENGRAVED, ID IS 8, 
+              TITLE "Branch", BACKGROUND-LOW.
+           03 Form1-Cb-1, Check-Box, 
+              COL 3.00, LINE 31.90, LINES 2.10 CELLS, SIZE 12.00 CELLS, 
+              ID IS 13, SELF-ACT, 
+              TITLE "Lnk-Books-sales", VALUE Lnk-Books-sales.
+           03 Form1-De-1, Date-Entry, 
+              COL 15.50, LINE 25.20, LINES 2.30 CELLS, 
+              SIZE 10.10 CELLS, 
+              ID IS 9, NOTIFY-CHANGE, VALUE-FORMAT 0, 
+              VALUE Form1-De-1-Value, 
+              EVENT PROCEDURE Form1-De-1-Event-Proc.

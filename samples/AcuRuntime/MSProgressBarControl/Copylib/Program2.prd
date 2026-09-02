@@ -1,0 +1,96 @@
+      * Program2.prd
+      * Program2.prd is generated from C:\AcuSamples\MSProgressBarControl\Program2.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       Acu-Initial-Routine.
+      *    Before-Init
+      * get system information
+           ACCEPT System-Information FROM System-Info
+      * get terminal information
+           ACCEPT Terminal-Abilities FROM Terminal-Info
+      *    After-Init
+           .
+
+       Acu-Exit-Rtn.
+      *    After-Program
+           EXIT PROGRAM
+           STOP RUN
+           .
+
+       Acu-Screen1-Routine.
+      *    Before-Routine
+           PERFORM Acu-Screen1-Scrn
+           PERFORM Acu-Screen1-Proc
+      *    After-Routine
+           .
+
+       Acu-Screen1-Scrn.
+           PERFORM Acu-Screen1-Create-Win
+           PERFORM Acu-Screen1-Init-Data
+           .
+
+       Acu-Screen1-Create-Win.
+      *    Before-Create
+      * display screen
+              DISPLAY Standard GRAPHICAL WINDOW
+                 LINES 53.30, SIZE 71.90, CELL HEIGHT 10, 
+                 CELL WIDTH 10, AUTO-MINIMIZE, COLOR IS 65793, 
+                 LABEL-OFFSET 0, LINK TO THREAD, MODELESS, NO SCROLL, 
+                 WITH SYSTEM MENU, 
+                 TITLE "Screen", TITLE-BAR, NO WRAP, 
+                 HANDLE IS Screen1-Handle
+      * toolbar
+           DISPLAY Screen1 UPON Screen1-Handle
+      *    After-Create
+           .
+
+       Acu-Screen1-Init-Data.
+      *    Before-Initdata
+      *    After-Initdata
+           .
+      * Screen1
+       Acu-Screen1-Proc.
+           PERFORM UNTIL Exit-Pushed
+              ACCEPT Screen1  
+                 ON EXCEPTION PERFORM Acu-Screen1-Evaluate-Func
+              END-ACCEPT
+           END-PERFORM
+           DESTROY Screen1-Handle
+           INITIALIZE Key-Status
+           .
+
+      * Screen1
+       Acu-Screen1-Evaluate-Func.
+           EVALUATE TRUE
+              WHEN Exit-Pushed
+                 PERFORM Acu-Screen1-Exit
+              WHEN Event-Occurred
+                 IF Event-Type = Cmd-Close
+                    PERFORM Acu-Screen1-Exit
+                 END-IF
+      * Screen1-Pb-2 Link To
+              WHEN Key-Status = 100
+                 PERFORM Screen1-Pb-2-Link
+      * Screen1-Pb-3 Link To
+              WHEN Key-Status = 101
+                 PERFORM Screen1-Pb-3-Link
+      * Screen1-Pb-5 Link To
+              WHEN Key-Status = 102
+                 PERFORM Screen1-Pb-5-Link
+      * Screen1-Pb-6 Link To
+              WHEN Key-Status = 103
+                 PERFORM Screen1-Pb-6-Link
+      * Screen1-Pb-7 Link To
+              WHEN Key-Status = 104
+                 PERFORM Screen1-Pb-7-Link
+      * Screen1-Pb-8 Link To
+              WHEN Key-Status = 105
+                 PERFORM Screen1-Pb-8-Link
+           END-EVALUATE
+           MOVE 1 TO Accept-Control
+           .
+
+       Acu-Screen1-Exit.
+           SET Exit-Pushed TO TRUE
+           .
+

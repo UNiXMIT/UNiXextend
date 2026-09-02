@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="wrunnetutil">
+</Property><Property Name="Solution File" Value="C:\AcuSamples\wrunnetutil\wrunnetutil.sln">
+</Property><Property Name="User Options File" Value="C:\AcuSamples\wrunnetutil\wrunnetutil.suo">
+</Property><Property Name="Date" Value="martedì 29 aprile 2014">
+</Property><Property Name="Time" Value="14:54">
+</Property><Property Name="Log Number" Value="2">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="wrunnetutil.sln" Description="File successfully backed up as C:\AcuSamples\wrunnetutil\Backup\wrunnetutil.sln">
+</Event><Event ErrorLevel="0" Project="" Source="wrunnetutil.suo" Description="File successfully backed up as C:\AcuSamples\wrunnetutil\Backup\wrunnetutil.suo">
+</Event><Event ErrorLevel="0" Project="" Source="wrunnetutil.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="wrunnetutil.sln" Description="Converted">
+</Event></UpgradeLog>

@@ -1,0 +1,11 @@
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\obj\x86\Debug\MyNetToCobol.csproj.AssemblyReference.cache
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\obj\x86\Debug\TestNetToCobol.Properties.Resources.resources
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\obj\x86\Debug\MyNetToCobol.csproj.GenerateResource.cache
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\obj\x86\Debug\MyNetToCobol.csproj.CoreCompileInputs.cache
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\bin\x86\Debug\MyNetToCobol.exe.config
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\bin\x86\Debug\MyNetToCobol.exe
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\bin\x86\Debug\MyNetToCobol.pdb
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\bin\x86\Debug\TestNetToCobol.NETModule
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\obj\x86\Debug\MyNetToCobol.csproj.CopyComplete
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\obj\x86\Debug\MyNetToCobol.exe
+C:\AcuSamples\dotNet\TestNetToCobol\TestNetToCobol\obj\x86\Debug\MyNetToCobol.pdb

@@ -1,0 +1,45 @@
+      * GRID-Phys-vs-Logical-Columns.scr
+      * GRID-Phys-vs-Logical-Columns.scr is generated from C:\AcuSamples\GRID\GRID-MoveAndHide-1040-ECN-4697\GRID-Phys-vs-Logical-Columns\GRID-Phys-vs-Logical-Columns.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       01 Screen1.
+           03 Screen1-La-1, Label, 
+              COL 3.80, LINE 2.30, LINES 1.30 CELLS, SIZE 19.40 CELLS, 
+              ID IS 1, LABEL-OFFSET 0, 
+              TITLE "Physical vs. Logical Grid Columns".
+           03 Screen1-La-2, Label, 
+              COL 3.80, LINE 6.10, LINES 1.30 CELLS, SIZE 30.10 CELLS, 
+              ID IS 2, LABEL-OFFSET 0, 
+              TITLE 
+              "Use the mouse to move the columns of the first Grid.".
+           03 Screen1-Gd-1, Grid, 
+              COL 3.80, LINE 8.80, LINES 10.50 CELLS, SIZE 57.80 CELLS, 
+              MOVEABLE-COLUMNS, 3-D, COLUMN-HEADINGS, 
+              DATA-COLUMNS (1, 9, 17, 25, 33, 41, 49, 57, 65, 73), 
+              DISPLAY-COLUMNS (1, 9, 17, 25, 33, 41, 49, 57, 65, 73), 
+              SEPARATION (5, 5, 5, 5, 5, 5, 5, 5, 5, 5), 
+              CURSOR-FRAME-WIDTH 3, DIVIDER-COLOR 1, DRAG-COLOR 1, 
+              HEADING-COLOR 353, HEADING-DIVIDER-COLOR 1, ID IS 3, 
+              NUM-COL-HEADINGS 1, NUM-ROWS 10, 
+              RECORD-DATA Screen1-Gd-1-Record, TILED-HEADINGS, 
+              VPADDING 50, VSCROLL, 
+              EVENT PROCEDURE Screen1-Gd-1-Event-Proc.
+           03 Screen1-La-2a, Label, 
+              COL 3.80, LINE 22.90, LINES 1.30 CELLS, SIZE 32.40 CELLS, 
+              ID IS 4, LABEL-OFFSET 0, 
+              TITLE 
+              "The columns in the second Grid will automatically follow.
+      -       "".
+           03 Screen1-Gd-2, Grid, 
+              COL 3.80, LINE 25.10, LINES 10.50 CELLS, 
+              SIZE 57.80 CELLS, 
+              3-D, COLUMN-HEADINGS, 
+              DATA-COLUMNS (1, 9, 17, 25, 33, 41, 49, 57, 65, 73), 
+              DISPLAY-COLUMNS (1, 9, 17, 25, 33, 41, 49, 57, 65, 73), 
+              SEPARATION (5, 5, 5, 5, 5, 5, 5, 5, 5, 5), 
+              CURSOR-FRAME-WIDTH 3, DIVIDER-COLOR 1, DRAG-COLOR 1, 
+              HEADING-COLOR 481, HEADING-DIVIDER-COLOR 1, ID IS 5, 
+              NUM-COL-HEADINGS 1, NUM-ROWS 10, 
+              RECORD-DATA Screen1-Gd-1-Record, TILED-HEADINGS, 
+              VPADDING 50, VSCROLL, 
+              EVENT PROCEDURE Screen1-Gd-1-Event-Proc.

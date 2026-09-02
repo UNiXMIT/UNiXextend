@@ -1,0 +1,63 @@
+      * SpellChecker.evt
+      * SpellChecker.evt is generated from C:\AcuSamples\Spell Checker\SpellChecker.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+
+       Acu-DataEntryScreen-Event-Extra.
+           EVALUATE Event-Type
+           WHEN Msg-Close
+              PERFORM Acu-DataEntryScreen-Msg-Close
+           END-EVALUATE
+           .
+
+       Acu-DataEntryScreen-Msg-Close.
+           ACCEPT Quit-Mode-Flag FROM ENVIRONMENT "QUIT_MODE"
+           IF Quit-Mode-Flag = ZERO
+              PERFORM Acu-DataEntryScreen-Exit
+              PERFORM Acu-Exit-Rtn
+           END-IF
+           .
+
+       Form1-Event-Proc.
+      * 
+           PERFORM Acu-DataEntryScreen-Event-Extra
+           .
+
+       SpellCheckButton-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Cmd-Clicked
+                 PERFORM SpellCheckButton-Ex-Cmd-Clicked
+              END-EVALUATE
+           END-IF
+           .
+
+       ExitButton-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Cmd-Clicked
+                 PERFORM ExitButton-Ex-Cmd-Clicked
+              END-EVALUATE
+           END-IF
+           .
+      ***   start event editor code   ***
+      *
+       ExitButton-Ex-Cmd-Clicked.
+           Modify SpellCheckerControl CloseDictionary().
+           PERFORM Acu-DataEntryScreen-Msg-Close.
+      *
+       SpellCheckButton-Ex-Cmd-Clicked.
+           Inquire DataEntryField value in DataEntryField-Value.
+           Modify SpellCheckerControl CheckTextVBS(DataEntryField-Value)
+                                          giving DataEntryField-Value.
+           Modify DataEntryField value is DataEntryField-Value.
+           Display Message Box "Spell Checking is Complete.".
+      *
+       DataEntryScreen-Aft-Create.
+           Modify SpellCheckerControl 
+                  OpenDictionary("SpellUS.lex", " ").
+      *
+      *
+       

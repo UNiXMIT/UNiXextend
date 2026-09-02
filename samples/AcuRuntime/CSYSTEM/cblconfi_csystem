@@ -1,0 +1,20 @@
+
+# This option causes the command to run independently of the COBOL program: Y or N
+CFG-CSYS-ASYNC N
+
+# This option causes the command to run in a minimized window: Y or N
+CFG-CSYS-MINIMIZED N
+
+# This option runs the command in a hidden window: Y or N
+CFG-CSYS-HIDDEN N
+
+# When this option is specified, C$SYSTEM uses the host's command-line processor (the host's shell) to execute the command: Y or N 
+CFG-CSYS-SHELL Y
+
+# This option is for applications running in the thin client environment: Y or N
+# It indicates that the application wants to run the command on the client system rather than the application server.
+CFG-CSYS-DESKTOP Y
+
+CFG-CMD-LINE "C:\AcuDocuments\t^&t.txt"
+#CFG-CMD-LINE "@[DISPLAY]:C:\Windows\System32\notepad.exe c:\temp\abc.txt"
+#CFG-CMD-LINE "@[DISPLAY]:C:\temp\cmd1.bat"

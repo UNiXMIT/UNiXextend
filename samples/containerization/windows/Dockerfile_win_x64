@@ -1,0 +1,55 @@
+# Dockerfile_win_x64 - Used to create the base image
+
+# Name of the repository tag used to create the base image
+# Can be overridden with the --build-arg option in bld.bat
+ARG BASEOSIMAGE=${BASEOSIMAGE}
+
+# Use the base operating system image to build the base extend image
+FROM ${BASEOSIMAGE}
+
+# Default Dockerfile values
+# Values can be overridden with the --build-arg options in bld.bat
+# These need to come after the FROM command or else they will not have a value
+ARG ACCEPT_CONTAINER_EULA=no
+ARG ADDLOCAL=${ADDLOCAL}
+ARG MSI=${MSI}
+ARG EXTEND_VERSION=${EXTEND_VERSION}
+
+# Embed the label information into the base image for identification.
+# This can be viewed with docker image inspect <image-id>
+LABEL vendor="Micro Focus" \
+      com.microfocus.name="extend" \
+      com.microfocus.version="$EXTEND_VERSION" \
+      com.microfocus.eula.url="https://supportline.microfocus.com/licensing/lvcontract.aspx" \
+      com.microfocus.is-base-image="true"
+
+# Use cmd.exe
+SHELL ["cmd", "/S", "/C"]
+
+# Copy the extend installer to the root directory
+COPY ["${MSI}", "C:/"]
+
+# Copy the 64-bit extend license files to the image
+COPY ["aculic_win_x64", "C:/ProgramData/Micro Focus/extend/${EXTEND_VERSION}/x64/"]
+
+# Install the extend products into the image
+RUN	set MSI=${MSI} && \
+	set ACCEPT_CONTAINER_EULA=${ACCEPT_CONTAINER_EULA} && \
+	set ADDLOCAL=${ADDLOCAL} && \
+	echo INFO: Installing %MSI% && \
+	start "" /wait msiexec /i "%MSI%" ADDLOCAL=%ADDLOCAL% /qn
+
+# Create a username and password
+# The default username is ContainerAdministrator
+RUN NET USER username "Password01!" /ADD
+
+# Add username to the Administrators group
+RUN NET LOCALGROUP "Administrators" "username" /ADD
+
+# Add the extend bin directory to the PATH so it is available
+# when the image is run.
+RUN	set VERSION=${EXTEND_VERSION} && \
+	setx PATH "%PATH%;%ProgramFiles%\Micro Focus\extend %EXTEND_VERSION%\AcuGT\bin;%ProgramFiles(x86)%\Micro Focus\extend %EXTEND_VERSION%\AcuGT\bin"
+
+# Set the starting directory when the image is run
+WORKDIR C:/

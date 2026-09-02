@@ -1,0 +1,26 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.                      sample.
+       AUTHOR.  MIT. 
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+      *     DECIMAL-POINT IS COMMA.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+      * SELECT
+
+       DATA DIVISION.
+       FILE SECTION.
+      * FD
+
+       WORKING-STORAGE SECTION.
+
+
+       LINKAGE SECTION.
+
+       SCREEN SECTION.
+
+       PROCEDURE DIVISION.
+
+           GOBACK.

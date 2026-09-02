@@ -1,0 +1,1003 @@
+; CASEMaker AcuBench Program Structure File, Version 10.4
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=Screen1
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=Screen1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_nType=10
+m_strName=Screen1-De-1-Value
+m_strRawPic=X(16)
+m_strPic=X(16)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_nType=10
+m_nItemLevel=1
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+[FDITEM3_WK]
+m_nType=10
+m_strName=Screen1-Ef-2-Value-Item
+m_nItemLevel=3
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM3_WK
+
+@}}
+[FDITEM4_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM4_WK
+
+@}}
+[FDITEM5_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM5_WK
+
+@}}
+[FDITEM6_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM6_WK
+
+@}}
+[FDITEM7_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM7_WK
+
+@}}
+[FDITEM8_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM8_WK
+
+@}}
+[FDITEM9_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM9_WK
+
+@}}
+[FDITEM10_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM10_WK
+
+@}}
+[FDITEM11_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM11_WK
+
+@}}
+[FDITEM12_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM12_WK
+
+@}}
+[FDITEM13_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM13_WK
+
+@}}
+[FDITEM14_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM14_WK
+
+@}}
+[FDITEM15_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM15_WK
+
+@}}
+[FDITEM16_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM16_WK
+
+@}}
+[FDITEM17_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM17_WK
+
+@}}
+[FDITEM18_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM18_WK
+
+@}}
+[FDITEM19_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM19_WK
+
+@}}
+[FDITEM20_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM20_WK
+
+@}}
+[FDITEM21_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM21_WK
+
+@}}
+[FDITEM22_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM22_WK
+
+@}}
+[FDITEM23_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM23_WK
+
+@}}
+[FDITEM24_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM24_WK
+
+@}}
+[FDITEM25_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM25_WK
+
+@}}
+[FDITEM26_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM26_WK
+
+@}}
+[FDITEM27_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM27_WK
+
+@}}
+[FDITEM28_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM28_WK
+
+@}}
+[FDITEM29_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM29_WK
+
+@}}
+[FDITEM30_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM30_WK
+
+@}}
+[FDITEM31_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM31_WK
+
+@}}
+[FDITEM32_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM32_WK
+
+@}}
+[FDITEM33_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM33_WK
+
+@}}
+[FDITEM34_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM34_WK
+
+@}}
+[FDITEM35_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM35_WK
+
+@}}
+[FDITEM36_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM36_WK
+
+@}}
+[FDITEM37_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM37_WK
+
+@}}
+[FDITEM38_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM38_WK
+
+@}}
+[FDITEM39_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM39_WK
+
+@}}
+[FDITEM40_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM40_WK
+
+@}}
+[FDITEM41_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM41_WK
+
+@}}
+[FDITEM42_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM42_WK
+
+@}}
+[FDITEM43_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM43_WK
+
+@}}
+[FDITEM44_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM44_WK
+
+@}}
+[FDITEM45_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM45_WK
+
+@}}
+[FDITEM46_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM46_WK
+
+@}}
+[FDITEM47_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM47_WK
+
+@}}
+[FDITEM48_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM48_WK
+
+@}}
+[FDITEM49_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM49_WK
+
+@}}
+[FDITEM50_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM50_WK
+
+@}}
+[FDITEM51_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM51_WK
+
+@}}
+[FDITEM52_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM52_WK
+
+@}}
+[FDITEM53_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM53_WK
+
+@}}
+[FDITEM54_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM54_WK
+
+@}}
+[FDITEM55_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM55_WK
+
+@}}
+[FDITEM56_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM56_WK
+
+@}}
+[FDITEM57_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM57_WK
+
+@}}
+[FDITEM58_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM58_WK
+
+@}}
+[FDITEM59_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM59_WK
+
+@}}
+[FDITEM60_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM60_WK
+
+@}}
+[FDITEM61_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM61_WK
+
+@}}
+[FDITEM62_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM62_WK
+
+@}}
+[FDITEM63_WK]
+m_nType=10
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_strDefaultValue=" "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM63_WK
+
+@}}
+[FDITEM64_WK]
+m_nType=10
+m_strName=Screen1-Ef-2-Value
+m_strRawPic=X(20)
+m_strPic=X(20)
+m_nItemLevel=3
+m_bRedefines=1
+m_strRedefines=Screen1-Ef-2-Value-Item
+m_nSync=-1
+m_bOccurs=1
+m_bFixed=1
+m_strRawSize=60
+m_nSize=60
+{{@DataItem_m_strDescriptionFDITEM64_WK
+
+@}}
+[FDITEM65_WK]
+m_strName=WS-COUNT
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_strDefaultValue=ZEROS
+m_nItemLevel=1
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM65_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen Screen1
+   PREFIX            = Screen1
+   LOCK-CONTROL      = FALSE
+   (Name)            = Screen1
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = TRUE
+   Auto Resize       = FALSE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = FALSE
+   Font              = Default Font
+   Handle Variable   = Screen1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 36.00
+   Link To Thread    = TRUE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 33.00
+   System Menu       = TRUE
+   Title             = "Screen"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Standard
+   Wrap              = FALSE
+   Event Procedure   = Screen1-Event-Proc
+   Begin Entry-Field Screen1-Ef-2
+      SCREEN-COL        = 7.00
+      SCREEN-LINE       = 3.40
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Ef-2
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = 3D
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 7.00
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 3
+      Justification     = Unaligned
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 3.40
+      Lines             = 25.40
+      Max Lines         = 60
+      Max Text          = 6000
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = FALSE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 21.00
+      Style             = Multiline
+      Tab Order         = 1
+      Use Return        = TRUE
+      Use Tab           = FALSE
+      Value Multiple    = TRUE
+      Value Picture     = X(20)
+      Value Variable    = Screen1-Ef-2-Value
+      Visible           = 1:TRUE
+   End
+   Begin Push-Button Screen1-Pb-1
+      SCREEN-COL        = 12.90
+      SCREEN-LINE       = 31.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-1
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 12.90
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 4
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 31.10
+      Lines             = 4.00
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 9.00
+      Style             = Other
+      Tab Order         = 2
+      Termination Value = 0
+      Title             = "TEST"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Event Procedure   = Screen1-Pb-1-Event-Proc
+      Cmd-Clicked       = Screen1-Pb-1-Ev-Cmd-Clicked
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       Screen1-Pb-1-Ev-Cmd-Clicked.
+           INITIALIZE WS-COUNT
+           PERFORM UNTIL 1 = 2
+               ADD 1 TO WS-COUNT
+               IF Screen1-Ef-2-Value (WS-COUNT) = SPACES
+                   SUBTRACT 1 FROM WS-COUNT
+                   DISPLAY MESSAGE WS-COUNT " LINE(S) OF TEXT"
+                   EXIT PARAGRAPH
+               END-IF
+           END-PERFORM
+           .
+
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=0
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

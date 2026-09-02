@@ -1,0 +1,535 @@
+      *****************************************************************
+      * Sample Program 1:  Simple Query                               *
+      *                                                               *
+      * This program logs on to ORACLE, prompts the user for an       *
+      * employee number, queries the database for the employee's      *
+      * name, salary, and commission, then displays the result.       *
+      * The program terminates when the user enters a 0.              *
+      *****************************************************************
+
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. QUERY.
+       ENVIRONMENT DIVISION.
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+      *(( PREPROC boomerang LINE BEGIN 15 ))
+       01  SQLFPN GLOBAL.
+           02  SQLFPN-FILE-LEN PIC S9(4) COMP-5 VALUE +11.
+           02  SQLFPN-FILENAME PIC X(11) VALUE "sample1.pco".
+
+       01  SQ0001 GLOBAL.
+           02  FILLER PIC X(73) VALUE "select ENAME  ,SAL  ,COMM   into 
+      -    ":b1,:b2,:b3:i3  from EMP where EMPNO=:b4".
+
+       01  SQLCTX GLOBAL PIC S9(9) COMP-5 VALUE +802694101.
+
+
+       01  SQLEXD GLOBAL.
+           02  SQL-SQLVSN   PIC S9(18) COMP-5 VALUE +13.
+           02  SQL-ARRSIZ   PIC S9(9) COMP-5 VALUE +4.
+           02  SQL-ITERS    PIC S9(9) COMP-5.
+           02  SQL-OFFSET   PIC S9(9) COMP-5.
+           02  SQL-SELERR   PIC S9(4) COMP-5.
+           02  SQL-SQLETY   PIC S9(4) COMP-5.
+           02  SQL-OCCURS   PIC S9(9) COMP-5.
+           02  SQL-DUMMY    PIC S9(9) COMP-5.
+           02  SQL-CUD      PIC S9(18) COMP-5.
+           02  SQL-SQLEST   PIC S9(18) COMP-5.
+           02  SQL-STMT     PIC S9(18) COMP-5.
+           02  SQL-SQLADTP  PIC S9(18) COMP-5 VALUE 0.
+           02  SQL-SQLTDSP  PIC S9(18) COMP-5 VALUE 0.
+           02  SQL-SQPHSV   PIC S9(18) COMP-5.
+           02  SQL-SQPHSL   PIC S9(18) COMP-5.
+           02  SQL-SQPHSS   PIC S9(18) COMP-5.
+           02  SQL-SQPIND   PIC S9(18) COMP-5.
+           02  SQL-SQPINS   PIC S9(18) COMP-5.
+           02  SQL-SQPARM   PIC S9(18) COMP-5.
+           02  SQL-SQPARC   PIC S9(18) COMP-5.
+           02  SQL-SQPADTO  PIC S9(18) COMP-5.
+           02  SQL-SQPTDSO  PIC S9(18) COMP-5.
+           02  SQL-SQPHR1   PIC S9(9) COMP-5.
+           02  SQL-SQPHR2   PIC S9(9) COMP-5.
+           02  SQL-SQPHR3   PIC S9(9) COMP-5.
+           02  SQL-SQPHR4   PIC S9(9) COMP-5.
+           02  SQL-SQPHR5   PIC S9(9) COMP-5.
+           02  SQL-SQFOFF   PIC S9(9) COMP-5.
+           02  SQL-SQCMOD   PIC S9(9) COMP-5.
+           02  SQL-SQFMOD   PIC S9(9) COMP-5.
+           02  SQL-SQPMEM   PIC S9(9) COMP-5.
+           02  SQL-DUMMYPF  PIC S9(9) COMP-5.
+           02  SQL-SQHSTV   PIC S9(18) COMP-5 OCCURS 4 TIMES.
+           02  SQL-SQHSTL   PIC S9(18) COMP-5 OCCURS 4 TIMES.
+           02  SQL-SQHSTS   PIC S9(18) COMP-5 OCCURS 4 TIMES.
+           02  SQL-SQINDV   PIC S9(18) COMP-5 OCCURS 4 TIMES.
+           02  SQL-SQINDS   PIC S9(18) COMP-5 OCCURS 4 TIMES.
+           02  SQL-SQHARM   PIC S9(18) COMP-5 OCCURS 4 TIMES.
+           02  SQL-SQHARC   PIC S9(18) COMP-5 OCCURS 4 TIMES.
+           02  SQL-SQADTO   PIC S9(4) COMP-5 OCCURS 4 TIMES.
+           02  SQL-SQTDSO   PIC S9(4) COMP-5 OCCURS 4 TIMES.
+
+
+       01  SQL-RUNTIME-VARS.
+           02  SQL-IAPXIT-SUCCESS  PIC S9(9) COMP-5 VALUE    +0.
+           02  SQL-IAPXIT-FAILURE  PIC S9(9) COMP-5 VALUE +1403.
+           02  SQL-IAPXIT-FATALERR PIC S9(9) COMP-5 VALUE  +535.
+
+       01  SQLCUD GLOBAL.
+           02     FILLER PIC S9(4) COMP-5 VALUE +13.
+           02     FILLER PIC S9(4) COMP-5 VALUE +4130.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +5.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +73.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +4.
+           02     FILLER PIC S9(4) COMP-5 VALUE +55.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +4.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +2.
+           02     FILLER PIC S9(4) COMP-5 VALUE +9.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +2.
+           02     FILLER PIC S9(4) COMP-5 VALUE +7.
+           02     FILLER PIC S9(4) COMP-5 VALUE +7.
+           02     FILLER PIC S9(4) COMP-5 VALUE +2.
+           02     FILLER PIC S9(4) COMP-5 VALUE +2.
+           02     FILLER PIC S9(4) COMP-5 VALUE +7.
+           02     FILLER PIC S9(4) COMP-5 VALUE +7.
+           02     FILLER PIC S9(4) COMP-5 VALUE +2.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +3.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +36.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +27.
+           02     FILLER PIC S9(4) COMP-5 VALUE +77.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +4.
+           02     FILLER PIC S9(4) COMP-5 VALUE +4.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +9.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +9.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +10.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +10.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +67.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +2.
+           02     FILLER PIC S9(4) COMP-5 VALUE +12.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +30.
+           02     FILLER PIC S9(4) COMP-5 VALUE +103.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +82.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +3.
+           02     FILLER PIC S9(4) COMP-5 VALUE +14.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +32.
+           02     FILLER PIC S9(4) COMP-5 VALUE +112.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+           02     FILLER PIC S9(4) COMP-5 VALUE +1.
+           02     FILLER PIC S9(4) COMP-5 VALUE +0.
+      *    EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+      *(( PREPROC boomerang LINE END 15 ))
+       01  CONNAME           PIC X(50).
+      *(( PREPROC boomerang LINE BEGIN 17 ))
+      *01  USERNAME          PIC X(10) VARYING.
+       01  USERNAME.
+           02  USERNAME-LEN  PIC S9(4) COMP-5.
+           02  USERNAME-ARR  PIC X(10).
+      *(( PREPROC boomerang LINE END 17 ))
+      *(( PREPROC boomerang LINE BEGIN 18 ))
+      *01  PASSWD            PIC X(10) VARYING.
+       01  PASSWD.
+           02  PASSWD-LEN  PIC S9(4) COMP-5.
+           02  PASSWD-ARR  PIC X(10).
+      *(( PREPROC boomerang LINE END 18 ))
+       01  EMP-REC-VARS.
+      *(( PREPROC boomerang LINE BEGIN 20 ))
+      *    05  EMP-NAME      PIC X(10) VARYING.
+           05  EMP-NAME.
+               06  EMP-NAME-LEN  PIC S9(4) COMP-5.
+               06  EMP-NAME-ARR  PIC X(10).
+      *(( PREPROC boomerang LINE END 20 ))
+      *(( PREPROC boomerang LINE BEGIN 21 ))
+           05  EMP-NUMBER    PIC S9(4) 
+      *                                COMP
+                                       COMP-5
+                                            VALUE ZERO.
+      *(( PREPROC boomerang LINE END 21 ))
+      *(( PREPROC boomerang LINE BEGIN 22 ))
+           05  SALARY        PIC S9(5)V99 COMP-3 VALUE ZERO.
+      *(( PREPROC boomerang LINE END 22 ))
+      *(( PREPROC boomerang LINE BEGIN 23 ))
+           05  COMMISSION    PIC S9(5)V99 COMP-3 VALUE ZERO.
+      *(( PREPROC boomerang LINE END 23 ))
+      *(( PREPROC boomerang LINE BEGIN 24 ))
+           05  COMM-IND      PIC S9(4) 
+      *                                COMP
+                                       COMP-5
+                                            VALUE ZERO.
+      *(( PREPROC boomerang LINE END 24 ))
+      *(( PREPROC boomerang LINE BEGIN 25 ))
+      *    EXEC SQL END DECLARE SECTION END-EXEC.
+      *(( PREPROC boomerang LINE END 25 ))
+
+      *(( PREPROC boomerang LINE BEGIN 27 ))
+      *    EXEC SQL INCLUDE SQLCA END-EXEC.
+       01  SQLCA GLOBAL.
+           05  SQLCAID               PIC X(8).
+           05  SQLCABC               PIC S9(9) COMP-5.
+           05  SQLCODE               PIC S9(9) COMP-5.
+           05  SQLERRM.
+               49 SQLERRML           PIC S9(4) COMP-5.
+               49 SQLERRMC           PIC X(70).
+           05  SQLERRP               PIC X(8).
+           05  SQLERRD OCCURS 6 TIMES
+                                     PIC S9(9) COMP-5.
+           05  SQLWARN.
+               10 SQLWARN0           PIC X(1).
+               10 SQLWARN1           PIC X(1).
+               10 SQLWARN2           PIC X(1).
+               10 SQLWARN3           PIC X(1).
+               10 SQLWARN4           PIC X(1).
+               10 SQLWARN5           PIC X(1).
+               10 SQLWARN6           PIC X(1).
+               10 SQLWARN7           PIC X(1).
+           05  SQLEXT                PIC X(8).
+      *(( PREPROC boomerang LINE END 27 ))
+      *     EXEC SQL INCLUDE USERPASSW END-EXEC.
+
+       01  DISPLAY-VARIABLES.
+           05  D-EMP-NAME    PIC X(10).
+           05  D-SALARY      PIC Z(4)9.99.
+           05  D-COMMISSION  PIC Z(4)9.99.
+           05  D-EMP-NUMBER  PIC 9(4).
+
+       01 D-TOTAL-QUERIED   PIC 9(4) VALUE ZERO.
+        
+       PROCEDURE DIVISION.
+       BEGIN-PGM.
+      *(( PREPROC boomerang LINE BEGIN 40 ))
+      *    EXEC SQL WHENEVER SQLERROR
+      *(( PREPROC boomerang LINE END 40 ))
+      *(( PREPROC boomerang LINE BEGIN 41 ))
+      *       DO PERFORM SQL-ERROR END-EXEC.
+      *(( PREPROC boomerang LINE END 41 ))
+           PERFORM LOGON.
+
+       QUERY-LOOP.
+      *     EXEC SQL INCLUDE MONINCLUDE END-EXEC.
+           DISPLAY " ".
+           DISPLAY "ENTER EMP NUMBER (0 TO QUIT): "
+               WITH NO ADVANCING.
+           ACCEPT D-EMP-NUMBER.
+           MOVE D-EMP-NUMBER TO EMP-NUMBER.
+           IF (EMP-NUMBER = 0)
+               PERFORM SIGN-OFF.
+           MOVE SPACES TO EMP-NAME-ARR.
+      *(( PREPROC boomerang LINE BEGIN 54 ))
+      *    EXEC SQL WHENEVER NOT FOUND GOTO NO-EMP END-EXEC.
+      *(( PREPROC boomerang LINE END 54 ))
+      *(( PREPROC boomerang LINE BEGIN 55 ))
+      *    EXEC SQL SELECT ENAME, SAL, COMM
+      *(( PREPROC boomerang LINE END 55 ))
+      *(( PREPROC boomerang LINE BEGIN 56 ))
+      *        INTO :EMP-NAME, :SALARY, :COMMISSION:COMM-IND
+      *(( PREPROC boomerang LINE END 56 ))
+      *(( PREPROC boomerang LINE BEGIN 57 ))
+      *        FROM EMP
+      *(( PREPROC boomerang LINE END 57 ))
+      *(( PREPROC boomerang LINE BEGIN 58 ))
+      *        WHERE EMPNO = :EMP-NUMBER
+      *(( PREPROC boomerang LINE END 58 ))
+      *(( PREPROC boomerang LINE BEGIN 59 ))
+      *    END-EXEC.
+           CALL "SQLADR" USING SQ0001 SQL-STMT
+           MOVE 1 TO SQL-ITERS
+           MOVE 5 TO SQL-OFFSET
+           MOVE 0 TO SQL-OCCURS
+           MOVE 1 TO SQL-SELERR
+           MOVE 0 TO SQL-SQPMEM
+           CALL "SQLADR" USING
+               SQLCUD
+               SQL-CUD
+           CALL "SQLADR" USING
+               SQLCA
+               SQL-SQLEST
+           MOVE 4352 TO SQL-SQLETY
+           CALL "SQLADRVC" USING
+               EMP-NAME-LEN IN
+               EMP-NAME IN
+               EMP-REC-VARS
+               EMP-NAME-ARR IN
+               EMP-NAME IN
+               EMP-REC-VARS
+               SQL-SQHSTV(1)
+           MOVE 12 TO SQL-SQHSTL(1)
+           MOVE 12 TO SQL-SQHSTS(1)
+           MOVE 0 TO SQL-SQINDV(1)
+           MOVE 0 TO SQL-SQINDS(1)
+           MOVE 0 TO SQL-SQHARM(1)
+           CALL "SQLADR" USING
+               SALARY IN
+               EMP-REC-VARS
+               SQL-SQHSTV(2)
+           MOVE 4 TO SQL-SQHSTL(2)
+           MOVE 4 TO SQL-SQHSTS(2)
+           MOVE 0 TO SQL-SQINDV(2)
+           MOVE 0 TO SQL-SQINDS(2)
+           MOVE 0 TO SQL-SQHARM(2)
+           CALL "SQLADR" USING
+               COMMISSION IN
+               EMP-REC-VARS
+               SQL-SQHSTV(3)
+           MOVE 4 TO SQL-SQHSTL(3)
+           MOVE 4 TO SQL-SQHSTS(3)
+           CALL "SQLADR" USING
+               COMM-IND IN
+               EMP-REC-VARS
+               SQL-SQINDV(3)
+           MOVE 0 TO SQL-SQINDS(3)
+           MOVE 0 TO SQL-SQHARM(3)
+           CALL "SQLADR" USING
+               EMP-NUMBER IN
+               EMP-REC-VARS
+               SQL-SQHSTV(4)
+           MOVE 2 TO SQL-SQHSTL(4)
+           MOVE 2 TO SQL-SQHSTS(4)
+           MOVE 0 TO SQL-SQINDV(4)
+           MOVE 0 TO SQL-SQINDS(4)
+           MOVE 0 TO SQL-SQHARM(4)
+           CALL "SQLADR" USING
+               SQL-SQHSTV(1)
+               SQL-SQPHSV
+           CALL "SQLADR" USING
+               SQL-SQHSTL(1)
+               SQL-SQPHSL
+           CALL "SQLADR" USING
+               SQL-SQHSTS(1)
+               SQL-SQPHSS
+           CALL "SQLADR" USING
+               SQL-SQINDV(1)
+               SQL-SQPIND
+           CALL "SQLADR" USING
+               SQL-SQINDS(1)
+               SQL-SQPINS
+           CALL "SQLADR" USING
+               SQL-SQHARM(1)
+               SQL-SQPARM
+           CALL "SQLADR" USING
+               SQL-SQHARC(1)
+               SQL-SQPARC
+
+           CALL "SQLBEX" USING
+               SQLCTX
+               SQLEXD
+               SQLFPN
+           IF SQLCODE IN SQLCA IS EQUAL TO 1403
+               THEN GO TO NO-EMP END-IF
+           IF SQLCODE IN SQLCA IS LESS THAN 0
+               THEN PERFORM SQL-ERROR END-IF.
+      *(( PREPROC boomerang LINE END 59 ))
+           PERFORM DISPLAY-INFO.
+           ADD 1 TO D-TOTAL-QUERIED.
+           GO TO QUERY-LOOP.
+
+       NO-EMP.
+           DISPLAY "NOT A VALID EMPLOYEE NUMBER - TRY AGAIN.".
+           GO TO QUERY-LOOP.
+
+       LOGON.
+      *     MOVE "SCOTT/TIGER@ACUCORP" TO CONNAME.
+      *     EXEC SQL
+      *         CONNECT :CONNAME
+      *     END-EXEC.
+           MOVE "scott" TO USERNAME-ARR.
+           MOVE 5 TO USERNAME-LEN.
+           MOVE "tiger" TO PASSWD-ARR.
+           MOVE 5 TO PASSWD-LEN.
+      *(( PREPROC boomerang LINE BEGIN 77 ))
+      *    EXEC SQL
+      *(( PREPROC boomerang LINE END 77 ))
+      *(( PREPROC boomerang LINE BEGIN 78 ))
+      *        CONNECT :USERNAME IDENTIFIED BY :PASSWD
+      *(( PREPROC boomerang LINE END 78 ))
+      *(( PREPROC boomerang LINE BEGIN 79 ))
+      *    END-EXEC.
+           MOVE 10 TO SQL-ITERS
+           MOVE 36 TO SQL-OFFSET
+           MOVE 0 TO SQL-OCCURS
+           CALL "SQLADR" USING
+               SQLCUD
+               SQL-CUD
+           CALL "SQLADR" USING
+               SQLCA
+               SQL-SQLEST
+           MOVE 4352 TO SQL-SQLETY
+           CALL "SQLADRVC" USING
+               USERNAME-LEN IN
+               USERNAME
+               USERNAME-ARR IN
+               USERNAME
+               SQL-SQHSTV(1)
+           MOVE 12 TO SQL-SQHSTL(1)
+           MOVE 12 TO SQL-SQHSTS(1)
+           MOVE 0 TO SQL-SQINDV(1)
+           MOVE 0 TO SQL-SQINDS(1)
+           MOVE 0 TO SQL-SQHARM(1)
+           CALL "SQLADRVC" USING
+               PASSWD-LEN IN
+               PASSWD
+               PASSWD-ARR IN
+               PASSWD
+               SQL-SQHSTV(2)
+           MOVE 12 TO SQL-SQHSTL(2)
+           MOVE 12 TO SQL-SQHSTS(2)
+           MOVE 0 TO SQL-SQINDV(2)
+           MOVE 0 TO SQL-SQINDS(2)
+           MOVE 0 TO SQL-SQHARM(2)
+           CALL "SQLADR" USING
+               SQL-SQHSTV(1)
+               SQL-SQPHSV
+           CALL "SQLADR" USING
+               SQL-SQHSTL(1)
+               SQL-SQPHSL
+           CALL "SQLADR" USING
+               SQL-SQHSTS(1)
+               SQL-SQPHSS
+           CALL "SQLADR" USING
+               SQL-SQINDV(1)
+               SQL-SQPIND
+           CALL "SQLADR" USING
+               SQL-SQINDS(1)
+               SQL-SQPINS
+           CALL "SQLADR" USING
+               SQL-SQHARM(1)
+               SQL-SQPARM
+           CALL "SQLADR" USING
+               SQL-SQHARC(1)
+               SQL-SQPARC
+
+           CALL "SQLBEX" USING
+               SQLCTX
+               SQLEXD
+               SQLFPN
+
+           IF SQLCODE IN SQLCA IS LESS THAN 0
+               THEN PERFORM SQL-ERROR END-IF.
+      *(( PREPROC boomerang LINE END 79 ))
+           DISPLAY " ".
+           DISPLAY "CONNECTED TO ORACLE AS USER: ", USERNAME-ARR.
+        
+       DISPLAY-INFO.
+           DISPLAY " ".
+           DISPLAY "EMPLOYEE    SALARY    COMMISSION".
+           DISPLAY "--------    ------    ----------". 
+           MOVE EMP-NAME-ARR TO D-EMP-NAME.
+           MOVE SALARY TO D-SALARY.
+           IF COMM-IND = -1
+               DISPLAY D-EMP-NAME, D-SALARY, "          NULL"
+           ELSE
+               MOVE COMMISSION TO D-COMMISSION
+               DISPLAY D-EMP-NAME, D-SALARY, "      ", D-COMMISSION
+           END-IF.
+
+       SIGN-OFF.
+           DISPLAY " ".
+           DISPLAY "TOTAL NUMBER QUERIED WAS ",
+               D-TOTAL-QUERIED, ".".
+           DISPLAY " ".
+           DISPLAY "HAVE A GOOD DAY.".
+           DISPLAY " ".
+      *(( PREPROC boomerang LINE BEGIN 103 ))
+      *    EXEC SQL COMMIT WORK RELEASE END-EXEC.
+           MOVE 1 TO SQL-ITERS
+           MOVE 67 TO SQL-OFFSET
+           MOVE 0 TO SQL-OCCURS
+           CALL "SQLADR" USING
+               SQLCUD
+               SQL-CUD
+           CALL "SQLADR" USING
+               SQLCA
+               SQL-SQLEST
+           MOVE 4352 TO SQL-SQLETY
+
+           CALL "SQLBEX" USING
+               SQLCTX
+               SQLEXD
+               SQLFPN
+
+           IF SQLCODE IN SQLCA IS LESS THAN 0
+               THEN PERFORM SQL-ERROR END-IF.
+      *(( PREPROC boomerang LINE END 103 ))
+           STOP RUN.
+
+       SQL-ERROR.
+      *(( PREPROC boomerang LINE BEGIN 107 ))
+      *    EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC.
+      *(( PREPROC boomerang LINE END 107 ))
+           DISPLAY " ".
+           DISPLAY "ORACLE ERROR DETECTED:".
+           DISPLAY " ".
+           DISPLAY SQLERRMC.
+      *(( PREPROC boomerang LINE BEGIN 112 ))
+      *    EXEC SQL ROLLBACK WORK RELEASE END-EXEC.
+           MOVE 1 TO SQL-ITERS
+           MOVE 82 TO SQL-OFFSET
+           MOVE 0 TO SQL-OCCURS
+           CALL "SQLADR" USING
+               SQLCUD
+               SQL-CUD
+           CALL "SQLADR" USING
+               SQLCA
+               SQL-SQLEST
+           MOVE 4352 TO SQL-SQLETY
+
+           CALL "SQLBEX" USING
+               SQLCTX
+               SQLEXD
+               SQLFPN
+               .
+      *(( PREPROC boomerang LINE END 112 ))
+           STOP RUN.

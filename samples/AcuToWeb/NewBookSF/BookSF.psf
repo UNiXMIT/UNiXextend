@@ -1,0 +1,1775 @@
+; CASEMaker AcuBench Program Structure File, Version 10.3
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=Screen1
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=Arial10
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_nType=10
+m_strName=Screen1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_nType=10
+m_strName=Calibri12B
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+[FDITEM3_WK]
+m_nType=10
+m_strName=Extend10b_937x2896-215605-png
+m_strRawPic=S9(6)
+m_strPic=S9(6)
+m_nUsage=5
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM3_WK
+
+@}}
+[FDITEM4_WK]
+m_nType=10
+m_strName=Calibri9B
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM4_WK
+
+@}}
+[FDITEM5_WK]
+m_nType=10
+m_strName=W90-DISPLAY
+m_strRawPic=X(26)
+m_strPic=X(26)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM5_WK
+
+@}}
+[FDITEM6_WK]
+m_nType=10
+m_strName=Arial9B
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM6_WK
+
+@}}
+[FDITEM7_WK]
+m_nType=10
+m_strName=ws-detail-visible
+m_strRawPic=9
+m_strPic=9
+m_strDefaultValue=1
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM7_WK
+
+@}}
+[FDITEM8_WK]
+m_nType=10
+m_strName=W20-A41-3
+m_strRawPic=X(21)
+m_strPic=X(21)
+m_strDefaultValue="Department No."
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM8_WK
+
+@}}
+[FDITEM9_WK]
+m_nType=10
+m_strName=W20-A41-4
+m_strRawPic=X(18)
+m_strPic=X(18)
+m_strDefaultValue="Sub-department No."
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM9_WK
+
+@}}
+[FDITEM10_WK]
+m_nType=10
+m_strName=Screen2-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM10_WK
+
+@}}
+[FDITEM11_WK]
+m_nType=10
+m_strName=Calibri-Light10
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM11_WK
+
+@}}
+[FDITEM12_WK]
+m_nType=10
+m_strName=Trebuchet-MS10B
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM12_WK
+
+@}}
+[FDITEM13_WK]
+m_nType=10
+m_strName=MS-Sans-Serif12B
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM13_WK
+
+@}}
+[FDITEM14_WK]
+m_nType=10
+m_strName=Screen2-Gd-1-Record
+m_nItemLevel=1
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM14_WK
+
+@}}
+[FDITEM15_WK]
+m_nType=10
+m_strName=Gd-1-Col-1
+m_strRawPic=X(09)
+m_strPic=X(09)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM15_WK
+
+@}}
+[FDITEM16_WK]
+m_nType=10
+m_strName=Gd-1-Col-2
+m_strRawPic=X(2)
+m_strPic=X(2)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM16_WK
+
+@}}
+[FDITEM17_WK]
+m_nType=10
+m_strName=Gd-1-Col-3
+m_strRawPic=X(25)
+m_strPic=X(25)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM17_WK
+
+@}}
+[FDITEM18_WK]
+m_nType=10
+m_strName=Gd-1-Col-4
+m_strRawPic=ZZZZ,ZZ9.99
+m_strPic=ZZZZ,ZZ9.99
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM18_WK
+
+@}}
+[FDITEM19_WK]
+m_nType=10
+m_strName=Gd-1-Col-5
+m_strRawPic=ZZZZ9-
+m_strPic=ZZZZ9-
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM19_WK
+
+@}}
+[FDITEM20_WK]
+m_nType=10
+m_strName=Gd-1-Col-6
+m_strRawPic=X
+m_strPic=X
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM20_WK
+
+@}}
+[FDITEM21_WK]
+m_nType=10
+m_strName=Gd-1-Col-7
+m_strRawPic=ZZZZ9-
+m_strPic=ZZZZ9-
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM21_WK
+
+@}}
+[FDITEM22_WK]
+m_nType=10
+m_strName=Gd-1-Col-8
+m_strRawPic=X(4)
+m_strPic=X(4)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM22_WK
+
+@}}
+[FDITEM23_WK]
+m_nType=10
+m_strName=Gd-1-Col-9
+m_strRawPic=X(10)
+m_strPic=X(10)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM23_WK
+
+@}}
+[FDITEM24_WK]
+m_nType=10
+m_strName=2DPB-BMP
+m_strRawPic=S9(6)
+m_strPic=S9(6)
+m_nUsage=5
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM24_WK
+
+@}}
+[FDITEM25_WK]
+m_nType=10
+m_strName=CRD-bmp
+m_strRawPic=S9(6)
+m_strPic=S9(6)
+m_nUsage=5
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM25_WK
+
+@}}
+[FDITEM26_WK]
+m_nType=10
+m_strName=Arial10I
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM26_WK
+
+@}}
+[FDITEM27_WK]
+m_nType=10
+m_strName=Arial10B
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM27_WK
+
+@}}
+[FDITEM28_WK]
+m_nType=11
+m_strName=Depart-status
+m_strRawPic=X(2)
+m_strPic=X(2)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM28_WK
+
+@}}
+[FDITEM29_WK]
+m_nType=11
+m_strName=Valid-Department
+m_nItemLevel=88
+m_nSync=-1
+m_bFixed=1
+m_strTrue="00" THRU "09"
+{{@DataItem_m_strDescriptionFDITEM29_WK
+
+@}}
+[FDITEM30_WK]
+m_nType=11
+m_strName=Books-status
+m_strRawPic=X(2)
+m_strPic=X(2)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM30_WK
+
+@}}
+[FDITEM31_WK]
+m_nType=11
+m_strName=Valid-Books
+m_nItemLevel=88
+m_nSync=-1
+m_bFixed=1
+m_strTrue="00" THRU "09"
+{{@DataItem_m_strDescriptionFDITEM31_WK
+
+@}}
+[FDITEM32_WK]
+m_strName=old-Departme-key
+m_strRawPic=x(26)
+m_strPic=x(26)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM32_WK
+
+@}}
+[FDITEM33_WK]
+m_strName=branchToKeep
+m_strRawPic=x(3)
+m_strPic=x(3)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM33_WK
+
+@}}
+[FDITEM34_WK]
+m_strName=ws-cursor
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM34_WK
+
+@}}
+[FDITEM35_WK]
+m_nType=10
+m_strName=Default-Font
+m_nUsage=38
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM35_WK
+
+@}}
+[FDITEM36_WK]
+m_nType=10
+m_strName=Calibri10
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM36_WK
+
+@}}
+[FDITEM37_WK]
+m_nType=10
+m_strName=books-jpg
+m_strRawPic=S9(6)
+m_strPic=S9(6)
+m_nUsage=5
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM37_WK
+
+@}}
+[FDITEM38_WK]
+m_nType=10
+m_strName=Extend10b-jpg
+m_strRawPic=S9(6)
+m_strPic=S9(6)
+m_nUsage=5
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM38_WK
+
+@}}
+[FDITEM39_WK]
+m_nType=10
+m_strName=AcuToWeb_resize1-jpg
+m_strRawPic=S9(6)
+m_strPic=S9(6)
+m_nUsage=5
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM39_WK
+
+@}}
+[FDITEM40_WK]
+m_nType=10
+m_strName=AcuToWeb_resize2-jpg
+m_strRawPic=S9(6)
+m_strPic=S9(6)
+m_nUsage=5
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM40_WK
+
+@}}
+[FDITEM41_WK]
+m_nType=10
+m_strName=AcuToWeb_resize3-jpg
+m_strRawPic=S9(6)
+m_strPic=S9(6)
+m_nUsage=5
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM41_WK
+
+@}}
+[FDITEM42_WK]
+m_nType=10
+m_strName=AcuToWeb_resize4-jpg
+m_strRawPic=S9(6)
+m_strPic=S9(6)
+m_nUsage=5
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM42_WK
+
+@}}
+[FDITEM43_WK]
+m_nType=10
+m_strName=Calibri11B
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM43_WK
+
+@}}
+[FDITEM44_WK]
+m_nType=10
+m_strName=Calibri11
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM44_WK
+
+@}}
+[FDITEM45_WK]
+m_nType=10
+m_strName=Calibri14B
+m_nUsage=26
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM45_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+[DATASET_CONTENT:DS1]
+DATASET_NAME=Department
+DATA_LAYOUT=Department
+KEY=mkey
+
+[DATASET_CONTENT:DS2]
+DATASET_NAME=Books
+DATA_LAYOUT=Books
+KEY=Books-id
+
+[REFERENCED_DATASET_CONTENT-Books:DS1]
+REFERENCED_DATASET=Department
+REFERENCED_FIELD=Books-branch
+
+[SEL_LAYOUT_FILE_CONTENT:DATALAYOUT1]
+DATA_LAYOUT=Department
+DECLARATIVES=
+BEFORE_OPEN=
+AFTER_OPEN=
+BEFORE_COMMIT=
+AFTER_COMMIT=
+BEFORE_ROLLBACK=
+AFTER_ROLLBACK=
+BEFORE_DELETEFILE=
+AFTER_DELETEFILE=
+
+[SEL_LAYOUT_FILE_CONTENT:DATALAYOUT1-IO_FUNCTION_CONTENT]
+GENERATE_IO_FUNCTION1=Declaratives
+GENERATE_IO_FUNCTION2=Read File Key Is
+GENERATE_IO_FUNCTION3=Read File Next
+GENERATE_IO_FUNCTION4=Read File Previous
+GENERATE_IO_FUNCTION5=Write
+GENERATE_IO_FUNCTION6=Rewrite
+GENERATE_IO_FUNCTION7=Delete File Record
+GENERATE_IO_FUNCTION8=Delete File
+GENERATE_IO_FUNCTION9=Close File
+
+[SEL_LAYOUT_FILE_CONTENT:DATALAYOUT2]
+DATA_LAYOUT=Books
+DECLARATIVES=
+BEFORE_OPEN=
+AFTER_OPEN=
+BEFORE_COMMIT=
+AFTER_COMMIT=
+BEFORE_ROLLBACK=
+AFTER_ROLLBACK=
+BEFORE_DELETEFILE=
+AFTER_DELETEFILE=
+
+[SEL_LAYOUT_FILE_CONTENT:DATALAYOUT2-IO_FUNCTION_CONTENT]
+GENERATE_IO_FUNCTION1=Declaratives
+GENERATE_IO_FUNCTION2=Read File Key Is
+GENERATE_IO_FUNCTION3=Read File Next
+GENERATE_IO_FUNCTION4=Read File Previous
+GENERATE_IO_FUNCTION5=Write
+GENERATE_IO_FUNCTION6=Rewrite
+GENERATE_IO_FUNCTION7=Delete File Record
+GENERATE_IO_FUNCTION8=Delete File
+GENERATE_IO_FUNCTION9=Close File
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen Screen1
+   PREFIX            = Screen1
+   LOCK-CONTROL      = FALSE
+   (Name)            = Screen1
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   ATW CSS Class     = ATW-SCREEN
+   Auto Minimize     = TRUE
+   Auto Resize       = FALSE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = TRUE
+   Font              = Arial/10:0
+   Font Variable     = Arial10
+   Handle Variable   = Screen1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 62.00
+   Link To Thread    = FALSE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = FALSE
+   No Close          = FALSE
+   Resizable         = TRUE
+   Scroll            = TRUE
+   Size              = 105.00
+   System Menu       = TRUE
+   Title             = "AcuToWeb - Modernize and mobilize ACUCOBOL-GT applications"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = TRUE
+   User White        = TRUE
+   Visible           = 1:TRUE
+   Window Type       = Standard
+   Wrap              = TRUE
+   Event Procedure   = Screen1-Event-Proc
+   After Initdata    = Screen1-Aft-Initdata
+   Begin Frame Screen1-Frame1
+      SCREEN-COL        = 8.90
+      SCREEN-LINE       = 1.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Frame1
+      3D Style          = Engraved
+      Alternate         = FALSE
+      ATW CSS ID        = ATW-BookSF-Frame
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 8.90
+      Csize             = 0
+      Destroy Type      = Automatic
+      Font              = Calibri/12/B:0
+      Font Variable     = Calibri12B
+      Full Height       = FALSE
+      Help ID           = 0
+      High Color        = 0
+      ID                = 1
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 1.00
+      Lines             = 16.50
+      Low Color         = 0
+      Size              = 89.70
+      Tab Order         = 1
+      Thickness         = Default
+      Title             = "Library Demo"
+      Title Position    = 0:Unaligned
+      Visible           = 1:TRUE
+      Begin Combo-Box Screen1-Dpt-Cb
+         SCREEN-COL        = 38.00
+         SCREEN-LINE       = 3.90
+         LOCK-CONTROL      = FALSE
+         (Name)            = Screen1-Dpt-Cb
+         ATW CSS ID        = ATW-BookSF-DepCombo
+         Auto load         = 0
+         Auto load ReadDirection = next
+         Auto load StartDirection = >=
+         Auto load StartValue = low-value
+         Border            = 3D
+         Case              = Mixed
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 0
+         Column            = 30.10
+         Csize             = 0
+         Destroy Type      = Automatic
+         Enable            = 1:TRUE
+         Exception Value   = 0
+         Font              = Calibri/11:0
+         Font Variable     = Calibri11
+         Help ID           = 0
+         ID                = 2
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 3.90
+         Lines             = 6.20
+         Mass Update       = 0:Fast-Update
+         Max Text          = 0
+         No Tab            = FALSE
+         Notify DblClick   = FALSE
+         Notify SelChange  = TRUE
+         Size              = 35.10
+         Style             = Drop List
+         Tab Order         = 1
+         Termination Value = 0
+         Unsorted          = TRUE
+         Value Picture     = X(26)
+         Value Variable    = W90-DISPLAY
+         Visible           = 1:TRUE
+         Event Procedure   = Screen1-Dpt-Cb-Event-Proc
+         Ntf-Selchange     = Screen1-Dpt-Cb-Ev-Ntf-Selchange
+      End
+      Begin Combo-Box Screen1-SubDpt-Cb
+         SCREEN-COL        = 38.00
+         SCREEN-LINE       = 7.80
+         LOCK-CONTROL      = FALSE
+         (Name)            = Screen1-SubDpt-Cb
+         ATW CSS ID        = ATW-BookSF-SubDepCombo
+         Auto load         = 0
+         Auto load ReadDirection = next
+         Auto load StartDirection = >=
+         Auto load StartValue = low-value
+         Border            = 3D
+         Case              = Mixed
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 0
+         Column            = 30.10
+         Csize             = 0
+         Destroy Type      = Automatic
+         Enable            = 1:TRUE
+         Exception Value   = 0
+         Font              = Calibri/11:0
+         Font Variable     = Calibri11
+         Help ID           = 0
+         ID                = 4
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 7.80
+         Lines             = 6.20
+         Mass Update       = 0:Fast-Update
+         Max Text          = 0
+         No Tab            = FALSE
+         Notify DblClick   = FALSE
+         Notify SelChange  = TRUE
+         Size              = 35.10
+         Style             = Drop List
+         Tab Order         = 2
+         Termination Value = 0
+         Unsorted          = TRUE
+         Value Picture     = X(26)
+         Visible           = 1:TRUE
+         Event Procedure   = Screen1-SubDpt-Cb-Event-Proc
+         Exception Procedure = Screen1-SubDpt-Cb-Exception-Proc
+         Ntf-Selchange(ex) = Screen1-SubDpt-Cb-Ev-Ntf-Selchange
+      End
+      Begin Label Screen1-Dpt-La
+         SCREEN-COL        = 19.20
+         SCREEN-LINE       = 3.90
+         LOCK-CONTROL      = FALSE
+         (Name)            = Screen1-Dpt-La
+         ATW CSS ID        = ATW-BookSF-DepLabel
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 0
+         Column            = 11.30
+         Csize             = 0
+         Destroy Type      = Permanent
+         Enable            = 1:TRUE
+         Font              = Calibri/11/B:0
+         Font Variable     = Calibri11B
+         Help ID           = 0
+         ID                = 5
+         Justification     = Unaligned
+         Label Offset      = 0
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 3.90
+         Lines             = 3.10
+         No Key Letter     = FALSE
+         Size              = 13.30
+         Tab Order         = 3
+         Title             = "Department No."
+         Title Picture     = X(21)
+         Title Variable    = W20-A41-3
+         Transparent       = FALSE
+         Visible           = 1:TRUE
+      End
+      Begin Label Screen1-SubDpt-La
+         SCREEN-COL        = 19.20
+         SCREEN-LINE       = 7.80
+         LOCK-CONTROL      = FALSE
+         (Name)            = Screen1-SubDpt-La
+         ATW CSS ID        = ATW-BookSF-SubDepLabel
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 0
+         Column            = 11.30
+         Csize             = 0
+         Destroy Type      = Permanent
+         Enable            = 1:TRUE
+         Font              = Calibri/11/B:0
+         Font Variable     = Calibri11B
+         Help ID           = 0
+         ID                = 7
+         Justification     = Unaligned
+         Label Offset      = 0
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 7.80
+         Lines             = 2.60
+         No Key Letter     = FALSE
+         Size              = 16.90
+         Tab Order         = 4
+         Title             = "Sub-department No."
+         Title Picture     = X(18)
+         Title Variable    = W20-A41-4
+         Transparent       = FALSE
+         Visible           = 1:TRUE
+      End
+      Begin Push-Button Screen1-Pb-1
+         SCREEN-COL        = 82.30
+         SCREEN-LINE       = 13.20
+         LOCK-CONTROL      = FALSE
+         (Name)            = Screen1-Pb-1
+         ATW CSS Class     = exitbutton
+         ATW CSS ID        = ATW-BookSF-ExitButton
+         Bitmap Frame      = FALSE
+         Bitmap Number     = 1
+         Bitmap Scale      = FALSE
+         Bitmap Square     = TRUE
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 0
+         Column            = 74.40
+         Copy Resource     = TRUE
+         Csize             = 0
+         Destroy Type      = Automatic
+         Enable            = 1:TRUE
+         Exception Value   = 0
+         Flat              = FALSE
+         Font              = Default Font
+         Help ID           = 0
+         ID                = 3
+         Is Link           = FALSE
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 13.20
+         Lines             = 2.90
+         Multiline         = FALSE
+         No Auto Default   = FALSE
+         No Tab            = FALSE
+         Self Act          = TRUE
+         Size              = 15.40
+         Style             = Cancel Button
+         Tab Order         = 5
+         Termination Value = 0
+         Title             = "&Exit"
+         Transparent Color = -1
+         Visible           = 1:TRUE
+      End
+      Begin Push-Button Screen1-Pb-1a
+         SCREEN-COL        = 46.00
+         SCREEN-LINE       = 13.20
+         LOCK-CONTROL      = FALSE
+         (Name)            = Screen1-Pb-1a
+         ATW CSS ID        = ATW-BookSF-FindButton
+         Bitmap Frame      = FALSE
+         Bitmap Number     = 1
+         Bitmap Scale      = FALSE
+         Bitmap Square     = TRUE
+         Ccol              = 0
+         Cline             = 0
+         Clines            = 0
+         Color             = 0
+         Column            = 38.10
+         Copy Resource     = TRUE
+         Csize             = 0
+         Destroy Type      = Automatic
+         Enable            = 1:TRUE
+         Exception Value   = 101
+         Flat              = FALSE
+         Font              = Arial/9/B:0
+         Font Variable     = Arial9B
+         Help ID           = 0
+         ID                = 29
+         Is Link           = FALSE
+         Layout Data       = 0
+         Layout Data Max Height Cells = 0.00
+         Layout Data Max Height Pixels = 0
+         Layout Data Max Width Cells = 0.00
+         Layout Data Max Width Pixels = 0
+         Layout Data Min Height Cells = 0.00
+         Layout Data Min Height Pixels = 0
+         Layout Data Min Width Cells = 0.00
+         Layout Data Min Width Pixels = 0
+         Line              = 13.20
+         Lines             = 2.90
+         Multiline         = FALSE
+         No Auto Default   = FALSE
+         No Tab            = FALSE
+         Self Act          = FALSE
+         Size              = 15.40
+         Style             = Other
+         Tab Order         = 6
+         Termination Value = 0
+         Title             = "&Find"
+         Transparent Color = -1
+         Visible           = 1:TRUE
+         Link To           = Screen1-Pb-1a-Link
+      End
+   End
+   Begin Bitmap Screen1-Bt-1
+      SCREEN-COL        = 8.20
+      SCREEN-LINE       = 18.20
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Bt-1
+      ATW CSS ID        = ATW-BookSF-JPG
+      Bitmap            = "AcuToWeb_resize3.jpg"
+      Bitmap End        = 0
+      Bitmap Handle     = AcuToWeb_resize3-jpg
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Start      = 0
+      Bitmap Timer      = 0
+      Column            = 8.20
+      Copy Resource     = TRUE
+      Destroy Type      = Automatic
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 6
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 18.20
+      Lines in Pixels   = 441
+      Size in Pixels    = 906
+      Tab Order         = 2
+      Transparent Color = -1
+      Visible           = 1:TRUE
+   End
+End
+
+Begin Screen Screen2
+   PREFIX            = Screen2
+   LOCK-CONTROL      = FALSE
+   (Name)            = Screen2
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   ATW CSS Class     = ATW-SCREEN
+   Auto Minimize     = FALSE
+   Auto Resize       = FALSE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = FALSE
+   Font              = Arial/10:0
+   Font Variable     = Arial10
+   Handle Variable   = Screen2-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 62.00
+   Link To Thread    = TRUE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = TRUE
+   Scroll            = FALSE
+   Size              = 122.30
+   System Menu       = TRUE
+   Title             = "AcuToWeb - Modernize and mobilize ACUCOBOL-GT applications"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Floating
+   Wrap              = FALSE
+   Begin Grid Screen2-Gd-1
+      SCREEN-COL        = 1.00
+      SCREEN-LINE       = 1.40
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen2-Gd-1
+      Action            = (None)
+      Adjustable Columns = TRUE
+      ATW CSS ID        = ATW-BookSF-Grid
+      Auto load         = 0
+      Auto load ReadDirection = next
+      Auto load StartDirection = >=
+      Auto load StartValue = low-value
+      Border            = 3D
+      Cells' Setting    = ( X = 1, Y = 1, Data = "Id No" )
+      Cells' Setting    = ( X = 2, Y = 1, Data = "Dr" )
+      Cells' Setting    = ( X = 3, Y = 1, Data = "Title" )
+      Cells' Setting    = ( X = 4, Y = 1, Data = "Price" )
+      Cells' Setting    = ( X = 5, Y = 1, Data = "Curr. Stock" )
+      Cells' Setting    = ( X = 6, Y = 1, Data = "FY16 Sales" )
+      Cells' Setting    = ( X = 7, Y = 1, Data = "Ordered" )
+      Cells' Setting    = ( X = 8, Y = 1, Data = "Last DATE" )
+      Cells' Setting    = ( X = 9, Y = 1, Data = "Author" )
+      Centered Headings = TRUE
+      Color             = 0
+      Column            = 1.00
+      Column Headings   = TRUE
+      Columns' Setting  = ( X = 1, Name = Gd-1-Col-1 )
+      Columns' Setting  = ( Font = Default Font, Font Variable = Default-Font )
+      Columns' Setting  = ( PIC = "X(09)", ALIGN = "C" )
+      Columns' Setting  = ( SORT-TYPE = "X" )
+      Columns' Setting  = ( DISP = 10, SEPA = 3, DIVI = 1 )
+      Columns' Setting  = ( X = 2, Name = Gd-1-Col-2 )
+      Columns' Setting  = ( Font = Default Font, Font Variable = Default-Font )
+      Columns' Setting  = ( PIC = "X(2)", ALIGN = "C" )
+      Columns' Setting  = ( DISP = 3, SEPA = 4, DIVI = 1 )
+      Columns' Setting  = ( X = 3, Name = Gd-1-Col-3 )
+      Columns' Setting  = ( Font = Default Font, Font Variable = Default-Font )
+      Columns' Setting  = ( PIC = "X(25)", ALIGN = "L" )
+      Columns' Setting  = ( SORT-TYPE = "X" )
+      Columns' Setting  = ( DISP = 25, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( X = 4, Name = Gd-1-Col-4 )
+      Columns' Setting  = ( Font = Default Font, Font Variable = Default-Font )
+      Columns' Setting  = ( PIC = "ZZZZ,ZZ9.99", ALIGN = "C" )
+      Columns' Setting  = ( SORT-TYPE = "P" )
+      Columns' Setting  = ( DISP = 15, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( X = 5, Name = Gd-1-Col-5 )
+      Columns' Setting  = ( Font = Default Font, Font Variable = Default-Font )
+      Columns' Setting  = ( PIC = "ZZZZ9-", ALIGN = "C" )
+      Columns' Setting  = ( SORT-TYPE = "P" )
+      Columns' Setting  = ( DISP = 11, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( X = 6, Name = Gd-1-Col-6 )
+      Columns' Setting  = ( Font = Default Font, Font Variable = Default-Font )
+      Columns' Setting  = ( PIC = "X", ALIGN = "C" )
+      Columns' Setting  = ( DISP = 10, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( X = 7, Name = Gd-1-Col-7 )
+      Columns' Setting  = ( Font = Default Font, Font Variable = Default-Font )
+      Columns' Setting  = ( PIC = "ZZZZ9-", ALIGN = "C" )
+      Columns' Setting  = ( SORT-TYPE = "X" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( X = 8, Name = Gd-1-Col-8 )
+      Columns' Setting  = ( Font = Default Font, Font Variable = Default-Font )
+      Columns' Setting  = ( PIC = "X(4)", ALIGN = "C" )
+      Columns' Setting  = ( SORT-TYPE = "X" )
+      Columns' Setting  = ( DISP = 10, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( X = 9, Name = Gd-1-Col-9 )
+      Columns' Setting  = ( Font = Default Font, Font Variable = Default-Font )
+      Columns' Setting  = ( PIC = "X(10)", ALIGN = "C" )
+      Columns' Setting  = ( SORT-TYPE = "X" )
+      Columns' Setting  = ( DISP = 20, SEPA = 5, DIVI = 1 )
+      Cursor Color      = 481
+      Cursor Frame Width = 3
+      Cursor X          = 0
+      Cursor Y          = 0
+      Destroy Type      = Automatic
+      Divider Color     = 6
+      Drag Color        = 1
+      Enable            = 1:TRUE
+      End Color         = 0
+      Font              = Default Font
+      Heading Color     = 263
+      Heading Divider Color = 6
+      Heading Font      = Default Font
+      Help ID           = 0
+      Hscroll           = FALSE
+      ID                = 1
+      Last Row          = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 1.40
+      Lines             = 43.60
+      No Cell Drag      = FALSE
+      No Tab            = FALSE
+      Num Column Headings = 1
+      Num Columns       = 9
+      Num Rows          = 15
+      Paged             = FALSE
+      Record Data       = Screen2-Gd-1-Record
+      ROW-COLOR-PATTERN = ( 257, 513 )
+      Row Dividers      = 1
+      Row Headings      = FALSE
+      Size              = 121.20
+      Tab Order         = 1
+      Tiled Headings    = TRUE
+      Use Tab           = FALSE
+      Virtual Width     = 0
+      Visible           = 1:TRUE
+      Vpadding          = 50
+      Vscroll           = TRUE
+      Event Procedure   = Screen2-Gd-1-Event-Proc
+      Msg-Begin-Entry   = Screen2-Gd-1-Ev-Msg-Begin-Entry
+   End
+   Begin Push-Button Screen2-Pb-1
+      SCREEN-COL        = 35.30
+      SCREEN-LINE       = 57.20
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen2-Pb-1
+      ATW CSS Class     = exitbutton
+      ATW CSS ID        = ATW-BookSF-ExitButton2
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 35.30
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 124
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 57.20
+      Lines             = 3.40
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = TRUE
+      Size              = 9.10
+      Style             = Other
+      Tab Order         = 2
+      Termination Value = 0
+      Title             = "E&xit"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen2-Pb-1-Link
+   End
+   Begin Push-Button Screen2-Pb-1a
+      SCREEN-COL        = 53.50
+      SCREEN-LINE       = 57.20
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen2-Pb-1a
+      ATW CSS ID        = ATW-BookSF-ForwardButton
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 53.50
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 123
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 3
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 57.20
+      Lines             = 3.40
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = TRUE
+      Size              = 9.10
+      Style             = Other
+      Tab Order         = 3
+      Termination Value = 0
+      Title             = "&Forward"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen2-Pb-1a-Link
+   End
+   Begin Push-Button Screen2-Pb-2
+      SCREEN-COL        = 44.40
+      SCREEN-LINE       = 57.20
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen2-Pb-2
+      ATW CSS ID        = ATW-BookSF-BackButton
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 44.40
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 126
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 4
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 57.20
+      Lines             = 3.40
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 9.10
+      Style             = Other
+      Tab Order         = 4
+      Termination Value = 0
+      Title             = "&Back"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen2-Pb-2-Link
+   End
+   Begin Push-Button Screen2-Pb-3
+      SCREEN-COL        = 62.60
+      SCREEN-LINE       = 57.20
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen2-Pb-3
+      ATW CSS ID        = ATW-BookSF-NewInputButton
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 62.60
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 125
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 5
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 57.20
+      Lines             = 3.40
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 9.10
+      Style             = Other
+      Tab Order         = 5
+      Termination Value = 0
+      Title             = "&New Input"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen2-Pb-3-Link
+   End
+   Begin Bitmap Screen2-Bt-1
+      SCREEN-COL        = 1.10
+      SCREEN-LINE       = 50.60
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen2-Bt-1
+      Bitmap            = "2DPB.BMP"
+      Bitmap End        = 0
+      Bitmap Handle     = 2DPB-BMP
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Start      = 0
+      Bitmap Timer      = 0
+      Column            = 1.10
+      Copy Resource     = TRUE
+      Destroy Type      = Automatic
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 9
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 50.60
+      Lines in Pixels   = 17
+      Size in Pixels    = 117
+      Tab Order         = 6
+      Transparent Color = -1
+      Visible           = 0:FALSE
+   End
+   Begin Bitmap Screen2-Bt-1a
+      SCREEN-COL        = 8.80
+      SCREEN-LINE       = 49.40
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen2-Bt-1a
+      Bitmap            = "CRD.bmp"
+      Bitmap End        = 0
+      Bitmap Handle     = CRD-bmp
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Start      = 0
+      Bitmap Timer      = 0
+      Column            = 8.80
+      Copy Resource     = TRUE
+      Destroy Type      = Automatic
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 6
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 49.40
+      Lines in Pixels   = 26
+      Size in Pixels    = 49
+      Tab Order         = 7
+      Transparent Color = -1
+      Visible           = 0:FALSE
+   End
+   Begin Label Screen2-La-1
+      SCREEN-COL        = 2.60
+      SCREEN-LINE       = 49.60
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen2-La-1
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 2.60
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Arial/10/I:0
+      Font Variable     = Arial10I
+      Help ID           = 0
+      ID                = 7
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 49.60
+      Lines             = 1.80
+      No Key Letter     = FALSE
+      Size              = 5.30
+      Tab Order         = 8
+      Title             = "Label"
+      Transparent       = FALSE
+      Visible           = 0:FALSE
+   End
+   Begin Label Screen2-La-2
+      SCREEN-COL        = 6.40
+      SCREEN-LINE       = 49.40
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen2-La-2
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 6.40
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Arial/10/B:0
+      Font Variable     = Arial10B
+      Help ID           = 0
+      ID                = 8
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 49.40
+      Lines             = 1.90
+      No Key Letter     = FALSE
+      Size              = 7.80
+      Tab Order         = 9
+      Title             = "Label"
+      Transparent       = FALSE
+      Visible           = 0:FALSE
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       Screen1-Aft-Initdata.
+           read Department next
+           perform until Depart-status(1:1) > "0"                 
+              move Departme-key to old-departme-key
+              modify Screen1-Dpt-Cb, item-to-add(Departme-key)
+              perform until (Departme-key not equal to old-departme-key) 
+                   or  (Depart-status(1:1) > "0")
+                   read Department next
+               end-perform
+           end-perform
+CCCCCC*     modify Screen1-Dpt-Cb, value="Fantasy" 
+CCCCCC     modify Screen1-Dpt-Cb, value="Science-Fiction"
+           perform Screen1-Dpt-Cb-Ev-Ntf-Selchange
+           .
+      *
+       Screen1-Dpt-Cb-Ev-Ntf-Selchange.
+           inquire Screen1-Dpt-Cb, value W90-DISPLAY 
+           close DEPARTMENT
+           open input DEPARTMENT           
+           modify Screen1-Subdpt-Cb, reset-list = 1
+           move W90-DISPLAY to Departme-key
+
+           start DEPARTMENT key is equal to Departme-key
+           end-start
+
+           read DEPARTMENT next
+           perform until (Departme-key not equal to W90-DISPLAY) or
+              (Depart-status(1:1) > "0" )
+              modify Screen1-SubDpt-Cb, item-to-add(Departme-sub)
+              read DEPARTMENT next        
+           end-perform
+CCCCCC*     modify Screen1-SubDpt-Cb, value="Uchronie" 
+CCCCCC     modify Screen1-SubDpt-Cb, value="Space Opera" 
+           .
+      *
+       Screen1-SubDpt-Cb-Ev-Ntf-Selchange.
+           inquire Screen1-SubDpt-Cb, value W90-DISPLAY
+           move 4 to accept-control
+           move 11 to control-id           
+           .
+      *
+       Screen1-selprice-Ef-Aft-Procedure.       
+            .
+      
+       load-grid.           
+           move 1 to WS-CURSOR
+           perform until (Books-branch is not equal to branchToKeep) or
+                   (books-status(1:1) > "0" ) or (ws-cursor = 15)
+               initialize Gd-1-Col-6
+               move books-id       to  Gd-1-Col-1
+               move books-dr       to  Gd-1-Col-2
+               move books-title    to  Gd-1-Col-3
+               move books-price    to  Gd-1-Col-4
+               move books-stock    to  Gd-1-Col-5
+               if books-sales = "N"
+                   move books-sales    to  Gd-1-Col-6
+               end-if
+               move books-order    to  Gd-1-Col-7
+               move books-date     to  Gd-1-Col-8
+               move books-author   to  Gd-1-Col-9
+
+               modify Screen2-Gd-1, record-to-add(Screen2-Gd-1-Record)
+
+               perform bitmap-grid
+
+               read BOOKS next
+           end-perform
+           
+           .
+      *
+       bitmap-grid.
+           INQUIRE Screen2-Gd-1, LAST-ROW IN WS-CURSOR
+           modify Screen2-Gd-1, y = ws-cursor
+
+           if books-sales = "Y" 
+           then 
+               modify Screen2-Gd-1, x = 6
+                                   bitmap = 2DPB-BMP
+                                   bitmap-number = 269
+                                   bitmap-width = 16
+               modify Screen2-Gd-1, x = 2
+                                    cell-data = spaces
+           end-if
+
+          
+           if books-dr = "AA" or books-dr = "BB"
+           then 
+               modify Screen2-Gd-1, x = 2
+                                   bitmap = CRD-bmp
+                                   bitmap-number =  1                                           
+                                   bitmap-width =   24 
+               modify Screen2-Gd-1, x = 2
+                                    cell-data = spaces
+           else if  books-dr = "CC"
+                then
+                modify Screen2-Gd-1, x = 2
+                                   bitmap = CRD-bmp
+                                   bitmap-number =  2                                           
+                                   bitmap-width =   24                                     
+               modify Screen2-Gd-1, x = 2
+                                    cell-data = spaces
+               end-if                   
+           end-if        
+           .
+
+       Screen2-Pb-1-Link.
+           perform Acu-Screen2-Exit      
+           .
+      *
+       Screen2-Pb-1a-Link.
+           if (( Books-branch is not equal to branchToKeep )
+                OR (books-status is equal to 10))
+              
+               then display message box "End of Branch"
+           else     
+               modify Screen2-Gd-1, reset-grid 1
+               perform Acu-Screen2-Gd-1-Content
+               perform load-grid
+           end-if
+           .
+      *
+       Screen2-Pb-2-Link.
+           modify Screen2-Gd-1, reset-grid 1
+           perform Acu-Screen2-Gd-1-Content
+      *     move low-values to books-id
+      *     start BOOKS key is higher than books-id
+
+           close BOOKS
+           Open input books
+           move branchToKeep to books-branch          
+           start BOOKS key is equal to Books-branch
+           end-start
+           read BOOKS next
+
+           perform load-grid 
+           .
+      *
+       Screen2-Pb-3-Link.   
+      *     display message box "Didn't you see the red button? Applicati
+      *-     "cation not finished! Okay, maybe it is just a demo!"
+           call "ModifyBook" using departme-rec 
+           .
+      *
+       Screen1-Pb-1a-Link.
+           inquire Screen1-SubDpt-Cb, value W90-DISPLAY
+           move W90-DISPLAY to Departme-sub
+           inquire Screen1-Dpt-Cb, value W90-DISPLAY
+           move W90-DISPLAY to Departme-key
+
+           close DEPARTMENT
+           open input DEPARTMENT    
+
+           start DEPARTMENT key is equal to mkey
+           end-start
+
+           read DEPARTMENT
+           
+
+           move Departme-branch to branchToKeep
+                      
+           perform Acu-Screen2-Create-Win
+           perform Acu-Screen2-Init-Data
+
+           move branchToKeep to Books-branch
+           start BOOKS key is equal to Books-branch
+           read BOOKS next
+
+           perform Control-screen2
+           .
+
+       Control-screen2.
+           perform Load-Grid
+           perform Acu-Screen2-Proc 
+           .                                  
+      *
+      
+      *
+       Screen2-Gd-1-Ev-Msg-Begin-Entry.
+           move event-action-fail to event-action
+           perform Acu-Screen2-Exit
+           perform Acu-Screen1-Exit
+           perform Acu-Exit-Rtn
+           .
+
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=0
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

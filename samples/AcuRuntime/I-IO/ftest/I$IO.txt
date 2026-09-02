@@ -1,0 +1,49 @@
+set OPEN-FUNCTION to true
+
+           move Finput to open_mode
+           inspect file_in replacing trailing spaces by low-values.
+           inspect LOGICAL-INFO replacing trailing spaces by low-values.
+
+           call "I$IO" using io_function
+                             file_in
+                             open_mode
+                             LOGICAL-INFO.
+
+           move return_code  to file_handlein
+
+           if return-code = 0
+
+        display "File in "    no
+                    display file_in_a     no
+                    display " not found!"
+
+           end-if.
+
+           set INFO-FUNCTION      to true.
+
+           set GET-LOGICAL-PARAMS to true.
+
+           inspect LOGICAL-INFO replacing trailing spaces by low-values.
+
+           call "I$IO" using io_function
+                             file_handlein
+                             info_mode
+                             logical_info.
+
+           set GET-PHYSICAL-PARAMS to true.
+
+           inspect physical-info replacing trailing spaces
+                   by low-values.
+
+           call "I$IO" using io_function
+                             file_handlein
+                             info_mode
+                             physical-info.
+
+           set GET-RECORD-COUNT to true.
+
+           call "I$IO" using io_function
+                             file_handlein
+                             info_mode
+                             record-count-info.
+

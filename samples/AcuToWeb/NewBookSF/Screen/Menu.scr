@@ -1,0 +1,90 @@
+* Menu.scr
+* Menu.scr is generated from C:\Work\Demo\classid\Menu.Psf
+* This is a generated file. DO NOT modify this file directly.
+
+ 01 Screen1.
+     03 Screen1-Frame1, Frame, 
+        COL 2.14, LINE 1.00, LINES 10.00 CELLS, SIZE 65.86 CELLS, 
+        ENGRAVED, FONT IS Calibri12B, ID IS 1, 
+        TITLE "Library Demo", BACKGROUND-LOW.
+     03 Screen1-Dpt-Cb, Combo-Box, 
+        COL 31.00, LINE 2.65, LINES 6.17 CELLS, SIZE 35.14 CELLS, 
+        3-D, ID IS 2, MASS-UPDATE 0, NOTIFY-SELCHANGE, DROP-LIST, 
+        UNSORTED, 
+        VALUE W90-DISPLAY, 
+        EVENT PROCEDURE Screen1-Dpt-Cb-Event-Proc.
+     03 Screen1-SubDpt-Cb, Combo-Box, 
+        COL 31.00, LINE 4.78, LINES 6.17 CELLS, SIZE 35.14 CELLS, 
+        3-D, ID IS 4, MASS-UPDATE 0, NOTIFY-SELCHANGE, DROP-LIST, 
+        UNSORTED, 
+        EVENT PROCEDURE Screen1-SubDpt-Cb-Event-Proc, 
+        EXCEPTION PROCEDURE Screen1-SubDpt-Cb-Exception-Proc.
+     03 Screen1-Dpt-La, Label, 
+        COL 7.29, LINE 2.83, LINES 0.70 CELLS, SIZE 13.29 CELLS, 
+        PERMANENT, FONT IS Calibri9B, ID IS 5, LABEL-OFFSET 0, 
+        TITLE W20-A41-3.
+     03 Screen1-SubDpt-La, Label, 
+        COL 7.29, LINE 4.78, LINES 0.70 CELLS, SIZE 16.86 CELLS, 
+        PERMANENT, FONT IS Calibri9B, ID IS 7, LABEL-OFFSET 0, 
+        TITLE W20-A41-4.
+     03 Screen1-Bt-1, Bitmap, 
+        COL 2.43, LINE 6.65, LINES 91 PIXELS, SIZE 450 PIXELS, 
+        BITMAP-SCALE 1,
+        BITMAP-HANDLE Extend10b-jpg, BITMAP-NUMBER 1, 
+        ID IS 6.
+     03 Screen1-Pb-1a, Push-Button, 
+        COL 15.86, LINE 11.43, LINES 1.30 CELLS, SIZE 15.43 CELLS, 
+        EXCEPTION-VALUE 101, FONT IS Arial9B, ID IS 29, 
+        TITLE "&Find", ATW-CSS-ID "findbutton".
+     03 Screen1-Pb-1, Push-Button, 
+        COL 39.14, LINE 11.43, LINES 1.30 CELLS, SIZE 15.43 CELLS, 
+        ID IS 3, SELF-ACT, CANCEL-BUTTON, 
+        TITLE "&Exit", ATW-CSS-CLASS "exitbutton".
+ 01 Screen2.
+     03 Screen2-Gd-1, Grid, 
+        COL 1.60, LINE 1.50, LINES 49.10 CELLS, SIZE 103.40 CELLS, 
+        ADJUSTABLE-COLUMNS, 3-D, CENTERED-HEADINGS, COLUMN-HEADINGS, 
+        DATA-COLUMNS (1, 10, 12, 37, 48, 54, 55, 61, 65), 
+        DISPLAY-COLUMNS (1, 10, 13, 38, 52, 63, 73, 81, 91), 
+        ALIGNMENT ("C", "C", "L", "C", "C", "C", "C", "C", "C"), 
+        SORT-TYPES ("X", "-", "X", "P", "P", "-", "X", "X", "X"), 
+        SEPARATION (3, 7, 5, 5, 5, 5, 5, 5, 5), 
+        CURSOR-COLOR 481, CURSOR-FRAME-WIDTH 3, DIVIDER-COLOR 6, 
+        DRAG-COLOR 1, FONT IS MS-Sans-Serif12B, HEADING-COLOR 263, 
+        HEADING-DIVIDER-COLOR 1, HEADING-FONT IS Trebuchet-MS10B, 
+        ID IS 1, NUM-COL-HEADINGS 1, NUM-ROWS 15, 
+        RECORD-DATA Screen2-Gd-1-Record, 
+        ROW-COLOR-PATTERN = (257, 513), TILED-HEADINGS, VPADDING 50, 
+        VSCROLL.
+     03 Screen2-Pb-1, Push-Button, 
+        COL 35.30, LINE 52.10, LINES 3.40 CELLS, SIZE 9.10 CELLS, 
+        EXCEPTION-VALUE 124, ID IS 2, SELF-ACT, 
+        TITLE "E&xit", ATW-CSS-CLASS "exitbutton".
+     03 Screen2-Pb-1a, Push-Button, 
+        COL 53.50, LINE 52.10, LINES 3.40 CELLS, SIZE 9.10 CELLS, 
+        EXCEPTION-VALUE 123, ID IS 3, SELF-ACT, 
+        TITLE "&Forward".
+     03 Screen2-Pb-2, Push-Button, 
+        COL 44.40, LINE 52.10, LINES 3.40 CELLS, SIZE 9.10 CELLS, 
+        EXCEPTION-VALUE 126, ID IS 4, 
+        TITLE "&Back".
+     03 Screen2-Pb-3, Push-Button, 
+        COL 62.60, LINE 52.10, LINES 3.40 CELLS, SIZE 9.10 CELLS, 
+        EXCEPTION-VALUE 125, ID IS 5, 
+        TITLE "&New Input", ATW-CSS-ID "newbutton".
+     03 Screen2-Bt-1, Bitmap, 
+        COL 1.10, LINE 50.60, LINES 17, SIZE 117, 
+        BITMAP-HANDLE 2DPB-BMP, BITMAP-NUMBER 1, 
+        ID IS 9, VISIBLE 0.
+     03 Screen2-Bt-1a, Bitmap, 
+        COL 8.80, LINE 49.40, LINES 26, SIZE 49, 
+        BITMAP-HANDLE CRD-bmp, BITMAP-NUMBER 1, 
+        ID IS 6, VISIBLE 0.
+     03 Screen2-La-1, Label, 
+        COL 2.60, LINE 49.60, LINES 1.80 CELLS, SIZE 5.30 CELLS, 
+        FONT IS Arial10I, ID IS 7, LABEL-OFFSET 0, 
+        TITLE "Label", VISIBLE 0.
+     03 Screen2-La-2, Label, 
+        COL 6.40, LINE 49.40, LINES 1.90 CELLS, SIZE 7.80 CELLS, 
+        FONT IS Arial10B, ID IS 8, LABEL-OFFSET 0, 
+        TITLE "Label", VISIBLE 0.

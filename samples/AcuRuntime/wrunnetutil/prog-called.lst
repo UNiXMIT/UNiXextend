@@ -1,0 +1,56 @@
+prog-called.cbl      Wed Apr 30 11:05:51 2014  ACUCOBOL-GT v9.1.1  Page: 0001
+ccbl32 -ga --netdll -v -lfo @.lst prog-called.cbl
+
+
+       identification division.
+       program-id. prog-called.
+       remarks.
+
+       environment division.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+       input-output section.
+       file-control.
+
+      *{Bench}file-control
+      *{Bench}end
+       data division.
+       file section.
+
+       working-storage section.
+       LINKAGE SECTION.
+       77 ln-n  pic 99.
+       77 ln-x  pic X(10).
+
+       SCREEN SECTION.
+       procedure division using ln-n, ln-x.
+       main-logic.
+
+000005     compute ln-n = ln-n + 7
+00000F     move "New Value" to ln-x
+           .
+000017     goback.
+
+prog-called.cbl      Wed Apr 30 11:05:51 2014  ACUCOBOL-GT v9.1.1  Page: 0002
+
+
+STATISTICS
+
+Total Lines:          29
+# of Files:            0
+# of Data Items:       2
+# of Paragraphs:       1
+
+Elapsed Time:        0.0 seconds
+Lines/Minute:     174000
+
+
+Code Size:            36 (000024)
+Data Size:            34 (000022)
+Shared Data:          56 (000038)
+Extra Segment:        12 (00000C)
+Thread Segment:        4 (000004)
+Address Table:        40 (000028)
+Program Size:        182 (0000B6)
+
+0 Error(s), 0 Warning(s)

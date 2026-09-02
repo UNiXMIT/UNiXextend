@@ -1,0 +1,281 @@
+; CASEMaker AcuBench Workspace File, Version 6.0
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[WORKSPACE_CONTENT]
+PROJECT_LIST=Project1
+CONFIGURATION_LIST=Debug Mode,Release Mode
+CURRENT_CONFIGURATION=Debug Mode
+
+[PROJECT_CONTENT-Project1]
+RELATIVE_PATH=.
+REMOTE_PATH=myserver:5632:/
+MAIN_PROGRAM_TYPE=2
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+
+[PROGRAM_CONTENT-Project1:PROGRAM1]
+RELATIVE_PATH=Threadds.psf
+
+[FOLDER_CONTENT-Project1:Source]
+ACCEPTED_FILE_EXTENSION=*.cbl;*.cob
+CREATED_TIME=4:33:23 PM, Friday, January 10, 2003
+
+[FOLDER_CONTENT-Project1:Screen]
+ACCEPTED_FILE_EXTENSION=*.scr;*.stf
+CREATED_TIME=4:33:23 PM, Friday, January 10, 2003
+
+[FOLDER_CONTENT-Project1:Report]
+ACCEPTED_FILE_EXTENSION=*.rpt;*.rtf
+CREATED_TIME=4:16:39 PM, Tuesday, September 02, 2003
+
+[FOLDER_CONTENT-Project1:Copylib]
+ACCEPTED_FILE_EXTENSION=*.cpy;*.wrk;*.lnk;*.lks;*.mnu;*.prd;*.evt;*.def
+CREATED_TIME=4:33:23 PM, Friday, January 10, 2003
+
+[FOLDER_CONTENT-Project1:Object]
+ACCEPTED_FILE_EXTENSION=*.acu;*.cbx;*.obj;*.lib
+CREATED_TIME=4:33:23 PM, Friday, January 10, 2003
+
+[FOLDER_CONTENT-Project1:List]
+ACCEPTED_FILE_EXTENSION=*.lst;*.log;*.asq
+CREATED_TIME=4:33:23 PM, Friday, January 10, 2003
+
+[FOLDER_CONTENT-Project1:Resource]
+ACCEPTED_FILE_EXTENSION=*.ico;*.bmp;*.jpg;*.jpe;*.jpeg
+CREATED_TIME=4:33:23 PM, Friday, January 10, 2003
+
+[FOLDER_CONTENT-Project1:FD]
+ACCEPTED_FILE_EXTENSION=*.fd;*.sl
+CREATED_TIME=4:33:23 PM, Friday, January 10, 2003
+
+[FOLDER_CONTENT-Project1:Remote]
+ACCEPTED_FILE_EXTENSION=*.acu;*.cbx;*.obj;*.lib
+CREATED_TIME=4:33:23 PM, Friday, January 10, 2003
+
+[FILE_CONTENT-Project1:FILE1]
+RELATIVE_PATH=Source\Threadds.cbl
+FOLDER_NAME=Source
+OWNER_PATH=Threadds.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-Project1:FILE2]
+RELATIVE_PATH=Screen\Threadds.scr
+FOLDER_NAME=Screen
+OWNER_PATH=Threadds.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-Project1:FILE3]
+RELATIVE_PATH=Report\Threadds.rpt
+FOLDER_NAME=Report
+OWNER_PATH=Threadds.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-Project1:FILE4]
+RELATIVE_PATH=Copylib\Threadds.wrk
+FOLDER_NAME=Copylib
+OWNER_PATH=Threadds.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-Project1:FILE5]
+RELATIVE_PATH=Copylib\Threadds.prd
+FOLDER_NAME=Copylib
+OWNER_PATH=Threadds.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-Project1:FILE6]
+RELATIVE_PATH=Copylib\Threadds.mnu
+FOLDER_NAME=Copylib
+OWNER_PATH=Threadds.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-Project1:FILE7]
+RELATIVE_PATH=Copylib\Threadds.evt
+FOLDER_NAME=Copylib
+OWNER_PATH=Threadds.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-Project1:FILE8]
+RELATIVE_PATH=Copylib\Threadds.lks
+FOLDER_NAME=Copylib
+OWNER_PATH=Threadds.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-Project1:FILE9]
+RELATIVE_PATH=COPYLIB\acucobol.def
+FOLDER_NAME=Copylib
+
+[FILE_CONTENT-Project1:FILE10]
+RELATIVE_PATH=COPYLIB\acugui.def
+FOLDER_NAME=Copylib
+
+[FILE_CONTENT-Project1:FILE11]
+RELATIVE_PATH=COPYLIB\crtvars.def
+FOLDER_NAME=Copylib
+
+[FILE_CONTENT-Project1:FILE12]
+RELATIVE_PATH=COPYLIB\showmsg.cpy
+FOLDER_NAME=Copylib
+
+[FILE_CONTENT-Project1:FILE13]
+RELATIVE_PATH=COPYLIB\showmsg.def
+FOLDER_NAME=Copylib
+
+[FILE_CONTENT-Project1:FILE14]
+RELATIVE_PATH=object\Threadds.acu
+FOLDER_NAME=Object
+OWNER_PATH=Source\Threadds.cbl
+ATTRIBUTE=0
+
+[PROJECT_COMPILE_SETTING-Project1:Debug Mode]
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+COMPATIBILITY_VERSION=17
+; File Options
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Miscellaneous Options
+DEBUGGING=1
+CODE_VERSION_NUMBER=17
+
+[PROJECT_RUNTIME_SETTING-Project1:Debug Mode]
+; Common Options
+CONFIGURATION_FILE=0
+NAME_CONFIGURATION_FILE=\etc\cblconfi
+; Io Options
+; Debug Options
+; ThinClient Options
+REMOTE_CONFIG_NAME=myserver:5632:/etc/cblconfig
+
+[PROJECT_ENVIRONMENT_SETTING-Project1:Debug Mode]
+VARIABLE0=RUNNAME,Wrun32.exe
+VARIABLE1=COMPILERNAME,Ccbl32.exe
+VARIABLE2=CODE_PREFIX,.\object
+VARIABLE3=ACUPATH,c:\acucorp\acucbl600\acugt\bin
+VARIABLE4=COPYPATH,.\screen;.\copylib;.\resource;.\fd;%screendir%;%copydir%;%reportdir%;%copydir%
+VARIABLE5=THINNAME,AcuThin.exe
+
+[PROJECT_LIBRARY_SETTING-Project1:Debug Mode]
+NAME_LIBRARY_FILE=.\object\@.lib
+
+[FILE_COMPILE_OPTION-Project1:Debug Mode:Source\Threadds.cbl]
+COPY_DEPENDENCE=Copylib\acugui.def;Copylib\acucobol.def;Copylib\crtvars.def;Copylib\showmsg.def;Copylib\Threadds.wrk;Screen\Threadds.scr;Copylib\showmsg.cpy;Copylib\Threadds.prd;Copylib\Threadds.evt
+FOLLOW_PROJECT=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+COMPATIBILITY_VERSION=17
+; File Options
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Miscellaneous Options
+DEBUGGING=1
+CODE_VERSION_NUMBER=17
+
+[PROJECT_COMPILE_SETTING-Project1:Release Mode]
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+COMPATIBILITY_VERSION=17
+; File Options
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+; Miscellaneous Options
+CODE_VERSION_NUMBER=17
+
+[PROJECT_RUNTIME_SETTING-Project1:Release Mode]
+; Common Options
+NAME_CONFIGURATION_FILE=\etc\cblconfi
+; Io Options
+; Debug Options
+; ThinClient Options
+REMOTE_CONFIG_NAME=myserver:5632:/etc/cblconfig
+
+[PROJECT_ENVIRONMENT_SETTING-Project1:Release Mode]
+VARIABLE0=RUNNAME,Wrun32.exe
+VARIABLE1=COMPILERNAME,Ccbl32.exe
+VARIABLE2=CODE_PREFIX,.\object
+VARIABLE3=ACUPATH,c:\acucorp\521\AcuGT\BIN
+VARIABLE4=COPYPATH,.\screen;.\copylib;.\resource;.\fd;c:\acucorp\acucbl600\AcuGT\sample\def;%screendir%;%copydir%;%reportdir%;%copydir%
+VARIABLE5=THINNAME,AcuThin.exe
+
+[PROJECT_LIBRARY_SETTING-Project1:Release Mode]
+NAME_LIBRARY_FILE=.\object\@.lib
+
+[FILE_COMPILE_OPTION-Project1:Release Mode:Source\Threadds.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+COMPATIBILITY_VERSION=17
+; File Options
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+; Miscellaneous Options
+CODE_VERSION_NUMBER=17

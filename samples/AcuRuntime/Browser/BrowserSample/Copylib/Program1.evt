@@ -1,0 +1,50 @@
+      * Program1.evt
+      * Program1.evt is generated from C:\AcuSamples\Browser\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+
+       Acu-Screen1-Event-Extra.
+           EVALUATE Event-Type
+           WHEN Msg-Close
+              PERFORM Acu-Screen1-Msg-Close
+           END-EVALUATE
+           .
+
+       Acu-Screen1-Msg-Close.
+           ACCEPT Quit-Mode-Flag FROM ENVIRONMENT "QUIT_MODE"
+           IF Quit-Mode-Flag = ZERO
+              PERFORM Acu-Screen1-Exit
+              PERFORM Acu-Exit-Rtn
+           END-IF
+           .
+
+       Screen1-Event-Proc.
+      * 
+           PERFORM Acu-Screen1-Event-Extra
+           .
+
+       Screen1-Pb-1-Event-Proc.
+      * 
+           EVALUATE Event-Type
+           WHEN Cmd-Clicked
+              EVALUATE Event-Control-Id
+              WHEN 1
+                 PERFORM Screen1-Pb-1-Ev-Cmd-Clicked
+              END-EVALUATE
+           END-EVALUATE
+           .
+
+       Screen2-Event-Proc.
+           .
+      ***   start event editor code   ***
+      *
+       Screen1-Pb-1-Ev-Cmd-Clicked.
+           perform Acu-Screen2-Routine
+           .
+      *
+       Screen2-Aft-Create.
+           MOVE 4 to ACCEPT-CONTROL.
+           MOVE 99 to CONTROL-ID.
+           MODIFY Screen2-Wb-1, VISIBLE TRUE
+           .
+       

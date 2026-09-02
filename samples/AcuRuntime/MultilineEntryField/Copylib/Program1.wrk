@@ -1,0 +1,145 @@
+      * Program1.wrk
+      * Program1.wrk is generated from C:\AcuSupport\Interchange-Group\SI-3162510-ATWMultiline\EntryField\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       77 Quit-Mode-Flag PIC S9(5) COMP-4 VALUE 0.
+       77 Key-Status IS SPECIAL-NAMES CRT STATUS PIC 9(4) VALUE 0.
+           88 Exit-Pushed VALUE 27.
+           88 Message-Received VALUE 95.
+           88 Event-Occurred VALUE 96.
+           88 Screen-No-Input-Field VALUE 97.
+           88 Screen-Time-Out VALUE 99.
+      * property-defined variable
+
+      * user-defined variable
+       77 Screen1-Handle
+                  USAGE IS HANDLE OF WINDOW VALUE NULL.
+       77 Screen1-De-1-Value           PIC  X(16).
+       77 Screen1-Ef-1-Value           PIC  X(30).
+       01 .
+           03 Screen1-Ef-2-Value-Item.
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+               05      PIC  X(20)
+                          VALUE IS " ".
+           03 Screen1-Ef-2-Value REDEFINES Screen1-Ef-2-Value-Item  PIC 
+            X(20)
+                      OCCURS 60 TIMES.
+       01 WS-COUNT         PIC  9(3)
+                  VALUE IS ZEROS.

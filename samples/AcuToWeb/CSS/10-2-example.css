@@ -1,0 +1,18 @@
+.css-ex-win-class td{
+background-color: lightcyan !important;
+}
+
+.keep-color-same{
+background-color: lightcyan !important;
+}
+
+#css-ex-win-color td{
+background-color: lime !important;
+}
+
+
+.css-ex-pb-corners{border-width: 5px; border-radius: 15px;}
+#css-ex-pb-color{
+background-color: lime !important;
+}
+

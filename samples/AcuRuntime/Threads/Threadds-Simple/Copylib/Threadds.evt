@@ -1,0 +1,154 @@
+      * Threadds.evt
+      * Threadds.evt is generated from C:\Sample\Threadds.Psf
+      * This is a generated file. DO NOT modify this file directly.
+      
+
+       Acu-Form1-Event-Extra.
+           EVALUATE Event-Type
+           WHEN Msg-Close
+              PERFORM Acu-Form1-Msg-Close
+           END-EVALUATE
+           .
+
+       Acu-Form1-Msg-Close.
+           ACCEPT Quit-Mode-Flag FROM ENVIRONMENT "QUIT_MODE"
+           IF Quit-Mode-Flag = ZERO
+              PERFORM Acu-Form1-Exit
+              PERFORM Acu-Exit-Rtn
+           END-IF
+           .
+
+       Form1-Event-Proc.
+      * 
+           PERFORM Acu-Form1-Event-Extra
+           .
+
+       Change-Btn-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Cmd-Clicked
+                 PERFORM Admissions-Btn-Ex-Cmd-Clicked
+              END-EVALUATE
+           END-IF
+           .
+
+       Exit-Btn-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Cmd-Clicked
+                 PERFORM Exit-Btn-Ex-Cmd-Clicked
+              END-EVALUATE
+           END-IF
+           .
+
+       Student-recs-Btn-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Cmd-Clicked
+                 PERFORM Student-recs-Btn-Ex-Cmd-Clicked
+              END-EVALUATE
+           END-IF
+           .
+
+       Form2-Event-Proc.
+           .
+
+       Form2-Close-Btn-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Cmd-Clicked
+                 PERFORM Form2-Close-Btn-Ex-Cmd-Clicked
+              END-EVALUATE
+           END-IF
+           .
+
+       Form2-Change-Push-Btn-Event-Proc.
+      * 
+           EVALUATE Event-Type
+           WHEN Cmd-Clicked
+              PERFORM Form2-Change-Push-Btn-Ev-Cmd-Clicked
+           END-EVALUATE
+           .
+
+       Form2-Change-Push-Btn-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Cmd-Clicked
+                 PERFORM Form2-Change-Push-Btn-Ex-Cmd-Clicked
+              END-EVALUATE
+           END-IF
+           .
+
+       Form3-Event-Proc.
+           .
+
+       Form3-Close-Btn-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Cmd-Clicked
+                 PERFORM Form3-Close-Btn-Ex-Cmd-Clicked
+              END-EVALUATE
+           END-IF
+           .
+      ***   start event editor code   ***
+      *
+       Exit-Btn-Ex-Cmd-Clicked.
+            perform Acu-exit-rtn
+           .
+      *
+       Form2-Close-Btn-Ex-Cmd-Clicked. 
+      * Perform updates 
+      * if processing successful
+           move zero to form2-handle
+           Stop thread
+      * else
+      * display message box
+      * end-if
+           .
+      *
+      *
+       Form2-Change-Push-Btn-Ex-Cmd-Clicked.
+      * Perform updates 
+      * if processing successful
+           Set I-O window to form1-handle
+      * else
+      * display message box     
+           .
+      *
+       Admissions-Btn-Ex-Cmd-Clicked.
+           If form2-handle > zero 
+           then
+               Set I-O window to form2-handle 
+           else
+               Perform thread Acu-Form2-routine
+           .
+      *
+       Student-recs-Btn-Ex-Cmd-Clicked.
+           if form3-handle > 0
+           then
+               set I-O window to form3-handle
+           else
+               Perform thread Acu-Form3-routine
+           .
+      *
+       Form3-Close-Btn-Ex-Cmd-Clicked.
+            move zero to form3-handle
+            Stop thread
+           .
+      *
+       Form2-Change-Push-Btn-Ev-Cmd-Clicked.
+            Set I-O window to form1-handle
+           .
+      *
+       Form1-Bef-Create.
+            move zero to form1-handle,
+                form2-handle,
+                form3-handle
+           .
+       

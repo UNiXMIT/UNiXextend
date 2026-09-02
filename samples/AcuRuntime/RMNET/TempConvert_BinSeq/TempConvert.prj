@@ -1,0 +1,63 @@
+
+<project type="cont" name="TempConvert" expanded="yes" catalog="no" pluginOwner="-1">
+	<file plugId="3" URL="tempconvert.wsdl" catalog="no">
+		<queries/>
+	</file>
+	<file plugId="3" URL="ConvertCelciusRequest.xml" catalog="no">
+		<queries/>
+	</file>
+	<file plugId="3" URL="ConvertCelciusResponse.xml" catalog="no">
+		<queries/>
+	</file>
+	<file plugId="3" URL="ConvertFarenheitRequest.xml" catalog="no">
+		<queries/>
+	</file>
+	<file plugId="3" URL="ConvertFarenheitResponse.xml" catalog="no">
+		<queries/>
+	</file>
+	<file plugId="3" URL="Fahrenheit-To-Celsius.xml" catalog="no">
+		<queries/>
+	</file>
+	<file plugId="3" URL="Fahrenheit-To-Celsius-Response.xml" catalog="no">
+		<queries/>
+	</file>
+	<file plugId="2" URL="TempConvertRequestF2C.xsl">
+		<scenarios>
+			<scenario default="yes" name="Fahrenheit-To-Celsius.xml" userelativepaths="yes" externalpreview="no" url="Fahrenheit-To-Celsius.xml" htmlbaseurl="" outputurl="" processortype="internal" useresolver="yes" profilemode="0" profiledepth=""
+			          profilelength="" urlprofilexml="" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext="" validateoutput="no"
+			          validator="internal" customvalidator=""/>
+		</scenarios>
+		<MapperMetaTag>
+			<MapperInfo srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="ConvertFarenheitRequest.xml" destSchemaRoot="Envelope" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no">
+				<SourceSchema srcSchemaPath="Fahrenheit-To-Celsius.xml" srcSchemaRoot="root" AssociatedInstance="file:///g:/XML/VEPostal/Fahrenheit-To-Celsius.xml" loaderFunction="document" loaderFunctionUsesURI="no"/>
+			</MapperInfo>
+			<MapperBlockPosition>
+				<template match="/"></template>
+			</MapperBlockPosition>
+			<TemplateContext></TemplateContext>
+			<MapperFilter side="target">
+				<Fragment url="" path="" action=""/>
+			</MapperFilter>
+		</MapperMetaTag>
+	</file>
+	<file plugId="2" URL="TempConvertResponseF2C.xsl">
+		<scenarios>
+			<scenario default="yes" name="Fahrenheit-To-Celsius-Response.xml" userelativepaths="yes" externalpreview="no" url="Fahrenheit-To-Celsius-Response.xml" htmlbaseurl="" outputurl="" processortype="internal" useresolver="yes" profilemode="0"
+			          profiledepth="" profilelength="" urlprofilexml="" commandline="" additionalpath="" additionalclasspath="" postprocessortype="none" postprocesscommandline="" postprocessadditionalpath="" postprocessgeneratedext="" validateoutput="no"
+			          validator="internal" customvalidator=""/>
+		</scenarios>
+		<MapperMetaTag>
+			<MapperInfo srcSchemaPathIsRelative="yes" srcSchemaInterpretAsXML="no" destSchemaPath="Fahrenheit-To-Celsius-Response.xml" destSchemaRoot="root" destSchemaPathIsRelative="yes" destSchemaInterpretAsXML="no">
+				<SourceSchema srcSchemaPath="ConvertFarenheitResponse.xml" srcSchemaRoot="Envelope" AssociatedInstance="file:///g:/XML/VEPostal/ConvertFarenheitResponse.xml" loaderFunction="document" loaderFunctionUsesURI="no"/>
+			</MapperInfo>
+			<MapperBlockPosition>
+				<template match="/"></template>
+			</MapperBlockPosition>
+			<TemplateContext></TemplateContext>
+			<MapperFilter side="source"></MapperFilter>
+		</MapperMetaTag>
+	</file>
+	<file plugId="3" URL="TempFahrenheitRequest.xml" catalog="no">
+		<queries/>
+	</file>
+</project>

@@ -1,0 +1,389 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.                      Processing.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+       SELECT RECEIPT-FILE     ASSIGN TO DYNAMIC RECEIPT-NAME
+							   ORGANIZATION IS LINE SEQUENTIAL
+							   FILE STATUS IS FILE-STATUS.
+
+       DATA DIVISION.
+       FILE SECTION.
+       FD RECEIPT-FILE.
+       01 RECEIPT-RECORD                PIC X(80).
+
+       WORKING-STORAGE SECTION.
+       01 FILE-STATUS.
+	      05 FS-BYTE1                   PIC X VALUE SPACE.
+          05 FS-BYTE2                   PIC X COMP-5 VALUE ZEROS.
+       01 RECEIPT-COUNTER               PIC 99 VALUE ZERO.
+       01 RECEIPT-NAME                  PIC X(13) VALUE SPACES.
+       01 PRINT-RECEIPT               PIC X(100) VALUE SPACES.
+
+       01 PRINT-HEADING.
+		   05 FILLER                    PIC X(30) VALUE SPACES.
+		   05 FILLER                    PIC X(20) VALUE "BANK OF VISUAL COBOL".
+       01 PRINT-LINE-1.
+		   05 FILLER                    PIC X(9) VALUE "ACCOUNT: ".
+		   05 PRINT-ACCOUNT             PIC X(4) VALUE SPACES.
+       01 PRINT-LINE-2.
+		   05 FILLER                    PIC X(6) VALUE "DATE: ".
+		   05 PRINT-DATE.
+			   10 PRINT-DAY         	PIC 9(2) VALUE ZEROS.
+			   10 FILLER                PIC X VALUE "/".
+               10 PRINT-MONTH      		PIC 9(2) VALUE ZEROS.
+			   10 FILLER                PIC X VALUE "/".
+			   10 PRINT-YEAR       		PIC 9(4) VALUE ZEROS.
+       01 PRINT-LINE-3.
+		   05 FILLER                    PIC X(6) VALUE "TIME: ".
+           05 PRINT-TIME.
+               10 PRINT-HOURS        	PIC 9(2) VALUE ZEROS.
+			   10 FILLER                PIC X VALUE ":".
+               10 PRINT-MINUTES   		PIC 9(2) VALUE ZEROS.
+			   10 FILLER                PIC X VALUE ":".
+               10 PRINT-SECONDS   		PIC 9(2) VALUE ZEROS.
+       01 PRINT-LINE-4.
+		   05 FILLER                    PIC X(19) VALUE "TRANSACTION TYPE: ".
+		   05 PRINT-TYPE                PIC X VALUE SPACES.
+       01 PRINT-LINE-5.
+		   05 FILLER                    PIC X(21) VALUE "TRANSACTION AMOUNT: ".
+		   05 PRINT-AMOUNT              PIC $$$,$$9.99 VALUE ZEROS.
+       01 PRINT-LINE-6.
+		   05 FILLER                    PIC X(18) VALUE "CURRENT BALANCE: ".
+		   05 PRINT-BALANCE             PIC $$$,$$9.99 VALUE ZEROS.
+           
+       EXEC SQL INCLUDE SQLCA END-EXEC.
+
+       EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01 MASTER-RECORD.
+           05 MASTER-ACCOUNT    		PIC 9(4) COMP-5 VALUE 0.
+           05 MASTER-NAME        		PIC X(30).
+           05 MASTER-ADDRESS.
+               10 MASTER-STREET  		PIC X(30).
+               10 MASTER-CITY      		PIC X(30).
+               10 MASTER-STATE   		PIC X(2).
+               10 MASTER-ZIP       		PIC X(10).
+           05 MASTER-PHONE.
+               10 MASTER-PHONE-AREA     PIC X(3).
+               10 MASTER-PHONE-PREFIX  	PIC X(3).
+               10 MASTER-PHONE-BASE    	PIC X(4).
+               10 MASTER-PHONE-EXT      PIC X(5).
+           05 MASTER-START-DATE.
+               10 MASTER-START-YYYY     PIC X(4).
+               10 MASTER-START-MM     	PIC X(2).
+               10 MASTER-START-DD       PIC X(2).
+           05 MASTER-BALANCE            PIC S9(5)V9(2) COMP-3 VALUE 0.
+
+       01 SERVER-NAME                   PIC X(30).
+       01 USERID                        PIC X(8).
+       01 PASSWD.
+           49 PASSWD-LENGTH             PIC S9(4) COMP-5 VALUE 0.
+           49 PASSWD-NAME               PIC X(18).
+       EXEC SQL END DECLARE SECTION END-EXEC.
+
+       EXEC SQL BEGIN DECLARE SECTION END-EXEC.
+       01 TRANS-RECORD.
+           05 TRANS-ACCOUNT     		PIC 9(4) COMP-5 VALUE 0.
+           05 TRANS-DATE.
+			   10 TRANS-YEAR       		PIC X(4).
+			   10 TRANS-MONTH      		PIC X(2).
+			   10 TRANS-DAY         	PIC X(2).
+           05 TRANS-TIME.
+               10 TRANS-HOURS        	PIC X(2).
+               10 TRANS-MINUTES   		PIC X(2).
+               10 TRANS-SECONDS   		PIC X(2).
+               10 TRANS-HUNDREDS 		PIC X(2).     
+           05 TRANS-TYPE        		PIC X.
+           05 TRANS-AMOUNT   		    PIC S9(5)V9(2) COMP-3 VALUE 0.
+       EXEC SQL END DECLARE SECTION END-EXEC.
+
+       LINKAGE SECTION.
+       01 WS-MASTER-RECORD.
+           05 WS-MASTER-ACCOUNT    		PIC X(4) VALUE SPACES.
+           05 WS-MASTER-NAME        	PIC X(30) VALUE SPACES.
+           05 WS-MASTER-BALANCE         PIC S9(5)V99 VALUE ZEROS.
+
+       01 ERROR-FLAG                    PIC X VALUE SPACES.
+           88 VALID                     VALUE "Y".
+           88 NOT-VALID                 VALUE "N".
+           88 STOP-RUN                  VALUE "S".
+       01 ERROR-MESSAGE                 PIC X(30) VALUE SPACES.
+       01 ENTER-AMOUNT                  PIC S9(5)V99 VALUE ZEROS.
+       01 RECEIPT-REQUIRED              PIC X VALUE SPACES.
+
+       01 TRANS-COUNT                   PIC 9 VALUE ZEROS.
+       01 TRANSACTIONS.
+           05 TRANSACTION-TABLE OCCURS 3 TIMES.
+               10 TABLE-DATE.
+                   15 TABLE-YEAR            PIC 9(4).
+                   15 TABLE-MONTH           PIC 9(2).
+                   15 TABLE-DAY             PIC 9(2).
+               10 TABLE-TIME.
+                   15 TABLE-HOURS           PIC 9(2).
+                   15 TABLE-MINUTES         PIC 9(2).
+                   15 TABLE-SECONDS         PIC 9(2).
+                   15 TABLE-HUNDREDS        PIC 9(2).     
+               10 TABLE-TYPE        	    PIC X.
+               10 TABLE-AMOUNT              PIC -$$$$$9.99.
+
+       01 SQL-ERROR-CHECK              PIC X VALUE SPACES.
+           88 SQL-ERROR                VALUE "Y".
+           88 SQL-NO-ERROR             VALUE "N".
+
+       SCREEN SECTION.
+
+       PROCEDURE DIVISION.
+       DECLARATIVES.
+       
+       FILE-ERROR-HANDLING SECTION.
+		   USE AFTER EXCEPTION PROCEDURE ON RECEIPT-FILE.
+		   EVALUATE FILE-STATUS
+              WHEN "10"
+                 MOVE "NO MORE RECORDS FOUND!" TO ERROR-MESSAGE
+			  WHEN "30"
+				 MOVE "PERMANENT ERROR!" TO ERROR-MESSAGE
+			     SET STOP-RUN TO TRUE
+			  WHEN "35"
+				 MOVE "FILE NOT FOUND!" TO ERROR-MESSAGE
+			     SET STOP-RUN TO TRUE
+              WHEN OTHER
+        	     IF FS-BYTE1 = "9"
+                    IF FS-BYTE2 = 65
+                       MOVE "FILE LOCKED!" TO ERROR-MESSAGE
+                    ELSE
+                       IF FS-BYTE2 = 68
+                          MOVE "RECORD LOCKED!" TO ERROR-MESSAGE
+                        ELSE
+                           STRING "ERROR: FILE STATUS = " FILE-STATUS INTO ERROR-MESSAGE
+                           SET STOP-RUN TO TRUE
+                        END-IF
+                    END-IF
+                 ELSE
+                    STRING "ERROR: FILE STATUS = " FILE-STATUS INTO ERROR-MESSAGE
+                    SET STOP-RUN TO TRUE
+                 END-IF
+           END-EVALUATE
+           GOBACK.
+
+       END DECLARATIVES.
+    
+           EXEC SQL WHENEVER SQLERROR PERFORM ERROR-EXIT END-EXEC
+           PERFORM INITIALIZATION-ROUTINE
+           PERFORM SQL-CONNECT
+           GOBACK.
+
+       READ-RECORD.
+		   ENTRY "INITIAL" USING WS-MASTER-RECORD ERROR-FLAG ERROR-MESSAGE
+		   MOVE WS-MASTER-ACCOUNT TO MASTER-ACCOUNT
+           EXEC SQL
+               SELECT
+                   MASTER_NAME,          
+                   MASTER_BALANCE
+               INTO
+                   :MASTER-NAME,            
+                   :MASTER-BALANCE
+                  FROM CUSTOMER
+                       WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT
+           END-EXEC
+           IF SQLCODE = 100				     
+               SET NOT-VALID TO TRUE
+           ELSE
+               SET VALID TO TRUE
+               MOVE MASTER-NAME TO WS-MASTER-NAME
+               MOVE MASTER-BALANCE TO WS-MASTER-BALANCE
+           END-IF
+           GOBACK.
+
+       WITHDRAWL.
+		   ENTRY "WITHDRAWL" USING WS-MASTER-RECORD ENTER-AMOUNT RECEIPT-REQUIRED ERROR-FLAG ERROR-MESSAGE
+		   MOVE "W" TO TRANS-TYPE
+           SUBTRACT ENTER-AMOUNT FROM MASTER-BALANCE
+           MOVE MASTER-BALANCE TO WS-MASTER-BALANCE
+           EXEC SQL
+               UPDATE CUSTOMER
+                   SET MASTER_BALANCE = :MASTER-BALANCE
+                           WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT 
+           END-EXEC
+		   PERFORM UPDATE-TRANSACTIONS
+           PERFORM RECEIPT
+           GOBACK.
+       
+       DEPOSIT.
+		   ENTRY "DEPOSIT" USING WS-MASTER-RECORD ENTER-AMOUNT RECEIPT-REQUIRED ERROR-FLAG ERROR-MESSAGE
+		   MOVE "D" TO TRANS-TYPE
+           ADD ENTER-AMOUNT TO MASTER-BALANCE
+           MOVE MASTER-BALANCE TO WS-MASTER-BALANCE
+           EXEC SQL
+               UPDATE CUSTOMER
+                   SET MASTER_BALANCE = :MASTER-BALANCE
+                           WHERE MASTER_ACCOUNT = :MASTER-ACCOUNT 
+           END-EXEC
+		   PERFORM UPDATE-TRANSACTIONS
+           PERFORM RECEIPT
+           GOBACK.
+
+       TRANSACTION-ENQUIRY.
+		   ENTRY "ENQUIRY" USING WS-MASTER-RECORD TRANS-COUNT TRANSACTIONS ERROR-FLAG ERROR-MESSAGE
+           MOVE WS-MASTER-ACCOUNT TO TRANS-ACCOUNT
+           EXEC SQL
+               SET ROWCOUNT 3
+           END-EXEC
+           EXEC SQL
+               DECLARE COBCUR1 CURSOR FOR
+                   SELECT TRANS_YEAR,
+                          TRANS_MONTH,
+                          TRANS_DAY,
+                          TRANS_HOURS,
+                          TRANS_MINUTES,
+                          TRANS_SECONDS,
+                          TRANS_HUNDREDS,
+                          TRANS_TYPE,
+                          TRANS_AMOUNT
+                   FROM TRANSACTIONS
+                   WHERE TRANS_ACCOUNT = :TRANS-ACCOUNT
+                   ORDER BY TRANS_YEAR DESC,
+                            TRANS_MONTH DESC,
+                            TRANS_DAY DESC,
+                            TRANS_HOURS DESC,
+                            TRANS_MINUTES DESC,
+                            TRANS_SECONDS DESC,
+                            TRANS_HUNDREDS DESC
+           END-EXEC
+           EXEC SQL 
+               OPEN COBCUR1 
+           END-EXEC
+           PERFORM UNTIL SQLCODE NOT EQUAL 0 OR TRANS-COUNT = 3
+               EXEC SQL
+                   FETCH COBCUR1 INTO :TRANS-YEAR,
+                                      :TRANS-MONTH,
+                                      :TRANS-DAY,
+                                      :TRANS-HOURS,
+                                      :TRANS-MINUTES,
+                                      :TRANS-SECONDS,
+                                      :TRANS-HUNDREDS,
+                                      :TRANS-TYPE,
+                                      :TRANS-AMOUNT
+               END-EXEC
+               IF SQLCODE EQUAL 0
+                   ADD 1 TO TRANS-COUNT
+                   MOVE TRANS-DATE TO TABLE-DATE(TRANS-COUNT) 
+                   MOVE TRANS-TIME TO TABLE-TIME(TRANS-COUNT)
+                   MOVE TRANS-TYPE TO TABLE-TYPE(TRANS-COUNT)
+                   MOVE TRANS-AMOUNT TO TABLE-AMOUNT(TRANS-COUNT)
+               END-IF  
+           END-PERFORM
+           EXEC SQL
+               CLOSE COBCUR1
+           END-EXEC
+           GOBACK.
+
+       UPDATE-TRANSACTIONS.
+		   MOVE MASTER-ACCOUNT TO TRANS-ACCOUNT
+		   ACCEPT TRANS-DATE FROM DATE YYYYMMDD
+		   ACCEPT TRANS-TIME FROM TIME
+		   MOVE ENTER-AMOUNT TO TRANS-AMOUNT
+           EXEC SQL
+               INSERT INTO TRANSACTIONS VALUES
+                   (:TRANS-ACCOUNT,
+                    :TRANS-YEAR,        
+                    :TRANS-MONTH, 
+                    :TRANS-DAY,     
+                    :TRANS-HOURS,       
+                    :TRANS-MINUTES,         
+                    :TRANS-SECONDS,  
+                    :TRANS-HUNDREDS,
+                    :TRANS-TYPE,  
+                    :TRANS-AMOUNT)
+           END-EXEC.
+       
+       RECEIPT.
+		   IF RECEIPT-REQUIRED = "Y" OR "y"
+			   ADD 1 TO RECEIPT-COUNTER
+			   STRING  "RECEIPT" DELIMITED BY SIZE
+				       RECEIPT-COUNTER DELIMITED BY SIZE
+					   ".TXT" DELIMITED BY SIZE
+					   INTO RECEIPT-NAME
+			   END-STRING
+			   PERFORM RECEIPT-DATA
+			   OPEN OUTPUT RECEIPT-FILE
+				   PERFORM RECEIPT-PRINT
+			   CLOSE RECEIPT-FILE
+               STRING "NOTEPAD " DELIMITED BY SIZE
+                      RECEIPT-NAME DELIMITED BY SIZE
+                      INTO PRINT-RECEIPT
+               CALL "C$SYSTEM" USING PRINT-RECEIPT 97
+           END-IF.
+
+       RECEIPT-DATA.
+		   MOVE MASTER-ACCOUNT TO PRINT-ACCOUNT
+		   MOVE TRANS-DAY TO PRINT-DAY
+		   MOVE TRANS-MONTH TO PRINT-MONTH
+		   MOVE TRANS-YEAR TO PRINT-YEAR
+		   MOVE TRANS-HOURS TO PRINT-HOURS
+		   MOVE TRANS-MINUTES TO PRINT-MINUTES
+		   MOVE TRANS-SECONDS TO PRINT-SECONDS
+		   MOVE TRANS-TYPE TO PRINT-TYPE
+		   MOVE TRANS-AMOUNT TO PRINT-AMOUNT
+		   MOVE MASTER-BALANCE TO PRINT-BALANCE.
+
+       RECEIPT-PRINT.
+		   WRITE RECEIPT-RECORD FROM PRINT-HEADING
+           WRITE RECEIPT-RECORD FROM PRINT-LINE-1
+			   AFTER ADVANCING 2 LINES
+		   WRITE RECEIPT-RECORD FROM PRINT-LINE-2
+			   AFTER ADVANCING 2 LINES
+		   WRITE RECEIPT-RECORD FROM PRINT-LINE-3
+			   AFTER ADVANCING 2 LINES
+		   WRITE RECEIPT-RECORD FROM PRINT-LINE-4
+			   AFTER ADVANCING 2 LINES
+		   WRITE RECEIPT-RECORD FROM PRINT-LINE-5
+			   AFTER ADVANCING 2 LINES
+		   WRITE RECEIPT-RECORD FROM PRINT-LINE-6
+			   AFTER ADVANCING 2 LINES.
+
+       INITIALIZATION-ROUTINE.
+           ACCEPT SERVER-NAME FROM ENVIRONMENT "SQL_SERVER_NAME"
+           ACCEPT USERID FROM ENVIRONMENT "SQL_USERNAME"
+           ACCEPT PASSWD-NAME FROM ENVIRONMENT "SQL_PASSWORD"
+           INSPECT PASSWD-NAME TALLYING PASSWD-LENGTH FOR CHARACTERS BEFORE INITIAL " ".
+
+       SQL-CONNECT.
+           IF USERID NOT = SPACES
+	           EXEC SQL CONNECT TO :SERVER-NAME AS C1
+		           USER :USERID USING :PASSWD
+	           END-EXEC
+           ELSE
+	           EXEC SQL CONNECT TO :SERVER-NAME AS C1
+	           END-EXEC
+           END-IF
+           IF SQLCODE < 0
+               PERFORM ERROR-EXIT
+           END-IF.
+
+       SQL-DISCONNECT.
+           ENTRY "SQL-DISCONNECT"
+           EXEC SQL COMMIT END-EXEC
+           EXEC SQL DISCONNECT ALL END-EXEC
+           GOBACK.
+
+       ERROR-EXIT.
+           EXEC SQL WHENEVER SQLERROR CONTINUE END-EXEC
+           IF SQLSTATE OF SQLCA = 23000
+               DISPLAY "ACCOUNT ALREADY EXISTS!" AT 0625 ERASE SCREEN
+               DISPLAY "PRESS ENTER TO CONTINUE." AT 0825
+               SET SQL-ERROR To TRUE
+               ACCEPT OMITTED AT 0850
+           ELSE
+               DISPLAY "SQL ERROR: SQLCODE  " AT 0510 ERASE SCREEN
+               DISPLAY SQLCODE OF SQLCA AT 0535
+               DISPLAY "           SQLSTATE " AT 0710
+               SQLSTATE OF SQLCA AT 0735
+               DISPLAY SQLERRMC OF SQLCA AT 0935
+               ACCEPT OMITTED
+               EXEC SQL DISCONNECT ALL END-EXEC
+               STOP RUN
+            END-IF.

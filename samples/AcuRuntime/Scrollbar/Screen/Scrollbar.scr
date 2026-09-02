@@ -1,0 +1,34 @@
+      * Scrollbar.scr
+      * Scrollbar.scr is generated from C:\AcuSamples\scrollbar\Scrollbar.Psf
+      * This is a generated file. DO NOT modify this file directly.
+            
+       01 Form1, 
+           BEFORE PROCEDURE Reload-Listbox.
+           03 Form1-Sb-1, Scroll-Bar, 
+              COL 4,00, LINE 27,00, LINES 2,00 CELLS, SIZE 20,00 CELLS, 
+              ID IS 1, HORIZONTAL, MAX-VAL IS 100, MIN-VAL IS 0, 
+              PAGE-SIZE IS 0, TRACK-THUMB, VALUE ws-scroll-value, 
+              EVENT PROCEDURE Form1-Sb-1-Event-Proc.
+           03 Form1-Ef-1, Entry-Field, 
+              COL 22,00, LINE 4,50, LINES 2,00 CELLS, SIZE 6,00 CELLS, 
+              3-D, ID IS 2, RIGHT, VALUE EVENTO-DATA-2.
+           03 Form1-Lb-1, List-Box, 
+              COL 4,50, LINE 4,00, LINES 20,50 CELLS, SIZE 8,00 CELLS, 
+              3-D, ID IS 3, MASS-UPDATE 0, UNSORTED, 
+              VALUE Form1-Lb-1-Value, 
+              NO-SEARCH.
+           03 Form1-Pb-1, Push-Button, 
+              COL 22,00, LINE 19,00, LINES 2,50 CELLS, SIZE 7,00 CELLS, 
+              ID IS 4, SELF-ACT, CANCEL-BUTTON, 
+              TITLE "E&xit".
+           03 Form1-La-1, Label, 
+              COL 22,00, LINE 7,00, LINES 2,00 CELLS, SIZE 10,00 CELLS, 
+              FONT IS Medium-Font, ID IS 5, LABEL-OFFSET 0, 
+              TITLE "campo data-2".
+           03 Form1-Ef-2, Entry-Field, 
+              COL 22,00, LINE 10,00, LINES 2,00 CELLS, SIZE 6,50 CELLS, 
+              3-D, ID IS 6, RIGHT, VALUE EVENTO-TYPE.
+           03 Form1-La-2, Label, 
+              COL 22,50, LINE 13,00, LINES 1,50 CELLS, SIZE 8,50 CELLS, 
+              ID IS 7, LABEL-OFFSET 0, 
+              TITLE "EVENT TYPE".

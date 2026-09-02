@@ -1,0 +1,7 @@
+!COPY \etc\cblconfi_ThinClient.cfg
+
+CODE_PREFIX .\object
+ECN_4444 ON
+ERRORS_OK ON
+FILE_PREFIX .\data
+WIN32_NATIVECTLS 0

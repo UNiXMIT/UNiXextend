@@ -1,0 +1,279 @@
+      * FILESYS.DEF - contains useful variables and values for use with
+      * the ACUCOBOL file handler.
+
+      * $Id: filesys.def 63291 2013-01-22 23:25:46Z mark $
+
+      * Limits and ranges
+
+       78  MAX-KEYS                            VALUE 120.
+       78  MAX-SEGS-V3                         VALUE 6.
+       78  MAX-SEGS                            VALUE 16.
+       78  MAX-KEY-SIZE                        VALUE 250.
+       78  MAX-RECORD-SIZE-V4                  VALUE 32767.
+       78  MAX-RECORD-SIZE                     VALUE 67108864.
+
+      * "I$IO" library functions
+
+       77  IO-FUNCTION                         PIC 99 COMP-X.
+           88  OPEN-FUNCTION                   VALUE 1.
+           88  CLOSE-FUNCTION                  VALUE 2.
+           88  MAKE-FUNCTION                   VALUE 3.
+           88  INFO-FUNCTION                   VALUE 4.
+           88  READ-FUNCTION                   VALUE 5.
+           88  NEXT-FUNCTION                   VALUE 6.
+           88  PREVIOUS-FUNCTION               VALUE 7.
+           88  START-FUNCTION                  VALUE 8.
+           88  WRITE-FUNCTION                  VALUE 9.
+           88  REWRITE-FUNCTION                VALUE 10.
+           88  DELETE-FUNCTION                 VALUE 11.
+           88  UNLOCK-FUNCTION                 VALUE 12.
+           88  REMOVE-FUNCTION                 VALUE 13.
+           88  FLUSH-FUNCTION                  VALUE 14.
+           88  EXECUTE-FUNCTION                VALUE 15.
+           88  START-TRANSACTION-FUNCTION      VALUE 16.
+           88  COMMIT-TRANSACTION-FUNCTION     VALUE 17.
+           88  ROLLBACK-FUNCTION               VALUE 18.
+           88  RECOVER-FUNCTION                VALUE 19.
+           88  IN-TRANSACTION-FUNCTION         VALUE 21.
+
+      * "S$IO" library functions
+
+       77  SIO-FUNCTION                        PIC 99 COMP-X.
+           88  S-OPEN-FUNCTION                 VALUE 1.
+           88  S-CLOSE-FUNCTION                VALUE 2.
+           88  S-MAKE-FUNCTION                 VALUE 3.
+           88  S-READ-FUNCTION                 VALUE 4.
+           88  S-WRITE-FUNCTION                VALUE 5.
+           88  S-REWRITE-FUNCTION              VALUE 6.
+           88  S-SEEK-FUNCTION                 VALUE 7.
+
+      * Sequential file types
+
+       01  SEQ-TYPE                            SIGNED-SHORT.
+
+       78  S-FIXED                             VALUE -1.
+       78  S-VAR-COUNT                         VALUE -2.
+       78  S-LINE                              VALUE -3.
+       78  S-PRINT                             VALUE -4.
+
+      * "R$IO" library functions
+
+       77  RIO-FUNCTION                        PIC 99 COMP-X.
+           88  R-OPEN-FUNCTION                 VALUE 1.
+           88  R-CLOSE-FUNCTION                VALUE 2.
+           88  R-MAKE-FUNCTION                 VALUE 3.
+           88  R-READ-FUNCTION                 VALUE 4.
+           88  R-NEXT-FUNCTION                 VALUE 5.
+           88  R-PREVIOUS-FUNCTION             VALUE 6.
+           88  R-START-FUNCTION                VALUE 7.
+           88  R-WRITE-FUNCTION                VALUE 8.
+           88  R-REWRITE-FUNCTION              VALUE 9.
+           88  R-DELETE-FUNCTION               VALUE 10.
+           88  R-UNLOCK-FUNCTION               VALUE 11.
+
+      * Standard error values
+
+       77  F-ERRNO                             SIGNED-SHORT
+                                               EXTERNAL.
+           88  F-IN-ERROR                      VALUES 1 THRU 99.
+           88  E-SYS-ERR                       VALUE 1.
+           88  E-PARAM-ERR                     VALUE 2.
+           88  E-TOO-MANY-FILES                VALUE 3.
+           88  E-MODE-CLASH                    VALUE 4.
+           88  E-REC-LOCKED                    VALUE 5.
+           88  E-BROKEN                        VALUE 6.
+           88  E-DUPLICATE                     VALUE 7.
+           88  E-NOT-FOUND                     VALUE 8.
+           88  E-UNDEF-RECORD                  VALUE 9.
+           88  E-DISK-FULL                     VALUE 10.
+           88  E-FILE-LOCKED                   VALUE 11.
+           88  E-REC-CHANGED                   VALUE 12.
+           88  E-MISMATCH                      VALUE 13.
+           88  E-NO-MEMORY                     VALUE 14.
+           88  E-MISSING-FILE                  VALUE 15.
+           88  E-PERMISSION                    VALUE 16.
+           88  E-NO-SUPPORT                    VALUE 17.
+           88  E-NO-LOCKS                      VALUE 18.
+           88  E-INTERFACE                     VALUE 19.
+           88  E-LICENSE-ERR                   VALUE 20.
+           88  E-UNKNOWN-ERR                   VALUE 21.
+           88  W-NO-SUPPORT                    VALUE 100.
+           88  W-DUP-OK                        VALUE 101.
+
+       77  F-INT-ERRNO                         SIGNED-LONG
+                                               EXTERNAL.
+
+       77  F-INT2-ERRNO                        SIGNED-LONG
+                                               EXTERNAL.
+
+       77  F-NO-LOCK                           SIGNED-SHORT
+                                               EXTERNAL.
+
+       77  F-ERRMSG                            USAGE POINTER
+                                               EXTERNAL.
+
+      * Transaction Management error values
+
+       77  F-LOG-ERRNO                         SIGNED-SHORT
+                                               EXTERNAL.
+           88  F-LOG-IN-ERROR                  VALUES 1 THRU 99.
+           88  E-LOG-EXTERNAL                  VALUE 1.
+           88  E-LOG-TOO-MANY                  VALUE 2.
+           88  E-LOG-MISSING                   VALUE 3.
+           88  E-LOG-PERMISSION                VALUE 4.
+           88  E-LOG-SYS-ERR                   VALUE 5.
+           88  E-LOG-CORRUPT                   VALUE 6.
+           88  E-LOG-LOCKED                    VALUE 7.
+           88  E-LOG-NO-MEMORY                 VALUE 8.
+           88  E-LOG-DISK-FULL                 VALUE 9.
+           88  E-NO-LOG                        VALUE 10.
+           88  E-RB-LOG-CORRUPT                VALUE 11.
+           88  E-LOG-INCOMPLETE                VALUE 12.
+           88  E-OPEN-NOT-LOGGED               VALUE 13.
+           88  E-LOG-INTERFACE                 VALUE 14.
+           88  E-LOG-REMOTE                    VALUE 15.
+           88  E-LOG-NESTED-START              VALUE 16.
+           88  E-LOG-TEMP                      VALUE 17.
+           88  W-LOG-NO-SUPPORT                VALUE 100.
+
+      * Miscellaneous variables
+
+       77  RECORD-SIZE-V4                      SIGNED-SHORT.
+       77  RECORD-SIZE                         UNSIGNED-INT.
+       77  START-KEY-SIZE                      SIGNED-SHORT.
+       77  KEY-NUM                             SIGNED-SHORT.
+       77  FLUSH-ALL-FLAG                      SIGNED-SHORT.
+
+      * Open mode variable and values
+
+       01  OPEN-MODE                           SIGNED-SHORT.
+
+       78  Finput                              VALUE 0.
+       78  Foutput                             VALUE 1.
+       78  Fio                                 VALUE 2.
+       78  Fextend                             VALUE 3.
+       78  Fmulti-lock                         VALUE 16.
+       78  Fread-lock                          VALUE 256.
+       78  Fwrite-lock                         VALUE 512.
+       78  Fmass-update                        VALUE 1536.
+       78  Ftrans                              VALUE 16384.
+       78  Fbulk-addition                      VALUE 34304.
+
+      * Start mode and values
+
+       77  START-MODE                          SIGNED-SHORT.
+           88  F-EQUALS                        VALUE ZERO.
+           88  F-NOT-LESS                      VALUE 1.
+           88  F-GREATER                       VALUE 2.
+           88  F-LESS                          VALUE 3.
+           88  F-NOT-GREATER                   VALUE 4.
+
+      * "Info" mode and values
+
+       77  INFO-MODE                           SIGNED-SHORT.
+           88  GET-LOGICAL-PARAMS              VALUE -1.
+           88  GET-PHYSICAL-PARAMS             VALUE -2.
+           88  GET-COMMENT                     VALUE -3.
+           88  GET-RECORD-COUNT                VALUE -4.
+           88  GET-COLLATING-SEQUENCE          VALUE -5.
+           88  GET-LOCK-COUNT                  VALUE -6.
+           88  GET-SEGMENT-COUNT               VALUE -7.
+           88  GET-SEGMENT-INFO                VALUE -8.
+           88  GET-FILE-SIZE                   VALUE -9.
+           88  GET-VERSION-NUMBER              VALUE -10.
+           88  GET-DELETED-COUNT               VALUE -11.
+           88  GET-OS-FILE-DESCRIPTOR          VALUE -12.
+           88  GET-LOCK-PID                    VALUE -13.
+
+      * "Logical" parameters layout
+
+       01  LOGICAL-INFO.
+           03  MAX-REC-SIZE                    PIC 9(10).
+           03  L-COMMA-1                       PIC X VALUE ",".
+           03  MIN-REC-SIZE                    PIC 9(10).
+           03  L-COMMA-2                       PIC X VALUE ",".
+           03  NUM-KEYS                        PIC 9(3).
+           03  L-END                           PIC X VALUE LOW-VALUES.
+
+      * "Physical" parameters layout
+
+       01  PHYSICAL-INFO.
+           03  BLOCK-MULTIPLE                  PIC 99.
+           03  P-COMMA-1                       PIC X VALUE ",".
+           03  PRE-ALLOCATION-AMOUNT           PIC 9(7).
+           03  P-COMMA-2                       PIC X VALUE ",".
+           03  EXTENSION-AMOUNT                PIC 9(7).
+           03  P-COMMA-3                       PIC X VALUE ",".
+           03  COMPRESSION-FACTOR              PIC 999.
+           03  P-COMMA-4                       PIC X VALUE ",".
+           03  ENCRYPTED-FLAG                  PIC 9.
+           03  P-END                           PIC X VALUE LOW-VALUES.
+
+      * Key information layout (for 1 key)
+
+       01  KEY-INFO.
+           03  KEY-DATA.
+               05  NUM-SEGS                    PIC 99.
+               05  K-COMMA-1                   PIC X VALUE ",".
+               05  DUPS-ALLOWED                PIC 9.
+               05  SEG-INFO
+                   OCCURS MAX-SEGS TIMES.
+                   07  K-COMMA-2               PIC X VALUE ",".
+                   07  KEY-SIZE                PIC 9(3).
+                   07  K-COMMA-3               PIC X VALUE ",".
+                   07  KEY-OFFSET              PIC 9(10).
+           03  K-END                           PIC X VALUE LOW-VALUES.
+
+       01  RECORD-COUNT-INFO.
+           03  NUMBER-OF-RECORDS               PIC 9(10).
+           03  NUMBER-OF-RECORDS-END           PIC X.
+
+      * File segment number information for Vision 4
+
+       01  FILE-SEGMENT-COUNT-INFO.
+           03  DATA-SEGMENTS                   PIC 9(5).
+           03  FS-COUNT-COMMA                  PIC X VALUE ",".
+           03  INDEX-SEGMENTS                  PIC 9(5).
+           03  FS-COUNT-END                    PIC X VALUE LOW-VALUES.
+
+      * File segment name information for Vision 4
+
+       01  FILE-SEGMENT-INFO.
+           03  FS-NAME                         PIC X(127).
+           03  FS-NAME-END                     PIC X VALUE LOW-VALUES.
+           03  FS-SIZE                         PIC 9(10).
+           03  FS-SIZE-END                     PIC X VALUE LOW-VALUES.
+           03  FS-TYPE                         SIGNED-SHORT.
+               88  FS-DATA                     VALUE 255.
+               88  FS-INDEX                    VALUE 254.
+           03  FS-SEGMENT-NUMBER               UNSIGNED-SHORT.
+
+      * File size information for Vision 4
+
+       01  FILE-SIZE-INFO.
+           03  WHOLE-FILE-SIZE                 PIC 9(15).
+           03  WHOLE-FILE-SIZE-END             PIC X VALUE LOW-VALUES.
+
+      * File version information
+
+       01  FILE-VERSION-INFO.
+           03  FILE-VERSION                    PIC 999.
+           03  FILE-VERSION-END                PIC X VALUE LOW-VALUES.
+
+      * Sync mode values (bit values)
+
+       78  FA-MASS-UPDATE                      VALUE 1.
+       78  FA-REMOTE                           VALUE 2.
+
+      * C$REDIRECT library call functions:
+
+       01  HANDLER-FUNCTION                    PIC 99 COMP-X.
+           88  HANDLER-FUNCTION-PRE            VALUE 0.
+           88  HANDLER-FUNCTION-REPLACE        VALUE 1.
+           88  HANDLER-FUNCTION-POST           VALUE 2.
+
+       01  HANDLER-VERSION                     PIC 99 COMP-X.
+           88  HANDLER-VERSION-ONE             VALUE 1.
+           88  HANDLER-VERSION-TWO             VALUE 2.
+
+      * End of sample/def/filesys.def

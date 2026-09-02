@@ -1,0 +1,660 @@
+; CASEMaker AcuBench Program Structure File, Version 10.3
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=Screen1
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=Screen1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_nType=10
+m_strName=ws-from
+m_strRawPic=X(50)
+m_strPic=X(50)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_nType=10
+m_strName=ws-to
+m_strRawPic=X(50)
+m_strPic=X(50)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+[FDITEM3_WK]
+m_nType=10
+m_strName=ws-subject
+m_strRawPic=X(50)
+m_strPic=X(50)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM3_WK
+
+@}}
+[FDITEM4_WK]
+m_nType=10
+m_strName=ws-message
+m_strRawPic=X(1000)
+m_strPic=X(1000)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM4_WK
+
+@}}
+[FDITEM5_WK]
+m_strName=ws-mailto
+m_strRawPic=X(1150)
+m_strPic=X(1150)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM5_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen Screen1
+   PREFIX            = Screen1
+   LOCK-CONTROL      = FALSE
+   (Name)            = Screen1
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = TRUE
+   Auto Resize       = FALSE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = FALSE
+   Font              = Default Font
+   Handle Variable   = Screen1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 30.60
+   Link To Thread    = TRUE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 40.60
+   System Menu       = TRUE
+   Title             = "Screen"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Standard
+   Wrap              = FALSE
+   Event Procedure   = Screen1-Event-Proc
+   Begin Label Screen1-La-1
+      SCREEN-COL        = 4.30
+      SCREEN-LINE       = 2.70
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-1
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 4.30
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 1
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 2.70
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 3.40
+      Tab Order         = 1
+      Title             = "From:"
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Entry-Field Screen1-Ef-1
+      SCREEN-COL        = 9.60
+      SCREEN-LINE       = 2.30
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Ef-1
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = 3D
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 9.60
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Justification     = Unaligned
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 2.30
+      Lines             = 2.20
+      Max Lines         = 0
+      Max Text          = 0
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = FALSE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 26.50
+      Style             = Singleline
+      Tab Order         = 2
+      Use Return        = FALSE
+      Use Tab           = FALSE
+      Value Multiple    = FALSE
+      Value Picture     = X(50)
+      Value Variable    = ws-from
+      Visible           = 1:TRUE
+   End
+   Begin Label Screen1-La-2
+      SCREEN-COL        = 4.50
+      SCREEN-LINE       = 6.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-2
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 4.50
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 3
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 6.10
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 2.20
+      Tab Order         = 3
+      Title             = "To:"
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Entry-Field Screen1-Ef-2
+      SCREEN-COL        = 9.90
+      SCREEN-LINE       = 5.90
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Ef-2
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = 3D
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 9.90
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 4
+      Justification     = Unaligned
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 5.90
+      Lines             = 2.60
+      Max Lines         = 0
+      Max Text          = 0
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = FALSE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 26.40
+      Style             = Singleline
+      Tab Order         = 4
+      Use Return        = FALSE
+      Use Tab           = FALSE
+      Value Multiple    = FALSE
+      Value Picture     = X(50)
+      Value Variable    = ws-to
+      Visible           = 1:TRUE
+   End
+   Begin Label Screen1-La-3
+      SCREEN-COL        = 2.60
+      SCREEN-LINE       = 11.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-3
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 2.60
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 5
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 11.00
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 5.70
+      Tab Order         = 5
+      Title             = "Subject:"
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Entry-Field Screen1-Ef-3
+      SCREEN-COL        = 9.90
+      SCREEN-LINE       = 10.90
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Ef-3
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = 3D
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 9.90
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 6
+      Justification     = Unaligned
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 10.90
+      Lines             = 2.40
+      Max Lines         = 0
+      Max Text          = 0
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = FALSE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 26.10
+      Style             = Singleline
+      Tab Order         = 6
+      Use Return        = FALSE
+      Use Tab           = FALSE
+      Value Multiple    = FALSE
+      Value Picture     = X(50)
+      Value Variable    = ws-subject
+      Visible           = 1:TRUE
+   End
+   Begin Label Screen1-La-4
+      SCREEN-COL        = 2.10
+      SCREEN-LINE       = 16.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-4
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 2.10
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 8
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 16.00
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 5.70
+      Tab Order         = 7
+      Title             = "Message:"
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Entry-Field Screen1-Ef-4
+      SCREEN-COL        = 10.00
+      SCREEN-LINE       = 15.60
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Ef-4
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = 3D
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 10.00
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 9
+      Justification     = Unaligned
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 15.60
+      Lines             = 8.60
+      Max Lines         = 0
+      Max Text          = 1000
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = FALSE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 25.90
+      Style             = Multiline
+      Tab Order         = 8
+      Use Return        = TRUE
+      Use Tab           = TRUE
+      Value Multiple    = FALSE
+      Value Picture     = X(1000)
+      Value Variable    = ws-message
+      Visible           = 1:TRUE
+   End
+   Begin Push-Button Screen1-Pb-1
+      SCREEN-COL        = 10.20
+      SCREEN-LINE       = 26.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-1
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 10.20
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 123
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 7
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 26.00
+      Lines             = 2.60
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 7.80
+      Style             = Other
+      Tab Order         = 9
+      Termination Value = 0
+      Title             = "SEND"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen1-Pb-1-Link
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       Screen1-Pb-1-Link.
+           inspect ws-subject replacing trailing spaces by low-values
+           inspect ws-message replacing trailing spaces by low-values
+           string "mailto:"
+                  ws-to delimited by spaces
+                  "?subject="    
+                  ws-subject delimited by low-values
+                  "&body="    
+                  ws-message delimited by low-values
+                  into ws-mailto
+           display web-browser, value ws-mailto, visible 0.
+           .
+
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=0
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

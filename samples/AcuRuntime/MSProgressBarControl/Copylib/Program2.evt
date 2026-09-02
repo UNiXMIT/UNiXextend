@@ -1,0 +1,104 @@
+      * Program2.evt
+      * Program2.evt is generated from C:\AcuSamples\MSProgressBarControl\Program2.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+
+       Acu-Screen1-Event-Extra.
+           EVALUATE Event-Type
+           WHEN Msg-Close
+              PERFORM Acu-Screen1-Msg-Close
+           END-EVALUATE
+           .
+
+       Acu-Screen1-Msg-Close.
+           ACCEPT Quit-Mode-Flag FROM ENVIRONMENT "QUIT_MODE"
+           IF Quit-Mode-Flag = ZERO
+              PERFORM Acu-Screen1-Exit
+              PERFORM Acu-Exit-Rtn
+           END-IF
+           .
+      ***   start event editor code   ***
+      *
+       Screen1-Pb-2-Link.
+      *Here is the actual movement of the progress bar
+      *which is done by modifying its value.  I am 
+      *performing it in a separate thread so that the 
+      *"Stop" push-button will work.  You should do 
+      *this to allow the user to change their mind and 
+      *stop the process mid-stream
+
+      *I have also included, for comparison's sake,
+      *AcuCOBOL-GT's standard method for making
+      *a progress bar, which is a frame with 2 fill colors and 
+      *a changable fill-percent. 
+
+           perform thread handle in thread1-handle 
+               varying int from 1 by 1 until int > 100
+               modify Screen1-PB-1, Value int
+               modify Screen1-Fr-1, FILL-PERCENT int
+               call "c$sleep" using ".1"       
+           end-perform
+           .
+      *
+       Screen1-Pb-3-Link.
+      *Get the value of the progress bar
+           inquire Screen1-PB-1, value ef-val
+      *Get the value of the frame
+           inquire Screen1-Fr-1, FILL-PERCENT in frame-value
+      *report the value to the screen
+           if ef-val < 100
+      *Display the percent completed of the progress bar:
+               modify Screen1-La-1, visible = 1
+               modify Screen1-La-2, VISIBLE = 1
+               modify Screen1-Ef-1, VISIBLE = 1
+      *and the frame
+               modify Screen1-La-1a, VISIBLE = 1
+               modify Screen1-La-2a, VISIBLE = 1
+               modify Screen1-Ef-1a, VISIBLE = 1
+               display Screen1
+           end-if.
+      *destroy the thread handle to stop the read
+           destroy thread1-handle
+           
+           .
+      *
+       Screen1-Pb-5-Link.
+      *Set the orientation to vertical
+           modify Screen1-PB-1, Orientation = 1
+                                LINES 30.3
+                                size 3                                        
+
+           
+           .
+      *
+       Screen1-Pb-6-Link.
+      *Set the orientation to horizontal
+           modify Screen1-PB-1, Orientation = 0
+                                LINES 3
+                                size 30.3              
+           .
+      *
+       Screen1-Pb-7-Link.
+      *I made this push-button dynamic, so we need to
+      *find out what the scrolling style is, then
+      *toggle it to the other
+           inquire Screen1-PB-1, Scrolling in scroll-state
+           if scroll-state = 0
+               modify Screen1-PB-1, Scrolling = 1
+               modify Screen1-Pb-7, TITLE = "Change &Style to bar"
+           else 
+               modify Screen1-PB-1, Scrolling = 0
+               modify Screen1-Pb-7, TITLE = "Change &Style to smooth"
+           end-if.
+           
+           .
+      *
+       Screen1-Pb-8-Link.
+      *You cannot change the fill-color of the frame,
+      *just the background color
+           modify Screen1-Fr-1, fill-color2 = 3
+           display Screen1
+           
+           .
+
+       

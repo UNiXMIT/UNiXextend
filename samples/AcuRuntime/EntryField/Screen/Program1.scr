@@ -1,0 +1,9 @@
+      * Program1.scr
+      * Program1.scr is generated from C:\AcuSamples\EntryField\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       01 Screen1.
+           03 Screen1-Ef-1, Entry-Field, 
+              COL 7.00, LINE 4.50, LINES 4.00 CELLS, SIZE 10.00 CELLS, 
+              3-D, ID IS 1, RIGHT, MULTILINE, VALUE Screen1-Ef-1-Value, 
+              PIC ZZZ.ZZ9,99.

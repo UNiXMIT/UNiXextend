@@ -1,0 +1,31 @@
+# Dockerfile_win_x64_app - Used to create the application image
+
+# Name of the repository tag used to create the application image
+# Can be overridden with the --build-arg option in bld.bat
+ARG BASEIMAGE=${BASEIMAGE}
+
+# Use the base extend image to create the application image
+FROM ${BASEIMAGE}
+
+# Default Dockerfile values
+# Values can be overridden with the --build-arg options in bld.bat
+# These need to come after the FROM command or else they will not have a value
+ARG EXTEND_VERSION=${EXTEND_VERSION}
+ARG APPCONTAINERDIRECTORY=${APPCONTAINERDIRECTORY}
+
+# Embed the label information into the application image for identification.
+# This can be viewed with docker image inspect <image-id>
+LABEL vendor="Micro Focus" \
+      com.microfocus.name="extend-app" \
+      com.microfocus.version="$EXTEND_VERSION" \
+      com.microfocus.eula.url="https://supportline.microfocus.com/licensing/lvcontract.aspx" \
+      com.microfocus.is-base-image="false"
+
+# Use cmd.exe
+SHELL ["cmd", "/S", "/C"]
+
+# Copy the local application directory to the root directory of the image
+COPY ["AppContainerDirectory", "C:/AppContainerDirectory/"]
+
+# Set the starting directory when the image is run
+WORKDIR C:/

@@ -1,0 +1,9 @@
+# Temp files for the transactions are stored in this folder.
+# If the transaction completes correctly, it will auto-empty.
+LOG_DIR   .\temp
+
+# This file contains the transactions.
+# In case of disruption, use CALL "C$RECOVER" to rollback the transactions.
+LOG_FILE  .\log\transaction.log
+
+FILE_PREFIX .\data

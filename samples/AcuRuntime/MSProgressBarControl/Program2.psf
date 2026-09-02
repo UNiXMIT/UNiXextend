@@ -1,0 +1,994 @@
+; CASEMaker AcuBench Program Structure File, Version 10.1
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=Screen1
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=Screen1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_nType=10
+m_strName=frame-value
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_nType=10
+m_strName=int
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+[FDITEM3_WK]
+m_strName=thread1-handle
+m_nUsage=47
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM3_WK
+
+@}}
+[FDITEM4_WK]
+m_nType=10
+m_strName=ef-val
+m_strRawPic=999
+m_strPic=999
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM4_WK
+
+@}}
+[FDITEM5_WK]
+m_nType=10
+m_strName=ActiveX-Res
+m_nUsage=52
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM5_WK
+
+@}}
+[FDITEM6_WK]
+m_strName=scroll-state
+m_strRawPic=9
+m_strPic=9
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM6_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen Screen1
+   PREFIX            = Screen1
+   LOCK-CONTROL      = FALSE
+   (Name)            = Screen1
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = TRUE
+   Auto Resize       = FALSE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = FALSE
+   Font              = Default Font
+   Handle Variable   = Screen1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 53.30
+   Link To Thread    = TRUE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 71.90
+   System Menu       = TRUE
+   Title             = "Screen"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Standard
+   Wrap              = FALSE
+   Begin OCX.ProgressBar Screen1-PB-1
+      SCREEN-COL        = 3.40
+      SCREEN-LINE       = 13.00
+      LOCK-CONTROL      = FALSE
+      CLSID             = {35053A22-8589-11D1-B16A-00C0F0283628}
+      SYMBOL            = PB
+      (Name)            = Screen1-PB-1
+      Column            = 3.40
+      Enable            = 1:TRUE
+      Help ID           = 0
+      ID                = 1
+      License Key       = "9368265E-85FE-11d1-8BE3-0000F8754DA1"
+      Line              = 13.00
+      Lines             = 3.00
+      Resource Tag      = Res-Tag-1
+      Size              = 38.40
+      Tab Order         = 1
+      Use Alt           = FALSE
+      Use Return        = FALSE
+      Use Tab           = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Push-Button Screen1-Pb-2
+      SCREEN-COL        = 7.90
+      SCREEN-LINE       = 39.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-2
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 7.90
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 100
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 39.10
+      Lines             = 4.20
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 27.20
+      Style             = Other
+      Tab Order         = 2
+      Termination Value = 0
+      Title             = "&Go"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen1-Pb-2-Link
+   End
+   Begin Push-Button Screen1-Pb-3
+      SCREEN-COL        = 38.80
+      SCREEN-LINE       = 39.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-3
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 38.80
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 101
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 3
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 39.10
+      Lines             = 4.20
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 27.20
+      Style             = Other
+      Tab Order         = 3
+      Termination Value = 0
+      Title             = "&Stop"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen1-Pb-3-Link
+   End
+   Begin Push-Button Screen1-Pb-4
+      SCREEN-COL        = 23.30
+      SCREEN-LINE       = 46.60
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-4
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 23.30
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 4
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 46.60
+      Lines             = 4.20
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 27.20
+      Style             = Cancel Button
+      Tab Order         = 4
+      Termination Value = 0
+      Title             = "E&xit"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+   End
+   Begin Label Screen1-La-1
+      SCREEN-COL        = 42.30
+      SCREEN-LINE       = 14.20
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-1
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 42.30
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 5
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 14.20
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 19.10
+      Tab Order         = 5
+      Title             = "The progress bar was stopped at: "
+      Transparent       = FALSE
+      Visible           = 0:FALSE
+   End
+   Begin Entry-Field Screen1-Ef-1
+      SCREEN-COL        = 62.20
+      SCREEN-LINE       = 13.90
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Ef-1
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = No Box
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 62.20
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 6
+      Justification     = Right
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 13.90
+      Lines             = 1.60
+      Max Lines         = 0
+      Max Text          = 0
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = TRUE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 2.30
+      Style             = Singleline
+      Tab Order         = 6
+      Use Return        = FALSE
+      Use Tab           = FALSE
+      Value Multiple    = FALSE
+      Value Picture     = 999
+      Value Variable    = ef-val
+      Visible           = 0:FALSE
+   End
+   Begin Label Screen1-La-2
+      SCREEN-COL        = 65.10
+      SCREEN-LINE       = 14.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-2
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 65.10
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 7
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 14.10
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 1.20
+      Tab Order         = 7
+      Title             = "%"
+      Transparent       = FALSE
+      Visible           = 0:FALSE
+   End
+   Begin Push-Button Screen1-Pb-5
+      SCREEN-COL        = 10.90
+      SCREEN-LINE       = 17.30
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-5
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 10.90
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 102
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 8
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 17.30
+      Lines             = 4.20
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 27.20
+      Style             = Other
+      Tab Order         = 8
+      Termination Value = 0
+      Title             = "Make &Vertical bar"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen1-Pb-5-Link
+   End
+   Begin Push-Button Screen1-Pb-6
+      SCREEN-COL        = 10.90
+      SCREEN-LINE       = 23.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-6
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 10.90
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 103
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 9
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 23.00
+      Lines             = 4.20
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 27.20
+      Style             = Other
+      Tab Order         = 9
+      Termination Value = 0
+      Title             = "Make &Horizontal bar"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen1-Pb-6-Link
+   End
+   Begin Push-Button Screen1-Pb-7
+      SCREEN-COL        = 10.90
+      SCREEN-LINE       = 28.70
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-7
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 10.90
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 104
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 10
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 28.70
+      Lines             = 4.20
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 27.20
+      Style             = Other
+      Tab Order         = 10
+      Termination Value = 0
+      Title             = "Change &Style to smooth"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen1-Pb-7-Link
+   End
+   Begin Frame Screen1-Fr-1
+      SCREEN-COL        = 2.70
+      SCREEN-LINE       = 3.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Fr-1
+      3D Style          = Engraved
+      Alternate         = FALSE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 2.70
+      Csize             = 0
+      Destroy Type      = Automatic
+      FILL-COLOR        = 13
+      FILL-PERCENT      = 0
+      Font              = Default Font
+      Full Height       = FALSE
+      Help ID           = 0
+      High Color        = 0
+      ID                = 11
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 3.10
+      Lines             = 2.70
+      Low Color         = 1
+      Size              = 38.50
+      Tab Order         = 11
+      Thickness         = Default
+      Title Position    = 0:Unaligned
+      Visible           = 1:TRUE
+   End
+   Begin Label Screen1-La-1a
+      SCREEN-COL        = 42.40
+      SCREEN-LINE       = 4.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-1a
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 42.40
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 12
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 4.10
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 19.10
+      Tab Order         = 12
+      Title             = "The fill-percent was stopped at; "
+      Transparent       = FALSE
+      Visible           = 0:FALSE
+   End
+   Begin Entry-Field Screen1-Ef-1a
+      SCREEN-COL        = 62.00
+      SCREEN-LINE       = 3.80
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Ef-1a
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = No Box
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 62.00
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 13
+      Justification     = Right
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 3.80
+      Lines             = 1.60
+      Max Lines         = 0
+      Max Text          = 0
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = TRUE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 2.30
+      Style             = Singleline
+      Tab Order         = 13
+      Use Return        = FALSE
+      Use Tab           = FALSE
+      Value Multiple    = FALSE
+      Value Picture     = 9(3)
+      Value Variable    = frame-value
+      Visible           = 0:FALSE
+   End
+   Begin Label Screen1-La-2a
+      SCREEN-COL        = 64.90
+      SCREEN-LINE       = 4.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-2a
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 64.90
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 14
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 4.10
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 1.20
+      Tab Order         = 14
+      Title             = "%"
+      Transparent       = FALSE
+      Visible           = 0:FALSE
+   End
+   Begin Push-Button Screen1-Pb-8
+      SCREEN-COL        = 10.50
+      SCREEN-LINE       = 7.30
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-8
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 10.50
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 105
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 15
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 7.30
+      Lines             = 4.20
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 27.20
+      Style             = Other
+      Tab Order         = 15
+      Termination Value = 0
+      Title             = "Change &Colors"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen1-Pb-8-Link
+   End
+   Begin Bar Screen1-Br-1
+      SCREEN-COL        = 8.20
+      SCREEN-LINE       = 36.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Br-1
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 8.20
+      Csize             = 0
+      Destroy Type      = Automatic
+      Help ID           = 0
+      ID                = 16
+      Kind              = Horizontal
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 36.10
+      Line Styles       = Solid
+      Position Shift    = 0
+      Size (Lines)      = 64.50
+      Size (Lines) in Pixels = 645
+      Tab Order         = 16
+      Visible           = 1:TRUE
+      Width             = 1
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       Screen1-Pb-2-Link.
+      *Here is the actual movement of the progress bar
+      *which is done by modifying its value.  I am 
+      *performing it in a separate thread so that the 
+      *"Stop" push-button will work.  You should do 
+      *this to allow the user to change their mind and 
+      *stop the process mid-stream
+
+      *I have also included, for comparison's sake,
+      *AcuCOBOL-GT's standard method for making
+      *a progress bar, which is a frame with 2 fill colors and 
+      *a changable fill-percent. 
+
+           perform thread handle in thread1-handle 
+               varying int from 1 by 1 until int > 100
+               modify Screen1-PB-1, Value int
+               modify Screen1-Fr-1, FILL-PERCENT int
+               call "c$sleep" using ".1"       
+           end-perform
+           .
+      *
+       Screen1-Pb-3-Link.
+      *Get the value of the progress bar
+           inquire Screen1-PB-1, value ef-val
+      *Get the value of the frame
+           inquire Screen1-Fr-1, FILL-PERCENT in frame-value
+      *report the value to the screen
+           if ef-val < 100
+      *Display the percent completed of the progress bar:
+               modify Screen1-La-1, visible = 1
+               modify Screen1-La-2, VISIBLE = 1
+               modify Screen1-Ef-1, VISIBLE = 1
+      *and the frame
+               modify Screen1-La-1a, VISIBLE = 1
+               modify Screen1-La-2a, VISIBLE = 1
+               modify Screen1-Ef-1a, VISIBLE = 1
+               display Screen1
+           end-if.
+      *destroy the thread handle to stop the read
+           destroy thread1-handle
+           
+           .
+      *
+       Screen1-Pb-5-Link.
+      *Set the orientation to vertical
+           modify Screen1-PB-1, Orientation = 1
+                                LINES 30.3
+                                size 3                                        
+
+           
+           .
+      *
+       Screen1-Pb-6-Link.
+      *Set the orientation to horizontal
+           modify Screen1-PB-1, Orientation = 0
+                                LINES 3
+                                size 30.3              
+           .
+      *
+       Screen1-Pb-7-Link.
+      *I made this push-button dynamic, so we need to
+      *find out what the scrolling style is, then
+      *toggle it to the other
+           inquire Screen1-PB-1, Scrolling in scroll-state
+           if scroll-state = 0
+               modify Screen1-PB-1, Scrolling = 1
+               modify Screen1-Pb-7, TITLE = "Change &Style to bar"
+           else 
+               modify Screen1-PB-1, Scrolling = 0
+               modify Screen1-Pb-7, TITLE = "Change &Style to smooth"
+           end-if.
+           
+           .
+      *
+       Screen1-Pb-8-Link.
+      *You cannot change the fill-color of the frame,
+      *just the background color
+           modify Screen1-Fr-1, fill-color2 = 3
+           display Screen1
+           
+           .
+
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=1
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

@@ -1,0 +1,13 @@
+C:\Users\idenis.GOODWORKS\Documents\Visual Studio 2017\Projects\OutlookWrapper\bin\Debug\OutlookWrapper.dll
+C:\Users\idenis.GOODWORKS\Documents\Visual Studio 2017\Projects\OutlookWrapper\bin\Debug\OutlookWrapper.pdb
+C:\Users\idenis.GOODWORKS\Documents\Visual Studio 2017\Projects\OutlookWrapper\obj\Debug\OutlookWrapper.csprojAssemblyReference.cache
+C:\Users\idenis.GOODWORKS\Documents\Visual Studio 2017\Projects\OutlookWrapper\obj\Debug\OutlookWrapper.csproj.ResolveComReference.cache
+C:\Users\idenis.GOODWORKS\Documents\Visual Studio 2017\Projects\OutlookWrapper\obj\Debug\OutlookWrapper.csproj.CoreCompileInputs.cache
+C:\Users\idenis.GOODWORKS\Documents\Visual Studio 2017\Projects\OutlookWrapper\obj\Debug\OutlookWrapper.dll
+C:\Users\idenis.GOODWORKS\Documents\Visual Studio 2017\Projects\OutlookWrapper\obj\Debug\OutlookWrapper.pdb
+D:\Works\OutlookWrapper\Source\OutlookWrapper\bin\Debug\OutlookWrapper.dll
+D:\Works\OutlookWrapper\Source\OutlookWrapper\bin\Debug\OutlookWrapper.pdb
+D:\Works\OutlookWrapper\Source\OutlookWrapper\obj\Debug\OutlookWrapper.csproj.ResolveComReference.cache
+D:\Works\OutlookWrapper\Source\OutlookWrapper\obj\Debug\OutlookWrapper.csproj.CoreCompileInputs.cache
+D:\Works\OutlookWrapper\Source\OutlookWrapper\obj\Debug\OutlookWrapper.dll
+D:\Works\OutlookWrapper\Source\OutlookWrapper\obj\Debug\OutlookWrapper.pdb

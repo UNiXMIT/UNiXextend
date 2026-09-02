@@ -1,0 +1,17 @@
+      * Grid-Drag.scr
+      * Grid-Drag.scr is generated from C:\AcuSamples\GRID\GRID-Drag\Grid-Drag.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       01 Screen1.
+           03 Screen1-Gd-1, Grid, 
+              COL 7.40, LINE 5.70, LINES 33.10 CELLS, SIZE 52.50 CELLS, 
+              MOVEABLE-COLUMNS, 3-D, COLUMN-HEADINGS, 
+              DATA-COLUMNS (1, 9, 17, 25, 33, 41, 49, 57, 65, 73), 
+              DISPLAY-COLUMNS (1, 9, 17, 25, 33, 41, 49, 57, 65, 73), 
+              SEPARATION (5, 5, 5, 5, 5, 5, 5, 5, 5, 5), 
+              CURSOR-FRAME-WIDTH 3, DIVIDER-COLOR 1, DRAG-COLOR 353, 
+              HEADING-COLOR 257, HEADING-DIVIDER-COLOR 1, HSCROLL, 
+              ID IS 1, NUM-COL-HEADINGS 1, NUM-ROWS -1, 
+              RECORD-DATA Screen1-Gd-1-Record, ROW-HEADINGS, 
+              TILED-HEADINGS, VPADDING 50, VSCROLL, 
+              EVENT PROCEDURE Screen1-Gd-1-Event-Proc.

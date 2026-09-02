@@ -1,0 +1,123 @@
+      * ModifyBook.evt
+      * ModifyBook.evt is generated from C:\COBOL\extend10.1\ModifyBook.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+
+       Form1-Event-Proc.
+           .
+
+       Form1-Cm-2-Exception-Proc.
+      * 
+           IF Event-Occurred
+              EVALUATE Event-Type
+              WHEN Ntf-Selchange
+                 EVALUATE Event-Control-Id
+                 WHEN 4
+                    PERFORM Form1-Cm-1-Ev-Ntf-Selchange
+                 WHEN 6
+                    PERFORM Form1-Cm-2-Ex-Ntf-Selchange
+                 END-EVALUATE
+              END-EVALUATE
+           END-IF
+           .
+
+       Form1-De-1-Event-Proc.
+      * 
+           EVALUATE Event-Type
+           WHEN Ntf-Changed
+              PERFORM Form1-De-1-Ev-Ntf-Changed
+           END-EVALUATE
+           .
+      ***   start event editor code   ***
+      *
+       Form1-Pb-1-Link.
+
+      *     move Departme-branch to Lnk-Books-branch
+           initialize Books-rec                                         
+           
+           if Lnk-Books-sales equal "0" 
+               move "N" to Lnk-Books-sales
+               else move "Y" to Lnk-Books-sales
+           end-if
+
+           move Lnk-Books-rec to Books-rec
+           move Lnk-Departme-branch to Books-branch
+           write Books-rec
+
+           if books-status(1:1) not equal "0"
+               display MESSAGE Box "Books-status : " , Books-status
+           end-if
+            
+           destroy Form1-Handle                                
+           exit program
+           .
+      *
+       Form1-Aft-Initdata.
+           read Department next
+           perform until Depart-status(1:1) > "0"                 
+              move Departme-key to old-departme-key
+              modify Form1-Cm-1, item-to-add(Departme-key)
+              perform until (Departme-key not equal to old-departme-key) 
+                   or  (Depart-status(1:1) > "0")
+                   read Department next
+               end-perform
+           end-perform
+           modify Form1-Cm-1, value= Lnk-Departme-key
+           perform Form1-Cm-1-Ev-Ntf-Selchange
+           perform  Form1-De-1-Ev-Ntf-Changed.
+           .      
+      *
+       Form1-Cm-1-Ev-Ntf-Selchange.
+           inquire Form1-Cm-1, value W90-DISPLAY 
+           close DEPARTMENT
+           open input DEPARTMENT           
+           modify Form1-Cm-2, reset-list = 1
+           move W90-DISPLAY to Departme-key
+
+           start DEPARTMENT key is equal to Departme-key
+           end-start
+           read DEPARTMENT next
+           
+           perform until (Departme-key not equal to W90-DISPLAY) or
+              (Depart-status(1:1) > "0" )
+              modify Form1-Cm-2, item-to-add(Departme-sub)
+              if Departme-sub = Lnk-Departme-sub
+               Then  
+                   move Departme-branch to Lnk-Departme-branch
+               end-if
+              read DEPARTMENT next        
+           end-perform
+           modify Form1-Cm-2, value= Lnk-Departme-Sub
+           .
+      *
+       Form1-Cm-2-Ex-Ntf-Selchange.
+           inquire Form1-Cm-2, value W90-DISPLAY
+           move W90-DISPLAY to Departme-sub
+           inquire Form1-Cm-1, value W90-DISPLAY
+           move W90-DISPLAY to Departme-key
+
+           close DEPARTMENT
+           open input DEPARTMENT    
+
+           start DEPARTMENT key is equal to mkey
+           end-start
+
+           read DEPARTMENT                      
+           move Departme-branch to branchToKeep, Lnk-Departme-branch  
+           display Form1                             
+           .
+      *
+       Form1-Rb-1-Ev-Msg-Validate.
+           continue
+           .
+      *
+       Form1-Mn-1-MI-OkayThisisaRealMenu-Link.
+           Call "WebBrowser"
+           .
+      *
+       Form1-De-1-Ev-Ntf-Changed.
+           inquire Form1-De-1, value Form1-De-1-Value
+           move Form1-De-1-Value(1:4) to Lnk-Books-date
+           .
+
+       

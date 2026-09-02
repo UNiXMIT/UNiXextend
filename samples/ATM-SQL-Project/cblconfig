@@ -1,0 +1,10 @@
+ACUSQL_RUNTIME_DLL      asqlsrvr.dll
+ASQL_CONNECT_DATABASE   support
+SQL_SERVER_NAME         awsdb 
+SQL_USERNAME            support
+SQL_PASSWORD            strongPassword123
+
+CODE_PREFIX     ./Maintenance ./ATM
+CURRENCY �
+SCREEN  EDITED-UPDATES=FORMATTED
+A_REMOVE_EMPTY_ERROR_FILE 1

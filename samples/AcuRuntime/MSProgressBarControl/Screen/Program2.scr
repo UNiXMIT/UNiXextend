@@ -1,0 +1,74 @@
+      * Program2.scr
+      * Program2.scr is generated from C:\AcuSamples\MSProgressBarControl\Program2.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       01 Screen1.
+           03 Screen1-PB-1, @ProgressBar, 
+              COL 3.40, LINE 13.00, LINES 3.00 CELLS, SIZE 38.40 CELLS, 
+              ID IS 1, 
+              LICENSE-KEY "9368265E-85FE-11d1-8BE3-0000F8754DA1".
+           03 Screen1-Pb-2, Push-Button, 
+              COL 7.90, LINE 39.10, LINES 4.20 CELLS, SIZE 27.20 CELLS, 
+              EXCEPTION-VALUE 100, ID IS 2, 
+              TITLE "&Go".
+           03 Screen1-Pb-3, Push-Button, 
+              COL 38.80, LINE 39.10, LINES 4.20 CELLS, 
+              SIZE 27.20 CELLS, 
+              EXCEPTION-VALUE 101, ID IS 3, 
+              TITLE "&Stop".
+           03 Screen1-Pb-4, Push-Button, 
+              COL 23.30, LINE 46.60, LINES 4.20 CELLS, 
+              SIZE 27.20 CELLS, 
+              ID IS 4, CANCEL-BUTTON, 
+              TITLE "E&xit".
+           03 Screen1-La-1, Label, 
+              COL 42.30, LINE 14.20, LINES 1.30 CELLS, 
+              SIZE 19.10 CELLS, 
+              ID IS 5, LABEL-OFFSET 0, 
+              TITLE "The progress bar was stopped at: ", VISIBLE 0.
+           03 Screen1-Ef-1, Entry-Field, 
+              COL 62.20, LINE 13.90, LINES 1.60 CELLS, SIZE 2.30 CELLS, 
+              NO-BOX, ID IS 6, RIGHT, READ-ONLY, VALUE ef-val, 
+              VISIBLE 0.
+           03 Screen1-La-2, Label, 
+              COL 65.10, LINE 14.10, LINES 1.30 CELLS, SIZE 1.20 CELLS, 
+              ID IS 7, LABEL-OFFSET 0, 
+              TITLE "%", VISIBLE 0.
+           03 Screen1-Pb-5, Push-Button, 
+              COL 10.90, LINE 17.30, LINES 4.20 CELLS, 
+              SIZE 27.20 CELLS, 
+              EXCEPTION-VALUE 102, ID IS 8, 
+              TITLE "Make &Vertical bar".
+           03 Screen1-Pb-6, Push-Button, 
+              COL 10.90, LINE 23.00, LINES 4.20 CELLS, 
+              SIZE 27.20 CELLS, 
+              EXCEPTION-VALUE 103, ID IS 9, 
+              TITLE "Make &Horizontal bar".
+           03 Screen1-Pb-7, Push-Button, 
+              COL 10.90, LINE 28.70, LINES 4.20 CELLS, 
+              SIZE 27.20 CELLS, 
+              EXCEPTION-VALUE 104, ID IS 10, 
+              TITLE "Change &Style to smooth".
+           03 Screen1-Fr-1, Frame, 
+              COL 2.70, LINE 3.10, LINES 2.70 CELLS, SIZE 38.50 CELLS, 
+              ENGRAVED, FILL-COLOR 13, FILL-PERCENT 0, ID IS 11, 
+              LOW-COLOR 1, BACKGROUND-LOW.
+           03 Screen1-La-1a, Label, 
+              COL 42.40, LINE 4.10, LINES 1.30 CELLS, SIZE 19.10 CELLS, 
+              ID IS 12, LABEL-OFFSET 0, 
+              TITLE "The fill-percent was stopped at; ", VISIBLE 0.
+           03 Screen1-Ef-1a, Entry-Field, 
+              COL 62.00, LINE 3.80, LINES 1.60 CELLS, SIZE 2.30 CELLS, 
+              NO-BOX, ID IS 13, RIGHT, READ-ONLY, VALUE frame-value, 
+              VISIBLE 0.
+           03 Screen1-La-2a, Label, 
+              COL 64.90, LINE 4.10, LINES 1.30 CELLS, SIZE 1.20 CELLS, 
+              ID IS 14, LABEL-OFFSET 0, 
+              TITLE "%", VISIBLE 0.
+           03 Screen1-Pb-8, Push-Button, 
+              COL 10.50, LINE 7.30, LINES 4.20 CELLS, SIZE 27.20 CELLS, 
+              EXCEPTION-VALUE 105, ID IS 15, 
+              TITLE "Change &Colors".
+           03 Screen1-Br-1, Bar, 
+              COL 8.20, LINE 36.10, SIZE 64.50 CELLS, 
+              ID IS 16, WIDTH 1.

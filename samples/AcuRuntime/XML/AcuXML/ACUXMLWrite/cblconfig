@@ -1,0 +1,4 @@
+writebookfile-HOST	xml
+4GL-COLUMN-CASE	unchanged
+AXML_STYLESHEET_TYPE text/xsl
+AXML_STYLESHEET_HREF writebookfile.xsl

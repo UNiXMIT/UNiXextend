@@ -1,0 +1,631 @@
+; CASEMaker AcuBench Program Structure File, Version 10.3
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=Screen1
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=Screen1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_nType=10
+m_strName=Screen1-Tr-1-Value
+m_nUsage=14
+m_strDefaultValue=NULL
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_strName=hidden-info
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+[FDITEM3_WK]
+m_strName=saved-parent
+m_nUsage=14
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM3_WK
+
+@}}
+[FDITEM4_WK]
+m_strName=ws-text
+m_strRawPic=x(30)
+m_strPic=x(30)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM4_WK
+
+@}}
+[FDITEM5_WK]
+m_strName=ws-item-text
+m_strRawPic=x(20)
+m_strPic=x(20)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM5_WK
+
+@}}
+[FDITEM6_WK]
+m_strName=ws-saved-text
+m_strRawPic=x(30)
+m_strPic=x(30)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM6_WK
+
+@}}
+[FDITEM7_WK]
+m_strName=ws-saved-parent-text
+m_strRawPic=x(30)
+m_strPic=x(30)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM7_WK
+
+@}}
+[FDITEM8_WK]
+m_strName=ws-counter
+m_strRawPic=9(2)
+m_strPic=9(2)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM8_WK
+
+@}}
+[FDITEM9_WK]
+m_nType=10
+m_strName=Screen1-Cb-1-Value
+m_strRawPic=9
+m_strPic=9
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM9_WK
+
+@}}
+[FDITEM10_WK]
+m_nType=10
+m_strName=Screen1-Tr-1-Pointer
+m_nUsage=14
+m_nItemLevel=77
+m_nSync=-1
+m_bOccurs=1
+m_bFixed=1
+m_strRawSize=10
+m_nSize=10
+{{@DataItem_m_strDescriptionFDITEM10_WK
+
+@}}
+[FDITEM11_WK]
+m_nType=10
+m_strName=Screen1-Tr-1-Pointer-Root
+m_nUsage=14
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM11_WK
+
+@}}
+[FDITEM12_WK]
+m_strName=item-1
+m_nUsage=14
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM12_WK
+
+@}}
+[FDITEM13_WK]
+m_strName=saved-selected
+m_nUsage=14
+m_strDefaultValue=null
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM13_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen Screen1
+   PREFIX            = Screen1
+   LOCK-CONTROL      = FALSE
+   (Name)            = Screen1
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = TRUE
+   Auto Resize       = FALSE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = FALSE
+   Font              = Default Font
+   Handle Variable   = Screen1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 32.80
+   Link To Thread    = TRUE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 61.00
+   System Menu       = TRUE
+   Title             = "Screen"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Standard
+   Wrap              = FALSE
+   Event Procedure   = Screen1-Event-Proc
+   After Initdata    = Screen1-Aft-Initdata
+   Begin Tree-View Screen1-Tr-1
+      SCREEN-COL        = 5.00
+      SCREEN-LINE       = 2.80
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Tr-1
+      Bitmap Width      = 16
+      Border            = 3D
+      Buttons           = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 5.00
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 1
+      Layout Data       = 0
+      Line              = 2.80
+      Lines             = 29.00
+      Lines At Root     = TRUE
+      No Tab            = FALSE
+      Show Lines        = TRUE
+      Show Selection Always = TRUE
+      Size              = 31.20
+      Tab Order         = 1
+      Value Variable    = Screen1-Tr-1-Value
+      Visible           = 1:TRUE
+      Event Procedure   = Screen1-Tr-1-Event-Proc
+      Msg-Tv-Dblclick   = Screen1-Tr-1-Ev-Msg-Tv-Dblclick
+      Msg-Tv-Expanding  = Screen1-Tr-1-Ev-Msg-Tv-Expanding
+      Msg-Tv-Selchange  = Screen1-Tr-1-Ev-Msg-Tv-Selchange
+      Before Procedure  = Screen1-Tr-1-Bef-Procedure
+      Begin Tree-Item Screen1-Tr-1-TI-1
+         (Name)            = Screen1-Tr-1-TI-1
+         Bitmap Number     = 0
+         Ensure Visible    = FALSE
+         Expand            = FALSE
+         Has Children      = 1:TRUE
+         Hidden Data       = 999
+         Identified Pointer = Screen1-Tr-1-Pointer-Root
+         Label             = "New TreeView 2"
+         Placement         = (None)
+      End
+   End
+   Begin Check-Box Screen1-Cb-1
+      SCREEN-COL        = 39.30
+      SCREEN-LINE       = 3.80
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Cb-1
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 39.30
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Left Text         = FALSE
+      Line              = 3.80
+      Lines             = 1.60
+      Multiline         = FALSE
+      No Tab            = FALSE
+      Notify            = FALSE
+      Self Act          = TRUE
+      Size              = 18.10
+      Tab Order         = 2
+      Termination Value = 0
+      Text Only         = FALSE
+      Title             = "Collapse non-selected Items"
+      Value             = 0:FALSE
+      Value Variable    = Screen1-Cb-1-Value
+      Visible           = 1:TRUE
+      Vtop              = FALSE
+   End
+   Begin Push-Button Screen1-Pb-1
+      SCREEN-COL        = 51.10
+      SCREEN-LINE       = 28.90
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Pb-1
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 51.10
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 123
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 3
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 28.90
+      Lines             = 3.20
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = TRUE
+      Size              = 8.80
+      Style             = Other
+      Tab Order         = 3
+      Termination Value = 0
+      Title             = "Exit"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+      Link To           = Screen1-Pb-1-Link
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       Screen1-Tr-1-Ev-Msg-Tv-Expanding.
+           if event-data-1 = tvflag-expand
+              modify Screen1-Tr-1 (event-data-2)
+                     next-item = tvni-child
+                     giving item-1
+              if item-1 = null
+                 perform add-children
+              end-if
+           else
+              continue
+           end-if
+           .
+
+       add-children.
+           inquire Screen1-Tr-1 (event-data-2)
+              hidden-data in hidden-info
+              item-text   in ws-item-text
+           move event-data-2 to saved-parent 
+
+           if hidden-info = 999
+              perform add-main-menu
+           else
+
+              initialize ws-counter ws-text
+              perform hidden-info times
+                 add 1 to ws-counter
+                 string ws-item-text delimited by space
+                        "-Sub-Item-"
+                        ws-counter
+                        into ws-text
+                 modify Screen1-Tr-1 (event-data-2)
+                        parent = saved-parent
+                        item-to-add = ws-text 
+                        giving item-1
+                        placement = tvplace-last
+                        has-children = 0
+                        hidden-data = ws-text
+                 if ws-text = ws-saved-text
+                    move item-1 to saved-selected
+                 end-if
+              end-perform
+
+           end-if
+           .
+
+       add-main-menu.
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                  ITEM-TO-ADD = "UNO", GIVING Screen1-Tr-1-Pointer(1), 
+                  HIDDEN-DATA = "1", HAS-CHILDREN 1.
+           if "UNO" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(1) to saved-selected
+           end-if   
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                  ITEM-TO-ADD = "DUE", GIVING Screen1-Tr-1-Pointer(2), 
+                  HIDDEN-DATA = "2", HAS-CHILDREN 1.
+           if "DUE" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(2) to saved-selected
+           end-if    
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                  ITEM-TO-ADD = "TRE", GIVING Screen1-Tr-1-Pointer(3), 
+                  HIDDEN-DATA = "3", HAS-CHILDREN 1.
+           if "TRE" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(3) to saved-selected
+           end-if     
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                ITEM-TO-ADD = "QUATTRO", GIVING Screen1-Tr-1-Pointer(4), 
+                  HIDDEN-DATA = "4", HAS-CHILDREN 1.
+           if "QUATTRO" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(4) to saved-selected
+           end-if        
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                 ITEM-TO-ADD = "CINQUE", GIVING Screen1-Tr-1-Pointer(5), 
+                  HIDDEN-DATA = "5", HAS-CHILDREN 1.
+           if "CINQUE" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(5) to saved-selected
+           end-if          
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                  ITEM-TO-ADD = "SEI", GIVING Screen1-Tr-1-Pointer(6), 
+                  HIDDEN-DATA = "6", HAS-CHILDREN 1.
+           if "SEI" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(6) to saved-selected
+           end-if           
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                  ITEM-TO-ADD = "SETTE", GIVING Screen1-Tr-1-Pointer(7), 
+                  HIDDEN-DATA = "7", HAS-CHILDREN 1.
+           if "SETTE" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(7) to saved-selected
+           end-if             
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                  ITEM-TO-ADD = "OTTO", GIVING Screen1-Tr-1-Pointer(8), 
+                  HIDDEN-DATA = "8", HAS-CHILDREN 1.
+           if "OTTO" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(8) to saved-selected
+           end-if               
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                  ITEM-TO-ADD = "NOVE", GIVING Screen1-Tr-1-Pointer(9), 
+                  HIDDEN-DATA = "9", HAS-CHILDREN 1.
+           if "NOVE" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(9) to saved-selected
+           end-if             
+           modify Screen1-Tr-1 (event-data-2)
+                  parent = saved-parent
+                 ITEM-TO-ADD = "DIECI", GIVING Screen1-Tr-1-Pointer(10), 
+                  HIDDEN-DATA = "10", HAS-CHILDREN 1.
+           if "DIECI" = ws-saved-parent-text
+              move Screen1-Tr-1-Pointer(10) to saved-selected
+           end-if
+           .
+           
+      *
+       Screen1-Tr-1-Ev-Msg-Tv-Dblclick.
+           inquire Screen1-Tr-1 (event-data-2)
+              hidden-data in ws-saved-text  
+           modify Screen1-Tr-1 (event-data-2)
+                  next-item = tvni-parent
+                  giving item-1 
+           inquire Screen1-Tr-1 (item-1)
+              item-text in ws-saved-parent-text   
+           destroy Screen1
+           |display message box ws-text
+           chain "treeview2-dss-display" 
+                 using ws-saved-text 
+                       ws-saved-parent-text 
+                       Screen1-Cb-1-Value
+           .
+      *
+       Screen1-Tr-1-Ev-Msg-Tv-Selchange. 
+           inquire Screen1-Cb-1 value in Screen1-Cb-1-Value
+           if Screen1-Cb-1-Value = 1  
+              modify Screen1-Tr-1 (event-data-2)
+                     next-item = tvni-child
+                     giving item-1
+              if item-1 = null
+                 modify Screen1-Tr-1 (event-data-2)
+                        next-item = tvni-parent
+                        giving item-1
+              else
+                 move event-data-2 to item-1    
+              end-if    
+              perform varying ws-counter from 1 by 1 
+                       until ws-counter > 10
+                 if Screen1-Tr-1-Pointer(ws-counter) not = item-1                  
+                    modify Screen1-Tr-1 
+                           item = Screen1-Tr-1-Pointer(ws-counter)
+                           EXPAND = TVFLAG-COLLAPSE 
+                 else               
+                    modify Screen1-Tr-1 
+                           item = item-1
+                           EXPAND = TVFLAG-EXPAND 
+                 end-if  
+              end-perform
+           end-if  
+           .
+
+
+      *
+       Screen1-Aft-Initdata.  
+           modify Screen1-Tr-1, item = Screen1-Tr-1-Pointer-Root 
+                                EXPAND = TVFLAG-EXPAND 
+           if saved-selected not = null
+              modify Screen1-Tr-1 item = saved-selected    
+                                  EXPAND = TVFLAG-EXPAND  
+              modify Screen1-Tr-1 value = saved-selected 
+           end-if
+           .
+      *
+       Screen1-Pb-1-Link.
+           stop run
+           .
+      *
+       Screen1-Tr-1-Bef-Procedure.
+           .
+
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=0
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

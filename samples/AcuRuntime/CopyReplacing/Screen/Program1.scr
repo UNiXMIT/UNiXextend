@@ -1,0 +1,9 @@
+      * Program1.scr
+      * Program1.scr is generated from C:\tmp\Project-copy\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+            
+       01 Screen1.
+           03 Screen1-Pb-1, Push-Button, 
+              COL 45,20, LINE 23,80, LINES 3,70 CELLS, SIZE 7,70 CELLS, 
+              ID IS 1, 
+              TITLE "Push Button".

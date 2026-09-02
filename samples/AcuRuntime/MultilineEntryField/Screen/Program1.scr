@@ -1,0 +1,21 @@
+      * Program1.scr
+      * Program1.scr is generated from C:\AcuSupport\Interchange-Group\SI-3162510-ATWMultiline\EntryField\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       01 Screen1.
+           03 Screen1-Ef-1, Entry-Field, 
+              COL 12.30, LINE 4.50, LINES 2.00 CELLS, SIZE 8.00 CELLS, 
+              3-D, ID IS 2, VALUE Screen1-Ef-1-Value.
+           03 Screen1-De-1, Date-Entry, 
+              COL 20.60, LINE 4.50, LINES 2.00 CELLS, SIZE 2.00 CELLS, 
+              ID IS 1, VALUE-FORMAT 0, VALUE Screen1-De-1-Value, 
+              AFTER PROCEDURE Screen1-De-1-Aft-Procedure.
+           03 Screen1-Ef-2, Entry-Field, 
+              COL 7.00, LINE 9.00, LINES 21.00 CELLS, SIZE 21.00 CELLS, 
+              3-D, ID IS 3, MAX-LINES 60, MAX-TEXT 6000, MULTILINE, 
+              VALUE MULTIPLE Screen1-Ef-2-Value.
+           03 Screen1-Pb-1, Push-Button, 
+              COL 13.00, LINE 32.00, LINES 4.00 CELLS, SIZE 9.00 CELLS, 
+              ID IS 4, 
+              TITLE "TEST", 
+              EVENT PROCEDURE Screen1-Pb-1-Event-Proc.

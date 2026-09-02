@@ -1,0 +1,982 @@
+; CASEMaker AcuBench Program Structure File, Version 10.4
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=Form1
+
+{{@DESCRIPTION:
+This program demonstrates logic used by the scroll-bar control
+to navigate in a list-box.
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_strName=key-entered
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_strDefaultValue=zeroes
+m_nItemLevel=1
+m_nSpecial=2
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_strName=exception-values
+m_nItemLevel=1
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_strName=quit
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+[FDITEM3_WK]
+m_strName=ws-max-lines
+m_strDefaultValue=13
+m_nItemLevel=78
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM3_WK
+
+@}}
+[FDITEM4_WK]
+m_strName=scroll-line
+m_strDefaultValue=14,25
+m_nItemLevel=78
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM4_WK
+
+@}}
+[FDITEM5_WK]
+m_strName=ws-window-lines
+m_strDefaultValue=16,5
+m_nItemLevel=78
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM5_WK
+
+@}}
+[FDITEM6_WK]
+m_strName=ws-button-lines
+m_strDefaultValue=15,5
+m_nItemLevel=78
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM6_WK
+
+@}}
+[FDITEM7_WK]
+m_strName=ws-max-line-length
+m_strDefaultValue=132
+m_nItemLevel=78
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM7_WK
+
+@}}
+[FDITEM8_WK]
+m_strName=ws-col-start
+m_strDefaultValue=7
+m_nItemLevel=78
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM8_WK
+
+@}}
+[FDITEM9_WK]
+m_strName=ws-win-size
+m_strRawPic=9(5)
+m_strPic=9(5)
+m_strDefaultValue=00060
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM9_WK
+
+@}}
+[FDITEM10_WK]
+m_strName=ws-size
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM10_WK
+
+@}}
+[FDITEM11_WK]
+m_nType=10
+m_strName=ws-scroll-value
+m_strRawPic=9(5)
+m_strPic=9(5)
+m_strDefaultValue=0001
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM11_WK
+
+@}}
+[FDITEM12_WK]
+m_strName=ws-sub
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM12_WK
+
+@}}
+[FDITEM13_WK]
+m_strName=ws-string
+m_strRawPic=x(ws-max-line-length)
+m_strPic=x(132)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM13_WK
+
+@}}
+[FDITEM14_WK]
+m_strName=data-table
+m_nItemLevel=1
+m_nSync=-1
+m_bOccurs=1
+m_bFixed=1
+m_strRawSize=WS-MAX-LINES
+m_nSize=13
+{{@DataItem_m_strDescriptionFDITEM14_WK
+
+@}}
+[FDITEM15_WK]
+m_strName=table-item
+m_strRawPic=x(ws-max-line-length)
+m_strPic=x(132)
+m_strDefaultValue=all "123456789 "
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM15_WK
+
+@}}
+[FDITEM16_WK]
+m_strName=ws-rd-line
+m_nItemLevel=1
+m_nSync=-1
+m_bOccurs=1
+m_bFixed=1
+m_strRawSize=WS-MAX-LINES
+m_nSize=13
+{{@DataItem_m_strDescriptionFDITEM16_WK
+
+@}}
+[FDITEM17_WK]
+m_strName=FILLER
+m_strRawPic=x(ws-max-line-length)
+m_strPic=x(132)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM17_WK
+
+@}}
+[FDITEM18_WK]
+m_nType=10
+m_strName=Form1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM18_WK
+
+@}}
+[FDITEM19_WK]
+m_nType=10
+m_nItemLevel=1
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM19_WK
+
+@}}
+[FDITEM20_WK]
+m_nType=10
+m_strName=Form1-Lb-1-Container-Item
+m_nItemLevel=3
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM20_WK
+
+@}}
+[FDITEM21_WK]
+m_nType=10
+m_strRawPic=X(30)
+m_strPic=X(30)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM21_WK
+
+@}}
+[FDITEM22_WK]
+m_nType=10
+m_strName=Form1-Lb-1-Container-Num
+m_strDefaultValue=1
+m_nItemLevel=78
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM22_WK
+
+@}}
+[FDITEM23_WK]
+m_nType=10
+m_strName=Form1-Lb-1-Container
+m_strRawPic=X(30)
+m_strPic=X(30)
+m_nItemLevel=3
+m_bRedefines=1
+m_strRedefines=Form1-Lb-1-Container-Item
+m_nSync=-1
+m_bOccurs=1
+m_bFixed=1
+m_strRawSize=1
+m_nSize=1
+m_bIndexed=1
+m_lstIndex=Form1-Lb-1-Container-Idx,
+{{@DataItem_m_strDescriptionFDITEM23_WK
+
+@}}
+[FDITEM24_WK]
+m_nType=10
+m_strName=Form1-Lb-1-Value
+m_strRawPic=X(30)
+m_strPic=X(30)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM24_WK
+
+@}}
+[FDITEM25_WK]
+m_nType=10
+m_strName=Medium-Font
+m_nUsage=36
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM25_WK
+
+@}}
+[FDITEM26_WK]
+m_nType=10
+m_strName=EVENT-DATA-2
+m_strRawPic=X(30)
+m_strPic=X(30)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM26_WK
+
+@}}
+[FDITEM27_WK]
+m_nType=10
+m_strName=EVENTO-DATA-2
+m_strRawPic=X(30)
+m_strPic=X(30)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM27_WK
+
+@}}
+[FDITEM28_WK]
+m_nType=10
+m_strName=EVENTO-TYPE
+m_strRawPic=X(30)
+m_strPic=X(30)
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM28_WK
+
+@}}
+[FDITEM29_WK]
+m_nType=10
+m_strName=Form1-Sb-2-Value
+m_strRawPic=S9(2)
+m_strPic=S9(2)
+m_strDefaultValue=5
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM29_WK
+
+@}}
+[FDITEM30_WK]
+m_strName=ws-line
+m_strRawPic=9(3)v99
+m_strPic=9(3)v99
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM30_WK
+
+@}}
+[FDITEM31_WK]
+m_strName=ws-line-comodo
+m_strRawPic=9(3)v99
+m_strPic=9(3)v99
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM31_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen Form1
+   PREFIX            = Form1
+   LOCK-CONTROL      = FALSE
+   (Name)            = Form1
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = TRUE
+   Auto Resize       = TRUE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = TRUE
+   Erase Screen      = TRUE
+   Font              = Default Font
+   Handle Variable   = Form1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 33.30
+   Link To Thread    = TRUE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 46.20
+   System Menu       = TRUE
+   Title             = "Scroll-bar demo"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Standard
+   Wrap              = FALSE
+   Event Procedure   = Form1-Event-Proc
+   Before Procedure  = Reload-Listbox
+   Begin Scroll-Bar Form1-Sb-1
+      SCREEN-COL        = 4.00
+      SCREEN-LINE       = 27.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-Sb-1
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Column            = 4.00
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Help ID           = 0
+      ID                = 1
+      Kind              = Horizontal
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 27.00
+      Lines             = 2.00
+      Max Value         = 100
+      Min Value         = 0
+      No Tab            = FALSE
+      Page Size         = 0
+      Size              = 20.00
+      Tab Order         = 1
+      Track Thumb       = TRUE
+      Value             = 0
+      Value Variable    = ws-scroll-value
+      Visible           = 1:TRUE
+      Event Procedure   = Form1-Sb-1-Event-Proc
+      Msg-Sb-Next       = Form1-Sb-1-Ev-Msg-Sb-Next
+      Msg-Sb-Nextpage   = Form1-Sb-1-Ev-Msg-Sb-Nextpage
+      Msg-Sb-Prev       = Form1-Sb-1-Ev-Msg-Sb-Prev
+      Msg-Sb-Prevpage   = Form1-Sb-1-Ev-Msg-Sb-Prevpage
+      Msg-Sb-Thumbtrack = Form1-Sb-1-Ev-Msg-Sb-Thumbtrack
+   End
+   Begin Entry-Field Form1-Ef-1
+      SCREEN-COL        = 26.90
+      SCREEN-LINE       = 10.30
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-Ef-1
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = 3D
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 26.90
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Justification     = Right
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 10.30
+      Lines             = 2.00
+      Max Lines         = 0
+      Max Text          = 0
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = FALSE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 6.00
+      Style             = Singleline
+      Tab Order         = 2
+      Use Return        = FALSE
+      Use Tab           = FALSE
+      Value Multiple    = FALSE
+      Value Picture     = X(30)
+      Value Variable    = EVENTO-DATA-2
+      Visible           = 1:TRUE
+   End
+   Begin List-Box Form1-Lb-1
+      SCREEN-COL        = 4.50
+      SCREEN-LINE       = 4.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-Lb-1
+      Auto load         = 0
+      Auto load ReadDirection = next
+      Auto load StartDirection = >=
+      Auto load StartValue = low-value
+      Border            = 3D
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 4.50
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 3
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 4.00
+      Lines             = 20.50
+      Mass Update       = 0:Fast-Update
+      No Search         = FALSE
+      No Tab            = FALSE
+      Notify DblClick   = FALSE
+      Notify SelChange  = FALSE
+      Paged             = FALSE
+      Selection Index   = 0
+      Size              = 8.00
+      Tab Order         = 3
+      Termination Value = 0
+      Unsorted          = TRUE
+      Value Container   = Form1-Lb-1-Container
+      Value Picture     = X(30)
+      Value Variable    = Form1-Lb-1-Value
+      Visible           = 1:TRUE
+      Additional Properties = NO-SEARCH
+   End
+   Begin Push-Button Form1-Pb-1
+      SCREEN-COL        = 38.20
+      SCREEN-LINE       = 29.80
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-Pb-1
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Scale      = FALSE
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 38.20
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 4
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 29.80
+      Lines             = 2.50
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = TRUE
+      Size              = 7.00
+      Style             = Cancel Button
+      Tab Order         = 4
+      Termination Value = 0
+      Title             = "E&xit"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+   End
+   Begin Label Form1-La-1
+      SCREEN-COL        = 26.90
+      SCREEN-LINE       = 13.30
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-La-1
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 26.90
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Medium Font
+      Font Variable     = Medium-Font
+      Help ID           = 0
+      ID                = 5
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 13.30
+      Lines             = 2.00
+      No Key Letter     = FALSE
+      Size              = 10.00
+      Tab Order         = 5
+      Title             = "campo data-2"
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Entry-Field Form1-Ef-2
+      SCREEN-COL        = 26.90
+      SCREEN-LINE       = 16.30
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-Ef-2
+      Auto              = FALSE
+      Auto Decimal      = 0
+      Autofill ID       = 0
+      Autofill Max Lines = 0
+      Border            = 3D
+      Case              = Mixed
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 26.90
+      Csize             = 0
+      Cursor            = 0
+      Cursor Col        = 0
+      Cursor Row        = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 6
+      Justification     = Right
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 16.30
+      Lines             = 2.00
+      Max Lines         = 0
+      Max Text          = 0
+      Max Value         = 0
+      Min Value         = 0
+      No AutoSel        = FALSE
+      No Tab            = FALSE
+      Notify Change     = FALSE
+      Numeric           = FALSE
+      Read Only         = FALSE
+      Required          = FALSE
+      Secure            = FALSE
+      Size              = 6.50
+      Style             = Singleline
+      Tab Order         = 6
+      Use Return        = FALSE
+      Use Tab           = FALSE
+      Value Multiple    = FALSE
+      Value Picture     = X(30)
+      Value Variable    = EVENTO-TYPE
+      Visible           = 1:TRUE
+   End
+   Begin Label Form1-La-2
+      SCREEN-COL        = 26.90
+      SCREEN-LINE       = 19.30
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-La-2
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 26.90
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 7
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 19.30
+      Lines             = 1.50
+      No Key Letter     = FALSE
+      Size              = 8.50
+      Tab Order         = 7
+      Title             = "EVENT TYPE"
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Scroll-Bar Form1-Sb-2
+      SCREEN-COL        = 39.30
+      SCREEN-LINE       = 3.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form1-Sb-2
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Column            = 39.30
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Help ID           = 0
+      ID                = 8
+      Kind              = Vertical
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 3.00
+      Lines             = 22.70
+      Max Value         = 10
+      Min Value         = 0
+      No Tab            = FALSE
+      Page Size         = 0
+      Size              = 2.10
+      Tab Order         = 8
+      Track Thumb       = TRUE
+      Value             = 5
+      Value Picture     = S9(2)
+      Value Variable    = Form1-Sb-2-Value
+      Visible           = 1:TRUE
+      Event Procedure   = Form1-Sb-2-Event-Proc
+      Msg-Sb-Next       = Form1-Sb-2-Ev-Msg-Sb-Next
+      Msg-Sb-Prev       = Form1-Sb-2-Ev-Msg-Sb-Prev
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Next.
+           if ws-scroll-value <= ws-max-line-length - ws-size
+                   add 1 to ws-scroll-value
+           end-if
+               perform redraw-sb-lb
+           .
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Prev.
+           if ws-scroll-value > 1
+                   subtract 1 from ws-scroll-value
+           end-if
+               perform redraw-sb-lb
+           .
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Nextpage.
+           if ws-scroll-value + (ws-size * 2) 
+                             < ws-max-line-length
+                   add ws-size to ws-scroll-value
+               else
+                   compute ws-scroll-value = 
+                   ws-max-line-length + 1 - ws-size 
+           end-if
+               perform redraw-sb-lb
+           .
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Prevpage.
+           if ws-scroll-value - ws-size > 1
+                  subtract ws-size from ws-scroll-value
+           else
+                   compute ws-scroll-value = 1
+           end-if
+               perform redraw-sb-lb
+           .
+      *
+       Form1-Sb-1-Ev-Msg-Sb-Thumbtrack.
+           if evento-data-2 > 0
+                    move evento-data-2 to ws-scroll-value
+           end-if
+               perform redraw-sb-lb
+           .
+       redraw-sb-lb.
+           modify Form1-Sb-1,    value = ws-scroll-value.
+           perform reload-listbox.
+
+       reload-listbox.
+           compute ws-size = ws-window-lines - ws-col-start + 1
+           
+           if ws-size > ws-max-line-length
+               move ws-max-line-length to ws-size
+               modify Form1-Sb-1,  visible = false
+           else
+               modify Form1-Sb-1,  visible = true    
+           end-if.     
+           
+           modify Form1-Lb-1, , reset-list 1 mass-update = 1.
+           perform varying ws-sub from 1 by 1 
+                   until ws-sub > ws-max-lines
+               move table-item(ws-sub) to ws-string
+               move ws-string(ws-scroll-value:ws-size) 
+                    to ws-rd-line(ws-sub)
+               modify Form1-Lb-1,  
+                    item-to-add = ws-rd-line(ws-sub)
+           end-perform.
+           modify Form1-Lb-1,  mass-update = 0.
+           display Form1. 
+      *
+
+            
+           .
+      *
+       Form1-Sb-2-Ev-Msg-Sb-Next.  
+        
+           compute Form1-Sb-2-Value = Form1-Sb-2-Value + 1
+           modify Form1-Sb-2, VALUE = Form1-Sb-2-Value
+
+           inquire Form1-Ef-1, line in ws-line
+           move ws-line to ws-line-comodo
+
+           if ws-line-comodo > 5
+
+              compute ws-line = ws-line - 1
+              modify Form1-Ef-1, line ws-line
+              inquire Form1-La-1, line in ws-line
+              compute ws-line = ws-line - 1
+              modify Form1-La-1, line ws-line
+              inquire Form1-Ef-2, line in ws-line
+              compute ws-line = ws-line - 1
+              modify Form1-Ef-2, line ws-line
+              inquire Form1-La-2, line in ws-line
+              compute ws-line = ws-line - 1
+              modify Form1-La-2, line ws-line
+
+           end-if
+           .
+      *
+       Form1-Sb-2-Ev-Msg-Sb-Prev. 
+
+           compute Form1-Sb-2-Value = Form1-Sb-2-Value - 1 
+           modify Form1-Sb-2, VALUE = Form1-Sb-2-Value  
+
+           inquire Form1-Ef-1, line in ws-line  
+           move ws-line to ws-line-comodo
+
+           if ws-line-comodo < 15 
+
+              compute ws-line = ws-line + 1
+              modify Form1-Ef-1, line ws-line
+              inquire Form1-La-1, line in ws-line
+              compute ws-line = ws-line + 1
+              modify Form1-La-1, line ws-line
+              inquire Form1-Ef-2, line in ws-line
+              compute ws-line = ws-line + 1
+              modify Form1-Ef-2, line ws-line
+              inquire Form1-La-2, line in ws-line
+              compute ws-line = ws-line + 1
+              modify Form1-La-2, line ws-line   
+
+           end-if
+           .
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=0
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

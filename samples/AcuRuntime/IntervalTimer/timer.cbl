@@ -1,0 +1,34 @@
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID.                      Timer.
+       AUTHOR.  MIT. 
+       REMARKS.
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+       SPECIAL-NAMES.
+      *     DECIMAL-POINT IS COMMA.
+       INPUT-OUTPUT SECTION.
+       FILE-CONTROL.
+      * SELECT
+
+       DATA DIVISION.
+       FILE SECTION.
+      * FD
+
+       WORKING-STORAGE SECTION.
+       01 START-TIME           DOUBLE.
+       01 ELAPSED-TIME         DOUBLE.
+       01 WS-TIME              PIC 9(8).9(4).
+       01 DISPLAY-TIME         PIC ZZZZZZZZ.9(4). 
+
+       LINKAGE SECTION.
+
+       SCREEN SECTION.
+
+       PROCEDURE DIVISION.
+           MOVE FUNCTION INTERVAL-TIMER TO START-TIME
+           CALL "C$SLEEP" using 1
+           COMPUTE ELAPSED-TIME = FUNCTION INTERVAL-TIMER - START-TIME
+           MOVE ELAPSED-TIME TO WS-TIME DISPLAY-TIME
+           DISPLAY "Elapsed Time: " DISPLAY-TIME " seconds"
+           ACCEPT OMITTED
+           GOBACK.

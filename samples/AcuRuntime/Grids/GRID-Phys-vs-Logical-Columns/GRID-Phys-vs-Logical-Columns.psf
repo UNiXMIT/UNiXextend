@@ -1,0 +1,801 @@
+; CASEMaker AcuBench Program Structure File, Version 10.4
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=Screen1
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=Screen1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_strName=ws-counter
+m_strRawPic=99
+m_strPic=99
+m_strDefaultValue=0
+m_nItemLevel=77
+m_bValue=1
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+
+@}}
+[FDITEM2_WK]
+m_strName=ws-logical-col-from
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+[FDITEM3_WK]
+m_strName=ws-logical-col-to
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_strDefaultValue=0
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM3_WK
+
+@}}
+[FDITEM4_WK]
+m_strName=ws-first-usable-col
+m_strRawPic=9(3)
+m_strPic=9(3)
+m_strDefaultValue=1
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM4_WK
+
+@}}
+[FDITEM5_WK]
+m_strName=max-cols
+m_strDefaultValue=10
+m_nItemLevel=78
+m_bValue=1
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM5_WK
+
+@}}
+[FDITEM6_WK]
+m_nType=10
+m_strName=Screen1-Gd-1-Record
+m_nItemLevel=1
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM6_WK
+
+@}}
+[FDITEM7_WK]
+m_nType=10
+m_strName=Gd-1-Col-1
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM7_WK
+
+@}}
+[FDITEM8_WK]
+m_nType=10
+m_strName=Gd-1-Col-2
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM8_WK
+
+@}}
+[FDITEM9_WK]
+m_nType=10
+m_strName=Gd-1-Col-3
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM9_WK
+
+@}}
+[FDITEM10_WK]
+m_nType=10
+m_strName=Gd-1-Col-4
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM10_WK
+
+@}}
+[FDITEM11_WK]
+m_nType=10
+m_strName=Gd-1-Col-5
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM11_WK
+
+@}}
+[FDITEM12_WK]
+m_nType=10
+m_strName=Gd-1-Col-6
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM12_WK
+
+@}}
+[FDITEM13_WK]
+m_nType=10
+m_strName=Gd-1-Col-7
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM13_WK
+
+@}}
+[FDITEM14_WK]
+m_nType=10
+m_strName=Gd-1-Col-8
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM14_WK
+
+@}}
+[FDITEM15_WK]
+m_nType=10
+m_strName=Gd-1-Col-9
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM15_WK
+
+@}}
+[FDITEM16_WK]
+m_nType=10
+m_strName=Gd-1-Col-10
+m_strRawPic=X(08)
+m_strPic=X(08)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM16_WK
+
+@}}
+[FDITEM17_WK]
+m_strName=Screen1-Physical-Table
+m_nItemLevel=1
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM17_WK
+
+@}}
+[FDITEM18_WK]
+m_strName=Screen1-Physical-Table-Item
+m_nItemLevel=3
+m_nSync=-1
+m_bOccurs=1
+m_strRawSize=10
+m_strRawMin=MAX-COLS
+m_strRawMax=MAX-COLS
+m_nSize=206908872
+m_nMin=10
+m_nMax=10
+m_strOccursDepending=ws-counter
+{{@DataItem_m_strDescriptionFDITEM18_WK
+
+@}}
+[FDITEM19_WK]
+m_strName=ws-phys-col
+m_strRawPic=S9(3)
+m_strPic=S9(3)
+m_nItemLevel=5
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM19_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen Screen1
+   PREFIX            = Screen1
+   LOCK-CONTROL      = FALSE
+   (Name)            = Screen1
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = TRUE
+   Auto Resize       = FALSE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = FALSE
+   Font              = Default Font
+   Handle Variable   = Screen1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 43.00
+   Link To Thread    = TRUE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 64.00
+   System Menu       = TRUE
+   Title             = "Screen"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Standard
+   Wrap              = FALSE
+   Event Procedure   = Screen1-Event-Proc
+   After Create      = Screen1-Aft-Create
+   Begin Label Screen1-La-1
+      SCREEN-COL        = 3.80
+      SCREEN-LINE       = 2.30
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-1
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 3.80
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 1
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 2.30
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 19.40
+      Tab Order         = 1
+      Title             = "Physical vs. Logical Grid Columns"
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Label Screen1-La-2
+      SCREEN-COL        = 3.80
+      SCREEN-LINE       = 6.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-2
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 3.80
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 6.10
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 30.10
+      Tab Order         = 2
+      Title             = "Use the mouse to move the columns of the first Grid."
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Grid Screen1-Gd-1
+      SCREEN-COL        = 3.80
+      SCREEN-LINE       = 8.80
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Gd-1
+      Action            = (None)
+      Adjustable Columns = FALSE
+      Auto load         = 0
+      Auto load ReadDirection = next
+      Auto load StartDirection = >=
+      Auto load StartValue = low-value
+      Border            = 3D
+      Centered Headings = FALSE
+      Color             = 0
+      Column            = 3.80
+      Column Headings   = TRUE
+      Columns' Setting  = ( X = 1, Name = Gd-1-Col-1 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 2, Name = Gd-1-Col-2 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 3, Name = Gd-1-Col-3 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 4, Name = Gd-1-Col-4 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 5, Name = Gd-1-Col-5 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 6, Name = Gd-1-Col-6 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 7, Name = Gd-1-Col-7 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 8, Name = Gd-1-Col-8 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 9, Name = Gd-1-Col-9 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 10, Name = Gd-1-Col-10 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Cursor Color      = 0
+      Cursor Frame Width = 3
+      Cursor X          = 0
+      Cursor Y          = 0
+      Destroy Type      = Automatic
+      Divider Color     = 1
+      Drag Color        = 1
+      Enable            = 1:TRUE
+      End Color         = 0
+      Font              = Default Font
+      Heading Color     = 353
+      Heading Divider Color = 1
+      Heading Font      = Default Font
+      Help ID           = 0
+      Hscroll           = FALSE
+      ID                = 3
+      Last Row          = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 8.80
+      Lines             = 10.50
+      Moveable Columns  = TRUE
+      No Cell Drag      = FALSE
+      No Tab            = FALSE
+      Num Column Headings = 1
+      Num Columns       = 10
+      Num Rows          = 10
+      Paged             = FALSE
+      Record Data       = Screen1-Gd-1-Record
+      Row Dividers      = 1
+      Row Headings      = FALSE
+      Size              = 57.80
+      Tab Order         = 3
+      Tiled Headings    = TRUE
+      Use Tab           = FALSE
+      Virtual Width     = 0
+      Visible           = 1:TRUE
+      Vpadding          = 50
+      Vscroll           = TRUE
+      Event Procedure   = Screen1-Gd-1-Event-Proc
+      Msg-Column-Moved  = Screen1-Gd-1-Ev-Msg-Column-Moved
+   End
+   Begin Label Screen1-La-2a
+      SCREEN-COL        = 3.80
+      SCREEN-LINE       = 22.90
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-La-2a
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 3.80
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 4
+      Justification     = Unaligned
+      Label Offset      = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 22.90
+      Lines             = 1.30
+      No Key Letter     = FALSE
+      Size              = 32.40
+      Tab Order         = 4
+      Title             = "The columns in the second Grid will automatically follow."
+      Transparent       = FALSE
+      Visible           = 1:TRUE
+   End
+   Begin Grid Screen1-Gd-2
+      SCREEN-COL        = 3.80
+      SCREEN-LINE       = 25.10
+      LOCK-CONTROL      = FALSE
+      (Name)            = Screen1-Gd-2
+      Action            = (None)
+      Adjustable Columns = FALSE
+      Auto load         = 0
+      Auto load ReadDirection = next
+      Auto load StartDirection = >=
+      Auto load StartValue = low-value
+      Border            = 3D
+      Centered Headings = FALSE
+      Color             = 0
+      Column            = 3.80
+      Column Headings   = TRUE
+      Columns' Setting  = ( X = 1, Name = Gd-1-Col-1 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 2, Name = Gd-1-Col-2 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 3, Name = Gd-1-Col-3 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 4, Name = Gd-1-Col-4 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 5, Name = Gd-1-Col-5 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 6, Name = Gd-1-Col-6 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 7, Name = Gd-1-Col-7 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 8, Name = Gd-1-Col-8 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 9, Name = Gd-1-Col-9 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Columns' Setting  = ( X = 10, Name = Gd-1-Col-10 )
+      Columns' Setting  = ( PIC = "X(08)", ALIGN = "U" )
+      Columns' Setting  = ( DISP = 8, SEPA = 5, DIVI = 1 )
+      Columns' Setting  = ( PhysicalColumn = 0, HiddenColumn = FALSE )
+      Cursor Color      = 0
+      Cursor Frame Width = 3
+      Cursor X          = 0
+      Cursor Y          = 0
+      Destroy Type      = Automatic
+      Divider Color     = 1
+      Drag Color        = 1
+      Enable            = 1:TRUE
+      End Color         = 0
+      Font              = Default Font
+      Heading Color     = 481
+      Heading Divider Color = 1
+      Heading Font      = Default Font
+      Help ID           = 0
+      Hscroll           = FALSE
+      ID                = 5
+      Last Row          = 0
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 25.10
+      Lines             = 10.50
+      Moveable Columns  = FALSE
+      No Cell Drag      = FALSE
+      No Tab            = FALSE
+      Num Column Headings = 1
+      Num Columns       = 10
+      Num Rows          = 10
+      Paged             = FALSE
+      Record Data       = Screen1-Gd-1-Record
+      Row Dividers      = 1
+      Row Headings      = FALSE
+      Size              = 57.80
+      Tab Order         = 5
+      Tiled Headings    = TRUE
+      Use Tab           = FALSE
+      Virtual Width     = 0
+      Visible           = 1:TRUE
+      Vpadding          = 50
+      Vscroll           = TRUE
+      Event Procedure   = Screen1-Gd-1-Event-Proc
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       Screen1-Aft-Create.
+           MODIFY Screen1-Gd-1, Y = 1, 
+                                RECORD-TO-ADD = "      A       B       C  
+      -    "       D       E       F       G       H       I       J"
+      
+           MODIFY Screen1-Gd-2, Y = 1, 
+                                RECORD-TO-ADD = "      A       B       C  
+      -    "       D       E       F       G       H       I       J"
+
+      * load-initial-Screen1-Physical-Table
+           perform varying ws-counter from 1 by 1                 
+                   until ws-counter > max-cols 
+              move ws-counter to ws-phys-col(ws-counter)
+           end-perform        
+           .
+      *
+       Screen1-Gd-1-Ev-Msg-Column-Moved.
+           perform update-moved-columns
+           .
+
+       update-moved-columns.
+      * When moved, the runtime sends a message to the COBOL program, MSG-COLUMN-MOVED.
+      * Event-data-1 is the physical column moving, 
+      * and event-data-2 is the physical column number immediately before the newly-moved column 
+      * (at the time of movement). 
+      *
+           initialize ws-logical-col-from ws-logical-col-to  
+           perform varying ws-counter from ws-first-usable-col by 1 
+                    until ws-counter > max-cols
+              if ws-phys-col(ws-counter) = event-data-1                         | I need to know the Logical position of the Physical Column I'm about to move
+                 or ws-phys-col(ws-counter) = event-data-1 * -1                 | At the same time, the value my be negative
+                    move ws-counter to ws-logical-col-from                      | Current Logical Column I am going to move  
+              end-if
+           end-perform        
+           
+           if ws-logical-col-from not = 0              
+              
+              if event-data-1 < event-data-2                                    | Column is going to be moved rightward 
+                 perform varying ws-counter from ws-first-usable-col 
+                         by 1 until ws-counter > max-cols  
+                    if ws-counter = ws-logical-col-from
+                       move event-data-2 to ws-phys-col(ws-counter)             | The column I am moving takes the new physical position
+                    else                                                        | and then all the others included in the range will shift down
+                       if ( ws-phys-col(ws-counter) >= event-data-1 
+                            and 
+                            ws-phys-col(ws-counter) <= event-data-2 
+                          ) 
+                          or
+                          ( ws-phys-col(ws-counter) <= event-data-1 * -1        | Physical Columns may be hidden, which means included in range from -7 to -2
+                            and 
+                            ws-phys-col(ws-counter) >= event-data-2 * -1 
+                          )  
+                          if ws-phys-col(ws-counter) > 0                        | Column is NOT hidden  
+                            subtract 1 from ws-phys-col(ws-counter)
+                          else                                                  | Column IS hidden  
+                            add 1 to ws-phys-col(ws-counter)
+                          end-if   
+                       end-if 
+                    end-if
+                 end-perform  
+                              
+              else                                                              | Column is going to be moved leftward 
+              
+                 add 1 to event-data-2
+                 perform varying ws-counter from max-cols   
+                         by -1 until ws-counter < ws-first-usable-col 
+                    if ws-counter = ws-logical-col-from
+                       move event-data-2 to ws-phys-col(ws-counter)             | The column I am moving takes the new physical position
+                    else                                                        | and then all the others included in the range will shift down
+                       if ( ws-phys-col(ws-counter) <= event-data-1 
+                            and 
+                            ws-phys-col(ws-counter) >= event-data-2 
+                          ) 
+                          or
+                          ( ws-phys-col(ws-counter) >= event-data-1 * -1        | Physical Columns may be hidden, which means included in range from -7 to -2
+                            and 
+                            ws-phys-col(ws-counter) <= event-data-2 * -1 
+                          )  
+                          if ws-phys-col(ws-counter) > 0                        | Column is NOT hidden 
+                            add 1 to ws-phys-col(ws-counter)  
+                          else                                                  | Column IS hidden 
+                            subtract 1 from ws-phys-col(ws-counter)
+                          end-if   
+                       end-if 
+                    end-if
+                 end-perform                             
+              
+              end-if 
+           
+           end-if  
+
+      * Now I apply the same sequence of physical information to Grid n. 2
+
+           MODIFY Screen1-Gd-2, PHYSICAL-COLUMNS = ( 0, 
+                                                     ws-phys-col(1),
+                                                     ws-phys-col(2),
+                                                     ws-phys-col(3),
+                                                     ws-phys-col(4),
+                                                     ws-phys-col(5),
+                                                     ws-phys-col(6),
+                                                     ws-phys-col(7),
+                                                     ws-phys-col(8),
+                                                     ws-phys-col(9),
+                                                     ws-phys-col(10),
+                                                   )
+           .
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=0
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

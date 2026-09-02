@@ -1,0 +1,21 @@
+      * Program1.wrk
+      * Program1.wrk is generated from C:\AcuSamples\Browser\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       77 Quit-Mode-Flag PIC S9(5) COMP-4 VALUE 0.
+       77 Key-Status IS SPECIAL-NAMES CRT STATUS PIC 9(4) VALUE 0.
+           88 Exit-Pushed VALUE 27.
+           88 Message-Received VALUE 95.
+           88 Event-Occurred VALUE 96.
+           88 Screen-No-Input-Field VALUE 97.
+           88 Screen-Time-Out VALUE 99.
+      * property-defined variable
+
+      * user-defined variable
+       77 Screen1-Handle
+                  USAGE IS HANDLE OF WINDOW VALUE NULL.
+       77 Screen2-Handle
+                  USAGE IS HANDLE OF WINDOW VALUE NULL.
+       77 Screen2-Wb-1-Value           PIC  X(50)
+                  VALUE IS "https://willowsystems.github.io/jSignature/#
+      -    "/demo/".

@@ -1,0 +1,323 @@
+; CASEMaker AcuBench Workspace File, Version 10.2
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[WORKSPACE_CONTENT]
+PROJECT_LIST=AcuBenchTest
+CONFIGURATION_LIST=Debug Mode,Release Mode
+CURRENT_CONFIGURATION=Debug Mode
+
+[PROJECT_CONTENT-AcuBenchTest]
+RELATIVE_PATH=.
+REMOTE_PATH=myserver:5632:/
+MAIN_PROGRAM_TYPE=2
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+
+[PROGRAM_CONTENT-AcuBenchTest:PROGRAM1]
+RELATIVE_PATH=Program1.psf
+
+[FOLDER_CONTENT-AcuBenchTest:Source]
+ACCEPTED_FILE_EXTENSION=*.cbl;*.cob
+CREATED_TIME=08:13:09, 22 November 2016
+
+[FOLDER_CONTENT-AcuBenchTest:Screen]
+ACCEPTED_FILE_EXTENSION=*.scr;*.stf
+CREATED_TIME=08:13:09, 22 November 2016
+
+[FOLDER_CONTENT-AcuBenchTest:Report]
+ACCEPTED_FILE_EXTENSION=*.rpt;*.rtf
+CREATED_TIME=08:13:09, 22 November 2016
+
+[FOLDER_CONTENT-AcuBenchTest:Copylib]
+ACCEPTED_FILE_EXTENSION=*.cpy;*.wrk;*.lnk;*.lks;*.mnu;*.prd;*.evt;*.def
+CREATED_TIME=08:13:09, 22 November 2016
+
+[FOLDER_CONTENT-AcuBenchTest:Object]
+ACCEPTED_FILE_EXTENSION=*.acu;*.cbx;*.obj;*.lib
+CREATED_TIME=08:13:09, 22 November 2016
+
+[FOLDER_CONTENT-AcuBenchTest:List]
+ACCEPTED_FILE_EXTENSION=*.lst;*.log;*.asq
+CREATED_TIME=08:13:09, 22 November 2016
+
+[FOLDER_CONTENT-AcuBenchTest:Resource]
+ACCEPTED_FILE_EXTENSION=*.ico;*.bmp;*.jpg;*.jpe;*.jpeg
+CREATED_TIME=08:13:09, 22 November 2016
+
+[FOLDER_CONTENT-AcuBenchTest:FD]
+ACCEPTED_FILE_EXTENSION=*.fd;*.sd;*.sl
+CREATED_TIME=08:13:09, 22 November 2016
+
+[FOLDER_CONTENT-AcuBenchTest:Remote]
+ACCEPTED_FILE_EXTENSION=*.acu;*.cbx;*.obj;*.lib
+CREATED_TIME=08:13:09, 22 November 2016
+
+[FILE_CONTENT-AcuBenchTest:FILE1]
+RELATIVE_PATH=Source\Program1.cbl
+FOLDER_NAME=Source
+OWNER_PATH=Program1.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-AcuBenchTest:FILE2]
+RELATIVE_PATH=Screen\Program1.scr
+FOLDER_NAME=Screen
+OWNER_PATH=Program1.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-AcuBenchTest:FILE3]
+RELATIVE_PATH=Report\Program1.rpt
+FOLDER_NAME=Report
+OWNER_PATH=Program1.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-AcuBenchTest:FILE4]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\acugui.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE5]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\acucobol.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE6]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\crtvars.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE7]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\showmsg.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE8]
+RELATIVE_PATH=Copylib\Program1.wrk
+FOLDER_NAME=Copylib
+OWNER_PATH=Program1.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-AcuBenchTest:FILE9]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.0\AcuGT\sample\def\showmsg.cpy
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE10]
+RELATIVE_PATH=Copylib\Program1.prd
+FOLDER_NAME=Copylib
+OWNER_PATH=Program1.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-AcuBenchTest:FILE11]
+RELATIVE_PATH=Copylib\Program1.evt
+FOLDER_NAME=Copylib
+OWNER_PATH=Program1.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-AcuBenchTest:FILE12]
+RELATIVE_PATH=Copylib\Program1.mnu
+FOLDER_NAME=Copylib
+OWNER_PATH=Program1.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-AcuBenchTest:FILE13]
+RELATIVE_PATH=Copylib\Program1.lks
+FOLDER_NAME=Copylib
+OWNER_PATH=Program1.psf
+ATTRIBUTE=0
+
+[FILE_CONTENT-AcuBenchTest:FILE14]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\acugui.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE15]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\acucobol.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE16]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\crtvars.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE17]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\showmsg.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE18]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\showmsg.cpy
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE19]
+RELATIVE_PATH=\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\lmresize.def
+FOLDER_NAME=Copylib
+OWNER_PATH=Source\Program1.cbl
+
+[FILE_CONTENT-AcuBenchTest:FILE20]
+RELATIVE_PATH=object\Program1.acu
+FOLDER_NAME=Object
+OWNER_PATH=Source\Program1.cbl
+ATTRIBUTE=0
+
+[PROJECT_COMPILE_SETTING-AcuBenchTest:Debug Mode]
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_RUNTIME_SETTING-AcuBenchTest:Debug Mode]
+; Common Options
+NAME_CONFIGURATION_FILE=\etc\cblconfi
+; Io Options
+; Debug Options
+; ThinClient Options
+REMOTE_CONFIG_NAME=myserver:5632:/etc/cblconfig
+REMOTE_CONFIG_DEBUG_PORT=5632
+
+[PROJECT_ENVIRONMENT_SETTING-AcuBenchTest:Debug Mode]
+VARIABLE0=RUNNAME,Wrun32.exe
+VARIABLE1=COMPILERNAME,Ccbl32.exe
+VARIABLE2=CODE_PREFIX,.\object
+VARIABLE3=ACUPATH,%acudir%\bin
+VARIABLE4=COPYPATH,.\screen;.\copylib;.\report;.\resource;.\fd;%acudir%\sample\def;%screendir%;%reportdir%;%copydir%
+VARIABLE5=THINNAME,AcuThin.exe
+
+[PROJECT_LIBRARY_SETTING-AcuBenchTest:Debug Mode]
+NAME_LIBRARY_FILE=.\object\@.lib
+
+[FILE_COMPILE_OPTION-AcuBenchTest:Debug Mode:Source\Program1.cbl]
+COPY_DEPENDENCE=\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\acugui.def;\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\acucobol.def;\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\crtvars.def;\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\lmresize.def;\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\showmsg.def;\Program Files (x86)\Micro Focus\extend 10.2.1\AcuGT\sample\def\showmsg.cpy
+FOLLOW_PROJECT=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+INCLUDE_ALL_INFO=1
+; Interop Options
+; Miscellaneous Options
+DEBUGGING=1
+
+[PROJECT_COMPILE_SETTING-AcuBenchTest:Release Mode]
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+; Interop Options
+; Miscellaneous Options
+
+[PROJECT_RUNTIME_SETTING-AcuBenchTest:Release Mode]
+; Common Options
+NAME_CONFIGURATION_FILE=\etc\cblconfi
+; Io Options
+; Debug Options
+; ThinClient Options
+REMOTE_CONFIG_NAME=myserver:5632:/etc/cblconfig
+REMOTE_CONFIG_DEBUG_PORT=5632
+
+[PROJECT_ENVIRONMENT_SETTING-AcuBenchTest:Release Mode]
+VARIABLE0=RUNNAME,Wrun32.exe
+VARIABLE1=COMPILERNAME,Ccbl32.exe
+VARIABLE2=CODE_PREFIX,.\object
+VARIABLE3=ACUPATH,%acudir%\bin
+VARIABLE4=COPYPATH,.\screen;.\copylib;.\report;.\resource;.\fd;%acudir%\sample\def;%screendir%;%reportdir%;%copydir%
+VARIABLE5=THINNAME,AcuThin.exe
+
+[PROJECT_LIBRARY_SETTING-AcuBenchTest:Release Mode]
+NAME_LIBRARY_FILE=.\object\@.lib
+
+[FILE_COMPILE_OPTION-AcuBenchTest:Release Mode:Source\Program1.cbl]
+FOLLOW_PROJECT=1
+RECPMPILE=1
+; Standard Options
+NAME_OBJECT_FILE=.\object\@.acu
+NAME_ERROR_FILE=@.err
+MAX_ERROR_COUNT_NUM=100
+REMOTE_SERVER_NAME=myserver
+REMOTE_SERVER_PORT=5632
+REMOTE_SERVER_DIR=/
+REMOTE_OBJECT_FILE=@.acu
+; Listing Options
+NAME_LISTING_FILE=.\list\@.lst
+; Compatibility Options
+; File Options
+XFD_FILE_VERSION=0
+; Source Options
+; ReservedWord Options
+; DataStorage Options
+ALIGNMENT_DATA_BOUNDARY=4
+SYNC_BOUNDARY_LIMIT_NUMBER=4
+; Video Options
+; Mapping Options
+; Precompiler Options
+NAME_PRECOMPILE_OUTPUT_FILE=.\list\@.asq
+; Native Code Options
+; Debugger Options
+; Interop Options
+; Miscellaneous Options

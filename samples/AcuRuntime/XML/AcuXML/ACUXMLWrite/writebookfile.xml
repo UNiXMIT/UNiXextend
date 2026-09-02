@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created by AcuXML(tm) version 11.0.0 on 2025/10/14 -->
+<?xml-stylesheet type="text/xsl" href="writebookfile.xsl"?><!DOCTYPE XML_BOOKFILE [
+<!ELEMENT XML_BOOKFILE (TRANSACTION)*>
+ <!ELEMENT TRANSACTION (LENDER*, NOTE, BOOKS)>
+      <!ELEMENT LENDER (NAME)>
+           <!ELEMENT NAME (#PCDATA)>
+      <!ELEMENT NOTE (#PCDATA)>
+      <!ELEMENT BOOKS (BOOK*)>
+           <!ELEMENT BOOK (BOOKTITLE)>
+                <!ELEMENT BOOKTITLE (#PCDATA)>
+]>
+<XML_BOOKFILE>
+ <TRANSACTION>
+      <LENDER>
+           <NAME>TX1</NAME>
+           <STREET>77 Massachusetts Ave.</STREET>
+           <CITY>Cambridge</CITY>
+           <STATE>MA</STATE>
+      </LENDER>
+      <LENDER>
+           <NAME></NAME>
+           <STREET></STREET>
+           <CITY></CITY>
+           <STATE></STATE>
+      </LENDER>
+      <BORROWER>
+           <NAME>John Doe</NAME>
+           <STREET>123 Main St.</STREET>
+           <CITY>Anytown</CITY>
+           <STATE>CA</STATE>
+      </BORROWER>
+      <BORROWER>
+           <NAME></NAME>
+           <STREET></STREET>
+           <CITY></CITY>
+           <STATE></STATE>
+      </BORROWER>
+      <NOTE></NOTE>
+      <BOOKS>
+           <BOOK>
+                <BOOKTITLE>Introduction to COBOL</BOOKTITLE>
+                <PUBDATE>2003</PUBDATE>
+                <REPLACEMENTVALUE>79.00</REPLACEMENTVALUE>
+                <MAXDAYSOUT>21</MAXDAYSOUT>
+           </BOOK>
+           <BOOK>
+                <BOOKTITLE>Advanced COBOL Programming</BOOKTITLE>
+                <PUBDATE>2005</PUBDATE>
+                <REPLACEMENTVALUE>99.00</REPLACEMENTVALUE>
+                <MAXDAYSOUT>30</MAXDAYSOUT>
+           </BOOK>
+      </BOOKS>
+ </TRANSACTION>
+</XML_BOOKFILE>

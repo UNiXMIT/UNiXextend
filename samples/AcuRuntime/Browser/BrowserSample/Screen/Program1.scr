@@ -1,0 +1,24 @@
+      * Program1.scr
+      * Program1.scr is generated from C:\AcuSamples\Browser\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       01 Screen1.
+           03 Screen1-Pb-1, Push-Button, 
+              COL 6.00, LINE 7.00, LINES 4.00 CELLS, SIZE 12.00 CELLS, 
+              ID IS 1, 
+              TITLE "Browser Control", 
+              EVENT PROCEDURE Screen1-Pb-1-Event-Proc.
+           03 Screen1-Pb-1a, Push-Button, 
+              COL 20.00, LINE 7.00, LINES 4.00 CELLS, SIZE 12.00 CELLS, 
+              EXCEPTION-VALUE 1000, ID IS 2, 
+              TITLE "EXIT", 
+              EVENT PROCEDURE Screen1-Pb-1-Event-Proc.
+       01 Screen2.
+           03 Screen2-Wb-1, Web-Browser, 
+              COL 1.00, LINE 1.00, LINES 46.00 CELLS, SIZE 64.00 CELLS, 
+              ID IS 99, VALUE Screen2-Wb-1-Value, VISIBLE 0.
+           03 Screen2-Pb-1, Push-Button, 
+              COL 27.00, LINE 51.00, LINES 4.00 CELLS, 
+              SIZE 12.00 CELLS, 
+              EXCEPTION-VALUE 1000, ID IS 2, 
+              TITLE "Close Browser".

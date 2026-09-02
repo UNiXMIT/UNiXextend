@@ -1,0 +1,13 @@
+      * Program2.wrk
+      * Program2.wrk is generated from C:\AcuSamples\MSProgressBarControl\Program2.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+      * 77 Key-Status IS SPECIAL-NAMES CRT STATUS PIC 9(4) USAGE [None] VALUE 0.
+      *     88 Exit-Pushed VALUE 27.
+      *     88 Message-Received VALUE 95.
+      *     88 Event-Occurred VALUE 96.
+      *     88 Screen-No-Input-Field VALUE 97.
+      *     88 Screen-Time-Out VALUE 99.
+      * property-defined variable
+
+      * user-defined variable

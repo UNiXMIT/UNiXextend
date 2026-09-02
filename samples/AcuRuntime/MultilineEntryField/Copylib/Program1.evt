@@ -1,0 +1,51 @@
+      * Program1.evt
+      * Program1.evt is generated from C:\AcuSupport\Interchange-Group\SI-3162510-ATWMultiline\EntryField\Program1.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+
+       Acu-Screen1-Event-Extra.
+           EVALUATE Event-Type
+           WHEN Msg-Close
+              PERFORM Acu-Screen1-Msg-Close
+           END-EVALUATE
+           .
+
+       Acu-Screen1-Msg-Close.
+           ACCEPT Quit-Mode-Flag FROM ENVIRONMENT "QUIT_MODE"
+           IF Quit-Mode-Flag = ZERO
+              PERFORM Acu-Screen1-Exit
+              PERFORM Acu-Exit-Rtn
+           END-IF
+           .
+
+       Screen1-Event-Proc.
+      * 
+           PERFORM Acu-Screen1-Event-Extra
+           .
+
+       Screen1-Pb-1-Event-Proc.
+      * 
+           EVALUATE Event-Type
+           WHEN Cmd-Clicked
+              PERFORM Screen1-Pb-1-Ev-Cmd-Clicked
+           END-EVALUATE
+           .
+      ***   start event editor code   ***
+      *
+       Screen1-De-1-Aft-Procedure.
+           modify screen1-ef-1 value Screen1-De-1-Value
+           .
+      *
+       Screen1-Pb-1-Ev-Cmd-Clicked.
+           INITIALIZE WS-COUNT
+           PERFORM UNTIL 1 = 2
+               ADD 1 TO WS-COUNT
+               IF Screen1-Ef-2-Value (WS-COUNT) = SPACES
+                   SUBTRACT 1 FROM WS-COUNT
+                   DISPLAY MESSAGE WS-COUNT " LINE(S) OF TEXT"
+                   EXIT PARAGRAPH
+               END-IF
+           END-PERFORM
+           .
+
+       

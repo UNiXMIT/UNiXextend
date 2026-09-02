@@ -1,0 +1,41 @@
+      * Threadds.scr
+      * Threadds.scr is generated from C:\Sample\Threadds.Psf
+      * This is a generated file. DO NOT modify this file directly.
+            
+       01 Form1.
+           03 Admissions-Btn, Push-Button, 
+              COL 2.00, LINE 2.00, LINES 3.00 CELLS, SIZE 14.00 CELLS, 
+              ID IS 1, 
+              TITLE "Admissions", 
+              EXCEPTION PROCEDURE Change-Btn-Exception-Proc.
+           03 Exit-Btn, Push-Button, 
+              COL 34.00, LINE 2.00, LINES 3.00 CELLS, SIZE 13.00 CELLS, 
+              ID IS 2, 
+              TITLE "Exit", 
+              EXCEPTION PROCEDURE Exit-Btn-Exception-Proc.
+           03 Student-recs-Btn, Push-Button, 
+              COL 18.00, LINE 2.00, LINES 3.00 CELLS, SIZE 14.00 CELLS, 
+              ID IS 3, 
+              TITLE "Student records", 
+              EXCEPTION PROCEDURE Student-recs-Btn-Exception-Proc.
+       01 Form2.
+           03 Form2-Close-Btn, Push-Button, 
+              COL 15.00, LINE 25.00, LINES 4.00 CELLS, 
+              SIZE 15.00 CELLS, 
+              ID IS 1, SELF-ACT, 
+              TITLE "Close", 
+              EXCEPTION PROCEDURE Form2-Close-Btn-Exception-Proc.
+           03 Form2-Change-Push-Btn, Push-Button, 
+              COL 15.00, LINE 16.00, LINES 4.00 CELLS, 
+              SIZE 15.00 CELLS, 
+              ID IS 2, SELF-ACT, 
+              TITLE "Change", 
+              EVENT PROCEDURE Form2-Change-Push-Btn-Event-Proc, 
+              EXCEPTION PROCEDURE Form2-Change-Push-Btn-Exception-Proc.
+       01 Form3.
+           03 Form3-Close-Btn, Push-Button, 
+              COL 19.00, LINE 26.00, LINES 4.00 CELLS, 
+              SIZE 15.00 CELLS, 
+              ID IS 1, SELF-ACT, 
+              TITLE "Close", 
+              EXCEPTION PROCEDURE Form3-Close-Btn-Exception-Proc.

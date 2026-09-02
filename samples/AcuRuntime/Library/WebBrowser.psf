@@ -1,0 +1,313 @@
+; CASEMaker AcuBench Program Structure File, Version 10.0
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=WebBrowser
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=WebBrowser-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_nType=10
+m_strName=WebBrowser-Mn-1-Handle
+m_nUsage=48
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_nType=10
+m_strName=WebBrowser-Wb-1-Value
+m_strRawPic=X(26)
+m_strPic=X(26)
+m_strDefaultValue="http://www.microfocus.com"
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen WebBrowser
+   PREFIX            = WebBrowser
+   LOCK-CONTROL      = FALSE
+   (Name)            = WebBrowser
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = FALSE
+   Auto Resize       = FALSE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = FALSE
+   Font              = Default Font
+   Handle Variable   = WebBrowser-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Layout Manager    = None
+   Lines             = 53.00
+   Link To Thread    = TRUE
+   Main Menu         = WebBrowser-Mn-1-Handle
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   No Close          = FALSE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 70.00
+   System Menu       = TRUE
+   Title             = "Screen"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Floating
+   Wrap              = FALSE
+   Event Procedure   = WebBrowser-Event-Proc
+   Begin Menu WebBrowser-Mn-1
+      SCREEN-COL        = 4.00
+      SCREEN-LINE       = 1.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = WebBrowser-Mn-1
+      Handle Variable   = WebBrowser-Mn-1-Handle
+      Style             = Static Menu
+      Tab Order         = 1
+      Begin Menuitem MI-File
+         (Name)            = MI-File
+         Checked           = FALSE
+         Enable            = 1:TRUE
+         Exception Value   = 1000
+         Label             = "File"
+         Separator         = FALSE
+         Begin Menuitem MI-Exit
+            (Name)            = MI-Exit
+            Checked           = FALSE
+            Enable            = 1:TRUE
+            Exception Value   = 1001
+            Label             = "Exit"
+            Separator         = FALSE
+            Link To           = WebBrowser-Mn-1-MI-Exit-Link
+         End
+      End
+      Begin Menuitem MI-Help
+         (Name)            = MI-Help
+         Checked           = FALSE
+         Enable            = 1:TRUE
+         Exception Value   = 1002
+         Label             = "Help"
+         Separator         = FALSE
+         Begin Menuitem MI-About
+            (Name)            = MI-About
+            Checked           = FALSE
+            Enable            = 1:TRUE
+            Exception Value   = 1003
+            Label             = "About"
+            Separator         = FALSE
+         End
+      End
+   End
+   Begin Web-Browser WebBrowser-Wb-1
+      SCREEN-COL        = 1.00
+      SCREEN-LINE       = 1.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = WebBrowser-Wb-1
+      Column            = 1.00
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Help ID           = 0
+      ID                = 1
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 1.00
+      Lines             = 47.00
+      No Tab            = FALSE
+      Size              = 70.00
+      Tab Order         = 2
+      Value             = "http://www.microfocus.com"
+      Value Picture     = X(26)
+      Value Variable    = WebBrowser-Wb-1-Value
+      Visible           = 1:TRUE
+   End
+   Begin Push-Button WebBrowser-Pb-1
+      SCREEN-COL        = 27.00
+      SCREEN-LINE       = 50.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = WebBrowser-Pb-1
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Color             = 0
+      Column            = 27.00
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Is Link           = FALSE
+      Layout Data       = 0
+      Layout Data Max Height Cells = 0.00
+      Layout Data Max Height Pixels = 0
+      Layout Data Max Width Cells = 0.00
+      Layout Data Max Width Pixels = 0
+      Layout Data Min Height Cells = 0.00
+      Layout Data Min Height Pixels = 0
+      Layout Data Min Width Cells = 0.00
+      Layout Data Min Width Pixels = 0
+      Line              = 50.00
+      Lines             = 3.00
+      Multiline         = FALSE
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = TRUE
+      Size              = 14.00
+      Style             = Cancel Button
+      Tab Order         = 3
+      Termination Value = 0
+      Title             = "Exit"
+      Transparent Color = -1
+      Visible           = 1:TRUE
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       WebBrowser-Mn-1-MI-Exit-Link.
+           Perform Acu-Exit-Rtn
+           .
+
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+FOLLOW_PROJECT_OPTIONS=1
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=0
+EXCLUDE_PROGRAM_PARAGRAPH=0
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+LINK_CLOSE_TO_OPEN=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=1
+ACCEPT_CONTROL=1
+ANSI_DOCUMENT_FORMAT=1

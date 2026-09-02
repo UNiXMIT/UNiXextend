@@ -1,0 +1,13 @@
+CFG-OPNSAV-FILTERS            All files(*.*)|*.*|ZIP files(*.zip)|*.zip
+CFG-OPNSAV-DEFAULT-FILTER     1
+
+CFG-OPNSAV-FILENAME           *.zip
+CFG-OPNSAV-DEFAULT-EXT        
+CFG-OPNSAV-DEFAULT-DIR        \\NWB-ALEXL1\Shared
+
+CFG-OPNSAV-TITLE              Import Document
+CFG-OP-CODE                   2
+#CFG-OPNSAV-TITLE              Export
+#CFG-OP-CODE                   3
+
+CFG-OPNSAV-FLAGS

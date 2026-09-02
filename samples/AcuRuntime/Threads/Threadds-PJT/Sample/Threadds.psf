@@ -1,0 +1,544 @@
+; CASEMaker AcuBench Program Structure File, Version 6.0
+; WARNING: DO NOT MODIFY THIS FILE!
+
+[PROGRAM_CONTENT]
+QUIT_CONFIRM=0
+MAIN_SCREEN_NAME=Form1
+
+{{@DESCRIPTION:
+
+@}}
+
+[WORKING_STORAGE]
+m_nType=1
+m_strName=Working Storage
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionWK
+
+@}}
+[FDITEM0_WK]
+m_nType=10
+m_strName=Form1-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM0_WK
+
+@}}
+[FDITEM1_WK]
+m_nType=10
+m_strName=Form2-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM1_WK
+
+@}}
+[FDITEM2_WK]
+m_nType=10
+m_strName=Form3-Handle
+m_nUsage=24
+m_nItemLevel=77
+m_nSync=-1
+m_bFixed=1
+{{@DataItem_m_strDescriptionFDITEM2_WK
+
+@}}
+
+
+[LINKAGE_SECTION]
+m_nType=1
+m_strName=Linkage Section
+m_bBlockRecords=1
+m_bRecordFixed=1
+m_bStandard=1
+{{@FD_m_strDescriptionLK
+
+@}}
+
+
+{{@SCREEN:
+*   Screen Painter Data
+*   Schema 6.0
+*
+BEGIN-SPDATA
+
+GRAPHICAL-SCREEN
+
+Begin Screen Form1
+   PREFIX            = Form1
+   LOCK-CONTROL      = FALSE
+   (Name)            = Form1
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = TRUE
+   Auto Resize       = TRUE
+   Bind To Thread    = FALSE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = TRUE
+   Font              = Default Font
+   Handle Variable   = Form1-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Lines             = 48.00
+   Link To Thread    = TRUE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   Resizable         = FALSE
+   Scroll            = FALSE
+   Size              = 64.00
+   System Menu       = TRUE
+   Title             = "Campus Anywhere"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Initial
+   Wrap              = FALSE
+   Event Procedure   = Form1-Event-Proc
+   Before Create     = Form1-Bef-Create
+   Begin Push-Button Admissions-Btn
+      SCREEN-COL        = 2.00
+      SCREEN-LINE       = 2.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Admissions-Btn
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Column            = 2.00
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 1
+      Line              = 2.00
+      Lines             = 3.00
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 14.00
+      Style             = Other
+      Tab Order         = 1
+      Termination Value = 0
+      Title             = "Admissions"
+      Visible           = 1:TRUE
+      Exception Procedure = Change-Btn-Exception-Proc
+      Cmd-Clicked(ex)   = Admissions-Btn-Ex-Cmd-Clicked
+   End
+   Begin Push-Button Exit-Btn
+      SCREEN-COL        = 34.00
+      SCREEN-LINE       = 2.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Exit-Btn
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Column            = 34.00
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Line              = 2.00
+      Lines             = 3.00
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 13.00
+      Style             = Other
+      Tab Order         = 2
+      Termination Value = 0
+      Title             = "Exit"
+      Visible           = 1:TRUE
+      Exception Procedure = Exit-Btn-Exception-Proc
+      Cmd-Clicked(ex)   = Exit-Btn-Ex-Cmd-Clicked
+   End
+   Begin Push-Button Student-recs-Btn
+      SCREEN-COL        = 18.00
+      SCREEN-LINE       = 2.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Student-recs-Btn
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Column            = 18.00
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 3
+      Line              = 2.00
+      Lines             = 3.00
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = FALSE
+      Size              = 14.00
+      Style             = Other
+      Tab Order         = 3
+      Termination Value = 0
+      Title             = "Student records"
+      Visible           = 1:TRUE
+      Exception Procedure = Student-recs-Btn-Exception-Proc
+      Cmd-Clicked(ex)   = Student-recs-Btn-Ex-Cmd-Clicked
+   End
+End
+
+Begin Screen Form2
+   PREFIX            = Form2
+   LOCK-CONTROL      = FALSE
+   (Name)            = Form2
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = FALSE
+   Auto Resize       = TRUE
+   Bind To Thread    = TRUE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = TRUE
+   Font              = Default Font
+   Handle Variable   = Form2-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Lines             = 44.00
+   Link To Thread    = FALSE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   Resizable         = TRUE
+   Scroll            = FALSE
+   Size              = 64.00
+   System Menu       = TRUE
+   Title             = "Admissions"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Independent
+   Wrap              = FALSE
+   Event Procedure   = Form2-Event-Proc
+   Begin Push-Button Form2-Close-Btn
+      SCREEN-COL        = 15.00
+      SCREEN-LINE       = 25.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form2-Close-Btn
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Column            = 15.00
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 1
+      Line              = 25.00
+      Lines             = 4.00
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = TRUE
+      Size              = 15.00
+      Style             = Other
+      Tab Order         = 1
+      Termination Value = 0
+      Title             = "Close"
+      Visible           = 1:TRUE
+      Exception Procedure = Form2-Close-Btn-Exception-Proc
+      Cmd-Clicked(ex)   = Form2-Close-Btn-Ex-Cmd-Clicked
+   End
+   Begin Push-Button Form2-Change-Push-Btn
+      SCREEN-COL        = 15.00
+      SCREEN-LINE       = 16.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form2-Change-Push-Btn
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Column            = 15.00
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 2
+      Line              = 16.00
+      Lines             = 4.00
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = TRUE
+      Size              = 15.00
+      Style             = Other
+      Tab Order         = 2
+      Termination Value = 0
+      Title             = "Change"
+      Visible           = 1:TRUE
+      Event Procedure   = Form2-Change-Push-Btn-Event-Proc
+      Cmd-Clicked       = Form2-Change-Push-Btn-Ev-Cmd-Clicked
+      Exception Procedure = Form2-Change-Push-Btn-Exception-Proc
+      Cmd-Clicked(ex)   = Form2-Change-Push-Btn-Ex-Cmd-Clicked
+   End
+End
+
+Begin Screen Form3
+   PREFIX            = Form3
+   LOCK-CONTROL      = FALSE
+   (Name)            = Form3
+   Absolute Column   = 0
+   Absolute Line     = 0
+   Action            = (None)
+   Auto Minimize     = FALSE
+   Auto Resize       = TRUE
+   Bind To Thread    = TRUE
+   Boxed             = FALSE
+   Cell              = TRUE
+   Cell Height       = 10
+   Cell Measure      = Pixels
+   Cell Width        = 10
+   Color             = 65793
+   Controls Uncropped = FALSE
+   Erase Screen      = TRUE
+   Font              = Default Font
+   Handle Variable   = Form3-Handle
+   Help ID           = 0
+   Label Offset      = 0
+   Lines             = 40.00
+   Link To Thread    = FALSE
+   Max Lines         = 0.00
+   Max Size          = 0.00
+   Measuring Control = Label
+   Measuring Font    = Default Font
+   Measuring Style   = [None]
+   Min Lines         = 0.00
+   Min Size          = 0.00
+   Modeless          = TRUE
+   Resizable         = TRUE
+   Scroll            = FALSE
+   Size              = 64.00
+   System Menu       = TRUE
+   Title             = "Student Records"
+   Title Bar         = TRUE
+   Unit              = Cells
+   User Gray         = FALSE
+   User White        = FALSE
+   Visible           = 1:TRUE
+   Window Type       = Independent
+   Wrap              = FALSE
+   Event Procedure   = Form3-Event-Proc
+   Begin Push-Button Form3-Close-Btn
+      SCREEN-COL        = 19.00
+      SCREEN-LINE       = 26.00
+      LOCK-CONTROL      = FALSE
+      (Name)            = Form3-Close-Btn
+      Bitmap Frame      = FALSE
+      Bitmap Number     = 1
+      Bitmap Square     = TRUE
+      Ccol              = 0
+      Cline             = 0
+      Clines            = 0
+      Column            = 19.00
+      Copy Resource     = TRUE
+      Csize             = 0
+      Destroy Type      = Automatic
+      Enable            = 1:TRUE
+      Exception Value   = 0
+      Flat              = FALSE
+      Font              = Default Font
+      Help ID           = 0
+      ID                = 1
+      Line              = 26.00
+      Lines             = 4.00
+      No Auto Default   = FALSE
+      No Tab            = FALSE
+      Self Act          = TRUE
+      Size              = 15.00
+      Style             = Other
+      Tab Order         = 1
+      Termination Value = 0
+      Title             = "Close"
+      Visible           = 1:TRUE
+      Exception Procedure = Form3-Close-Btn-Exception-Proc
+      Cmd-Clicked(ex)   = Form3-Close-Btn-Ex-Cmd-Clicked
+   End
+End
+
+END-SPDATA
+
+@}}
+
+{{@REPORT:
+*   Report Writer Data
+*   Schema 6.0
+*
+BEGIN-RWDATA-6.0A
+
+END-RWDATA
+
+@}}
+
+{{@PARAGRAPH:
+      *
+       Exit-Btn-Ex-Cmd-Clicked.
+            perform Acu-exit-rtn
+           .
+      *
+       Form2-Close-Btn-Ex-Cmd-Clicked. 
+      * Perform updates 
+      * if processing successful
+           move zero to form2-handle
+           Stop thread
+      * else
+      * display message box
+      * end-if
+           .
+      *
+      *
+       Form2-Change-Push-Btn-Ex-Cmd-Clicked.
+      * Perform updates 
+      * if processing successful
+           Set I-O window to form1-handle
+      * else
+      * display message box     
+           .
+      *
+       Admissions-Btn-Ex-Cmd-Clicked.
+           If form2-handle > zero 
+           then
+               Set I-O window to form2-handle 
+           else
+               Perform thread Acu-Form2-routine
+           .
+      *
+       Student-recs-Btn-Ex-Cmd-Clicked.
+           if form3-handle > 0
+           then
+               set I-O window to form3-handle
+           else
+               Perform thread Acu-Form3-routine
+           .
+      *
+       Form3-Close-Btn-Ex-Cmd-Clicked.
+            move zero to form3-handle
+            Stop thread
+           .
+      *
+       Form2-Change-Push-Btn-Ev-Cmd-Clicked.
+            Set I-O window to form1-handle
+           .
+      *
+       Form1-Bef-Create.
+            move zero to form1-handle,
+                form2-handle,
+                form3-handle
+           .
+@}}
+
+[KEY_STATUS_FIELD_FORMAT]
+PIC=9(4)
+USAGE=[None]
+
+[KEYSTATUS_CONTENT:KS1]
+CONDITION=Exit-Pushed
+VALUE=27
+
+[KEYSTATUS_CONTENT:KS2]
+CONDITION=Message-Received
+VALUE=95
+
+[KEYSTATUS_CONTENT:KS3]
+CONDITION=Event-Occurred
+VALUE=96
+
+[KEYSTATUS_CONTENT:KS4]
+CONDITION=Screen-No-Input-Field
+VALUE=97
+
+[KEYSTATUS_CONTENT:KS5]
+CONDITION=Screen-Time-Out
+VALUE=99
+
+[CODE_GENERATION_OPTIONS]
+GENERATE_PROGRAM_FILE=1
+GENERATE_WORKING_STORAGE=1
+GENERATE_EVENT_PARAGRAPH=1
+GENERATE_SCREEN_SECTION=1
+GENERATE_REPORT_SECTION=1
+GENERATE_PROCEDURE_DIVISION=1
+GENERATE_MENU_PARAGRAPH=1
+GENERATE_LINKAGE_SECTION=1
+REPLACE_REMARK_PART=1
+EXCLUDE_PROGRAM_VARIABLE=1
+EXCLUDE_PROGRAM_PARAGRAPH=1
+PROGRAM_EXTENSION=.cbl
+WORKINGSTORAGE_EXTENSION=.wrk
+EVENT_EXTENSION=.evt
+SCREEN_EXTENSION=.scr
+REPORT_EXTENSION=.rpt
+PROCEDURE_EXTENSION=.prd
+MENU_EXTENSION=.mnu
+LINKAGE_EXTENSION=.lks
+PROGRAM_FILE_READ_ONLY=0
+COPYBOOK_READ_ONLY=1
+GENERATE_COPY_FILES=1
+ANSI_DOCUMENT_FORMAT=1

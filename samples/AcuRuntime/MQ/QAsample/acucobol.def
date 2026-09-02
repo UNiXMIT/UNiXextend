@@ -1,0 +1,151 @@
+      * ACUCOBOL.DEF - Some useful ACUCOBOL definitions.
+      * Last modified: 28-Mar-97 TDC.
+
+      * Copyright (c) 1996-2000 by Acucorp, Inc.  Users of ACUCOBOL
+      * may freely include this file in their COBOL source code.  
+
+       01  TERMINAL-ABILITIES.
+           03  TERMINAL-NAME                   PIC X(10).
+           03  FILLER                          PIC X.
+               88  HAS-REVERSE                 VALUE "Y".
+           03  FILLER                          PIC X.
+               88  HAS-BLINK                   VALUE "Y".
+           03  FILLER                          PIC X.
+               88  HAS-UNDERLINE               VALUE "Y".
+           03  FILLER                          PIC X.
+               88  HAS-DUAL-INTENSITY          VALUE "Y".
+           03  FILLER                          PIC X.
+               88  HAS-132-COLUMN-MODE         VALUE "Y".
+           03  FILLER                          PIC X.
+               88  HAS-COLOR                   VALUE "Y".
+           03  FILLER                          PIC X.
+               88  HAS-LINE-DRAWING            VALUE "Y".
+           03  NUMBER-OF-SCREEN-LINES          PIC 9(3).
+           03  NUMBER-OF-SCREEN-COLUMNS        PIC 9(3).
+           03  FILLER                          PIC X.
+               88  HAS-LOCAL-PRINTER           VALUE "Y".
+           03  FILLER                          PIC X.
+               88  HAS-VISIBLE-ATTRIBUTES      VALUE "Y".
+           03  FILLER                          PIC X.
+               88  HAS-GRAPHICAL-INTERFACE     VALUE "Y".
+           03  USABLE-SCREEN-HEIGHT            PIC X(2) COMP-X.
+           03  USABLE-SCREEN-WIDTH             PIC X(2) COMP-X.
+           03  PHYSICAL-SCREEN-HEIGHT          PIC X(2) COMP-X.
+           03  PHYSICAL-SCREEN-WIDTH           PIC X(2) COMP-X.
+
+
+       01  SYSTEM-INFORMATION.
+           03  OPERATING-SYSTEM                PIC X(10).
+               88  OS-IS-MSDOS                 VALUE "MS-DOS".
+               88  OS-IS-OS2                   VALUE "OS/2".
+               88  OS-IS-VMS                   VALUES "VMS",
+                                               "VAX/VMS".
+               88  OS-IS-UNIX                  VALUES "Unix",
+					       "Unix-V", "Unix-4",
+					       "UNOS".
+               88  OS-IS-AOS                   VALUE "AOS/VS".
+               88  OS-IS-WINDOWS               VALUE "WINDOWS".
+               88  OS-IS-WIN-NT                VALUE "WIN/NT".
+               88  OS-IS-WIN-FAMILY            VALUES "WINDOWS", 
+                                                      "WIN/NT".
+               88  OS-IS-AMOS                  VALUE "AMOS".
+           03  USER-ID                         PIC X(12).
+           03  STATION-ID                      PIC X(12).
+           03  FILLER                          PIC X.
+               88  HAS-INDEXED-READ-PREVIOUS   VALUE "Y".
+           03  FILLER                          PIC X.
+               88  HAS-RELATIVE-READ-PREVIOUS  VALUE "Y".
+           03  FILLER                          PIC X.
+               88  CAN-TEST-INPUT-STATUS       VALUE "Y".
+           03  FILLER                          PIC X.
+               88  IS-MULTI-TASKING            VALUE "Y".
+           03  RUNTIME-VERSION.
+               88  VERSION-PRIOR-TO-2-2        VALUE SPACES.
+               05  RUNTIME-MAJOR-VERSION       PIC 99.
+               05  RUNTIME-MINOR-VERSION       PIC 99.
+               05  RUNTIME-RELEASE             PIC 99.
+           03  FILLER                          PIC X.
+               88  IS-PLUGIN                   VALUE "Y".
+           03  SERIAL-NUMBER                   PIC X(20).
+
+       01  BROWSERINFO-DATA.
+           03  USER-AGENT-STRING               PIC X(50).
+           03  BROWSER-MAJOR-VERSION           PIC X COMP-X.
+           03  BROWSER-MINOR-VERSION           PIC X COMP-X.
+
+       78  BLACK                               VALUE 1.
+       78  BLUE                                VALUE 2.
+       78  GREEN                               VALUE 3.
+       78  CYAN                                VALUE 4.
+       78  RED                                 VALUE 5.
+       78  MAGENTA                             VALUE 6.
+       78  BROWN                               VALUE 7.
+       78  WHITE                               VALUE 8.
+       78  DARK-GRAY                           VALUE 9.
+       78  BRIGHT-BLUE                         VALUE 10.
+       78  BRIGHT-GREEN                        VALUE 11.
+       78  BRIGHT-CYAN                         VALUE 12.
+       78  BRIGHT-RED                          VALUE 13.
+       78  BRIGHT-MAGENTA                      VALUE 14.
+       78  YELLOW                              VALUE 15.
+       78  BRIGHT-WHITE                        VALUE 16.
+       78  BCKGRND-BLACK                       VALUE 32.
+       78  BCKGRND-BLUE                        VALUE 64.
+       78  BCKGRND-GREEN                       VALUE 96.
+       78  BCKGRND-CYAN                        VALUE 128.
+       78  BCKGRND-RED                         VALUE 160.
+       78  BCKGRND-MAGENTA                     VALUE 192.
+       78  BCKGRND-BROWN                       VALUE 224.
+       78  BCKGRND-WHITE                       VALUE 256.
+       78  BCKGRND-DARK-GRAY                   VALUE 288.
+       78  BCKGRND-BRIGHT-BLUE                 VALUE 320.
+       78  BCKGRND-BRIGHT-GREEN                VALUE 352.
+       78  BCKGRND-BRIGHT-CYAN                 VALUE 384.
+       78  BCKGRND-BRIGHT-RED                  VALUE 416.
+       78  BCKGRND-BRIGHT-MAGENTA              VALUE 448.
+       78  BCKGRND-YELLOW                      VALUE 480.
+       78  BCKGRND-BRIGHT-WHITE                VALUE 512.
+       78  COLOR-REVERSE                       VALUE 1024.
+       78  FRGRND-LOW                          VALUE 2048.
+       78  FRGRND-HIGH                         VALUE 4096.
+       78  COLOR-UNDERLINE                     VALUE 8192.
+       78  COLOR-BLINK                         VALUE 16384.
+       78  COLOR-PROTECTED                     VALUE 32768.
+       78  BCKGRND-LOW                         VALUE 65536.
+       78  BCKGRND-HIGH                        VALUE 131072.
+       78  WINDOW-BRIGHT-WHITE                 VALUE 131328.
+
+      *  Options for C$RERR STATUS-TYPE
+
+       78  GET-FILE-STATUS                     VALUE 1.
+       78  GET-TRANSACTION-STATUS              VALUE 2.
+
+      *  Opcodes for C$FILESYS
+
+       78  START-FILESYSTEM-LIST               VALUE 0.
+       78  CONTINUE-FILESYSTEM-LIST            VALUE 1.
+       78  CHECK-FOR-FILESYSTEM                VALUE 2.
+       78  NUMBER-OF-FILESYSTEMS               VALUE 3.
+
+       77  FILESYSTEM                          PIC X(5).
+
+      * Flags for "C$SYSTEM"
+
+       78  CSYS-ASYNC                          VALUE 1.
+       78  CSYS-NO-IO                          VALUE 2.
+       78  CSYS-MAXIMIZED                      VALUE 4.
+       78  CSYS-MINIMIZED                      VALUE 8.
+       78  CSYS-COMPATIBILITY                  VALUE 16.
+       78  CSYS-HIDDEN                         VALUE 32.
+       78  CSYS-SHELL                          VALUE 64.
+
+      * Return codes for "C$PING"
+
+       78  CPING_OK                            VALUE 0.
+       78  CPING_NO_CLIENT                     VALUE 1.
+       78  CPING_PARAM_ERROR                   VALUE 2.
+       78  CPING_CONN_REFUSED                  VALUE 3.
+       78  CPING_VERSION_ERROR                 VALUE 4.
+       78  CPING_SOCKET_ERROR                  VALUE 5.
+
+      * end of acucobol.def

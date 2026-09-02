@@ -1,0 +1,59 @@
+#wt-loading {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    margin-left: -200px;
+    margin-top: -150px;
+    left: 50%;
+    top: 50%;
+    background: #fff url("https://mfmit.ddns.net/loading.gif") no-repeat;
+    background-size: 400px;
+    overflow: hidden;
+    padding: 2px;
+    border: none;
+}
+
+#wt-loading div {
+    display: none;
+}
+
+.panel-loading::before {
+    background-image: none;
+  }
+  
+.panel-loading span {
+    display: none;
+  }
+  
+.panel-loading::after {
+    content: "Reconnecting...";
+    font-size: 10pt;
+    display: block;
+    position: absolute;
+    margin-top: 82px;
+    margin-left: 39px;
+  }
+  
+.panel-loading {
+    position: absolute;
+    /* Dimension of panel */
+    width: 165px;
+    height: 160px;
+  
+    /* Central position on the page */
+    left: 50%;
+    top: 50%;
+    margin-left: -62px;
+    margin-top: -62px;
+  
+    /* Set image background */
+    background: #ffffff url("https://mfmit.ddns.net/loading.gif") no-repeat;
+    color: #000000;
+    overflow: hidden;
+    padding: 2px;
+    border: 0px;
+  
+    /* The background image must be centered */
+    /* (Width - ImageWidth) / 2 */
+    background-position-x: 18.5px;
+  }

@@ -1,0 +1,54 @@
+      * ModifyBook.wrk
+      * ModifyBook.wrk is generated from C:\COBOL\extend10.1\ModifyBook.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       77 Key-Status IS SPECIAL-NAMES CRT STATUS PIC 9(4) VALUE 0.
+           88 Exit-Pushed VALUE 27.
+           88 Message-Received VALUE 95.
+           88 Event-Occurred VALUE 96.
+           88 Screen-No-Input-Field VALUE 97.
+           88 Screen-Time-Out VALUE 99.
+      * property-defined variable
+
+      * user-defined variable
+       77 Form1-Handle
+                  USAGE IS HANDLE OF WINDOW VALUE NULL.
+       77 Depart-status    PIC  X(2).
+           88 Valid-Department VALUE IS "00" THRU "09". 
+       77 Books-status     PIC  X(2).
+           88 Valid-Books VALUE IS "00" THRU "09". 
+       01 Lnk-Books-rec.
+           05 Lnk-Books-branch PIC  x(3).
+           05 Lnk-Books-id     PIC  x(9).
+           05 Lnk-Books-dr     PIC  x(2).
+           05 Lnk-Books-title  PIC  x(25).
+           05 Lnk-Books-price  PIC  9(8)v9(2).
+           05 Lnk-Books-stock  PIC  s9(6).
+           05 Lnk-Books-sales  PIC  x.
+           05 Lnk-Books-order  PIC  s9(6).
+           05 Lnk-Books-date   PIC  x(4).
+           05 Lnk-Books-author PIC  x(10).
+       77 old-Departme-key PIC  x(26).
+       77 branchToKeep     PIC  x(3).
+       77 W90-DISPLAY      PIC  X(26).
+       01 .
+           03 Form1-Cm-3-Container-Item.
+               05      PIC  x(2)
+                          VALUE IS "AA".
+               05      PIC  x(2)
+                          VALUE IS "BB".
+               05      PIC  x(2)
+                          VALUE IS "CC".
+               05      PIC  x(2)
+                          VALUE IS "  ".
+           78 Form1-Cm-3-Container-Num VALUE IS 4. 
+           03 Form1-Cm-3-Container REDEFINES Form1-Cm-3-Container-Item  
+           PIC  x(2)
+                      OCCURS 4 TIMES
+                      INDEXED  Form1-Cm-3-Container-Idx.
+       77 AA   PIC  x(2).
+       77 Form1-St-1-Handle
+                  USAGE IS HANDLE OF STATUS-BAR VALUE NULL.
+       77 Form1-Mn-1-Handle
+                  USAGE IS HANDLE OF MENU VALUE NULL.
+       77 Form1-De-1-Value PIC  X(16).

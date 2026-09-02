@@ -1,0 +1,98 @@
+      * SpellChecker.prd
+      * SpellChecker.prd is generated from C:\AcuSamples\Spell Checker\SpellChecker.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       Acu-Initial-Routine.
+      *    Before-Init
+      * get system information
+           ACCEPT System-Information FROM System-Info
+      * get terminal information
+           ACCEPT Terminal-Abilities FROM Terminal-Info
+      * set font
+           PERFORM Acu-Init-Font
+      *    After-Init
+           .
+
+       Acu-Init-Font.
+      * font setting
+           INITIALIZE WFONT-DATA Arial12BI
+           MOVE 12 TO WFONT-SIZE
+           MOVE "Arial" TO WFONT-NAME
+           SET WFCHARSET-DEFAULT TO TRUE
+           SET WFONT-BOLD TO TRUE
+           SET WFONT-ITALIC TO TRUE
+           SET WFONT-UNDERLINE TO FALSE
+           SET WFONT-STRIKEOUT TO FALSE
+           SET WFFAMILY-DONT-CARE TO TRUE
+           SET WFONT-FIXED-PITCH TO FALSE
+           CALL "W$FONT" USING WFONT-GET-FONT, Arial12BI, WFONT-DATA
+           .
+
+       Acu-Exit-Rtn.
+      *    After-Program
+           EXIT PROGRAM
+           STOP RUN
+           .
+
+       Acu-DataEntryScreen-Routine.
+      *    Before-Routine
+           PERFORM Acu-DataEntryScreen-Scrn
+           PERFORM Acu-DataEntryScreen-Proc
+      *    After-Routine
+           .
+
+       Acu-DataEntryScreen-Scrn.
+           PERFORM Acu-DataEntryScreen-Create-Win
+           PERFORM Acu-DataEntryScreen-Init-Data
+           .
+
+       Acu-DataEntryScreen-Create-Win.
+      *    Before-Create
+      * display screen
+              DISPLAY Standard GRAPHICAL WINDOW
+                 LINES 42.40, SIZE 51.90, CELL HEIGHT 10, 
+                 CELL WIDTH 10, AUTO-MINIMIZE, BIND TO THREAD, 
+                 COLOR IS 65793, ERASE, LABEL-OFFSET 0, MODELESS, 
+                 NO SCROLL, WITH SYSTEM MENU, 
+                 TITLE 
+                 "AcuCorp Workbench 5.0 ActiveX SpellChecker Sample", 
+                 TITLE-BAR, NO WRAP, 
+                 EVENT PROCEDURE Form1-Event-Proc, 
+                 HANDLE IS Form1-Handle
+      * toolbar
+           DISPLAY DataEntryScreen UPON Form1-Handle
+           PERFORM DataEntryScreen-Aft-Create
+           .
+
+       Acu-DataEntryScreen-Init-Data.
+      *    Before-Initdata
+      *    After-Initdata
+           .
+      * DataEntryScreen
+       Acu-DataEntryScreen-Proc.
+           PERFORM UNTIL Exit-Pushed
+              ACCEPT DataEntryScreen  
+                 ON EXCEPTION PERFORM Acu-DataEntryScreen-Evaluate-Func
+              END-ACCEPT
+           END-PERFORM
+           DESTROY Form1-Handle
+           INITIALIZE Key-Status
+           .
+
+      * DataEntryScreen
+       Acu-DataEntryScreen-Evaluate-Func.
+           EVALUATE TRUE
+              WHEN Exit-Pushed
+                 PERFORM Acu-DataEntryScreen-Exit
+              WHEN Event-Occurred
+                 IF Event-Type = Cmd-Close
+                    PERFORM Acu-DataEntryScreen-Exit
+                 END-IF
+           END-EVALUATE
+           MOVE 1 TO Accept-Control
+           .
+
+       Acu-DataEntryScreen-Exit.
+           SET Exit-Pushed TO TRUE
+           .
+

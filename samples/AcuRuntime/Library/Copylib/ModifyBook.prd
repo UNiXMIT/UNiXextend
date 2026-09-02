@@ -1,0 +1,246 @@
+      * ModifyBook.prd
+      * ModifyBook.prd is generated from C:\COBOL\extend10.1\ModifyBook.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       Acu-Initial-Routine.
+      *    Before-Init
+      * get system information
+           ACCEPT System-Information FROM System-Info
+      * get terminal information
+           ACCEPT Terminal-Abilities FROM Terminal-Info
+      * create pop-up menu
+           PERFORM Acu-Init-Popup
+      * open file
+           PERFORM Acu-Open-Files
+      *    After-Init
+           .
+
+       Acu-Init-Popup.
+           PERFORM Acu-Form1-Mn-1-Menu
+           MOVE Menu-Handle TO Form1-Mn-1-Handle
+           .
+
+       Acu-Exit-Rtn.
+           PERFORM Acu-Close-Files
+      *    After-Program
+           EXIT PROGRAM
+           STOP RUN
+           .
+
+       Acu-Open-Files.
+      *    Before-Open
+           PERFORM Acu-Open-Department
+           PERFORM Acu-Open-Books
+      *    After-Open
+           .
+
+       Acu-Open-Department.
+      *    Before-Open
+           OPEN I-O Department 
+           IF Depart-status = "35"
+              OPEN OUTPUT Department
+              IF Depart-status(1:1) = "0"
+                 CLOSE Department
+                 OPEN I-O Department
+              END-IF
+           END-IF
+           IF NOT Depart-status(1:1) = "0"
+              PERFORM Acu-Extended-File-Status
+              GO TO Acu-Exit-Rtn
+           END-IF
+      *    After-Open
+           .
+
+       Acu-Open-Books.
+      *    Before-Open
+           OPEN I-O Books 
+           IF Books-status = "35"
+              OPEN OUTPUT Books
+              IF Books-status(1:1) = "0"
+                 CLOSE Books
+                 OPEN I-O Books
+              END-IF
+           END-IF
+           IF NOT Books-status(1:1) = "0"
+              PERFORM Acu-Extended-File-Status
+              GO TO Acu-Exit-Rtn
+           END-IF
+      *    After-Open
+           .
+
+       Acu-Form1-Routine.
+      *    Before-Routine
+           PERFORM Acu-Form1-Scrn
+           PERFORM Acu-Form1-Proc
+      *    After-Routine
+           .
+
+       Acu-Form1-Scrn.
+           PERFORM Acu-Form1-Create-Win
+           PERFORM Acu-Form1-Init-Data
+           .
+
+       Acu-Form1-Create-Win.
+      *    Before-Create
+      * display screen
+              DISPLAY Floating GRAPHICAL WINDOW
+                 LINES 43.00, SIZE 56.00, CELL HEIGHT 10, 
+                 CELL WIDTH 10, COLOR IS 65793, LABEL-OFFSET 0, 
+                 LINK TO THREAD, MODELESS, 
+                 POP-UP MENU IS Form1-Mn-1-Handle, NO SCROLL, 
+                 WITH SYSTEM MENU, 
+                 TITLE "Add/Modify Book", TITLE-BAR, NO WRAP, 
+                 EVENT PROCEDURE Form1-Event-Proc, 
+                 HANDLE IS Form1-Handle
+      * toolbar
+      * status-bar
+           DISPLAY STATUS-BAR
+              PANEL-WIDTHS (20, 20, 8), 
+              PANEL-STYLE (1, 2, 0), 
+              PANEL-TEXT (Depart-status, Books-status, 
+                 Lnk-Departme-branch), 
+              GRIP, 
+              HANDLE IS Form1-St-1-Handle
+           DISPLAY Form1 UPON Form1-Handle
+      *    After-Create
+           .
+
+       Acu-Form1-Init-Data.
+      *    Before-Initdata
+           PERFORM Acu-Form1-Cm-1-Content
+           PERFORM Acu-Form1-Cm-2-Content
+           PERFORM Acu-Form1-Cm-3-Content
+           PERFORM Form1-Aft-Initdata
+           .
+      * Form1
+       Acu-Form1-Proc.
+           PERFORM UNTIL Exit-Pushed
+              ACCEPT Form1  
+                 ON EXCEPTION PERFORM Acu-Form1-Evaluate-Func
+              END-ACCEPT
+           END-PERFORM
+           DESTROY Form1-Handle
+           INITIALIZE Key-Status
+           .
+
+      * Form1-Cm-1
+       Acu-Form1-Cm-1-Content.
+           .
+
+      * Form1-Cm-2
+       Acu-Form1-Cm-2-Content.
+           .
+
+      * Form1-Cm-3
+       Acu-Form1-Cm-3-Content.
+           MODIFY Form1-Cm-3, MASS-UPDATE = 1, RESET-LIST = 1
+           MODIFY Form1-Cm-3, ITEM-TO-ADD = TABLE Form1-Cm-3-Container
+           MODIFY Form1-Cm-3, MASS-UPDATE = 0
+           MODIFY Form1-Cm-3, VALUE Lnk-Books-dr
+           .
+
+      * Form1
+       Acu-Form1-Evaluate-Func.
+           EVALUATE TRUE
+              WHEN Exit-Pushed
+                 PERFORM Acu-Form1-Exit
+              WHEN Event-Occurred
+                 IF Event-Type = Cmd-Close
+                    PERFORM Acu-Form1-Exit
+                 END-IF
+      * Form1-Pb-1 Link To
+              WHEN Key-Status = 101
+                 PERFORM Form1-Pb-1-Link
+      * MI-OkayThisisaRealMenu Link To
+              WHEN Key-Status = 1006
+                 PERFORM Form1-Mn-1-MI-OkayThisisaRealMenu-Link
+           END-EVALUATE
+           MOVE 1 TO Accept-Control
+           .
+
+       Acu-Form1-Display-Status-Msg.
+           MODIFY Form1-St-1-Handle
+              PANEL-WIDTHS (20, 20, 8), 
+              PANEL-STYLE (1, 2, 0), 
+              PANEL-TEXT (Depart-status, Books-status, 
+                 Lnk-Departme-branch), 
+              GRIP, 
+           .
+
+       Acu-Form1-Clear-Status-Msg.
+           
+           MOVE SPACE TO Depart-status
+           PERFORM Acu-Form1-Display-Status-Msg
+           .
+
+       Acu-Close-Files.
+      *    Before-Close
+           CLOSE Department
+           CLOSE Books
+      *    After-Close
+           .
+
+      * Department
+
+       Acu-Department-Read.
+           READ Department WITH NO LOCK KEY mkey OF Department
+           .
+
+       Acu-Department-Read-Next.
+           READ Department NEXT WITH NO LOCK
+           .
+
+       Acu-Department-Read-Prev.
+           READ Department PREVIOUS WITH NO LOCK
+           .
+
+       Acu-Department-Rec-Write.
+           WRITE Departme-rec
+           .
+
+       Acu-Department-Rec-Rewrite.
+           REWRITE Departme-rec
+           .
+
+       Acu-Department-Rec-Delete.
+           DELETE Department
+           .
+
+       Acu-Department-Delete.
+           DELETE FILE Department
+           .
+
+      * Books
+
+       Acu-Books-Read.
+           READ Books WITH NO LOCK KEY Books-id OF Books
+           .
+
+       Acu-Books-Read-Next.
+           READ Books NEXT WITH NO LOCK
+           .
+
+       Acu-Books-Read-Prev.
+           READ Books PREVIOUS WITH NO LOCK
+           .
+
+       Acu-Books-Rec-Write.
+           WRITE Books-rec
+           .
+
+       Acu-Books-Rec-Rewrite.
+           REWRITE Books-rec
+           .
+
+       Acu-Books-Rec-Delete.
+           DELETE Books
+           .
+
+       Acu-Books-Delete.
+           DELETE FILE Books
+           .
+
+       Acu-Form1-Exit.
+           SET Exit-Pushed TO TRUE
+           .
+

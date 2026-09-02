@@ -1,0 +1,14 @@
+      * WebBrowser.evt
+      * WebBrowser.evt is generated from C:\Work\Demo\extend10.1\WebBrowser.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+
+       WebBrowser-Event-Proc.
+           .
+      ***   start event editor code   ***
+      *
+       WebBrowser-Mn-1-MI-Exit-Link.
+           Perform Acu-Exit-Rtn
+           .
+
+       

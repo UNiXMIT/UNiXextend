@@ -1,0 +1,34 @@
+# Dockerfile_linux_x64_app - Used to create the application image
+
+# Name of the repository tag used to create the application image
+# Can be overridden with the --build-arg option in bld.sh
+ARG BASEIMAGE=${BASEIMAGE}
+
+# Use the base extend image to create the application image
+FROM ${BASEIMAGE}
+
+# Default Dockerfile values
+# Values can be overridden with the --build-arg options in bld.sh
+# These need to come after the FROM command or else they will not have a value
+ARG EXTEND_VERSION=${EXTEND_VERSION}
+ARG APPCONTAINERDIRECTORY=${APPCONTAINERDIRECTORY}
+
+# Embed the label information into the application image for identification.
+# This can be viewed with podman image inspect <image-id>
+LABEL vendor="Micro Focus" \
+      com.microfocus.name="extend-app" \
+      com.microfocus.version="$EXTEND_VERSION" \
+      com.microfocus.eula.url="https://supportline.microfocus.com/licensing/lvcontract.aspx" \
+      com.microfocus.is-base-image="false"
+
+# Copy the local application directory to the root directory in the image
+COPY ["AppContainerDirectory", "/AppContainerDirectory/"]
+
+# Set permissions needed for running the applications
+RUN chmod 644 /AppContainerDirectory/AcuAccess*
+RUN chmod 644 /AppContainerDirectory/*.cfg
+RUN chmod 644 /AppContainerDirectory/*.ini
+RUN chmod 644 /AppContainerDirectory/*.conf
+RUN chmod 644 /AppContainerDirectory/*.acu
+RUN chmod 744 /AppContainerDirectory/*.sh
+

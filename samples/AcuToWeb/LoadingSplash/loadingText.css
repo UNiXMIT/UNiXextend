@@ -1,0 +1,11 @@
+#wt-loading div {
+    text-indent: -9999px;
+    line-height: 0;
+}
+
+#wt-loading div::after {
+    content: "Replaced Text!";
+    text-indent: 0;
+    display: block;
+    line-height: initial;
+}

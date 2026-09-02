@@ -1,0 +1,85 @@
+      * WebBrowser.prd
+      * WebBrowser.prd is generated from C:\Work\Demo\extend10.1\WebBrowser.Psf
+      * This is a generated file. DO NOT modify this file directly.
+
+       Acu-Initial-Routine.
+      *    Before-Init
+      * get system information
+           ACCEPT System-Information FROM System-Info
+      * get terminal information
+           ACCEPT Terminal-Abilities FROM Terminal-Info
+      *    After-Init
+           .
+
+       Acu-Exit-Rtn.
+      *    After-Program
+           EXIT PROGRAM
+           STOP RUN
+           .
+
+       Acu-WebBrowser-Routine.
+      *    Before-Routine
+           PERFORM Acu-WebBrowser-Scrn
+           PERFORM Acu-WebBrowser-Proc
+      *    After-Routine
+           .
+
+       Acu-WebBrowser-Scrn.
+           PERFORM Acu-WebBrowser-Create-Win
+           PERFORM Acu-WebBrowser-Init-Data
+           .
+
+       Acu-WebBrowser-Create-Win.
+      *    Before-Create
+      * display screen
+              DISPLAY Floating GRAPHICAL WINDOW
+                 LINES 53.00, SIZE 70.00, CELL HEIGHT 10, 
+                 CELL WIDTH 10, COLOR IS 65793, LABEL-OFFSET 0, 
+                 LINK TO THREAD, MODELESS, NO SCROLL, WITH SYSTEM MENU, 
+                 TITLE "Screen", TITLE-BAR, NO WRAP, 
+                 EVENT PROCEDURE WebBrowser-Event-Proc, 
+                 HANDLE IS WebBrowser-Handle
+      * main menu
+           PERFORM Acu-WebBrowser-Mn-1-Menu
+           MOVE Menu-Handle TO WebBrowser-Mn-1-Handle
+           CALL "W$MENU" USING Wmenu-Show, WebBrowser-Mn-1-Handle
+      * toolbar
+           DISPLAY WebBrowser UPON WebBrowser-Handle
+      *    After-Create
+           .
+
+       Acu-WebBrowser-Init-Data.
+      *    Before-Initdata
+      *    After-Initdata
+           .
+      * WebBrowser
+       Acu-WebBrowser-Proc.
+           PERFORM UNTIL Exit-Pushed
+              ACCEPT WebBrowser  
+                 ON EXCEPTION PERFORM Acu-WebBrowser-Evaluate-Func
+              END-ACCEPT
+           END-PERFORM
+           DESTROY WebBrowser-Handle
+           INITIALIZE Key-Status
+           .
+
+      * WebBrowser
+       Acu-WebBrowser-Evaluate-Func.
+           EVALUATE TRUE
+              WHEN Exit-Pushed
+                 PERFORM Acu-WebBrowser-Exit
+              WHEN Event-Occurred
+                 IF Event-Type = Cmd-Close
+                    PERFORM Acu-WebBrowser-Exit
+                 END-IF
+      * MI-Exit Link To
+              WHEN Key-Status = 1001
+                 PERFORM WebBrowser-Mn-1-MI-Exit-Link
+           END-EVALUATE
+           MOVE 1 TO Accept-Control
+           .
+
+       Acu-WebBrowser-Exit.
+           SET Exit-Pushed TO TRUE
+           .
+

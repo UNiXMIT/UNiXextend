@@ -1,0 +1,42 @@
+SUBJECT: Grid control now supports SORT-COLUMN
+Change Number:  ECN-4619
+Status:         Complete
+Type of Change: Enhancement
+Priority:       Medium
+Incidents:      None
+RPI Number:	None
+
+Date:        2019-05-31
+Product:     ACUCOBOL-GT
+Module:      Runtime, compiler, thin client
+New Version: 10.3.0
+
+Machines Affected: Windows
+Known Versions Affected: All
+
+
+DESCRIPTION of problem or enhancement:
+
+It is now possible to sort a grid on a column without user interaction,
+similar to the user clicking a grid column header.
+
+
+INSTRUCTIONS for use:
+
+There is a new numeric grid property, SORT-COLUMN. When inquired,
+returns a value that tells the current sorted column. The value
+is 0 if there is no column sorted, positive if the sort is ascending,
+and negative if the sort is descending.
+
+When modified, the SORT-COLUMN property causes the given column to be
+sorted. Set the SORT-COLUMN negative to sort the given column in
+descending order.
+
+Modifying this property causes the usual sorting events to be sent
+to the COBOL program.
+
+Note that if the column number given does not have a SORT-TYPE property,
+then nothing will happen - the events are not sent to the COBOL program,
+and the grid is not modified.
+
+The property number is 4113, and is given in def/controls.def.
