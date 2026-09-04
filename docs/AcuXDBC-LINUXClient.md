@@ -53,7 +53,7 @@ TotalSortPages = 10000
 VortexDriver = 0 (Genesis - 0, VortexNet - 1)
 ```
 
-If your client and server are the same machine, set `VortexDriver` to `0`, otherwise set it to `1`.
+  If your client and server are the same machine, set `VortexDriver` to `0`, otherwise set it to `1`.
 
 3.	Set two operating environment variables called VORTEX_HOME and GENESIS_HOME. These environment variables should be set to the root installation directory of AcuXDBC:
 
@@ -62,7 +62,7 @@ export VORTEX_HOME=/home/products/acu1100shx64
 export GENESIS_HOME=/home/products/acu1100shx64
 ```
 
-**Note:** the value assigned to the environment variable should not have a '/' as the last character as this can interfere with the installation and configuration scripts.  
+  **Note:** the value assigned to the environment variable should not have a '/' as the last character as this can interfere with the installation and configuration scripts.  
 
 4.	Environment variables need to be set or modified that point the location of the AcuXDBC executables and to tell the operating system where to find the AcuXDBC shared libraries:
 
@@ -84,7 +84,7 @@ DICTSOURCE      /home/products/acu1100shx64/syscat
 FILE_PREFIX     ;/home/products/acu1100shx64/data;/home/products/acu1100shx64/sample/acuxdbc/data
 ```
 
-**Note:** This product only, supports the semi-colon as a separator, not a colon as would be expected on Linux/UNIX.  
+  **Note:** This product only, supports the semi-colon as a separator, not a colon as would be expected on Linux/UNIX.  
 
 6.	Verify that the AcuXDBC licence file, xvision.alc, is located in the bin directory. 
 
@@ -113,4 +113,4 @@ $ isql -v acuxdbc system manager
 SQL> select * from pets
 ```
 
-![1](images/xdbc-lc-1.png)
+  ![1](images/xdbc-lc-1.png)
