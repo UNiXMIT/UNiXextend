@@ -37,9 +37,23 @@ SQLSETPOSIROW Size.: 8
 ```
 [acuxdbc]
 Driver = /home/products/acu1100shx64/bin/acuxdbc.so
+DataSource = acuxdbc.cfg
 Description = AcuXDBC
-LoginID = system
+Host = localhost
+PortNumber = 20222
+UserID = system
+Password = manager
+FetchBufferSize = 8192
+MaxColumns = 256
+MaxDBCursors = 1024
+MaxStatements = 64
+MemorySortPages = 1000
+MergeBufferSize = 10000
+TotalSortPages = 10000
+VortexDriver = 0 (Genesis - 0, VortexNet - 1)
 ```
+
+If your client and server are the same machine, set `VortexDriver` to `0`, otherwise set it to `1`.
 
 3.	Set two operating environment variables called VORTEX_HOME and GENESIS_HOME. These environment variables should be set to the root installation directory of AcuXDBC:
 
@@ -50,35 +64,14 @@ export GENESIS_HOME=/home/products/acu1100shx64
 
 **Note:** the value assigned to the environment variable should not have a '/' as the last character as this can interfere with the installation and configuration scripts.  
 
-4.	Add an entry in $VORTEX_HOME/lib/odbc.ini with the following information. Please create this file if it does not already exist.  
-
-```
-fetch_buffer_size   8192  -- fetch buffer size (in bytes)
-columns             256   -- max # of database columns
-logical_cursors     1024  -- max # of logical cursors
-db_cursors          64    -- max # of DB cursors
-```
-
-If the information above is for use on a local machine, add the following to the odbc.ini:
-
-```
-dsn_acuxdbc "acuxdbc04:%s/%s/xvision:acuxdbc.cfg"
-```
-
-If the information above is for use on a server, add the following to the odbc.ini:
-
-```
-dsn_acuxdbc "acuxdbc03:%s/%s/xvision:acuxdbc.cfg@20222:servername!acuxdbc04"
-```
-
-5.	Environment variables need to be set or modified that point the location of the AcuXDBC executables and to tell the operating system where to find the AcuXDBC shared libraries:
+4.	Environment variables need to be set or modified that point the location of the AcuXDBC executables and to tell the operating system where to find the AcuXDBC shared libraries:
 
 ```
 export PATH=/home/products/acu1100shx64/bin
 export LD_LIBRARY_PATH=/home/products/acu1100shx64/bin:/home/products/acu1100shx64/lib
 ```
 
-6.	Next modify the AcuXDBC configuration file, acuxdbc.cfg, located at $GENESIS_HOME. If it is not there, create it by running 'genxconf.sh'.  
+5.	Next modify the AcuXDBC configuration file, acuxdbc.cfg, located at $GENESIS_HOME. If it is not there, create it by running 'genxconf.sh'.  
 There are two variables that are required, although others may be needed depending on your situation:
 
 ```
@@ -93,11 +86,11 @@ FILE_PREFIX     ;/home/products/acu1100shx64/data;/home/products/acu1100shx64/sa
 
 **Note:** This product only, supports the semi-colon as a separator, not a colon as would be expected on Linux/UNIX.  
 
-7.	Verify that the AcuXDBC licence file, xvision.alc, is located in the bin directory. 
+6.	Verify that the AcuXDBC licence file, xvision.alc, is located in the bin directory. 
 
-8.	Run setup script demo.sh located at $GENESIS_HOME/bin.
+7.	Run setup script demo.sh located at $GENESIS_HOME/bin.
 
-9.	Try to access a sample Vision file using a utility that came with unixODBC:  
+8.	Try to access a sample Vision file using a utility that came with unixODBC:  
 
 
 ```
