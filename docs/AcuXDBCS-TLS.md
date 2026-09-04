@@ -25,9 +25,9 @@ cert.pem: OK
 
 ### Examples
 ```
-acuxdbcs.sh -start -p20222 -e cert.pem fullchain_ca.crt 1.1,1.2
-acuxdbcs.sh -start -p20222 -e cert_store 1.1
-acuxdbcs.sh -start -p20222 -e cert.pem invcertok,1.1
+xdbcsrvr -p20222 -e cert.pem fullchain_ca.crt 1.1,1.2
+xdbcsrvr -p20222 -e cert_store 1.1
+xdbcsrvr -p20222 -e cert.pem invcertok,1.1
 ```
 
 ### Clients
@@ -40,7 +40,7 @@ Use the net.ini to configure TLS on the client side:
 ```
 ssl                 yes
 ssl_CAcertstore     /etc/certs/crt.txt
-ssl_certfile        /etc/certs/fullchain_ca.crt
+ssl_certfile        /etc/certs/aws.pem
 ssl_protocol        1.1,1.2
 ```
 
