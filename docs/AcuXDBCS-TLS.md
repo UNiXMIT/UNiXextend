@@ -25,9 +25,9 @@ cert.pem: OK
 
 ### Examples
 ```
-xdbcsrvr -p20222 -e cert.pem fullchain_ca.crt 1.1,1.2
+xdbcsrvr -p20222 -e cert.pem fullchain_ca.crt 1.1 1.2
 xdbcsrvr -p20222 -e cert_store 1.1
-xdbcsrvr -p20222 -e cert.pem invcertok,1.1
+xdbcsrvr -p20222 -e cert.pem invcertok 1.1
 ```
 
 ### Clients
