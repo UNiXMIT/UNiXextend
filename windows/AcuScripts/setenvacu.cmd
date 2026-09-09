@@ -190,7 +190,7 @@ SET GENESIS_HOME=%INSTALLDIR32%AcuGT
 SET VORTEX_HOME=%INSTALLDIR32%AcuGT
 SET CBLMODE=32
 ECHO.
-ccbl32 -vv | powershell -Command "$input | Select-Object -First 1"
+ccbl32 -vv | powershell -Command "$a=@($input); $a[0]; $a[-2]"
 GOTO :SETEXTRAS
 
 :64BIT
@@ -200,7 +200,7 @@ SET GENESIS_HOME=%INSTALLDIR64%AcuGT
 SET VORTEX_HOME=%INSTALLDIR64%AcuGT
 SET CBLMODE=64
 ECHO.
-ccbl32 -vv | powershell -Command "$input | Select-Object -First 1"
+ccbl32 -vv | powershell -Command "$a=@($input); $a[0]; $a[-2]"
 GOTO :SETEXTRAS
 
 :SETEXTRAS
