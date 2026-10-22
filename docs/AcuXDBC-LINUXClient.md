@@ -88,6 +88,11 @@ sudo apt install unixodbc-dev
     +---------------------------------------+  
     ```
 
+    Or run the tool directly using (no DSN):  
+    ```
+    xdbcquery /z /cacuxdbc03:system/manager/xvision:acuxdbc.cfg@port:IPorHostname\!acuxdbc04
+    ```
+
 6. Connect to a Vision file called 'pets', that is physically located at $GENESIS_HOME/sample/acuxdbc/data, and whose XFD was loaded by the demo.sh script.  
 
     ```

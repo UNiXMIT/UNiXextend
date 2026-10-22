@@ -240,14 +240,19 @@ To test your DSN use the script odbcsql.bat
 
 ```
 odbcsql –h
-odbcsql -d my-dsn-name
+odbcsql -d myDSN
 SQL (/? for help) ==> select * from CLIENTS;
 ```
 
 Or run the tool directly using:  
 
 ```
-xdbcquery /cacuxdbc11:system/manager/my-dsn-name
+xdbcquery /z /cacuxdbc11:system/manager/myDSN
+```
+
+Without a DSN:
+```
+xdbcquery /z /cacuxdbc03:system/manager/xvision:acuxdbc.cfg@port:IPorHostname!acuxdbc04
 ```
 
 If everything works fine, you can open MS Access or MS Excel and use AcuXDBC to link your Vision files.  
