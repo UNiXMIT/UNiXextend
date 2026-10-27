@@ -284,7 +284,7 @@ xdbcquery /z /cacuxdbc11:system/manager/myDSN
 
 Without a DSN:
 ```
-xdbcquery /z /cacuxdbc03:system/manager/xvision:acuxdbc.cfg@port:IPorHostname!acuxdbc04
+xdbcquery /z /cacuxdbc03:system/manager/xvision:acuxdbc.cfg@port:host!acuxdbc04
 ```
 
 If everything works fine, you can open MS Access or MS Excel and use AcuXDBC to link your Vision files.
