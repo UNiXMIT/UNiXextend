@@ -2,7 +2,7 @@
 
 AcuXDBC supports TLS on UNIX using OpenSSL whereas AcuXDBC on Windows uses Secure Channel (SChannel) which is part of the Windows operating system.  
 
-AcuXDBC can be configured to use standard TLS or mutual TLS (mTLS). Standard TLS requires a server certificate. mTLS additionally requires a client certificate, so that the server and client each authenticate the other.  
+AcuXDBC can be configured to use standard TLS or mutual TLS (mTLS). Standard TLS requires only a server certificate. mTLS additionally requires a client certificate, so that the server and client each authenticate the other.  
 
 ## Certificates
 | File | Description |
@@ -13,9 +13,7 @@ AcuXDBC can be configured to use standard TLS or mutual TLS (mTLS). Standard TLS
 | `client.crt` / `client.key` | Client certificate and private key. Required only if mTLS is configured. Presented by the client to prove its identity to the server. | 
 
 ## Install CA Certificates  
-These steps install the CA certificates into the operating system trust store.   
-- **Client:** Required, so the client can validate the server certificate against the root CA certificate.  
-- **Server:** Required. AcuXDBC Server verifies its own server certificate against the root CA certificate at startup. If mTLS is configured, the root CA certificate is also used to validate client certificates.  
+Install the CA certificates into the operating system trust store on both the client and the server. The client requires the root CA certificate to validate the server certificate. The server also requires it, because AcuXDBC Server verifies its own server certificate against the root CA certificate at startup and, if mTLS is configured, uses the root CA certificate to validate client certificates.   
 
 ### Windows 
 Add a root CA certificate to the Trusted Root Certification Authorities (Root) store.  
@@ -78,7 +76,8 @@ server.crt: OK    # Example output; the result depends on the certificate
 
 > **NOTE**: SSL_CERT_DIR and SSL_CERT_FILE can be used to modify the system defined CA certificate location and filename. Applies only to OpenSSL. 
 
-## Setup
+## Enabling TLS on AcuXDBC Server
+Enable TLS by passing the -e option directly to xdbcsrvr.  
 ```
 -e ServerCertificate [CA_PEM_filename|cert_store] [invcertok] [TLS-level]
 ```
@@ -112,7 +111,7 @@ Specify one of the following to enable mTLS. The server then requires a client c
     CA certificate used to verify the client certificate.  
 
 - **cert_store**  
-    The `cert_store` keyword tells AcuXDBC Server to validate the client certificate using the CA certificates in the system certificate store — the OpenSSL store on Linux or the SChannel store on Windows.  
+    Instructs AcuXDBC Server to validate the client certificate using the CA certificates in the system certificate store — the OpenSSL store on Linux or the SChannel store on Windows.  
 
 ### Other Options [optional]
 - **invcertok**  
