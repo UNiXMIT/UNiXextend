@@ -167,8 +167,8 @@ AcuXDBC looks for net.ini in the lib subdirectory of the specified path. For exa
     Default: `no`. If `yes`, then the client requires TLS communication with the server. If `no` and the server requires TLS, then the client will also use TLS.  
 
 - **ssl_CAcertstore** 
-    Default: `cert_store`. System-defined CA certificate store. The specified CA certificate trust store will be used to validate the server certificate. The certificates must be in PEM format.  
-    On Windows, only `cert_store` or `CA_PEM_filename` may be specified.  
+    `cert_store`(System-defined CA certificate store) or `CA_PEM_filename`(CA Certificate). The specified CA certificate trust store or CA Certificate will be used to validate the server certificate. The certificates must be in PEM format.  
+    On Windows, only `cert_store` or `CA_PEM_filename` may be specified. `Storename\Path\[CommonName|Thumbprint]` cannot be used.  
 
 - **ssl_certfile** 
     Used to specify the client certificate when mTLS is enabled in AcuXDBC Server. The certificates must be in PEM format.  
